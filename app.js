@@ -1,82 +1,75 @@
-const form = document.getElementById("askForm");
-const questionInput = document.getElementById("question");
-const results = document.getElementById("results");
-const submitButton = form?.querySelector('button[type="submit"]');
+const input = document.querySelector("#input");
+const button = document.querySelector("#submit");
+const status = document.querySelector("#status");
+const results = document.querySelector("#results");
 
-if (form) {
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+button.addEventListener("click", run);
 
-    const question = questionInput?.value.trim();
+input.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+    run();
+  }
+});
 
-    if (!question) {
-      return;
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (m) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  }[m]));
+}
+
+async function run() {
+  const value = input.value.trim();
+
+  if (!value) {
+    status.textContent = "Please enter a question or situation first.";
+    input.focus();
+    return;
+  }
+
+  button.disabled = true;
+  status.textContent = "Finding relevant Scripture…";
+  results.innerHTML = "";
+
+  try {
+    const res = await fetch("/api/scripture", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        input: value
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || "Request failed");
     }
 
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Finding Scripture...";
-    }
+    results.innerHTML = data.passages.map((p) => `
+      <article class="verse">
+        <div class="ref">${esc(p.reference)}</div>
+        <div class="text">${esc(p.text)}</div>
+        <div class="translation">${esc(p.translation)}</div>
+      </article>
+    `).join("");
 
-    if (results) {
-      results.innerHTML = "<p>Searching Scripture...</p>";
-    }
+    status.textContent = `${data.passages.length} passages found`;
 
-    try {
-      const response = await fetch("/api/answer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question })
-      });
+    results.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Unable to find Scripture.");
-      }
-
-      if (!results) return;
-
-      results.innerHTML = "";
-
-      const passages = data.passages || [];
-
-      if (!passages.length) {
-        results.innerHTML =
-          "<p>No passages were returned. Please try another question.</p>";
-        return;
-      }
-
-      passages.forEach((passage) => {
-        const article = document.createElement("article");
-        article.className = "scripture-result";
-
-        const heading = document.createElement("h3");
-        heading.textContent =
-          passage.reference || passage.ref || "Scripture";
-
-        const text = document.createElement("p");
-        text.textContent =
-          passage.text || "Scripture text could not be retrieved.";
-
-        article.appendChild(heading);
-        article.appendChild(text);
-        results.appendChild(article);
-      });
-    } catch (error) {
-      console.error(error);
-
-      if (results) {
-        results.innerHTML =
-          "<p>We couldn't retrieve Scripture right now. Please try again.</p>";
-      }
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = "Find Scripture";
-      }
-    }
-  });
+  } catch (e) {
+    results.innerHTML = `<div class="error">${esc(e.message)}</div>`;
+    status.textContent = "";
+  } finally {
+    button.disabled = false;
+  }
 }
