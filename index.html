@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b2236">
+  <title>ASKJesus.ca — Ask. Seek. Knock.</title>
+  <meta name="description" content="Bring your question or situation and find relevant Scripture. Matthew 7:7 — Ask, seek, knock.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="ASKJesus.ca home">
+      <svg class="brand-star" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M50 6 89 73H11L50 6Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+        <path d="M50 94 11 27h78L50 94Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/>
+      </svg>
+      <span>ASKJesus.ca</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#ask">ASK</a>
+      <a href="#meaning">MATTHEW 7:7</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="mountains mountains-back"></div>
+      <div class="mountains mountains-front"></div>
+      <div class="hero-content">
+        <div class="hero-emblem" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path d="M50 6 89 73H11L50 6Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+            <path d="M50 94 11 27h78L50 94Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="kicker">MATTHEW 7:7</p>
+        <h1>ASK<span>Jesus.ca</span></h1>
+        <blockquote>“Ask and it will be given to you; seek, and you will find; knock, and it will be opened to you.”</blockquote>
+        <a class="primary-cta" href="#ask">Find Scripture <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section id="meaning" class="meaning section-wrap">
+      <div class="section-heading">
+        <p class="kicker dark">ASK • SEEK • KNOCK</p>
+        <h2>Bring your questions to the Word.</h2>
+        <p>Ask what you are facing. Seek what Scripture says. Open the Bible and read the passages in context.</p>
+      </div>
+
+      <div class="ask-grid">
+        <article>
+          <div class="letter">A</div>
+          <h3>ASK</h3>
+          <p>“Ask and it will be given to you.”</p>
+        </article>
+        <article>
+          <div class="letter">S</div>
+          <h3>SEEK</h3>
+          <p>“Seek, and you will find.”</p>
+        </article>
+        <article>
+          <div class="letter">K</div>
+          <h3>KNOCK</h3>
+          <p>“Knock, and it will be opened to you.”</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ask" class="ask-section">
+      <div class="section-wrap narrow">
+        <div class="section-heading light">
+          <p class="kicker">WHAT ARE YOU FACING?</p>
+          <h2>Ask your question.</h2>
+          <p>Describe a struggle, decision, situation, or subject. The answer shown below will be Bible passages—not an AI-written sermon.</p>
+        </div>
+
+        <div class="ask-card">
+          <label for="input">Your question or situation</label>
+          <textarea id="input" maxlength="1800" placeholder="Example: I’m worried about my future and I don’t know what to do next."></textarea>
+          <div class="actions">
+            <button id="submit">Find Scripture</button>
+            <span id="status" role="status" aria-live="polite"></span>
+          </div>
+          <p class="note">Scripture references are selected for relevance. The displayed Bible wording is retrieved separately from the World English Bible.</p>
+        </div>
+
+        <section id="results" class="results" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section id="about" class="about section-wrap narrow">
+      <div class="emblem-small" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <path d="M50 6 89 73H11L50 6Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M50 94 11 27h78L50 94Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+          <text x="50" y="57" text-anchor="middle" font-family="Georgia,serif" font-size="24" font-weight="700" fill="currentColor">ASK</text>
+        </svg>
+      </div>
+      <div>
+        <p class="kicker dark">ABOUT ASKJESUS.CA</p>
+        <h2>Built to point back to Scripture.</h2>
+        <p>ASKJesus.ca is a Scripture-finding tool. It does not claim personal revelation, replace prayer, or replace wise pastoral, medical, legal, or professional care. Its purpose is simple: help people find relevant passages and then read God’s Word for themselves.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">ASKJesus.ca</div>
+      <p>“Ask, and it will be given to you. Seek, and you will find. Knock, and it will be opened to you.” — Matthew 7:7</p>
+      <p class="legal">World English Bible text is public domain. Always read Scripture in context.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
