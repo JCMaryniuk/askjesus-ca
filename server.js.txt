@@ -1,0 +1,125 @@
+import express from "express";
+import OpenAI from "openai";
+
+const app = express();
+app.disable("x-powered-by");
+app.use(express.json({ limit: "20kb" }));
+app.use(express.static(".", { maxAge: "1h" }));
+
+const PORT = process.env.PORT || 3000;
+
+const FALLBACK = {
+  fear: ["Philippians 4:6-7", "Isaiah 41:10", "1 Peter 5:7", "Psalm 56:3-4", "Matthew 6:31-34"],
+  anxiety: ["Philippians 4:6-7", "1 Peter 5:7", "Matthew 6:25-34", "Psalm 94:19", "John 14:27"],
+  forgiveness: ["Ephesians 4:31-32", "Colossians 3:12-13", "Matthew 6:14-15", "Romans 12:17-21", "Luke 17:3-4"],
+  anger: ["James 1:19-20", "Ephesians 4:26-27", "Proverbs 15:1", "Romans 12:17-21", "Colossians 3:8"],
+  grief: ["Psalm 34:18", "Matthew 5:4", "Revelation 21:4", "Psalm 147:3", "2 Corinthians 1:3-4"],
+  wisdom: ["James 1:5", "Proverbs 3:5-6", "Proverbs 16:9", "Psalm 119:105", "Colossians 3:15-17"],
+  temptation: ["1 Corinthians 10:13", "James 1:12-16", "Matthew 26:41", "Hebrews 4:15-16", "Psalm 119:9-11"],
+  money: ["Matthew 6:19-34", "1 Timothy 6:6-10", "Proverbs 3:9-10", "Hebrews 13:5", "Philippians 4:11-13"],
+  marriage: ["Ephesians 5:21-33", "1 Corinthians 13:4-7", "Colossians 3:12-14", "James 1:19", "1 Peter 3:7"],
+  parenting: ["Deuteronomy 6:6-7", "Proverbs 22:6", "Ephesians 6:4", "Colossians 3:21", "Psalm 127:3-5"],
+  identity: ["Genesis 1:27", "Psalm 139:13-14", "2 Corinthians 5:17", "Ephesians 2:10", "1 Peter 2:9"],
+  work: ["Colossians 3:23-24", "Proverbs 16:3", "Proverbs 22:29", "Ecclesiastes 9:10", "1 Thessalonians 4:11-12"],
+  loneliness: ["Psalm 27:10", "Isaiah 41:10", "Hebrews 13:5-6", "Psalm 68:5-6", "Matthew 28:20"],
+  hope: ["Romans 15:13", "Lamentations 3:21-24", "Romans 8:28", "Psalm 42:11", "Hebrews 6:19"]
+};
+
+function fallbackReferences(input) {
+  const text = input.toLowerCase();
+  const synonyms = {
+    fear:["afraid","scared","worry","worried"], anxiety:["anxious","stress","stressed","panic"],
+    forgiveness:["forgive","betrayed","betrayal","hurt me"], anger:["angry","mad","rage"],
+    grief:["grieving","death","died","loss","mourning"], wisdom:["decision","choose","choice","guidance","what should i do"],
+    temptation:["tempted","sin","addiction"], money:["financial","finances","provide","debt"],
+    marriage:["wife","husband","spouse"], parenting:["child","children","kids","son","daughter"],
+    identity:["worthless","purpose","who am i","value"], work:["business","career","job"],
+    loneliness:["alone","lonely","abandoned"], hope:["hopeless","future","despair"]
+  };
+  const scored = Object.entries(FALLBACK).map(([key, refs]) => {
+    let score = text.includes(key) ? 3 : 0;
+    for (const s of (synonyms[key] || [])) if (text.includes(s)) score += 1;
+    return { refs, score };
+  }).sort((a,b) => b.score - a.score);
+
+  return scored[0]?.score > 0 ? scored[0].refs : [
+    "Proverbs 3:5-6", "James 1:5", "Psalm 119:105", "Philippians 4:6-7", "Romans 12:2"
+  ];
+}
+
+async function chooseReferences(input) {
+  if (!process.env.OPENAI_API_KEY) return fallbackReferences(input);
+
+  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const response = await client.responses.create({
+    model: process.env.OPENAI_MODEL || "gpt-5-mini",
+    input: [
+      {
+        role: "system",
+        content: `You are a Bible passage selector. You do not counsel, preach, interpret, or claim revelation.
+Return ONLY valid JSON in this exact form: {"references":["Book 1:1-3","Book 2:4"]}
+Rules:
+- Return 4 to 7 passages.
+- Select passages that genuinely address the user's subject or situation.
+- Prefer complete, contextual passage ranges over isolated proof-texts.
+- Never provide explanations, advice, prayers, commentary, summaries, or a personal message from God.
+- Use only references from the standard Protestant 66-book canon.
+- Never invent a reference.
+- For disputed or complex subjects, include relevant passages representing the major biblical considerations rather than forcing a yes/no conclusion.
+- Do not choose passages merely because a keyword appears; prioritize meaning and context.`
+      },
+      { role: "user", content: input }
+    ]
+  });
+
+  try {
+    const parsed = JSON.parse(response.output_text.trim());
+    if (Array.isArray(parsed.references) && parsed.references.length) {
+      return [...new Set(parsed.references.map(String))].slice(0, 7);
+    }
+  } catch {}
+
+  return fallbackReferences(input);
+}
+
+async function fetchPassage(reference) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  try {
+    const url = `https://bible-api.com/${encodeURIComponent(reference)}?translation=web`;
+    const res = await fetch(url, { signal: controller.signal });
+    if (!res.ok) throw new Error(`Bible text unavailable for ${reference}`);
+    const data = await res.json();
+    return {
+      reference: data.reference || reference,
+      text: (data.text || "").trim(),
+      translation: data.translation_name || "World English Bible"
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+app.get("/api/health", (_req, res) => res.json({ ok: true }));
+
+app.post("/api/scripture", async (req, res) => {
+  try {
+    const input = String(req.body?.input || "").trim();
+    if (!input) return res.status(400).json({ error: "Please enter a question or situation." });
+    if (input.length > 1800) return res.status(400).json({ error: "Please shorten your entry." });
+
+    const references = await chooseReferences(input);
+    const settled = await Promise.allSettled(references.map(fetchPassage));
+    const passages = settled.filter(x => x.status === "fulfilled").map(x => x.value);
+
+    if (!passages.length) throw new Error("No passages could be retrieved.");
+    res.json({ passages });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Something went wrong while finding Scripture. Please try again." });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`ASKJesus.ca running at http://localhost:${PORT}`);
+});
