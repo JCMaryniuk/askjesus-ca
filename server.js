@@ -1,16 +1,6 @@
 /* =========================================================
-   ASKJESUS.CA — SMARTER SCRIPTURE STUDY SERVER
-   ES MODULE VERSION FOR RENDER
-
-   What this version does:
-
-   1. Understands the user's situation
-   2. Identifies the main biblical themes
-   3. Selects 6 primary Scripture passages
-   4. Provides short study-context notes
-   5. Fetches the ACTUAL Bible text
-   6. Provides additional related references
-   7. Keeps Scripture and study notes clearly separated
+   ASKJESUS.CA — SCRIPTURE STUDY SERVER
+   FULL REPLACEMENT
 ========================================================= */
 
 import express from "express";
@@ -19,7 +9,7 @@ import { fileURLToPath } from "url";
 
 
 /* =========================================================
-   ES MODULE PATH SETUP
+   PATH SETUP
 ========================================================= */
 
 const __filename = fileURLToPath(import.meta.url);
@@ -57,7 +47,7 @@ app.use(
 
 
 /* =========================================================
-   HELPERS
+   CLEAN INPUT
 ========================================================= */
 
 function cleanQuestion(value) {
@@ -87,7 +77,7 @@ function cleanReference(value) {
 }
 
 
-function cleanText(value, maxLength = 700) {
+function cleanText(value, maxLength = 1000) {
 
   if (typeof value !== "string") {
     return "";
@@ -101,7 +91,7 @@ function cleanText(value, maxLength = 700) {
 
 
 /* =========================================================
-   PARSE TEXT FROM RESPONSES API
+   EXTRACT RESPONSES API TEXT
 ========================================================= */
 
 function extractResponseText(data) {
@@ -110,10 +100,6 @@ function extractResponseText(data) {
     return "";
   }
 
-
-  /*
-    Some API responses expose output_text directly.
-  */
 
   if (
     typeof data.output_text === "string" &&
@@ -124,10 +110,6 @@ function extractResponseText(data) {
 
   }
 
-
-  /*
-    Otherwise inspect output message content.
-  */
 
   if (Array.isArray(data.output)) {
 
@@ -161,7 +143,7 @@ function extractResponseText(data) {
 
 
 /* =========================================================
-   SMART SCRIPTURE STUDY ANALYSIS
+   SCRIPTURE STUDY PROMPT
 ========================================================= */
 
 async function createStudyPlan(question) {
@@ -169,87 +151,89 @@ async function createStudyPlan(question) {
   if (!process.env.OPENAI_API_KEY) {
 
     throw new Error(
-      "Scripture study service is not configured."
+      "OPENAI_API_KEY is missing in Render."
     );
 
   }
 
 
   const systemPrompt = `
-You are the biblical study-planning component for ASKJesus.ca.
+You are the Scripture study planning system for ASKJesus.ca.
 
-ASKJesus.ca is a Scripture study tool.
+ASKJesus.ca is a Bible Scripture study tool.
 
-Your job is to help identify Bible passages and organize them into a careful, balanced Scripture study.
+Your task is to understand the user's actual question and select Scripture that directly addresses that subject.
 
-DO NOT pretend that your commentary is Scripture.
+CRITICAL RULES:
 
-The Bible passages themselves will be retrieved separately from a Bible text source.
-
-Your responsibilities:
-
-1. Understand the user's actual question or situation.
-2. Identify the main biblical themes involved.
-3. Select 6 primary Bible passages that directly address the issue.
-4. Prefer meaningful passage ranges rather than isolated proof-texts when context matters.
-5. Consider multiple biblical dimensions when appropriate.
-6. Avoid simply repeating passages that all make the same point.
-7. Include both encouragement and correction when Scripture contains both.
-8. Distinguish forgiveness, reconciliation, trust, wisdom, consequences, responsibility, grace, repentance, justice, mercy, or other concepts when relevant.
+1. Answer the actual subject the user asked about.
+2. Do not default to generic wisdom verses unless the question is genuinely about wisdom or guidance.
+3. If the user asks about marriage, divorce, separation, adultery, reconciliation, spouses, husbands, wives, abandonment, remarriage, or marital conflict, the primary passages MUST directly address marriage or those issues.
+4. If the user asks about forgiveness, include passages specifically about forgiveness.
+5. If the user asks about fear or anxiety, include passages specifically about fear, anxiety, trust, or God's peace.
+6. If the user asks about money, debt, work, generosity, greed, stewardship, or provision, use passages directly related to those subjects.
+7. If the question is morally difficult or the Bible contains multiple relevant principles, show those different biblical dimensions rather than forcing a simplistic answer.
+8. Prefer passage ranges rather than isolated verses where surrounding context matters.
 9. Never invent Bible references.
-10. Use the standard 66-book Protestant Bible.
-11. Keep study notes concise and careful.
-12. Do not tell the user that a study note is a Bible quotation.
-13. Do not claim certainty where Scripture allows different reasonable applications.
-14. Do not make the answer into general motivational advice.
-15. Focus the study on Scripture.
+10. Use only books contained in the standard 66-book Protestant Bible.
+11. Scripture quotations will be retrieved separately. Do not fabricate Bible text.
+12. Your overview and context notes are study aids, not Scripture.
+13. Do not present personal opinion as biblical teaching.
+14. Do not promise outcomes that Scripture does not promise.
+15. Avoid proof-texting. Choose passages that genuinely fit their surrounding biblical context.
+16. Where Christians reasonably differ about application, acknowledge the biblical principles without pretending every interpretive question is settled.
+17. For sensitive relationship questions, do not assume facts the user did not state.
+18. For divorce questions specifically, consider passages such as Genesis 2, Malachi 2, Matthew 5, Matthew 19, Mark 10, 1 Corinthians 7, Ephesians 5, and related passages where actually relevant.
+19. Do not select passages merely because they contain one matching keyword.
+20. The six primary passages should collectively give a balanced biblical study of the question.
 
-For each primary passage, provide:
+Return:
 
-- reference
-- purpose
-- contextNote
+- a short study topic
+- a 2 to 4 sentence overview
+- exactly 3 key biblical themes
+- exactly 6 primary Bible passages
+- a purpose label for each passage
+- a concise context note for each passage
+- exactly 4 additional related references
 
-contextNote should be 1 or 2 sentences explaining why the passage matters to this study and what the surrounding context is about.
-
-Also provide:
-
-- topic: short study title
-- overview: 2 to 4 sentences describing the major biblical themes that the passages address
-- keyPrinciples: 3 concise principles
-- relatedReferences: 4 additional Bible references for further study
-
-Return JSON only.
-
-Required JSON structure:
+Example structure:
 
 {
-  "topic": "Forgiveness, Trust, and Discernment",
-  "overview": "Short Scripture-focused overview.",
+  "topic": "Marriage, Divorce, and Reconciliation",
+  "overview": "A concise Scripture-focused overview.",
   "keyPrinciples": [
-    "Principle one",
-    "Principle two",
-    "Principle three"
+    "Biblical principle one",
+    "Biblical principle two",
+    "Biblical principle three"
   ],
   "passages": [
     {
-      "reference": "Proverbs 14:15",
-      "purpose": "Discernment",
-      "contextNote": "Short context note."
+      "reference": "Matthew 19:3-9",
+      "purpose": "Jesus on marriage and divorce",
+      "contextNote": "Jesus responds to a question about divorce by pointing back to God's design for marriage in creation."
     }
   ],
   "relatedReferences": [
-    "Proverbs 22:3",
-    "Luke 17:3-4",
-    "Romans 12:18",
-    "Psalm 1:1-3"
+    "Genesis 2:18-24",
+    "Mark 10:2-12",
+    "Ephesians 5:21-33",
+    "Romans 12:18"
   ]
 }
 
-Exactly 6 primary passages whenever possible.
-Exactly 3 key principles.
-Exactly 4 related references whenever possible.
+Return JSON only.
 `;
+
+
+  const model =
+    process.env.OPENAI_MODEL ||
+    "gpt-5.6-terra";
+
+
+  console.log(
+    `Creating Scripture study with model: ${model}`
+  );
 
 
   const response = await fetch(
@@ -258,47 +242,63 @@ Exactly 4 related references whenever possible.
       method: "POST",
 
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
+
+        "Content-Type":
+          "application/json",
+
+        "Authorization":
+          `Bearer ${process.env.OPENAI_API_KEY}`
+
       },
 
       body: JSON.stringify({
 
-        model:
-          process.env.OPENAI_MODEL ||
-          "gpt-5.6-terra",
+        model,
 
         reasoning: {
           effort: "medium"
         },
 
         input: [
+
           {
             role: "system",
+
             content: [
+
               {
                 type: "input_text",
                 text: systemPrompt
               }
+
             ]
           },
 
           {
             role: "user",
+
             content: [
+
               {
                 type: "input_text",
-                text: question
+
+                text:
+                  `Prepare a Scripture study for this question:\n\n${question}`
               }
+
             ]
           }
+
         ],
 
         text: {
+
           format: {
+
             type: "json_schema",
 
-            name: "scripture_study",
+            name:
+              "scripture_study",
 
             strict: true,
 
@@ -319,6 +319,7 @@ Exactly 4 related references whenever possible.
                 },
 
                 keyPrinciples: {
+
                   type: "array",
 
                   minItems: 3,
@@ -327,9 +328,11 @@ Exactly 4 related references whenever possible.
                   items: {
                     type: "string"
                   }
+
                 },
 
                 passages: {
+
                   type: "array",
 
                   minItems: 6,
@@ -364,9 +367,11 @@ Exactly 4 related references whenever possible.
                     ]
 
                   }
+
                 },
 
                 relatedReferences: {
+
                   type: "array",
 
                   minItems: 4,
@@ -375,6 +380,7 @@ Exactly 4 related references whenever possible.
                   items: {
                     type: "string"
                   }
+
                 }
 
               },
@@ -388,33 +394,49 @@ Exactly 4 related references whenever possible.
               ]
 
             }
+
           }
+
         }
 
       })
+
     }
   );
 
 
   if (!response.ok) {
 
-    const details =
-      await response.text().catch(() => "");
+    const errorDetails =
+      await response
+        .text()
+        .catch(() => "");
+
 
     console.error(
-      "Study analysis service error:",
-      response.status,
-      details
+      "OPENAI REQUEST FAILED"
     );
 
+    console.error(
+      "Status:",
+      response.status
+    );
+
+    console.error(
+      errorDetails
+    );
+
+
     throw new Error(
-      "The Scripture study analysis is temporarily unavailable."
+      `Study analysis failed with status ${response.status}.`
     );
 
   }
 
 
-  const data = await response.json();
+  const data =
+    await response.json();
+
 
   const rawText =
     extractResponseText(data);
@@ -422,8 +444,17 @@ Exactly 4 related references whenever possible.
 
   if (!rawText) {
 
+    console.error(
+      "No output text returned from study analysis."
+    );
+
+    console.error(
+      JSON.stringify(data, null, 2)
+    );
+
+
     throw new Error(
-      "No Scripture study plan was returned."
+      "The Scripture study analysis returned no usable response."
     );
 
   }
@@ -434,14 +465,19 @@ Exactly 4 related references whenever possible.
 
   try {
 
-    parsed = JSON.parse(rawText);
+    parsed =
+      JSON.parse(rawText);
 
   } catch (error) {
 
     console.error(
-      "Study JSON parse error:",
+      "Could not parse Scripture study JSON."
+    );
+
+    console.error(
       rawText
     );
+
 
     throw new Error(
       "The Scripture study response could not be read."
@@ -452,29 +488,44 @@ Exactly 4 related references whenever possible.
 
   const passages =
     Array.isArray(parsed.passages)
+
       ? parsed.passages
+
           .map((item) => ({
+
             reference:
-              cleanReference(item.reference),
+              cleanReference(
+                item.reference
+              ),
 
             purpose:
-              cleanText(item.purpose, 80),
+              cleanText(
+                item.purpose,
+                100
+              ),
 
             contextNote:
-              cleanText(item.contextNote, 500)
+              cleanText(
+                item.contextNote,
+                600
+              )
+
           }))
+
           .filter(
             (item) =>
               item.reference
           )
+
           .slice(0, 6)
+
       : [];
 
 
-  if (passages.length === 0) {
+  if (passages.length < 1) {
 
     throw new Error(
-      "No Bible passages were selected."
+      "No Scripture passages were selected."
     );
 
   }
@@ -485,30 +536,32 @@ Exactly 4 related references whenever possible.
     topic:
       cleanText(
         parsed.topic,
-        120
+        150
       ) ||
       "Scripture Study",
 
     overview:
       cleanText(
         parsed.overview,
-        1000
+        1200
       ),
 
     keyPrinciples:
       Array.isArray(
         parsed.keyPrinciples
       )
+
         ? parsed.keyPrinciples
             .map(
               (item) =>
                 cleanText(
                   item,
-                  300
+                  350
                 )
             )
             .filter(Boolean)
             .slice(0, 3)
+
         : [],
 
     passages,
@@ -517,10 +570,12 @@ Exactly 4 related references whenever possible.
       Array.isArray(
         parsed.relatedReferences
       )
+
         ? parsed.relatedReferences
             .map(cleanReference)
             .filter(Boolean)
             .slice(0, 4)
+
         : []
 
   };
@@ -529,246 +584,7 @@ Exactly 4 related references whenever possible.
 
 
 /* =========================================================
-   FALLBACK STUDY
-========================================================= */
-
-function getFallbackStudy(question) {
-
-  const text =
-    question.toLowerCase();
-
-
-  if (
-    text.includes("trust") ||
-    text.includes("lie") ||
-    text.includes("lying")
-  ) {
-
-    return {
-
-      topic:
-        "Trust, Forgiveness, and Discernment",
-
-      overview:
-        "Scripture teaches forgiveness while also calling believers to wisdom, truth, repentance, and discernment. Reconciliation and restored trust can involve honesty, changed behavior, and careful judgment.",
-
-      keyPrinciples: [
-        "Forgiveness does not require pretending wrongdoing did not occur.",
-        "Biblical wisdom includes careful discernment rather than unquestioning trust.",
-        "Reconciliation should pursue truth, repentance, peace, and restoration."
-      ],
-
-      passages: [
-
-        {
-          reference: "Proverbs 14:15-16",
-          purpose: "Discernment",
-          contextNote:
-            "This section of Proverbs contrasts gullibility with careful judgment and wise awareness of danger."
-        },
-
-        {
-          reference: "Matthew 18:15-17",
-          purpose: "Addressing wrongdoing",
-          contextNote:
-            "Jesus describes a process for confronting sin directly and seeking restoration rather than ignoring the problem."
-        },
-
-        {
-          reference: "Luke 17:3-4",
-          purpose: "Forgiveness and repentance",
-          contextNote:
-            "Jesus connects rebuke, repentance, and repeated forgiveness in relationships."
-        },
-
-        {
-          reference: "Ephesians 4:25-32",
-          purpose: "Truth and forgiveness",
-          contextNote:
-            "Paul places forgiveness within a broader call to honesty, changed conduct, kindness, and Christlike relationships."
-        },
-
-        {
-          reference: "Romans 12:17-21",
-          purpose: "Responding to wrongdoing",
-          contextNote:
-            "Paul teaches believers not to repay evil with evil and to pursue peace while leaving final judgment to God."
-        },
-
-        {
-          reference: "Proverbs 22:3",
-          purpose: "Wise caution",
-          contextNote:
-            "Proverbs commends the prudent person who recognizes danger and responds wisely rather than ignoring it."
-        }
-
-      ],
-
-      relatedReferences: [
-        "Colossians 3:12-13",
-        "Psalm 37:3-7",
-        "1 Corinthians 13:4-7",
-        "James 1:5"
-      ]
-
-    };
-
-  }
-
-
-  if (
-    text.includes("fear") ||
-    text.includes("anxious") ||
-    text.includes("anxiety") ||
-    text.includes("worry")
-  ) {
-
-    return {
-
-      topic:
-        "Fear, Anxiety, and Trust",
-
-      overview:
-        "Scripture repeatedly directs God's people to bring anxiety to Him, remember His presence, and place their confidence in His care. These passages combine prayer, trust, perspective, and God's promises.",
-
-      keyPrinciples: [
-        "Bring anxiety and requests to God in prayer.",
-        "Remember God's presence and faithfulness.",
-        "Focus on God's kingdom and today's responsibilities rather than being consumed by tomorrow."
-      ],
-
-      passages: [
-
-        {
-          reference: "Philippians 4:4-9",
-          purpose: "Prayer and peace",
-          contextNote:
-            "Paul teaches prayer, thanksgiving, disciplined thought, and confidence in God's peace."
-        },
-
-        {
-          reference: "Matthew 6:25-34",
-          purpose: "Worry",
-          contextNote:
-            "Jesus addresses anxiety about everyday needs and directs His listeners toward trust in the Father's care."
-        },
-
-        {
-          reference: "Isaiah 41:8-10",
-          purpose: "God's presence",
-          contextNote:
-            "God reassures His people that they belong to Him and need not fear because He will strengthen and uphold them."
-        },
-
-        {
-          reference: "Psalm 56:3-4",
-          purpose: "Fear and trust",
-          contextNote:
-            "The psalmist responds to fear by deliberately placing trust in God."
-        },
-
-        {
-          reference: "1 Peter 5:6-9",
-          purpose: "Casting cares on God",
-          contextNote:
-            "Peter connects humility, handing anxieties to God, vigilance, and steadfast faith."
-        },
-
-        {
-          reference: "Psalm 23:1-6",
-          purpose: "God's care",
-          contextNote:
-            "David describes God's guidance, provision, presence, and protection through both peaceful and difficult circumstances."
-        }
-
-      ],
-
-      relatedReferences: [
-        "Psalm 46:1-3",
-        "John 14:27",
-        "Proverbs 3:5-6",
-        "Psalm 34:4"
-      ]
-
-    };
-
-  }
-
-
-  return {
-
-    topic:
-      "Wisdom and Guidance",
-
-    overview:
-      "Scripture consistently directs people to seek God's wisdom, trust His direction, examine their ways carefully, and allow His Word to guide their decisions.",
-
-    keyPrinciples: [
-      "Ask God for wisdom.",
-      "Trust God rather than relying only on personal understanding.",
-      "Use Scripture as a guide for decisions and conduct."
-    ],
-
-    passages: [
-
-      {
-        reference: "James 1:5-8",
-        purpose: "Seeking wisdom",
-        contextNote:
-          "James encourages believers who lack wisdom to ask God, who gives generously."
-      },
-
-      {
-        reference: "Proverbs 3:5-7",
-        purpose: "Trusting God's direction",
-        contextNote:
-          "This passage contrasts trusting God with depending entirely on one's own understanding."
-      },
-
-      {
-        reference: "Psalm 119:105",
-        purpose: "Guidance through Scripture",
-        contextNote:
-          "The psalmist describes God's Word as a source of direction for the path ahead."
-      },
-
-      {
-        reference: "Psalm 32:8-9",
-        purpose: "Instruction",
-        contextNote:
-          "This passage emphasizes receiving instruction and responding willingly rather than stubbornly."
-      },
-
-      {
-        reference: "Proverbs 15:22",
-        purpose: "Wise counsel",
-        contextNote:
-          "Proverbs highlights the value of receiving counsel when making plans."
-      },
-
-      {
-        reference: "Romans 12:1-2",
-        purpose: "Discernment",
-        contextNote:
-          "Paul connects transformed thinking with discerning what is good and pleasing to God."
-      }
-
-    ],
-
-    relatedReferences: [
-      "Proverbs 16:3",
-      "Proverbs 16:9",
-      "Psalm 25:4-5",
-      "Colossians 3:16"
-    ]
-
-  };
-
-}
-
-
-/* =========================================================
-   CHAPTER LINK
+   BIBLEGATEWAY FULL CHAPTER LINK
 ========================================================= */
 
 function makeChapterLink(reference) {
@@ -790,12 +606,10 @@ function makeChapterLink(reference) {
 
 
 /* =========================================================
-   FETCH ACTUAL SCRIPTURE
+   FETCH ACTUAL SCRIPTURE TEXT
 ========================================================= */
 
-async function fetchScripture(
-  passage
-) {
+async function fetchScripture(passage) {
 
   const reference =
     passage.reference;
@@ -828,8 +642,7 @@ async function fetchScripture(
     if (!response.ok) {
 
       console.error(
-        "Bible lookup failed:",
-        reference,
+        `Bible lookup failed for ${reference}:`,
         response.status
       );
 
@@ -843,6 +656,10 @@ async function fetchScripture(
 
 
     if (!data?.text) {
+
+      console.error(
+        `Bible lookup returned no text for ${reference}.`
+      );
 
       return null;
 
@@ -892,10 +709,10 @@ async function fetchScripture(
   } catch (error) {
 
     console.error(
-      "Bible retrieval error:",
-      reference,
+      `Bible retrieval error for ${reference}:`,
       error.message
     );
+
 
     return null;
 
@@ -905,7 +722,7 @@ async function fetchScripture(
 
 
 /* =========================================================
-   SCRIPTURE STUDY ENDPOINT
+   MAIN SCRIPTURE ENDPOINT
 ========================================================= */
 
 app.post(
@@ -927,16 +744,14 @@ app.post(
           .json({
 
             error:
-              "Please describe the question, topic, decision, struggle, or situation you would like to study."
+              "Please describe the question, struggle, decision, topic, or situation you would like to study."
 
           });
 
       }
 
 
-      if (
-        question.length < 4
-      ) {
+      if (question.length < 4) {
 
         return res
           .status(400)
@@ -950,30 +765,26 @@ app.post(
       }
 
 
-      let study;
+      console.log(
+        "New Scripture study question:",
+        question
+      );
 
 
-      try {
+      /*
+        IMPORTANT:
 
-        study =
-          await createStudyPlan(
-            question
-          );
+        There is intentionally NO generic fallback here.
 
-      } catch (error) {
+        If the study analysis fails, we tell the visitor that
+        the service is unavailable instead of showing unrelated
+        Scripture.
+      */
 
-        console.error(
-          "Using backup Scripture study:",
-          error.message
+      const study =
+        await createStudyPlan(
+          question
         );
-
-
-        study =
-          getFallbackStudy(
-            question
-          );
-
-      }
 
 
       const passages =
@@ -990,20 +801,28 @@ app.post(
         passages.filter(Boolean);
 
 
-      if (
-        validPassages.length === 0
-      ) {
+      if (validPassages.length === 0) {
+
+        console.error(
+          "No Scripture text could be retrieved."
+        );
+
 
         return res
           .status(502)
           .json({
 
             error:
-              "Scripture could not be retrieved right now. Please try again shortly."
+              "The Bible passages could not be loaded right now. Please try again shortly."
 
           });
 
       }
+
+
+      console.log(
+        `Returning ${validPassages.length} Scripture passages for study: ${study.topic}`
+      );
 
 
       return res.json({
@@ -1034,7 +853,10 @@ app.post(
     } catch (error) {
 
       console.error(
-        "Scripture study endpoint error:",
+        "SCRIPTURE STUDY ERROR:"
+      );
+
+      console.error(
         error
       );
 
@@ -1044,7 +866,7 @@ app.post(
         .json({
 
           error:
-            "The Scripture study could not be completed. Please try again."
+            "The Scripture study service is temporarily unavailable. Please try again shortly."
 
         });
 
@@ -1055,7 +877,7 @@ app.post(
 
 
 /* =========================================================
-   HEALTH
+   HEALTH CHECK
 ========================================================= */
 
 app.get(
@@ -1064,11 +886,14 @@ app.get(
 
     res.json({
 
-      status:
-        "ok",
+      status: "ok",
 
       service:
-        "ASKJesus.ca Scripture Study Tool"
+        "ASKJesus.ca Scripture Study Tool",
+
+      model:
+        process.env.OPENAI_MODEL ||
+        "gpt-5.6-terra"
 
     });
 
@@ -1105,6 +930,13 @@ app.listen(
 
     console.log(
       `ASKJesus.ca running on port ${PORT}`
+    );
+
+    console.log(
+      `Study model: ${
+        process.env.OPENAI_MODEL ||
+        "gpt-5.6-terra"
+      }`
     );
 
   }
