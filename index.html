@@ -11,7 +11,7 @@
 
   <meta
     name="theme-color"
-    content="#071f34"
+    content="#041d32"
   >
 
   <title>ASKJesus.ca — Ask. Seek. Knock.</title>
@@ -21,19 +21,16 @@
     content="Bring your questions. Search His Word. Find relevant Scripture. Matthew 7:7 — Ask, seek, knock."
   >
 
-  <!-- v20 forces the browser to load the new design -->
   <link
     rel="stylesheet"
-    href="/style.css?v=20"
+    href="/style.css?v=30"
   >
 </head>
 
-
 <body>
 
-
 <!-- ======================================================
-     TOP NAVIGATION
+     HEADER
 ======================================================= -->
 
 <header class="topbar">
@@ -93,16 +90,24 @@
       HOME
     </a>
 
-    <a href="#meaning">
-      MATTHEW 7:7
-    </a>
-
-    <a href="#ask">
-      ASK
-    </a>
-
     <a href="#about">
       ABOUT
+    </a>
+
+    <a href="#meaning">
+      BIBLE
+    </a>
+
+    <a href="#reminder">
+      PRAYER
+    </a>
+
+    <a href="#steps">
+      RESOURCES
+    </a>
+
+    <a href="#footer">
+      CONTACT
     </a>
 
   </nav>
@@ -110,10 +115,6 @@
 </header>
 
 
-
-<!-- ======================================================
-     MAIN PAGE
-======================================================= -->
 
 <main id="top">
 
@@ -124,19 +125,12 @@
 
 <section class="hero">
 
-  <div class="hero-sun"></div>
+  <div class="hero-photo-layer"></div>
 
-  <div class="mountains mountains-back"></div>
-
-  <div class="mountains mountains-front"></div>
-
-  <div class="hero-shade"></div>
-
+  <div class="hero-overlay"></div>
 
   <div class="hero-content">
 
-
-    <!-- Large ASK emblem -->
 
     <div
       class="hero-emblem"
@@ -180,27 +174,16 @@
     </div>
 
 
-    <!-- Main name -->
-
     <h1>
       ASK<span>Jesus.ca</span>
     </h1>
 
 
-    <p class="hero-tagline">
-      BRING YOUR QUESTIONS
-      <span>•</span>
-      SEARCH HIS WORD
-      <span>•</span>
-      SEEK TRUTH
-    </p>
-
-
-    <div class="scripture-divider">
+    <div class="hero-rule">
 
       <span></span>
 
-      <div class="bible-symbol">
+      <div class="hero-book">
         ♡
       </div>
 
@@ -230,7 +213,7 @@
       href="#ask"
     >
       FIND SCRIPTURE
-      <span aria-hidden="true">↓</span>
+      <span aria-hidden="true">⌄</span>
     </a>
 
 
@@ -241,7 +224,7 @@
 
 
 <!-- ======================================================
-     ASK • SEEK • KNOCK
+     ASK SEEK KNOCK
 ======================================================= -->
 
 <section
@@ -251,8 +234,6 @@
 
   <div class="meaning-inner">
 
-
-    <!-- ASK -->
 
     <article class="meaning-card">
 
@@ -267,7 +248,7 @@
       <div class="small-gold-line"></div>
 
       <p>
-        Ask and it will<br>
+        Ask, and it will<br>
         be given to you.
       </p>
 
@@ -278,8 +259,6 @@
     </article>
 
 
-
-    <!-- SEEK -->
 
     <article class="meaning-card">
 
@@ -305,8 +284,6 @@
     </article>
 
 
-
-    <!-- KNOCK -->
 
     <article class="meaning-card">
 
@@ -339,19 +316,28 @@
 
 
 <!-- ======================================================
-     PRAYER REMINDER
+     REMINDER
 ======================================================= -->
 
-<section class="reminder-section">
+<section
+  id="reminder"
+  class="reminder-section"
+>
 
   <div class="reminder-card">
 
 
     <div
-      class="prayer-symbol"
+      class="prayer-art"
       aria-hidden="true"
     >
-      ♱
+
+      <div class="prayer-rays"></div>
+
+      <div class="prayer-hands">
+        🙏
+      </div>
+
     </div>
 
 
@@ -363,16 +349,14 @@
 
 
       <p>
-        Pray and <strong>ASK the Holy Spirit first</strong>
-        to reveal His Word through Scripture and through your
-        thoughts.
+        Pray and ASK the Holy Spirit first to reveal His Word
+        through Scripture and through your thoughts.
         <strong>Matthew 7:7</strong>
       </p>
 
 
       <p>
-        It is also <strong>important to read Scripture in its
-        full context.</strong>
+        It is also important to read Scripture in its full context.
         A link to read the full chapter is provided with each
         Scripture result.
       </p>
@@ -387,7 +371,7 @@
 
 
 <!-- ======================================================
-     SCRIPTURE FINDER
+     ASK AREA
 ======================================================= -->
 
 <section
@@ -398,8 +382,6 @@
   <div class="ask-inner">
 
 
-    <!-- Door decoration -->
-
     <div
       class="door-decoration"
       aria-hidden="true"
@@ -407,7 +389,7 @@
 
       <div class="door-rays"></div>
 
-      <div class="door-shape">
+      <div class="door-frame">
 
         <div class="door-panel"></div>
 
@@ -419,8 +401,6 @@
 
 
 
-    <!-- Finder -->
-
     <div class="finder-area">
 
 
@@ -431,8 +411,7 @@
         </p>
 
         <p class="ask-subheading">
-          Describe your question, struggle, decision,
-          or situation.
+          Describe your question, struggle, decision, or situation.
         </p>
 
       </div>
@@ -451,7 +430,7 @@
 
         <textarea
           id="input"
-          maxlength="1800"
+          maxlength="2000"
           placeholder="For example: My friend has repeatedly lied to me. I forgive him, but should I immediately trust him again?"
         ></textarea>
 
@@ -486,9 +465,8 @@
             </span>
 
             <p>
-              We show Bible passages — not opinions or
-              AI-written answers.<br>
-
+              We show Bible passages — not opinions or AI-written answers.
+              <br>
               Always read Scripture in its full context.
             </p>
 
@@ -558,20 +536,21 @@
 
 
 <!-- ======================================================
-     EXPLORE • READ • PRAY • GROW
+     EXPLORE / READ / PRAY / GROW
 ======================================================= -->
 
-<section class="steps-section">
+<section
+  id="steps"
+  class="steps-section"
+>
 
   <div class="steps-inner">
 
 
-    <!-- EXPLORE -->
-
     <article class="step">
 
       <div class="step-icon">
-        ?
+        ⌕
       </div>
 
       <div>
@@ -581,8 +560,7 @@
         </h3>
 
         <p>
-          Find answers to life's
-          biggest questions.
+          Find answers to life's biggest questions.
         </p>
 
       </div>
@@ -590,8 +568,6 @@
     </article>
 
 
-
-    <!-- READ -->
 
     <article class="step">
 
@@ -606,8 +582,7 @@
         </h3>
 
         <p>
-          Dive into the Bible and
-          discover God's truth.
+          Dive into the Bible and discover God's truth.
         </p>
 
       </div>
@@ -616,12 +591,10 @@
 
 
 
-    <!-- PRAY -->
-
     <article class="step">
 
       <div class="step-icon">
-        ♱
+        🙏
       </div>
 
       <div>
@@ -631,8 +604,7 @@
         </h3>
 
         <p>
-          Talk to God.
-          He hears you.
+          Talk to God. He hears you.
         </p>
 
       </div>
@@ -640,8 +612,6 @@
     </article>
 
 
-
-    <!-- GROW -->
 
     <article class="step">
 
@@ -656,8 +626,7 @@
         </h3>
 
         <p>
-          Build a deeper relationship
-          with Jesus.
+          Build a deeper relationship with Jesus.
         </p>
 
       </div>
@@ -735,22 +704,20 @@
       </h2>
 
       <p>
-        ASKJesus.ca is a Scripture-finding tool created to help
-        people bring their questions, struggles, and decisions
-        to God's Word.
+        ASKJesus.ca helps you locate Bible passages relevant to
+        the questions, struggles, decisions, and situations you are facing.
       </p>
 
       <p>
-        Artificial intelligence is used to help identify relevant
-        Bible passages. It does not replace prayer, the Holy Spirit,
-        Scripture itself, or wise pastoral and professional care.
+        Artificial intelligence is used only to help identify relevant
+        Scripture references. The Bible text itself is retrieved separately.
       </p>
 
       <p>
-        Our goal is simple:
+        The goal is simple:
         <strong>
-          help you find Scripture, read it in context,
-          pray, and seek God for yourself.
+          bring your questions, seek His Word, read Scripture in context,
+          pray, and continue seeking God.
         </strong>
       </p>
 
@@ -770,7 +737,7 @@
      FOOTER
 ======================================================= -->
 
-<footer>
+<footer id="footer">
 
   <div class="footer-inner">
 
@@ -855,12 +822,7 @@
 
 
 
-<!-- ======================================================
-     JAVASCRIPT
-======================================================= -->
-
-<script src="/app.js?v=20"></script>
-
+<script src="/app.js?v=30"></script>
 
 </body>
 </html>
