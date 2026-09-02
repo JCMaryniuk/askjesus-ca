@@ -1,289 +1,547 @@
+/* =========================================================
+   ASKJesus.ca
+   Scripture Finder
+   ========================================================= */
+
 const input = document.querySelector("#input");
 const button = document.querySelector("#submit");
 const status = document.querySelector("#status");
 const results = document.querySelector("#results");
 
+
+/* =========================================================
+   STARTUP
+   ========================================================= */
+
 if (!input || !button || !results) {
+
   console.error(
     "ASKJesus.ca: Required page elements were not found."
   );
+
 } else {
+
   button.addEventListener("click", run);
 
+  /*
+    On computers:
+    Ctrl + Enter
+    or
+    Command + Enter
+
+    will submit the question.
+  */
+
   input.addEventListener("keydown", (event) => {
+
     if (
       (event.ctrlKey || event.metaKey) &&
       event.key === "Enter"
     ) {
+
+      event.preventDefault();
+
       run();
+
     }
+
   });
+
 }
 
-// ----------------------------------------------------
-// ESCAPE HTML
-// ----------------------------------------------------
+
+/* =========================================================
+   SAFELY DISPLAY TEXT
+   ========================================================= */
 
 function escapeHtml(value) {
-  return String(value ?? "").replace(
-    /[&<>"']/g,
-    (character) => {
-      const entities = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      };
 
-      return entities[character];
-    }
-  );
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      (character) => {
+
+        const entities = {
+
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+
+        };
+
+        return entities[character];
+
+      }
+    );
+
 }
 
-// ----------------------------------------------------
-// CREATE A FULL-CHAPTER LINK
-//
-// This is used as a fallback in case the server
-// does not provide chapterUrl for some reason.
-// ----------------------------------------------------
+
+/* =========================================================
+   CREATE FULL CHAPTER LINK
+   ========================================================= */
 
 function getChapterLink(reference) {
-  const value = String(reference || "").trim();
 
-  // Examples:
-  // John 3:16-18 -> John 3
-  // 1 Corinthians 13:4-8 -> 1 Corinthians 13
-
-  const match = value.match(
-    /^(.+?)\s+(\d+)(?::\d+(?:-\d+)?)?$/
-  );
-
-  if (!match) {
-    return null;
+  if (!reference) {
+    return "https://www.biblegateway.com/";
   }
 
-  const book = match[1].trim();
-  const chapter = match[2];
+  /*
+    Examples:
 
-  const chapterReference =
-    `${book} ${chapter}`;
+    John 3:16
+       becomes
+    John 3
 
-  const params =
-    new URLSearchParams({
-      search: chapterReference,
-      version: "WEB"
-    });
+    Matthew 18:15-17
+       becomes
+    Matthew 18
+
+    1 Corinthians 13:4-7
+       becomes
+    1 Corinthians 13
+  */
+
+  const cleanedReference =
+    String(reference)
+      .replace(/[–—]/g, "-")
+      .trim();
+
+
+  const match =
+    cleanedReference.match(
+      /^((?:[1-3]\s+)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)/
+    );
+
+
+  let chapterReference = cleanedReference;
+
+
+  if (match) {
+
+    const book = match[1];
+    const chapter = match[2];
+
+    chapterReference =
+      `${book} ${chapter}`;
+
+  }
+
 
   return (
-    `https://www.biblegateway.com/passage/?${params.toString()}`
+    "https://www.biblegateway.com/passage/" +
+    "?search=" +
+    encodeURIComponent(chapterReference) +
+    "&version=WEB"
   );
+
 }
 
-// ----------------------------------------------------
-// MAIN SCRIPTURE SEARCH
-// ----------------------------------------------------
+
+/* =========================================================
+   FIND SCRIPTURE
+   ========================================================= */
 
 async function run() {
-  const question = input.value.trim();
+
+  const question =
+    input.value.trim();
+
+
+  /* -------------------------------------------------------
+     NO QUESTION
+     ------------------------------------------------------- */
 
   if (!question) {
+
     if (status) {
+
       status.textContent =
         "Please enter a question or situation first.";
+
     }
 
     input.focus();
+
     return;
+
   }
+
+
+  /* -------------------------------------------------------
+     LOADING STATE
+     ------------------------------------------------------- */
 
   button.disabled = true;
-  button.textContent =
-    "Finding Scripture...";
+
+  button.innerHTML = `
+    <span
+      class="search-icon"
+      aria-hidden="true"
+    >
+      ⌕
+    </span>
+
+    SEARCHING...
+  `;
+
 
   if (status) {
+
     status.textContent =
-      "Searching relevant Scripture…";
+      "Searching Scripture for passages relevant to your question…";
+
   }
+
 
   results.innerHTML = "";
 
+
   try {
+
+
+    /* =====================================================
+       SEND QUESTION TO SERVER
+       ===================================================== */
+
     const response =
-      await fetch("/api/ask", {
-        method: "POST",
+      await fetch(
+        "/api/ask",
+        {
 
-        headers: {
-          "Content-Type":
-            "application/json"
-        },
+          method: "POST",
 
-        body: JSON.stringify({
-          question
-        })
-      });
+          headers: {
+
+            "Content-Type":
+              "application/json"
+
+          },
+
+          body:
+            JSON.stringify({
+
+              question: question
+
+            })
+
+        }
+      );
+
+
+    /* =====================================================
+       MAKE SURE SERVER RETURNED JSON
+       ===================================================== */
 
     const contentType =
       response.headers.get(
         "content-type"
       ) || "";
 
+
     if (
       !contentType.includes(
         "application/json"
       )
     ) {
+
       const text =
         await response.text();
+
 
       console.error(
         "Expected JSON but received:",
         text
       );
 
+
       throw new Error(
         `Server returned an unexpected response (${response.status}).`
       );
+
     }
+
+
+    /* =====================================================
+       READ RESPONSE
+       ===================================================== */
 
     const data =
       await response.json();
 
+
     if (!response.ok) {
+
       throw new Error(
+
         data.error ||
+
         `Request failed with status ${response.status}.`
+
       );
+
     }
+
 
     const passages =
       Array.isArray(data.passages)
         ? data.passages
         : [];
 
+
+    /* =====================================================
+       NOTHING FOUND
+       ===================================================== */
+
     if (!passages.length) {
+
       results.innerHTML = `
+
         <div class="error">
+
           No Scripture passages were returned.
-          Please try another question.
+
+          Please try asking your question
+          another way.
+
         </div>
+
       `;
 
+
       if (status) {
+
         status.textContent = "";
+
       }
 
+
       return;
+
     }
 
-    // ------------------------------------------------
-    // RENDER EACH SCRIPTURE PASSAGE
-    // ------------------------------------------------
+
+    /* =====================================================
+       CREATE SCRIPTURE CARDS
+       ===================================================== */
 
     results.innerHTML =
       passages
-        .map((passage) => {
-          const reference =
-            passage.reference ||
-            passage.ref ||
-            "Scripture";
+        .map(
+          (passage) => {
 
-          const text =
-            passage.text ||
-            "Scripture text could not be retrieved.";
 
-          const translation =
-            passage.translation ||
-            "World English Bible";
+            const reference =
 
-          // Prefer the chapter link coming from server.js.
-          // If it is missing, build one here.
+              passage.reference ||
 
-          const chapterLink =
-            passage.chapterUrl ||
-            getChapterLink(reference);
+              passage.ref ||
 
-          return `
-            <article class="verse">
+              "Scripture";
 
-              <div class="ref">
-                ${escapeHtml(reference)}
-              </div>
 
-              <div class="text">
-                ${escapeHtml(text)}
-              </div>
+            const text =
 
-              <div class="translation">
-                ${escapeHtml(translation)}
-              </div>
+              passage.text ||
 
-              ${
-                chapterLink
-                  ? `
-                    <div class="chapter-link-wrap">
-                      <a
-                        class="chapter-link"
-                        href="${escapeHtml(chapterLink)}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Read Full Chapter →
-                      </a>
-                    </div>
-                  `
-                  : ""
-              }
+              "Scripture text could not be retrieved.";
 
-            </article>
-          `;
-        })
+
+            const translation =
+
+              passage.translation ||
+
+              "World English Bible";
+
+
+            /*
+              If server.js already provides chapterUrl,
+              use it.
+
+              Otherwise app.js creates one.
+            */
+
+            const chapterUrl =
+
+              passage.chapterUrl ||
+
+              getChapterLink(reference);
+
+
+            return `
+
+              <article class="verse">
+
+
+                <div class="ref">
+
+                  ${escapeHtml(reference)}
+
+                </div>
+
+
+                <div class="text">
+
+                  ${escapeHtml(text)}
+
+                </div>
+
+
+                <div class="translation">
+
+                  ${escapeHtml(translation)}
+
+                </div>
+
+
+                <div class="chapter-link-wrap">
+
+                  <a
+                    class="chapter-link"
+                    href="${escapeHtml(chapterUrl)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Read the full chapter containing ${escapeHtml(reference)}"
+                  >
+
+                    READ FULL CHAPTER →
+
+                  </a>
+
+                </div>
+
+
+              </article>
+
+            `;
+
+          }
+        )
         .join("");
 
-    // ------------------------------------------------
-    // STATUS MESSAGE
-    // ------------------------------------------------
+
+    /* =====================================================
+       SUCCESS MESSAGE
+       ===================================================== */
 
     if (status) {
+
       status.textContent =
+
         `${passages.length} Scripture passage${
           passages.length === 1
             ? ""
             : "s"
         } found.`;
+
     }
 
-    // ------------------------------------------------
-    // SCROLL TO RESULTS
-    // ------------------------------------------------
 
-    results.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    /* =====================================================
+       SCROLL TO RESULTS
+       ===================================================== */
+
+    setTimeout(
+      () => {
+
+        const resultsArea =
+          document.querySelector(
+            ".results-area"
+          );
+
+
+        if (resultsArea) {
+
+          resultsArea.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+          });
+
+        } else {
+
+          results.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+          });
+
+        }
+
+      },
+
+      100
+    );
+
 
   } catch (error) {
+
+
+    /* =====================================================
+       ERROR
+       ===================================================== */
+
     console.error(
       "ASKJesus.ca request error:",
       error
     );
 
+
     results.innerHTML = `
+
       <div class="error">
+
         ${escapeHtml(
+
           error.message ||
+
           "We couldn't retrieve Scripture right now. Please try again."
+
         )}
+
       </div>
+
     `;
 
+
     if (status) {
-      status.textContent = "";
+
+      status.textContent =
+        "Something went wrong. Please try again.";
+
     }
 
+
   } finally {
+
+
+    /* =====================================================
+       RESTORE BUTTON
+       ===================================================== */
+
     button.disabled = false;
-    button.textContent =
-      "Find Scripture";
+
+
+    button.innerHTML = `
+
+      <span
+        class="search-icon"
+        aria-hidden="true"
+      >
+        ⌕
+      </span>
+
+      FIND SCRIPTURE
+
+    `;
+
   }
+
 }
