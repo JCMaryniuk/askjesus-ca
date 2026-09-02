@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ASKJesus.ca</title>
+  <title>ASKJesus.ca | Scripture Study Tool</title>
 
   <meta
     name="description"
-    content="Ask, seek, and knock. Find Scripture for the questions, struggles, decisions, and situations you are facing."
+    content="ASKJesus.ca is a Scripture study tool designed to help you discover Bible passages related to the questions, struggles, decisions, and situations you are facing."
   />
 
   <link rel="stylesheet" href="style.css" />
@@ -20,24 +20,36 @@
        HEADER
   ========================================================== -->
   <header class="site-header">
+
     <div class="header-inner">
 
       <a class="brand" href="#home" aria-label="ASKJesus.ca home">
+
         <div class="brand-symbol" aria-hidden="true">
           <div class="star-symbol">
             <span class="star-text">ASK</span>
           </div>
         </div>
 
-        <div class="brand-name">
-          ASKJesus<span>.ca</span>
+        <div class="brand-text">
+
+          <div class="brand-name">
+            ASKJesus<span>.ca</span>
+          </div>
+
+          <div class="brand-subtitle">
+            SCRIPTURE STUDY TOOL
+          </div>
+
         </div>
+
       </a>
+
 
       <button
         class="mobile-menu-button"
         id="mobileMenuButton"
-        aria-label="Open menu"
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="mainNavigation"
       >
@@ -46,17 +58,35 @@
         <span></span>
       </button>
 
+
       <nav class="main-nav" id="mainNavigation">
-        <a class="active" href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#bible">BIBLE</a>
-        <a href="#prayer">PRAYER</a>
-        <a href="#resources">RESOURCES</a>
-        <a href="#contact">CONTACT</a>
+
+        <a class="active" href="#home">
+          HOME
+        </a>
+
+        <a href="#about">
+          ABOUT
+        </a>
+
+        <a href="#study">
+          STUDY
+        </a>
+
+        <a href="#scripture-results">
+          SCRIPTURE
+        </a>
+
+        <a href="#resources">
+          RESOURCES
+        </a>
+
       </nav>
 
     </div>
+
   </header>
+
 
 
   <main>
@@ -71,22 +101,38 @@
       <div class="hero-content">
 
         <div class="hero-symbol-wrap" aria-hidden="true">
+
           <div class="hero-rays"></div>
 
           <div class="hero-star">
             <span>ASK</span>
           </div>
+
         </div>
+
 
         <h1 class="hero-title">
           ASKJesus<span>.ca</span>
         </h1>
 
-        <div class="verse-divider">
-          <span class="divider-line"></span>
-          <span class="bible-icon">📖</span>
-          <span class="divider-line"></span>
+
+        <div class="study-label">
+          SCRIPTURE STUDY TOOL
         </div>
+
+
+        <div class="verse-divider">
+
+          <span class="divider-line"></span>
+
+          <span class="bible-symbol" aria-hidden="true">
+            ✦
+          </span>
+
+          <span class="divider-line"></span>
+
+        </div>
+
 
         <p class="hero-verse">
           Ask, and it will be given to you;<br />
@@ -94,23 +140,56 @@
           knock, and it will be opened to you.
         </p>
 
+
         <div class="verse-reference">
           MATTHEW 7:7
         </div>
 
-        <a class="primary-cta" href="#question">
-          <span>FIND SCRIPTURE</span>
-          <span class="chevron">⌄</span>
+
+        <a class="primary-cta" href="#study">
+
+          <span class="button-symbol">
+            ◇
+          </span>
+
+          <span>
+            STUDY SCRIPTURE
+          </span>
+
+          <span class="chevron">
+            ↓
+          </span>
+
         </a>
 
       </div>
+
     </section>
+
 
 
     <!-- =========================================================
          ASK SEEK KNOCK
     ========================================================== -->
     <section class="ask-seek-knock" id="about">
+
+      <div class="section-intro">
+
+        <div class="eyebrow">
+          ASK • SEEK • KNOCK
+        </div>
+
+        <h2>
+          SEEK ANSWERS IN SCRIPTURE
+        </h2>
+
+        <p>
+          Bring the questions and situations you are facing,
+          then explore Bible passages that can help guide your study.
+        </p>
+
+      </div>
+
 
       <div class="ask-seek-inner">
 
@@ -120,7 +199,9 @@
             <span>A</span>
           </div>
 
-          <h2>ASK</h2>
+          <h3>
+            ASK
+          </h3>
 
           <div class="small-gold-line"></div>
 
@@ -142,7 +223,9 @@
             <span>S</span>
           </div>
 
-          <h2>SEEK</h2>
+          <h3>
+            SEEK
+          </h3>
 
           <div class="small-gold-line"></div>
 
@@ -164,7 +247,9 @@
             <span>K</span>
           </div>
 
-          <h2>KNOCK</h2>
+          <h3>
+            KNOCK
+          </h3>
 
           <div class="small-gold-line"></div>
 
@@ -182,73 +267,101 @@
       </div>
 
 
+
       <!-- =====================================================
-           REMINDER BOX
+           STUDY REMINDER
       ====================================================== -->
       <div class="reminder-card">
 
         <div class="reminder-art" aria-hidden="true">
+
           <div class="prayer-rays"></div>
-          <div class="prayer-hands">🙏</div>
+
+          <div class="prayer-icon">
+            ✦
+          </div>
+
         </div>
+
 
         <div class="reminder-copy">
 
+          <div class="reminder-label">
+            BEFORE YOU STUDY
+          </div>
+
           <h3>
-            A REMINDER BEFORE YOU ASK
+            PRAY. ASK. READ. SEEK.
           </h3>
 
           <p>
-            Pray and ASK the Holy Spirit first to reveal His Word
-            through Scripture and through your thoughts.
-            <span>Matthew 7:7</span>
+            Begin by praying and asking the Holy Spirit for
+            wisdom and understanding as you read God's Word.
           </p>
 
           <p>
-            It is also important to read Scripture in its full context.<br />
-            A link to read the full chapter is provided with each Scripture result.
+            This study tool helps you discover relevant passages,
+            but Scripture should always be read carefully and in its full context.
           </p>
 
         </div>
+
       </div>
 
 
+
       <!-- =====================================================
-           QUESTION FORM
+           STUDY TOOL
       ====================================================== -->
-      <div class="question-section" id="question">
+      <div class="question-section" id="study">
+
 
         <div class="door-art" aria-hidden="true">
+
           <div class="door-rays"></div>
 
           <div class="door-frame">
+
             <div class="door">
               <span class="door-handle"></span>
             </div>
+
           </div>
+
         </div>
+
 
 
         <div class="question-content">
 
-          <h2>WHAT ARE YOU FACING?</h2>
+          <div class="study-heading-label">
+            SCRIPTURE STUDY
+          </div>
+
+          <h2>
+            WHAT ARE YOU FACING?
+          </h2>
 
           <p class="question-intro">
-            Describe your question, struggle, decision, or situation.
+            Describe a question, struggle, decision, topic,
+            or situation you would like to study in Scripture.
           </p>
+
 
           <form id="scriptureForm">
 
             <label class="sr-only" for="questionInput">
-              Describe what you are facing
+              Describe what you would like to study
             </label>
 
             <textarea
               id="questionInput"
               name="question"
-              placeholder="For example: My friend has repeatedly lied to me. I forgive him, but should I immediately trust him again?"
+              maxlength="1500"
+              placeholder="For example: My friend has repeatedly lied to me. I forgive him, but what does Scripture say about rebuilding trust?"
               required
             ></textarea>
+
 
             <div class="question-actions">
 
@@ -257,20 +370,28 @@
                 class="find-button"
                 id="findScriptureButton"
               >
-                <span class="search-icon">⌕</span>
-                <span>FIND SCRIPTURE</span>
+
+                <span class="search-symbol">
+                  ◇
+                </span>
+
+                <span>
+                  FIND SCRIPTURE
+                </span>
+
               </button>
 
 
-              <div class="disclaimer">
+              <div class="study-disclaimer">
 
                 <div class="shield-icon" aria-hidden="true">
-                  ♢
+                  ✓
                 </div>
 
                 <p>
-                  We show Bible passages — not opinions or AI-written answers.<br />
-                  Always read Scripture in its full context.
+                  A Scripture study tool designed to help you
+                  discover relevant Bible passages.
+                  Always read each passage in its full context.
                 </p>
 
               </div>
@@ -280,35 +401,56 @@
           </form>
 
         </div>
+
       </div>
 
     </section>
 
 
+
     <!-- =========================================================
          SCRIPTURE RESULTS
     ========================================================== -->
-    <section class="results-section" id="bible">
+    <section
+      class="results-section"
+      id="scripture-results"
+    >
 
       <div class="results-heading">
 
         <span class="heading-line"></span>
 
-        <span class="results-book-icon">
-          📖
+        <span class="results-symbol">
+          ✦
         </span>
 
-        <h2>
-          SCRIPTURE RESULTS
-        </h2>
+        <div>
 
-        <span class="results-book-icon">
-          📖
+          <div class="results-eyebrow">
+            YOUR STUDY
+          </div>
+
+          <h2>
+            SCRIPTURE RESULTS
+          </h2>
+
+        </div>
+
+        <span class="results-symbol">
+          ✦
         </span>
 
         <span class="heading-line"></span>
 
       </div>
+
+
+
+      <p class="results-description">
+        Explore these passages and continue reading the surrounding
+        chapter to understand each verse in context.
+      </p>
+
 
 
       <div class="results-wrapper">
@@ -316,91 +458,137 @@
         <button
           class="carousel-arrow arrow-left"
           id="previousResults"
-          aria-label="Previous Scripture results"
+          aria-label="Previous Scripture passage"
         >
           ‹
         </button>
 
 
-        <div class="results-grid" id="scriptureResults">
+        <div
+          class="results-grid"
+          id="scriptureResults"
+        >
 
           <article class="scripture-card">
 
-            <h3>Proverbs 14:15</h3>
+            <div class="card-top">
+
+              <span class="card-book">
+                SCRIPTURE
+              </span>
+
+            </div>
+
+            <h3>
+              Proverbs 14:15
+            </h3>
 
             <p>
               The simple believes everything,
-              but the prudent considers
-              carefully his steps.
+              but the prudent man carefully considers his ways.
             </p>
 
-            <div class="translation">
-              World English Bible
-            </div>
+            <div class="card-bottom">
 
-            <a
-              href="https://www.biblegateway.com/passage/?search=Proverbs%2014"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="chapter-link"
-            >
-              READ FULL CHAPTER →
-            </a>
+              <div class="translation">
+                World English Bible
+              </div>
+
+              <a
+                href="https://www.biblegateway.com/passage/?search=Proverbs%2014"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="chapter-link"
+              >
+                READ FULL CHAPTER →
+              </a>
+
+            </div>
 
           </article>
 
 
+
           <article class="scripture-card">
 
-            <h3>Psalm 37:3-5</h3>
+            <div class="card-top">
+
+              <span class="card-book">
+                SCRIPTURE
+              </span>
+
+            </div>
+
+            <h3>
+              Psalm 37:3-5
+            </h3>
 
             <p>
-              Trust in Yahweh, and do good;
-              dwell in the land, and feed on His
-              faithfulness. Delight yourself also
-              in Yahweh, and He will give you the
-              desires of your heart.
+              Trust in Yahweh, and do good.
+              Dwell in the land, and enjoy safe pasture.
+              Also delight yourself in Yahweh,
+              and he will give you the desires of your heart.
+              Commit your way to Yahweh.
+              Trust also in him, and he will do this.
             </p>
 
-            <div class="translation">
-              World English Bible
-            </div>
+            <div class="card-bottom">
 
-            <a
-              href="https://www.biblegateway.com/passage/?search=Psalm%2037"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="chapter-link"
-            >
-              READ FULL CHAPTER →
-            </a>
+              <div class="translation">
+                World English Bible
+              </div>
+
+              <a
+                href="https://www.biblegateway.com/passage/?search=Psalm%2037"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="chapter-link"
+              >
+                READ FULL CHAPTER →
+              </a>
+
+            </div>
 
           </article>
 
 
+
           <article class="scripture-card">
 
-            <h3>Matthew 18:15-17</h3>
+            <div class="card-top">
+
+              <span class="card-book">
+                SCRIPTURE
+              </span>
+
+            </div>
+
+            <h3>
+              Matthew 18:15-17
+            </h3>
 
             <p>
               If your brother sins against you,
-              go and tell him his fault between you
-              and him alone. If he listens to you,
-              you have gained your brother.
+              go, show him his fault between you and him alone.
+              If he listens to you, you have gained your brother.
             </p>
 
-            <div class="translation">
-              World English Bible
-            </div>
+            <div class="card-bottom">
 
-            <a
-              href="https://www.biblegateway.com/passage/?search=Matthew%2018"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="chapter-link"
-            >
-              READ FULL CHAPTER →
-            </a>
+              <div class="translation">
+                World English Bible
+              </div>
+
+              <a
+                href="https://www.biblegateway.com/passage/?search=Matthew%2018"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="chapter-link"
+              >
+                READ FULL CHAPTER →
+              </a>
+
+            </div>
 
           </article>
 
@@ -410,7 +598,7 @@
         <button
           class="carousel-arrow arrow-right"
           id="nextResults"
-          aria-label="Next Scripture results"
+          aria-label="Next Scripture passage"
         >
           ›
         </button>
@@ -419,32 +607,141 @@
 
 
       <div class="carousel-dots" aria-hidden="true">
+
         <span class="dot active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
+
       </div>
 
     </section>
 
 
+
     <!-- =========================================================
-         FOOTER FEATURE SECTION
+         HOW TO USE THE TOOL
     ========================================================== -->
-    <section class="footer-features" id="resources">
+    <section class="study-guide-section">
+
+      <div class="study-guide-inner">
+
+        <div class="study-guide-heading">
+
+          <div class="eyebrow">
+            STUDY WITH PURPOSE
+          </div>
+
+          <h2>
+            HOW TO USE ASKJESUS.CA
+          </h2>
+
+        </div>
+
+
+        <div class="study-guide-grid">
+
+          <article class="guide-card">
+
+            <div class="guide-number">
+              1
+            </div>
+
+            <h3>
+              ASK
+            </h3>
+
+            <p>
+              Describe the question or situation
+              you want to explore.
+            </p>
+
+          </article>
+
+
+          <article class="guide-card">
+
+            <div class="guide-number">
+              2
+            </div>
+
+            <h3>
+              READ
+            </h3>
+
+            <p>
+              Read the Scripture passages
+              provided in your study results.
+            </p>
+
+          </article>
+
+
+          <article class="guide-card">
+
+            <div class="guide-number">
+              3
+            </div>
+
+            <h3>
+              SEEK CONTEXT
+            </h3>
+
+            <p>
+              Open the full chapter and understand
+              what surrounds each passage.
+            </p>
+
+          </article>
+
+
+          <article class="guide-card">
+
+            <div class="guide-number">
+              4
+            </div>
+
+            <h3>
+              PRAY
+            </h3>
+
+            <p>
+              Ask God for wisdom as you consider
+              what His Word teaches.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER FEATURES
+    ========================================================== -->
+    <section
+      class="footer-features"
+      id="resources"
+    >
 
       <div class="feature-grid">
 
         <article class="feature">
 
-          <div class="feature-icon search-feature" aria-hidden="true">
-            ⌕
+          <div class="feature-icon">
+            ◇
           </div>
 
-          <h3>EXPLORE</h3>
+          <h3>
+            EXPLORE
+          </h3>
 
           <p>
-            Find answers to life's<br />
-            biggest questions.
+            Explore questions and topics
+            through Scripture.
           </p>
 
         </article>
@@ -452,31 +749,17 @@
 
         <article class="feature">
 
-          <div class="feature-icon" aria-hidden="true">
-            📖
+          <div class="feature-icon">
+            ✦
           </div>
 
-          <h3>READ</h3>
+          <h3>
+            READ
+          </h3>
 
           <p>
-            Dive into the Bible and<br />
-            discover God's truth.
-          </p>
-
-        </article>
-
-
-        <article class="feature" id="prayer">
-
-          <div class="feature-icon" aria-hidden="true">
-            🙏
-          </div>
-
-          <h3>PRAY</h3>
-
-          <p>
-            Talk to God.<br />
-            He hears you.
+            Read God's Word and
+            study passages in context.
           </p>
 
         </article>
@@ -484,15 +767,35 @@
 
         <article class="feature">
 
-          <div class="feature-icon heart-icon" aria-hidden="true">
+          <div class="feature-icon">
+            △
+          </div>
+
+          <h3>
+            PRAY
+          </h3>
+
+          <p>
+            Ask God for wisdom,
+            understanding, and direction.
+          </p>
+
+        </article>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
             ♡
           </div>
 
-          <h3>GROW</h3>
+          <h3>
+            GROW
+          </h3>
 
           <p>
-            Build a deeper relationship<br />
-            with Jesus.
+            Grow in your understanding
+            and application of Scripture.
           </p>
 
         </article>
@@ -500,35 +803,56 @@
       </div>
 
 
+
       <!-- =====================================================
-           FOOTER BOTTOM
+           FOOTER
       ====================================================== -->
-      <footer class="site-footer" id="contact">
+      <footer class="site-footer">
 
         <div class="footer-brand">
 
-          <div class="footer-symbol">
-            <div class="mini-star">
-              <span>ASK</span>
-            </div>
+          <div class="mini-star">
+            <span>ASK</span>
           </div>
 
-          <div class="footer-brand-name">
-            ASKJesus<span>.ca</span>
+          <div>
+
+            <div class="footer-brand-name">
+              ASKJesus<span>.ca</span>
+            </div>
+
+            <div class="footer-study-label">
+              SCRIPTURE STUDY TOOL
+            </div>
+
           </div>
 
         </div>
 
 
         <div class="footer-center">
-          <p>Ask. Seek. Knock.</p>
-          <span>MATTHEW 7:7</span>
+
+          <p>
+            Ask. Seek. Knock.
+          </p>
+
+          <span>
+            MATTHEW 7:7
+          </span>
+
         </div>
 
 
         <div class="footer-copyright">
-          <p>© 2026 ASKJesus.ca</p>
-          <p>All rights reserved.</p>
+
+          <p>
+            © 2026 ASKJesus.ca
+          </p>
+
+          <p>
+            Scripture study and discovery.
+          </p>
+
         </div>
 
       </footer>
@@ -538,21 +862,33 @@
   </main>
 
 
+
   <!-- =========================================================
-       LOADING / MESSAGE OVERLAY
+       LOADING / MESSAGE
   ========================================================== -->
-  <div class="message-overlay" id="messageOverlay" aria-hidden="true">
+  <div
+    class="message-overlay"
+    id="messageOverlay"
+    aria-hidden="true"
+  >
 
     <div class="message-box">
 
-      <div class="loading-spinner" id="loadingSpinner"></div>
+      <div
+        class="loading-spinner"
+        id="loadingSpinner"
+      ></div>
+
+      <div class="message-eyebrow">
+        SCRIPTURE STUDY
+      </div>
 
       <h3 id="messageTitle">
         Finding Scripture
       </h3>
 
       <p id="messageText">
-        Searching Scripture for passages related to what you are facing.
+        Finding Bible passages related to your study.
       </p>
 
       <button
