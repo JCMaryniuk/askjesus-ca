@@ -2,11 +2,14 @@ import express from "express";
 import OpenAI from "openai";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// ----------------------------------------------------
-// BASIC SERVER SETTINGS
-// ----------------------------------------------------
+const PORT =
+  process.env.PORT || 3000;
+
+
+/* =========================================================
+   BASIC SERVER SETUP
+   ========================================================= */
 
 app.disable("x-powered-by");
 
@@ -16,91 +19,113 @@ app.use(
   })
 );
 
-// Serve website files from this project folder
+
+/*
+  Serve the website.
+
+  maxAge is deliberately kept short while we are developing
+  the site so new CSS / JS changes appear more quickly.
+*/
+
 app.use(
   express.static(".", {
-    maxAge: "1h",
+    maxAge: "5m",
     etag: true
   })
 );
 
-// ----------------------------------------------------
-// OPENAI
-// ----------------------------------------------------
 
-const openai = process.env.OPENAI_API_KEY
-  ? new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY
-    })
-  : null;
+/* =========================================================
+   OPENAI
+   ========================================================= */
+
+const openai =
+  process.env.OPENAI_API_KEY
+    ? new OpenAI({
+        apiKey:
+          process.env.OPENAI_API_KEY
+      })
+    : null;
+
 
 const MODEL =
-  process.env.OPENAI_MODEL || "gpt-5-mini";
+  process.env.OPENAI_MODEL ||
+  "gpt-5-mini";
 
-// ----------------------------------------------------
-// FALLBACK SCRIPTURE REFERENCES
-//
-// These are only used if OpenAI is unavailable,
-// errors, or cannot return usable references.
-//
-// OpenAI should normally make the specific selections.
-// ----------------------------------------------------
+
+/* =========================================================
+   FALLBACK SCRIPTURE REFERENCES
+
+   These are used if AI reference selection is unavailable.
+   ========================================================= */
 
 const FALLBACKS = {
+
   fear: [
-    "Psalm 27:1-5",
+    "Psalm 23:1-6",
     "Psalm 56:3-4",
-    "Isaiah 41:8-13",
-    "Matthew 10:26-31",
-    "Hebrews 13:5-6"
+    "Isaiah 41:10",
+    "Matthew 6:25-34",
+    "Philippians 4:6-7"
+  ],
+
+  afraid: [
+    "Psalm 56:3-4",
+    "Isaiah 41:10",
+    "Psalm 27:1-5",
+    "John 14:25-27",
+    "2 Timothy 1:7"
   ],
 
   anxiety: [
-    "Psalm 94:18-19",
+    "Psalm 55:22",
     "Matthew 6:25-34",
     "Philippians 4:4-9",
-    "1 Peter 5:6-9",
-    "Psalm 55:16-23"
+    "1 Peter 5:6-7",
+    "Psalm 94:18-19"
+  ],
+
+  anxious: [
+    "Matthew 6:25-34",
+    "Philippians 4:4-9",
+    "1 Peter 5:6-7",
+    "Psalm 94:18-19"
   ],
 
   worry: [
     "Matthew 6:25-34",
-    "Luke 12:22-32",
     "Philippians 4:4-9",
-    "1 Peter 5:6-9",
-    "Psalm 37:1-7"
+    "1 Peter 5:6-7",
+    "Psalm 55:22"
   ],
 
   marriage: [
     "Genesis 2:18-24",
-    "Matthew 19:4-6",
+    "Matthew 19:3-9",
     "Ephesians 5:21-33",
     "Colossians 3:12-19",
-    "1 Peter 3:1-9"
+    "1 Corinthians 13:4-8"
   ],
 
   husband: [
-    "Ephesians 5:25-33",
-    "Colossians 3:19",
-    "1 Peter 3:7",
-    "1 Corinthians 7:3-5",
-    "Genesis 2:24"
+    "Ephesians 5:21-33",
+    "Colossians 3:12-19",
+    "1 Peter 3:1-7",
+    "1 Corinthians 13:4-8"
   ],
 
   wife: [
-    "Ephesians 5:22-33",
-    "Colossians 3:18-19",
-    "1 Peter 3:1-6",
-    "Proverbs 31:10-31",
-    "1 Corinthians 7:3-5"
+    "Ephesians 5:21-33",
+    "Colossians 3:12-19",
+    "1 Peter 3:1-7",
+    "1 Corinthians 13:4-8"
   ],
 
   divorce: [
     "Malachi 2:13-16",
     "Matthew 19:3-9",
     "Mark 10:2-12",
-    "1 Corinthians 7:10-16",
-    "Romans 12:17-21"
+    "1 Corinthians 7:10-16"
   ],
 
   forgiveness: [
@@ -111,57 +136,98 @@ const FALLBACKS = {
     "Colossians 3:12-13"
   ],
 
-  betrayed: [
-    "Psalm 55:12-23",
-    "Luke 22:47-62",
-    "Romans 12:17-21",
-    "Ephesians 4:31-32",
-    "Proverbs 25:9-10"
+  forgive: [
+    "Matthew 6:12-15",
+    "Matthew 18:21-35",
+    "Luke 17:3-4",
+    "Ephesians 4:31-32"
   ],
 
   betrayal: [
     "Psalm 55:12-23",
-    "Matthew 26:20-25",
-    "Luke 22:47-62",
+    "Luke 17:3-4",
+    "Matthew 18:15-17",
     "Romans 12:17-21",
-    "1 Peter 2:21-23"
+    "Ephesians 4:31-32"
+  ],
+
+  betrayed: [
+    "Psalm 55:12-23",
+    "Luke 17:3-4",
+    "Matthew 18:15-17",
+    "Romans 12:17-21"
   ],
 
   trust: [
-    "Psalm 37:3-7",
+    "Psalm 118:8-9",
+    "Proverbs 3:5-7",
     "Proverbs 14:15",
     "Proverbs 22:3",
-    "Jeremiah 17:5-8",
     "John 2:23-25"
+  ],
+
+  lied: [
+    "Proverbs 12:17-22",
+    "Ephesians 4:25-32",
+    "Colossians 3:8-10",
+    "Matthew 18:15-17"
+  ],
+
+  lying: [
+    "Proverbs 12:17-22",
+    "Ephesians 4:25-32",
+    "Colossians 3:8-10"
   ],
 
   anger: [
     "Proverbs 15:1",
-    "Proverbs 19:11",
     "Proverbs 29:11",
     "Ephesians 4:26-32",
-    "James 1:19-20"
+    "James 1:19-20",
+    "Colossians 3:8-14"
   ],
 
-  bitterness: [
-    "Ephesians 4:31-32",
-    "Hebrews 12:14-15",
-    "Romans 12:17-21",
-    "Colossians 3:12-15",
-    "Matthew 18:21-35"
+  angry: [
+    "Proverbs 15:1",
+    "Ephesians 4:26-32",
+    "James 1:19-20",
+    "Proverbs 29:11"
+  ],
+
+  conflict: [
+    "Matthew 5:21-26",
+    "Matthew 18:15-20",
+    "Romans 12:14-21",
+    "James 3:13-18",
+    "James 4:1-10"
+  ],
+
+  friend: [
+    "Proverbs 17:17",
+    "Proverbs 18:24",
+    "Proverbs 27:5-6",
+    "Proverbs 27:9-17",
+    "John 15:12-17"
+  ],
+
+  friendship: [
+    "Proverbs 17:17",
+    "Proverbs 18:24",
+    "Proverbs 27:5-17",
+    "John 15:12-17"
   ],
 
   grief: [
     "Psalm 34:17-18",
-    "Psalm 42:1-11",
+    "Psalm 147:3",
+    "Matthew 5:4",
     "John 11:32-36",
-    "1 Thessalonians 4:13-18",
     "Revelation 21:1-5"
   ],
 
   death: [
     "Psalm 23:1-6",
-    "John 11:21-27",
+    "John 11:25-26",
     "1 Corinthians 15:50-58",
     "1 Thessalonians 4:13-18",
     "Revelation 21:1-5"
@@ -175,14 +241,6 @@ const FALLBACKS = {
     "Hebrews 4:14-16"
   ],
 
-  lust: [
-    "Matthew 5:27-30",
-    "1 Corinthians 6:12-20",
-    "2 Timothy 2:22",
-    "1 Thessalonians 4:3-8",
-    "Job 31:1"
-  ],
-
   money: [
     "Matthew 6:19-34",
     "Luke 12:13-34",
@@ -192,155 +250,108 @@ const FALLBACKS = {
   ],
 
   debt: [
-    "Proverbs 6:1-5",
     "Proverbs 22:7",
     "Romans 13:7-8",
     "Luke 14:28-30",
-    "Psalm 37:21"
+    "Matthew 6:19-34"
   ],
 
   work: [
-    "Proverbs 11:1-3",
-    "Proverbs 16:8",
+    "Proverbs 14:23",
     "Colossians 3:22-24",
-    "Ephesians 6:5-9",
-    "1 Thessalonians 4:11-12"
-  ],
-
-  job: [
-    "Colossians 3:22-24",
-    "Ephesians 6:5-9",
-    "Proverbs 11:1-3",
-    "Daniel 6:1-10",
-    "Acts 5:27-29"
-  ],
-
-  lie: [
-    "Proverbs 12:17-22",
-    "Proverbs 19:5",
-    "Ephesians 4:25",
-    "Colossians 3:9-10",
-    "Acts 5:1-11"
-  ],
-
-  lying: [
-    "Proverbs 12:17-22",
-    "Proverbs 19:5",
-    "Ephesians 4:25",
-    "Colossians 3:9-10",
-    "John 8:42-47"
+    "2 Thessalonians 3:10-13",
+    "Proverbs 22:29"
   ],
 
   guidance: [
-    "Psalm 25:4-12",
-    "Psalm 119:97-105",
-    "Proverbs 16:1-9",
-    "Romans 12:1-2",
-    "James 1:5-8"
+    "Psalm 25:4-5",
+    "Psalm 119:105",
+    "Proverbs 3:5-7",
+    "James 1:5-8",
+    "Romans 12:1-2"
   ],
 
   decision: [
-    "Proverbs 11:14",
-    "Proverbs 15:22",
+    "Proverbs 3:5-7",
     "Proverbs 16:1-9",
-    "Luke 14:28-33",
-    "James 1:5-8"
+    "James 1:5-8",
+    "Romans 12:1-2",
+    "Colossians 3:15-17"
   ],
 
   wisdom: [
-    "Proverbs 2:1-15",
-    "Proverbs 4:5-13",
+    "Proverbs 2:1-12",
+    "Proverbs 3:5-7",
     "James 1:5-8",
-    "James 3:13-18",
-    "Colossians 1:9-12"
+    "James 3:13-18"
   ],
 
   lonely: [
     "Psalm 27:7-10",
-    "Psalm 68:4-6",
-    "Isaiah 49:14-16",
-    "John 14:15-23",
+    "Psalm 68:5-6",
+    "Isaiah 41:10",
+    "Matthew 28:18-20",
     "Hebrews 13:5-6"
   ],
 
   loneliness: [
     "Psalm 27:7-10",
-    "Psalm 68:4-6",
-    "Isaiah 49:14-16",
-    "John 14:15-23",
+    "Psalm 68:5-6",
+    "Isaiah 41:10",
     "Hebrews 13:5-6"
   ],
 
   depressed: [
-    "Psalm 42:1-11",
-    "Psalm 43:1-5",
-    "Lamentations 3:19-26",
-    "2 Corinthians 4:7-18",
-    "1 Kings 19:1-18"
-  ],
-
-  discouraged: [
-    "Joshua 1:1-9",
-    "Psalm 42:1-11",
-    "Galatians 6:7-10",
-    "Hebrews 12:1-13",
+    "Psalm 42:5-11",
+    "Psalm 43:5",
+    "Psalm 34:17-18",
+    "Lamentations 3:21-26",
     "2 Corinthians 4:7-18"
   ],
 
+  sadness: [
+    "Psalm 34:17-18",
+    "Psalm 42:5-11",
+    "Lamentations 3:21-26",
+    "John 16:20-22"
+  ],
+
   hope: [
-    "Lamentations 3:19-26",
+    "Psalm 42:5-11",
+    "Lamentations 3:21-26",
     "Romans 5:1-5",
     "Romans 8:18-39",
-    "1 Peter 1:3-9",
-    "Hebrews 6:13-20"
+    "1 Peter 1:3-9"
   ],
 
   faith: [
+    "Proverbs 3:5-7",
     "Mark 9:14-29",
-    "Romans 10:8-17",
     "Hebrews 11:1-16",
     "James 1:2-8",
-    "1 Peter 1:6-9"
+    "Romans 10:8-17"
   ],
 
   doubt: [
     "Mark 9:14-29",
     "John 20:24-31",
     "James 1:5-8",
-    "Jude 1:20-23",
-    "Psalm 73:1-28"
+    "Jude 1:20-23"
   ],
 
   sin: [
     "Psalm 51:1-17",
+    "John 8:1-11",
     "Romans 6:1-14",
-    "Romans 8:1-14",
     "1 John 1:5-10",
     "1 John 2:1-6"
-  ],
-
-  repentance: [
-    "Psalm 51:1-17",
-    "Isaiah 55:6-7",
-    "Luke 15:11-32",
-    "Acts 3:19-21",
-    "2 Corinthians 7:8-11"
   ],
 
   guilt: [
     "Psalm 32:1-7",
     "Psalm 51:1-17",
     "Romans 8:1-4",
-    "Hebrews 9:11-14",
     "1 John 1:5-10"
-  ],
-
-  shame: [
-    "Psalm 34:4-5",
-    "Isaiah 54:4-8",
-    "Romans 8:1-4",
-    "Hebrews 12:1-3",
-    "1 John 2:28"
   ],
 
   prayer: [
@@ -351,642 +362,515 @@ const FALLBACKS = {
     "1 John 5:14-15"
   ],
 
-  parenting: [
-    "Deuteronomy 6:4-9",
-    "Proverbs 22:6",
-    "Ephesians 6:1-4",
-    "Colossians 3:20-21",
-    "Hebrews 12:5-11"
+  pray: [
+    "Matthew 6:5-13",
+    "Matthew 7:7-11",
+    "Luke 18:1-8",
+    "Philippians 4:4-7"
+  ],
+
+  enemy: [
+    "Matthew 5:43-48",
+    "Romans 12:14-21",
+    "Ephesians 6:10-18",
+    "1 Peter 3:8-12"
+  ],
+
+  revenge: [
+    "Leviticus 19:17-18",
+    "Proverbs 20:22",
+    "Matthew 5:38-48",
+    "Romans 12:17-21"
   ],
 
   children: [
     "Deuteronomy 6:4-9",
     "Psalm 127:3-5",
     "Proverbs 22:6",
+    "Ephesians 6:1-4"
+  ],
+
+  parenting: [
+    "Deuteronomy 6:4-9",
+    "Proverbs 22:6",
     "Ephesians 6:1-4",
     "Colossians 3:20-21"
   ],
 
-  enemy: [
-    "Matthew 5:43-48",
-    "Luke 6:27-36",
-    "Romans 12:17-21",
-    "1 Peter 3:8-12",
-    "Proverbs 25:21-22"
-  ],
-
-  enemies: [
-    "Matthew 5:43-48",
-    "Luke 6:27-36",
-    "Romans 12:17-21",
-    "1 Peter 3:8-12",
-    "Proverbs 25:21-22"
-  ],
-
   suffering: [
-    "Job 1:20-22",
+    "Psalm 34:17-19",
     "Romans 5:1-5",
     "Romans 8:18-39",
     "2 Corinthians 4:7-18",
     "1 Peter 4:12-19"
-  ],
-
-  persecution: [
-    "Matthew 5:10-12",
-    "John 15:18-25",
-    "Acts 5:27-42",
-    "2 Timothy 3:10-17",
-    "1 Peter 4:12-19"
   ]
+
 };
 
-// ----------------------------------------------------
-// DEFAULT REFERENCES
-//
-// Only used as a last resort.
-// ----------------------------------------------------
+
+/* =========================================================
+   DEFAULT REFERENCES
+   ========================================================= */
 
 const DEFAULT_REFERENCES = [
-  "Psalm 25:4-12",
-  "Proverbs 2:1-15",
+
+  "Psalm 119:105",
+  "Proverbs 3:5-7",
   "Matthew 7:7-11",
   "Romans 12:1-2",
   "James 1:5-8"
+
 ];
 
-// ----------------------------------------------------
-// CLEAN / VALIDATE REFERENCES
-// ----------------------------------------------------
+
+/* =========================================================
+   CLEAN AI REFERENCES
+   ========================================================= */
 
 function cleanReferences(references) {
+
   if (!Array.isArray(references)) {
     return [];
   }
 
-  const cleaned = references
-    .filter(
-      (reference) =>
-        typeof reference === "string"
-    )
-    .map((reference) => reference.trim())
-    .filter(Boolean)
-    .filter(
-      (reference) =>
-        reference.length <= 100
-    );
 
-  return [...new Set(cleaned)].slice(0, 8);
+  const cleaned =
+    references
+
+      .filter(
+        reference =>
+          typeof reference === "string"
+      )
+
+      .map(
+        reference =>
+          reference.trim()
+      )
+
+      .filter(Boolean);
+
+
+  return [
+    ...new Set(cleaned)
+  ].slice(0, 8);
+
 }
 
-// ----------------------------------------------------
-// FALLBACK MATCHER
-// ----------------------------------------------------
+
+/* =========================================================
+   FALLBACK MATCHER
+   ========================================================= */
 
 function fallbackReferences(question) {
-  const text = String(question || "")
-    .toLowerCase();
+
+  const text =
+    question.toLowerCase();
+
 
   const matches = [];
+
 
   for (
     const [keyword, references]
     of Object.entries(FALLBACKS)
   ) {
-    if (text.includes(keyword)) {
-      matches.push(...references);
+
+    if (
+      text.includes(keyword)
+    ) {
+
+      matches.push(
+        ...references
+      );
+
     }
+
   }
+
 
   if (!matches.length) {
+
     return DEFAULT_REFERENCES;
+
   }
 
-  return [...new Set(matches)].slice(0, 8);
+
+  return [
+    ...new Set(matches)
+  ].slice(0, 8);
+
 }
 
-// ----------------------------------------------------
-// ASK OPENAI TO CHOOSE SCRIPTURE REFERENCES
-// ----------------------------------------------------
+
+/* =========================================================
+   AI SCRIPTURE REFERENCE SELECTION
+
+   IMPORTANT:
+   AI selects references ONLY.
+
+   AI does not generate the Bible text.
+   ========================================================= */
 
 async function chooseReferences(question) {
+
+
   if (!openai) {
-    return fallbackReferences(question);
+
+    console.log(
+      "OpenAI unavailable. Using fallback Scripture references."
+    );
+
+    return fallbackReferences(
+      question
+    );
+
   }
 
+
   try {
+
+
     const response =
       await openai.chat.completions.create({
+
         model: MODEL,
 
+
         messages: [
+
           {
+
             role: "system",
 
             content: `
-You are the Scripture research and reference-selection engine for ASKJesus.ca.
+You are the Scripture-reference selection system for ASKJesus.ca.
 
-PURPOSE
+Your ONLY task is to identify Bible passages that are genuinely relevant to the person's question, struggle, decision, relationship, belief, or situation.
 
-Your job is to help the user locate Bible passages that most directly address the exact question, circumstance, struggle, decision, relationship, temptation, belief, or life situation they entered.
+You are NOT answering the person's question.
 
-Scripture is the authority.
+You are NOT writing a sermon.
 
-You are only selecting passages for the reader to examine.
+You are NOT writing a devotional.
 
-DO NOT:
+You are NOT giving personal advice.
 
-- answer the user's question
-- write a sermon
-- write a devotional
-- give personal advice
-- pretend to speak for Jesus
-- say God personally told the user something
-- provide commentary
-- provide interpretation in the output
+You are NOT pretending to speak for God.
 
-Your final output must contain Bible references only.
+You are ONLY selecting Scripture references.
 
-----------------------------------------
-DEEP ANALYSIS BEFORE SELECTION
-----------------------------------------
-
-Before choosing references, SILENTLY analyze the user's question.
-
-Do not output this analysis.
-
-Determine all of the following:
-
-1. PRIMARY ISSUE
-
-Identify what the person is actually asking.
-
-Do not merely match keywords.
-
-2. SECONDARY ISSUES
-
-Identify additional biblical themes that materially affect the question.
-
-For example:
-
-"My friend betrayed me and apologized, but I still do not trust him."
-
-This is NOT merely a question about forgiveness.
-
-It may involve:
-
-- betrayal
-- forgiveness
-- repentance
-- reconciliation
-- restored trust
-- wisdom
-- discernment
-- boundaries
-- love
-- bitterness
-
-Another example:
-
-"My boss wants me to lie so I can keep my job."
-
-This is NOT merely a question about work.
-
-It may involve:
-
-- truthfulness
-- integrity
-- obedience to God
-- human authority
-- fear
-- provision
-- consequences
-- courage
-- faith
-
-Another example:
-
-"I keep losing my temper with my children."
-
-This involves more than anger.
-
-It may involve:
-
-- anger
-- parenting
-- self-control
-- patience
-- speech
-- discipline
-- gentleness
-- repentance
-- responsibility
-
-3. SPECIFIC CONTEXT
-
-Identify the details that make THIS question different from a general question about the same subject.
-
-The more specific the user's situation is, the more specific the Scripture selection should be.
-
-4. THE PERSON'S ROLE
-
-When relevant, identify relationships and roles such as:
-
-- husband
-- wife
-- parent
-- child
-- friend
-- employer
-- employee
-- church leader
-- church member
-- authority
-- victim
-- offender
-- believer
-- unbeliever
-
-Use passages appropriate to the actual role and relationship involved.
-
-----------------------------------------
-IMPORTANT BIBLICAL DISTINCTIONS
-----------------------------------------
-
-Do NOT treat these concepts as interchangeable:
-
-- fear vs anxiety vs ordinary concern
-- grief vs loneliness vs discouragement
-- temptation vs deliberate ongoing sin
-- guilt vs shame vs conviction
-- forgiveness vs reconciliation
-- reconciliation vs restored trust
-- marriage conflict vs adultery
-- marriage conflict vs abuse
-- anger vs bitterness
-- anger vs righteous anger
-- discipline vs uncontrolled anger
-- wisdom vs a direct biblical command
-- poverty vs debt
-- debt vs greed
-- greed vs ordinary financial concern
-- generosity vs irresponsible spending
-- suffering vs persecution
-- doubt vs unbelief
-- submission vs participating in wrongdoing
-- respecting authority vs obeying sinful commands
-- repentance vs merely feeling regret
-- consequences vs condemnation
-- boundaries vs revenge
-- patience vs enabling wrongdoing
-
-The passages selected should reflect the actual distinction present in the user's question.
-
-----------------------------------------
-SEARCH THE WHOLE BIBLE
-----------------------------------------
-
-Consider relevant passages from across the entire standard Protestant 66-book Bible.
-
-Do not limit yourself to famous verses.
+Before selecting references, silently analyze the question carefully.
 
 Consider:
 
-- teachings of Jesus
-- Torah
-- historical narratives
-- Psalms
-- Proverbs and wisdom literature
-- prophets
-- Acts
-- New Testament letters
-- biblical examples
-- direct commands
-- warnings
-- promises
-- correction
-- repentance
-- restoration
-- consequences
-- encouragement
-- Christian character
-- wisdom
-- justice
-- mercy
-- holiness
-- faith
-- obedience
+• What is the person's primary issue?
+• Are there secondary issues?
+• What relationships or responsibilities are involved?
+• Is there a distinction between forgiveness, reconciliation, trust, wisdom, boundaries, justice, mercy, repentance, consequences, or restoration?
+• Is the person asking about something Scripture addresses directly?
+• Are there biblical principles that address the situation indirectly?
+• Does Scripture contain warnings, commands, examples, wisdom, correction, comfort, or promises relevant to the issue?
+• Would a passage that challenges the person's assumptions be important?
+• Are there passages from different parts of Scripture that together provide a more complete biblical picture?
 
-A biblical narrative may sometimes address a situation more specifically than a commonly quoted inspirational verse.
+SEARCH PRINCIPLES:
 
-----------------------------------------
-SPECIFICITY OVER POPULARITY
-----------------------------------------
+1. Search conceptually across the whole Bible rather than merely matching words in the user's question.
 
-Prefer a less-famous passage that DIRECTLY addresses the details of the question over a famous verse that only loosely relates.
+2. Prefer passages that address the specific situation over famous verses that are only loosely related.
 
-Do NOT automatically select:
+3. Meaning is more important than keyword similarity.
 
-- Proverbs 3:5-6
-- Jeremiah 29:11
-- Philippians 4:6-7
-- Romans 8:28
-- Psalm 23
-- Matthew 6:25-34
+4. Prefer passages with enough surrounding verses to preserve context.
 
-These passages may absolutely be selected when they genuinely fit the question.
+5. When an issue involves multiple biblical principles, select passages covering the different relevant principles.
 
-However, do not use them simply because they are familiar or broadly encouraging.
+6. Do not deliberately select verses merely because they will comfort the user.
 
-The objective is not to provide the most famous verses.
+7. Do not deliberately select verses merely because they agree with what the user appears to want.
 
-The objective is to provide the most relevant passages.
+8. Include correction, warning, responsibility, repentance, wisdom, mercy, forgiveness, justice, or caution when Scripture makes those relevant.
 
-----------------------------------------
-MEANING OVER KEYWORDS
-----------------------------------------
+9. For difficult or disputed issues, select passages representing the major directly relevant biblical considerations rather than forcing Scripture into a simplistic yes/no answer.
 
-Do not select a passage merely because it contains a word also used by the user.
+10. Do not treat narrative descriptions as commands unless the passage itself supports that use.
 
-Select passages based on biblical meaning and context.
+11. Do not remove a passage from its literary context merely because one sentence sounds relevant.
 
-For example:
+12. Do not invent references.
 
-A person asking whether they should trust someone again after repeated deception should not receive only verses containing the word "trust."
+13. Use only books in the standard Protestant 66-book Bible.
 
-Consider passages relating to:
+14. Normally return 5 to 8 references.
 
-- discernment
-- fruit
-- wisdom
-- repentance
-- truthfulness
-- reconciliation
-- prudence
+15. Use fewer only when Scripture has very limited direct material on the subject.
 
-----------------------------------------
-BALANCED BIBLICAL RESEARCH
-----------------------------------------
+16. Avoid unnecessary duplication. Several references that all make exactly the same point are less useful than passages addressing different important aspects of the question.
 
-When appropriate, return passages addressing different dimensions of the issue.
+17. Accuracy and relevance are more important than popularity.
 
-For example, if another person has sinned against the user, passages might address:
+18. Do not provide commentary, explanations, summaries, interpretations, advice, or conclusions.
 
-- how the user should respond
-- forgiveness
-- justice
-- wisdom
-- the offender's responsibility
-- repentance
-- reconciliation
-- peace
-- protection from bitterness
+19. Do not claim "God told me," "God is telling you," or anything similar.
 
-Do not return 8 passages that all say essentially the same thing.
-
-----------------------------------------
-DO NOT FORCE COMFORT
-----------------------------------------
-
-Not every biblical answer is primarily comforting.
-
-When genuinely relevant, include Scripture involving:
-
-- correction
-- warning
-- responsibility
-- repentance
-- consequences
-- discipline
-- holiness
-- obedience
-- difficult truth
-
-Do not soften Scripture simply to make the results emotionally pleasing.
-
-At the same time, do not select harsh passages merely for shock value.
-
-Select what is actually relevant.
-
-----------------------------------------
-CONTEXT
-----------------------------------------
-
-Prefer passages that can be responsibly understood within their surrounding chapter.
-
-Avoid proof-texting.
-
-Where the biblical teaching requires several verses, return an appropriate verse range.
-
-A single verse is acceptable when it expresses the point clearly in context.
-
-Do not intentionally remove a verse from a surrounding argument in a way that changes its meaning.
-
-----------------------------------------
-DIFFICULT OR DISPUTED SUBJECTS
-----------------------------------------
-
-Some biblical questions involve multiple passages or legitimate interpretive disagreements.
-
-Do not force a yes/no result when Scripture requires consideration of several passages.
-
-Instead, select the passages that a careful Bible reader should examine.
-
-Allow Scripture to provide the material for study.
-
-----------------------------------------
-ACCURACY
-----------------------------------------
-
-Use ONLY books contained in the standard Protestant 66-book Bible.
-
-Never invent:
-
-- Bible books
-- chapters
-- verses
-- verse ranges
-
-If uncertain whether a reference exists, do not use it.
-
-----------------------------------------
-NUMBER OF RESULTS
-----------------------------------------
-
-Return between 5 and 8 references.
-
-Aim for 6 or 7 when enough directly relevant passages exist.
-
-Do not add weak references merely to reach 8.
-
-----------------------------------------
-OUTPUT FORMAT
-----------------------------------------
-
-Return ONLY valid JSON.
-
-No markdown.
-
-No explanation.
-
-No commentary.
-
-No headings.
-
-No analysis.
-
-No advice.
+20. Your response MUST be valid JSON and contain nothing except the required JSON object.
 
 Return exactly this structure:
 
 {
   "references": [
     "Book chapter:verse-verse",
-    "Book chapter:verse-verse",
     "Book chapter:verse-verse"
   ]
 }
             `.trim()
+
           },
 
-          {
-            role: "user",
-            content: `
-Find the Bible passages that most specifically and responsibly address this question or situation:
 
-${question}
-            `.trim()
+          {
+
+            role: "user",
+
+            content:
+              question
+
           }
+
         ],
 
+
         response_format: {
-          type: "json_object"
+
+          type:
+            "json_object"
+
         }
+
       });
 
+
     const content =
-      response.choices?.[0]?.message?.content;
+      response
+        .choices?.[0]
+        ?.message?.content;
+
 
     if (!content) {
-      return fallbackReferences(question);
+
+      return fallbackReferences(
+        question
+      );
+
     }
 
-    const parsed = JSON.parse(content);
+
+    const parsed =
+      JSON.parse(content);
+
 
     const references =
-      cleanReferences(parsed.references);
+      cleanReferences(
+        parsed.references
+      );
+
 
     if (!references.length) {
-      return fallbackReferences(question);
+
+      return fallbackReferences(
+        question
+      );
+
     }
 
+
     return references;
+
+
   } catch (error) {
+
+
     console.error(
-      "OpenAI Scripture selection failed:",
-      error?.message || error
+      "OpenAI reference selection failed:",
+      error.message
     );
 
-    return fallbackReferences(question);
+
+    return fallbackReferences(
+      question
+    );
+
   }
+
 }
 
-// ----------------------------------------------------
-// CREATE FULL-CHAPTER LINK
-// ----------------------------------------------------
+
+/* =========================================================
+   CREATE FULL CHAPTER URL
+   ========================================================= */
 
 function createChapterUrl(reference) {
-  const value =
-    String(reference || "").trim();
+
+
+  const cleanedReference =
+    String(reference || "")
+      .replace(/[–—]/g, "-")
+      .trim();
+
 
   /*
     Examples:
 
-    "John 3:16-18"
-       becomes chapter reference "John 3"
+    Matthew 18:15-17
+       -> Matthew 18
 
-    "1 Corinthians 13:4-8"
-       becomes "1 Corinthians 13"
+    John 3:16
+       -> John 3
+
+    1 Corinthians 13:4-8
+       -> 1 Corinthians 13
   */
 
+
   const match =
-    value.match(
-      /^(.+?)\s+(\d+)(?::\d+(?:-\d+)?)?$/
+    cleanedReference.match(
+
+      /^((?:[1-3]\s+)?[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)/
+
     );
 
-  if (!match) {
-    return null;
+
+  let chapterReference =
+    cleanedReference;
+
+
+  if (match) {
+
+    chapterReference =
+      `${match[1]} ${match[2]}`;
+
   }
 
-  const book = match[1].trim();
-  const chapter = match[2];
-
-  const chapterReference =
-    `${book} ${chapter}`;
-
-  const params =
-    new URLSearchParams({
-      search: chapterReference,
-      version: "WEB"
-    });
 
   return (
-    `https://www.biblegateway.com/passage/?${params.toString()}`
+
+    "https://www.biblegateway.com/passage/" +
+
+    "?search=" +
+
+    encodeURIComponent(
+      chapterReference
+    ) +
+
+    "&version=WEB"
+
   );
+
 }
 
-// ----------------------------------------------------
-// RETRIEVE ACTUAL WORLD ENGLISH BIBLE TEXT
-// ----------------------------------------------------
+
+/* =========================================================
+   RETRIEVE ACTUAL SCRIPTURE TEXT
+
+   Bible text comes from Bible API using
+   World English Bible.
+   ========================================================= */
 
 async function fetchPassage(reference) {
+
+
   const controller =
     new AbortController();
 
+
   const timeout =
-    setTimeout(() => {
-      controller.abort();
-    }, 12000);
+    setTimeout(
+      () => {
+
+        controller.abort();
+
+      },
+      12000
+    );
+
 
   try {
+
+
     const url =
-      `https://bible-api.com/` +
-      `${encodeURIComponent(reference)}` +
-      `?translation=web`;
+
+      `https://bible-api.com/${encodeURIComponent(reference)}` +
+
+      "?translation=web";
+
 
     const response =
-      await fetch(url, {
-        signal: controller.signal,
+      await fetch(
+        url,
+        {
 
-        headers: {
-          Accept: "application/json"
+          signal:
+            controller.signal,
+
+          headers: {
+
+            Accept:
+              "application/json"
+
+          }
+
         }
-      });
+      );
+
 
     if (!response.ok) {
+
       throw new Error(
-        `Bible API returned status ${response.status}`
+
+        `Bible API returned status ${response.status} for ${reference}`
+
       );
+
     }
+
 
     const data =
       await response.json();
 
+
     const text =
-      String(data.text || "")
-        .replace(/\s+/g, " ")
+      String(
+        data.text || ""
+      )
+
+        .replace(
+          /\s+/g,
+          " "
+        )
+
         .trim();
 
+
     if (!text) {
+
       throw new Error(
+
         `No Scripture text returned for ${reference}`
+
       );
+
     }
 
-    const returnedReference =
-      data.reference || reference;
+
+    const finalReference =
+      data.reference ||
+      reference;
+
 
     return {
-      reference: returnedReference,
+
+      reference:
+        finalReference,
 
       text,
 
@@ -996,93 +880,153 @@ async function fetchPassage(reference) {
 
       chapterUrl:
         createChapterUrl(
-          returnedReference
+          finalReference
         )
+
     };
+
+
   } finally {
-    clearTimeout(timeout);
+
+
+    clearTimeout(
+      timeout
+    );
+
   }
+
 }
 
-// ----------------------------------------------------
-// GET PASSAGES FOR A QUESTION
-//
-// Shared by /api/ask and /api/scripture so both routes
-// always behave the same.
-// ----------------------------------------------------
+
+/* =========================================================
+   PROCESS QUESTION
+   ========================================================= */
 
 async function getScripturePassages(
   question
 ) {
+
+
   const references =
-    await chooseReferences(question);
+    await chooseReferences(
+      question
+    );
+
 
   const results =
     await Promise.allSettled(
-      references.map(fetchPassage)
+
+      references.map(
+        fetchPassage
+      )
+
     );
+
+
+  /*
+    If one individual Bible passage fails,
+    don't make the entire search fail.
+  */
 
   const passages =
     results
+
       .filter(
-        (result) =>
-          result.status === "fulfilled"
+        result =>
+          result.status ===
+          "fulfilled"
       )
+
       .map(
-        (result) =>
+        result =>
           result.value
       )
+
       .filter(
-        (passage) =>
+        passage =>
           passage &&
           passage.text
       );
 
+
   return passages;
+
 }
 
-// ----------------------------------------------------
-// VALIDATE QUESTION
-// ----------------------------------------------------
 
-function validateQuestion(req, res) {
-  const question =
-    String(
-      req.body?.question ||
-      req.body?.input ||
-      ""
-    ).trim();
+/* =========================================================
+   VALIDATE QUESTION
+   ========================================================= */
+
+function getQuestion(req) {
+
+  return String(
+
+    req.body?.question ||
+
+    req.body?.input ||
+
+    ""
+
+  ).trim();
+
+}
+
+
+function validateQuestion(
+  question,
+  res
+) {
+
 
   if (!question) {
+
     res.status(400).json({
+
       error:
         "Please enter a question."
+
     });
 
-    return null;
+    return false;
+
   }
 
-  if (question.length > 2000) {
+
+  if (
+    question.length > 2000
+  ) {
+
     res.status(400).json({
+
       error:
         "Please keep your question under 2,000 characters."
+
     });
 
-    return null;
+    return false;
+
   }
 
-  return question;
+
+  return true;
+
 }
 
-// ----------------------------------------------------
-// HEALTH CHECK
-// ----------------------------------------------------
+
+/* =========================================================
+   HEALTH CHECK
+   ========================================================= */
 
 app.get(
   "/api/health",
   (req, res) => {
+
+
     res.json({
-      ok: true,
+
+      ok:
+        true,
 
       service:
         "ASKJesus.ca",
@@ -1091,123 +1035,226 @@ app.get(
         Boolean(openai),
 
       model:
-        openai ? MODEL : null
+        MODEL
+
     });
+
   }
 );
 
-// ----------------------------------------------------
-// MAIN ASK ENDPOINT
-// ----------------------------------------------------
+
+/* =========================================================
+   MAIN API
+
+   This is the endpoint used by the new app.js.
+   ========================================================= */
 
 app.post(
   "/api/ask",
   async (req, res) => {
-    try {
-      const question =
-        validateQuestion(req, res);
 
-      if (!question) {
+
+    try {
+
+
+      const question =
+        getQuestion(req);
+
+
+      if (
+        !validateQuestion(
+          question,
+          res
+        )
+      ) {
+
         return;
+
       }
+
 
       const passages =
         await getScripturePassages(
           question
         );
 
+
       if (!passages.length) {
+
         return res
           .status(502)
           .json({
+
             error:
               "Scripture could not be retrieved right now. Please try again."
+
           });
+
       }
 
+
       return res.json({
+
         passages
+
       });
+
+
     } catch (error) {
+
+
       console.error(
         "ASKJesus.ca /api/ask error:",
         error
       );
 
+
       return res
         .status(500)
         .json({
+
           error:
             "Something went wrong. Please try again."
+
         });
+
     }
+
   }
 );
 
-// ----------------------------------------------------
-// LEGACY /API/SCRIPTURE ROUTE
-//
-// Keep this route.
-//
-// Some browsers may have an older cached copy of
-// app.js that still calls /api/scripture.
-// Keeping this endpoint prevents another 404.
-// ----------------------------------------------------
+
+/* =========================================================
+   LEGACY API
+
+   Keep this because an older cached version of app.js
+   may still call /api/scripture.
+   ========================================================= */
 
 app.post(
   "/api/scripture",
   async (req, res) => {
-    try {
-      const question =
-        validateQuestion(req, res);
 
-      if (!question) {
+
+    try {
+
+
+      const question =
+        getQuestion(req);
+
+
+      if (
+        !validateQuestion(
+          question,
+          res
+        )
+      ) {
+
         return;
+
       }
+
 
       const passages =
         await getScripturePassages(
           question
         );
 
+
       if (!passages.length) {
+
         return res
           .status(502)
           .json({
+
             error:
               "Scripture could not be retrieved right now. Please try again."
+
           });
+
       }
 
+
       return res.json({
+
         passages
+
       });
+
+
     } catch (error) {
+
+
       console.error(
-        "ASKJesus.ca /api/scripture error:",
+        "ASKJesus.ca legacy route error:",
         error
       );
+
 
       return res
         .status(500)
         .json({
+
           error:
             "Something went wrong. Please try again."
+
         });
+
     }
+
   }
 );
 
-// ----------------------------------------------------
-// START SERVER
-// ----------------------------------------------------
+
+/* =========================================================
+   API 404
+
+   This makes missing API routes return JSON instead
+   of an HTML page.
+
+   That prevents the old:
+   Unexpected token '<'
+   error from being confusing.
+   ========================================================= */
+
+app.use(
+  "/api",
+  (req, res) => {
+
+
+    res.status(404).json({
+
+      error:
+        "API route not found."
+
+    });
+
+  }
+);
+
+
+/* =========================================================
+   START SERVER
+   ========================================================= */
 
 app.listen(
   PORT,
   "0.0.0.0",
   () => {
+
+
     console.log(
       `ASKJesus.ca running on port ${PORT}`
     );
+
+
+    console.log(
+      `AI Scripture selection: ${
+        openai
+          ? "enabled"
+          : "fallback mode"
+      }`
+    );
+
   }
 );
