@@ -1,6 +1,7 @@
 /* =========================================================
    ASKJESUS.CA
-   CLEAN RESPONSIVE DESIGN
+   COMPLETE RESPONSIVE STYLE
+   Hero image: hero-mountains.png
 ========================================================= */
 
 :root {
@@ -38,13 +39,9 @@ body {
   overflow-x: hidden;
 
   background: var(--navy-dark);
-
   color: white;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 a {
@@ -65,6 +62,9 @@ textarea {
 .site-header {
   width: 100%;
 
+  position: relative;
+  z-index: 100;
+
   background:
     linear-gradient(
       90deg,
@@ -73,21 +73,14 @@ textarea {
       #03182a
     );
 
-  border-bottom:
-    1px solid rgba(255,255,255,.12);
-
-  position: relative;
-
-  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,.12);
 }
 
 .header-inner {
   width: min(95%, 1480px);
-
   min-height: 96px;
 
   margin: 0 auto;
-
   padding: 10px 12px;
 
   display: flex;
@@ -98,7 +91,6 @@ textarea {
 .brand {
   display: flex;
   align-items: center;
-
   gap: 12px;
 }
 
@@ -106,29 +98,21 @@ textarea {
   width: 62px;
   height: 62px;
 
-  color: white;
-
   flex-shrink: 0;
+
+  color: white;
 }
 
 .logo-ask {
   fill: currentColor;
 
   font-family: Georgia, serif;
-
   font-size: 18px;
-
   font-weight: 700;
 }
 
 .brand-name {
-  font-size:
-    clamp(
-      31px,
-      4vw,
-      52px
-    );
-
+  font-size: clamp(31px, 4vw, 52px);
   line-height: 1;
 
   letter-spacing: -2px;
@@ -139,6 +123,11 @@ textarea {
 .brand-name span {
   font-size: .69em;
 }
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .main-nav {
   display: flex;
@@ -152,11 +141,7 @@ textarea {
 
   padding: 12px 0;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
 
   letter-spacing: 2px;
@@ -185,6 +170,11 @@ textarea {
   width: 100%;
 }
 
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
 .mobile-menu-button {
   display: none;
 
@@ -200,6 +190,8 @@ textarea {
   align-items: center;
 
   gap: 7px;
+
+  cursor: pointer;
 }
 
 .mobile-menu-button span {
@@ -228,10 +220,9 @@ textarea {
   overflow: hidden;
 
   /*
-    It will try BOTH locations.
-
-    Recommended:
-    images/hero-mountains.jpg
+     IMPORTANT:
+     hero-mountains.png must be in the same
+     GitHub folder as style.css.
   */
 
   background-color: #e7bd7e;
@@ -239,39 +230,34 @@ textarea {
   background-image:
     linear-gradient(
       180deg,
-      rgba(255,220,165,.10),
-      rgba(247,196,113,.05) 55%,
-      rgba(5,36,61,.32)
+      rgba(255, 220, 165, 0.02) 0%,
+      rgba(247, 196, 113, 0.02) 45%,
+      rgba(5, 36, 61, 0.18) 100%
     ),
-    url("./images/hero-mountains.jpg"),
-    url("./hero-mountains.jpg");
+    url("./hero-mountains.png");
 
   background-repeat:
-    no-repeat,
     no-repeat,
     no-repeat;
 
   background-position:
-    center,
-    center,
-    center;
+    center center,
+    center center;
 
   background-size:
-    cover,
     cover,
     cover;
 }
 
 
-/*
-  Warm fallback if the photo isn't available.
-*/
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
 
 .hero-section::before {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   z-index: 0;
@@ -279,15 +265,9 @@ textarea {
   background:
     radial-gradient(
       circle at 73% 24%,
-      rgba(255,245,200,.9),
-      rgba(255,195,83,.35) 12%,
-      transparent 32%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(238,196,139,.10),
-      rgba(214,157,87,.08) 55%,
-      rgba(8,42,66,.20)
+      rgba(255,245,200,.18),
+      rgba(255,195,83,.08) 15%,
+      transparent 35%
     );
 
   pointer-events: none;
@@ -295,7 +275,6 @@ textarea {
 
 .hero-shade {
   position: absolute;
-
   inset: 0;
 
   z-index: 1;
@@ -303,25 +282,34 @@ textarea {
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.02),
-      transparent 64%,
-      rgba(3,31,50,.25)
+      rgba(255,255,255,.01),
+      transparent 65%,
+      rgba(3,31,50,.16)
     );
 }
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
   width: min(100%, 900px);
 
   position: relative;
-
   z-index: 2;
 
-  padding: 24px 20px 25px;
+  padding: 22px 20px 25px;
 
   text-align: center;
 
   color: var(--ink);
 }
+
+
+/* =========================================================
+   HERO STAR / ASK LOGO
+========================================================= */
 
 .hero-logo-wrap {
   width: 190px;
@@ -367,7 +355,6 @@ textarea {
 
 .hero-logo {
   position: relative;
-
   z-index: 2;
 
   width: 93px;
@@ -380,22 +367,19 @@ textarea {
   fill: currentColor;
 
   font-family: Georgia, serif;
-
   font-size: 18px;
-
   font-weight: 700;
 }
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .hero-content h1 {
   margin: 0;
 
-  font-size:
-    clamp(
-      64px,
-      8vw,
-      112px
-    );
-
+  font-size: clamp(64px, 8vw, 112px);
   line-height: .92;
 
   letter-spacing: -6px;
@@ -409,12 +393,18 @@ textarea {
   letter-spacing: -3px;
 }
 
+
+/* =========================================================
+   HERO DIVIDER
+========================================================= */
+
 .hero-divider {
   width: min(78%, 515px);
 
   margin: 25px auto 10px;
 
   display: grid;
+
   grid-template-columns:
     1fr auto 1fr;
 
@@ -437,38 +427,38 @@ textarea {
   font-size: 25px;
 }
 
+
+/* =========================================================
+   HERO SCRIPTURE
+========================================================= */
+
 .hero-scripture {
   margin: 0;
 
-  font-size:
-    clamp(
-      20px,
-      2vw,
-      28px
-    );
-
+  font-size: clamp(20px, 2vw, 28px);
   line-height: 1.2;
 
   color: var(--ink);
 
   text-shadow:
-    0 1px 0 rgba(255,255,255,.25);
+    0 1px 1px rgba(255,255,255,.35);
 }
 
 .hero-reference {
   margin-top: 12px;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 13px;
-
   font-weight: 700;
 
   letter-spacing: 6px;
 }
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
 
 .primary-cta {
   min-width: 270px;
@@ -483,9 +473,7 @@ textarea {
 
   gap: 17px;
 
-  border:
-    1px solid #f2bd50;
-
+  border: 1px solid #f2bd50;
   border-radius: 5px;
 
   background:
@@ -496,17 +484,13 @@ textarea {
 
   box-shadow:
     inset 0 2px 0 rgba(255,255,255,.25),
-    0 6px 14px rgba(87,48,0,.2);
+    0 6px 14px rgba(87,48,0,.20);
 
   color: white;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 16px;
-
   font-weight: 500;
 
   letter-spacing: 2px;
@@ -514,14 +498,13 @@ textarea {
 
 
 /* =========================================================
-   BLUE SECTION
+   MAIN NAVY SECTION
 ========================================================= */
 
 .main-blue-section {
   padding: 26px 0 32px;
 
-  border-top:
-    3px solid var(--gold);
+  border-top: 3px solid var(--gold);
 
   background:
     linear-gradient(
@@ -533,7 +516,7 @@ textarea {
 
 
 /* =========================================================
-   ASK SEEK KNOCK
+   ASK / SEEK / KNOCK
 ========================================================= */
 
 .ask-seek-grid {
@@ -559,11 +542,8 @@ textarea {
 }
 
 .middle-card {
-  border-left:
-    2px solid var(--gold);
-
-  border-right:
-    2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
 }
 
 .letter-circle {
@@ -578,9 +558,7 @@ textarea {
   display: grid;
   place-items: center;
 
-  border:
-    3px solid var(--gold-bright);
-
+  border: 3px solid var(--gold-bright);
   border-radius: 50%;
 
   color: var(--gold-bright);
@@ -612,7 +590,6 @@ textarea {
   min-height: 55px;
 
   font-size: 20px;
-
   line-height: 1.12;
 }
 
@@ -623,13 +600,9 @@ textarea {
 
   color: var(--gold-bright);
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 10px;
-
   font-weight: 700;
 
   letter-spacing: 4px;
@@ -637,7 +610,7 @@ textarea {
 
 
 /* =========================================================
-   REMINDER
+   REMINDER CARD
 ========================================================= */
 
 .reminder-card {
@@ -648,6 +621,7 @@ textarea {
   padding: 18px 30px;
 
   display: grid;
+
   grid-template-columns:
     190px 1fr;
 
@@ -657,8 +631,7 @@ textarea {
 
   background: #fbf7ef;
 
-  border:
-    2px solid #d79826;
+  border: 2px solid #d79826;
 
   border-radius: 12px;
 
@@ -705,7 +678,6 @@ textarea {
 
 .reminder-symbol > span {
   position: relative;
-
   z-index: 2;
 
   font-size: 65px;
@@ -716,12 +688,7 @@ textarea {
 
   color: #a36910;
 
-  font-size:
-    clamp(
-      20px,
-      2vw,
-      30px
-    );
+  font-size: clamp(20px, 2vw, 30px);
 
   font-weight: 400;
 
@@ -732,13 +699,12 @@ textarea {
   margin-top: 5px;
 
   font-size: 16px;
-
   line-height: 1.35;
 }
 
 
 /* =========================================================
-   STUDY
+   STUDY AREA
 ========================================================= */
 
 .study-area {
@@ -755,6 +721,11 @@ textarea {
 
   gap: 25px;
 }
+
+
+/* =========================================================
+   DOOR
+========================================================= */
 
 .door-illustration {
   min-height: 225px;
@@ -800,18 +771,14 @@ textarea {
   height: 175px;
 
   position: relative;
-
   z-index: 2;
 
   padding: 10px 9px 0;
 
-  border:
-    4px solid var(--gold);
-
+  border: 4px solid var(--gold);
   border-bottom-width: 6px;
 
-  border-radius:
-    55px 55px 0 0;
+  border-radius: 55px 55px 0 0;
 }
 
 .door-panel {
@@ -820,13 +787,10 @@ textarea {
 
   position: relative;
 
-  border:
-    2px solid #f0b547;
-
+  border: 2px solid #f0b547;
   border-bottom: 0;
 
-  border-radius:
-    35px 35px 0 0;
+  border-radius: 35px 35px 0 0;
 
   background:
     linear-gradient(
@@ -850,13 +814,13 @@ textarea {
   background: #523200;
 }
 
+
+/* =========================================================
+   STUDY FORM
+========================================================= */
+
 .study-content h2 {
-  font-size:
-    clamp(
-      28px,
-      3vw,
-      37px
-    );
+  font-size: clamp(28px, 3vw, 37px);
 
   letter-spacing: 5px;
 }
@@ -892,7 +856,6 @@ textarea {
   color: #24384a;
 
   font-size: 16px;
-
   line-height: 1.4;
 
   box-shadow:
@@ -902,7 +865,7 @@ textarea {
 #questionInput:focus {
   box-shadow:
     0 0 0 3px rgba(219,156,40,.35),
-    inset 0 1px 4px rgba(0,0,0,.1);
+    inset 0 1px 4px rgba(0,0,0,.10);
 }
 
 .study-actions {
@@ -921,9 +884,7 @@ textarea {
 
   padding: 14px 21px;
 
-  border:
-    1px solid #efb849;
-
+  border: 1px solid #efb849;
   border-radius: 5px;
 
   background:
@@ -934,13 +895,9 @@ textarea {
 
   color: white;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 13px;
-
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -962,13 +919,9 @@ textarea {
 
   gap: 10px;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 10px;
-
   line-height: 1.4;
 }
 
@@ -981,18 +934,16 @@ textarea {
   display: grid;
   place-items: center;
 
-  border:
-    2px solid var(--gold);
+  border: 2px solid var(--gold);
 
-  border-radius:
-    5px 5px 12px 12px;
+  border-radius: 5px 5px 12px 12px;
 
   color: var(--gold-bright);
 }
 
 
 /* =========================================================
-   RESULTS
+   RESULTS SECTION
 ========================================================= */
 
 .results-section {
@@ -1001,8 +952,7 @@ textarea {
     0
     18px;
 
-  background:
-    #f7f1e8;
+  background: #f7f1e8;
 
   color: #10283c;
 }
@@ -1013,6 +963,7 @@ textarea {
   margin: 0 auto;
 
   display: grid;
+
   grid-template-columns:
     1fr auto auto auto 1fr;
 
@@ -1038,12 +989,7 @@ textarea {
 .results-title h2 {
   text-align: center;
 
-  font-size:
-    clamp(
-      20px,
-      2vw,
-      28px
-    );
+  font-size: clamp(20px, 2vw, 28px);
 
   letter-spacing: 4px;
 }
@@ -1062,6 +1008,11 @@ textarea {
 
   font-size: 13px;
 }
+
+
+/* =========================================================
+   RESULTS CARDS
+========================================================= */
 
 .results-shell {
   width: min(94%, 1390px);
@@ -1095,8 +1046,7 @@ textarea {
 
   background: rgba(255,255,255,.75);
 
-  border:
-    1px solid rgba(11,39,61,.1);
+  border: 1px solid rgba(11,39,61,.10);
 
   border-radius: 5px;
 
@@ -1114,7 +1064,6 @@ textarea {
   flex: 1;
 
   font-size: 15px;
-
   line-height: 1.35;
 }
 
@@ -1135,22 +1084,15 @@ textarea {
 
   margin-top: 11px;
 
-  padding:
-    7px
-    13px;
+  padding: 7px 13px;
 
-  border:
-    1px solid #cb8411;
+  border: 1px solid #cb8411;
 
   background: #fffdf8;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 9px;
-
   font-weight: 700;
 
   letter-spacing: 1.3px;
@@ -1163,7 +1105,6 @@ textarea {
   flex-shrink: 0;
 
   border: 0;
-
   border-radius: 50%;
 
   display: grid;
@@ -1221,6 +1162,7 @@ textarea {
   margin: 0 auto;
 
   display: grid;
+
   grid-template-columns:
     repeat(4, 1fr);
 }
@@ -1274,9 +1216,13 @@ textarea {
   margin-top: 6px;
 
   font-size: 13px;
-
   line-height: 1.3;
 }
+
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
 
 .bottom-footer {
   width: min(92%, 1410px);
@@ -1291,6 +1237,7 @@ textarea {
     15px;
 
   display: grid;
+
   grid-template-columns:
     1fr 1fr 1fr;
 
@@ -1321,7 +1268,6 @@ textarea {
   fill: currentColor;
 
   font-size: 18px;
-
   font-weight: 700;
 
   font-family: Georgia, serif;
@@ -1330,10 +1276,7 @@ textarea {
 .footer-middle {
   text-align: center;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 12px;
 
@@ -1355,13 +1298,9 @@ textarea {
 .copyright {
   text-align: right;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 9px;
-
   line-height: 1.5;
 }
 
@@ -1383,8 +1322,7 @@ textarea {
 
   padding: 20px;
 
-  background:
-    rgba(1,15,25,.78);
+  background: rgba(1,15,25,.78);
 }
 
 .message-overlay.show {
@@ -1402,9 +1340,7 @@ textarea {
 
   background: var(--cream);
 
-  border:
-    2px solid var(--gold);
-
+  border: 2px solid var(--gold);
   border-radius: 10px;
 }
 
@@ -1417,9 +1353,7 @@ textarea {
     auto
     14px;
 
-  border:
-    4px solid rgba(5,36,61,.15);
-
+  border: 4px solid rgba(5,36,61,.15);
   border-top-color: var(--gold);
 
   border-radius: 50%;
@@ -1436,7 +1370,6 @@ textarea {
   margin-top: 8px;
 
   font-size: 15px;
-
   line-height: 1.4;
 }
 
@@ -1448,9 +1381,7 @@ textarea {
     auto
     0;
 
-  padding:
-    9px
-    20px;
+  padding: 9px 20px;
 
   border: 0;
 
@@ -1469,12 +1400,36 @@ textarea {
 
 
 /* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .main-nav {
+    gap: 17px;
+  }
+
+  .main-nav a {
+    font-size: 10px;
+  }
+
+  .study-area {
+    grid-template-columns:
+      170px 1fr;
+  }
+
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 760px) {
 
-  /* HEADER */
+  /* =======================================================
+     HEADER
+  ======================================================= */
 
   .header-inner {
     width: 100%;
@@ -1505,6 +1460,11 @@ textarea {
     display: flex;
   }
 
+
+  /* =======================================================
+     MOBILE NAVIGATION
+  ======================================================= */
+
   .main-nav {
     position: absolute;
 
@@ -1531,31 +1491,55 @@ textarea {
   }
 
   .main-nav a {
+    width: 100%;
+
     padding:
       13px
       5px;
 
     border-bottom:
       1px solid rgba(255,255,255,.08);
+
+    font-size: 11px;
   }
 
 
-  /* HERO */
+  /* =======================================================
+     MOBILE HERO
+  ======================================================= */
 
   .hero-section {
     min-height: 500px;
 
+    background-color: #e7bd7e;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(255,220,165,.02) 0%,
+        rgba(247,196,113,.01) 45%,
+        rgba(5,36,61,.18) 100%
+      ),
+      url("./hero-mountains.png");
+
+    background-repeat:
+      no-repeat,
+      no-repeat;
+
     background-position:
-      center,
-      center,
-      center;
+      center center,
+      center center;
+
+    background-size:
+      cover,
+      cover;
   }
 
   .hero-content {
     padding:
-      24px
+      20px
       12px
-      25px;
+      24px;
   }
 
   .hero-logo-wrap {
@@ -1576,12 +1560,7 @@ textarea {
   }
 
   .hero-content h1 {
-    font-size:
-      clamp(
-        49px,
-        13.5vw,
-        68px
-      );
+    font-size: clamp(49px, 13.5vw, 68px);
 
     letter-spacing: -4px;
   }
@@ -1626,7 +1605,9 @@ textarea {
   }
 
 
-  /* ASK SEEK KNOCK */
+  /* =======================================================
+     MOBILE ASK SEEK KNOCK
+  ======================================================= */
 
   .main-blue-section {
     padding-top: 17px;
@@ -1690,11 +1671,12 @@ textarea {
   }
 
 
-  /* REMINDER */
+  /* =======================================================
+     MOBILE REMINDER
+  ======================================================= */
 
   .reminder-card {
-    width:
-      calc(100% - 18px);
+    width: calc(100% - 18px);
 
     grid-template-columns:
       70px 1fr;
@@ -1742,19 +1724,18 @@ textarea {
     margin-top: 3px;
 
     font-size: 9px;
-
     line-height: 1.3;
   }
 
 
-  /* STUDY */
+  /* =======================================================
+     MOBILE STUDY
+  ======================================================= */
 
   .study-area {
-    width:
-      calc(100% - 28px);
+    width: calc(100% - 28px);
 
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 0;
   }
@@ -1770,9 +1751,9 @@ textarea {
   }
 
   .study-subtitle {
-    font-size: 12px;
-
     margin-bottom: 9px;
+
+    font-size: 12px;
   }
 
   #questionInput {
@@ -1811,11 +1792,12 @@ textarea {
   }
 
 
-  /* RESULTS */
+  /* =======================================================
+     MOBILE RESULTS
+  ======================================================= */
 
   .results-title {
-    width:
-      calc(100% - 20px);
+    width: calc(100% - 20px);
 
     gap: 5px;
   }
@@ -1835,8 +1817,7 @@ textarea {
   }
 
   .results-shell {
-    width:
-      calc(100% - 14px);
+    width: calc(100% - 14px);
 
     gap: 4px;
   }
@@ -1846,8 +1827,7 @@ textarea {
 
     overflow-x: auto;
 
-    scroll-snap-type:
-      x mandatory;
+    scroll-snap-type: x mandatory;
 
     gap: 9px;
 
@@ -1885,7 +1865,9 @@ textarea {
   }
 
 
-  /* FOOTER FEATURES */
+  /* =======================================================
+     MOBILE FOOTER
+  ======================================================= */
 
   .footer-features {
     width: 100%;
@@ -1924,11 +1906,9 @@ textarea {
   }
 
   .bottom-footer {
-    width:
-      calc(100% - 22px);
+    width: calc(100% - 22px);
 
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 12px;
 
@@ -1952,6 +1932,14 @@ textarea {
 
 @media (max-width: 400px) {
 
+  .header-inner {
+    min-height: 72px;
+
+    padding:
+      7px
+      14px;
+  }
+
   .brand-name {
     font-size: 27px;
   }
@@ -1961,8 +1949,20 @@ textarea {
     height: 42px;
   }
 
+  .mobile-menu-button {
+    width: 44px;
+  }
+
+  .mobile-menu-button span {
+    width: 27px;
+  }
+
   .hero-section {
     min-height: 475px;
+
+    background-position:
+      center center,
+      center center;
   }
 
   .hero-content h1 {
