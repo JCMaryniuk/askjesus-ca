@@ -1,6 +1,6 @@
 /* =========================================================
    ASKJESUS.CA
-   APP.JS — SCRIPTURE STUDY FRONT END
+   APP.JS — INTELLIGENT SCRIPTURE STUDY FRONT END
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileMenuButton.addEventListener("click", () => {
 
-      const isOpen =
+      const open =
         mainNavigation.classList.toggle("open");
 
       mobileMenuButton.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        open ? "true" : "false"
       );
 
     });
@@ -94,20 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return String(value)
 
       .replace(/&/g, "&amp;")
-
       .replace(/</g, "&lt;")
-
       .replace(/>/g, "&gt;")
-
       .replace(/"/g, "&quot;")
-
       .replace(/'/g, "&#039;");
 
   }
 
 
   /* =======================================================
-     MESSAGE / LOADING OVERLAY
+     MESSAGE OVERLAY
   ======================================================= */
 
   function showLoading() {
@@ -123,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (messageText) {
       messageText.textContent =
-        "Finding relevant Bible passages and gathering Scripture in context.";
+        "Finding the most relevant Bible passages and gathering Scripture in context.";
     }
 
     if (loadingSpinner) {
@@ -196,40 +192,107 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  if (messageClose) {
-
-    messageClose.addEventListener(
+  messageClose
+    ?.addEventListener(
       "click",
       hideMessage
     );
 
-  }
 
-
-  if (messageOverlay) {
-
-    messageOverlay.addEventListener(
+  messageOverlay
+    ?.addEventListener(
       "click",
       (event) => {
 
-        if (event.target === messageOverlay) {
+        if (
+          event.target ===
+          messageOverlay
+        ) {
           hideMessage();
         }
 
       }
     );
 
+
+  /* =======================================================
+     CLEAN QUESTION TYPE LABEL
+  ======================================================= */
+
+  function formatQuestionType(value) {
+
+    return String(value || "")
+
+      .replace(/_/g, " ")
+
+      .toLowerCase()
+
+      .replace(/\b\w/g, (letter) =>
+        letter.toUpperCase()
+      );
+
   }
 
 
   /* =======================================================
-     REMOVE OLD STUDY OVERVIEW
+     RELEVANCE LABELS
+  ======================================================= */
+
+  function relevanceLabel(level) {
+
+    if (level === "DIRECT") {
+      return "DIRECT TEACHING";
+    }
+
+    if (level === "FOUNDATIONAL") {
+      return "FOUNDATIONAL";
+    }
+
+    return "SUPPORTING";
+  }
+
+
+  function relevanceStyles(level) {
+
+    if (level === "DIRECT") {
+
+      return {
+        background: "#05243d",
+        color: "#ffffff",
+        border: "#05243d"
+      };
+
+    }
+
+    if (level === "FOUNDATIONAL") {
+
+      return {
+        background: "#d99a26",
+        color: "#ffffff",
+        border: "#d99a26"
+      };
+
+    }
+
+    return {
+      background: "#f5eee2",
+      color: "#8f5a0c",
+      border: "#d7a24c"
+    };
+
+  }
+
+
+  /* =======================================================
+     REMOVE OLD OVERVIEW
   ======================================================= */
 
   function removeOldStudyOverview() {
 
     const oldOverview =
-      document.getElementById("studyOverview");
+      document.getElementById(
+        "studyOverview"
+      );
 
     if (oldOverview) {
       oldOverview.remove();
@@ -245,7 +308,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderStudyOverview(data) {
 
     const resultsSection =
-      document.getElementById("scripture-results");
+      document.getElementById(
+        "scripture-results"
+      );
 
     if (!resultsSection) {
       return;
@@ -258,16 +323,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const panel =
       document.createElement("div");
 
-    panel.id = "studyOverview";
 
-    panel.className = "study-overview";
+    panel.id =
+      "studyOverview";
 
-
-    /*
-      Inline styling is intentional here so the new
-      study feature works even before we add its final
-      CSS styling.
-    */
 
     panel.style.width =
       "min(90%, 1100px)";
@@ -276,19 +335,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "18px auto 24px";
 
     panel.style.padding =
-      "22px";
+      "24px";
 
     panel.style.background =
       "#fffdf8";
 
     panel.style.border =
-      "1px solid #d9a044";
+      "1px solid #d99a26";
 
     panel.style.borderRadius =
-      "8px";
+      "10px";
 
     panel.style.boxShadow =
-      "0 6px 20px rgba(0,0,0,0.08)";
+      "0 8px 24px rgba(0,0,0,0.08)";
 
     panel.style.color =
       "#10283c";
@@ -301,6 +360,13 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
+    const shortAnswer =
+      escapeHTML(
+        data.shortAnswer ||
+        ""
+      );
+
+
     const overview =
       escapeHTML(
         data.overview ||
@@ -309,19 +375,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const principles =
-      Array.isArray(data.keyPrinciples)
+      Array.isArray(
+        data.keyPrinciples
+      )
         ? data.keyPrinciples
         : [];
 
 
+    const questionTypes =
+      Array.isArray(
+        data.questionType
+      )
+        ? data.questionType
+        : [];
+
+
     const relatedReferences =
-      Array.isArray(data.relatedReferences)
+      Array.isArray(
+        data.relatedReferences
+      )
         ? data.relatedReferences
         : [];
 
 
+    const safetyNote =
+      escapeHTML(
+        data.safetyNote ||
+        ""
+      );
+
+
     /* =====================================================
-       PRINCIPLES
+       QUESTION TYPES
+    ===================================================== */
+
+    const questionTypeHTML =
+      questionTypes
+
+        .map((type) => {
+
+          return `
+
+            <span
+              style="
+                display:inline-block;
+                margin:4px 5px 4px 0;
+                padding:6px 9px;
+                border:1px solid #d8a34a;
+                border-radius:3px;
+                background:#f7efe2;
+                color:#7d5515;
+                font-family:Arial,Helvetica,sans-serif;
+                font-size:9px;
+                font-weight:700;
+                letter-spacing:1px;
+              "
+            >
+              ${escapeHTML(formatQuestionType(type))}
+            </span>
+
+          `;
+
+        })
+
+        .join("");
+
+
+    /* =====================================================
+       KEY PRINCIPLES
     ===================================================== */
 
     const principleHTML =
@@ -333,7 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <li
               style="
-                margin:6px 0;
+                margin:7px 0;
                 line-height:1.45;
               "
             >
@@ -348,7 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       RELATED SCRIPTURES
+       RELATED REFERENCES
     ===================================================== */
 
     const relatedHTML =
@@ -360,14 +481,11 @@ document.addEventListener("DOMContentLoaded", () => {
             String(reference).trim();
 
 
-          /*
-            Link to the passage itself rather than
-            only the chapter.
-          */
-
           const url =
             "https://www.biblegateway.com/passage/?search=" +
-            encodeURIComponent(cleanReference);
+            encodeURIComponent(
+              cleanReference
+            );
 
 
           return `
@@ -380,13 +498,14 @@ document.addEventListener("DOMContentLoaded", () => {
               style="
                 display:inline-block;
                 margin:5px 5px 0 0;
-                padding:7px 10px;
+                padding:8px 11px;
 
                 border:1px solid #d49a32;
                 border-radius:4px;
 
-                color:#10283c;
                 background:#fff;
+
+                color:#10283c;
 
                 text-decoration:none;
 
@@ -396,12 +515,11 @@ document.addEventListener("DOMContentLoaded", () => {
                   sans-serif;
 
                 font-size:11px;
-                letter-spacing:.5px;
+
+                letter-spacing:.4px;
               "
             >
-
               ${escapeHTML(cleanReference)}
-
             </a>
 
           `;
@@ -412,14 +530,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BUILD OVERVIEW
+       BUILD PANEL
     ===================================================== */
 
     panel.innerHTML = `
 
       <div
         style="
-          color:#ae7117;
+          color:#a86b10;
 
           font-family:
             Arial,
@@ -431,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           letter-spacing:3px;
 
-          margin-bottom:6px;
+          margin-bottom:7px;
         "
       >
         SCRIPTURE STUDY
@@ -442,14 +560,14 @@ document.addEventListener("DOMContentLoaded", () => {
         style="
           font-size:
             clamp(
-              22px,
+              24px,
               3vw,
-              31px
+              34px
             );
 
-          margin:0 0 10px;
+          line-height:1.1;
 
-          letter-spacing:1px;
+          margin:0 0 12px;
 
           color:#10283c;
         "
@@ -459,20 +577,129 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       ${
+        questionTypeHTML
+
+          ? `
+
+            <div
+              style="
+                margin-bottom:17px;
+              "
+            >
+              ${questionTypeHTML}
+            </div>
+
+          `
+
+          : ""
+      }
+
+
+      ${
+        shortAnswer
+
+          ? `
+
+            <div
+              style="
+                margin:0 0 18px;
+
+                padding:16px 17px;
+
+                background:#05243d;
+
+                color:#ffffff;
+
+                border-left:
+                  4px solid #dda12e;
+
+                border-radius:5px;
+              "
+            >
+
+              <div
+                style="
+                  margin-bottom:6px;
+
+                  color:#efb847;
+
+                  font-family:
+                    Arial,
+                    Helvetica,
+                    sans-serif;
+
+                  font-size:9px;
+                  font-weight:700;
+
+                  letter-spacing:2px;
+                "
+              >
+                BIBLICAL SUMMARY
+              </div>
+
+              <p
+                style="
+                  margin:0;
+                  font-size:15px;
+                  line-height:1.55;
+                "
+              >
+                ${shortAnswer}
+              </p>
+
+            </div>
+
+          `
+
+          : ""
+      }
+
+
+      ${
         overview
 
           ? `
 
-            <p
+            <div
               style="
-                font-size:15px;
-                line-height:1.55;
-                margin:0 0 16px;
-                color:#263e52;
+                margin-bottom:18px;
               "
             >
-              ${overview}
-            </p>
+
+              <div
+                style="
+                  margin-bottom:6px;
+
+                  color:#a86b10;
+
+                  font-family:
+                    Arial,
+                    Helvetica,
+                    sans-serif;
+
+                  font-size:9px;
+                  font-weight:700;
+
+                  letter-spacing:2px;
+                "
+              >
+                HOW THESE PASSAGES FIT TOGETHER
+              </div>
+
+              <p
+                style="
+                  margin:0;
+
+                  color:#30475a;
+
+                  font-size:15px;
+                  line-height:1.55;
+                "
+              >
+                ${overview}
+              </p>
+
+            </div>
 
           `
 
@@ -487,7 +714,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div
               style="
-                padding-top:12px;
+                padding-top:14px;
 
                 border-top:
                   1px solid #eadac1;
@@ -496,35 +723,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
               <div
                 style="
+                  margin-bottom:8px;
+
+                  color:#a86b10;
+
                   font-family:
                     Arial,
                     Helvetica,
                     sans-serif;
 
                   font-size:10px;
-
-                  color:#a86c10;
-
                   font-weight:700;
 
                   letter-spacing:2px;
-
-                  margin-bottom:7px;
                 "
               >
-                KEY THEMES TO CONSIDER
+                KEY BIBLICAL THEMES
               </div>
-
 
               <ul
                 style="
+                  margin:0;
                   padding-left:20px;
 
-                  margin:0;
+                  color:#30475a;
 
                   font-size:14px;
-
-                  color:#263e52;
                 "
               >
                 ${principleHTML}
@@ -545,9 +769,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <div
               style="
-                margin-top:16px;
+                margin-top:17px;
 
-                padding-top:13px;
+                padding-top:14px;
 
                 border-top:
                   1px solid #eadac1;
@@ -556,20 +780,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
               <div
                 style="
+                  margin-bottom:5px;
+
+                  color:#a86b10;
+
                   font-family:
                     Arial,
                     Helvetica,
                     sans-serif;
 
                   font-size:10px;
-
-                  color:#a86c10;
-
                   font-weight:700;
 
                   letter-spacing:2px;
-
-                  margin-bottom:5px;
                 "
               >
                 RELATED PASSAGES FOR FURTHER STUDY
@@ -585,27 +808,72 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
 
+      ${
+        safetyNote
+
+          ? `
+
+            <div
+              style="
+                margin-top:18px;
+
+                padding:14px 15px;
+
+                border:
+                  1px solid #bd7d1c;
+
+                border-radius:5px;
+
+                background:#fff7e8;
+
+                color:#503c1a;
+
+                font-family:
+                  Arial,
+                  Helvetica,
+                  sans-serif;
+
+                font-size:12px;
+
+                line-height:1.5;
+              "
+            >
+
+              <strong>
+                Important:
+              </strong>
+
+              ${safetyNote}
+
+            </div>
+
+          `
+
+          : ""
+      }
+
+
       <p
         style="
-          margin:16px 0 0;
+          margin:17px 0 0;
 
-          padding-top:12px;
+          padding-top:13px;
 
           border-top:
             1px solid #eadac1;
+
+          color:#68737d;
 
           font-size:11px;
 
           line-height:1.45;
 
-          color:#68737d;
-
           font-style:italic;
         "
       >
-        Study notes help organize the passages by theme.
-        Read each passage and its surrounding chapter
-        carefully for full biblical context.
+        Study notes summarize biblical themes.
+        Read each passage and the surrounding chapter carefully
+        to understand the Scripture in full context.
       </p>
 
     `;
@@ -626,7 +894,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-      resultsSection.prepend(panel);
+      resultsSection.prepend(
+        panel
+      );
 
     }
 
@@ -634,7 +904,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     SCRIPTURE RESULTS
+     RENDER SCRIPTURE RESULTS
   ======================================================= */
 
   function renderResults(results) {
@@ -662,8 +932,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <p>
             No Scripture passages were found.
-            Try describing your question in
-            another way.
+            Try describing your question in another way.
           </p>
 
         </article>
@@ -712,6 +981,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
+      const relevanceLevel =
+        result.relevanceLevel ||
+        "SUPPORTING";
+
+
+      const relevance =
+        relevanceStyles(
+          relevanceLevel
+        );
+
+
       const chapterUrl =
         escapeHTML(
           result.chapterUrl ||
@@ -733,7 +1013,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div
           style="
-            color:#b47716;
+            display:inline-block;
+            align-self:flex-start;
+
+            margin-bottom:10px;
+
+            padding:5px 8px;
+
+            border:
+              1px solid ${relevance.border};
+
+            border-radius:3px;
+
+            background:
+              ${relevance.background};
+
+            color:
+              ${relevance.color};
+
+            font-family:
+              Arial,
+              Helvetica,
+              sans-serif;
+
+            font-size:8px;
+
+            font-weight:700;
+
+            letter-spacing:1.4px;
+          "
+        >
+          ${relevanceLabel(relevanceLevel)}
+        </div>
+
+
+        <div
+          style="
+            margin-bottom:6px;
+
+            color:#ad7014;
 
             font-family:
               Arial,
@@ -742,11 +1060,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             font-size:9px;
 
-            letter-spacing:2px;
-
             font-weight:700;
 
-            margin-bottom:7px;
+            letter-spacing:2px;
           "
         >
           ${purpose}
@@ -769,19 +1085,17 @@ document.addEventListener("DOMContentLoaded", () => {
             ? `
 
               <div
-                class="scripture-context"
-
                 style="
                   margin-top:14px;
 
                   padding:
                     11px 12px;
 
-                  background:
-                    #f6efe3;
-
                   border-left:
                     3px solid #d89a2a;
+
+                  background:
+                    #f6efe3;
 
                   color:
                     #3c4b58;
@@ -879,7 +1193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         data =
           await response.json();
 
-      } catch (error) {
+      } catch {
 
         throw new Error(
           "The Scripture study service returned an invalid response."
@@ -902,7 +1216,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       if (
-        !Array.isArray(data.results) ||
+        !Array.isArray(
+          data.results
+        ) ||
         data.results.length === 0
       ) {
 
@@ -916,25 +1232,15 @@ document.addEventListener("DOMContentLoaded", () => {
       hideMessage();
 
 
-      /*
-        Study summary
-      */
+      renderStudyOverview(
+        data
+      );
 
-      renderStudyOverview(data);
-
-
-      /*
-        Actual Scripture
-      */
 
       renderResults(
         data.results
       );
 
-
-      /*
-        Scroll to results
-      */
 
       const resultsSection =
         document.getElementById(
@@ -942,21 +1248,23 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-      setTimeout(() => {
+      setTimeout(
+        () => {
 
-        if (resultsSection) {
+          resultsSection
+            ?.scrollIntoView({
 
-          resultsSection.scrollIntoView({
+              behavior:
+                "smooth",
 
-            behavior: "smooth",
+              block:
+                "start"
 
-            block: "start"
+            });
 
-          });
-
-        }
-
-      }, 100);
+        },
+        100
+      );
 
 
     } catch (error) {
@@ -983,12 +1291,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     FORM
+     FORM SUBMISSION
   ======================================================= */
 
-  if (scriptureForm) {
-
-    scriptureForm.addEventListener(
+  scriptureForm
+    ?.addEventListener(
       "submit",
       async (event) => {
 
@@ -997,8 +1304,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const question =
           questionInput
-            ? questionInput.value.trim()
-            : "";
+            ?.value
+            .trim() ||
+          "";
 
 
         if (!question) {
@@ -1016,7 +1324,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        if (question.length < 4) {
+        if (
+          question.length < 4
+        ) {
 
           showMessage(
 
@@ -1038,61 +1348,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-  }
-
 
   /* =======================================================
-     HERO FIND SCRIPTURE BUTTON
+     HERO BUTTON
   ======================================================= */
 
-  const heroButton =
-    document.querySelector(
+  document
+    .querySelector(
       ".primary-cta"
-    );
-
-
-  if (heroButton) {
-
-    heroButton.addEventListener(
+    )
+    ?.addEventListener(
       "click",
       (event) => {
 
         event.preventDefault();
 
 
-        const studySection =
-          document.getElementById(
+        document
+          .getElementById(
             "study"
-          );
+          )
+          ?.scrollIntoView({
 
+            behavior:
+              "smooth",
 
-        if (studySection) {
-
-          studySection.scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "center"
+            block:
+              "center"
 
           });
 
-        }
 
+        setTimeout(
+          () => {
 
-        setTimeout(() => {
+            questionInput
+              ?.focus();
 
-          if (questionInput) {
-
-            questionInput.focus();
-
-          }
-
-        }, 600);
+          },
+          600
+        );
 
       }
     );
-
-  }
 
 
   /* =======================================================
@@ -1101,15 +1399,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getCardWidth() {
 
-    if (!scriptureResults) {
-      return 0;
-    }
-
-
     const card =
-      scriptureResults.querySelector(
-        ".scripture-card"
-      );
+      scriptureResults
+        ?.querySelector(
+          ".scripture-card"
+        );
 
 
     if (!card) {
@@ -1117,14 +1411,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    const styles =
+    const style =
       window.getComputedStyle(
         scriptureResults
       );
 
 
     const gap =
-      parseFloat(styles.gap) || 10;
+      parseFloat(
+        style.gap
+      ) || 10;
 
 
     return (
@@ -1137,11 +1433,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scrollResults(direction) {
 
-    if (!scriptureResults) {
-      return;
-    }
-
-
     const width =
       getCardWidth();
 
@@ -1151,46 +1442,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    scriptureResults.scrollBy({
+    scriptureResults
+      ?.scrollBy({
 
-      left:
-        direction *
-        width,
+        left:
+          direction *
+          width,
 
-      behavior:
-        "smooth"
+        behavior:
+          "smooth"
 
-    });
+      });
 
   }
 
 
-  if (previousResults) {
-
-    previousResults.addEventListener(
+  previousResults
+    ?.addEventListener(
       "click",
-      () => {
-
-        scrollResults(-1);
-
-      }
+      () =>
+        scrollResults(-1)
     );
 
-  }
 
-
-  if (nextResults) {
-
-    nextResults.addEventListener(
+  nextResults
+    ?.addEventListener(
       "click",
-      () => {
-
-        scrollResults(1);
-
-      }
+      () =>
+        scrollResults(1)
     );
-
-  }
 
 
   /* =======================================================
@@ -1201,7 +1481,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "keydown",
     (event) => {
 
-      if (event.key !== "Escape") {
+      if (
+        event.key !==
+        "Escape"
+      ) {
         return;
       }
 
@@ -1209,24 +1492,18 @@ document.addEventListener("DOMContentLoaded", () => {
       hideMessage();
 
 
-      if (mainNavigation) {
-
-        mainNavigation
-          .classList
-          .remove("open");
-
-      }
+      mainNavigation
+        ?.classList
+        .remove(
+          "open"
+        );
 
 
-      if (mobileMenuButton) {
-
-        mobileMenuButton
-          .setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-      }
+      mobileMenuButton
+        ?.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
     }
   );
