@@ -12,6 +12,15 @@ app.use(express.json({ limit: "50kb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
+function getOpenAIKey() {
+  return (
+    process.env.OPENAI_API_KEY ||
+    process.env.OPEN_API_KEY ||
+    process.env.OPENAI_KEY ||
+    ""
+  );
+}
+
 function cleanQuestion(value) {
   return String(value || "")
     .replace(/\s+/g, " ")
@@ -34,19 +43,18 @@ function cleanText(value, maxLength = 1000) {
 }
 
 function extractResponseText(data) {
-  // Responses API convenience field
   if (typeof data?.output_text === "string" && data.output_text.trim()) {
     return data.output_text.trim();
   }
 
-  // Otherwise inspect output items
   if (Array.isArray(data?.output)) {
     for (const item of data.output) {
       if (!Array.isArray(item?.content)) continue;
 
       for (const content of item.content) {
         if (
-          (content?.type === "output_text" || content?.type === "text") &&
+          (content?.type === "output_text" ||
+            content?.type === "text") &&
           typeof content?.text === "string"
         ) {
           return content.text.trim();
@@ -59,62 +67,50 @@ function extractResponseText(data) {
 }
 
 async function createStudyPlan(question) {
-  if (!process.env.OPENAI_API_KEY) {
+  const OPENAI_KEY = getOpenAIKey();
+
+  if (!OPENAI_KEY) {
     throw new Error(
-      "OPENAI_API_KEY is missing from the Render environment variables."
+      "No OpenAI API key was found. Checked OPENAI_API_KEY, OPEN_API_KEY, and OPENAI_KEY."
     );
   }
 
   const model = process.env.OPENAI_MODEL || "gpt-5.6-sol";
 
   console.log("====================================");
-  console.log("New Scripture study question:");
-  console.log(question);
-  console.log("Creating Scripture study with model:", model);
+  console.log("New Scripture study question:", question);
+  console.log("OpenAI model:", model);
+  console.log("API key detected: YES");
   console.log("====================================");
 
   const systemPrompt = `
 You are assisting a Christian Bible study tool called ASKJesus.ca.
 
-Your job is to understand the user's actual question and select Bible
+Your task is to understand the user's actual question and identify Bible
 passages that most directly address it.
 
-IMPORTANT RULES:
+Important rules:
 
-1. Scripture is the authority. Do not invent Bible verses.
-2. Return Bible REFERENCES, not fabricated quotations.
-3. Choose passages directly relevant to the user's actual subject.
-4. Do not default to generic wisdom passages when Scripture speaks
-   specifically about the subject.
-5. Consider the full biblical context, not isolated proof-texts.
-6. Present biblical teaching fairly and carefully.
-7. Distinguish Scripture from explanatory study notes.
-8. Do not claim that your study notes are God's words.
-9. Avoid pretending that every difficult question has a simplistic answer.
-10. Select exactly 6 primary passages.
-11. Select exactly 4 additional related references.
-12. The overview should explain why these passages matter to the question.
-13. Each contextNote should briefly explain the passage's relevance without
-    replacing the reader's responsibility to read the chapter.
+- Scripture is the authority.
+- Never invent Bible quotations.
+- Return Bible references only; actual Scripture text is fetched separately.
+- Choose passages directly relevant to the real question.
+- Avoid generic wisdom passages when Scripture speaks directly to the topic.
+- Consider context, not isolated proof texts.
+- Keep explanatory comments separate from Scripture.
+- Select exactly 6 primary passages.
+- Select exactly 4 related passages.
+- Give exactly 3 key principles.
 
-For marriage and divorce questions, prioritize direct biblical teaching
-where relevant, including passages such as:
-Genesis 2,
-Malachi 2,
-Matthew 5,
-Matthew 19,
-Mark 10,
-1 Corinthians 7,
-and Ephesians 5.
+For marriage and divorce questions, consider direct biblical teaching
+including Genesis 2, Malachi 2, Matthew 5, Matthew 19, Mark 10,
+1 Corinthians 7, and Ephesians 5 where relevant.
 
-For other subjects, identify the actual biblical topic first and select
-the strongest directly relevant passages.
-
-Return ONLY valid JSON matching this exact structure:
+Return ONLY valid JSON in this format:
 
 {
-  "topic": "short descriptive study topic",
-  "overview": "brief explanation of what Scripture addresses concerning the question",
+  "topic": "short descriptive topic",
+  "overview": "brief biblical study overview",
   "keyPrinciples": [
     "principle one",
     "principle two",
@@ -123,8 +119,8 @@ Return ONLY valid JSON matching this exact structure:
   "passages": [
     {
       "reference": "Bible reference",
-      "purpose": "short reason this passage matters",
-      "contextNote": "brief study context"
+      "purpose": "why this passage matters",
+      "contextNote": "brief contextual study note"
     }
   ],
   "relatedReferences": [
@@ -136,76 +132,55 @@ Return ONLY valid JSON matching this exact structure:
 }
 `;
 
-  const requestBody = {
-    model,
-    reasoning: {
-      effort: "medium"
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${OPENAI_KEY}`,
+      "Content-Type": "application/json"
     },
-    input: [
-      {
-        role: "system",
-        content: [
-          {
-            type: "input_text",
-            text: systemPrompt
-          }
-        ]
+    body: JSON.stringify({
+      model,
+      reasoning: {
+        effort: "medium"
       },
-      {
-        role: "user",
-        content: [
-          {
-            type: "input_text",
-            text: `Bible study question: ${question}`
-          }
-        ]
-      }
-    ]
-  };
-
-  let response;
-
-  try {
-    response = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(requestBody)
-    });
-  } catch (networkError) {
-    console.error("OPENAI NETWORK ERROR:", networkError);
-
-    throw new Error(
-      `OpenAI network request failed: ${networkError.message}`
-    );
-  }
+      input: [
+        {
+          role: "system",
+          content: [
+            {
+              type: "input_text",
+              text: systemPrompt
+            }
+          ]
+        },
+        {
+          role: "user",
+          content: [
+            {
+              type: "input_text",
+              text: `Bible study question: ${question}`
+            }
+          ]
+        }
+      ]
+    })
+  });
 
   const rawBody = await response.text();
 
-  console.log("OpenAI HTTP status:", response.status);
-
   if (!response.ok) {
-    console.error("OPENAI REQUEST FAILED");
-    console.error("Status:", response.status);
-    console.error("Response:", rawBody);
-
-    let apiMessage = rawBody;
+    let message = rawBody;
 
     try {
-      const parsedError = JSON.parse(rawBody);
-
-      apiMessage =
-        parsedError?.error?.message ||
-        parsedError?.message ||
+      const parsed = JSON.parse(rawBody);
+      message =
+        parsed?.error?.message ||
+        parsed?.message ||
         rawBody;
-    } catch {
-      // Keep raw response
-    }
+    } catch {}
 
     throw new Error(
-      `OpenAI API error (${response.status}): ${apiMessage}`
+      `OpenAI API error (${response.status}): ${message}`
     );
   }
 
@@ -213,59 +188,34 @@ Return ONLY valid JSON matching this exact structure:
 
   try {
     data = JSON.parse(rawBody);
-  } catch (error) {
-    console.error("Could not parse OpenAI response JSON:");
-    console.error(rawBody);
-
-    throw new Error(
-      `OpenAI returned an unreadable response: ${error.message}`
-    );
+  } catch {
+    throw new Error("OpenAI returned an unreadable response.");
   }
 
   const outputText = extractResponseText(data);
 
   if (!outputText) {
-    console.error("NO OUTPUT TEXT FOUND");
-    console.error(JSON.stringify(data, null, 2));
-
-    throw new Error(
-      "OpenAI returned a response but no readable study text was found."
-    );
+    throw new Error("OpenAI returned no readable study response.");
   }
 
-  console.log("OpenAI returned study plan text.");
+  let cleaned = outputText
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/i, "")
+    .replace(/\s*```$/i, "")
+    .trim();
 
   let study;
 
   try {
-    let cleanedOutput = outputText.trim();
-
-    // Remove markdown code fences if they appear
-    cleanedOutput = cleanedOutput
-      .replace(/^```json\s*/i, "")
-      .replace(/^```\s*/i, "")
-      .replace(/\s*```$/i, "")
-      .trim();
-
-    study = JSON.parse(cleanedOutput);
+    study = JSON.parse(cleaned);
   } catch (error) {
-    console.error("STUDY PLAN JSON PARSE FAILED");
-    console.error("Model output:");
-    console.error(outputText);
-
     throw new Error(
-      `The study plan could not be read as JSON: ${error.message}`
+      `Study response JSON could not be read: ${error.message}`
     );
-  }
-
-  if (!study || typeof study !== "object") {
-    throw new Error("The study plan was empty.");
   }
 
   if (!Array.isArray(study.passages) || study.passages.length === 0) {
-    throw new Error(
-      "The study plan did not contain any Scripture references."
-    );
+    throw new Error("No Scripture references were returned.");
   }
 
   return {
@@ -290,7 +240,7 @@ Return ONLY valid JSON matching this exact structure:
     relatedReferences: Array.isArray(study.relatedReferences)
       ? study.relatedReferences
           .slice(0, 4)
-          .map(cleanReference)
+          .map((item) => cleanReference(item))
           .filter(Boolean)
       : []
   };
@@ -313,30 +263,15 @@ function makeChapterLink(reference) {
 async function fetchScripture(passage) {
   const reference = cleanReference(passage.reference);
 
-  if (!reference) {
-    throw new Error("A Scripture reference was empty.");
-  }
-
-  const bibleURL =
-    `https://bible-api.com/${encodeURIComponent(reference)}` +
-    "?translation=web";
-
-  console.log("Fetching Scripture:", reference);
-
-  const response = await fetch(bibleURL);
+  const response = await fetch(
+    `https://bible-api.com/${encodeURIComponent(
+      reference
+    )}?translation=web`
+  );
 
   if (!response.ok) {
-    const errorBody = await response.text();
-
-    console.error(
-      "BIBLE API ERROR:",
-      reference,
-      response.status,
-      errorBody
-    );
-
     throw new Error(
-      `Bible text lookup failed for ${reference} (${response.status}).`
+      `Bible lookup failed for ${reference} (${response.status}).`
     );
   }
 
@@ -344,7 +279,7 @@ async function fetchScripture(passage) {
 
   if (!data?.text) {
     throw new Error(
-      `Bible text lookup returned no text for ${reference}.`
+      `Bible lookup returned no text for ${reference}.`
     );
   }
 
@@ -379,23 +314,10 @@ app.post("/api/scripture", async (req, res) => {
   }
 
   try {
-    console.log("");
-    console.log("************************************");
-    console.log("SCRIPTURE REQUEST RECEIVED");
-    console.log("Question:", question);
-    console.log("************************************");
-
     const study = await createStudyPlan(question);
-
-    console.log("Study topic:", study.topic);
-    console.log("Passages selected:", study.passages.length);
 
     const results = await Promise.all(
       study.passages.map(fetchScripture)
-    );
-
-    console.log(
-      `Scripture study completed successfully with ${results.length} passages.`
     );
 
     return res.json({
@@ -408,17 +330,7 @@ app.post("/api/scripture", async (req, res) => {
       relatedReferences: study.relatedReferences
     });
   } catch (error) {
-    console.error("");
-    console.error("!!!!!!!! SCRIPTURE STUDY ERROR !!!!!!!!");
-    console.error(error);
-    console.error("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-    /*
-      TEMPORARY DEBUGGING:
-      This intentionally sends the real server error to the browser.
-      After we identify the problem, we will replace this with the
-      normal friendly message again.
-    */
+    console.error("SCRIPTURE STUDY ERROR:", error);
 
     return res.status(500).json({
       success: false,
@@ -428,11 +340,22 @@ app.post("/api/scripture", async (req, res) => {
 });
 
 app.get("/api/health", (req, res) => {
+  const hasOpenAIAPIKey = Boolean(process.env.OPENAI_API_KEY);
+  const hasOpenAPIKey = Boolean(process.env.OPEN_API_KEY);
+  const hasOpenAIKey = Boolean(process.env.OPENAI_KEY);
+
   res.json({
     status: "ok",
     service: "ASKJesus.ca Scripture Study Tool",
     model: process.env.OPENAI_MODEL || "gpt-5.6-sol",
-    apiKeyConfigured: Boolean(process.env.OPENAI_API_KEY)
+
+    apiKeyConfigured: Boolean(getOpenAIKey()),
+
+    detectedVariables: {
+      OPENAI_API_KEY: hasOpenAIAPIKey,
+      OPEN_API_KEY: hasOpenAPIKey,
+      OPENAI_KEY: hasOpenAIKey
+    }
   });
 });
 
@@ -443,11 +366,9 @@ app.use((req, res) => {
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`ASKJesus.ca running on port ${PORT}`);
   console.log(
-    `OpenAI model: ${process.env.OPENAI_MODEL || "gpt-5.6-sol"}`
+    `API key detected: ${getOpenAIKey() ? "YES" : "NO"}`
   );
   console.log(
-    `OpenAI API key configured: ${
-      process.env.OPENAI_API_KEY ? "YES" : "NO"
-    }`
+    `Model: ${process.env.OPENAI_MODEL || "gpt-5.6-sol"}`
   );
 });
