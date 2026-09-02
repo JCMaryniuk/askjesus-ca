@@ -1,64 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1"
+    content="width=device-width, initial-scale=1.0"
   >
 
   <meta
     name="theme-color"
-    content="#041d32"
+    content="#031b30"
   >
-
-  <title>ASKJesus.ca — Ask. Seek. Knock.</title>
 
   <meta
     name="description"
-    content="Bring your questions. Search His Word. Find relevant Scripture. Matthew 7:7 — Ask, seek, knock."
+    content="ASKJesus.ca helps you find Bible passages relevant to your questions, struggles, decisions, and situations."
   >
+
+  <title>ASKJesus.ca | Ask. Seek. Knock.</title>
 
   <link
     rel="stylesheet"
-    href="/style.css?v=30"
+    href="/style.css?v=40"
   >
 </head>
 
+
 <body>
 
-<!-- ======================================================
+<!-- =====================================================
      HEADER
-======================================================= -->
+===================================================== -->
 
 <header class="topbar">
 
   <a
     class="brand"
-    href="#top"
-    aria-label="ASKJesus.ca home"
+    href="#home"
+    aria-label="ASKJesus.ca Home"
   >
 
-    <span class="brand-emblem" aria-hidden="true">
+    <span class="brand-emblem">
 
-      <svg viewBox="0 0 100 100">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
 
         <path
-          d="M50 6 89 73H11L50 6Z"
+          d="M50 5 L91 74 L9 74 Z"
           fill="none"
           stroke="currentColor"
-          stroke-width="7"
-          stroke-linejoin="round"
+          stroke-width="6"
         />
 
         <path
-          d="M50 94 11 27h78L50 94Z"
+          d="M50 95 L9 26 L91 26 Z"
           fill="none"
           stroke="currentColor"
-          stroke-width="7"
-          stroke-linejoin="round"
+          stroke-width="6"
         />
 
         <text
@@ -66,7 +65,7 @@
           y="57"
           text-anchor="middle"
           font-family="Georgia, serif"
-          font-size="22"
+          font-size="21"
           font-weight="700"
           fill="currentColor"
         >
@@ -84,9 +83,9 @@
   </a>
 
 
-  <nav aria-label="Primary navigation">
+  <nav aria-label="Main navigation">
 
-    <a href="#top">
+    <a class="active" href="#home">
       HOME
     </a>
 
@@ -116,53 +115,52 @@
 
 
 
-<main id="top">
+<main>
 
 
-<!-- ======================================================
+<!-- =====================================================
      HERO
-======================================================= -->
+===================================================== -->
 
-<section class="hero">
+<section
+  id="home"
+  class="hero"
+>
 
   <div class="hero-photo-layer"></div>
 
   <div class="hero-overlay"></div>
 
+
   <div class="hero-content">
 
 
-    <div
-      class="hero-emblem"
-      aria-hidden="true"
-    >
+    <div class="hero-emblem">
 
       <div class="emblem-rays"></div>
 
-      <svg viewBox="0 0 100 100">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
 
         <path
-          d="M50 6 89 73H11L50 6Z"
+          d="M50 5 L91 74 L9 74 Z"
           fill="none"
           stroke="currentColor"
           stroke-width="6"
-          stroke-linejoin="round"
         />
 
         <path
-          d="M50 94 11 27h78L50 94Z"
+          d="M50 95 L9 26 L91 26 Z"
           fill="none"
           stroke="currentColor"
           stroke-width="6"
-          stroke-linejoin="round"
         />
 
         <text
           x="50"
-          y="58"
+          y="57"
           text-anchor="middle"
           font-family="Georgia, serif"
-          font-size="23"
+          font-size="21"
           font-weight="700"
           fill="currentColor"
         >
@@ -175,7 +173,7 @@
 
 
     <h1>
-      ASK<span>Jesus.ca</span>
+      ASKJesus.ca
     </h1>
 
 
@@ -184,7 +182,7 @@
       <span></span>
 
       <div class="hero-book">
-        ♡
+        📖
       </div>
 
       <span></span>
@@ -213,7 +211,7 @@
       href="#ask"
     >
       FIND SCRIPTURE
-      <span aria-hidden="true">⌄</span>
+      <span>⌄</span>
     </a>
 
 
@@ -223,9 +221,9 @@
 
 
 
-<!-- ======================================================
-     ASK SEEK KNOCK
-======================================================= -->
+<!-- =====================================================
+     ASK / SEEK / KNOCK
+===================================================== -->
 
 <section
   id="meaning"
@@ -234,6 +232,8 @@
 
   <div class="meaning-inner">
 
+
+    <!-- ASK -->
 
     <article class="meaning-card">
 
@@ -260,6 +260,8 @@
 
 
 
+    <!-- SEEK -->
+
     <article class="meaning-card">
 
       <div class="letter">
@@ -273,7 +275,7 @@
       <div class="small-gold-line"></div>
 
       <p>
-        Seek and you<br>
+        Seek, and you<br>
         will find.
       </p>
 
@@ -284,6 +286,8 @@
     </article>
 
 
+
+    <!-- KNOCK -->
 
     <article class="meaning-card">
 
@@ -298,7 +302,7 @@
       <div class="small-gold-line"></div>
 
       <p>
-        Knock and the door<br>
+        Knock, and the door<br>
         will be opened to you.
       </p>
 
@@ -315,9 +319,9 @@
 
 
 
-<!-- ======================================================
+<!-- =====================================================
      REMINDER
-======================================================= -->
+===================================================== -->
 
 <section
   id="reminder"
@@ -370,17 +374,20 @@
 
 
 
-<!-- ======================================================
-     ASK AREA
-======================================================= -->
+<!-- =====================================================
+     QUESTION / SCRIPTURE FINDER
+===================================================== -->
 
 <section
   id="ask"
   class="ask-section"
 >
 
+
   <div class="ask-inner">
 
+
+    <!-- OPEN DOOR -->
 
     <div
       class="door-decoration"
@@ -388,6 +395,7 @@
     >
 
       <div class="door-rays"></div>
+
 
       <div class="door-frame">
 
@@ -400,6 +408,8 @@
     </div>
 
 
+
+    <!-- QUESTION AREA -->
 
     <div class="finder-area">
 
@@ -417,12 +427,13 @@
       </div>
 
 
+
       <div class="ask-card">
 
 
         <label
-          class="sr-only"
           for="input"
+          class="sr-only"
         >
           Your question or situation
         </label>
@@ -430,9 +441,11 @@
 
         <textarea
           id="input"
+          name="question"
           maxlength="2000"
           placeholder="For example: My friend has repeatedly lied to me. I forgive him, but should I immediately trust him again?"
         ></textarea>
+
 
 
         <div class="ask-actions">
@@ -455,6 +468,7 @@
           </button>
 
 
+
           <div class="scripture-note">
 
             <span
@@ -463,6 +477,7 @@
             >
               ✓
             </span>
+
 
             <p>
               We show Bible passages — not opinions or AI-written answers.
@@ -493,9 +508,9 @@
 
 
 
-  <!-- ====================================================
-       RESULTS
-  ===================================================== -->
+  <!-- ===================================================
+       SCRIPTURE RESULTS
+  ==================================================== -->
 
   <div class="results-area">
 
@@ -505,7 +520,7 @@
       <span></span>
 
       <div class="results-book">
-        ♡
+        📖
       </div>
 
       <h2>
@@ -513,7 +528,7 @@
       </h2>
 
       <div class="results-book">
-        ♡
+        📖
       </div>
 
       <span></span>
@@ -535,9 +550,9 @@
 
 
 
-<!-- ======================================================
+<!-- =====================================================
      EXPLORE / READ / PRAY / GROW
-======================================================= -->
+===================================================== -->
 
 <section
   id="steps"
@@ -547,9 +562,14 @@
   <div class="steps-inner">
 
 
+    <!-- EXPLORE -->
+
     <article class="step">
 
-      <div class="step-icon">
+      <div
+        class="step-icon"
+        aria-hidden="true"
+      >
         ⌕
       </div>
 
@@ -560,7 +580,8 @@
         </h3>
 
         <p>
-          Find answers to life's biggest questions.
+          Find answers to life's<br>
+          biggest questions.
         </p>
 
       </div>
@@ -569,10 +590,15 @@
 
 
 
+    <!-- READ -->
+
     <article class="step">
 
-      <div class="step-icon">
-        ♡
+      <div
+        class="step-icon"
+        aria-hidden="true"
+      >
+        📖
       </div>
 
       <div>
@@ -582,7 +608,8 @@
         </h3>
 
         <p>
-          Dive into the Bible and discover God's truth.
+          Dive into the Bible and<br>
+          discover God's truth.
         </p>
 
       </div>
@@ -591,9 +618,14 @@
 
 
 
+    <!-- PRAY -->
+
     <article class="step">
 
-      <div class="step-icon">
+      <div
+        class="step-icon"
+        aria-hidden="true"
+      >
         🙏
       </div>
 
@@ -604,7 +636,8 @@
         </h3>
 
         <p>
-          Talk to God. He hears you.
+          Talk to God.<br>
+          He hears you.
         </p>
 
       </div>
@@ -613,9 +646,14 @@
 
 
 
+    <!-- GROW -->
+
     <article class="step">
 
-      <div class="step-icon">
+      <div
+        class="step-icon"
+        aria-hidden="true"
+      >
         ♡
       </div>
 
@@ -626,7 +664,8 @@
         </h3>
 
         <p>
-          Build a deeper relationship with Jesus.
+          Build a deeper relationship<br>
+          with Jesus.
         </p>
 
       </div>
@@ -640,9 +679,9 @@
 
 
 
-<!-- ======================================================
+<!-- =====================================================
      ABOUT
-======================================================= -->
+===================================================== -->
 
 <section
   id="about"
@@ -652,27 +691,22 @@
   <div class="about-inner">
 
 
-    <div
-      class="about-emblem"
-      aria-hidden="true"
-    >
+    <div class="about-emblem">
 
-      <svg viewBox="0 0 100 100">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
 
         <path
-          d="M50 6 89 73H11L50 6Z"
+          d="M50 5 L91 74 L9 74 Z"
           fill="none"
           stroke="currentColor"
-          stroke-width="7"
-          stroke-linejoin="round"
+          stroke-width="6"
         />
 
         <path
-          d="M50 94 11 27h78L50 94Z"
+          d="M50 95 L9 26 L91 26 Z"
           fill="none"
           stroke="currentColor"
-          stroke-width="7"
-          stroke-linejoin="round"
+          stroke-width="6"
         />
 
         <text
@@ -680,7 +714,7 @@
           y="57"
           text-anchor="middle"
           font-family="Georgia, serif"
-          font-size="23"
+          font-size="21"
           font-weight="700"
           fill="currentColor"
         >
@@ -699,19 +733,23 @@
         ABOUT ASKJESUS.CA
       </p>
 
+
       <h2>
         Built to point you back to Scripture.
       </h2>
+
 
       <p>
         ASKJesus.ca helps you locate Bible passages relevant to
         the questions, struggles, decisions, and situations you are facing.
       </p>
 
+
       <p>
         Artificial intelligence is used only to help identify relevant
         Scripture references. The Bible text itself is retrieved separately.
       </p>
+
 
       <p>
         The goal is simple:
@@ -720,6 +758,7 @@
           pray, and continue seeking God.
         </strong>
       </p>
+
 
     </div>
 
@@ -733,9 +772,9 @@
 
 
 
-<!-- ======================================================
+<!-- =====================================================
      FOOTER
-======================================================= -->
+===================================================== -->
 
 <footer id="footer">
 
@@ -744,25 +783,23 @@
 
     <div class="footer-brand">
 
+
       <span class="footer-star">
 
-        <svg
-          viewBox="0 0 100 100"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 100 100" aria-hidden="true">
 
           <path
-            d="M50 6 89 73H11L50 6Z"
+            d="M50 5 L91 74 L9 74 Z"
             fill="none"
             stroke="currentColor"
-            stroke-width="7"
+            stroke-width="6"
           />
 
           <path
-            d="M50 94 11 27h78L50 94Z"
+            d="M50 95 L9 26 L91 26 Z"
             fill="none"
             stroke="currentColor"
-            stroke-width="7"
+            stroke-width="6"
           />
 
           <text
@@ -770,7 +807,7 @@
             y="57"
             text-anchor="middle"
             font-family="Georgia, serif"
-            font-size="23"
+            font-size="21"
             font-weight="700"
             fill="currentColor"
           >
@@ -781,9 +818,11 @@
 
       </span>
 
+
       <span>
         ASKJesus.ca
       </span>
+
 
     </div>
 
@@ -806,7 +845,7 @@
     <div class="footer-legal">
 
       <p>
-        ASKJesus.ca
+        © ASKJesus.ca
       </p>
 
       <p>
@@ -822,7 +861,13 @@
 
 
 
-<script src="/app.js?v=30"></script>
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script src="/app.js?v=40"></script>
+
 
 </body>
+
 </html>
