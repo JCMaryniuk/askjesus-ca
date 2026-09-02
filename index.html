@@ -1,266 +1,438 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1"
   >
 
   <meta
-    name="description"
-    content="ASKJesus.ca helps you search Scripture for passages relevant to your questions, struggles, decisions, and situations."
+    name="theme-color"
+    content="#071f34"
   >
 
-  <title>ASKJesus.ca | Ask. Seek. Knock.</title>
+  <title>ASKJesus.ca — Ask. Seek. Knock.</title>
 
+  <meta
+    name="description"
+    content="Bring your questions. Search His Word. Find relevant Scripture. Matthew 7:7 — Ask, seek, knock."
+  >
+
+  <!-- v20 forces the browser to load the new design -->
   <link
     rel="stylesheet"
-    href="/style.css?v=10"
+    href="/style.css?v=20"
   >
 </head>
 
+
 <body>
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
 
-  <header class="topbar">
+<!-- ======================================================
+     TOP NAVIGATION
+======================================================= -->
 
-    <a
-      class="brand"
-      href="/"
-      aria-label="ASKJesus.ca home"
-    >
-      <span class="brand-mark">ASK</span>
-      <span class="brand-name">ASKJesus.ca</span>
+<header class="topbar">
+
+  <a
+    class="brand"
+    href="#top"
+    aria-label="ASKJesus.ca home"
+  >
+
+    <span class="brand-emblem" aria-hidden="true">
+
+      <svg viewBox="0 0 100 100">
+
+        <path
+          d="M50 6 89 73H11L50 6Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M50 94 11 27h78L50 94Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linejoin="round"
+        />
+
+        <text
+          x="50"
+          y="57"
+          text-anchor="middle"
+          font-family="Georgia, serif"
+          font-size="22"
+          font-weight="700"
+          fill="currentColor"
+        >
+          ASK
+        </text>
+
+      </svg>
+
+    </span>
+
+    <span class="brand-text">
+      ASKJesus.ca
+    </span>
+
+  </a>
+
+
+  <nav aria-label="Primary navigation">
+
+    <a href="#top">
+      HOME
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">HOME</a>
-      <a href="#matthew">MATTHEW 7:7</a>
-      <a href="#ask">ASK</a>
-      <a href="#about">ABOUT</a>
-    </nav>
+    <a href="#meaning">
+      MATTHEW 7:7
+    </a>
 
-  </header>
+    <a href="#ask">
+      ASK
+    </a>
+
+    <a href="#about">
+      ABOUT
+    </a>
+
+  </nav>
+
+</header>
 
 
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
 
-  <section
-    id="home"
-    class="hero"
-  >
+<!-- ======================================================
+     MAIN PAGE
+======================================================= -->
 
-    <div class="hero-overlay"></div>
+<main id="top">
 
-    <div class="hero-content">
 
-      <div class="hero-logo">
-        <div class="hero-ask-mark">
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="hero-sun"></div>
+
+  <div class="mountains mountains-back"></div>
+
+  <div class="mountains mountains-front"></div>
+
+  <div class="hero-shade"></div>
+
+
+  <div class="hero-content">
+
+
+    <!-- Large ASK emblem -->
+
+    <div
+      class="hero-emblem"
+      aria-hidden="true"
+    >
+
+      <div class="emblem-rays"></div>
+
+      <svg viewBox="0 0 100 100">
+
+        <path
+          d="M50 6 89 73H11L50 6Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="6"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M50 94 11 27h78L50 94Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="6"
+          stroke-linejoin="round"
+        />
+
+        <text
+          x="50"
+          y="58"
+          text-anchor="middle"
+          font-family="Georgia, serif"
+          font-size="23"
+          font-weight="700"
+          fill="currentColor"
+        >
           ASK
-        </div>
+        </text>
 
-        <h1>
-          ASKJesus.ca
-        </h1>
+      </svg>
+
+    </div>
+
+
+    <!-- Main name -->
+
+    <h1>
+      ASK<span>Jesus.ca</span>
+    </h1>
+
+
+    <p class="hero-tagline">
+      BRING YOUR QUESTIONS
+      <span>•</span>
+      SEARCH HIS WORD
+      <span>•</span>
+      SEEK TRUTH
+    </p>
+
+
+    <div class="scripture-divider">
+
+      <span></span>
+
+      <div class="bible-symbol">
+        ♡
       </div>
 
-      <p class="hero-tagline">
-        BRING YOUR QUESTIONS
-        <span>•</span>
-        SEARCH HIS WORD
-        <span>•</span>
-        SEEK TRUTH
+      <span></span>
+
+    </div>
+
+
+    <blockquote>
+
+      Ask, and it will be given to you;<br>
+
+      seek, and you will find;<br>
+
+      knock, and it will be opened to you.
+
+    </blockquote>
+
+
+    <p class="hero-reference">
+      MATTHEW 7:7
+    </p>
+
+
+    <a
+      class="primary-cta"
+      href="#ask"
+    >
+      FIND SCRIPTURE
+      <span aria-hidden="true">↓</span>
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ASK • SEEK • KNOCK
+======================================================= -->
+
+<section
+  id="meaning"
+  class="meaning-section"
+>
+
+  <div class="meaning-inner">
+
+
+    <!-- ASK -->
+
+    <article class="meaning-card">
+
+      <div class="letter">
+        A
+      </div>
+
+      <h2>
+        ASK
+      </h2>
+
+      <div class="small-gold-line"></div>
+
+      <p>
+        Ask and it will<br>
+        be given to you.
       </p>
 
-      <div class="hero-divider">
-        <span></span>
-        <span class="book-icon">📖</span>
-        <span></span>
-      </div>
-
-      <blockquote>
-        “Ask, and it will be given to you;
-        seek, and you will find;
-        knock, and it will be opened for you.”
-      </blockquote>
-
-      <div class="hero-reference">
+      <small>
         MATTHEW 7:7
+      </small>
+
+    </article>
+
+
+
+    <!-- SEEK -->
+
+    <article class="meaning-card">
+
+      <div class="letter">
+        S
       </div>
 
-      <a
-        class="primary-cta"
-        href="#ask"
-      >
-        FIND SCRIPTURE
-      </a>
+      <h2>
+        SEEK
+      </h2>
+
+      <div class="small-gold-line"></div>
+
+      <p>
+        Seek and you<br>
+        will find.
+      </p>
+
+      <small>
+        MATTHEW 7:7
+      </small>
+
+    </article>
+
+
+
+    <!-- KNOCK -->
+
+    <article class="meaning-card">
+
+      <div class="letter">
+        K
+      </div>
+
+      <h2>
+        KNOCK
+      </h2>
+
+      <div class="small-gold-line"></div>
+
+      <p>
+        Knock and the door<br>
+        will be opened to you.
+      </p>
+
+      <small>
+        MATTHEW 7:7
+      </small>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     PRAYER REMINDER
+======================================================= -->
+
+<section class="reminder-section">
+
+  <div class="reminder-card">
+
+
+    <div
+      class="prayer-symbol"
+      aria-hidden="true"
+    >
+      ♱
+    </div>
+
+
+    <div class="reminder-copy">
+
+      <p class="reminder-title">
+        A REMINDER BEFORE YOU ASK
+      </p>
+
+
+      <p>
+        Pray and <strong>ASK the Holy Spirit first</strong>
+        to reveal His Word through Scripture and through your
+        thoughts.
+        <strong>Matthew 7:7</strong>
+      </p>
+
+
+      <p>
+        It is also <strong>important to read Scripture in its
+        full context.</strong>
+        A link to read the full chapter is provided with each
+        Scripture result.
+      </p>
 
     </div>
 
-  </section>
+
+  </div>
+
+</section>
 
 
-  <!-- =====================================================
-       ASK SEEK KNOCK
-       ===================================================== -->
 
-  <section
-    id="matthew"
-    class="ask-seek-knock-section"
-  >
+<!-- ======================================================
+     SCRIPTURE FINDER
+======================================================= -->
 
-    <div class="section-wrap">
+<section
+  id="ask"
+  class="ask-section"
+>
 
-      <div class="ask-grid">
-
-        <article>
-
-          <div class="letter">
-            A
-          </div>
-
-          <h2>
-            ASK
-          </h2>
-
-          <p>
-            Ask and it will be given to you.
-          </p>
-
-          <span class="mini-line"></span>
-
-          <small>
-            MATTHEW 7:7
-          </small>
-
-        </article>
+  <div class="ask-inner">
 
 
-        <article>
+    <!-- Door decoration -->
 
-          <div class="letter">
-            S
-          </div>
+    <div
+      class="door-decoration"
+      aria-hidden="true"
+    >
 
-          <h2>
-            SEEK
-          </h2>
+      <div class="door-rays"></div>
 
-          <p>
-            Seek and you will find.
-          </p>
+      <div class="door-shape">
 
-          <span class="mini-line"></span>
+        <div class="door-panel"></div>
 
-          <small>
-            MATTHEW 7:7
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <div class="letter">
-            K
-          </div>
-
-          <h2>
-            KNOCK
-          </h2>
-
-          <p>
-            Knock and the door will be opened to you.
-          </p>
-
-          <span class="mini-line"></span>
-
-          <small>
-            MATTHEW 7:7
-          </small>
-
-        </article>
+        <div class="door-knob"></div>
 
       </div>
 
     </div>
 
-  </section>
 
 
-  <!-- =====================================================
-       ASK SECTION
-       ===================================================== -->
+    <!-- Finder -->
 
-  <section
-    id="ask"
-    class="ask-section"
-  >
-
-    <div class="section-wrap narrow">
+    <div class="finder-area">
 
 
-      <!-- =================================================
-           REMINDER
-           ================================================= -->
-
-      <div class="spiritual-reminder">
-
-        <div class="reminder-icon">
-          ✝
-        </div>
-
-        <div class="reminder-content">
-
-          <p class="reminder-kicker">
-            A REMINDER BEFORE YOU ASK
-          </p>
-
-          <h2>
-            Pray first.
-          </h2>
-
-          <p>
-            Pray and ASK the Holy Spirit first to reveal
-            His Word through Scripture and through your thoughts.
-            <strong>Matthew 7:7</strong>
-          </p>
-
-          <p>
-            It is also <strong>important to read Scripture in its full context.</strong>
-            A link to read the full chapter is provided with each
-            Scripture result.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           QUESTION BOX
-           ================================================= -->
-
-      <div class="section-heading light">
+      <div class="ask-heading">
 
         <p class="kicker">
           WHAT ARE YOU FACING?
         </p>
 
-        <h2>
-          Ask your question.
-        </h2>
-
-        <p>
+        <p class="ask-subheading">
           Describe your question, struggle, decision,
-          situation, or subject.
+          or situation.
         </p>
 
       </div>
@@ -268,271 +440,427 @@
 
       <div class="ask-card">
 
-        <label for="input">
+
+        <label
+          class="sr-only"
+          for="input"
+        >
           Your question or situation
         </label>
 
+
         <textarea
           id="input"
-          name="question"
-          maxlength="2000"
-          placeholder="For example: My friend betrayed me several times. He apologized. I forgive him, but do I have to immediately trust him again?"
+          maxlength="1800"
+          placeholder="For example: My friend has repeatedly lied to me. I forgive him, but should I immediately trust him again?"
         ></textarea>
 
-        <div class="actions">
+
+        <div class="ask-actions">
+
 
           <button
             id="submit"
             type="button"
           >
+
+            <span
+              class="search-icon"
+              aria-hidden="true"
+            >
+              ⌕
+            </span>
+
             FIND SCRIPTURE
+
           </button>
 
-          <span
-            id="status"
-            aria-live="polite"
-          ></span>
+
+          <div class="scripture-note">
+
+            <span
+              class="note-shield"
+              aria-hidden="true"
+            >
+              ✓
+            </span>
+
+            <p>
+              We show Bible passages — not opinions or
+              AI-written answers.<br>
+
+              Always read Scripture in its full context.
+            </p>
+
+          </div>
+
 
         </div>
 
-        <div class="ask-note">
 
-          <span class="shield-icon">
-            ✓
-          </span>
+        <span
+          id="status"
+          role="status"
+          aria-live="polite"
+        ></span>
 
-          <p>
-            We show Bible passages — not opinions or an AI-written sermon.
-            Always read Scripture in its full context.
-          </p>
-
-        </div>
 
       </div>
 
 
-      <!-- =================================================
-           RESULTS
-           ================================================= -->
+    </div>
 
-      <div
-        id="results"
-        class="results"
-        aria-live="polite"
-      ></div>
+
+  </div>
+
+
+
+  <!-- ====================================================
+       RESULTS
+  ===================================================== -->
+
+  <div class="results-area">
+
+
+    <div class="results-heading">
+
+      <span></span>
+
+      <div class="results-book">
+        ♡
+      </div>
+
+      <h2>
+        SCRIPTURE RESULTS
+      </h2>
+
+      <div class="results-book">
+        ♡
+      </div>
+
+      <span></span>
 
     </div>
 
-  </section>
+
+    <section
+      id="results"
+      class="results"
+      aria-live="polite"
+    ></section>
 
 
-  <!-- =====================================================
-       HOW IT WORKS
-       ===================================================== -->
+  </div>
 
-  <section class="how-section">
 
-    <div class="section-wrap">
+</section>
 
-      <div class="section-heading centered">
 
-        <p class="kicker dark">
-          HOW IT WORKS
+
+<!-- ======================================================
+     EXPLORE • READ • PRAY • GROW
+======================================================= -->
+
+<section class="steps-section">
+
+  <div class="steps-inner">
+
+
+    <!-- EXPLORE -->
+
+    <article class="step">
+
+      <div class="step-icon">
+        ?
+      </div>
+
+      <div>
+
+        <h3>
+          EXPLORE
+        </h3>
+
+        <p>
+          Find answers to life's
+          biggest questions.
         </p>
 
-        <h2>
-          Search Scripture carefully.
-        </h2>
+      </div>
+
+    </article>
+
+
+
+    <!-- READ -->
+
+    <article class="step">
+
+      <div class="step-icon">
+        ♡
+      </div>
+
+      <div>
+
+        <h3>
+          READ
+        </h3>
+
+        <p>
+          Dive into the Bible and
+          discover God's truth.
+        </p>
 
       </div>
 
-
-      <div class="how-grid">
-
-        <article>
-
-          <div class="how-icon">
-            ?
-          </div>
-
-          <h3>
-            ASK
-          </h3>
-
-          <p>
-            Enter your question,
-            situation, or struggle.
-          </p>
-
-        </article>
+    </article>
 
 
-        <article>
 
-          <div class="how-icon">
-            🔎
-          </div>
+    <!-- PRAY -->
 
-          <h3>
-            SEEK
-          </h3>
+    <article class="step">
 
-          <p>
-            Relevant Bible passages are selected
-            for your specific question.
-          </p>
+      <div class="step-icon">
+        ♱
+      </div>
 
-        </article>
+      <div>
 
+        <h3>
+          PRAY
+        </h3>
 
-        <article>
-
-          <div class="how-icon">
-            📖
-          </div>
-
-          <h3>
-            READ
-          </h3>
-
-          <p>
-            Read the verses and open
-            the full chapter for context.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <div class="how-icon">
-            ♡
-          </div>
-
-          <h3>
-            GROW
-          </h3>
-
-          <p>
-            Pray, reflect, and seek to
-            apply God's Word faithfully.
-          </p>
-
-        </article>
+        <p>
+          Talk to God.
+          He hears you.
+        </p>
 
       </div>
+
+    </article>
+
+
+
+    <!-- GROW -->
+
+    <article class="step">
+
+      <div class="step-icon">
+        ♡
+      </div>
+
+      <div>
+
+        <h3>
+          GROW
+        </h3>
+
+        <p>
+          Build a deeper relationship
+          with Jesus.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ABOUT
+======================================================= -->
+
+<section
+  id="about"
+  class="about-section"
+>
+
+  <div class="about-inner">
+
+
+    <div
+      class="about-emblem"
+      aria-hidden="true"
+    >
+
+      <svg viewBox="0 0 100 100">
+
+        <path
+          d="M50 6 89 73H11L50 6Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M50 94 11 27h78L50 94Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="7"
+          stroke-linejoin="round"
+        />
+
+        <text
+          x="50"
+          y="57"
+          text-anchor="middle"
+          font-family="Georgia, serif"
+          font-size="23"
+          font-weight="700"
+          fill="currentColor"
+        >
+          ASK
+        </text>
+
+      </svg>
 
     </div>
 
-  </section>
 
 
-  <!-- =====================================================
-       ABOUT
-       ===================================================== -->
+    <div class="about-copy">
 
-  <section
-    id="about"
-    class="about-section"
-  >
+      <p class="about-kicker">
+        ABOUT ASKJESUS.CA
+      </p>
 
-    <div class="section-wrap">
-
-      <div class="about-grid">
-
-
-        <div class="about-main">
-
-          <p class="kicker dark">
-            ABOUT ASKJESUS.CA
-          </p>
-
-          <h2>
-            Scripture first.
-          </h2>
-
-          <p>
-            ASKJesus.ca helps you locate Bible passages
-            relevant to the questions, struggles, decisions,
-            and situations you are facing.
-          </p>
-
-          <p>
-            Artificial intelligence is used only to help identify
-            relevant Scripture references. The Bible text itself is
-            retrieved separately so you can examine God's Word directly.
-          </p>
-
-          <p>
-            The goal is simple:
-            point you to Scripture,
-            encourage you to read it in context,
-            and leave room for prayer, reflection,
-            and the leading of the Holy Spirit.
-          </p>
-
-        </div>
-
-
-        <aside class="about-verse">
-
-          <div class="about-book">
-            📖
-          </div>
-
-          <blockquote>
-            “Your word is a lamp to my feet
-            and a light to my path.”
-          </blockquote>
-
-          <span>
-            PSALM 119:105
-          </span>
-
-        </aside>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
-  <footer>
-
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-        ASKJesus.ca
-      </div>
+      <h2>
+        Built to point you back to Scripture.
+      </h2>
 
       <p>
-        Ask. Seek. Knock.
+        ASKJesus.ca is a Scripture-finding tool created to help
+        people bring their questions, struggles, and decisions
+        to God's Word.
       </p>
 
-      <p class="footer-verse">
-        Matthew 7:7
+      <p>
+        Artificial intelligence is used to help identify relevant
+        Bible passages. It does not replace prayer, the Holy Spirit,
+        Scripture itself, or wise pastoral and professional care.
       </p>
 
-      <p class="legal">
-        ASKJesus.ca helps locate Scripture.
-        Always read the Bible in context.
+      <p>
+        Our goal is simple:
+        <strong>
+          help you find Scripture, read it in context,
+          pray, and seek God for yourself.
+        </strong>
       </p>
 
     </div>
 
-  </footer>
+
+  </div>
+
+</section>
 
 
-  <!-- =====================================================
-       APP SCRIPT
-       ===================================================== -->
+</main>
 
-  <script src="/app.js?v=10"></script>
+
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+
+    <div class="footer-brand">
+
+      <span class="footer-star">
+
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+        >
+
+          <path
+            d="M50 6 89 73H11L50 6Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="7"
+          />
+
+          <path
+            d="M50 94 11 27h78L50 94Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="7"
+          />
+
+          <text
+            x="50"
+            y="57"
+            text-anchor="middle"
+            font-family="Georgia, serif"
+            font-size="23"
+            font-weight="700"
+            fill="currentColor"
+          >
+            ASK
+          </text>
+
+        </svg>
+
+      </span>
+
+      <span>
+        ASKJesus.ca
+      </span>
+
+    </div>
+
+
+
+    <div class="footer-message">
+
+      <strong>
+        Ask. Seek. Knock.
+      </strong>
+
+      <span>
+        MATTHEW 7:7
+      </span>
+
+    </div>
+
+
+
+    <div class="footer-legal">
+
+      <p>
+        ASKJesus.ca
+      </p>
+
+      <p>
+        Always read Scripture in context.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script src="/app.js?v=20"></script>
+
 
 </body>
 </html>
