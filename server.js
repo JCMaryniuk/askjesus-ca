@@ -1,310 +1,189 @@
 import express from "express";
+import cors from "cors";
 import OpenAI from "openai";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
 
-// --------------------------------------------------
-// FILE PATH SETUP
-// --------------------------------------------------
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// --------------------------------------------------
-// MIDDLEWARE
-// --------------------------------------------------
-
+app.use(cors());
 app.use(express.json());
-
-// Prevent server/config files from being served publicly
-app.get("/server.js", (req, res) => res.sendStatus(404));
-app.get("/package.json", (req, res) => res.sendStatus(404));
-app.get("/package-lock.json", (req, res) => res.sendStatus(404));
-app.get("/.env", (req, res) => res.sendStatus(404));
-
-// Serve the website files from the same folder as server.js
-app.use(express.static(__dirname));
-
-// Explicitly serve the homepage
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-// --------------------------------------------------
-// OPENAI
-// --------------------------------------------------
+app.use(express.static("public"));
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// --------------------------------------------------
-// HEALTH CHECK
-// --------------------------------------------------
-
 app.get("/health", (req, res) => {
-  res.json({
-    status: "ok",
-    version: "SCRIPTURE-API-3",
-  });
+  res.json({ status: "ok" });
 });
 
-// --------------------------------------------------
-// SCRIPTURE API
-// --------------------------------------------------
-
-app.post("/api/scripture", async (req, res) => {
+app.post("/ask", async (req, res) => {
   try {
-    const question = req.body?.question?.trim();
+    const { question } = req.body;
 
-    if (!question) {
+    if (!question || !question.trim()) {
       return res.status(400).json({
         error: "Please enter a question.",
       });
     }
 
-    console.log("SCRIPTURE QUESTION:", question);
-
     const response = await openai.responses.create({
-      model: "gpt-5.6-luna",
+      model: "gpt-5-mini",
 
       instructions: `
-You are the Scripture study engine for AskJesus.ca.
+You are a Scripture research assistant for AskJesus.ca.
 
-Your purpose is to help users understand what Scripture teaches.
+Your ONLY purpose is to help people find Bible passages relevant to their question.
 
-IMPORTANT:
+IMPORTANT PHILOSOPHY:
+AskJesus.ca should allow Scripture to speak for itself.
 
-Answer the user's actual question directly.
+Do NOT:
+- Give a biblical summary.
+- Give your own conclusion.
+- Tell the user what they should believe.
+- Interpret the verses for them.
+- Explain how the verses fit together.
+- Answer yes or no on behalf of Scripture.
+- Give pastoral advice unless the user specifically asks for passages about comfort, prayer, encouragement, etc.
+- Add denominational doctrine.
+- favor one Christian tradition when sincere Christians disagree.
 
-Do not begin with vague encouragement when Scripture allows a clear answer.
+Instead:
+- Identify the Bible passages most directly relevant to the user's question.
+- Include enough surrounding verses to preserve context.
+- Prefer passages that directly address the subject.
+- Include important passages from both Jesus and the rest of Scripture when appropriate.
+- When Scripture contains passages that are commonly considered together on a subject, include all major relevant passages rather than selecting only one side.
+- Let the reader come to their own conclusion from Scripture.
 
 For example:
 
-If asked:
+If the user asks:
 "Is divorce good?"
 
-A good short answer begins clearly:
+Do NOT answer:
+"No, divorce is not God's ideal."
 
-"No. Scripture does not present divorce as God's ideal for marriage."
+Instead return passages such as:
+- Genesis 2:24
+- Malachi 2:14-16
+- Matthew 5:31-32
+- Matthew 19:3-9
+- Mark 10:2-12
+- 1 Corinthians 7:10-16
 
-Then explain the relevant passages and important biblical context.
+The output must be valid JSON only.
 
-Always distinguish between:
-
-1. What Scripture explicitly teaches.
-2. Biblical principles.
-3. Reasonable interpretation.
-4. Areas where sincere Christians disagree.
-
-Do not pretend to be Jesus.
-
-Do not claim that God personally gave you new revelation.
-
-Do not say:
-"God told me..."
-"Jesus is telling you..."
-
-Instead say:
-"Scripture teaches..."
-"Jesus says in..."
-"A biblical principle is..."
-
-Be compassionate without weakening biblical teaching.
-
-Use Scripture in context.
-
-Return ONLY valid JSON.
-
-Do not use markdown code fences.
-Do not write anything outside the JSON.
-
-Return this structure:
+Use exactly this structure:
 
 {
-  "topic": "Short study title",
-  "shortAnswer": "Direct biblical answer to the user's question",
-  "overview": "Brief explanation of how the passages fit together",
-  "questionType": [
-    "wisdom"
-  ],
-  "keyPrinciples": [
-    "Biblical principle",
-    "Biblical principle",
-    "Biblical principle"
-  ],
-  "relatedReferences": [
-    "Book 1:1",
-    "Book 2:2"
-  ],
-  "safetyNote": "",
-  "results": [
+  "title": "What Scripture Says About [topic]",
+  "categories": ["Category 1", "Category 2"],
+  "passages": [
     {
-      "reference": "Book chapter:verse",
-      "text": "Scripture text",
-      "translation": "World English Bible",
-      "purpose": "Why this passage matters",
-      "contextNote": "Short explanation of the passage in context",
-      "relevanceLevel": "DIRECT",
-      "chapterUrl": ""
+      "reference": "Bible reference",
+      "text": "Bible passage text"
     }
   ]
 }
 
-RULES FOR RESULTS:
+RULES FOR TITLE:
+- Make it short and neutral.
+- Use wording such as "What Scripture Says About Divorce".
+- Do not place a conclusion in the title.
 
-Return 3 to 6 Bible passages.
+RULES FOR CATEGORIES:
+- Return 1 to 3 short categories.
+- Examples: Marriage, Relationships, Wisdom, Salvation, Faith, Prayer, Sin, Forgiveness, Doctrine.
 
-At least one should directly address the user's question whenever possible.
+RULES FOR PASSAGES:
+- Return approximately 4 to 8 of the strongest passages.
+- Prefer direct passages over loosely related ones.
+- Preserve context whenever possible.
+- Do not cherry-pick verses to force a conclusion.
+- Do not write explanations underneath the verses.
+- Do not add commentary.
+- Do not add a conclusion after the verses.
+- Do not fabricate Bible verses.
+- If you are uncertain of the exact wording of a verse, do not pretend certainty.
 
-relevanceLevel must be exactly one of:
+The purpose of the page is:
+QUESTION -> RELEVANT SCRIPTURE -> READER STUDIES THE SCRIPTURE.
+`,
 
-DIRECT
-FOUNDATIONAL
-SUPPORTING
-
-DIRECT:
-The passage directly addresses the issue.
-
-FOUNDATIONAL:
-The passage establishes an important biblical principle.
-
-SUPPORTING:
-The passage gives relevant supporting wisdom.
-
-Use World English Bible wording for quoted Scripture text.
-
-Do not invent Bible verses.
-
-Do not invent Bible references.
-
-Prefer passages that genuinely address the user's situation.
-
-Keep context notes concise and useful.
-
-For questions involving immediate danger, abuse, self-harm, violence,
-or emergencies, include an appropriate practical safety message in
-"safetyNote".
-
-Otherwise set "safetyNote" to an empty string.
-      `,
-
-      input: question,
+      input: question.trim(),
     });
 
-    const raw = response.output_text?.trim();
+    const rawText = response.output_text;
 
-    if (!raw) {
-      throw new Error("The AI returned an empty response.");
+    if (!rawText) {
+      throw new Error("OpenAI returned an empty response.");
     }
 
-    let data;
+    let result;
 
     try {
-      data = JSON.parse(raw);
-    } catch (error) {
-      console.error("INVALID JSON FROM OPENAI:");
-      console.error(raw);
+      let cleaned = rawText.trim();
 
-      throw new Error(
-        "The Scripture study response could not be read."
-      );
+      // Remove markdown code fences if the model adds them
+      cleaned = cleaned
+        .replace(/^```json\s*/i, "")
+        .replace(/^```\s*/i, "")
+        .replace(/\s*```$/i, "");
+
+      result = JSON.parse(cleaned);
+    } catch (parseError) {
+      console.error("Could not parse AI response:", rawText);
+
+      return res.status(500).json({
+        error: "The Scripture results could not be formatted correctly.",
+      });
     }
 
-    if (!Array.isArray(data.results) || data.results.length === 0) {
-      console.error("NO RESULTS RETURNED:");
-      console.error(data);
+    // Basic validation
+    if (
+      !result ||
+      !result.title ||
+      !Array.isArray(result.passages)
+    ) {
+      console.error("Unexpected response structure:", result);
 
-      throw new Error(
-        "No Scripture passages were generated."
-      );
+      return res.status(500).json({
+        error: "The Scripture results were incomplete.",
+      });
     }
 
-    const results = data.results.map((result) => {
-      const reference = result.reference || "Scripture";
+    // Make sure categories always exists
+    if (!Array.isArray(result.categories)) {
+      result.categories = [];
+    }
 
-      return {
-        reference,
+    // Remove any malformed passages
+    result.passages = result.passages.filter(
+      (passage) =>
+        passage &&
+        typeof passage.reference === "string" &&
+        typeof passage.text === "string"
+    );
 
-        text:
-          result.text || "",
+    if (result.passages.length === 0) {
+      return res.status(500).json({
+        error: "No Scripture passages were returned.",
+      });
+    }
 
-        translation:
-          result.translation || "World English Bible",
-
-        purpose:
-          result.purpose || "Study Passage",
-
-        contextNote:
-          result.contextNote || "",
-
-        relevanceLevel:
-          ["DIRECT", "FOUNDATIONAL", "SUPPORTING"].includes(
-            result.relevanceLevel
-          )
-            ? result.relevanceLevel
-            : "SUPPORTING",
-
-        chapterUrl:
-          result.chapterUrl ||
-          `https://www.biblegateway.com/passage/?search=${encodeURIComponent(
-            reference
-          )}`,
-      };
-    });
-
-    return res.status(200).json({
-      topic:
-        data.topic || "Scripture Study",
-
-      shortAnswer:
-        data.shortAnswer || "",
-
-      overview:
-        data.overview || "",
-
-      questionType:
-        Array.isArray(data.questionType)
-          ? data.questionType
-          : [],
-
-      keyPrinciples:
-        Array.isArray(data.keyPrinciples)
-          ? data.keyPrinciples
-          : [],
-
-      relatedReferences:
-        Array.isArray(data.relatedReferences)
-          ? data.relatedReferences
-          : [],
-
-      safetyNote:
-        data.safetyNote || "",
-
-      results,
-    });
-
+    res.json(result);
   } catch (error) {
-    console.error("SCRIPTURE API ERROR:", error);
+    console.error("ASK ERROR:", error);
 
-    return res.status(500).json({
-      error:
-        error?.message ||
-        "Something went wrong while preparing the Scripture study.",
+    res.status(500).json({
+      error: "Something went wrong while finding Scripture.",
     });
   }
 });
 
-// --------------------------------------------------
-// SERVER
-// --------------------------------------------------
-
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(
-    `SCRIPTURE API 3 running on port ${PORT}`
-  );
+app.listen(PORT, () => {
+  console.log(`AskJesus.ca server running on port ${PORT}`);
 });
