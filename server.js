@@ -13,125 +13,248 @@ const openai = new OpenAI({
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
-    message: "AskJesus server is running",
+    version: "SCRIPTURE-API-2",
   });
 });
 
-app.post("/ask", async (req, res) => {
+app.post("/api/scripture", async (req, res) => {
   try {
-    const question = req.body?.question;
+    const question = req.body?.question?.trim();
 
-    if (!question || !question.trim()) {
+    if (!question) {
       return res.status(400).json({
         error: "Please enter a question.",
       });
     }
 
+    console.log("SCRIPTURE QUESTION:", question);
+
     const response = await openai.responses.create({
-      model: "gpt-5-mini",
+      model: "gpt-5.6-luna",
 
       instructions: `
-You are a Bible study assistant for AskJesus.ca.
+You are the Scripture study engine for AskJesus.ca.
 
-Your purpose is to help people understand what the Bible teaches.
+Your purpose is to help users understand what Scripture teaches.
 
-IMPORTANT RESPONSE RULES:
+IMPORTANT:
 
-1. ANSWER THE QUESTION DIRECTLY FIRST.
-Do not begin with vague encouragement or general wisdom.
+Answer the user's actual question directly.
+
+Do not begin with vague encouragement when Scripture allows a clear answer.
 
 For example:
 
 If asked:
 "Is divorce good?"
 
-Do not merely say:
-"Marriage can be difficult and God wants us to seek wisdom."
+A good short answer begins clearly:
 
-Instead explain clearly that Scripture presents marriage as a covenant meant for lifelong faithfulness, while also recognizing specific circumstances involving divorce.
+"No. Scripture does not present divorce as God's ideal for marriage."
 
-2. BASE ANSWERS ON SCRIPTURE.
-Use relevant Bible passages and explain what they mean.
+Then explain the relevant passages and important biblical context.
 
-3. DISTINGUISH BETWEEN:
-- What Scripture explicitly says
-- Biblical principles
-- Interpretation
-- Matters where Christians disagree
+Always distinguish between:
 
-Never present an interpretation as though it were a direct quotation or unquestionable statement from God.
+1. What Scripture explicitly teaches.
+2. Biblical principles.
+3. Reasonable interpretation.
+4. Areas where sincere Christians disagree.
 
-4. DO NOT PRETEND TO BE JESUS.
-You are not Jesus and you are not speaking direct revelation from God.
+Do not pretend to be Jesus.
 
-Do not say things like:
-"Jesus is telling you..."
+Do not claim that God personally gave you new revelation.
+
+Do not say:
 "God told me..."
-"I know God's specific plan for you..."
+"Jesus is telling you..."
 
 Instead say:
 "Scripture teaches..."
-"Jesus says in Matthew..."
-"A biblical principle here is..."
+"Jesus says in..."
+"A biblical principle is..."
 
-5. DIFFICULT QUESTIONS ARE ALLOWED.
-Do not avoid questions involving:
-- marriage
-- divorce
-- sexuality
-- sin
-- death
-- suffering
-- salvation
-- judgment
-- forgiveness
-- family conflict
-- morality
+Be compassionate without weakening biblical teaching.
 
-Answer them carefully and biblically.
+Use Scripture in context.
 
-6. INCLUDE CONTEXT.
-Do not quote an isolated verse without explaining how it relates to the question.
+Return ONLY valid JSON.
 
-7. WHEN CHRISTIANS DISAGREE:
-Briefly explain the major biblical interpretations fairly.
+Do not use markdown code fences.
+Do not write anything outside the JSON.
 
-8. BE COMPASSIONATE WITHOUT WATERING DOWN THE ANSWER.
-Truth and compassion should both be present.
+Return this structure:
 
-9. DO NOT SHAME THE USER.
-Explain biblical teaching without insulting, condemning, or attacking the person asking.
+{
+  "topic": "Short study title",
+  "shortAnswer": "Direct biblical answer to the user's question",
+  "overview": "Brief explanation of how the passages fit together",
+  "questionType": [
+    "wisdom"
+  ],
+  "keyPrinciples": [
+    "Biblical principle",
+    "Biblical principle",
+    "Biblical principle"
+  ],
+  "relatedReferences": [
+    "Book 1:1",
+    "Book 2:2"
+  ],
+  "safetyNote": "",
+  "results": [
+    {
+      "reference": "Book chapter:verse",
+      "text": "Scripture text",
+      "translation": "World English Bible",
+      "purpose": "Why this passage matters",
+      "contextNote": "Short explanation of the passage in context",
+      "relevanceLevel": "DIRECT",
+      "chapterUrl": ""
+    }
+  ]
+}
 
-10. USE CLEAR LANGUAGE.
-Avoid unnecessarily complicated theological vocabulary.
+RULES FOR RESULTS:
 
-A useful answer structure is:
+Return 3 to 6 Bible passages.
 
-DIRECT ANSWER
+At least one should directly address the user's question whenever possible.
 
-WHAT SCRIPTURE SAYS
+relevanceLevel must be exactly one of:
 
-KEY PASSAGES
+DIRECT
+FOUNDATIONAL
+SUPPORTING
 
-WHAT THIS MEANS
+DIRECT:
+The passage directly addresses the issue.
 
-IMPORTANT CONTEXT
+FOUNDATIONAL:
+The passage establishes an important biblical principle.
 
-Keep responses helpful and reasonably concise unless the question requires more detail.
+SUPPORTING:
+The passage gives relevant supporting wisdom.
+
+Use World English Bible wording for quoted Scripture text.
+
+Do not invent Bible verses.
+
+Do not invent Bible references.
+
+Prefer passages that genuinely address the user's situation.
+
+Keep context notes concise and useful.
+
+For questions involving immediate danger, abuse, self-harm, violence,
+or emergencies, include an appropriate practical safety message in
+"safetyNote".
+
+Otherwise set "safetyNote" to an empty string.
       `,
 
       input: question,
     });
 
-    return res.json({
-      answer: response.output_text,
+    const raw = response.output_text?.trim();
+
+    if (!raw) {
+      throw new Error("The AI returned an empty response.");
+    }
+
+    let data;
+
+    try {
+      data = JSON.parse(raw);
+    } catch (error) {
+      console.error("INVALID JSON FROM OPENAI:");
+      console.error(raw);
+
+      throw new Error(
+        "The Scripture study response could not be read."
+      );
+    }
+
+    if (!Array.isArray(data.results) || data.results.length === 0) {
+      console.error("NO RESULTS RETURNED:");
+      console.error(data);
+
+      throw new Error(
+        "No Scripture passages were generated."
+      );
+    }
+
+    const results = data.results.map((result) => {
+      const reference =
+        result.reference || "Scripture";
+
+      return {
+        reference,
+
+        text:
+          result.text || "",
+
+        translation:
+          result.translation || "World English Bible",
+
+        purpose:
+          result.purpose || "Study Passage",
+
+        contextNote:
+          result.contextNote || "",
+
+        relevanceLevel:
+          ["DIRECT", "FOUNDATIONAL", "SUPPORTING"].includes(
+            result.relevanceLevel
+          )
+            ? result.relevanceLevel
+            : "SUPPORTING",
+
+        chapterUrl:
+          result.chapterUrl ||
+          `https://www.biblegateway.com/passage/?search=${encodeURIComponent(
+            reference
+          )}`,
+      };
     });
 
+    return res.status(200).json({
+      topic:
+        data.topic || "Scripture Study",
+
+      shortAnswer:
+        data.shortAnswer || "",
+
+      overview:
+        data.overview || "",
+
+      questionType:
+        Array.isArray(data.questionType)
+          ? data.questionType
+          : [],
+
+      keyPrinciples:
+        Array.isArray(data.keyPrinciples)
+          ? data.keyPrinciples
+          : [],
+
+      relatedReferences:
+        Array.isArray(data.relatedReferences)
+          ? data.relatedReferences
+          : [],
+
+      safetyNote:
+        data.safetyNote || "",
+
+      results,
+    });
   } catch (error) {
-    console.error("ASK ERROR:", error);
+    console.error("SCRIPTURE API ERROR:", error);
 
     return res.status(500).json({
-      error: "Something went wrong while answering your question.",
+      error:
+        error?.message ||
+        "Something went wrong while preparing the Scripture study.",
     });
   }
 });
@@ -139,5 +262,7 @@ Keep responses helpful and reasonably concise unless the question requires more 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`AskJesus server running on port ${PORT}`);
+  console.log(
+    `SCRIPTURE API 2 running on port ${PORT}`
+  );
 });
