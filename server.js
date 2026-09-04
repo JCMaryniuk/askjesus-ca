@@ -4,7 +4,7 @@ import OpenAI from "openai";
 const app = express();
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("."));
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
