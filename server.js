@@ -1,21 +1,59 @@
 import express from "express";
 import OpenAI from "openai";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 
+// --------------------------------------------------
+// FILE PATH SETUP
+// --------------------------------------------------
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// --------------------------------------------------
+// MIDDLEWARE
+// --------------------------------------------------
+
 app.use(express.json());
-app.use(express.static("public"));
+
+// Prevent server/config files from being served publicly
+app.get("/server.js", (req, res) => res.sendStatus(404));
+app.get("/package.json", (req, res) => res.sendStatus(404));
+app.get("/package-lock.json", (req, res) => res.sendStatus(404));
+app.get("/.env", (req, res) => res.sendStatus(404));
+
+// Serve the website files from the same folder as server.js
+app.use(express.static(__dirname));
+
+// Explicitly serve the homepage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// --------------------------------------------------
+// OPENAI
+// --------------------------------------------------
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// --------------------------------------------------
+// HEALTH CHECK
+// --------------------------------------------------
+
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
-    version: "SCRIPTURE-API-2",
+    version: "SCRIPTURE-API-3",
   });
 });
+
+// --------------------------------------------------
+// SCRIPTURE API
+// --------------------------------------------------
 
 app.post("/api/scripture", async (req, res) => {
   try {
@@ -185,8 +223,7 @@ Otherwise set "safetyNote" to an empty string.
     }
 
     const results = data.results.map((result) => {
-      const reference =
-        result.reference || "Scripture";
+      const reference = result.reference || "Scripture";
 
       return {
         reference,
@@ -248,6 +285,7 @@ Otherwise set "safetyNote" to an empty string.
 
       results,
     });
+
   } catch (error) {
     console.error("SCRIPTURE API ERROR:", error);
 
@@ -259,10 +297,14 @@ Otherwise set "safetyNote" to an empty string.
   }
 });
 
+// --------------------------------------------------
+// SERVER
+// --------------------------------------------------
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(
-    `SCRIPTURE API 2 running on port ${PORT}`
+    `SCRIPTURE API 3 running on port ${PORT}`
   );
 });
