@@ -29,6 +29,30 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function getChapterReference(reference) {
+  if (!reference || typeof reference !== "string") {
+    return "";
+  }
+
+  const match = reference.match(/^(.+?)\s+(\d+)(?::.*)?$/);
+
+  if (!match) {
+    return reference.trim();
+  }
+
+  return `${match[1].trim()} ${match[2]}`;
+}
+
+
+/* =========================================================
+   ASK SCRIPTURE
+========================================================= */
+
 app.post("/ask", async (req, res) => {
   try {
     const { question } = req.body;
@@ -40,187 +64,82 @@ app.post("/ask", async (req, res) => {
     }
 
     const response = await openai.responses.create({
-      model: "gpt-5-mini",
+      /*
+        Fast, lower-cost model.
+      */
+      model: "gpt-5.6-luna",
+
+      /*
+        This task is mostly passage selection + JSON formatting.
+        Turning reasoning off helps reduce latency.
+      */
+      reasoning: {
+        effort: "none",
+      },
+
+      text: {
+        verbosity: "low",
+      },
 
       instructions: `
-You are a Scripture research assistant for AskJesus.ca.
+You are the Scripture passage finder for AskJesus.ca.
 
-Your ONLY purpose is to help people find Bible passages relevant to their question.
+Your job is ONLY to return Bible passages relevant to the user's question.
+Do not give commentary, interpretation, advice, conclusions, doctrine, or a yes/no answer.
+Let Scripture speak for itself.
 
-IMPORTANT PHILOSOPHY:
-AskJesus.ca should allow Scripture to speak for itself.
+Return 4 to 5 of the strongest, most direct passages.
 
-Do NOT:
-- Give a biblical summary.
-- Give your own conclusion.
-- Tell the user what they should believe.
-- Interpret the verses for them.
-- Explain how the verses fit together.
-- Answer yes or no on behalf of Scripture.
-- Give pastoral advice unless the user specifically asks for passages about comfort, prayer, encouragement, etc.
-- Add denominational doctrine.
-- Favor one Christian tradition when sincere Christians disagree.
-
-Instead:
-- Identify the Bible passages most directly relevant to the user's question.
-- Include enough surrounding verses to preserve context.
-- Prefer passages that directly address the subject.
-- Include important passages from both Jesus and the rest of Scripture when appropriate.
-- When Scripture contains passages that are commonly considered together on a subject, include all major relevant passages rather than selecting only one side.
-- Let the reader come to their own conclusion from Scripture.
-
-For example:
-
-If the user asks:
-"Is divorce good?"
-
-Do NOT answer:
-"No, divorce is not God's ideal."
-
-Instead return passages such as:
-- Genesis 2:24
-- Malachi 2:14-16
-- Matthew 5:31-32
-- Matthew 19:3-9
-- Mark 10:2-12
-- 1 Corinthians 7:10-16
-
-RULES FOR USER TERMINOLOGY:
-- Preserve the important relationship terminology used in the user's question.
-- If the user asks about a "wife", use "wife" rather than replacing it with "partner".
-- If the user asks about a "husband", use "husband" rather than replacing it with "partner".
-- If the user asks about a "spouse", you may use "spouse".
-- Do not automatically replace husband, wife, marriage, man, or woman with the gender-neutral word "partner".
-- When the question concerns biblical marriage, prefer the Bible's relevant terminology such as husband, wife, marriage, man, and woman where appropriate.
-- Do not change the user's question into a broader or different relationship category.
-
-Examples:
-
-User:
-"I am single. What should I look for in a wife?"
-
-Good title:
-"What Scripture Says About Choosing a Wife"
-
-Do NOT use:
-"What Scripture Says About Choosing a Partner"
-
-User:
-"What should I look for in a husband?"
-
-Good title:
-"What Scripture Says About Choosing a Husband"
-
-Do NOT use:
-"What Scripture Says About Choosing a Partner"
-
-User:
-"What should I look for in a spouse?"
-
-Good title:
-"What Scripture Says About Choosing a Spouse"
-
-RULES FOR TITLE:
-- Make it short and neutral.
-- Preserve the user's important terminology.
-- Do not unnecessarily broaden or rewrite the subject.
+IMPORTANT:
+- Preserve the user's wording in the title.
 - If the user says wife, use wife.
 - If the user says husband, use husband.
 - If the user says spouse, use spouse.
-- Only use partner when the user's question uses partner or when that word is genuinely necessary.
-- Use wording such as "What Scripture Says About Divorce".
-- Do not place a conclusion in the title.
+- Do not replace wife or husband with partner unless the user used partner.
+- Prefer direct passages over loosely related passages.
+- Keep displayed passage text concise.
+- Do not quote an entire long chapter.
+- Do not fabricate Bible text.
 
-RULES FOR CATEGORIES:
-- Return 1 to 3 short categories.
-- Examples: Marriage, Relationships, Wisdom, Salvation, Faith, Prayer, Sin, Forgiveness, Doctrine, Character.
+For EACH passage return:
+- reference: the specific verse or short passage shown on the page.
+- text: the text of that specific reference only.
+- contextReference: the smallest meaningful surrounding paragraph or thought-unit that helps the reader understand the reference.
+- chapterReference: book and chapter only.
 
-RULES FOR PASSAGES:
-- Return approximately 4 to 6 of the strongest passages.
-- Prefer direct passages over loosely related ones.
-- Do not cherry-pick verses to force a conclusion.
-- Do not write explanations underneath the verses.
-- Do not add commentary.
-- Do not add a conclusion after the verses.
-- Do not fabricate Bible verses.
-- If you are uncertain of the exact wording of a verse, do not pretend certainty.
-- Keep the displayed "text" focused on the specific "reference". The context link will provide surrounding verses.
+CONTEXT RULES:
+- Usually contextReference should be about 3 to 8 verses.
+- It must include the displayed reference.
+- Do not use the whole chapter unless the entire chapter is genuinely the necessary context.
+- Prefer a natural paragraph, teaching unit, or immediate thought.
+- It is okay to use more than 8 verses when a complete paragraph or teaching unit requires it.
 
-RULES FOR CONTEXT REFERENCES:
+Examples:
+- Proverbs 19:14 -> contextReference "Proverbs 19:13-15", chapterReference "Proverbs 19"
+- Proverbs 12:4 -> contextReference "Proverbs 12:2-5", chapterReference "Proverbs 12"
+- 2 Corinthians 6:14 -> contextReference "2 Corinthians 6:14-18", chapterReference "2 Corinthians 6"
+- Galatians 5:22-23 -> contextReference "Galatians 5:16-26", chapterReference "Galatians 5"
 
-Every passage must include:
-
-1. "reference"
-   - The specific verse or short passage displayed to the reader.
-
-2. "contextReference"
-   - A short surrounding passage that gives enough context to understand the displayed verse.
-   - Prefer the natural paragraph or immediate thought-unit surrounding the verse.
-   - Usually this should be approximately 3 to 8 verses.
-   - Do NOT automatically use the entire chapter.
-   - Do NOT return very large ranges simply because the verse occurs in a long chapter.
-   - Include more verses only when they are genuinely necessary to preserve the author's thought.
-   - Never create a verse range that crosses beyond the actual verses in that chapter.
-   - The contextReference must contain the displayed reference.
-
-3. "chapterReference"
-   - The book and chapter only.
-   - This is used for the separate "Read full chapter" button.
-
-EXAMPLES:
-
-If the displayed passage is:
-"Proverbs 19:14"
-
-Good:
-"contextReference": "Proverbs 19:13-15"
-"chapterReference": "Proverbs 19"
-
-Avoid:
-"contextReference": "Proverbs 19:1-29"
-
-If the displayed passage is:
-"Proverbs 12:4"
-
-Good:
-"contextReference": "Proverbs 12:2-5"
-"chapterReference": "Proverbs 12"
-
-If the displayed passage is:
-"2 Corinthians 6:14"
-
-Good:
-"contextReference": "2 Corinthians 6:14-18"
-"chapterReference": "2 Corinthians 6"
-
-If the displayed passage is:
-"Galatians 5:22-23"
-
-Good:
-"contextReference": "Galatians 5:16-26"
-"chapterReference": "Galatians 5"
-
-If a complete biblical paragraph is longer than 8 verses, it is acceptable to return the complete paragraph when shortening it would remove important context.
-
-The output must be valid JSON only.
-
-Use exactly this structure:
+Return VALID JSON ONLY in exactly this shape:
 
 {
   "title": "What Scripture Says About [topic]",
   "categories": ["Category 1", "Category 2"],
   "passages": [
     {
-      "reference": "Proverbs 19:14",
+      "reference": "Bible reference",
       "text": "Bible passage text",
-      "contextReference": "Proverbs 19:13-15",
-      "chapterReference": "Proverbs 19"
+      "contextReference": "Surrounding passage reference",
+      "chapterReference": "Book and chapter"
     }
   ]
 }
 
-The purpose of the page is:
-QUESTION -> RELEVANT SCRIPTURE -> READER STUDIES THE SCRIPTURE.
+Categories:
+- Return 1 to 3 short categories.
+
+Do not include markdown.
+Do not include code fences.
 `,
 
       input: question.trim(),
@@ -267,12 +186,40 @@ QUESTION -> RELEVANT SCRIPTURE -> READER STUDIES THE SCRIPTURE.
       result.categories = [];
     }
 
-    result.passages = result.passages.filter(
-      (passage) =>
-        passage &&
-        typeof passage.reference === "string" &&
-        typeof passage.text === "string"
-    );
+    result.categories = result.categories
+      .filter((category) => typeof category === "string")
+      .slice(0, 3);
+
+    result.passages = result.passages
+      .filter(
+        (passage) =>
+          passage &&
+          typeof passage.reference === "string" &&
+          typeof passage.text === "string"
+      )
+      .slice(0, 5)
+      .map((passage) => {
+        const reference = passage.reference.trim();
+
+        const contextReference =
+          typeof passage.contextReference === "string" &&
+          passage.contextReference.trim()
+            ? passage.contextReference.trim()
+            : reference;
+
+        const chapterReference =
+          typeof passage.chapterReference === "string" &&
+          passage.chapterReference.trim()
+            ? passage.chapterReference.trim()
+            : getChapterReference(reference);
+
+        return {
+          reference,
+          text: passage.text.trim(),
+          contextReference,
+          chapterReference,
+        };
+      });
 
     if (result.passages.length === 0) {
       return res.status(500).json({
@@ -280,34 +227,8 @@ QUESTION -> RELEVANT SCRIPTURE -> READER STUDIES THE SCRIPTURE.
       });
     }
 
-    // Fallbacks keep both links working even if a field is omitted.
-    result.passages = result.passages.map((passage) => {
-      const reference = passage.reference.trim();
-
-      if (
-        !passage.contextReference ||
-        typeof passage.contextReference !== "string"
-      ) {
-        passage.contextReference = reference;
-      }
-
-      if (
-        !passage.chapterReference ||
-        typeof passage.chapterReference !== "string"
-      ) {
-        const chapterMatch = reference.match(
-          /^(.+?\s+\d+)(?::\d+(?:-\d+)?)?$/
-        );
-
-        passage.chapterReference = chapterMatch
-          ? chapterMatch[1]
-          : reference;
-      }
-
-      return passage;
-    });
-
     res.json(result);
+
   } catch (error) {
     console.error("ASK ERROR:", error);
 
@@ -316,6 +237,11 @@ QUESTION -> RELEVANT SCRIPTURE -> READER STUDIES THE SCRIPTURE.
     });
   }
 });
+
+
+/* =========================================================
+   START SERVER
+========================================================= */
 
 const PORT = process.env.PORT || 3000;
 
