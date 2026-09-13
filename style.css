@@ -1527,205 +1527,240 @@ footer span {
   }
 
 }
+
+
 /* =========================================================
-   FINAL DESKTOP BLEND + QUOTE POSITION
-========================================================= */
-
-@media (min-width: 769px) {
-
-  .hero-inner {
-    height: 500px;
-    grid-template-columns: 41% 59%;
-  }
-
-  .hero-copy {
-    padding-top: 62px;
-  }
-
-  .jesus-image-wrap {
-    height: 500px;
-    overflow: hidden;
-    background: transparent;
-  }
-
-  .jesus-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 60% center;
-  }
-
-  .jesus-image-wrap::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-
-    background:
-      linear-gradient(
-        90deg,
-        #063e5c 0%,
-        rgba(6, 62, 92, 0.96) 6%,
-        rgba(6, 62, 92, 0.68) 16%,
-        rgba(6, 62, 92, 0.20) 30%,
-        transparent 46%
-      );
-  }
-
-  .jesus-image-wrap::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 150px;
-    z-index: 3;
-    pointer-events: none;
-
-    background:
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(7, 71, 101, 0.38) 45%,
-        #074765 100%
-      );
-  }
-
-  .scripture-quote {
-    margin: -5px auto 28px;
-    width: min(900px, 70%);
-  }
-
-  .scripture-quote p {
-    font-size: 27px;
-    line-height: 1.25;
-  }
-}
-/* =========================================================
-   FINAL DESKTOP POLISH
-   MOBILE UNCHANGED
-========================================================= */
-
-@media (min-width: 769px) {
-
-  .hero-inner {
-    width: 100%;
-    height: 540px;
-
-    grid-template-columns: 40% 60%;
-
-    margin: 0;
-  }
-
-  .hero-copy {
-    padding-top: 58px;
-    padding-left: 4.2vw;
-  }
-
-  .jesus-image-wrap {
-    height: 540px;
-    overflow: hidden;
-  }
-
-  .jesus-image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: 58% center;
-  }
-
-  .jesus-image-wrap::before {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(3, 47, 73, 1) 0%,
-        rgba(3, 47, 73, 0.88) 7%,
-        rgba(3, 47, 73, 0.56) 18%,
-        rgba(3, 47, 73, 0.18) 31%,
-        transparent 47%
-      );
-  }
-
-  .jesus-image-wrap::after {
-    height: 180px;
-
-    background:
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(7, 71, 101, 0.35) 42%,
-        #074765 100%
-      );
-  }
-
-  .scripture-quote {
-    width: min(820px, 58%);
-
-    margin:
-      -82px
-      auto
-      22px;
-
-    z-index: 10;
-  }
-
-  .scripture-quote p {
-    font-size: 27px;
-    line-height: 1.22;
-  }
-
-  .verse-reference {
-    margin-top: 12px;
-  }
-
-}
-/* =========================================================
-   DESKTOP TEST / FINAL POSITION
+   CLEAN DESKTOP HERO
+   ONE FULL-WIDTH COMPOSITION
+   MOBILE RULES ABOVE REMAIN UNCHANGED
 ========================================================= */
 
 @media screen and (min-width: 769px) {
 
-  .hero-inner {
-    width: 100% !important;
-    height: 600px !important;
-    margin: 0 !important;
-
-    display: grid !important;
-    grid-template-columns: 36% 64% !important;
+  /* Header stays clean and separate */
+  .site-header {
+    width: 100%;
+    height: 125px;
+    background: #01283f;
+    position: relative;
+    z-index: 30;
   }
 
+  .header-inner {
+    width: min(1600px, calc(100% - 100px));
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  /* One continuous hero instead of text + image columns */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 55px;
+    background: #074765;
+  }
+
+  .hero-glow {
+    display: none;
+  }
+
+  .hero-inner {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+    height: 650px;
+    min-height: 650px;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+
+    overflow: hidden;
+
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(7, 71, 101, 0) 62%,
+        rgba(7, 71, 101, 0.38) 78%,
+        #074765 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(3, 47, 73, 0.98) 0%,
+        rgba(3, 47, 73, 0.92) 24%,
+        rgba(3, 47, 73, 0.62) 37%,
+        rgba(3, 47, 73, 0.20) 50%,
+        rgba(3, 47, 73, 0) 64%
+      ),
+      url("/IMG_5276.png");
+
+    background-size:
+      100% 100%,
+      100% 100%,
+      100% auto;
+
+    background-position:
+      center center,
+      center center,
+      center top;
+
+    background-repeat:
+      no-repeat,
+      no-repeat,
+      no-repeat;
+  }
+
+  /* The artwork is already in the hero background */
+  .jesus-image-wrap {
+    display: none;
+  }
+
+  /* Left-side copy */
   .hero-copy {
-    padding: 55px 0 0 5vw !important;
-    width: 100% !important;
+    position: relative;
+    z-index: 5;
+
+    width: 42%;
+    max-width: 610px;
+
+    padding:
+      62px
+      0
+      0
+      5vw;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 6px;
   }
 
   .hero-copy h1 {
-    font-size: 76px !important;
-    line-height: 0.9 !important;
+    max-width: 560px;
+
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(64px, 4.7vw, 86px);
+    font-weight: 700;
+
+    line-height: 0.91;
+    letter-spacing: -3px;
   }
 
-  .jesus-image-wrap {
-    height: 600px !important;
-    width: 100% !important;
+  .hero-description {
+    width: 100%;
+    max-width: 500px;
+
+    margin-top: 28px;
+
+    color: white;
+
+    font-size: clamp(20px, 1.45vw, 25px);
+    line-height: 1.45;
   }
 
-  .jesus-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: 55% center !important;
+  .small-gold-line {
+    width: 74px;
+    height: 3px;
+
+    margin-top: 22px;
+
+    background: var(--gold);
   }
 
+  .hero-subline {
+    width: 520px;
+    max-width: 100%;
+
+    margin-top: 16px;
+
+    color: #d9e5ec;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    letter-spacing: 3.5px;
+    white-space: nowrap;
+  }
+
+  /* Pull Matthew 7:7 into the bottom fade like the reference */
   .scripture-quote {
-    width: 760px !important;
-    margin: -125px auto 25px !important;
-    position: relative !important;
-    z-index: 20 !important;
+    position: relative;
+    z-index: 10;
+
+    width: min(820px, 62%);
+
+    margin:
+      -145px
+      auto
+      30px;
+
+    text-align: center;
   }
 
   .scripture-quote p {
-    font-size: 27px !important;
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+
+    font-size: clamp(23px, 1.75vw, 30px);
+    line-height: 1.27;
+  }
+
+  .verse-reference {
+    margin-top: 14px;
+  }
+
+  /* Keep lower sections balanced on desktop */
+  .ask-cards {
+    width: min(1450px, calc(100% - 90px));
+    margin-top: 24px;
+  }
+
+  .question-area {
+    width: min(1450px, calc(100% - 90px));
+  }
+
+  .features {
+    width: min(1300px, calc(100% - 90px));
+  }
+}
+
+/* Large desktop refinement */
+@media screen and (min-width: 1400px) {
+
+  .hero-inner {
+    height: 690px;
+    min-height: 690px;
+
+    background-size:
+      100% 100%,
+      100% 100%,
+      100% auto;
+
+    background-position:
+      center center,
+      center center,
+      center top;
+  }
+
+  .hero-copy {
+    padding-top: 72px;
+  }
+
+  .scripture-quote {
+    margin-top: -155px;
   }
 }
