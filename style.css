@@ -1983,3 +1983,192 @@ footer span {
   }
 
 }
+/* =========================================================
+   FINAL HERO FIX FOR IMG_5276.PNG
+   KEEP THIS AT THE VERY BOTTOM
+========================================================= */
+
+@media screen and (max-width: 760px) {
+
+  .hero-inner {
+    width: 100% !important;
+
+    height: 400px !important;
+    min-height: 400px !important;
+
+    margin: 0 !important;
+
+    padding:
+      32px
+      20px
+      0 !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(3, 35, 57, 0.55) 0%,
+        rgba(3, 35, 57, 0.28) 42%,
+        rgba(3, 35, 57, 0.05) 70%,
+        rgba(3, 35, 57, 0) 100%
+      ),
+      url("/IMG_5276.png") !important;
+
+    background-size:
+      100% 100%,
+      118% auto !important;
+
+    background-position:
+      center center,
+      center top !important;
+
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+  }
+
+
+  /* Hide the separate Jesus image.
+     The complete artwork is now the hero background. */
+
+  .jesus-image-wrap {
+    display: none !important;
+  }
+
+
+  /* Keep words on the empty dark left side */
+
+  .hero-copy {
+    width: 54% !important;
+
+    max-width: 220px !important;
+
+    padding: 0 !important;
+
+    position: relative !important;
+
+    z-index: 10 !important;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 9px !important;
+
+    letter-spacing: 2.8px !important;
+
+    margin-bottom: 11px !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 39px !important;
+
+    line-height: 0.93 !important;
+
+    letter-spacing: -1.3px !important;
+
+    max-width: 220px !important;
+
+    margin: 0 !important;
+
+    color: #fffaf1 !important;
+
+    text-shadow:
+      0
+      3px
+      14px
+      rgba(0, 0, 0, 0.28) !important;
+  }
+
+  .hero-description {
+    max-width: 195px !important;
+
+    margin-top: 15px !important;
+
+    font-size: 12.5px !important;
+
+    line-height: 1.42 !important;
+
+    color: white !important;
+
+    text-shadow:
+      0
+      2px
+      8px
+      rgba(0, 0, 0, 0.22) !important;
+  }
+
+  .small-gold-line {
+    width: 45px !important;
+
+    margin:
+      14px
+      0
+      10px !important;
+  }
+
+  .hero-subline {
+    display: block !important;
+
+    width: 205px !important;
+
+    font-size: 5.8px !important;
+
+    letter-spacing: 1.2px !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* Pull Matthew 7:7 closer to the hero */
+
+  .scripture-quote {
+    margin:
+      10px
+      auto
+      25px !important;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL IPHONES
+========================================================= */
+
+@media screen and (max-width: 430px) {
+
+  .hero-inner {
+    height: 385px !important;
+
+    min-height: 385px !important;
+
+    background-size:
+      100% 100%,
+      120% auto !important;
+
+    background-position:
+      center center,
+      center top !important;
+  }
+
+  .hero-copy {
+    width: 53% !important;
+
+    max-width: 205px !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 37px !important;
+
+    max-width: 205px !important;
+  }
+
+  .hero-description {
+    max-width: 185px !important;
+
+    font-size: 12px !important;
+  }
+
+}
