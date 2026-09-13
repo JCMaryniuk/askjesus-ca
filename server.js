@@ -44,19 +44,6 @@ function getChapterReference(reference) {
     return "";
   }
 
-  /*
-    Examples:
-
-    "Ephesians 5:25"
-      -> "Ephesians 5"
-
-    "1 Corinthians 7:10-16"
-      -> "1 Corinthians 7"
-
-    "Song of Solomon 2:10-13"
-      -> "Song of Solomon 2"
-  */
-
   const match = reference.match(/^(.+?)\s+(\d+)(?::.*)?$/);
 
   if (!match) {
@@ -76,13 +63,7 @@ function getChapterReference(reference) {
 
 app.post("/ask", async (req, res) => {
   try {
-
     const { question } = req.body;
-
-
-    /* -------------------------------------------------------
-       VALIDATE QUESTION
-    ------------------------------------------------------- */
 
     if (!question || !question.trim()) {
       return res.status(400).json({
@@ -90,14 +71,26 @@ app.post("/ask", async (req, res) => {
       });
     }
 
-
-    /* -------------------------------------------------------
-       ASK OPENAI
-    ------------------------------------------------------- */
-
     const response = await openai.responses.create({
+      /*
+        Faster, lower-cost GPT-5.6 model.
+      */
+      model: "gpt-5.6-luna",
 
-      model: "gpt-5-mini",
+      /*
+        This task is structured Scripture retrieval,
+        so we prioritize low latency over deeper reasoning.
+      */
+      reasoning: {
+        effort: "none",
+      },
+
+      /*
+        Keep non-essential wording concise.
+      */
+      text: {
+        verbosity: "low",
+      },
 
       instructions: `
 You are a Scripture research assistant for AskJesus.ca.
@@ -118,22 +111,23 @@ Do NOT:
 - Interpret the verses for them.
 - Explain how the verses fit together.
 - Answer yes or no on behalf of Scripture.
-- Give pastoral advice unless the user specifically asks for passages about comfort, prayer, encouragement, etc.
 - Add denominational doctrine.
 - Favor one Christian tradition when sincere Christians disagree.
 - Cherry-pick isolated verses when surrounding context changes or clarifies their meaning.
+- Return an entire long chapter when a shorter directly relevant passage is sufficient.
 
 Instead:
 
 - Identify the Bible passages most directly relevant to the user's actual question.
 - Prefer passages that directly address the subject.
-- Include enough surrounding verses to preserve context.
+- Return 4 to 6 of the strongest passages.
+- Keep quoted passage text concise while preserving enough context to understand it.
+- Prefer shorter directly relevant passages over very long sections.
 - Include important passages from Jesus and the rest of Scripture when appropriate.
 - When Scripture contains passages commonly considered together on a subject, include the major relevant passages rather than selecting only one side.
 - Let the reader come to their own conclusion from Scripture.
 - For EVERY result, identify the most useful surrounding paragraph or passage that should be read with the quoted verse.
 - Also identify the chapter containing that passage.
-
 
 CONTEXT RULE:
 
@@ -276,9 +270,11 @@ Doctrine
 
 RULES FOR PASSAGES:
 
-- Return approximately 4 to 8 of the strongest passages.
+- Return 4 to 6 of the strongest passages.
 - Prefer direct passages over loosely related passages.
-- Preserve context.
+- Keep quoted text reasonably concise.
+- Preserve enough context to avoid misleading isolated quotations.
+- Use contextReference for the larger surrounding section instead of quoting that entire larger section in the result.
 - Do not cherry-pick verses to force a conclusion.
 - Do not write explanations underneath the verses.
 - Do not add commentary.
@@ -301,13 +297,7 @@ READER STUDIES SCRIPTURE
 `,
 
       input: question.trim(),
-
     });
-
-
-    /* -------------------------------------------------------
-       GET RESPONSE TEXT
-    ------------------------------------------------------- */
 
     const rawText = response.output_text;
 
@@ -317,21 +307,10 @@ READER STUDIES SCRIPTURE
       );
     }
 
-
-    /* -------------------------------------------------------
-       PARSE JSON
-    ------------------------------------------------------- */
-
     let result;
 
     try {
-
       let cleaned = rawText.trim();
-
-      /*
-        Remove Markdown code fences
-        if the model accidentally adds them.
-      */
 
       cleaned = cleaned
         .replace(/^```json\s*/i, "")
@@ -341,7 +320,6 @@ READER STUDIES SCRIPTURE
       result = JSON.parse(cleaned);
 
     } catch (parseError) {
-
       console.error(
         "Could not parse AI response:",
         rawText
@@ -353,17 +331,11 @@ READER STUDIES SCRIPTURE
       });
     }
 
-
-    /* -------------------------------------------------------
-       BASIC RESPONSE VALIDATION
-    ------------------------------------------------------- */
-
     if (
       !result ||
       !result.title ||
       !Array.isArray(result.passages)
     ) {
-
       console.error(
         "Unexpected response structure:",
         result
@@ -375,19 +347,9 @@ READER STUDIES SCRIPTURE
       });
     }
 
-
-    /* -------------------------------------------------------
-       MAKE SURE CATEGORIES EXISTS
-    ------------------------------------------------------- */
-
     if (!Array.isArray(result.categories)) {
       result.categories = [];
     }
-
-
-    /* -------------------------------------------------------
-       CLEAN + VALIDATE PASSAGES
-    ------------------------------------------------------- */
 
     result.passages = result.passages
       .filter(
@@ -396,24 +358,13 @@ READER STUDIES SCRIPTURE
           typeof passage.reference === "string" &&
           typeof passage.text === "string"
       )
+      .slice(0, 6)
       .map((passage) => {
-
-        /*
-          If contextReference is unexpectedly missing,
-          fall back to the displayed reference.
-        */
-
         const contextReference =
           typeof passage.contextReference === "string" &&
           passage.contextReference.trim()
             ? passage.contextReference.trim()
             : passage.reference.trim();
-
-
-        /*
-          If chapterReference is missing,
-          derive it from the verse reference.
-        */
 
         const chapterReference =
           typeof passage.chapterReference === "string" &&
@@ -423,9 +374,7 @@ READER STUDIES SCRIPTURE
                 passage.reference.trim()
               );
 
-
         return {
-
           reference:
             passage.reference.trim(),
 
@@ -435,34 +384,19 @@ READER STUDIES SCRIPTURE
           contextReference,
 
           chapterReference,
-
         };
-
       });
 
-
-    /* -------------------------------------------------------
-       MAKE SURE AT LEAST ONE PASSAGE EXISTS
-    ------------------------------------------------------- */
-
     if (result.passages.length === 0) {
-
       return res.status(500).json({
         error:
           "No Scripture passages were returned.",
       });
     }
 
-
-    /* -------------------------------------------------------
-       RETURN RESULTS
-    ------------------------------------------------------- */
-
     res.json(result);
 
-
   } catch (error) {
-
     console.error(
       "ASK ERROR:",
       error
@@ -472,7 +406,6 @@ READER STUDIES SCRIPTURE
       error:
         "Something went wrong while finding Scripture.",
     });
-
   }
 });
 
@@ -487,10 +420,8 @@ const PORT =
 app.listen(
   PORT,
   () => {
-
     console.log(
       `AskJesus.ca server running on port ${PORT}`
     );
-
   }
 );
