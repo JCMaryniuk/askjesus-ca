@@ -23,6 +23,22 @@ function setText(element, text) {
 
 
 // --------------------------------------------------
+// CREATE BIBLE PASSAGE LINK
+// --------------------------------------------------
+
+function createBibleLink(reference) {
+  if (!reference) {
+    return "#";
+  }
+
+  return (
+    "https://www.biblegateway.com/passage/?search=" +
+    encodeURIComponent(reference)
+  );
+}
+
+
+// --------------------------------------------------
 // CLEAR OLD RESULTS
 // --------------------------------------------------
 
@@ -76,25 +92,153 @@ function renderPassages(passages = []) {
   passagesContainer.innerHTML = "";
 
   passages.forEach((passage) => {
+
     if (!passage.reference || !passage.text) {
       return;
     }
 
-    const scriptureCard = document.createElement("article");
-    scriptureCard.className = "scripture-card";
 
-    const reference = document.createElement("h3");
-    reference.className = "scripture-reference";
-    reference.textContent = passage.reference;
+    // ----------------------------------------------
+    // CARD
+    // ----------------------------------------------
 
-    const verseText = document.createElement("p");
-    verseText.className = "scripture-text";
-    verseText.textContent = passage.text;
+    const scriptureCard =
+      document.createElement("article");
 
-    scriptureCard.appendChild(reference);
-    scriptureCard.appendChild(verseText);
+    scriptureCard.className =
+      "scripture-card";
 
-    passagesContainer.appendChild(scriptureCard);
+
+    // ----------------------------------------------
+    // SCRIPTURE REFERENCE
+    // ----------------------------------------------
+
+    const reference =
+      document.createElement("h3");
+
+    reference.className =
+      "scripture-reference";
+
+    reference.textContent =
+      passage.reference;
+
+
+    // ----------------------------------------------
+    // VERSE TEXT
+    // ----------------------------------------------
+
+    const verseText =
+      document.createElement("p");
+
+    verseText.className =
+      "scripture-text";
+
+    verseText.textContent =
+      passage.text;
+
+
+    // ----------------------------------------------
+    // LINKS AREA
+    // ----------------------------------------------
+
+    const linksContainer =
+      document.createElement("div");
+
+    linksContainer.className =
+      "scripture-links";
+
+
+    // ----------------------------------------------
+    // CONTEXT LINK
+    // ----------------------------------------------
+
+    const contextReference =
+      passage.contextReference ||
+      passage.reference;
+
+    const contextLink =
+      document.createElement("a");
+
+    contextLink.className =
+      "scripture-context-link";
+
+    contextLink.href =
+      createBibleLink(contextReference);
+
+    contextLink.target =
+      "_blank";
+
+    contextLink.rel =
+      "noopener noreferrer";
+
+    contextLink.textContent =
+      `Read ${contextReference} in context →`;
+
+
+    // ----------------------------------------------
+    // FULL CHAPTER LINK
+    // ----------------------------------------------
+
+    if (passage.chapterReference) {
+
+      const chapterLink =
+        document.createElement("a");
+
+      chapterLink.className =
+        "scripture-chapter-link";
+
+      chapterLink.href =
+        createBibleLink(
+          passage.chapterReference
+        );
+
+      chapterLink.target =
+        "_blank";
+
+      chapterLink.rel =
+        "noopener noreferrer";
+
+      chapterLink.textContent =
+        `Read full chapter: ${passage.chapterReference} →`;
+
+      linksContainer.appendChild(
+        contextLink
+      );
+
+      linksContainer.appendChild(
+        chapterLink
+      );
+
+    } else {
+
+      linksContainer.appendChild(
+        contextLink
+      );
+
+    }
+
+
+    // ----------------------------------------------
+    // ADD EVERYTHING TO CARD
+    // ----------------------------------------------
+
+    scriptureCard.appendChild(
+      reference
+    );
+
+    scriptureCard.appendChild(
+      verseText
+    );
+
+    scriptureCard.appendChild(
+      linksContainer
+    );
+
+
+    passagesContainer.appendChild(
+      scriptureCard
+    );
+
   });
 }
 
@@ -104,15 +248,20 @@ function renderPassages(passages = []) {
 // --------------------------------------------------
 
 function showError(message) {
+
   if (loadingMessage) {
-    loadingMessage.style.display = "none";
+    loadingMessage.style.display =
+      "none";
   }
 
   if (errorMessage) {
-    errorMessage.textContent =
-      message || "Something went wrong while finding Scripture.";
 
-    errorMessage.style.display = "block";
+    errorMessage.textContent =
+      message ||
+      "Something went wrong while finding Scripture.";
+
+    errorMessage.style.display =
+      "block";
   }
 }
 
@@ -122,18 +271,41 @@ function showError(message) {
 // --------------------------------------------------
 
 function setLoading(isLoading) {
-  if (submitButton) {
-    submitButton.disabled = isLoading;
 
-    submitButton.textContent = isLoading
-      ? "Finding Scripture..."
-      : "Find Scripture";
+  if (submitButton) {
+
+    submitButton.disabled =
+      isLoading;
+
+    /*
+      Keep the button structure intact
+      so the arrow does not disappear.
+    */
+
+    const buttonText =
+      submitButton.querySelector(
+        "span:first-child"
+      );
+
+    if (buttonText) {
+
+      buttonText.textContent =
+        isLoading
+          ? "Finding Scripture..."
+          : "Find Scripture";
+
+    }
+
   }
 
+
   if (loadingMessage) {
-    loadingMessage.style.display = isLoading
-      ? "block"
-      : "none";
+
+    loadingMessage.style.display =
+      isLoading
+        ? "block"
+        : "none";
+
   }
 }
 
@@ -143,25 +315,42 @@ function setLoading(isLoading) {
 // --------------------------------------------------
 
 function displayResults(data) {
+
   clearResults();
+
 
   setText(
     resultTitle,
-    data.title || "What Scripture Says"
+    data.title ||
+    "What Scripture Says"
   );
 
-  renderCategories(data.categories || []);
-  renderPassages(data.passages || []);
+
+  renderCategories(
+    data.categories || []
+  );
+
+
+  renderPassages(
+    data.passages || []
+  );
+
 
   if (resultsSection) {
-    resultsSection.style.display = "block";
+
+    resultsSection.style.display =
+      "block";
+
 
     setTimeout(() => {
+
       resultsSection.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
+
     }, 100);
+
   }
 }
 
@@ -171,80 +360,128 @@ function displayResults(data) {
 // --------------------------------------------------
 
 if (form) {
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    const question = questionInput
-      ? questionInput.value.trim()
-      : "";
+  form.addEventListener(
+    "submit",
+    async (event) => {
 
-    if (!question) {
-      showError("Please enter a question.");
-      return;
-    }
+      event.preventDefault();
 
-    clearResults();
 
-    if (resultsSection) {
-      resultsSection.style.display = "none";
-    }
+      const question =
+        questionInput
+          ? questionInput.value.trim()
+          : "";
 
-    setLoading(true);
 
-    try {
-      const response = await fetch("/ask", {
-        method: "POST",
+      if (!question) {
 
-        headers: {
-          "Content-Type": "application/json"
-        },
+        showError(
+          "Please enter a question."
+        );
 
-        body: JSON.stringify({
-          question: question
-        })
-      });
+        return;
+      }
 
-      let data;
+
+      clearResults();
+
+
+      if (resultsSection) {
+
+        resultsSection.style.display =
+          "none";
+
+      }
+
+
+      setLoading(true);
+
 
       try {
-        data = await response.json();
-      } catch {
-        throw new Error(
-          "The server returned an invalid response."
-        );
-      }
 
-      if (!response.ok) {
-        throw new Error(
-          data.error ||
+        const response =
+          await fetch("/ask", {
+
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body: JSON.stringify({
+              question: question
+            })
+
+          });
+
+
+        let data;
+
+
+        try {
+
+          data =
+            await response.json();
+
+        } catch {
+
+          throw new Error(
+            "The server returned an invalid response."
+          );
+
+        }
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.error ||
+            "Something went wrong while finding Scripture."
+          );
+
+        }
+
+
+        if (
+          !data ||
+          !Array.isArray(data.passages) ||
+          data.passages.length === 0
+        ) {
+
+          throw new Error(
+            "No Scripture passages were found."
+          );
+
+        }
+
+
+        displayResults(data);
+
+
+      } catch (error) {
+
+        console.error(
+          "ASK ERROR:",
+          error
+        );
+
+
+        showError(
+          error.message ||
           "Something went wrong while finding Scripture."
         );
+
+
+      } finally {
+
+        setLoading(false);
+
       }
 
-      if (
-        !data ||
-        !Array.isArray(data.passages) ||
-        data.passages.length === 0
-      ) {
-        throw new Error(
-          "No Scripture passages were found."
-        );
-      }
-
-      displayResults(data);
-
-    } catch (error) {
-      console.error("ASK ERROR:", error);
-
-      showError(
-        error.message ||
-        "Something went wrong while finding Scripture."
-      );
-
-    } finally {
-      setLoading(false);
     }
-  });
+  );
 }
 
 
@@ -256,21 +493,36 @@ document
   .querySelectorAll("[data-question]")
   .forEach((button) => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      const exampleQuestion =
-        button.getAttribute("data-question");
+        const exampleQuestion =
+          button.getAttribute(
+            "data-question"
+          );
 
-      if (!exampleQuestion || !questionInput) {
-        return;
+
+        if (
+          !exampleQuestion ||
+          !questionInput
+        ) {
+          return;
+        }
+
+
+        questionInput.value =
+          exampleQuestion;
+
+
+        questionInput.focus();
+
+
+        if (form) {
+          form.requestSubmit();
+        }
+
       }
+    );
 
-      questionInput.value = exampleQuestion;
-
-      questionInput.focus();
-
-      if (form) {
-        form.requestSubmit();
-      }
-    });
   });
