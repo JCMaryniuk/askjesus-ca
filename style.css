@@ -1764,3 +1764,92 @@ footer span {
     margin-top: -155px;
   }
 }
+
+/* =========================================================
+   ASK / SEEK / KNOCK — CLEAN CIRCLES
+========================================================= */
+
+.ask-cards {
+  width: auto;
+  max-width: none;
+  margin: 24px 0 8px;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+}
+
+.ask-card {
+  width: 92px;
+  height: 92px;
+  min-height: 0;
+  padding: 0;
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(3, 47, 73, 0.30);
+  box-shadow: none;
+}
+
+.ask-card .card-icon,
+.ask-card .card-line,
+.ask-card p {
+  display: none;
+}
+
+.ask-card .letter {
+  margin: 0;
+
+  color: var(--gold);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.ask-card h2 {
+  margin: 6px 0 0;
+
+  color: var(--gold);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .ask-cards {
+    gap: 9px;
+    margin: 15px 0 8px;
+  }
+
+  .ask-card {
+    width: 60px;
+    height: 60px;
+    min-height: 0;
+    padding: 0;
+    border-width: 1.5px;
+  }
+
+  .ask-card .letter {
+    font-size: 23px;
+  }
+
+  .ask-card h2 {
+    margin-top: 3px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+}
