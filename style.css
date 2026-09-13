@@ -1212,63 +1212,72 @@ footer span {
   }
 
 }
+
 /* =========================================================
-   DESKTOP HERO HEADLINE — MORE BREATHING ROOM
+   SCRIPTURE RESULT CARDS + LINKS
 ========================================================= */
 
-@media screen and (min-width: 769px) {
+.scripture-card {
+  padding: 22px 0 24px;
 
-  .hero-copy {
-    width: 52% !important;
-    max-width: 850px !important;
-    padding-left: 5vw !important;
-  }
-
-  .hero-copy h1 {
-    max-width: 820px !important;
-    font-size: clamp(64px, 4.4vw, 80px) !important;
-    line-height: 0.95 !important;
-    letter-spacing: -2px !important;
-  }
-
-  .hero-description {
-    max-width: 610px !important;
-  }
+  border-bottom: 1px solid rgba(11, 69, 104, 0.12);
 }
-/* =========================================================
-   SCRIPTURE RESULT LINKS
-========================================================= */
+
+.scripture-card:last-child {
+  border-bottom: none;
+}
+
+.scripture-reference {
+  margin-bottom: 6px;
+
+  color: #073d5b;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.scripture-text {
+  color: #12364c;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
 
 .scripture-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
 
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .scripture-context-link,
 .scripture-chapter-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 8px 13px;
+  min-height: 40px;
 
-  border-radius: 8px;
+  padding: 9px 14px;
+
+  border-radius: 9px;
 
   text-decoration: none;
 
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.2;
 
   transition:
     transform 0.15s ease,
     background 0.15s ease,
-    border-color 0.15s ease;
+    border-color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .scripture-context-link {
-  color: #0b4568;
+  color: #073d5b;
 
   background: #fff4d5;
 
@@ -1296,23 +1305,53 @@ footer span {
   background: #083754;
 }
 
+.category-tag {
+  display: inline-block;
 
-/* MOBILE */
+  padding: 6px 10px;
+
+  border: 1px solid rgba(11, 69, 104, 0.18);
+  border-radius: 999px;
+
+  background: rgba(11, 69, 104, 0.06);
+
+  color: #0b4568;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* MOBILE RESULT LINKS */
 
 @media (max-width: 768px) {
 
+  .scripture-card {
+    padding: 18px 0 20px;
+  }
+
+  .scripture-reference {
+    font-size: 20px;
+  }
+
+  .scripture-text {
+    font-size: 16px;
+  }
+
   .scripture-links {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+
+    gap: 9px;
   }
 
   .scripture-context-link,
   .scripture-chapter-link {
     width: 100%;
 
-    justify-content: center;
-
     text-align: center;
-  }
 
+    font-size: 14px;
+  }
 }
+
