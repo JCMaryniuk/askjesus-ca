@@ -2311,3 +2311,255 @@ footer span {
   }
 
 }
+/* =========================================================
+   DESKTOP HERO — MATCH REFERENCE IMAGE
+   DOES NOT CHANGE MOBILE
+========================================================= */
+
+@media screen and (min-width: 761px) {
+
+  /* -----------------------------------------
+     HEADER
+     Blend header into the same blue composition
+  ----------------------------------------- */
+
+  .site-header {
+    background: #032a46 !important;
+    border-bottom: none !important;
+  }
+
+  .header-inner {
+    max-width: 1500px !important;
+    min-height: 105px !important;
+    padding: 12px 4% !important;
+  }
+
+
+  /* -----------------------------------------
+     HERO BACKGROUND
+     Use IMG_5276 as the complete artwork
+  ----------------------------------------- */
+
+  .hero {
+    position: relative !important;
+
+    padding-bottom: 70px !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        #084b78 0%,
+        #063b60 35%,
+        #04314e 70%,
+        #032944 100%
+      ) !important;
+  }
+
+  .hero-glow {
+    display: none !important;
+  }
+
+  .hero-inner {
+    width: 100% !important;
+
+    max-width: none !important;
+
+    min-height: 610px !important;
+    height: 610px !important;
+
+    margin: 0 !important;
+
+    padding:
+      70px
+      5%
+      0 !important;
+
+    display: block !important;
+
+    position: relative !important;
+
+    overflow: hidden !important;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(2, 33, 55, 0.78) 0%,
+        rgba(2, 33, 55, 0.55) 28%,
+        rgba(2, 33, 55, 0.18) 48%,
+        rgba(2, 33, 55, 0) 68%
+      ),
+      url("/IMG_5276.png") !important;
+
+    background-size:
+      100% 100%,
+      cover !important;
+
+    background-position:
+      center center,
+      center center !important;
+
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+  }
+
+
+  /* -----------------------------------------
+     HIDE OLD SEPARATE IMAGE
+  ----------------------------------------- */
+
+  .jesus-image-wrap {
+    display: none !important;
+  }
+
+
+  /* -----------------------------------------
+     LEFT HERO TEXT
+  ----------------------------------------- */
+
+  .hero-copy {
+    width: 45% !important;
+
+    max-width: 620px !important;
+
+    padding: 0 !important;
+
+    position: relative !important;
+
+    z-index: 10 !important;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 17px !important;
+
+    letter-spacing: 5px !important;
+
+    margin-bottom: 18px !important;
+  }
+
+  .hero-copy h1 {
+    font-size:
+      clamp(
+        68px,
+        5.2vw,
+        92px
+      ) !important;
+
+    line-height: 0.91 !important;
+
+    letter-spacing: -3px !important;
+
+    max-width: 600px !important;
+
+    margin: 0 !important;
+
+    color: #fffaf1 !important;
+  }
+
+  .hero-description {
+    max-width: 520px !important;
+
+    margin-top: 26px !important;
+
+    font-size:
+      clamp(
+        20px,
+        1.7vw,
+        27px
+      ) !important;
+
+    line-height: 1.45 !important;
+
+    color: white !important;
+  }
+
+  .small-gold-line {
+    width: 76px !important;
+
+    margin:
+      22px
+      0
+      18px !important;
+  }
+
+  .hero-subline {
+    font-size: 13px !important;
+
+    letter-spacing: 4px !important;
+  }
+
+
+  /* -----------------------------------------
+     MATTHEW 7:7
+     Pull it upward into Jesus fade
+  ----------------------------------------- */
+
+  .scripture-quote {
+    width: min(820px, 70%) !important;
+
+    margin:
+      -115px
+      auto
+      30px !important;
+
+    position: relative !important;
+
+    z-index: 20 !important;
+  }
+
+  .scripture-quote p {
+    font-size:
+      clamp(
+        24px,
+        2vw,
+        34px
+      ) !important;
+
+    line-height: 1.28 !important;
+  }
+
+  .verse-reference {
+    margin-top: 16px !important;
+  }
+
+
+  /* -----------------------------------------
+     CARDS
+     Keep close to reference proportions
+  ----------------------------------------- */
+
+  .ask-cards {
+    width: min(1400px, 91%) !important;
+
+    gap: 20px !important;
+  }
+
+  .ask-card {
+    min-height: 310px !important;
+
+    border-radius: 24px !important;
+  }
+
+
+  /* -----------------------------------------
+     QUESTION AREA
+  ----------------------------------------- */
+
+  .question-area {
+    width: min(1450px, 93%) !important;
+
+    margin-top: 28px !important;
+  }
+
+
+  /* -----------------------------------------
+     FEATURES
+  ----------------------------------------- */
+
+  .features {
+    width: min(1250px, 88%) !important;
+
+    margin-top: 36px !important;
+  }
+
+}
