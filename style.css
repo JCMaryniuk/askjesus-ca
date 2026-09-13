@@ -1527,3 +1527,78 @@ footer span {
   }
 
 }
+/* =========================================================
+   FINAL DESKTOP BLEND + QUOTE POSITION
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .hero-inner {
+    height: 500px;
+    grid-template-columns: 41% 59%;
+  }
+
+  .hero-copy {
+    padding-top: 62px;
+  }
+
+  .jesus-image-wrap {
+    height: 500px;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .jesus-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% center;
+  }
+
+  .jesus-image-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        90deg,
+        #063e5c 0%,
+        rgba(6, 62, 92, 0.96) 6%,
+        rgba(6, 62, 92, 0.68) 16%,
+        rgba(6, 62, 92, 0.20) 30%,
+        transparent 46%
+      );
+  }
+
+  .jesus-image-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    z-index: 3;
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(7, 71, 101, 0.38) 45%,
+        #074765 100%
+      );
+  }
+
+  .scripture-quote {
+    margin: -5px auto 28px;
+    width: min(900px, 70%);
+  }
+
+  .scripture-quote p {
+    font-size: 27px;
+    line-height: 1.25;
+  }
+}
