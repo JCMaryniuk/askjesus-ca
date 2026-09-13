@@ -2412,3 +2412,91 @@ footer span {
     margin-top: -125px !important;
   }
 }
+/* =========================================================
+   FINAL DESKTOP TUNING
+   MOBILE UNCHANGED
+========================================================= */
+
+@media screen and (min-width: 761px) {
+
+  .hero-inner {
+    height: 570px !important;
+    min-height: 570px !important;
+
+    padding:
+      58px
+      5%
+      0 !important;
+
+    background-size:
+      100% 100%,
+      94% auto !important;
+
+    background-position:
+      center center,
+      63% 48% !important;
+  }
+
+  .hero-copy {
+    width: 42% !important;
+    max-width: 560px !important;
+  }
+
+  .hero-copy h1 {
+    font-size:
+      clamp(
+        62px,
+        4.7vw,
+        82px
+      ) !important;
+
+    line-height: 0.92 !important;
+    max-width: 545px !important;
+  }
+
+  .hero-description {
+    max-width: 490px !important;
+
+    margin-top: 22px !important;
+
+    font-size:
+      clamp(
+        19px,
+        1.45vw,
+        24px
+      ) !important;
+  }
+
+  .small-gold-line {
+    margin:
+      18px
+      0
+      15px !important;
+  }
+
+  .hero-subline {
+    font-size: 11px !important;
+    letter-spacing: 3.5px !important;
+  }
+
+  .scripture-quote {
+    width: min(760px, 62%) !important;
+
+    margin:
+      -92px
+      auto
+      28px !important;
+  }
+
+  .scripture-quote p {
+    font-size:
+      clamp(
+        22px,
+        1.75vw,
+        30px
+      ) !important;
+
+    line-height: 1.25 !important;
+  }
+
+}
