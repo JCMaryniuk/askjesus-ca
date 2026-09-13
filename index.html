@@ -15,7 +15,7 @@
 
   <title>AskJesus.ca | Find What Scripture Says</title>
 
-  <link rel="stylesheet" href="style.css?v=14" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 
 <body>
@@ -25,11 +25,9 @@
   ========================== -->
 
   <header class="site-header">
-
     <div class="header-inner">
 
       <a href="/" class="brand">
-
         <div class="ask-logo">
           ASK
         </div>
@@ -43,7 +41,6 @@
             FIND WHAT SCRIPTURE SAYS
           </div>
         </div>
-
       </a>
 
       <nav class="main-nav">
@@ -54,7 +51,6 @@
       </nav>
 
     </div>
-
   </header>
 
 
@@ -66,6 +62,8 @@
 
     <section class="hero" id="home">
 
+      <div class="hero-glow"></div>
+
       <div class="hero-inner">
 
         <div class="hero-copy">
@@ -74,10 +72,12 @@
             SCRIPTURE STUDY
           </div>
 
-   <h1>
-  Ask a question.<br>
-  Find the Scripture.
-</h1>
+          <h1>
+            Ask a<br>
+            question.<br>
+            Find the<br>
+            Scripture.
+          </h1>
 
           <p class="hero-description">
             Search the Bible by topic and read
@@ -94,13 +94,11 @@
 
 
         <div class="jesus-image-wrap">
-
           <img
             src="/IMG_5276.png"
             alt="Jesus reaching out his hand"
             class="jesus-image"
           />
-
         </div>
 
       </div>
@@ -119,7 +117,6 @@
         </p>
 
         <div class="verse-reference">
-
           <span></span>
 
           <strong>
@@ -127,7 +124,6 @@
           </strong>
 
           <span></span>
-
         </div>
 
       </div>
@@ -135,25 +131,41 @@
 
       <!-- =========================
            ASK / SEEK / KNOCK
-           SIMPLE CIRCLES
       ========================== -->
 
-      <section class="ask-circles" aria-label="Ask Seek Knock">
+      <section class="ask-cards">
 
-        <div class="ask-circle">
-          <div class="circle-letter">A</div>
-          <div class="circle-word">ASK</div>
-        </div>
+        <article class="ask-card">
+          <div class="letter">
+            A
+          </div>
 
-        <div class="ask-circle">
-          <div class="circle-letter">S</div>
-          <div class="circle-word">SEEK</div>
-        </div>
+          <h2>
+            ASK
+          </h2>
+        </article>
 
-        <div class="ask-circle">
-          <div class="circle-letter">K</div>
-          <div class="circle-word">KNOCK</div>
-        </div>
+
+        <article class="ask-card">
+          <div class="letter">
+            S
+          </div>
+
+          <h2>
+            SEEK
+          </h2>
+        </article>
+
+
+        <article class="ask-card">
+          <div class="letter">
+            K
+          </div>
+
+          <h2>
+            KNOCK
+          </h2>
+        </article>
 
       </section>
 
@@ -172,14 +184,14 @@
 
           <div class="question-row">
 
-     <textarea
-  id="question"
-  name="question"
-  rows="3"
-  placeholder="Example: I’m single. What does the Bible say I should look for in a husband or wife?"
-  autocomplete="off"
-  required
-></textarea>
+            <textarea
+              id="question"
+              name="question"
+              rows="3"
+              placeholder="Example: I am single. What should I look for in a partner?"
+              autocomplete="off"
+              required
+            ></textarea>
 
             <button
               id="submitButton"
@@ -203,7 +215,7 @@
           class="loading-message"
           hidden
         >
-          Searching Scripture...
+          Please wait — searching Scripture and gathering relevant passages...
         </div>
 
         <div
@@ -225,7 +237,6 @@
       >
 
         <article class="feature">
-
           <div class="feature-icon book-icon">
             ♧
           </div>
@@ -234,7 +245,6 @@
             BIBLICAL<br>
             ANSWERS
           </h3>
-
         </article>
 
 
@@ -242,7 +252,6 @@
 
 
         <article class="feature">
-
           <div class="feature-icon">
             ✝
           </div>
@@ -251,7 +260,6 @@
             TRUSTED<br>
             SCRIPTURE
           </h3>
-
         </article>
 
 
@@ -259,7 +267,6 @@
 
 
         <article class="feature">
-
           <div class="feature-icon">
             ☼
           </div>
@@ -268,7 +275,6 @@
             REAL<br>
             LIFE GUIDANCE
           </h3>
-
         </article>
 
 
@@ -276,7 +282,6 @@
 
 
         <article class="feature">
-
           <div class="feature-icon">
             ♙
           </div>
@@ -285,14 +290,12 @@
             FOR<br>
             EVERYONE
           </h3>
-
         </article>
 
       </section>
 
 
       <div class="closing-message">
-
         <span></span>
 
         <p>
@@ -300,7 +303,6 @@
         </p>
 
         <span></span>
-
       </div>
 
     </section>
@@ -407,16 +409,18 @@
   ========================== -->
 
   <footer>
-
     <p>
       AskJesus.ca
       <span>•</span>
       Find What Scripture Says
     </p>
-
   </footer>
 
 
+  <!-- IMPORTANT:
+       We deliberately use a NEW JavaScript filename
+       so the live site cannot keep using an old cached app.js.
+  -->
   <script src="app-new.js"></script>
 
 </body>
