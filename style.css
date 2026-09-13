@@ -1681,3 +1681,51 @@ footer span {
   }
 
 }
+/* =========================================================
+   DESKTOP TEST / FINAL POSITION
+========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .hero-inner {
+    width: 100% !important;
+    height: 600px !important;
+    margin: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: 36% 64% !important;
+  }
+
+  .hero-copy {
+    padding: 55px 0 0 5vw !important;
+    width: 100% !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 76px !important;
+    line-height: 0.9 !important;
+  }
+
+  .jesus-image-wrap {
+    height: 600px !important;
+    width: 100% !important;
+  }
+
+  .jesus-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 55% center !important;
+  }
+
+  .scripture-quote {
+    width: 760px !important;
+    margin: -125px auto 25px !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  .scripture-quote p {
+    font-size: 27px !important;
+  }
+}
