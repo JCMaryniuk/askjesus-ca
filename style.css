@@ -1853,3 +1853,64 @@ footer span {
     letter-spacing: 1px;
   }
 }
+/* =========================================================
+   DESKTOP HERO SPACING — LESS CROWDED
+========================================================= */
+
+@media screen and (min-width: 769px) {
+
+  .hero-copy {
+    width: 46%;
+    max-width: 690px;
+
+    padding-left: 5vw;
+  }
+
+  .hero-copy h1 {
+    max-width: 600px;
+  }
+
+  /* Give circles their own breathing room */
+  .ask-cards {
+    width: 390px;
+    max-width: 100%;
+
+    margin:
+      32px
+      0
+      32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 24px;
+  }
+
+  .ask-card {
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
+  }
+
+  /* Description sits farther below circles */
+  .hero-description {
+    margin-top: 0;
+
+    max-width: 520px;
+
+    font-size: 23px;
+    line-height: 1.5;
+  }
+
+  .small-gold-line {
+    margin-top: 24px;
+  }
+
+  .hero-subline {
+    margin-top: 17px;
+
+    letter-spacing: 3.2px;
+  }
+
+}
