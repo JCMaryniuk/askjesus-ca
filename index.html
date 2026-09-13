@@ -2,194 +2,424 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AskJesus.ca helps you search Scripture by topic and read what the Bible says for yourself." />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="AskJesus.ca helps you search Scripture by topic and read what the Bible says for yourself."
+  />
+
   <title>AskJesus.ca | Find What Scripture Says</title>
-  <link rel="stylesheet" href="style.css?v=13" />
+
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="brand">
-      <div class="ask-logo">ASK</div>
-      <div class="brand-text">
-        <div class="brand-name">AskJesus.ca</div>
-        <div class="brand-tagline">FIND WHAT SCRIPTURE SAYS</div>
-      </div>
-    </a>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <nav class="main-nav">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#resources">Resources</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
 
-<main>
-  <section class="hero" id="home">
-    <div class="hero-glow"></div>
+    <div class="header-inner">
 
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="eyebrow">SCRIPTURE STUDY</div>
+      <a href="/" class="brand">
 
-        <h1>
-          Ask a<br>
-          question.<br>
-          Find the<br>
-          Scripture.
-        </h1>
-
-        <section class="ask-cards">
-          <article class="ask-card">
-            <div class="letter">A</div>
-            <h2>ASK</h2>
-          </article>
-
-          <article class="ask-card">
-            <div class="letter">S</div>
-            <h2>SEEK</h2>
-          </article>
-
-          <article class="ask-card">
-            <div class="letter">K</div>
-            <h2>KNOCK</h2>
-          </article>
-        </section>
-
-        <p class="hero-description">
-          Search the Bible by topic and read the passages for yourself.
-        </p>
-
-        <div class="small-gold-line"></div>
-
-        <p class="hero-subline">
-          REAL QUESTIONS. GOD’S WORD. REAL LIFE.
-        </p>
-      </div>
-
-      <div class="jesus-image-wrap">
-        <img src="/IMG_5276.png" alt="Jesus reaching out his hand" class="jesus-image" />
-      </div>
-    </div>
-
-    <div class="scripture-quote">
-      <p>
-        “Ask, and it will be given to you;<br>
-        seek, and you will find;<br>
-        knock, and the door shall be opened to you.”
-      </p>
-
-      <div class="verse-reference">
-        <span></span>
-        <strong>MATTHEW 7:7</strong>
-        <span></span>
-      </div>
-    </div>
-
-    <section class="question-area">
-      <form id="questionForm">
-        <label for="question">WHAT WOULD YOU LIKE TO ASK?</label>
-
-        <div class="question-row">
-          <textarea
-            id="question"
-            name="question"
-            rows="3"
-            placeholder="Example: I’m dealing with anxiety. What do I do?"
-            autocomplete="off"
-            required
-          ></textarea>
-
-          <button id="submitButton" type="submit">
-            <span>Find Scripture</span>
-            <span class="button-arrow">→</span>
-          </button>
+        <div class="ask-logo">
+          ASK
         </div>
-      </form>
 
-      <div id="loadingMessage" class="loading-message" hidden>
-        Searching Scripture...
+        <div class="brand-text">
+          <div class="brand-name">
+            AskJesus.ca
+          </div>
+
+          <div class="brand-tagline">
+            FIND WHAT SCRIPTURE SAYS
+          </div>
+        </div>
+
+      </a>
+
+      <nav class="main-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-inner">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            SCRIPTURE STUDY
+          </div>
+
+          <h1>
+            Ask a<br>
+            question.<br>
+            Find the<br>
+            Scripture.
+          </h1>
+
+          <p class="hero-description">
+            Search the Bible by topic and read
+            the passages for yourself.
+          </p>
+
+          <div class="small-gold-line"></div>
+
+          <p class="hero-subline">
+            REAL QUESTIONS. GOD’S WORD. REAL LIFE.
+          </p>
+
+        </div>
+
+
+        <div class="jesus-image-wrap">
+
+          <img
+            src="/IMG_5276.png"
+            alt="Jesus reaching out his hand"
+            class="jesus-image"
+          />
+
+        </div>
+
       </div>
 
-      <div id="errorMessage" class="error-message" hidden></div>
+
+      <!-- =========================
+           MATTHEW 7:7
+      ========================== -->
+
+      <div class="scripture-quote">
+
+        <p>
+          “Ask, and it will be given to you;<br>
+          seek, and you will find;<br>
+          knock, and the door shall be opened to you.”
+        </p>
+
+        <div class="verse-reference">
+
+          <span></span>
+
+          <strong>
+            MATTHEW 7:7
+          </strong>
+
+          <span></span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           ASK / SEEK / KNOCK
+           SIMPLE CIRCLES
+      ========================== -->
+
+      <section class="ask-circles" aria-label="Ask Seek Knock">
+
+        <div class="ask-circle">
+          <div class="circle-letter">A</div>
+          <div class="circle-word">ASK</div>
+        </div>
+
+        <div class="ask-circle">
+          <div class="circle-letter">S</div>
+          <div class="circle-word">SEEK</div>
+        </div>
+
+        <div class="ask-circle">
+          <div class="circle-letter">K</div>
+          <div class="circle-word">KNOCK</div>
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           QUESTION FORM
+      ========================== -->
+
+      <section class="question-area">
+
+        <form id="questionForm">
+
+          <label for="question">
+            WHAT WOULD YOU LIKE TO ASK?
+          </label>
+
+          <div class="question-row">
+
+            <textarea
+              id="question"
+              name="question"
+              rows="3"
+              placeholder="Example: I’m dealing with anxiety. What do I do?"
+              autocomplete="off"
+              required
+            ></textarea>
+
+            <button
+              id="submitButton"
+              type="submit"
+            >
+              <span>
+                Find Scripture
+              </span>
+
+              <span class="button-arrow">
+                →
+              </span>
+            </button>
+
+          </div>
+
+        </form>
+
+        <div
+          id="loadingMessage"
+          class="loading-message"
+          hidden
+        >
+          Searching Scripture...
+        </div>
+
+        <div
+          id="errorMessage"
+          class="error-message"
+          hidden
+        ></div>
+
+      </section>
+
+
+      <!-- =========================
+           BENEFITS
+      ========================== -->
+
+      <section
+        class="features"
+        id="about"
+      >
+
+        <article class="feature">
+
+          <div class="feature-icon book-icon">
+            ♧
+          </div>
+
+          <h3>
+            BIBLICAL<br>
+            ANSWERS
+          </h3>
+
+        </article>
+
+
+        <div class="feature-divider"></div>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            ✝
+          </div>
+
+          <h3>
+            TRUSTED<br>
+            SCRIPTURE
+          </h3>
+
+        </article>
+
+
+        <div class="feature-divider"></div>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            ☼
+          </div>
+
+          <h3>
+            REAL<br>
+            LIFE GUIDANCE
+          </h3>
+
+        </article>
+
+
+        <div class="feature-divider"></div>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            ♙
+          </div>
+
+          <h3>
+            FOR<br>
+            EVERYONE
+          </h3>
+
+        </article>
+
+      </section>
+
+
+      <div class="closing-message">
+
+        <span></span>
+
+        <p>
+          GOD’S WORD FOR OUR EVERYDAY QUESTIONS
+        </p>
+
+        <span></span>
+
+      </div>
+
     </section>
 
-    <section class="features" id="about">
-      <article class="feature">
-        <div class="feature-icon book-icon">♧</div>
-        <h3>BIBLICAL<br>ANSWERS</h3>
-      </article>
 
-      <div class="feature-divider"></div>
+    <!-- =========================
+         SCRIPTURE RESULTS
+    ========================== -->
 
-      <article class="feature">
-        <div class="feature-icon">✝</div>
-        <h3>TRUSTED<br>SCRIPTURE</h3>
-      </article>
+    <section
+      id="results"
+      class="results-section"
+      hidden
+    >
 
-      <div class="feature-divider"></div>
+      <div class="results-inner">
 
-      <article class="feature">
-        <div class="feature-icon">☼</div>
-        <h3>REAL<br>LIFE GUIDANCE</h3>
-      </article>
+        <div class="results-heading">
+          SCRIPTURE RESULTS
+        </div>
 
-      <div class="feature-divider"></div>
+        <h2 id="resultTitle"></h2>
 
-      <article class="feature">
-        <div class="feature-icon">♙</div>
-        <h3>FOR<br>EVERYONE</h3>
-      </article>
+        <div
+          id="categories"
+          class="categories"
+        ></div>
+
+        <div
+          id="passages"
+          class="passages"
+        ></div>
+
+      </div>
+
     </section>
 
-    <div class="closing-message">
-      <span></span>
-      <p>GOD’S WORD FOR OUR EVERYDAY QUESTIONS</p>
-      <span></span>
-    </div>
-  </section>
 
-  <section id="results" class="results-section" hidden>
-    <div class="results-inner">
-      <div class="results-heading">SCRIPTURE RESULTS</div>
-      <h2 id="resultTitle"></h2>
-      <div id="categories" class="categories"></div>
-      <div id="passages" class="passages"></div>
-    </div>
-  </section>
+    <!-- =========================
+         RESOURCES
+    ========================== -->
 
-  <section id="resources" class="simple-section">
-    <div class="simple-section-inner">
-      <div class="eyebrow">RESOURCES</div>
-      <h2>Read Scripture in Context</h2>
-      <p>
-        AskJesus.ca is designed to point you back to God’s Word.
-        Read each passage in its surrounding chapter and prayerfully
-        seek understanding through Scripture.
-      </p>
-    </div>
-  </section>
+    <section
+      id="resources"
+      class="simple-section"
+    >
 
-  <section id="contact" class="simple-section alternate">
-    <div class="simple-section-inner">
-      <div class="eyebrow">ASKJESUS.CA</div>
-      <h2>Pray. Ask. Seek. Knock.</h2>
-      <p>
-        Pray and ask the Holy Spirit for wisdom, then search the
-        Scriptures and read each passage in context.
-      </p>
-    </div>
-  </section>
-</main>
+      <div class="simple-section-inner">
 
-<footer>
-  <p>AskJesus.ca <span>•</span> Find What Scripture Says</p>
-</footer>
+        <div class="eyebrow">
+          RESOURCES
+        </div>
 
-<script src="app.js"></script>
+        <h2>
+          Read Scripture in Context
+        </h2>
+
+        <p>
+          AskJesus.ca is designed to point you back
+          to God’s Word. Read each passage in its
+          surrounding chapter and prayerfully seek
+          understanding through Scripture.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+      id="contact"
+      class="simple-section alternate"
+    >
+
+      <div class="simple-section-inner">
+
+        <div class="eyebrow">
+          ASKJESUS.CA
+        </div>
+
+        <h2>
+          Pray. Ask. Seek. Knock.
+        </h2>
+
+        <p>
+          Pray and ask the Holy Spirit for wisdom,
+          then search the Scriptures and read each
+          passage in context.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      AskJesus.ca
+      <span>•</span>
+      Find What Scripture Says
+    </p>
+
+  </footer>
+
+
+  <script src="app.js"></script>
+
 </body>
 </html>
