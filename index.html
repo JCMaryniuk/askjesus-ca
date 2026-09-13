@@ -8,220 +8,471 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>AskJesus.ca — Find Scripture</title>
-
   <meta
     name="description"
-    content="Ask a question and find Bible passages related to it."
+    content="AskJesus.ca helps you search Scripture by topic and read what the Bible says for yourself."
   />
+
+  <title>AskJesus.ca | Find What Scripture Says</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header class="site-header">
+
     <div class="header-inner">
 
-      <div class="brand-mark">
-        ASK
-      </div>
+      <a href="/" class="brand">
 
-      <div class="brand-copy">
-        <div class="brand-name">
-          AskJesus.ca
+        <div class="ask-logo">
+          ASK
         </div>
 
-        <div class="brand-subtitle">
-          Find what Scripture says
+        <div class="brand-text">
+          <div class="brand-name">
+            AskJesus.ca
+          </div>
+
+          <div class="brand-tagline">
+            FIND WHAT SCRIPTURE SAYS
+          </div>
         </div>
-      </div>
+
+      </a>
+
+
+      <nav class="main-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
     </div>
+
   </header>
 
 
-  <main class="page-shell">
+  <!-- =========================
+       HERO
+  ========================== -->
 
-    <!-- HERO -->
-    <section class="hero-section">
+  <main>
 
-      <div class="hero-eyebrow">
-        SCRIPTURE STUDY
+    <section class="hero" id="home">
+
+      <div class="hero-glow"></div>
+
+      <div class="hero-inner">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            SCRIPTURE STUDY
+          </div>
+
+          <h1>
+            Ask a<br>
+            question.<br>
+            Find the<br>
+            Scripture.
+          </h1>
+
+          <p class="hero-description">
+            Search the Bible by topic and read
+            the passages for yourself.
+          </p>
+
+          <div class="small-gold-line"></div>
+
+          <p class="hero-subline">
+            REAL QUESTIONS. GOD’S WORD. REAL LIFE.
+          </p>
+
+        </div>
+
+
+        <!--
+          Put your new blue Jesus image here.
+
+          Save the image in your public folder as:
+
+          public/images/jesus-blue.jpg
+
+          If your image has another filename,
+          just change the src below.
+        -->
+
+        <div class="jesus-image-wrap">
+
+          <img
+            src="images/jesus-blue.jpg"
+            alt="Jesus reaching out his hand"
+            class="jesus-image"
+          />
+
+        </div>
+
       </div>
 
-      <h1 class="hero-title">
-        Ask a question.<br />
-        Find the Scripture.
-      </h1>
 
-      <p class="hero-description">
-        Search the Bible by topic and read the passages for yourself.
-      </p>
+      <!-- =========================
+           MATTHEW 7:7
+      ========================== -->
+
+      <div class="scripture-quote">
+
+        <p>
+          “Ask, and it will be given to you;<br>
+          seek, and you will find;<br>
+          knock, and the door shall be opened to you.”
+        </p>
+
+        <div class="verse-reference">
+
+          <span></span>
+
+          <strong>
+            MATTHEW 7:7
+          </strong>
+
+          <span></span>
+
+        </div>
+
+      </div>
 
 
-      <!-- QUESTION FORM -->
-      <form
-        id="questionForm"
-        class="question-form"
+      <!-- =========================
+           ASK / SEEK / KNOCK
+      ========================== -->
+
+      <section class="ask-cards">
+
+        <!-- ASK -->
+
+        <article class="ask-card">
+
+          <div class="card-icon">
+            <div class="speech-icon"></div>
+          </div>
+
+          <div class="letter">
+            A
+          </div>
+
+          <h2>
+            ASK
+          </h2>
+
+          <div class="card-line"></div>
+
+          <p>
+            Ask, and it will<br>
+            be given to you.
+          </p>
+
+        </article>
+
+
+        <!-- SEEK -->
+
+        <article class="ask-card">
+
+          <div class="card-icon">
+            <div class="search-icon"></div>
+          </div>
+
+          <div class="letter">
+            S
+          </div>
+
+          <h2>
+            SEEK
+          </h2>
+
+          <div class="card-line"></div>
+
+          <p>
+            Seek, and you<br>
+            will find.
+          </p>
+
+        </article>
+
+
+        <!-- KNOCK -->
+
+        <article class="ask-card">
+
+          <div class="card-icon">
+            <div class="door-icon">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="letter">
+            K
+          </div>
+
+          <h2>
+            KNOCK
+          </h2>
+
+          <div class="card-line"></div>
+
+          <p>
+            Knock, and the door<br>
+            shall be opened<br>
+            to you.
+          </p>
+
+        </article>
+
+      </section>
+
+
+      <!-- =========================
+           QUESTION FORM
+      ========================== -->
+
+      <section class="question-area">
+
+        <form id="questionForm">
+
+          <label for="question">
+            WHAT WOULD YOU LIKE TO ASK?
+          </label>
+
+          <div class="question-row">
+
+            <input
+              id="question"
+              name="question"
+              type="text"
+              placeholder="Example: What does the Bible say about divorce?"
+              autocomplete="off"
+              required
+            />
+
+            <button
+              id="submitButton"
+              type="submit"
+            >
+              <span>
+                Find Scripture
+              </span>
+
+              <span class="button-arrow">
+                →
+              </span>
+            </button>
+
+          </div>
+
+        </form>
+
+        <div
+          id="loadingMessage"
+          class="loading-message"
+          hidden
+        >
+          Searching Scripture...
+        </div>
+
+        <div
+          id="errorMessage"
+          class="error-message"
+          hidden
+        ></div>
+
+      </section>
+
+
+      <!-- =========================
+           BENEFITS
+      ========================== -->
+
+      <section
+        class="features"
+        id="about"
       >
 
-        <label
-          for="question"
-          class="question-label"
-        >
-          What would you like to ask?
-        </label>
+        <article class="feature">
 
-        <div class="question-input-wrap">
+          <div class="feature-icon book-icon">
+            ♧
+          </div>
 
-          <textarea
-            id="question"
-            class="question-input"
-            name="question"
-            rows="3"
-            placeholder="Example: What does the Bible say about divorce?"
-            required
-          ></textarea>
+          <h3>
+            BIBLICAL<br>
+            ANSWERS
+          </h3>
 
-        </div>
-
-        <button
-          id="submitButton"
-          class="ask-button"
-          type="submit"
-        >
-          Find Scripture
-        </button>
-
-      </form>
+        </article>
 
 
-      <!-- EXAMPLE QUESTIONS -->
-      <div class="example-section">
+        <div class="feature-divider"></div>
 
-        <div class="example-label">
-          TRY A QUESTION
-        </div>
 
-        <div class="example-grid">
+        <article class="feature">
 
-          <button
-            type="button"
-            class="example-button"
-            data-question="What does the Bible say about divorce?"
-          >
-            Divorce
-          </button>
+          <div class="feature-icon">
+            ✝
+          </div>
 
-          <button
-            type="button"
-            class="example-button"
-            data-question="What does the Bible say about forgiveness?"
-          >
-            Forgiveness
-          </button>
+          <h3>
+            TRUSTED<br>
+            SCRIPTURE
+          </h3>
 
-          <button
-            type="button"
-            class="example-button"
-            data-question="What does the Bible say about anxiety?"
-          >
-            Anxiety
-          </button>
+        </article>
 
-          <button
-            type="button"
-            class="example-button"
-            data-question="What does the Bible say about salvation?"
-          >
-            Salvation
-          </button>
 
-        </div>
+        <div class="feature-divider"></div>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            ☼
+          </div>
+
+          <h3>
+            REAL<br>
+            LIFE GUIDANCE
+          </h3>
+
+        </article>
+
+
+        <div class="feature-divider"></div>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            ♙
+          </div>
+
+          <h3>
+            FOR<br>
+            EVERYONE
+          </h3>
+
+        </article>
+
+      </section>
+
+
+      <div class="closing-message">
+
+        <span></span>
+
+        <p>
+          GOD’S WORD FOR OUR EVERYDAY QUESTIONS
+        </p>
+
+        <span></span>
 
       </div>
-
-
-      <!-- STATUS MESSAGES -->
-      <div
-        id="loadingMessage"
-        class="loading-message"
-        style="display: none;"
-      >
-        Finding Scripture...
-      </div>
-
-      <div
-        id="errorMessage"
-        class="error-message"
-        style="display: none;"
-      ></div>
 
     </section>
 
 
-    <!-- RESULTS -->
+    <!-- =========================
+         SCRIPTURE RESULTS
+
+         These IDs are intentionally
+         preserved for your app.js.
+    ========================== -->
+
     <section
       id="results"
       class="results-section"
-      style="display: none;"
+      hidden
     >
 
-      <div class="results-heading-row">
-
-        <div class="results-line"></div>
+      <div class="results-inner">
 
         <div class="results-heading">
-          ▤ SCRIPTURE RESULTS ▤
+          SCRIPTURE RESULTS
         </div>
 
-        <div class="results-line"></div>
+        <h2 id="resultTitle"></h2>
+
+        <div
+          id="categories"
+          class="categories"
+        ></div>
+
+        <div
+          id="passages"
+          class="passages"
+        ></div>
 
       </div>
 
+    </section>
 
-      <div class="results-card">
 
-        <div class="result-eyebrow">
-          SCRIPTURE STUDY
+    <!-- =========================
+         OPTIONAL PAGE SECTIONS
+    ========================== -->
+
+    <section
+      id="resources"
+      class="simple-section"
+    >
+
+      <div class="simple-section-inner">
+
+        <div class="eyebrow">
+          RESOURCES
         </div>
 
-        <h2
-          id="resultTitle"
-          class="result-title"
-        >
-          What Scripture Says
+        <h2>
+          Read Scripture in Context
         </h2>
 
+        <p>
+          AskJesus.ca is designed to point you back
+          to God’s Word. Read each passage in its
+          surrounding chapter and prayerfully seek
+          understanding through Scripture.
+        </p>
 
-        <!-- CATEGORY TAGS -->
-        <div
-          id="categories"
-          class="category-container"
-        ></div>
+      </div>
 
-
-        <!-- SCRIPTURE PASSAGES -->
-        <div
-          id="passages"
-          class="passages-container"
-        ></div>
+    </section>
 
 
-        <!-- FOOTER NOTE -->
-        <div class="study-note">
+    <section
+      id="contact"
+      class="simple-section alternate"
+    >
 
-          <div class="study-note-title">
-            READ IN CONTEXT
-          </div>
+      <div class="simple-section-inner">
 
-          <p>
-            These passages are provided so you can study Scripture directly.
-            Consider reading the surrounding chapter for fuller context.
-          </p>
-
+        <div class="eyebrow">
+          ASKJESUS.CA
         </div>
+
+        <h2>
+          Pray. Ask. Seek. Knock.
+        </h2>
+
+        <p>
+          Pray and ask the Holy Spirit for wisdom,
+          then search the Scriptures and read each
+          passage in context.
+        </p>
 
       </div>
 
@@ -230,19 +481,17 @@
   </main>
 
 
-  <footer class="site-footer">
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    <div class="footer-inner">
+  <footer>
 
-      <div class="footer-brand">
-        AskJesus.ca
-      </div>
-
-      <p>
-        Search Scripture. Read in context. Seek truth.
-      </p>
-
-    </div>
+    <p>
+      AskJesus.ca
+      <span>•</span>
+      Find What Scripture Says
+    </p>
 
   </footer>
 
