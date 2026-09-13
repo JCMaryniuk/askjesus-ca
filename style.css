@@ -1,26 +1,13 @@
 /* =========================================================
    ASKJESUS.CA
-   CLEAN BLUE LAYOUT
-========================================================= */
-
-:root {
-  --navy: #062a46;
-  --navy-dark: #031b2d;
-  --navy-light: #0b4c78;
-  --gold: #f5c56c;
-  --gold-bright: #ffd97f;
-  --cream: #fffaf1;
-  --white: #ffffff;
-  --muted: #bfd0df;
-  --line: rgba(255, 255, 255, 0.18);
-  --card-bg: rgba(3, 38, 62, 0.74);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
-}
+   COMPLETE STYLE.CSS
+   Desktop + Mobile
+   ========================================================= */
 
 
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+========================= */
 
 * {
   box-sizing: border-box;
@@ -33,35 +20,41 @@ html {
 }
 
 body {
+  margin: 0;
+  background: #073d5b;
+  color: #fffaf0;
   font-family: Arial, Helvetica, sans-serif;
-
-  background:
-    linear-gradient(
-      180deg,
-      #0c4f7d 0%,
-      #063654 28%,
-      #04263e 55%,
-      #031d31 100%
-    );
-
-  color: var(--white);
   overflow-x: hidden;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
-button,
-input,
-textarea {
-  font: inherit;
+
+/* =========================
+   COLOURS
+========================= */
+
+:root {
+  --navy: #022f49;
+  --navy-dark: #01283f;
+  --navy-light: #074765;
+
+  --cream: #fffaf0;
+  --white: #ffffff;
+
+  --gold: #f7c45e;
+  --gold-light: #ffda86;
+
+  --muted: #cbd8e1;
+
+  --border: rgba(247, 196, 94, 0.9);
 }
 
 
@@ -71,133 +64,111 @@ textarea {
 
 .site-header {
   width: 100%;
-
-  background:
-    rgba(3, 27, 45, 0.88);
-
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.12);
-
-  backdrop-filter: blur(12px);
-
+  height: 125px;
+  background: var(--navy-dark);
   position: relative;
-  z-index: 50;
+  z-index: 20;
 }
 
 .header-inner {
-  max-width: 1450px;
+  width: min(1600px, calc(100% - 100px));
+  height: 100%;
   margin: 0 auto;
-
-  min-height: 110px;
-
-  padding: 14px 5%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 40px;
 }
 
 
-/* BRAND */
+/* =========================
+   BRAND
+========================= */
 
 .brand {
   display: flex;
   align-items: center;
   gap: 28px;
+
+  text-decoration: none;
+  color: var(--cream);
 }
 
 .ask-logo {
-  width: 94px;
-  height: 78px;
+  width: 96px;
+  height: 96px;
 
   border: 2px solid var(--gold);
-
   border-radius: 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-family: Georgia, serif;
-
-  font-size: 34px;
-
-  letter-spacing: 2px;
-
-  color: var(--gold-bright);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 39px;
+  color: var(--gold);
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
 .brand-name {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      28px,
-      3vw,
-      47px
-    );
-
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
-
+  font-size: 48px;
+  line-height: 1;
   color: var(--cream);
 }
 
 .brand-tagline {
+  margin-top: 13px;
+
+  font-size: 17px;
+  letter-spacing: 7px;
+  line-height: 1;
+
   color: var(--white);
-
-  font-size: 16px;
-
-  letter-spacing: 5px;
-
-  font-weight: 400;
 }
 
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 50px;
-
-  font-size: 18px;
+  gap: 68px;
 }
 
 .main-nav a {
-  padding: 15px 4px;
-
-  color: rgba(255, 255, 255, 0.92);
-
   position: relative;
+
+  text-decoration: none;
+  color: var(--white);
+
+  font-size: 18px;
+  font-weight: 400;
+
+  padding: 15px 0;
 }
 
-.main-nav a:hover,
 .main-nav a.active {
-  color: var(--gold-bright);
+  color: var(--gold);
 }
 
 .main-nav a.active::after {
   content: "";
 
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 4px;
 
   height: 2px;
-
   background: var(--gold);
 }
 
@@ -208,215 +179,193 @@ textarea {
 
 .hero {
   position: relative;
-
-  min-height: 100vh;
-
   overflow: hidden;
 
-  padding-bottom: 90px;
-
   background:
-    radial-gradient(
-      circle at 77% 15%,
-      rgba(72, 155, 215, 0.65),
-      transparent 37%
-    ),
     linear-gradient(
-      180deg,
-      #0b4a73 0%,
-      #073957 27%,
-      #052d48 52%,
-      #03243a 100%
+      90deg,
+      #032f49 0%,
+      #063e5c 36%,
+      #07547d 68%,
+      #08669a 100%
     );
+
+  padding-bottom: 60px;
 }
 
 .hero-glow {
   position: absolute;
+  inset: 0;
 
-  width: 750px;
-  height: 750px;
-
-  right: -180px;
-  top: -90px;
+  pointer-events: none;
 
   background:
     radial-gradient(
-      circle,
-      rgba(80, 174, 235, 0.35),
-      transparent 68%
+      circle at 73% 20%,
+      rgba(62, 171, 242, 0.25),
+      transparent 35%
     );
-
-  pointer-events: none;
 }
 
 
-/* HERO TOP AREA */
+/* =========================
+   TOP HERO
+========================= */
 
 .hero-inner {
-  width: min(1450px, 90%);
+  position: relative;
+
+  width: min(1600px, calc(100% - 100px));
+  height: 520px;
 
   margin: 0 auto;
 
-  min-height: 650px;
-
   display: grid;
+  grid-template-columns: 42% 58%;
 
-  grid-template-columns:
-    47%
-    53%;
-
-  align-items: center;
-
-  position: relative;
-
-  padding-top: 55px;
+  z-index: 2;
 }
 
 
-/* HERO COPY */
+/* =========================
+   HERO COPY
+========================= */
 
 .hero-copy {
   position: relative;
+  z-index: 4;
 
-  z-index: 5;
-
-  padding-right: 20px;
+  padding-top: 68px;
+  padding-left: 15px;
 }
 
 .eyebrow {
-  color: var(--gold-bright);
+  color: var(--gold);
 
-  letter-spacing: 5px;
-
-  font-size: 17px;
-
+  font-size: 18px;
   font-weight: 700;
 
-  margin-bottom: 16px;
+  letter-spacing: 7px;
+
+  margin-bottom: 24px;
 }
 
 .hero-copy h1 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   color: var(--cream);
 
-  font-size:
-    clamp(
-      64px,
-      6.5vw,
-      100px
-    );
-
-  line-height: 0.92;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(66px, 5.4vw, 92px);
+  line-height: 0.88;
 
   letter-spacing: -3px;
+  font-weight: 700;
 
-  max-width: 650px;
-
-  text-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.15);
+  margin: 0;
 }
 
 .hero-description {
-  margin-top: 30px;
+  margin-top: 34px;
 
-  font-size:
-    clamp(
-      20px,
-      2vw,
-      28px
-    );
+  width: 600px;
+  max-width: 92%;
 
+  font-size: 26px;
   line-height: 1.45;
 
-  max-width: 620px;
-
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--white);
 }
 
 .small-gold-line {
-  width: 80px;
-  height: 2px;
+  width: 75px;
+  height: 3px;
 
   background: var(--gold);
 
-  margin-top: 24px;
-  margin-bottom: 23px;
+  margin-top: 28px;
 }
 
 .hero-subline {
-  color: #d8e5ee;
+  margin-top: 20px;
 
-  letter-spacing: 5px;
+  color: #d9e5ec;
 
-  font-size:
-    clamp(
-      11px,
-      1vw,
-      15px
-    );
+  font-size: 13px;
+  letter-spacing: 4px;
+  line-height: 1.5;
 }
 
 
-/* =========================================================
+/* =========================
    JESUS IMAGE
-========================================================= */
+========================= */
 
 .jesus-image-wrap {
-  position: absolute;
+  position: relative;
 
-  right: -5%;
+  height: 520px;
+  overflow: hidden;
 
-  bottom: -40px;
-
-  width: 64%;
-
-  height: 100%;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-
-  z-index: 2;
-
-  pointer-events: none;
+  align-self: stretch;
 }
 
 .jesus-image {
   width: 100%;
-  max-height: 680px;
+  height: 100%;
 
-  object-fit: contain;
+  object-fit: cover;
 
-  object-position: right bottom;
+  /*
+    Keeps Jesus on the right,
+    with his hand reaching toward
+    the centre of the page.
+  */
+  object-position: center center;
+}
 
-  filter:
-    drop-shadow(
-      0
-      15px
-      40px
-      rgba(0, 0, 0, 0.22)
+
+/* Soft blend between copy and image */
+
+.jesus-image-wrap::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 47, 73, 0.92) 0%,
+      rgba(3, 47, 73, 0.48) 13%,
+      rgba(3, 47, 73, 0.08) 30%,
+      transparent 45%
     );
+}
 
-  -webkit-mask-image:
+
+/* Bottom image fade */
+
+.jesus-image-wrap::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 130px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background:
     linear-gradient(
       to bottom,
-      black 0%,
-      black 73%,
-      rgba(0, 0, 0, 0.84) 84%,
-      transparent 100%
-    );
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black 0%,
-      black 73%,
-      rgba(0, 0, 0, 0.84) 84%,
-      transparent 100%
+      transparent,
+      rgba(4, 61, 91, 0.88)
     );
 }
 
@@ -426,66 +375,49 @@ textarea {
 ========================================================= */
 
 .scripture-quote {
-  width: min(950px, 90%);
-
-  margin:
-    -15px
-    auto
-    35px;
-
   position: relative;
+  z-index: 5;
 
-  z-index: 10;
+  width: min(1000px, 90%);
+
+  margin: 12px auto 25px;
 
   text-align: center;
 }
 
 .scripture-quote p {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      25px,
-      2.7vw,
-      38px
-    );
-
-  line-height: 1.3;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
 
-  color: var(--cream);
+  font-size: 29px;
+  line-height: 1.3;
 
-  text-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.2);
+  color: var(--cream);
 }
 
 .verse-reference {
+  margin-top: 14px;
+
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  gap: 30px;
-
-  margin-top: 18px;
+  align-items: center;
+  gap: 25px;
 }
 
 .verse-reference span {
-  width: 80px;
+  display: block;
+
+  width: 78px;
   height: 2px;
 
   background: var(--gold);
 }
 
 .verse-reference strong {
-  color: var(--gold-bright);
-
-  letter-spacing: 10px;
+  color: var(--gold);
 
   font-size: 18px;
+  letter-spacing: 7px;
 }
 
 
@@ -494,79 +426,56 @@ textarea {
 ========================================================= */
 
 .ask-cards {
-  width: min(1450px, 91%);
+  position: relative;
+  z-index: 5;
 
-  margin: 0 auto;
+  width: min(1500px, calc(100% - 100px));
+
+  margin: 20px auto 25px;
 
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 20px;
-
-  position: relative;
-
-  z-index: 10;
+  gap: 22px;
 }
 
 .ask-card {
-  min-height: 340px;
+  min-height: 290px;
 
-  padding:
-    18px
-    25px
-    28px;
-
-  border:
-    1.7px solid var(--gold);
-
+  border: 2px solid var(--gold);
   border-radius: 28px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(6, 54, 84, 0.84),
-      rgba(3, 39, 63, 0.92)
-    );
 
   text-align: center;
 
-  box-shadow: var(--shadow);
+  padding: 14px 20px 24px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: rgba(2, 47, 73, 0.28);
 }
 
 .card-icon {
-  width: 120px;
-  height: 120px;
+  width: 94px;
+  height: 94px;
 
-  border:
-    4px solid var(--gold);
+  margin: 0 auto -15px;
 
+  border: 4px solid var(--gold);
   border-radius: 50%;
 
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  margin-bottom: -15px;
-
-  position: relative;
+  justify-content: center;
 }
 
 
-/* SPEECH BUBBLE */
+/* =========================
+   SPEECH ICON
+========================= */
 
 .speech-icon {
-  width: 55px;
-  height: 42px;
+  width: 46px;
+  height: 34px;
 
-  border:
-    4px solid var(--gold-bright);
-
+  border: 4px solid var(--gold);
   border-radius: 50%;
 
   position: relative;
@@ -577,32 +486,27 @@ textarea {
 
   position: absolute;
 
-  bottom: -11px;
-  left: 5px;
+  left: 4px;
+  bottom: -13px;
 
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 15px;
 
-  border-left:
-    4px solid var(--gold-bright);
+  border-left: 4px solid var(--gold);
 
-  border-bottom:
-    4px solid var(--gold-bright);
-
-  transform:
-    skew(-25deg);
+  transform: skew(-22deg);
 }
 
 
-/* SEARCH ICON */
+/* =========================
+   SEARCH ICON
+========================= */
 
 .search-icon {
-  width: 46px;
-  height: 46px;
+  width: 43px;
+  height: 43px;
 
-  border:
-    4px solid var(--gold-bright);
-
+  border: 4px solid var(--gold);
   border-radius: 50%;
 
   position: relative;
@@ -613,31 +517,29 @@ textarea {
 
   position: absolute;
 
-  width: 28px;
+  width: 27px;
   height: 4px;
 
-  background: var(--gold-bright);
+  background: var(--gold);
 
-  transform:
-    rotate(45deg);
-
-  right: -21px;
+  right: -20px;
   bottom: -11px;
 
-  border-radius: 4px;
+  transform: rotate(45deg);
 }
 
 
-/* DOOR ICON */
+/* =========================
+   DOOR ICON
+========================= */
 
 .door-icon {
-  width: 35px;
-  height: 61px;
-
-  border:
-    4px solid var(--gold-bright);
-
   position: relative;
+
+  width: 37px;
+  height: 50px;
+
+  border: 4px solid var(--gold);
 }
 
 .door-icon::before {
@@ -645,277 +547,199 @@ textarea {
 
   position: absolute;
 
-  left: -15px;
-  top: 6px;
+  left: -16px;
+  top: 8px;
 
-  width: 12px;
-  height: 46px;
+  width: 13px;
+  height: 39px;
 
-  border:
-    4px solid var(--gold-bright);
-
-  border-right: none;
+  border: 3px solid var(--gold);
 }
 
 .door-icon span {
   position: absolute;
 
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 
   border-radius: 50%;
 
-  background: var(--gold-bright);
+  background: var(--gold);
 
   right: 5px;
-  top: 27px;
+  bottom: 7px;
 }
 
 
-/* CARD TEXT */
+/* =========================
+   CARD TEXT
+========================= */
 
-.ask-card .letter {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+.letter {
+  font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 64px;
-
+  font-size: 58px;
   line-height: 1;
 
-  color: var(--gold-bright);
+  color: var(--gold);
 
   font-weight: 700;
 }
 
 .ask-card h2 {
+  margin-top: 0;
+
+  color: var(--gold);
+
   font-size: 23px;
-
-  color: var(--gold-bright);
-
   letter-spacing: 4px;
 }
 
 .card-line {
-  width: 85px;
-  height: 2px;
+  width: 74px;
+  height: 3px;
 
   background: var(--gold);
 
-  margin:
-    14px
-    auto
-    14px;
+  margin: 14px auto;
 }
 
 .ask-card p {
-  font-size: 20px;
-
+  font-size: 18px;
   line-height: 1.35;
 
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--white);
 }
 
 
 /* =========================================================
-   QUESTION BOX
+   QUESTION AREA
 ========================================================= */
 
 .question-area {
-  width: min(1480px, 94%);
-
-  margin:
-    34px
-    auto
-    0;
-
-  padding:
-    26px
-    28px
-    28px;
-
-  border:
-    1.8px solid var(--gold);
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(4, 44, 70, 0.90),
-      rgba(3, 35, 57, 0.94)
-    );
-
   position: relative;
+  z-index: 5;
 
-  z-index: 10;
+  width: min(1500px, calc(100% - 100px));
 
-  box-shadow: var(--shadow);
+  margin: 25px auto;
 }
 
-.question-area label {
+#questionForm {
+  border: 2px solid var(--gold);
+  border-radius: 28px;
+
+  padding: 20px 25px 25px;
+
+  background: rgba(2, 42, 64, 0.35);
+}
+
+#questionForm label {
   display: block;
 
-  color: var(--gold-bright);
+  margin-bottom: 16px;
 
-  letter-spacing: 5px;
+  color: var(--gold);
 
-  font-size:
-    clamp(
-      15px,
-      1.5vw,
-      22px
-    );
-
+  font-size: 20px;
   font-weight: 700;
 
-  margin-bottom: 18px;
+  letter-spacing: 4px;
 }
 
 .question-row {
   display: grid;
 
-  grid-template-columns:
-    1fr
-    320px;
+  grid-template-columns: 1fr 290px;
 
-  gap: 0;
+  gap: 10px;
 }
 
-.question-row input,
-.question-row textarea {
+#question {
   width: 100%;
+  height: 74px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.18);
+  resize: none;
 
-  border-radius:
-    22px
-    0
-    0
-    22px;
+  border: 1px solid rgba(151, 195, 221, 0.45);
+  border-radius: 15px;
 
-  outline: none;
-
-  background:
-    rgba(19, 58, 87, 0.75);
+  background: rgba(19, 70, 100, 0.85);
 
   color: var(--white);
 
-  font-size: 20px;
+  padding: 22px 26px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 19px;
+  line-height: 1.4;
+
+  outline: none;
 }
 
-.question-row input {
-  height: 96px;
-
-  padding:
-    0
-    28px;
+#question::placeholder {
+  color: #abc3d5;
 }
 
-.question-row textarea {
-  min-height: 96px;
-
-  padding:
-    20px
-    28px;
-
-  line-height: 1.45;
-
-  resize: vertical;
+#question:focus {
+  border-color: var(--gold);
 }
 
-.question-row input::placeholder,
-.question-row textarea::placeholder {
-  color: #b8ccdd;
-}
-
-.question-row input:focus,
-.question-row textarea:focus {
-  border-color:
-    rgba(245, 197, 108, 0.7);
-
-  box-shadow:
-    inset
-    0
-    0
-    0
-    1px
-    rgba(245, 197, 108, 0.2);
-}
-
-.question-row button {
+#submitButton {
   border: none;
-
-  min-height: 96px;
-
-  border-radius:
-    0
-    22px
-    22px
-    0;
-
-  padding:
-    0
-    28px;
+  border-radius: 15px;
 
   background:
     linear-gradient(
-      135deg,
-      #ffe19a,
-      #e8a844
+      90deg,
+      #ffdc8b,
+      #f2b64d
     );
 
-  color: #102030;
-
-  font-weight: 800;
+  color: #082d46;
 
   font-size: 20px;
+  font-weight: 700;
 
   cursor: pointer;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  gap: 25px;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.question-row button:hover {
-  transform:
-    translateY(-1px);
-
-  box-shadow:
-    0
-    12px
-    30px
-    rgba(0, 0, 0, 0.20);
+  gap: 28px;
 }
 
 .button-arrow {
-  font-size: 38px;
+  font-size: 34px;
+  font-weight: 400;
+}
 
-  line-height: 1;
+#submitButton:hover {
+  filter: brightness(1.04);
+}
+
+#submitButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 .loading-message,
 .error-message {
-  margin-top: 18px;
+  margin-top: 14px;
+
+  text-align: center;
 
   font-size: 17px;
 }
 
 .loading-message {
-  color: var(--gold-bright);
+  color: var(--gold);
 }
 
 .error-message {
-  color: #ffb7b7;
+  color: #ffd4d4;
 }
 
 
@@ -924,31 +748,22 @@ textarea {
 ========================================================= */
 
 .features {
-  width: min(1300px, 88%);
+  position: relative;
+  z-index: 5;
 
-  margin:
-    45px
-    auto
-    0;
+  width: min(1300px, calc(100% - 100px));
+
+  margin: 35px auto 25px;
 
   display: grid;
 
   grid-template-columns:
-    1fr
-    auto
-    1fr
-    auto
-    1fr
-    auto
+    1fr auto
+    1fr auto
+    1fr auto
     1fr;
 
   align-items: center;
-
-  gap: 30px;
-
-  position: relative;
-
-  z-index: 10;
 }
 
 .feature {
@@ -956,129 +771,109 @@ textarea {
 }
 
 .feature-icon {
-  font-size: 56px;
-
-  min-height: 72px;
-
-  color: var(--cream);
+  min-height: 55px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  font-size: 48px;
+
+  color: var(--gold);
 }
 
-.feature:nth-of-type(3) .feature-icon {
-  color: var(--gold-bright);
+.book-icon {
+  color: var(--white);
 }
 
 .feature h3 {
-  font-size: 15px;
+  margin-top: 8px;
 
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
 
-  letter-spacing: 4px;
+  font-weight: 400;
 
-  font-weight: 500;
+  letter-spacing: 3px;
 
-  margin-top: 7px;
+  color: var(--white);
 }
 
 .feature-divider {
   width: 1px;
-  height: 115px;
+  height: 100px;
 
-  background:
-    rgba(255, 255, 255, 0.38);
+  background: rgba(255,255,255,0.35);
 }
 
 
-/* =========================================================
+/* =========================
    CLOSING MESSAGE
-========================================================= */
+========================= */
 
 .closing-message {
-  display: flex;
+  position: relative;
+  z-index: 5;
 
+  margin: 30px auto 0;
+
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 28px;
-
-  width: min(900px, 90%);
-
-  margin:
-    45px
-    auto
-    0;
-
-  color: #cbd8e2;
-
-  letter-spacing: 5px;
-
-  font-size: 13px;
-
-  text-align: center;
+  gap: 22px;
 }
 
 .closing-message span {
-  width: 120px;
+  width: 85px;
   height: 2px;
 
   background: var(--gold);
 }
 
+.closing-message p {
+  font-size: 13px;
+  letter-spacing: 4px;
+
+  color: #d8e3ea;
+}
+
 
 /* =========================================================
-   RESULTS SECTION
+   RESULTS
 ========================================================= */
 
 .results-section {
-  background: #f8f3e9;
+  background: #f7f3ea;
 
-  color: #0b2e47;
+  color: #12364c;
 
-  padding:
-    75px
-    5%;
-
-  position: relative;
-
-  z-index: 20;
+  padding: 70px 25px;
 }
 
 .results-inner {
-  max-width: 1100px;
+  width: min(1000px, 100%);
+
   margin: 0 auto;
 }
 
 .results-heading {
-  color: #b57d22;
+  color: #b78326;
 
   font-size: 14px;
-
-  letter-spacing: 5px;
-
   font-weight: 700;
 
-  margin-bottom: 15px;
+  letter-spacing: 4px;
+
+  margin-bottom: 12px;
 }
 
 #resultTitle {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
-  font-size:
-    clamp(
-      34px,
-      5vw,
-      55px
-    );
+  font-size: 38px;
 
-  line-height: 1.1;
-
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 
 .categories {
@@ -1090,47 +885,10 @@ textarea {
   margin-bottom: 25px;
 }
 
-.categories button,
-.categories span {
-  display: inline-block;
-
-  border:
-    1px solid #d9ba78;
-
-  background: #fff8ea;
-
-  color: #173b54;
-
-  padding:
-    9px
-    14px;
-
-  border-radius: 30px;
-
-  font-size: 14px;
-}
-
 .passages {
   display: grid;
 
-  gap: 20px;
-}
-
-.passages > * {
-  background: #ffffff;
-
-  border:
-    1px solid #e8dfce;
-
-  border-radius: 18px;
-
-  padding: 24px;
-
-  box-shadow:
-    0
-    10px
-    25px
-    rgba(0, 0, 0, 0.05);
+  gap: 18px;
 }
 
 
@@ -1139,21 +897,19 @@ textarea {
 ========================================================= */
 
 .simple-section {
-  background: #f8f3e9;
+  padding: 80px 25px;
 
-  color: #0d304a;
+  background: #f8f4eb;
 
-  padding:
-    90px
-    5%;
+  color: #12364c;
 }
 
 .simple-section.alternate {
-  background: #efe6d4;
+  background: #e8eef0;
 }
 
 .simple-section-inner {
-  max-width: 900px;
+  width: min(900px, 100%);
 
   margin: 0 auto;
 
@@ -1161,31 +917,16 @@ textarea {
 }
 
 .simple-section h2 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
-  font-size:
-    clamp(
-      36px,
-      5vw,
-      58px
-    );
+  font-size: 40px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .simple-section p {
-  max-width: 750px;
-
-  margin: 0 auto;
-
-  font-size: 20px;
-
+  font-size: 19px;
   line-height: 1.7;
-
-  color: #435b6c;
 }
 
 
@@ -1194,22 +935,15 @@ textarea {
 ========================================================= */
 
 footer {
-  min-height: 120px;
-
   background: var(--navy-dark);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #dce7ed;
 
   text-align: center;
 
-  padding: 30px;
-}
+  padding: 30px 20px;
 
-footer p {
-  color:
-    rgba(255, 255, 255, 0.70);
+  font-size: 14px;
 
   letter-spacing: 2px;
 }
@@ -1217,9 +951,7 @@ footer p {
 footer span {
   color: var(--gold);
 
-  margin:
-    0
-    10px;
+  margin: 0 10px;
 }
 
 
@@ -1227,17 +959,19 @@ footer span {
    TABLET
 ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
 
   .header-inner {
-    flex-direction: column;
+    width: calc(100% - 50px);
+  }
 
-    justify-content: center;
+  .brand-name {
+    font-size: 39px;
+  }
 
-    gap: 10px;
-
-    padding-top: 18px;
-    padding-bottom: 18px;
+  .brand-tagline {
+    font-size: 13px;
+    letter-spacing: 5px;
   }
 
   .main-nav {
@@ -1245,1258 +979,551 @@ footer span {
   }
 
   .hero-inner {
-    grid-template-columns: 1fr;
+    width: calc(100% - 50px);
 
-    min-height: 950px;
-
-    align-items: start;
-
-    padding-top: 55px;
-  }
-
-  .hero-copy {
-    width: 60%;
-
-    z-index: 5;
+    grid-template-columns: 48% 52%;
   }
 
   .hero-copy h1 {
-    font-size:
-      clamp(
-        60px,
-        9vw,
-        90px
-      );
+    font-size: 65px;
   }
 
-  .jesus-image-wrap {
-    right: -13%;
-
-    width: 78%;
-
-    height: 82%;
-
-    bottom: 0;
+  .hero-description {
+    font-size: 21px;
   }
 
-  .jesus-image {
-    max-height: 720px;
+  .ask-cards,
+  .question-area {
+    width: calc(100% - 50px);
   }
 
-  .ask-cards {
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    width: 95%;
-  }
-
-  .ask-card {
-    min-height: 320px;
-
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .features {
-    width: 95%;
-  }
 }
 
 
 /* =========================================================
    MOBILE
-   DESIGNED TO MATCH THE DESKTOP LOOK
 ========================================================= */
 
-@media screen and (max-width: 760px) {
+@media (max-width: 768px) {
+
+  body {
+    background: #073d5b;
+  }
+
 
   /* =========================
-     HEADER
-  ========================== */
+     MOBILE HEADER
+  ========================= */
 
   .site-header {
-    background: #032a46 !important;
+    height: 130px;
   }
 
   .header-inner {
-    min-height: 92px !important;
+    width: calc(100% - 42px);
 
-    padding:
-      12px
-      20px !important;
-
-    display: flex !important;
-
-    flex-direction: row !important;
-
-    align-items: center !important;
-
-    justify-content: flex-start !important;
+    justify-content: flex-start;
   }
 
   .brand {
-    display: flex !important;
-
-    align-items: center !important;
-
-    gap: 14px !important;
+    gap: 16px;
   }
 
   .ask-logo {
-    width: 64px !important;
+    width: 69px;
+    height: 69px;
 
-    height: 58px !important;
+    border-radius: 17px;
 
-    border-radius: 15px !important;
-
-    font-size: 23px !important;
+    font-size: 29px;
   }
 
   .brand-name {
-    font-size: 27px !important;
-
-    line-height: 1 !important;
+    font-size: 31px;
   }
 
   .brand-tagline {
-    font-size: 7px !important;
+    margin-top: 9px;
 
-    letter-spacing: 2.6px !important;
+    font-size: 9px;
 
-    margin-top: 5px !important;
+    letter-spacing: 4px;
   }
 
   .main-nav {
-    display: none !important;
+    display: none;
   }
 
 
   /* =========================
-     HERO
-  ========================== */
+     MOBILE HERO
+  ========================= */
 
   .hero {
-    padding-bottom: 38px !important;
-
-    background:
-      linear-gradient(
-        180deg,
-        #084b78 0%,
-        #063b60 32%,
-        #04314e 65%,
-        #032944 100%
-      ) !important;
-  }
-
-  .hero-glow {
-    display: none !important;
+    padding-bottom: 45px;
   }
 
   .hero-inner {
-    width: 100% !important;
+    width: 100%;
+    height: 480px;
 
-    height: 465px !important;
+    margin: 0;
 
-    min-height: 465px !important;
+    display: block;
 
-    margin: 0 !important;
-
-    padding:
-      38px
-      20px
-      0 !important;
-
-    display: block !important;
-
-    position: relative !important;
-
-    overflow: hidden !important;
-
-    background: none !important;
+    position: relative;
   }
 
-
-  /* =========================
-     HERO WORDS
-  ========================== */
-
   .hero-copy {
-    width: 56% !important;
+    position: absolute;
 
-    max-width: 230px !important;
+    z-index: 5;
 
-    padding: 0 !important;
+    top: 0;
+    left: 0;
 
-    position: relative !important;
+    width: 54%;
+    height: 100%;
 
-    z-index: 10 !important;
+    padding:
+      40px
+      0
+      0
+      22px;
   }
 
   .eyebrow {
-    font-size: 10px !important;
+    font-size: 12px;
 
-    letter-spacing: 3px !important;
+    letter-spacing: 4px;
 
-    margin-bottom: 13px !important;
+    margin-bottom: 18px;
   }
 
   .hero-copy h1 {
-    font-size: 42px !important;
+    font-size: clamp(43px, 11vw, 59px);
 
-    line-height: 0.91 !important;
+    line-height: 0.91;
 
-    letter-spacing: -1.5px !important;
-
-    max-width: 230px !important;
-
-    margin: 0 !important;
-
-    color: #fffaf1 !important;
-
-    text-shadow:
-      0
-      3px
-      15px
-      rgba(0, 0, 0, 0.22) !important;
+    letter-spacing: -2px;
   }
 
   .hero-description {
-    width: 100% !important;
+    width: 100%;
+    max-width: 100%;
 
-    max-width: 220px !important;
+    margin-top: 22px;
 
-    margin-top: 18px !important;
-
-    font-size: 13px !important;
-
-    line-height: 1.45 !important;
-
-    color: white !important;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .small-gold-line {
-    width: 48px !important;
+    width: 48px;
 
-    height: 2px !important;
+    height: 3px;
 
-    margin:
-      16px
-      0
-      12px !important;
+    margin-top: 20px;
   }
 
   .hero-subline {
-    display: block !important;
+    margin-top: 13px;
 
-    font-size: 6px !important;
+    width: 260px;
 
-    letter-spacing: 1.3px !important;
+    font-size: 8px;
 
-    width: 210px !important;
+    letter-spacing: 2px;
 
-    white-space: nowrap !important;
+    white-space: nowrap;
   }
 
 
   /* =========================
-     JESUS
-  ========================== */
+     MOBILE JESUS IMAGE
+  ========================= */
 
   .jesus-image-wrap {
-    display: flex !important;
+    position: absolute;
 
-    position: absolute !important;
+    inset: 0;
 
-    right: -6% !important;
+    width: 100%;
+    height: 100%;
 
-    bottom: -8px !important;
-
-    width: 65% !important;
-
-    height: 100% !important;
-
-    align-items: flex-end !important;
-
-    justify-content: flex-end !important;
-
-    z-index: 3 !important;
-
-    pointer-events: none !important;
+    z-index: 1;
   }
 
   .jesus-image {
-    display: block !important;
+    width: 100%;
+    height: 100%;
 
-    width: 100% !important;
+    object-fit: cover;
 
-    height: auto !important;
+    /*
+      Important:
+      Keeps Jesus to the right
+      while preserving room for text.
+    */
+    object-position: 67% center;
+  }
 
-    max-height: 445px !important;
+  .jesus-image-wrap::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 47, 73, 1) 0%,
+        rgba(3, 47, 73, 0.96) 26%,
+        rgba(3, 47, 73, 0.72) 43%,
+        rgba(3, 47, 73, 0.12) 63%,
+        transparent 80%
+      );
+  }
 
-    object-fit: contain !important;
+  .jesus-image-wrap::after {
+    height: 90px;
 
-    object-position: right bottom !important;
-
-    filter:
-      drop-shadow(
-        0
-        12px
-        28px
-        rgba(0, 0, 0, 0.18)
-      ) !important;
-
-    -webkit-mask-image:
+    background:
       linear-gradient(
         to bottom,
-        black 0%,
-        black 78%,
-        rgba(0,0,0,.9) 88%,
-        transparent 100%
-      ) !important;
-
-    mask-image:
-      linear-gradient(
-        to bottom,
-        black 0%,
-        black 78%,
-        rgba(0,0,0,.9) 88%,
-        transparent 100%
-      ) !important;
+        transparent,
+        #074765
+      );
   }
 
 
   /* =========================
-     MATTHEW 7:7
-  ========================== */
+     MOBILE SCRIPTURE
+  ========================= */
 
   .scripture-quote {
-    width: 91% !important;
+    width: calc(100% - 40px);
 
     margin:
-      8px
+      70px
       auto
-      26px !important;
-
-    position: relative !important;
-
-    z-index: 10 !important;
-
-    text-align: center !important;
+      30px;
   }
 
   .scripture-quote p {
-    font-size: 17px !important;
+    font-size: 21px;
 
-    line-height: 1.32 !important;
-
-    margin: 0 !important;
+    line-height: 1.35;
   }
 
   .verse-reference {
-    gap: 14px !important;
+    gap: 15px;
 
-    margin-top: 14px !important;
+    margin-top: 17px;
   }
 
   .verse-reference span {
-    width: 42px !important;
+    width: 45px;
   }
 
   .verse-reference strong {
-    font-size: 10px !important;
+    font-size: 13px;
 
-    letter-spacing: 4px !important;
+    letter-spacing: 4px;
   }
 
 
   /* =========================
-     ASK SEEK KNOCK
-  ========================== */
+     MOBILE CARDS
+  ========================= */
 
   .ask-cards {
-    width: 94% !important;
-
-    margin: 0 auto !important;
-
-    display: grid !important;
+    width: calc(100% - 24px);
 
     grid-template-columns:
-      repeat(
-        3,
-        minmax(0, 1fr)
-      ) !important;
+      repeat(3, minmax(0, 1fr));
 
-    gap: 7px !important;
+    gap: 8px;
+
+    margin-top: 32px;
   }
 
   .ask-card {
-    min-height: 200px !important;
+    min-height: 250px;
+
+    border-radius: 18px;
 
     padding:
-      10px
+      12px
       5px
-      13px !important;
-
-    border-radius: 16px !important;
-
-    border-width: 1.5px !important;
+      15px;
   }
 
   .card-icon {
-    width: 61px !important;
+    width: 65px;
+    height: 65px;
 
-    height: 61px !important;
+    border-width: 3px;
 
-    border-width: 2px !important;
-
-    margin-bottom: -7px !important;
+    margin-bottom: -10px;
   }
-
-  .ask-card .letter {
-    font-size: 34px !important;
-  }
-
-  .ask-card h2 {
-    font-size: 12px !important;
-
-    letter-spacing: 1.8px !important;
-  }
-
-  .card-line {
-    width: 42px !important;
-
-    margin:
-      7px
-      auto
-      9px !important;
-  }
-
-  .ask-card p {
-    font-size: 10px !important;
-
-    line-height: 1.3 !important;
-  }
-
-
-  /* SPEECH ICON */
 
   .speech-icon {
-    width: 29px !important;
+    width: 32px;
+    height: 24px;
 
-    height: 23px !important;
-
-    border-width: 2px !important;
+    border-width: 3px;
   }
-
-  .speech-icon::after {
-    width: 9px !important;
-
-    height: 9px !important;
-
-    border-left-width: 2px !important;
-
-    border-bottom-width: 2px !important;
-  }
-
-
-  /* SEARCH ICON */
 
   .search-icon {
-    width: 27px !important;
+    width: 30px;
+    height: 30px;
 
-    height: 27px !important;
-
-    border-width: 2px !important;
+    border-width: 3px;
   }
 
   .search-icon::after {
-    width: 15px !important;
+    width: 18px;
 
-    height: 2px !important;
-
-    right: -11px !important;
-
-    bottom: -6px !important;
+    right: -13px;
+    bottom: -8px;
   }
 
-
-  /* DOOR ICON */
-
   .door-icon {
-    width: 21px !important;
+    width: 27px;
+    height: 36px;
 
-    height: 36px !important;
-
-    border-width: 2px !important;
+    border-width: 3px;
   }
 
   .door-icon::before {
-    width: 7px !important;
+    left: -11px;
 
-    height: 27px !important;
+    width: 9px;
+    height: 28px;
+  }
 
-    left: -9px !important;
+  .letter {
+    font-size: 42px;
+  }
 
-    border-width: 2px !important;
+  .ask-card h2 {
+    font-size: 15px;
 
-    border-right: none !important;
+    letter-spacing: 2px;
+  }
+
+  .card-line {
+    width: 45px;
+
+    margin: 12px auto;
+  }
+
+  .ask-card p {
+    font-size: 12px;
+
+    line-height: 1.4;
   }
 
 
   /* =========================
-     QUESTION
-  ========================== */
+     MOBILE QUESTION BOX
+  ========================= */
 
   .question-area {
-    width: 94% !important;
+    width: calc(100% - 24px);
 
-    margin:
-      22px
-      auto
-      0 !important;
-
-    padding:
-      15px
-      15px
-      17px !important;
-
-    border-radius: 18px !important;
+    margin-top: 25px;
   }
 
-  .question-area label {
-    font-size: 11px !important;
+  #questionForm {
+    border-radius: 20px;
 
-    letter-spacing: 2.3px !important;
+    padding: 20px;
+  }
 
-    margin-bottom: 11px !important;
+  #questionForm label {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 17px;
   }
 
   .question-row {
-    display: grid !important;
-
-    grid-template-columns:
-      minmax(0, 1fr)
-      120px !important;
-
-    gap: 0 !important;
+    display: block;
   }
 
-  .question-row textarea,
-  .question-row input {
-    width: 100% !important;
+  #question {
+    height: 115px;
 
-    min-width: 0 !important;
+    font-size: 16px;
 
-    height: 74px !important;
+    padding: 18px;
 
-    min-height: 74px !important;
-
-    max-height: 74px !important;
-
-    resize: none !important;
-
-    padding:
-      14px
-      13px !important;
-
-    border-radius:
-      12px
-      0
-      0
-      12px !important;
-
-    font-size: 12px !important;
-
-    line-height: 1.35 !important;
+    border-radius: 16px;
   }
 
-  .question-row textarea::placeholder,
-  .question-row input::placeholder {
-    color: #bed0df !important;
+  #submitButton {
+    width: 100%;
+    height: 62px;
 
-    opacity: 1 !important;
-  }
+    margin-top: 12px;
 
-  .question-row button {
-    width: 120px !important;
+    border-radius: 15px;
 
-    height: 74px !important;
-
-    min-height: 74px !important;
-
-    padding:
-      0
-      8px !important;
-
-    border-radius:
-      0
-      12px
-      12px
-      0 !important;
-
-    font-size: 11px !important;
-
-    gap: 6px !important;
-  }
-
-  .button-arrow {
-    font-size: 21px !important;
+    font-size: 18px;
   }
 
 
   /* =========================
-     FEATURES
-  ========================== */
+     MOBILE FEATURES
+  ========================= */
 
   .features {
-    width: 92% !important;
+    width: calc(100% - 30px);
 
-    margin:
-      27px
-      auto
-      0 !important;
-
-    display: grid !important;
+    margin-top: 35px;
 
     grid-template-columns:
-      1fr
-      auto
-      1fr
-      auto
-      1fr
-      auto
-      1fr !important;
-
-    gap: 4px !important;
-
-    align-items: center !important;
-  }
-
-  .feature-divider {
-    display: block !important;
-
-    width: 1px !important;
-
-    height: 58px !important;
+      1fr auto
+      1fr auto
+      1fr auto
+      1fr;
   }
 
   .feature-icon {
-    min-height: 35px !important;
+    font-size: 31px;
 
-    font-size: 27px !important;
+    min-height: 42px;
   }
 
   .feature h3 {
-    font-size: 6px !important;
+    font-size: 8px;
 
-    line-height: 1.5 !important;
+    letter-spacing: 2px;
 
-    letter-spacing: 1.2px !important;
+    line-height: 1.45;
+  }
+
+  .feature-divider {
+    height: 68px;
   }
 
 
   /* =========================
-     BOTTOM LINE
-  ========================== */
+     MOBILE CLOSING
+  ========================= */
 
   .closing-message {
-    width: 92% !important;
+    width: calc(100% - 40px);
 
-    margin:
-      22px
-      auto
-      0 !important;
+    gap: 10px;
 
-    gap: 8px !important;
-
-    font-size: 5.8px !important;
-
-    letter-spacing: 1.2px !important;
+    margin-top: 28px;
   }
 
   .closing-message span {
-    width: 30px !important;
+    width: 32px;
+  }
+
+  .closing-message p {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
   }
 
 
   /* =========================
-     OTHER SECTIONS
-  ========================== */
+     MOBILE LOWER SECTIONS
+  ========================= */
 
-  .results-section {
-    padding:
-      55px
-      20px !important;
-  }
-
+  .results-section,
   .simple-section {
     padding:
-      65px
-      20px !important;
+      50px
+      20px;
+  }
+
+  #resultTitle {
+    font-size: 29px;
+  }
+
+  .simple-section h2 {
+    font-size: 31px;
   }
 
   .simple-section p {
-    font-size: 17px !important;
+    font-size: 16px;
   }
 
 }
 
 
 /* =========================================================
-   SMALL IPHONES
+   SMALL PHONES
 ========================================================= */
 
-@media screen and (max-width: 430px) {
-
-  .hero-inner {
-    height: 445px !important;
-
-    min-height: 445px !important;
-  }
-
-  .hero-copy {
-    width: 55% !important;
-
-    max-width: 215px !important;
-  }
-
-  .hero-copy h1 {
-    font-size: 40px !important;
-
-    max-width: 215px !important;
-  }
-
-  .hero-description {
-    max-width: 195px !important;
-
-    font-size: 12.5px !important;
-  }
-
-  .jesus-image-wrap {
-    width: 64% !important;
-
-    right: -7% !important;
-  }
-
-  .jesus-image {
-    max-height: 425px !important;
-  }
-
-}
-
-@media screen and (max-width: 760px) {
-
-  /* HEADER BECOMES PART OF HERO */
+@media (max-width: 430px) {
 
   .site-header {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100% !important;
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(3, 42, 70, 0.95) 0%,
-        rgba(3, 42, 70, 0.78) 70%,
-        rgba(3, 42, 70, 0) 100%
-      ) !important;
-
-    border-bottom: none !important;
-
-    z-index: 50 !important;
+    height: 115px;
   }
 
   .header-inner {
-    min-height: 92px !important;
-
-    padding:
-      12px
-      20px !important;
-  }
-
-
-  /* HERO */
-
-  .hero-inner {
-    width: 100% !important;
-
-    height: 455px !important;
-    min-height: 455px !important;
-
-    margin: 0 !important;
-
-    padding:
-      120px
-      20px
-      0 !important;
-
-    position: relative !important;
-
-    overflow: hidden !important;
-
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(2, 32, 54, 0.58) 0%,
-        rgba(2, 32, 54, 0.28) 40%,
-        rgba(2, 32, 54, 0.04) 68%,
-        rgba(2, 32, 54, 0) 100%
-      ),
-      url("/IMG_5276.png") !important;
-
-    background-size:
-      100% 100%,
-      116% auto !important;
-
-    background-position:
-      center center,
-      55% 42% !important;
-
-    background-repeat:
-      no-repeat,
-      no-repeat !important;
-  }
-
-
-  /* DO NOT SHOW SECOND JESUS IMAGE */
-
-  .jesus-image-wrap {
-    display: none !important;
-  }
-
-
-  /* HERO TEXT */
-
-  .hero-copy {
-    width: 52% !important;
-
-    max-width: 215px !important;
-
-    padding: 0 !important;
-
-    position: relative !important;
-
-    z-index: 10 !important;
-  }
-
-  .hero-copy .eyebrow {
-    font-size: 9px !important;
-
-    letter-spacing: 2.8px !important;
-
-    margin-bottom: 9px !important;
-  }
-
-  .hero-copy h1 {
-    font-size: 38px !important;
-
-    line-height: 0.91 !important;
-
-    letter-spacing: -1.2px !important;
-
-    max-width: 215px !important;
-
-    margin: 0 !important;
-  }
-
-  .hero-description {
-    max-width: 190px !important;
-
-    margin-top: 14px !important;
-
-    font-size: 11.5px !important;
-
-    line-height: 1.42 !important;
-  }
-
-  .small-gold-line {
-    width: 45px !important;
-
-    margin:
-      12px
-      0
-      8px !important;
-  }
-
-  .hero-subline {
-    width: 195px !important;
-
-    font-size: 5.3px !important;
-
-    letter-spacing: 1.1px !important;
-
-    white-space: nowrap !important;
-  }
-
-
-  /* MATTHEW 7:7 — PULL UP INTO HERO */
-
-  .scripture-quote {
-    width: 91% !important;
-
-    margin:
-      -35px
-      auto
-      20px !important;
-
-    position: relative !important;
-
-    z-index: 20 !important;
-  }
-
-  .scripture-quote p {
-    font-size: 16px !important;
-
-    line-height: 1.28 !important;
-  }
-
-  .verse-reference {
-    margin-top: 12px !important;
-  }
-
-}
-
-
-/* SMALL IPHONES */
-
-@media screen and (max-width: 430px) {
-
-  .hero-inner {
-    height: 440px !important;
-    min-height: 440px !important;
-
-    padding-top: 115px !important;
-
-    background-size:
-      100% 100%,
-      120% auto !important;
-
-    background-position:
-      center center,
-      56% 42% !important;
-  }
-
-  .hero-copy h1 {
-    font-size: 36px !important;
-  }
-
-  .scripture-quote {
-    margin-top: -32px !important;
-  }
-
-}
-
-/* =========================================================
-   DESKTOP HERO — FINAL MATCH TO REFERENCE
-   MOBILE RULES ABOVE REMAIN UNCHANGED
-========================================================= */
-
-@media screen and (min-width: 761px) {
-
-  /* HEADER SITS OVER THE HERO LIKE THE REFERENCE */
-  .site-header {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    background: transparent !important;
-    border-bottom: none !important;
-    backdrop-filter: none !important;
-    z-index: 50 !important;
-  }
-
-  .header-inner {
-    width: min(1500px, 92%) !important;
-    max-width: 1500px !important;
-    min-height: 112px !important;
-    margin: 0 auto !important;
-    padding: 12px 0 !important;
+    width: calc(100% - 30px);
   }
 
   .ask-logo {
-    width: 94px !important;
-    height: 78px !important;
+    width: 62px;
+    height: 62px;
+
+    font-size: 25px;
+  }
+
+  .brand {
+    gap: 13px;
   }
 
   .brand-name {
-    font-size: clamp(34px, 3vw, 48px) !important;
+    font-size: 27px;
   }
 
   .brand-tagline {
-    font-size: 14px !important;
-    letter-spacing: 5px !important;
-  }
+    font-size: 8px;
 
-  .main-nav {
-    gap: 52px !important;
-    font-size: 18px !important;
-  }
-
-  /* FULL-WIDTH HERO */
-  .hero {
-    position: relative !important;
-    min-height: auto !important;
-    padding-bottom: 70px !important;
-    overflow: hidden !important;
-    background:
-      linear-gradient(
-        180deg,
-        #0a4d79 0%,
-        #073c60 34%,
-        #052f4c 68%,
-        #032741 100%
-      ) !important;
-  }
-
-  .hero-glow {
-    display: none !important;
+    letter-spacing: 3px;
   }
 
   .hero-inner {
-    width: 100% !important;
-    max-width: none !important;
-    height: 760px !important;
-    min-height: 760px !important;
-    margin: 0 !important;
-    padding: 165px 5% 0 !important;
-    display: block !important;
-    position: relative !important;
-    overflow: hidden !important;
-
-    /* IMG_5276 is intentionally fit by HEIGHT rather than cover.
-       This keeps Jesus smaller and preserves the full face/hand composition. */
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(2, 31, 52, 0.88) 0%,
-        rgba(2, 31, 52, 0.66) 28%,
-        rgba(2, 31, 52, 0.26) 48%,
-        rgba(2, 31, 52, 0.03) 66%,
-        rgba(2, 31, 52, 0) 100%
-      ),
-      url("/IMG_5276.png") !important;
-    background-size:
-      100% 100%,
-      auto 100% !important;
-    background-position:
-      center center,
-      right center !important;
-    background-repeat:
-      no-repeat,
-      no-repeat !important;
+    height: 460px;
   }
 
-  /* The complete artwork is now the hero background. */
-  .jesus-image-wrap {
-    display: none !important;
-  }
-
-  /* LEFT COPY */
   .hero-copy {
-    width: 43% !important;
-    max-width: 600px !important;
-    padding: 0 !important;
-    position: relative !important;
-    z-index: 10 !important;
-  }
+    padding-left: 20px;
 
-  .hero-copy .eyebrow {
-    font-size: 16px !important;
-    letter-spacing: 5px !important;
-    margin-bottom: 17px !important;
+    width: 56%;
   }
 
   .hero-copy h1 {
-    max-width: 580px !important;
-    margin: 0 !important;
-    font-size: clamp(66px, 5vw, 88px) !important;
-    line-height: 0.92 !important;
-    letter-spacing: -2.6px !important;
-    color: #fffaf1 !important;
-    text-shadow: 0 5px 20px rgba(0,0,0,.16) !important;
+    font-size: 44px;
   }
 
   .hero-description {
-    max-width: 500px !important;
-    margin-top: 24px !important;
-    font-size: clamp(20px, 1.55vw, 25px) !important;
-    line-height: 1.42 !important;
-    color: #fff !important;
-  }
-
-  .small-gold-line {
-    width: 70px !important;
-    margin: 20px 0 17px !important;
+    font-size: 14px;
   }
 
   .hero-subline {
-    font-size: 12px !important;
-    letter-spacing: 4px !important;
-    white-space: nowrap !important;
+    font-size: 7px;
   }
 
-  /* MATTHEW 7:7 RESTS IN THE LOWER FADE, NOT OVER THE HAND */
   .scripture-quote {
-    width: min(800px, 64%) !important;
-    margin: -142px auto 28px !important;
-    position: relative !important;
-    z-index: 20 !important;
-    text-align: center !important;
+    margin-top: 55px;
   }
 
   .scripture-quote p {
-    font-size: clamp(23px, 1.8vw, 31px) !important;
-    line-height: 1.27 !important;
-  }
-
-  .verse-reference {
-    gap: 26px !important;
-    margin-top: 14px !important;
-  }
-
-  .verse-reference span {
-    width: 72px !important;
-  }
-
-  .verse-reference strong {
-    font-size: 15px !important;
-    letter-spacing: 8px !important;
-  }
-
-  /* LOWER SECTIONS — KEEP THE POLISHED REFERENCE PROPORTIONS */
-  .ask-cards {
-    width: min(1400px, 91%) !important;
-    gap: 20px !important;
+    font-size: 18px;
   }
 
   .ask-card {
-    min-height: 315px !important;
-    border-radius: 24px !important;
-  }
-
-  .question-area {
-    width: min(1450px, 93%) !important;
-    margin-top: 28px !important;
-  }
-
-  .features {
-    width: min(1260px, 88%) !important;
-    margin-top: 36px !important;
-  }
-}
-
-/* Slightly smaller desktop/laptop screens */
-@media screen and (min-width: 761px) and (max-width: 1200px) {
-  .hero-inner {
-    height: 700px !important;
-    min-height: 700px !important;
-    padding-top: 150px !important;
-    background-size: 100% 100%, auto 94% !important;
-  }
-
-  .hero-copy {
-    width: 47% !important;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(58px, 6vw, 76px) !important;
-  }
-
-  .hero-description {
-    font-size: 20px !important;
-  }
-
-  .scripture-quote {
-    margin-top: -125px !important;
-  }
-}
-/* =========================================================
-   FINAL DESKTOP TUNING
-   MOBILE UNCHANGED
-========================================================= */
-
-@media screen and (min-width: 761px) {
-
-  .hero-inner {
-    height: 570px !important;
-    min-height: 570px !important;
-
-    padding:
-      58px
-      5%
-      0 !important;
-
-    background-size:
-      100% 100%,
-      94% auto !important;
-
-    background-position:
-      center center,
-      63% 48% !important;
-  }
-
-  .hero-copy {
-    width: 42% !important;
-    max-width: 560px !important;
-  }
-
-  .hero-copy h1 {
-    font-size:
-      clamp(
-        62px,
-        4.7vw,
-        82px
-      ) !important;
-
-    line-height: 0.92 !important;
-    max-width: 545px !important;
-  }
-
-  .hero-description {
-    max-width: 490px !important;
-
-    margin-top: 22px !important;
-
-    font-size:
-      clamp(
-        19px,
-        1.45vw,
-        24px
-      ) !important;
-  }
-
-  .small-gold-line {
-    margin:
-      18px
-      0
-      15px !important;
-  }
-
-  .hero-subline {
-    font-size: 11px !important;
-    letter-spacing: 3.5px !important;
-  }
-
-  .scripture-quote {
-    width: min(760px, 62%) !important;
-
-    margin:
-      -92px
-      auto
-      28px !important;
-  }
-
-  .scripture-quote p {
-    font-size:
-      clamp(
-        22px,
-        1.75vw,
-        30px
-      ) !important;
-
-    line-height: 1.25 !important;
+    min-height: 235px;
   }
 
 }
