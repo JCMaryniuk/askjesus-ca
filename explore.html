@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Explore Scripture one passage at a time with AskJesus.ca."
+  />
+
+  <title>
+    Explore Scripture | AskJesus.ca
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=16"
+  />
+
+  <style>
+
+    /* =====================================================
+       EXPLORE SCRIPTURE PAGE
+       Kept inside this file so our existing style.css
+       does NOT need to be changed yet.
+    ===================================================== */
+
+    body.explore-page {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(
+          180deg,
+          #061c2b 0%,
+          #0a3047 55%,
+          #061c2b 100%
+        );
+      color: #ffffff;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP BAR
+    ----------------------------------------------------- */
+
+    .explore-topbar {
+      width: 100%;
+      padding: 18px 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      box-sizing: border-box;
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
+    .explore-brand {
+      text-decoration: none;
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+
+    .explore-brand span {
+      color: #d8ad62;
+    }
+
+
+    .back-home {
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      opacity: 0.85;
+    }
+
+
+    /* -----------------------------------------------------
+       MAIN AREA
+    ----------------------------------------------------- */
+
+    .explore-main {
+      width: 100%;
+
+      min-height:
+        calc(100vh - 70px);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      box-sizing: border-box;
+
+      padding:
+        38px 18px 50px;
+    }
+
+
+    /* -----------------------------------------------------
+       PAGE INTRO
+    ----------------------------------------------------- */
+
+    .explore-intro {
+      width: 100%;
+      max-width: 680px;
+
+      text-align: center;
+
+      margin-bottom: 28px;
+    }
+
+
+    .explore-label {
+      color: #d8ad62;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 2.5px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .explore-intro h1 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(30px, 6vw, 48px);
+
+      line-height: 1.05;
+    }
+
+
+    .explore-intro p {
+      max-width: 540px;
+
+      margin:
+        0 auto;
+
+      color:
+        rgba(255, 255, 255, 0.72);
+
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       PROGRESS
+    ----------------------------------------------------- */
+
+    .explore-progress {
+      width: 100%;
+      max-width: 560px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 12px;
+
+      color:
+        rgba(255, 255, 255, 0.6);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.5px;
+    }
+
+
+    .progress-track {
+      width: 100%;
+      max-width: 560px;
+
+      height: 4px;
+
+      margin-bottom: 20px;
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
+      border-radius: 100px;
+
+      overflow: hidden;
+    }
+
+
+    .progress-fill {
+      width: 20%;
+      height: 100%;
+
+      background: #d8ad62;
+
+      border-radius: 100px;
+
+      transition:
+        width 0.25s ease;
+    }
+
+
+    /* -----------------------------------------------------
+       SCRIPTURE CARD
+    ----------------------------------------------------- */
+
+    .scripture-explore-card {
+      width: 100%;
+      max-width: 560px;
+
+      min-height: 390px;
+
+      box-sizing: border-box;
+
+      padding:
+        38px 32px 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background:
+        rgba(255, 255, 255, 0.97);
+
+      color: #092b40;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 22px 55px
+        rgba(0, 0, 0, 0.28);
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .scripture-explore-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 5px;
+
+      background: #d8ad62;
+    }
+
+
+    .card-topic {
+      color: #a47c39;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+
+    .card-reference {
+      margin:
+        0 0 24px;
+
+      color: #092b40;
+
+      font-size: 25px;
+      font-weight: 800;
+
+      line-height: 1.15;
+    }
+
+
+    .card-scripture {
+      margin: 0;
+
+      color: #173b50;
+
+      font-family: Georgia, serif;
+
+      font-size:
+        clamp(20px, 4.5vw, 27px);
+
+      line-height: 1.55;
+
+      font-style: italic;
+    }
+
+
+    .card-divider {
+      width: 48px;
+      height: 2px;
+
+      margin:
+        28px 0 20px;
+
+      background: #d8ad62;
+    }
+
+
+    .card-reminder {
+      margin: 0;
+
+      color: #68808d;
+
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       SCRIPTURE LINKS
+    ----------------------------------------------------- */
+
+    .explore-links {
+      width: 100%;
+      max-width: 560px;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 18px;
+    }
+
+
+    .explore-link {
+      padding:
+        10px 15px;
+
+      border:
+        1px solid rgba(216, 173, 98, 0.65);
+
+      border-radius: 100px;
+
+      color: #f1d39c;
+
+      text-decoration: underline;
+
+      text-underline-offset: 3px;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+
+    /* -----------------------------------------------------
+       PREVIOUS / NEXT
+    ----------------------------------------------------- */
+
+    .explore-controls {
+      width: 100%;
+      max-width: 560px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+
+    .explore-control-button {
+      min-height: 50px;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      border-radius: 12px;
+
+      background:
+        rgba(255, 255, 255, 0.07);
+
+      color: #ffffff;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+
+    .explore-control-button.next {
+      border-color: #d8ad62;
+
+      background: #d8ad62;
+
+      color: #092b40;
+    }
+
+
+    .explore-control-button:disabled {
+      opacity: 0.35;
+
+      cursor: default;
+    }
+
+
+    /* -----------------------------------------------------
+       SWIPE MESSAGE
+    ----------------------------------------------------- */
+
+    .swipe-message {
+      margin-top: 20px;
+
+      color:
+        rgba(255, 255, 255, 0.48);
+
+      font-size: 12px;
+
+      text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE
+    ----------------------------------------------------- */
+
+    @media screen and (max-width: 600px) {
+
+      .explore-topbar {
+        padding:
+          16px 18px;
+      }
+
+
+      .explore-main {
+        padding:
+          26px 16px 40px;
+      }
+
+
+      .explore-intro {
+        margin-bottom: 22px;
+      }
+
+
+      .explore-intro h1 {
+        font-size: 34px;
+      }
+
+
+      .scripture-explore-card {
+        min-height: 390px;
+
+        padding:
+          32px 24px 26px;
+
+        border-radius: 20px;
+      }
+
+
+      .card-reference {
+        font-size: 22px;
+      }
+
+
+      .card-scripture {
+        font-size: 21px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="explore-page">
+
+
+  <!-- =====================================================
+       TOP BAR
+  ====================================================== -->
+
+  <header class="explore-topbar">
+
+    <a
+      href="/"
+      class="explore-brand"
+    >
+      <span>ASK</span>Jesus.ca
+    </a>
+
+
+    <a
+      href="/"
+      class="back-home"
+    >
+      ← Ask a Question
+    </a>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       EXPLORE SCRIPTURE
+  ====================================================== -->
+
+  <main class="explore-main">
+
+
+    <section class="explore-intro">
+
+      <div class="explore-label">
+        EXPLORE SCRIPTURE
+      </div>
+
+      <h1>
+        Discover God’s Word.
+      </h1>
+
+      <p>
+        Read one passage at a time.
+        Explore its context and continue
+        through Scripture at your own pace.
+      </p>
+
+    </section>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="explore-progress">
+
+      <span id="progressText">
+        PASSAGE 1 OF 5
+      </span>
+
+      <span>
+        KEEP READING
+      </span>
+
+    </div>
+
+
+    <div class="progress-track">
+
+      <div
+        id="progressFill"
+        class="progress-fill"
+      ></div>
+
+    </div>
+
+
+
+    <!-- SCRIPTURE CARD -->
+
+    <article
+      id="scriptureCard"
+      class="scripture-explore-card"
+    >
+
+      <div
+        id="cardTopic"
+        class="card-topic"
+      >
+        FAITH & TRUST
+      </div>
+
+
+      <h2
+        id="cardReference"
+        class="card-reference"
+      >
+        Proverbs 3:5–6
+      </h2>
+
+
+      <p
+        id="cardScripture"
+        class="card-scripture"
+      >
+        “Trust in the LORD with all thine heart;
+        and lean not unto thine own understanding.
+        In all thy ways acknowledge him,
+        and he shall direct thy paths.”
+      </p>
+
+
+      <div class="card-divider"></div>
+
+
+      <p class="card-reminder">
+        Read the surrounding passage and full chapter
+        to understand Scripture in context.
+      </p>
+
+    </article>
+
+
+
+    <!-- CONTEXT LINKS -->
+
+    <div class="explore-links">
+
+      <a
+        id="contextLink"
+        class="explore-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read in Context →
+      </a>
+
+
+      <a
+        id="chapterLink"
+        class="explore-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read Full Chapter →
+      </a>
+
+    </div>
+
+
+
+    <!-- CONTROLS -->
+
+    <div class="explore-controls">
+
+      <button
+        id="previousButton"
+        class="explore-control-button"
+        type="button"
+      >
+        ← Previous
+      </button>
+
+
+      <button
+        id="nextButton"
+        class="explore-control-button next"
+        type="button"
+      >
+        Next Scripture →
+      </button>
+
+    </div>
+
+
+    <div class="swipe-message">
+      On mobile, swipe left or right to move through Scripture.
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       EXPLORE SCRIPTURE JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    const passages = [
+
+      {
+        topic: "FAITH & TRUST",
+
+        reference:
+          "Proverbs 3:5–6",
+
+        text:
+          "“Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.”",
+
+        context:
+          "Proverbs 3:1-12",
+
+        chapter:
+          "Proverbs 3"
+      },
+
+
+      {
+        topic: "PRAYER",
+
+        reference:
+          "Philippians 4:6–7",
+
+        text:
+          "“Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God.”",
+
+        context:
+          "Philippians 4:4-9",
+
+        chapter:
+          "Philippians 4"
+      },
+
+
+      {
+        topic: "GOD'S WORD",
+
+        reference:
+          "Psalm 119:105",
+
+        text:
+          "“Thy word is a lamp unto my feet, and a light unto my path.”",
+
+        context:
+          "Psalm 119:97-112",
+
+        chapter:
+          "Psalm 119"
+      },
+
+
+      {
+        topic: "WISDOM",
+
+        reference:
+          "James 1:5",
+
+        text:
+          "“If any of you lack wisdom, let him ask of God, that giveth to all men liberally...”",
+
+        context:
+          "James 1:2-8",
+
+        chapter:
+          "James 1"
+      },
+
+
+      {
+        topic: "SEEKING GOD",
+
+        reference:
+          "Matthew 7:7–8",
+
+        text:
+          "“Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you.”",
+
+        context:
+          "Matthew 7:7-12",
+
+        chapter:
+          "Matthew 7"
+      }
+
+    ];
+
+
+
+    let currentIndex = 0;
+
+
+
+    const card =
+      document.getElementById(
+        "scriptureCard"
+      );
+
+
+    const topicElement =
+      document.getElementById(
+        "cardTopic"
+      );
+
+
+    const referenceElement =
+      document.getElementById(
+        "cardReference"
+      );
+
+
+    const scriptureElement =
+      document.getElementById(
+        "cardScripture"
+      );
+
+
+    const contextLink =
+      document.getElementById(
+        "contextLink"
+      );
+
+
+    const chapterLink =
+      document.getElementById(
+        "chapterLink"
+      );
+
+
+    const previousButton =
+      document.getElementById(
+        "previousButton"
+      );
+
+
+    const nextButton =
+      document.getElementById(
+        "nextButton"
+      );
+
+
+    const progressText =
+      document.getElementById(
+        "progressText"
+      );
+
+
+    const progressFill =
+      document.getElementById(
+        "progressFill"
+      );
+
+
+
+    function bibleLink(reference) {
+
+      return (
+        "https://www.biblegateway.com/passage/?search=" +
+        encodeURIComponent(reference)
+      );
+
+    }
+
+
+
+    function showPassage() {
+
+      const passage =
+        passages[currentIndex];
+
+
+      topicElement.textContent =
+        passage.topic;
+
+
+      referenceElement.textContent =
+        passage.reference;
+
+
+      scriptureElement.textContent =
+        passage.text;
+
+
+      contextLink.href =
+        bibleLink(
+          passage.context
+        );
+
+
+      contextLink.textContent =
+        "Read " +
+        passage.context +
+        " in Context →";
+
+
+      chapterLink.href =
+        bibleLink(
+          passage.chapter
+        );
+
+
+      chapterLink.textContent =
+        "Read Full Chapter: " +
+        passage.chapter +
+        " →";
+
+
+      progressText.textContent =
+        "PASSAGE " +
+        (currentIndex + 1) +
+        " OF " +
+        passages.length;
+
+
+      progressFill.style.width =
+        (
+          ((currentIndex + 1) /
+          passages.length) *
+          100
+        ) + "%";
+
+
+      previousButton.disabled =
+        currentIndex === 0;
+
+
+      if (
+        currentIndex ===
+        passages.length - 1
+      ) {
+
+        nextButton.textContent =
+          "Start Again ↻";
+
+      } else {
+
+        nextButton.textContent =
+          "Next Scripture →";
+
+      }
+
+    }
+
+
+
+    function nextPassage() {
+
+      if (
+        currentIndex <
+        passages.length - 1
+      ) {
+
+        currentIndex++;
+
+      } else {
+
+        currentIndex = 0;
+
+      }
+
+
+      showPassage();
+
+    }
+
+
+
+    function previousPassage() {
+
+      if (currentIndex > 0) {
+
+        currentIndex--;
+
+        showPassage();
+
+      }
+
+    }
+
+
+
+    nextButton.addEventListener(
+      "click",
+      nextPassage
+    );
+
+
+    previousButton.addEventListener(
+      "click",
+      previousPassage
+    );
+
+
+
+    /* =====================================================
+       MOBILE SWIPE
+    ====================================================== */
+
+    let touchStartX = 0;
+
+    let touchEndX = 0;
+
+
+
+    card.addEventListener(
+      "touchstart",
+      (event) => {
+
+        touchStartX =
+          event.changedTouches[0].screenX;
+
+      },
+      { passive: true }
+    );
+
+
+
+    card.addEventListener(
+      "touchend",
+      (event) => {
+
+        touchEndX =
+          event.changedTouches[0].screenX;
+
+
+        const difference =
+          touchStartX - touchEndX;
+
+
+        if (difference > 55) {
+
+          nextPassage();
+
+        }
+
+
+        if (difference < -55) {
+
+          previousPassage();
+
+        }
+
+      },
+      { passive: true }
+    );
+
+
+
+    showPassage();
+
+  </script>
+
+
+</body>
+
+</html>
