@@ -12,7 +12,9 @@ The game uses character names, level-one stats, skill names and descriptions fro
 
 ## Scores and saves
 
-Progress, gear, and high scores are stored in the browser on the current device. A shared online leaderboard needs persistent server storage and is not active in this release.
+The Save Files menu has three independent save slots. Each slot saves its run, team, gear, upgrades, and high scores automatically in the current browser. An existing `sarko-card-arena-v3` save is migrated into File 1 when the new menu first loads. Players can rename slots, download a JSON backup, and import a backup into any slot.
+
+These files live in browser storage on the current device; private browsing or clearing site data can erase them. Use Download Backup to keep a portable copy. Cloud saves and a shared online leaderboard need persistent server storage and are not active in this release.
 
 ## Original site
 
