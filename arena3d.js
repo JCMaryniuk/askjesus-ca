@@ -3,7 +3,7 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 const names=['Sarko','Levi','Waiz','Diago','Amaya','Naomi','Hailey','Isaac'];
 const colors=['#f0c568','#70a8f6','#96e7ca','#f39a75','#ffb679','#d0a5f5','#77d5ed','#b9c6da'];
-let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='',wolfReady=false;
+let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='';
 let enemyRoot,actors=[],effects=[],lastState,frame=0;
 const loader=new GLTFLoader(),textureLoader=new THREE.TextureLoader(),modelCache=new Map(),weaponCache=new Map();
 const clock=new THREE.Clock();
@@ -42,29 +42,15 @@ function setup(){
   }
   enemyRoot=new THREE.Group();enemyRoot.position.set(2.55,.12,-.55);scene.add(enemyRoot);
   buildEnemy();
-  loader.loadAsync('assets/ForestWolf-3D.glb').then(result=>{
-    const wolf=result.scene;
-    const bounds=new THREE.Box3().setFromObject(wolf),size=bounds.getSize(new THREE.Vector3());
-    const scale=2.25/Math.max(.01,size.y);
-    wolf.scale.setScalar(scale);
-    wolf.position.sub(bounds.getCenter(new THREE.Vector3()).multiplyScalar(scale));
-    wolf.position.y+=size.y*scale*.5;
-    wolf.rotation.y=-.3;
-    enemyRoot.clear();enemyRoot.add(wolf);wolfReady=true;
-  }).catch(()=>{});
   requestAnimationFrame(animate);
 }
 function buildEnemy(){
   enemyRoot.clear();
-  const fur=material('#594335'),claw=material('#d3bb8f',.2,.6),horn=material('#aa8664');
-  mesh(new THREE.SphereGeometry(.85,18,12),fur,enemyRoot,0,.75,0).scale.set(1.18,.7,1.3);
-  mesh(new THREE.SphereGeometry(.62,18,12),fur,enemyRoot,0,1.55,.45);
-  for(const side of [-1,1]){
-    mesh(new THREE.CylinderGeometry(.19,.26,.85,10),fur,enemyRoot,side*.58,.34,.55);
-    mesh(new THREE.ConeGeometry(.16,.6,9),horn,enemyRoot,side*.42,2.18,.45).rotation.z=side*.32;
-    for(let n=0;n<3;n++)mesh(new THREE.ConeGeometry(.07,.28,7),claw,enemyRoot,side*.59+n*.10-.10,.06,.92).rotation.x=Math.PI/2;
-  }
-  enemyImage=mesh(new THREE.PlaneGeometry(1.07,1.07),new THREE.MeshBasicMaterial({color:'#8e7454',side:THREE.DoubleSide}),enemyRoot,0,1.58,.96);
+  mesh(new THREE.CylinderGeometry(1.36,1.48,.28,32),material('#6a7382',.3,.65),enemyRoot,0,.02,0);
+  mesh(new THREE.CylinderGeometry(1.4,1.4,.08,32),material('#c6a45c',.8,.32),enemyRoot,0,.19,0);
+  mesh(new THREE.BoxGeometry(2.32,2.62,.13),material('#bd9855',.7,.3),enemyRoot,0,1.62,.08);
+  mesh(new THREE.BoxGeometry(2.16,2.46,.04),material('#112039',.1,.8),enemyRoot,0,1.62,.17);
+  enemyImage=mesh(new THREE.PlaneGeometry(2.08,2.38),new THREE.MeshBasicMaterial({color:'#8e7454',side:THREE.DoubleSide}),enemyRoot,0,1.62,.2);
 }
 function figureFallback(id,parent){
   const tone=colors[id];
@@ -121,7 +107,6 @@ function rebuildParty(state){
 function enemyArt(type){
   if(type===enemyType)return;
   enemyType=type;
-  if(wolfReady)return;
   if(enemyTexture)enemyTexture.dispose();
   textureLoader.load('assets/Monster-'+type+'.jpg',texture=>{
     if(type!==enemyType){texture.dispose();return;}
