@@ -6,6 +6,8 @@ Choose four of eight Sarko heroes. Their eight skills play automatically against
 
 The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. It is a standalone browser adaptation of survival mode. The campaign is not part of this release.
 
+The Fruit Tree uses the supplied `tree_equip.png` illustration and the fruit forms from `fruit f the spirit.png`. Each fruit now applies its named effect: health, experience, damage reduction, cooldown, healing, gold, critical chance, special attack resistance, or attack power. The current value shown on the card includes any socketed gem.
+
 ## Run
 
 `npm install` then `npm start`. The server uses Render's `PORT` value or port 3000 locally.

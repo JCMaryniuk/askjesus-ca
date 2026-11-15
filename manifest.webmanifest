@@ -1,6 +1,6 @@
 {
-  "name": "Sarko Guild Card Arena",
-  "short_name": "Sarko Arena",
+  "name": "Sarko Card Game",
+  "short_name": "Sarko Cards",
   "description": "Choose four Sarko heroes and see how far they go in an endless guild card arena.",
   "start_url": "/",
   "display": "standalone",
