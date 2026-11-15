@@ -1,7 +1,7 @@
 {
   "name": "Sarko Classic RPG",
   "short_name": "Sarko RPG",
-  "description": "Choose four Sarko heroes for a classic card RPG battle arena with Auto and Manual turns.",
+  "description": "Choose four Sarko heroes for a classic card RPG with an optional 3D battle view with Auto and Manual turns.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#09121f",

@@ -2,7 +2,7 @@
 
 A free browser RPG for iPhone and desktop, hosted at askjesus.ca while the Sarko domain is being decided.
 
-Choose four of eight Sarko heroes. The current battle view uses Sarko hero cards. A selectable 3D view is in development. Auto mode plays their eight skills against a reshuffling deck of monsters; Manual mode lets you choose a ready skill or basic attack each turn. Defeat a boss after every five regular foes, collect spirit fruit and gems, and choose when to start the next fight. The shop, forge, fruit tree, church upgrades, and local high scores are available from the arena.
+Choose four of eight Sarko heroes. Players can switch between classic cards and a 3D battle arena with optimized character models exported from the Windows game. Auto mode plays their eight skills against a reshuffling deck of monsters; Manual mode lets you choose a ready skill or basic attack each turn. Defeat a boss after every five regular foes, collect spirit fruit and gems, and choose when to start the next fight. The shop, forge, fruit tree, church upgrades, and local high scores are available from the arena.
 
 The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. It is a standalone browser adaptation of survival mode. The campaign is not part of this release.
 
