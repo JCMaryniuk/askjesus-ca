@@ -21204,6 +21204,400 @@ var SarkoArena3D = (function (exports) {
 
 	}
 
+	/**
+	 * A material for rendering instances of {@link Sprite}.
+	 *
+	 * ```js
+	 * const map = new THREE.TextureLoader().load( 'textures/sprite.png' );
+	 * const material = new THREE.SpriteMaterial( { map: map, color: 0xffffff } );
+	 *
+	 * const sprite = new THREE.Sprite( material );
+	 * sprite.scale.set(200, 200, 1)
+	 * scene.add( sprite );
+	 * ```
+	 *
+	 * @augments Material
+	 */
+	class SpriteMaterial extends Material {
+
+		/**
+		 * Constructs a new sprite material.
+		 *
+		 * @param {Object} [parameters] - An object with one or more properties
+		 * defining the material's appearance. Any property of the material
+		 * (including any property from inherited materials) can be passed
+		 * in here. Color values can be passed any type of value accepted
+		 * by {@link Color#set}.
+		 */
+		constructor( parameters ) {
+
+			super();
+
+			/**
+			 * This flag can be used for type testing.
+			 *
+			 * @type {boolean}
+			 * @readonly
+			 * @default true
+			 */
+			this.isSpriteMaterial = true;
+
+			this.type = 'SpriteMaterial';
+
+			/**
+			 * Color of the material.
+			 *
+			 * @type {Color}
+			 * @default (1,1,1)
+			 */
+			this.color = new Color( 0xffffff );
+
+			/**
+			 * The color map. May optionally include an alpha channel, typically combined
+			 * with {@link Material#transparent} or {@link Material#alphaTest}. The texture map
+			 * color is modulated by the diffuse `color`.
+			 *
+			 * `map` represents color data, and the texture must be assigned a
+			 * {@link Texture#colorSpace}. Most `map` textures set
+			 * `texture.colorSpace = SRGBColorSpace`.
+			 *
+			 * @type {?Texture}
+			 * @default null
+			 */
+			this.map = null;
+
+			/**
+			 * The alpha map is a grayscale texture that controls the opacity across the
+			 * surface (black: fully transparent; white: fully opaque).
+			 *
+			 * Only the color of the texture is used, ignoring the alpha channel if one
+			 * exists. For RGB and RGBA textures, the renderer will use the green channel
+			 * when sampling this texture due to the extra bit of precision provided for
+			 * green in DXT-compressed and uncompressed RGB 565 formats. Luminance-only and
+			 * luminance/alpha textures will also still work as expected.
+			 *
+			 * `alphaMap` represents non-color data. Any texture assigned must have
+			 * `texture.colorSpace = NoColorSpace` (default).
+			 *
+			 * @type {?Texture}
+			 * @default null
+			 */
+			this.alphaMap = null;
+
+			/**
+			 * The rotation of the sprite in radians.
+			 *
+			 * @type {number}
+			 * @default 0
+			 */
+			this.rotation = 0;
+
+			/**
+			 * Specifies whether size of the sprite is attenuated by the camera depth (perspective camera only).
+			 *
+			 * @type {boolean}
+			 * @default true
+			 */
+			this.sizeAttenuation = true;
+
+			/**
+			 * Overwritten since sprite materials are transparent
+			 * by default.
+			 *
+			 * @type {boolean}
+			 * @default true
+			 */
+			this.transparent = true;
+
+			/**
+			 * Whether the material is affected by fog or not.
+			 *
+			 * @type {boolean}
+			 * @default true
+			 */
+			this.fog = true;
+
+			this.setValues( parameters );
+
+		}
+
+		copy( source ) {
+
+			super.copy( source );
+
+			this.color.copy( source.color );
+
+			this.map = source.map;
+
+			this.alphaMap = source.alphaMap;
+
+			this.rotation = source.rotation;
+
+			this.sizeAttenuation = source.sizeAttenuation;
+
+			this.fog = source.fog;
+
+			return this;
+
+		}
+
+	}
+
+	let _geometry;
+
+	const _intersectPoint = /*@__PURE__*/ new Vector3();
+	const _worldScale = /*@__PURE__*/ new Vector3();
+	const _mvPosition = /*@__PURE__*/ new Vector3();
+
+	const _alignedPosition = /*@__PURE__*/ new Vector2();
+	const _rotatedPosition = /*@__PURE__*/ new Vector2();
+	const _viewWorldMatrix = /*@__PURE__*/ new Matrix4();
+
+	const _vA$1 = /*@__PURE__*/ new Vector3();
+	const _vB$1 = /*@__PURE__*/ new Vector3();
+	const _vC$1 = /*@__PURE__*/ new Vector3();
+
+	const _uvA = /*@__PURE__*/ new Vector2();
+	const _uvB = /*@__PURE__*/ new Vector2();
+	const _uvC = /*@__PURE__*/ new Vector2();
+
+	/**
+	 * A sprite is a plane that always faces towards the camera, generally with a
+	 * partially transparent texture applied.
+	 *
+	 * Sprites do not cast shadows, setting {@link Object3D#castShadow} to `true` will
+	 * have no effect.
+	 *
+	 * ```js
+	 * const map = new THREE.TextureLoader().load( 'sprite.png' );
+	 * const material = new THREE.SpriteMaterial( { map: map } );
+	 *
+	 * const sprite = new THREE.Sprite( material );
+	 * scene.add( sprite );
+	 * ```
+	 *
+	 * @augments Object3D
+	 */
+	class Sprite extends Object3D {
+
+		/**
+		 * Constructs a new sprite.
+		 *
+		 * @param {(SpriteMaterial|SpriteNodeMaterial)} [material] - The sprite material.
+		 */
+		constructor( material = new SpriteMaterial() ) {
+
+			super();
+
+			/**
+			 * This flag can be used for type testing.
+			 *
+			 * @type {boolean}
+			 * @readonly
+			 * @default true
+			 */
+			this.isSprite = true;
+
+			this.type = 'Sprite';
+
+			if ( _geometry === undefined ) {
+
+				_geometry = new BufferGeometry();
+
+				const float32Array = new Float32Array( [
+					-0.5, -0.5, 0, 0, 0,
+					0.5, -0.5, 0, 1, 0,
+					0.5, 0.5, 0, 1, 1,
+					-0.5, 0.5, 0, 0, 1
+				] );
+
+				const interleavedBuffer = new InterleavedBuffer( float32Array, 5 );
+
+				_geometry.setIndex( [ 0, 1, 2,	0, 2, 3 ] );
+				_geometry.setAttribute( 'position', new InterleavedBufferAttribute( interleavedBuffer, 3, 0, false ) );
+				_geometry.setAttribute( 'uv', new InterleavedBufferAttribute( interleavedBuffer, 2, 3, false ) );
+
+			}
+
+			/**
+			 * The sprite geometry.
+			 *
+			 * @type {BufferGeometry}
+			 */
+			this.geometry = _geometry;
+
+			/**
+			 * The sprite material.
+			 *
+			 * @type {(SpriteMaterial|SpriteNodeMaterial)}
+			 */
+			this.material = material;
+
+			/**
+			 * The sprite's anchor point, and the point around which the sprite rotates.
+			 * A value of `(0.5, 0.5)` corresponds to the midpoint of the sprite. A value
+			 * of `(0, 0)` corresponds to the lower left corner of the sprite.
+			 *
+			 * @type {Vector2}
+			 * @default (0.5,0.5)
+			 */
+			this.center = new Vector2( 0.5, 0.5 );
+
+			/**
+			 * The number of instances of this sprite.
+			 * Can only be used with {@link WebGPURenderer}.
+			 *
+			 * @type {number}
+			 * @default 1
+			 */
+			this.count = 1;
+
+		}
+
+		/**
+		 * Returns `true` if this sprite intersects the given frustum.
+		 *
+		 * @param {Frustum|FrustumArray} frustum - The frustum to test.
+		 * @return {boolean} Whether this sprite intersects the given frustum or not.
+		 */
+		intersectsFrustum( frustum ) {
+
+			return frustum.intersectsSprite( this );
+
+		}
+
+		/**
+		 * Computes intersection points between a casted ray and this sprite.
+		 *
+		 * @param {Raycaster} raycaster - The raycaster.
+		 * @param {Array<Object>} intersects - The target array that holds the intersection points.
+		 */
+		raycast( raycaster, intersects ) {
+
+			if ( raycaster.camera === null ) {
+
+				error( 'Sprite: "Raycaster.camera" needs to be set in order to raycast against sprites.' );
+
+			}
+
+			_worldScale.setFromMatrixScale( this.matrixWorld );
+
+			_viewWorldMatrix.copy( raycaster.camera.matrixWorld );
+			this.modelViewMatrix.multiplyMatrices( raycaster.camera.matrixWorldInverse, this.matrixWorld );
+
+			_mvPosition.setFromMatrixPosition( this.modelViewMatrix );
+
+			if ( raycaster.camera.isPerspectiveCamera && this.material.sizeAttenuation === false ) {
+
+				_worldScale.multiplyScalar( - _mvPosition.z );
+
+			}
+
+			const rotation = this.material.rotation;
+			let sin, cos;
+
+			if ( rotation !== 0 ) {
+
+				cos = Math.cos( rotation );
+				sin = Math.sin( rotation );
+
+			}
+
+			const center = this.center;
+
+			transformVertex( _vA$1.set( -0.5, -0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
+			transformVertex( _vB$1.set( 0.5, -0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
+			transformVertex( _vC$1.set( 0.5, 0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
+
+			_uvA.set( 0, 0 );
+			_uvB.set( 1, 0 );
+			_uvC.set( 1, 1 );
+
+			// check first triangle
+			let intersect = raycaster.ray.intersectTriangle( _vA$1, _vB$1, _vC$1, false, _intersectPoint );
+
+			if ( intersect === null ) {
+
+				// check second triangle
+				transformVertex( _vB$1.set( -0.5, 0.5, 0 ), _mvPosition, center, _worldScale, sin, cos );
+				_uvB.set( 0, 1 );
+
+				intersect = raycaster.ray.intersectTriangle( _vA$1, _vC$1, _vB$1, false, _intersectPoint );
+				if ( intersect === null ) {
+
+					return;
+
+				}
+
+			}
+
+			const distance = raycaster.ray.origin.distanceTo( _intersectPoint );
+
+			if ( distance < raycaster.near || distance > raycaster.far ) return;
+
+			intersects.push( {
+
+				distance: distance,
+				point: _intersectPoint.clone(),
+				uv: Triangle.getInterpolation( _intersectPoint, _vA$1, _vB$1, _vC$1, _uvA, _uvB, _uvC, new Vector2() ),
+				face: null,
+				object: this
+
+			} );
+
+		}
+
+		copy( source, recursive ) {
+
+			super.copy( source, recursive );
+
+			if ( source.center !== undefined ) this.center.copy( source.center );
+
+			this.material = source.material;
+
+			return this;
+
+		}
+
+		toJSON( meta ) {
+
+			const data = super.toJSON( meta );
+
+			data.object.center = this.center.toArray();
+
+			return data;
+
+		}
+
+	}
+
+	function transformVertex( vertexPosition, mvPosition, center, scale, sin, cos ) {
+
+		// compute position in camera space
+		_alignedPosition.subVectors( vertexPosition, center ).addScalar( 0.5 ).multiply( scale );
+
+		// to check if rotation is not zero
+		if ( sin !== undefined ) {
+
+			_rotatedPosition.x = ( cos * _alignedPosition.x ) - ( sin * _alignedPosition.y );
+			_rotatedPosition.y = ( sin * _alignedPosition.x ) + ( cos * _alignedPosition.y );
+
+		} else {
+
+			_rotatedPosition.copy( _alignedPosition );
+
+		}
+
+
+		vertexPosition.copy( mvPosition );
+		vertexPosition.x += _rotatedPosition.x;
+		vertexPosition.y += _rotatedPosition.y;
+
+		// transform to world space
+		vertexPosition.applyMatrix4( _viewWorldMatrix );
+
+	}
+
 	const _vector$7 = /*@__PURE__*/ new Vector3();
 	const _segCenter = /*@__PURE__*/ new Vector3();
 	const _segDir = /*@__PURE__*/ new Vector3();
@@ -63149,7 +63543,7 @@ void main() {
 	const colors=['#f0c568','#70a8f6','#96e7ca','#f39a75','#ffb679','#d0a5f5','#77d5ed','#b9c6da'];
 	let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='',wolfReady=false;
 	let enemyRoot,actors=[],effects=[],lastState;
-	const loader=new GLTFLoader(),textureLoader=new TextureLoader(),modelCache=new Map();
+	const loader=new GLTFLoader(),textureLoader=new TextureLoader(),modelCache=new Map(),weaponCache=new Map();
 	const clock=new Clock();
 
 	function material(color,metalness=.15,roughness=.72){return new MeshStandardMaterial({color,metalness,roughness});}
@@ -63231,6 +63625,13 @@ void main() {
 	  if(!modelCache.has(name))modelCache.set(name,loader.loadAsync('assets/'+name+'-3D.glb').then(result=>result.scene).catch(()=>null));
 	  return modelCache.get(name);
 	}
+	function weaponFor(id){
+	  if(!weaponCache.has(id)){
+	    const name=id===7?'Magnar':names[id];
+	    weaponCache.set(id,textureLoader.loadAsync('assets/Weapon-'+name+'.png').then(texture=>{texture.colorSpace=SRGBColorSpace;return texture;}).catch(()=>null));
+	  }
+	  return weaponCache.get(id);
+	}
 	function rebuildParty(state){
 	  for(const actor of actors)scene.remove(actor.root);
 	  actors=[];
@@ -63241,6 +63642,7 @@ void main() {
 	    mesh(new CylinderGeometry(.55,.64,.15,18),material('#967e55',.7,.36),root,0,.02,0);
 	    const figure=new Group();root.add(figure);figureFallback(fighter.id,figure);
 	    const actor={id:fighter.id,root,figure,x,z,loaded:false};actors.push(actor);
+	    weaponFor(fighter.id);
 	    modelFor(fighter.id).then(source=>{
 	      if(!source||!actors.includes(actor))return;
 	      figure.clear();
@@ -63300,6 +63702,13 @@ void main() {
 	  }
 	  if(actor){
 	    actor.root.userData.lunge=performance.now()+530;
+	    weaponFor(info.hero).then(texture=>{
+	      if(!texture||!scene||!actors.includes(actor))return;
+	      const sprite=new Sprite(new SpriteMaterial({map:texture,transparent:true,depthTest:false,opacity:.95}));
+	      sprite.scale.set(1.8,1.8,1);
+	      scene.add(sprite);
+	      effects.push({object:sprite,until:performance.now()+850,start:performance.now(),from:actor.x,kind:'weapon'});
+	    });
 	    let color=info.color||colors[info.hero];
 	    if(/thunder|storm|lightning/i.test(info.skill))color='#9db5ff';
 	    else if(/fire|flame|burn/i.test(info.skill))color='#ff9a49';
@@ -63328,6 +63737,12 @@ void main() {
 	    const effect=effects[i],remaining=(effect.until-now)/620;
 	    if(remaining<=0){scene.remove(effect.object);effect.object.geometry?.dispose();effect.object.material?.dispose();effects.splice(i,1);continue;}
 	    if(effect.object.material?.opacity!==undefined)effect.object.material.opacity=Math.max(0,remaining*.75);
+	    if(effect.kind==='weapon'){
+	      const t=Math.min(1,(now-effect.start)/800);
+	      effect.object.position.set(effect.from+(2.55-effect.from)*t,1.25+.65*Math.sin(Math.PI*t),.95);
+	      effect.object.material.rotation=-0.5+1.3*t;
+	      effect.object.material.opacity=Math.min(1,Math.max(0,(effect.until-now)/240));
+	    }
 	    if(effect.kind==='heal')effect.object.scale.setScalar(1+(1-remaining)*1.2);
 	  }
 	  renderer.render(scene,camera);

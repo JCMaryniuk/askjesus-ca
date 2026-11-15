@@ -18,6 +18,8 @@
 .spiritBranchName{color:#fff0b9;background:#091625df;border:1px solid #d0a658;border-radius:6px;padding:2px 5px;font:600 clamp(8px,1.25vw,12px) Georgia,serif;white-space:nowrap;text-shadow:0 1px 2px #000}
 .spiritBranch.empty .spiritBranchName{opacity:.88}
 @media(max-width:600px){.treeHero{flex-wrap:wrap}.treeHero .button{width:100%}.spiritBranchName{font-size:8px;padding:1px 2px}.spiritBranch .fruitIcon{width:39px;height:39px}}
+@keyframes weaponSwing{0%{transform:translate(12px,-10px) rotate(-25deg) scale(.75);opacity:0}40%{transform:translate(0,0) rotate(0) scale(1);opacity:1}100%{transform:translate(-8px,8px) rotate(18deg) scale(.9);opacity:0}}
+.enemyCard .strike{right:54%;top:14%;width:min(35%,140px);max-height:160px;object-fit:contain;animation:weaponSwing .55s ease-out}
 .enemyCard{overflow:visible}.enemyCard>img:first-child{aspect-ratio:1/1;object-fit:cover;border-radius:14px 14px 0 0}.enemyCard .strike{z-index:3;pointer-events:none;width:clamp(105px,13vw,175px);height:auto;aspect-ratio:auto;object-fit:contain;right:35%;top:14%;animation:strike .55s ease-out;filter:drop-shadow(0 0 18px #ffcf74)}
 @media(min-width:601px) and (max-width:1199px){.enemyCard>img:first-child{height:250px;aspect-ratio:auto;object-position:center 35%;border-radius:14px 0 0 14px}}
 @media(min-width:1200px){.enemyCard>img:first-child{height:250px;aspect-ratio:auto;object-position:center 35%}}

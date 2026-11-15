@@ -5,7 +5,7 @@ const names=['Sarko','Levi','Waiz','Diago','Amaya','Naomi','Hailey','Isaac'];
 const colors=['#f0c568','#70a8f6','#96e7ca','#f39a75','#ffb679','#d0a5f5','#77d5ed','#b9c6da'];
 let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='',wolfReady=false;
 let enemyRoot,actors=[],effects=[],lastState,frame=0;
-const loader=new GLTFLoader(),textureLoader=new THREE.TextureLoader(),modelCache=new Map();
+const loader=new GLTFLoader(),textureLoader=new THREE.TextureLoader(),modelCache=new Map(),weaponCache=new Map();
 const clock=new THREE.Clock();
 
 function material(color,metalness=.15,roughness=.72){return new THREE.MeshStandardMaterial({color,metalness,roughness});}
@@ -87,6 +87,13 @@ async function modelFor(id){
   if(!modelCache.has(name))modelCache.set(name,loader.loadAsync('assets/'+name+'-3D.glb').then(result=>result.scene).catch(()=>null));
   return modelCache.get(name);
 }
+function weaponFor(id){
+  if(!weaponCache.has(id)){
+    const name=id===7?'Magnar':names[id];
+    weaponCache.set(id,textureLoader.loadAsync('assets/Weapon-'+name+'.png').then(texture=>{texture.colorSpace=THREE.SRGBColorSpace;return texture;}).catch(()=>null));
+  }
+  return weaponCache.get(id);
+}
 function rebuildParty(state){
   for(const actor of actors)scene.remove(actor.root);
   actors=[];
@@ -97,6 +104,7 @@ function rebuildParty(state){
     mesh(new THREE.CylinderGeometry(.55,.64,.15,18),material('#967e55',.7,.36),root,0,.02,0);
     const figure=new THREE.Group();root.add(figure);figureFallback(fighter.id,figure);
     const actor={id:fighter.id,root,figure,x,z,loaded:false};actors.push(actor);
+    weaponFor(fighter.id);
     modelFor(fighter.id).then(source=>{
       if(!source||!actors.includes(actor))return;
       figure.clear();
@@ -156,6 +164,13 @@ function action(info){
   }
   if(actor){
     actor.root.userData.lunge=performance.now()+530;
+    weaponFor(info.hero).then(texture=>{
+      if(!texture||!scene||!actors.includes(actor))return;
+      const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false,opacity:.95}));
+      sprite.scale.set(1.8,1.8,1);
+      scene.add(sprite);
+      effects.push({object:sprite,until:performance.now()+850,start:performance.now(),from:actor.x,kind:'weapon'});
+    });
     let color=info.color||colors[info.hero];
     if(/thunder|storm|lightning/i.test(info.skill))color='#9db5ff';
     else if(/fire|flame|burn/i.test(info.skill))color='#ff9a49';
@@ -184,6 +199,12 @@ function animate(){
     const effect=effects[i],remaining=(effect.until-now)/620;
     if(remaining<=0){scene.remove(effect.object);effect.object.geometry?.dispose();effect.object.material?.dispose();effects.splice(i,1);continue;}
     if(effect.object.material?.opacity!==undefined)effect.object.material.opacity=Math.max(0,remaining*.75);
+    if(effect.kind==='weapon'){
+      const t=Math.min(1,(now-effect.start)/800);
+      effect.object.position.set(effect.from+(2.55-effect.from)*t,1.25+.65*Math.sin(Math.PI*t),.95);
+      effect.object.material.rotation=-.5+1.3*t;
+      effect.object.material.opacity=Math.min(1,Math.max(0,(effect.until-now)/240));
+    }
     if(effect.kind==='heal')effect.object.scale.setScalar(1+(1-remaining)*1.2);
   }
   renderer.render(scene,camera);
