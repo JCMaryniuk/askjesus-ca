@@ -6,7 +6,7 @@ Choose four of eight Sarko heroes. Players can switch between classic cards and 
 
 The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. It is a standalone browser adaptation of survival mode. The campaign is not part of this release.
 
-The Fruit Tree uses the supplied `tree_equip.png` illustration and the fruit forms from `fruit f the spirit.png`. Each fruit now applies its named effect: health, experience, damage reduction, cooldown, healing, gold, critical chance, special attack resistance, or attack power. The current value shown on the card includes any socketed gem.
+Each hero has a dedicated Fruit of the Spirit tree based on the supplied art. Empty branches name the missing fruit, and wordless fruit pictures appear only when equipped. Remove All returns every fruit on that hero to inventory. Each fruit now applies its named effect: health, experience, damage reduction, cooldown, healing, gold, critical chance, special attack resistance, or attack power. The current value shown on the card includes any socketed gem.
 
 ## Run
 
