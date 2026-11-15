@@ -1,0 +1,404 @@
+{
+  "skills": {
+    "Sarko": [
+      {
+        "id": "shield_guard",
+        "name": "Shield Guard",
+        "index": 0,
+        "description": "Protect yourself and nearby allies in front of your shield."
+      },
+      {
+        "id": "radiant_mark",
+        "name": "Radiant Mark",
+        "index": 1,
+        "description": "Mark a foe so your team deals greater damage; enables marked combat openings."
+      },
+      {
+        "id": "minor_restoration",
+        "name": "Minor Restoration",
+        "index": 2,
+        "description": "Restore the nearest wounded ally or yourself at close range."
+      },
+      {
+        "id": "miraculous_heal",
+        "name": "Miraculous Heal",
+        "index": 3,
+        "description": "Restore health to yourself and nearby living allies; does not revive."
+      },
+      {
+        "id": "sanctuary",
+        "name": "Sanctuary",
+        "index": 4,
+        "description": "Create a radial protective field; its name evolves with earned story gifts."
+      },
+      {
+        "id": "shared_burden",
+        "name": "Shared Burden",
+        "index": 5,
+        "description": "Share incoming harm among nearby living allies."
+      },
+      {
+        "id": "light_of_renewal",
+        "name": "Light of Renewal",
+        "index": 6,
+        "description": "Restore nearby allies over several healing pulses."
+      },
+      {
+        "id": "guardians_covenant",
+        "name": "Guardian's Covenant",
+        "index": 7,
+        "description": "Grant nearby living allies a stronger protective ward."
+      }
+    ],
+    "Levi": [
+      {
+        "id": "apostles_advance",
+        "name": "Apostle's Advance",
+        "index": 0,
+        "description": "Advance into a focused forward sword strike."
+      },
+      {
+        "id": "resolute_assault",
+        "name": "Resolute Assault",
+        "index": 1,
+        "description": "Strengthen your attacks for a short time."
+      },
+      {
+        "id": "formation_seven",
+        "name": "Formation Seven",
+        "index": 2,
+        "description": "Protect nearby allies and call companions into formation."
+      },
+      {
+        "id": "steady_resolve",
+        "name": "Steady Resolve",
+        "index": 3,
+        "description": "Recover your own health with brief protection."
+      },
+      {
+        "id": "radiant_judgment",
+        "name": "Radiant Judgment",
+        "index": 4,
+        "description": "Deliver a powerful extended frontal judgment strike."
+      },
+      {
+        "id": "guiding_parry",
+        "name": "Guiding Parry",
+        "index": 5,
+        "description": "Prepare a riposte after successfully blocking an enemy strike."
+      },
+      {
+        "id": "rallying_command",
+        "name": "Rallying Command",
+        "index": 6,
+        "description": "Protect nearby allies and briefly strengthen your own attacks."
+      },
+      {
+        "id": "measured_rebuke",
+        "name": "Measured Rebuke",
+        "index": 7,
+        "description": "Deliver a narrow strike that strongly staggers a foe."
+      }
+    ],
+    "Waiz": [
+      {
+        "id": "tendon_cut",
+        "name": "Tendon Cut",
+        "index": 0,
+        "description": "Cut low with both blades and briefly hinder nearby foes."
+      },
+      {
+        "id": "fleet_witness",
+        "name": "Fleet Witness",
+        "index": 1,
+        "description": "Evade and briefly protect yourself."
+      },
+      {
+        "id": "guardians_passage",
+        "name": "Guardian's Passage",
+        "index": 2,
+        "description": "Evade while granting protection to nearby allies."
+      },
+      {
+        "id": "courageous_witness",
+        "name": "Courageous Witness",
+        "index": 3,
+        "description": "Rally nearby living allies with healing and brief protection."
+      },
+      {
+        "id": "radiant_wind",
+        "name": "Radiant Wind",
+        "index": 4,
+        "description": "Cut a broad arc and shift sideways through the opening."
+      },
+      {
+        "id": "crosswind_flurry",
+        "name": "Crosswind Flurry",
+        "index": 5,
+        "description": "Deliver a sequence of rapid alternating strikes."
+      },
+      {
+        "id": "twin_blade_counter",
+        "name": "Twin-Blade Counter",
+        "index": 6,
+        "description": "Prepare a dual-blade riposte after a successful block."
+      },
+      {
+        "id": "opening_strike",
+        "name": "Opening Strike",
+        "index": 7,
+        "description": "Strike a narrow opening; deals extra power against a marked foe."
+      }
+    ],
+    "Amaya": [
+      {
+        "id": "piercing_current",
+        "name": "Piercing Current",
+        "index": 0,
+        "description": "Drive the spear through a frontal arc; evolves into Storm Piercer."
+      },
+      {
+        "id": "watchful_counter",
+        "name": "Watchful Counter",
+        "index": 1,
+        "description": "Prepare a spear riposte after a successful block."
+      },
+      {
+        "id": "weak_point_thrust",
+        "name": "Weak-Point Thrust",
+        "index": 2,
+        "description": "Concentrate a powerful thrust into a narrow weak point."
+      },
+      {
+        "id": "renewed_focus",
+        "name": "Renewed Focus",
+        "index": 3,
+        "description": "Recover your health and briefly protect yourself."
+      },
+      {
+        "id": "thunder_breaker",
+        "name": "Thunder Breaker",
+        "index": 4,
+        "description": "Deliver a powerful wider spear strike with strong knockback."
+      },
+      {
+        "id": "vanguard_step",
+        "name": "Vanguard Step",
+        "index": 5,
+        "description": "Evade and briefly protect yourself while repositioning."
+      },
+      {
+        "id": "sweeping_guard",
+        "name": "Sweeping Guard",
+        "index": 6,
+        "description": "Sweep the spear broadly to drive foes back."
+      },
+      {
+        "id": "pinning_thrust",
+        "name": "Pinning Thrust",
+        "index": 7,
+        "description": "Thrust narrowly and briefly hinder a foe in front."
+      }
+    ],
+    "Naomi": [
+      {
+        "id": "foresight",
+        "name": "Foresight",
+        "index": 0,
+        "description": "Read nearby danger and signal safer movement."
+      },
+      {
+        "id": "sheltering_word",
+        "name": "Sheltering Word",
+        "index": 1,
+        "description": "Heal nearby living allies and grant a protective ward."
+      },
+      {
+        "id": "discernment",
+        "name": "Discernment",
+        "index": 2,
+        "description": "Read a wider area of danger and briefly protect the group."
+      },
+      {
+        "id": "steadfast_counsel",
+        "name": "Steadfast Counsel",
+        "index": 3,
+        "description": "Restore nearby allies with steadying protection."
+      },
+      {
+        "id": "guided_bolt",
+        "name": "Guided Bolt",
+        "index": 4,
+        "description": "Fire a precise bolt with partial armor penetration."
+      },
+      {
+        "id": "pinning_bolt",
+        "name": "Pinning Bolt",
+        "index": 5,
+        "description": "Fire a bolt that briefly binds its target."
+      },
+      {
+        "id": "safe_passage",
+        "name": "Safe Passage",
+        "index": 6,
+        "description": "Protect nearby allies and call companions into formation."
+      },
+      {
+        "id": "warning_bolt",
+        "name": "Warning Bolt",
+        "index": 7,
+        "description": "Fire a lighter bolt that strongly staggers its target."
+      }
+    ],
+    "Hailey": [
+      {
+        "id": "binding_shot",
+        "name": "Binding Shot",
+        "index": 0,
+        "description": "Fire a powerful arrow that briefly binds its target."
+      },
+      {
+        "id": "retreating_shot",
+        "name": "Retreating Shot",
+        "index": 1,
+        "description": "Step backward while firing a forward arrow."
+      },
+      {
+        "id": "piercing_star",
+        "name": "Piercing Star",
+        "index": 2,
+        "description": "Fire a precise arrow with strong armor penetration."
+      },
+      {
+        "id": "regenerative_focus",
+        "name": "Regenerative Focus",
+        "index": 3,
+        "description": "Focus your natural regeneration to restore your own health; no revival."
+      },
+      {
+        "id": "celestial_convergence",
+        "name": "Celestial Convergence",
+        "index": 4,
+        "description": "Launch the earned converging-arrow attack."
+      },
+      {
+        "id": "celestial_rain",
+        "name": "Celestial Rain",
+        "index": 5,
+        "description": "Release the earned rain of arrows."
+      },
+      {
+        "id": "celestial_volley",
+        "name": "Celestial Volley",
+        "index": 6,
+        "description": "Fire three arrows across a narrow fan."
+      },
+      {
+        "id": "heartseeker",
+        "name": "Heartseeker",
+        "index": 7,
+        "description": "Fire a powerful penetrating arrow with added stagger."
+      }
+    ],
+    "Diago": [
+      {
+        "id": "resolute_cleave",
+        "name": "Resolute Cleave",
+        "index": 0,
+        "description": "Deliver a powerful broad cleaving strike."
+      },
+      {
+        "id": "groundbreaker",
+        "name": "Groundbreaker",
+        "index": 1,
+        "description": "Strike around yourself to stagger and drive back foes."
+      },
+      {
+        "id": "mentors_measure",
+        "name": "Mentor's Measure",
+        "index": 2,
+        "description": "Deliver a measured heavy strike with strong stagger."
+      },
+      {
+        "id": "second_wind",
+        "name": "Second Wind",
+        "index": 3,
+        "description": "Recover your health with brief protection."
+      },
+      {
+        "id": "guarding_lesson",
+        "name": "Guarding Lesson",
+        "index": 4,
+        "description": "Ward allies in front and prepare a riposte after a successful block."
+      },
+      {
+        "id": "disarming_blow",
+        "name": "Disarming Blow",
+        "index": 5,
+        "description": "Deliver a narrow strike that strongly staggers a foe."
+      },
+      {
+        "id": "teachers_rebuke",
+        "name": "Teacher's Rebuke",
+        "index": 6,
+        "description": "Drive foes back with a broad rebuking strike."
+      },
+      {
+        "id": "stand_together",
+        "name": "Stand Together",
+        "index": 7,
+        "description": "Grant nearby allies a lasting protective ward."
+      }
+    ],
+    "Magnar": [
+      {
+        "id": "stonewall_brace",
+        "name": "Stonewall Brace",
+        "index": 0,
+        "description": "Brace to protect yourself and nearby allies in front."
+      },
+      {
+        "id": "earthbreaker",
+        "name": "Earthbreaker",
+        "index": 1,
+        "description": "Strike with the hammer and raise the earned earthworks."
+      },
+      {
+        "id": "stand_for_another",
+        "name": "Stand for Another",
+        "index": 2,
+        "description": "Protect nearby allies who are fighting beside you."
+      },
+      {
+        "id": "steadfast_heart",
+        "name": "Steadfast Heart",
+        "index": 3,
+        "description": "Recover your health and brace against incoming harm."
+      },
+      {
+        "id": "fortress_dominion",
+        "name": "Fortress Dominion",
+        "index": 4,
+        "description": "Raise protective earthworks and ward nearby allies."
+      },
+      {
+        "id": "fortress_titan",
+        "name": "Fortress Titan",
+        "index": 5,
+        "description": "Advance with the earned titan impact and a heavy frontal strike."
+      },
+      {
+        "id": "fortress_descent",
+        "name": "Fortress Descent",
+        "index": 6,
+        "description": "Deliver a heavy surrounding impact with earthworks."
+      },
+      {
+        "id": "hammer_riposte",
+        "name": "Hammer Riposte",
+        "index": 7,
+        "description": "Prepare a heavy hammer riposte after a successful block."
+      }
+    ]
+  }
+}

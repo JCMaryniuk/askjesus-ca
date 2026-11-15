@@ -1,31 +1,19 @@
-# ASKJesus.ca
+# Sarko Guild Card Arena
 
-A Scripture-finding web app built around Matthew 7:7: Ask, Seek, Knock.
+A free browser mini game for iPhone and desktop, hosted at askjesus.ca while the Sarko domain is being decided.
 
-## Core rule
-The model selects Bible references only. The exact displayed Bible wording is retrieved separately from the World English Bible through bible-api.com.
+Choose four of eight Sarko heroes. Their eight skills play automatically against a reshuffling deck of monsters. Pause between attacks, inspect skill descriptions, defeat a boss after every five regular foes, collect spirit fruit and gems, and choose when to start the next fight. The shop, forge, fruit tree, church upgrades, and local high scores are available from the arena.
 
-## Run locally
-1. Install Node.js 20+.
-2. Run `npm install`.
-3. Copy `.env.example` to `.env` and add your OpenAI API key.
-4. Run `npm start`.
-5. Open `http://localhost:3000`.
+The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. It is a standalone browser adaptation of survival mode. The campaign is not part of this release.
 
-Without an OpenAI key, the app still runs using a small built-in topic matcher.
+## Run
 
-## Deployment
-This project is ready for a Node host such as Render or Railway.
+`npm install` then `npm start`. The server uses Render's `PORT` value or port 3000 locally.
 
-Typical settings:
-- Build command: `npm install`
-- Start command: `npm start`
-- Environment variable: `OPENAI_API_KEY`
-- Optional environment variable: `OPENAI_MODEL=gpt-5-mini`
+## Scores and saves
 
-After deployment, point ASKJesus.ca to the host using the DNS records provided by the hosting service.
+Progress, gear, and high scores are stored in the browser on the current device. A shared online leaderboard needs persistent server storage and is not active in this release.
 
-## Important design principle
-ASKJesus.ca is a Scripture-finding tool. It should not claim personal revelation or replace a pastor, counsellor, doctor, lawyer, emergency service, or other qualified human support.
+## Original site
 
-World English Bible text is public domain.
+The earlier AskJesus.ca source is preserved in the `archive/askjesus-2026` branch.

@@ -1,0 +1,12 @@
+{
+  "name": "Sarko Guild Card Arena",
+  "short_name": "Sarko Arena",
+  "description": "Choose four Sarko heroes and see how far they go in an endless guild card arena.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09121f",
+  "theme_color": "#09152a",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
