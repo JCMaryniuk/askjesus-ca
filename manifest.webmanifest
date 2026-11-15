@@ -1,7 +1,7 @@
 {
-  "name": "Sarko Card Game",
-  "short_name": "Sarko Cards",
-  "description": "Choose four Sarko heroes and see how far they go in an endless guild card arena.",
+  "name": "Sarko Classic RPG",
+  "short_name": "Sarko RPG",
+  "description": "Choose four Sarko heroes for a classic card RPG battle arena with Auto and Manual turns.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#09121f",
@@ -10,3 +10,4 @@
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }
   ]
 }
+
