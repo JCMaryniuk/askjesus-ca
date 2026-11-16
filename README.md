@@ -2,7 +2,7 @@
 
 A free browser RPG for iPhone and desktop, hosted at askjesus.ca while the Sarko domain is being decided.
 
-Choose four of eight Sarko heroes. Battles use the illustrated card arena; Auto mode plays their eight skills against a reshuffling deck of monsters, while Manual mode lets you choose a ready skill or basic attack each turn. Actions advance slowly enough to read damage and healing. After every win, the party appears on an illustrated world map and you decide when to travel to the next battle. Face bosses at encounters 10 and 20 in each world, collect spirit fruit and gems, and visit the merchant, forge, fruit tree, or church between fights.
+Choose four of nine Sarko heroes, including Grace. Choose the illustrated Cards view or animated 3D battles, world maps and service scenes; Auto mode plays their eight skills against a reshuffling deck of monsters, while Manual mode lets you choose a ready skill or basic attack each turn. Actions advance slowly enough to read damage and healing. After every win, the party appears on an illustrated world map and you decide when to travel to the next battle. Face bosses at encounters 10 and 20 in each world, collect spirit fruit and gems, and visit the merchant, forge, fruit tree, or church between fights.
 
 The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. Survival reshuffles all 11 monster families and two bosses appear at encounters 10 and 20 in each world. The seven-world book campaign has 20 stages per world, bosses at stages 10 and 20, all 17 full chapters to read, and ElevenLabs chapter narration. Completing a difficulty unlocks the next and carries the team, levels, fruit, skill ranks, gold, and points forward.
 
@@ -25,3 +25,9 @@ These files live in browser storage on the current device; private browsing or c
 ## Original site
 
 The earlier AskJesus.ca source is preserved in the `archive/askjesus-2026` branch.
+
+## Windows beta
+
+Open Sarko Classic RPG from the title menu or guild table, then choose CARDS / 3D to launch the bundled browser edition. Keep Sarko open while playing; it serves the game locally at http://127.0.0.1:18765 without an internet connection. Cards and 3D share saves inside this browser edition. The older Unity card mode and the public website use separate save locations; use browser Save Files backups to transfer between the local and public browser editions.
+
+Controller: D-pad or left stick moves focus; A selects; B closes a dialog; Start pauses or resumes a battle. Keyboard and touch controls remain available.

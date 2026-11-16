@@ -11,33 +11,48 @@ const HEROES = [
 ];
 const MONSTERS = ['AshhornStag','BriarClawBear','BrightCap','CrystalBackTortoise','DreadwingVulture','HollowWretch','Rockshade','Shadowthorn','StonehideRhino','Thornback','VineboundGuardian'];
 const MONSTER_MOVES = {
-  AshhornStag:['Antler Run','Antler Sweep'],BriarClawBear:['Hooking Claw'],BrightCap:['Cap Spring','Spore Burst'],
-  CrystalBackTortoise:['Shell Turn'],DreadwingVulture:['Dreadwing Dive','Wing Rake'],HollowWretch:['Twin Rake'],
-  Rockshade:['Stone Guard','Double Fist','Boulder Throw','Rock Charge'],Shadowthorn:['Shadow Pounce','Raking Swipe','Thorn Burst'],
-  StonehideRhino:['Horn Drive','Horn Toss'],Thornback:['Tusks','Boar Charge'],VineboundGuardian:['Rootfall']
+  AshhornStag:['Antler Run','Antler Sweep'],BriarClawBear:['Hooking Claw','Mauling Rush'],BrightCap:['Cap Spring','Spore Burst'],
+  CrystalBackTortoise:['Shell Turn','Crystal Tremor'],DreadwingVulture:['Dreadwing Dive','Wing Rake'],HollowWretch:['Twin Rake','Hunger Lunge'],
+  Rockshade:['Stone Guard','Boulder Throw'],Shadowthorn:['Shadow Pounce','Thorn Burst'],
+  StonehideRhino:['Horn Drive','Horn Toss'],Thornback:['Tusks','Boar Charge'],VineboundGuardian:['Rootfall','Vine Snare']
 };
+const BASIC_ATTACKS={AshhornStag:'Antler Jab',BriarClawBear:'Claw Swipe',BrightCap:'Cap Bump',CrystalBackTortoise:'Stone Bite',DreadwingVulture:'Beak Strike',HollowWretch:'Claw Strike',Rockshade:'Stone Fist',Shadowthorn:'Raking Swipe',StonehideRhino:'Horn Jab',Thornback:'Tusk Jab',VineboundGuardian:'Branch Strike',CorruptedWolf:'Fang Bite'};
 const BOSSES = [
-  {name:'Corrupted Wolf',type:'CorruptedWolf',moves:['Shadow Pounce','Raking Swipe'],art:'Boss-CorruptedWolf.jpg'},
-  {name:'Stoneheart Warden',type:'StonehideRhino',moves:['Horn Drive','Quaking Fist'],art:'Boss-Stoneheart.jpg'},
-  {name:'Tidebound Oracle',type:'CrystalBackTortoise',moves:['Shell Turn','Tidal Surge'],art:'Boss-Tidebound.jpg'},
-  {name:'Frostveil Warden',type:'AshhornStag',moves:['Antler Run','Whiteout Charge'],art:'Boss-Frostveil.jpg'},
-  {name:'Stormwing Herald',type:'DreadwingVulture',moves:['Dreadwing Dive','Thunderstrike']},
-  {name:'Cinder Crown',type:'BriarClawBear',moves:['Hooking Claw','Cinder Breath']},
-  {name:'Malachar',type:'Shadowthorn',moves:['Heavy Strike','Rush','Corruption Wave'],art:'Boss-Malachar.jpg'},
-  {name:'Rex Draconum',type:'BriarClawBear',moves:['Rex Claw','Dragon Breath'],art:'Boss-RexDraconum.jpg'},
-  {name:'Dawn Guardian',type:'VineboundGuardian',moves:['Rootfall','Radiant Judgment'],art:'Boss-DawnGuardian.jpg'}
+  {name:'Corrupted Wolf',type:'CorruptedWolf',moves:['Shadow Pounce','Raking Swipe','Dread Howl','Ravenous Lunge'],art:'Boss-CorruptedWolf.jpg'},
+  {name:'Stoneheart Warden',type:'StonehideRhino',moves:['Horn Drive','Quaking Fist','Stone Guard','Boulder Throw'],art:'Boss-Stoneheart.jpg'},
+  {name:'Tidebound Oracle',type:'CrystalBackTortoise',moves:['Shell Turn','Tidal Surge','Undertow','Crashing Wave'],art:'Boss-Tidebound.jpg'},
+  {name:'Frostveil Warden',type:'AshhornStag',moves:['Antler Run','Whiteout Charge','Ice Lance','Frost Guard'],art:'Boss-Frostveil.jpg'},
+  {name:'Stormwing Herald',type:'DreadwingVulture',moves:['Dreadwing Dive','Thunderstrike','Wing Rake','Tempest Burst']},
+  {name:'Cinder Crown',type:'BriarClawBear',moves:['Hooking Claw','Cinder Breath','Molten Slam','Ember Guard']},
+  {name:'Malachar',type:'Shadowthorn',moves:['Heavy Strike','Rush','Corruption Wave','Shadow Ward'],art:'Boss-Malachar.jpg'},
+  {name:'Rex Draconum',type:'BriarClawBear',basicAttack:'Dragon Bite',moves:['Rex Claw','Dragon Breath','Tail Sweep','Royal Roar'],art:'Boss-RexDraconum.jpg'},
+  {name:'Dawn Guardian',type:'VineboundGuardian',moves:['Rootfall','Radiant Judgment','Dawn Lance','Radiant Ward'],art:'Boss-DawnGuardian.jpg'}
 ];
 const CAMPAIGN_BOSSES=[1,2,3,4,5,6,7];
 const MIDWORLD_BOSSES=[
   BOSSES[0],
-  {name:'Floodfang',type:'Thornback',moves:['Tusks','Tidal Surge']},
-  {name:'Icewing',type:'DreadwingVulture',moves:['Dreadwing Dive','Whiteout Charge']},
-  {name:'Thunderstone Colossus',type:'Rockshade',moves:['Boulder Throw','Thunderstrike']},
-  {name:'Ashhorn Inferno',type:'AshhornStag',moves:['Antler Run','Cinder Breath']},
+  {name:'Floodfang',type:'Thornback',moves:['Tusks','Tidal Surge','Undertow','Boar Charge']},
+  {name:'Icewing',type:'DreadwingVulture',moves:['Dreadwing Dive','Whiteout Charge','Ice Lance','Wing Rake']},
+  {name:'Thunderstone Colossus',type:'Rockshade',moves:['Boulder Throw','Thunderstrike','Stone Guard','Quaking Fist']},
+  {name:'Ashhorn Inferno',type:'AshhornStag',moves:['Antler Run','Cinder Breath','Antler Sweep','Ember Guard']},
   BOSSES[0],
   BOSSES[8]
 ];
 const WORLD_NAMES=['Earth','Water','Snow','Thunder','Fire','Shadow','Light'];
+const ENEMY_AREA_SKILLS=['Spore Burst','Crystal Tremor','Thorn Burst','Rootfall','Quaking Fist','Tidal Surge','Whiteout Charge','Thunderstrike','Cinder Breath','Corruption Wave','Dragon Breath','Radiant Judgment','Dread Howl','Crashing Wave','Tempest Burst','Molten Slam','Tail Sweep','Royal Roar'];
+const ENEMY_GUARD_SKILLS=['Stone Guard','Shell Turn','Frost Guard','Ember Guard','Shadow Ward','Radiant Ward'];
+const ENEMY_HEAVY_SKILLS=['Heavy Strike','Rex Claw','Mauling Rush','Hunger Lunge','Ravenous Lunge','Ice Lance','Dawn Lance'];
+function enemyKit(enemy){
+  const boss=enemy.boss?[...BOSSES,...MIDWORLD_BOSSES].find(b=>b.name===(enemy.bossId||enemy.name.replace(/^BOSS · /,''))):null;
+  return {skills:boss?.moves||MONSTER_MOVES[enemy.type]||enemy.moves||[],basic:boss?.basicAttack||BASIC_ATTACKS[enemy.type]||'Basic Attack'};
+}
+function syncEnemyKit(enemy){if(!enemy)return;const kit=enemyKit(enemy);enemy.moves=[...kit.skills];enemy.basicAttack=kit.basic;enemy.move=Math.max(0,Math.floor(enemy.move)||0);}
+function nextEnemyAction(enemy){
+  const kit=enemyKit(enemy),turn=enemy.move++;
+  // One action per enemy turn. Alternate basic attacks with the full skill rotation.
+  return turn%2===0||!kit.skills.length?{name:kit.basic,basic:true}:{name:kit.skills[Math.floor(turn/2)%kit.skills.length],basic:false};
+}
+function enemySkillDescription(name){return ENEMY_GUARD_SKILLS.includes(name)?'Guards itself: gains 2 defense for this encounter (up to +6).':ENEMY_AREA_SKILLS.includes(name)?'Hits every living hero for reduced damage.':ENEMY_HEAVY_SKILLS.includes(name)?'A heavy strike against one hero.':'A special strike against one hero.';}
 const DIFFICULTIES=['Easy','Medium','Hard','Hardcore'];
 const CAMPAIGN_SCENES=[
   [{speaker:'Sarko',text:'I know what it feels like to freeze when someone needs me. I will keep walking.'},{speaker:'Waiz',text:'You do not have to walk this road alone.'},{speaker:'Diago',text:'Stand steady. Courage grows through practice.'}],
@@ -85,6 +100,31 @@ const LEGACY_KEY = 'sarko-card-arena-v3';
 let saveFiles = loadSaveFiles();
 let state = loadState();
 let manualChoice=null;
+let threeManifest=null,threeView=null,threeHost=null,threeLoading=false,threeBusy=false,threePaused=false,threeEvents=[],threeFrame=null,threeVersion=0;
+const canUse3D=()=>threeManifest?.releaseReady===true;
+function queue3D(event){if(threeView&&state.view3d)threeEvents.push(event);}
+function close3D(){++threeVersion;threeView?.dispose();threeView=null;threeHost?.remove();threeHost=null;threeLoading=false;threeBusy=false;threeEvents=[];threeFrame=null;}
+function fail3D(error){state.view3d=false;state.paused=true;close3D();save();render();toast('3D could not load. Your run is safe in Cards. '+error.message);}
+async function sync3D(){
+  const slot=$('#battle3d');
+  if(!state.view3d||!canUse3D()||!slot){if(threeView||threeHost)close3D();return;}
+  slot.setAttribute('aria-busy',threeLoading||!threeHost?'true':'false');
+  if(threeHost){slot.append(threeHost);threeView?.setPaused(threeBusy?threePaused:state.paused||!!modal);return;}
+  const version=++threeVersion;threeLoading=true;threeHost=document.createElement('div');threeHost.className='battle3dStage';slot.append(threeHost);
+  try{
+    const {Game3DView}=await import('./rpg3d-view.js');if(version!==threeVersion)return;
+    threeView=new Game3DView(threeHost,threeManifest,{onSelect:key=>{if(threeBusy)return;const id=Number(key.replace('hero-',''));if(key.startsWith('hero-')){selectedHero=id;openModal('details');}},onError:message=>{if(version===threeVersion)fail3D(Error(message));}});
+    await threeView.setBattle({key:state.battleId||state.enemy.name,heroes:state.fighters.map(f=>({id:f.id,name:hero(f.id).name,defeated:f.hp<=0})),enemy:state.enemy.boss?(state.enemy.bossId||state.enemy.name.replace(/^BOSS · /,'')):state.enemy.type,enemyDefeated:state.enemy.hp<=0,world:WORLD_NAMES[state.enemy.world??0],chapterStage:state.mode==='campaign'?state.worldStage+1:state.regular+1});
+    if(version!==threeVersion)return;threeLoading=false;$('#battle3d')?.setAttribute('aria-busy','false');threeView.setPaused(state.paused||!!modal);
+  }catch(error){if(version===threeVersion)fail3D(error);}
+}
+function finishBattleTurn(){
+  save();
+  if(!threeView||!state.view3d||!threeEvents.length){render();return;}
+  const events=threeEvents;threeEvents=[];threeBusy=true;threePaused=false;const version=threeVersion;
+  threeView.present(events).then(()=>{if(version!==threeVersion)return;threeBusy=false;threeFrame=null;if(threePaused)state.paused=true;threePaused=false;save();render();}).catch(error=>{if(version===threeVersion)fail3D(error);});
+}
+function pauseBattle(){if(threeBusy){threePaused=!threePaused;threeView?.setPaused(threePaused);}else{state.paused=!state.paused;save();}render();}
 
 function initialState(){return {phase:'selection',mode:'survival',difficulty:0,unlockedDifficulty:0,campaignCarry:null,world:0,worldStage:0,mapView:'route',pendingStory:false,pendingScene:null,storyChapter:0,bossDeck:[],chosen:[],fighters:[],enemy:null,deck:[],cleared:0,regular:0,turn:0,actor:0,paused:false,awaiting:false,manual:false,view3d:false,gold:0,points:0,inventory:[],ranks:{},scores:[],log:[],loot:[],scoreSent:false,arena:0,shopRevision:0,shopBought:[],playerName:'',savedAt:Date.now()};}
 function validState(s){
@@ -115,6 +155,7 @@ function loadState(){
   const loaded={...initialState(),...saveFiles.slots[saveFiles.active].state};
   if(loaded.mode==='survival')loaded.regular=loaded.cleared%20;
   if(loaded.enemy&&!Number.isInteger(loaded.enemy.world))loaded.enemy.world=loaded.mode==='campaign'?loaded.world:Math.floor(loaded.cleared/20)%7;
+  syncEnemyKit(loaded.enemy);
   return loaded;
 }
 function save(){
@@ -126,6 +167,7 @@ function switchFile(index){
   if(index<0||index>=3)return;
   if(index===saveFiles.active)return;
   save();
+  close3D();manualChoice=null;
   if(!saveFiles.slots[index])saveFiles.slots[index]={name:`File ${index+1}`,state:initialState()};
   saveFiles.active=index;state=loadState();state.paused=true;
   selectedHero=state.chosen[0]??0;selectedGear=-1;selectedGem=-1;transient={chips:[],hits:[],enemyMove:'',heal:-1,weapon:-1};
@@ -141,6 +183,7 @@ function deleteFile(index){
   if(!saveFiles.slots[index]||!confirm(`Delete ${saveFiles.slots[index].name}? This cannot be undone unless you downloaded a backup.`))return;
   saveFiles.slots[index]=null;
   if(index===saveFiles.active){
+    close3D();manualChoice=null;
     let next=saveFiles.slots.findIndex(Boolean);
     if(next<0){next=0;saveFiles.slots[0]={name:'File 1',state:initialState()};}
     saveFiles.active=next;state=loadState();state.paused=true;
@@ -162,7 +205,7 @@ async function importFile(index,file){
     if(backup?.app!=='Sarko Guild Card Arena'||backup.version!==1||!validState(backup.state))throw Error('Invalid Sarko save file.');
     if(saveFiles.slots[index]&&!confirm(`Replace ${saveFiles.slots[index].name} with this backup?`))return;
     save();saveFiles.slots[index]={name:String(backup.name||`File ${index+1}`).slice(0,30),state:backup.state};
-    if(index===saveFiles.active){state=loadState();state.paused=true;}
+    if(index===saveFiles.active){close3D();manualChoice=null;state=loadState();state.paused=true;}
     save();render();toast('Save file imported.');
   } catch(e){toast(e.message||'Could not import save file.');}
 }
@@ -192,7 +235,7 @@ function startRun(mode='survival'){
   if(state.chosen.length!==4&&!carry)return toast('Choose four heroes first.');
   if(mode==='campaign'&&state.difficulty>state.unlockedDifficulty)return toast('Beat the previous difficulty first.');
   if(carry)state.chosen=[...carry.chosen];
-  state.mode=mode;state.world=0;state.worldStage=0;state.mapView='route';state.pendingStory=mode==='campaign';state.pendingScene=null;state.storyChapter=0;
+  state.scenePage=0;state.guidedIntro=false;state.mode=mode;state.world=0;state.worldStage=0;state.mapView='route';state.pendingStory=mode==='campaign';state.pendingScene=null;state.storyChapter=0;
   state.inventory=[];state.ranks={};selectedGear=-1;selectedGem=-1;state.phase='battle';state.manual=false;manualChoice=null;
   state.fighters=state.chosen.map(id=>({id,level:1,xp:0,hp:hero(id).hp,ward:false,nextSkill:0,last:Array(8).fill(-100),cooldownSavings:Array(8).fill(0)}));
   if(carry){state.inventory=JSON.parse(JSON.stringify(carry.inventory));state.ranks={...carry.ranks};state.fighters=JSON.parse(JSON.stringify(carry.fighters));}
@@ -203,6 +246,7 @@ function startRun(mode='survival'){
   spawnEnemy();if(mode==='campaign'){modal='story';state.paused=true;}playMusic();render();globalThis.scrollTo?.(0,0);
 }
 function spawnEnemy(){
+  if(threeView||threeHost)close3D();state.battleId=newId();
   state.mapView='route';
   const campaign=state.mode==='campaign';
   const boss=[9,19].includes(campaign?state.worldStage:state.regular);
@@ -222,6 +266,7 @@ function spawnEnemy(){
   state.enemy={type,boss,world,bossId:chosenBoss?.name||null,name:boss?`BOSS · ${chosenBoss.name}`:label(type),art:chosenBoss?.art||null,level,hp,max:hp,
     attack:Math.max(1,Math.round(((boss?34:20)+state.cleared*2)*(1+.04*(level-1))*.5*difficulty)),
     guard:Math.max(0,Math.round(((boss?13:5)+Math.floor(level/2))*.5*difficulty)),moves:chosenBoss?.moves||MONSTER_MOVES[type],move:0};
+  syncEnemyKit(state.enemy);state.enemy.baseGuard=state.enemy.guard;
   state.awaiting=false;state.paused=false;state.actor=0;state.turn=0;state.loot=[];
   note(`${campaign?`World ${state.world+1} · Stage ${state.worldStage+1}`:`Wave ${state.cleared+1}`}: ${state.enemy.name} enters the arena.`);save();
 }
@@ -239,6 +284,10 @@ function availableTeamMoves(){
 function teamMove(){
   const moves=availableTeamMoves();if(!moves.length)return;
   const move=moves[(Math.floor(state.turn/4)-1)%moves.length],living=state.fighters.filter(f=>f.hp>0);
+  const choreography={"Shepherd's Advance":{0:'sanctuary',1:'apostles_advance'},"A Witnessed Opening":{5:'guided_bolt'},"The Mentor's Clear Line":{3:'mentors_measure',6:'piercing_star'},"Room to Move":{7:'stonewall_brace',4:'vanguard_step'},"Guiding Parry":{1:'guiding_parry'},"One Road Together":{2:'guardians_passage'}};
+  const support=['sanctuary','steady_resolve','courageous_witness','stand_together','renewed_focus','sheltering_word','regenerative_focus','steadfast_heart','shelter_of_grace'];
+  const participants=living.map(f=>({hero:f.id,action:move==='Threefold Support'?support[f.id]:(choreography[move]?.[f.id]||'attack')}));
+  const team3D={hero:living[0].id,effectOnly:true,participants,skillId:move,color:'#f1c76b',targets:[]};
   const current=move==='A Witnessed Opening'||move==='Room to Move';
   let hit=0;
   if(current)hit=living.length*12+12;
@@ -247,13 +296,17 @@ function teamMove(){
     hit=Math.max(1,Math.round(fighterStats(finisher).attack*(move==="The Mentor's Clear Line"?.35:.2)));
   }
   state.enemy.hp=Math.max(0,state.enemy.hp-hit);
+  if(hit)team3D.targets.push({enemy:true,kind:'damage',amount:hit,defeated:state.enemy.hp===0});
   if(hit)transient.chips.push({text:'−'+hit+' '+move,color:'#f1c76b'});
   if(!current)for(const ally of living){
     ally.ward=true;
+    team3D.targets.push({hero:ally.id,kind:'ward'});
     const pct=move==='Threefold Support'?.05:move==="Shepherd's Advance"?.04:0;
     const healed=Math.min(fighterStats(ally).max-ally.hp,Math.round(fighterStats(ally).max*pct));
     if(healed>0){ally.hp+=healed;transient.heal=ally.id;transient.chips.push({text:'+'+healed+' '+hero(ally.id).name,color:'#72e5aa'});}
+    if(healed>0)team3D.targets.push({hero:ally.id,kind:'heal',amount:healed});
   }
+  queue3D(team3D);
   note('TEAM SKILL / '+move+' / '+hit+' bonus damage'+(current?'.':move==='Threefold Support'||move==="Shepherd's Advance"?'; healing and protection.':'; protection.'));
 }
 function toggleMode(){
@@ -263,7 +316,9 @@ function toggleMode(){
   save();render();
 }
 function toggleView(){
+  if(!canUse3D()||threeBusy)return;
   state.view3d=!state.view3d;
+  if(!state.view3d)close3D();
   save();render();
 }
 function chooseManual(index){
@@ -282,12 +337,13 @@ function manualPanel(){
     return '<button class="manualSkill button mini" data-action="manualSkill" data-index="'+i+'" '+(wait?'disabled':'')+'><img src="'+img('Skill-'+f.id+'-'+i+'.png')+'" alt=""><span>'+esc(skill.name)+'<small>'+(wait?'Ready in '+wait+' turns':'Ready · '+esc(skill.description))+'</small></span></button>';
   }).join('')+'</div></div>';
 }
-function battleTick(){
-  if(state.phase!=='battle'||state.paused||state.awaiting||modal)return;
+function battleTick(){if(globalThis.sarkoIntroPlaying)return;
+  if(state.phase!=='battle'||state.paused||state.awaiting||modal||threeBusy||threeLoading)return;
   const enemy=state.enemy;if(!enemy)return;
   const f=state.fighters[state.actor],nextTurn=state.turn+(state.actor===0?1:0);
   if(state.manual&&f?.hp>0&&manualChoice===null)return;
   if(state.manual&&manualChoice>=0&&nextTurn-f.last[manualChoice]<cooldown(f.id,manualChoice))return;
+  threeEvents=[];threeFrame=threeView&&state.view3d?JSON.parse(JSON.stringify(state)):null;
   transient={chips:[],hits:[],enemyMove:'',heal:-1,weapon:-1};
   if(state.actor===0)state.turn++;
   if(f?.hp>0){
@@ -299,9 +355,10 @@ function battleTick(){
       enemy.hp=Math.max(0,enemy.hp-hit);transient.weapon=f.id;
       transient.chips.push({text:'−'+hit+' '+hero(f.id).name,color:hero(f.id).color});
       note(hero(f.id).name+' uses Basic Attack for '+hit+' damage.');
-      globalThis.SarkoArena3D?.action({kind:'attack',hero:f.id,skill:'Basic Attack',color:hero(f.id).color});
+      queue3D({hero:f.id,color:hero(f.id).color,projectile:f.id===5?'bolt':f.id===6?'arrow':null,advance:[5,6].includes(f.id)?0:1.25,targets:[{enemy:true,kind:'damage',amount:hit,defeated:enemy.hp===0}]});
     }else if(index!==undefined&&index!==null){
       const skill=skillFor(f.id,index),desc=skill.description.toLowerCase(),stats=fighterStats(f),power=1+.18*(rankFor(f.id,index)-1);
+      const move3D={hero:f.id,skillId:skill.id,color:hero(f.id).color,targets:[]};
       recordSkillUse(f,index);f.nextSkill=(index+1)%8;
       const heal=/heal|restore|recover/.test(desc),protect=/protect|ward|brace|guard/.test(desc);
       if(heal){
@@ -310,29 +367,32 @@ function battleTick(){
           const healed=Math.min(amount,fighterStats(target).max-target.hp);target.hp+=healed;transient.heal=target.id;
           transient.chips.push({text:'+'+healed+' '+hero(target.id).name,color:'#72e5aa'});
           note(hero(f.id).name+' uses '+skill.name+'; '+hero(target.id).name+' heals '+healed+'.');
-          globalThis.SarkoArena3D?.action({kind:'heal',hero:f.id,target:target.id,skill:skill.name,color:'#72e5aa'});
+          move3D.targets.push({hero:target.id,kind:'heal',amount:healed});
         }
       }
-      if(protect){state.fighters.filter(x=>x.hp>0).forEach(x=>x.ward=true);note(hero(f.id).name+' grants a protective ward.');}
+      if(protect){state.fighters.filter(x=>x.hp>0).forEach(x=>{x.ward=true;move3D.targets.push({hero:x.id,kind:'ward'});});note(hero(f.id).name+' grants a protective ward.');}
       if(!heal||/strike|bolt|arrow|cut|thrust/.test(desc)){
         let hit=Math.max(4,Math.round(stats.attack*(1.2+(f.nextSkill%4)*.13)*power)-enemy.guard);
         if(Math.random()<stats.crit){hit=Math.round(hit*2);note('Critical hit!');}
         enemy.hp=Math.max(0,enemy.hp-hit);transient.weapon=f.id;
         transient.chips.push({text:'−'+hit+' '+hero(f.id).name,color:hero(f.id).color});
         note(hero(f.id).name+' uses '+skill.name+' for '+hit+' damage.');
-        globalThis.SarkoArena3D?.action({kind:'attack',hero:f.id,skill:skill.name,color:hero(f.id).color});
+        move3D.targets.push({enemy:true,kind:'damage',amount:hit,defeated:enemy.hp===0});
+        if([5,6].includes(f.id))move3D.projectile=f.id===5?'bolt':'arrow';
+        if(![0,5,6].includes(f.id))move3D.advance=1.25;
       }
+      queue3D(move3D);
     }
   }
   manualChoice=null;
   state.actor++;
-  if(enemy.hp<=0){victory();render();return;}
+  if(enemy.hp<=0){victory();finishBattleTurn();return;}
   if(state.actor>=4){
     state.actor=0;
-    if(state.turn%4===0){teamMove();if(enemy.hp<=0){victory();render();return;}}
+    if(state.turn%4===0){teamMove();if(enemy.hp<=0){victory();finishBattleTurn();return;}}
     monsterTurn();
   }
-  save();render();
+  finishBattleTurn();
 }
 function unequipFallen(id){
   for(const item of state.inventory)if(item.equippedTo===id)item.equippedTo=null;
@@ -340,21 +400,23 @@ function unequipFallen(id){
 }
 function monsterTurn(){
   const enemy=state.enemy,living=state.fighters.filter(f=>f.hp>0);if(!living.length)return defeat();
-  const move=enemy.moves[enemy.move++%enemy.moves.length];
-  transient.enemyMove=move;
-  if(move==='Stone Guard'||move==='Shell Turn'){enemy.guard+=2;note(`${enemy.name} uses ${move} and hardens its defense.`);return;}
-  const area=['Spore Burst','Rootfall','Quaking Fist','Tidal Surge','Whiteout Charge','Thunderstrike','Cinder Breath','Corruption Wave','Dragon Breath','Radiant Judgment'].includes(move);
+  const action=nextEnemyAction(enemy),move=action.name;
+  const move3D={enemy:true,skillId:action.basic?null:move,color:'#ffba7e',targets:[]};
+  transient.enemyMove=action.basic?`${move} · Basic attack`:move;
+  if(!action.basic&&ENEMY_GUARD_SKILLS.includes(move)){enemy.baseGuard??=enemy.guard;enemy.guard=Math.min(enemy.baseGuard+6,enemy.guard+2);move3D.targets.push({enemy:true,kind:'ward'});queue3D(move3D);note(`${enemy.name} uses ${move} and hardens its defense.`);return;}
+  const area=!action.basic&&ENEMY_AREA_SKILLS.includes(move);
   const targets=area?living:[living[rand(living.length)]];
-  const multiplier=area?.67:move==='Heavy Strike'||move==='Rex Claw'?1.3:1;
+  const multiplier=action.basic?.8:area?.67:ENEMY_HEAVY_SKILLS.includes(move)?1.3:1;
   for(const victim of targets){
     const stats=fighterStats(victim);
     const damage=Math.max(2,Math.round((enemy.attack*multiplier-stats.defense*.5)*(1-stats.resist)*(1-(area?fruitBonus(victim.id,'Gentleness'):0))*(victim.ward?.55:1)));
     victim.hp=Math.max(0,victim.hp-damage);victim.ward=false;
     transient.hits.push({id:victim.id,damage});
-    globalThis.SarkoArena3D?.action({kind:'enemy',target:victim.id});
+    move3D.targets.push({hero:victim.id,kind:'damage',amount:damage,defeated:victim.hp===0});
     note(`${enemy.name} uses ${move} on ${hero(victim.id).name} for ${damage}.`);
     if(victim.hp===0)unequipFallen(victim.id);
   }
+  move3D.advance=area?0:1.25;queue3D(move3D);
   if(state.fighters.every(f=>f.hp===0))defeat();
 }
 function victory(){
@@ -381,7 +443,7 @@ function victory(){
 function addLoot(kind){const item=kind==='Fruit'?{id:newId(),kind,name:FRUITS[rand(FRUITS.length)],rarity:RARITIES[Math.min(4,Math.floor(state.cleared/9)+rand(2))],bonus:.04+rand(4)*.02,equippedTo:null,gem:null}:{id:newId(),kind,name:['Radiant','Storm','Guardian','Luminous'][rand(4)]+' Gem',rarity:RARITIES[Math.min(4,Math.floor(state.cleared/12)+rand(2))],bonus:.04,equippedTo:null};state.inventory.push(item);state.loot.push(item);}
 function defeat(){state.phase='over';state.paused=true;note(`Run complete: ${state.cleared} monsters cleared.`);save();}
 function nextFight(){if(state.phase!=='battle'||!state.awaiting)return;if(state.pendingStory){modal='story';render();return;}if(state.pendingScene){modal='scene';render();return;}spawnEnemy();render();}
-function resetRun(){manualChoice=null;state.inventory=[];state.ranks={};state.gold=0;state.points=0;state.loot=[];selectedGear=-1;selectedGem=-1;state.phase='selection';state.chosen=[...(state.campaignCarry?.chosen||[])];state.fighters=[];state.enemy=null;state.awaiting=false;state.paused=false;modal='';save();render();}
+function resetRun(){state.scenePage=0;state.guidedIntro=false;manualChoice=null;state.inventory=[];state.ranks={};state.gold=0;state.points=0;state.loot=[];selectedGear=-1;selectedGem=-1;state.phase='selection';state.chosen=[...(state.campaignCarry?.chosen||[])];state.fighters=[];state.enemy=null;state.awaiting=false;state.paused=false;modal='';save();render();}
 function submitScore(){if(state.phase!=='over'||state.scoreSent)return;const input=$('#scoreName');const name=(input?.value||state.playerName||'Traveler').trim().slice(0,30)||'Traveler';state.playerName=name;state.scores.push({name,cleared:state.cleared,bosses:Math.floor(state.cleared/20)*2+(state.cleared%20>=10?1:0),team:state.chosen.map(id=>hero(id).name).join(', '),date:new Date().toISOString().slice(0,10)});state.scores.sort((a,b)=>b.cleared-a.cleared);state.scores=state.scores.slice(0,50);state.scoreSent=true;save();toast('Score saved on this device.');render();}
 function playMusic(){if(!musicOn)return;const a=$('#music');if(!a)return;a.src=MUSIC[musicIndex%MUSIC.length];a.volume=.28;a.play().catch(()=>{});}
 function toggleMusic(){musicOn=!musicOn;const a=$('#music');if(musicOn)playMusic();else a.pause();render();}
@@ -398,6 +460,7 @@ const ROUTE_POINTS=[[[10,86],[29,75],[54,71],[66,64],[60,52],[31,50],[43,42],[70
 const WORLD_POINTS=[[11,45],[25,75],[31,32],[44,29],[57,31],[69,46],[79,54],[89,18]];
 function travelMap(world,stage,token){
   const names=[...WORLD_NAMES,'Heavenly City'];
+  if(state.view3d&&canUse3D())return `<div id="travel3d" aria-label="3D journey through ${esc(names[world])}"></div>`;
   if(state.mapView==='overview')return `<div class="travelMap overviewMap" role="img" aria-label="Seven Sarko worlds and Heavenly City"><img src="${img('Sarko-Overworld-Map.jpg')}" alt="Seven connected Sarko worlds leading to Heavenly City">${names.map((name,i)=>`<span class="worldPin ${i===world?'current':''}" style="left:${WORLD_POINTS[i][0]}%;top:${WORLD_POINTS[i][1]}%">${i===world?'◆ ':''}${esc(name)}</span>`).join('')}</div>`;
   const second=stage>=10,offset=second?10:0;
   const route=ROUTE_POINTS[second?1:0];
@@ -417,12 +480,71 @@ function journeyScreen(){
     <div class="panel panelpad"><span class="eyebrow">Victory · rewards found</span><h2>${esc(state.enemy.name)} defeated</h2>${lootHtml()}<p class="small muted">Gold ${state.gold} · Skill points ${state.points}. A fruit chest is guaranteed after every victory.</p><div class="actions"><button class="button alt" data-action="modal" data-modal="shop">VISIT MERCHANT</button><button class="button alt" data-action="modal" data-modal="forge">FORGE</button><button class="button alt" data-action="modal" data-modal="church">UPGRADE SKILLS</button><button class="button alt" data-action="modal" data-modal="tree">FRUIT TREE</button></div></div></div></section>`;
 }
 function heroCard(id,selection=false){const h=hero(id),picked=state.chosen.includes(id),f=state.fighters.find(x=>x.id===id),stats=f?fighterStats(f):h,hit=transient.hits.filter(x=>x.id===id).reduce((n,x)=>n+x.damage,0);return `<article class="card ${selection?'':'heroBattle'} ${picked&&selection?'selected':''} ${f&&f.hp===0?'dead':''} ${transient.heal===id?'healing':''}" style="border-top:4px solid ${h.color}"><button class="cardbutton" data-action="${selection?'pick':'details'}" data-id="${id}" aria-label="${selection?'Choose':'Inspect'} ${h.name}"><img class="portrait" src="${img(h.art+'.jpg')}" alt="${h.name}"><div class="cardbody"><div class="meta"><h3>${h.name}</h3><span class="role">${selection?'LV 1':`LV ${f.level}`}</span></div><div class="role">${h.role}</div>${hit?`<div class="damageTaken" aria-live="polite">−${hit} DAMAGE TAKEN${transient.enemyMove?` · ${esc(transient.enemyMove)}`:''}</div>`:''}${f?`<div class="bar health" aria-label="Health ${f.hp} of ${stats.max}"><span style="width:${100*f.hp/stats.max}%"></span></div><div class="stats">HP ${f.hp}/${stats.max} · ATK ${stats.attack} · DEF ${stats.defense}</div><div class="bar xp"><span style="width:${100*f.xp/(60+f.level*30)}%"></span></div><div class="stats">XP ${f.xp}/${60+f.level*30}</div>`:`<div class="stats">HP ${h.hp} · ATK ${h.attack} · DEF ${h.defense}</div>`}</div></button>${selection?`<span class="pick">${picked?'✓ CHOSEN':'TAP TO PICK'}</span>`:''}</article>`;}
-function header(){return `<div class="topbar"><div class="brand"><div class="brandmark"><img src="icon-180.png" alt="Sarko game icon"></div><div><b>SARKO CLASSIC RPG</b><span class="eyebrow small">Guild Arena · ${esc(saveFiles.slots[saveFiles.active].name)}</span></div></div><nav class="nav" aria-label="Main navigation">${state.mode==='campaign'&&state.phase!=='selection'?'<button class="button mini" data-action="modal" data-modal="story">Book Story</button>':''}<button class="button mini ${modal==='files'?'active':''}" data-action="modal" data-modal="files">Save Files</button><button class="button mini ${modal==='shop'?'active':''}" data-action="modal" data-modal="shop">Shop</button><button class="button mini ${modal==='forge'?'active':''}" data-action="modal" data-modal="forge">Forge</button><button class="button mini ${modal==='church'?'active':''}" data-action="modal" data-modal="church">Church</button><button class="button mini ${modal==='tree'?'active':''}" data-action="modal" data-modal="tree">Fruit Tree</button><button class="button mini ${modal==='scores'?'active':''}" data-action="modal" data-modal="scores">Scores</button></nav></div>`;}
+function header(){return `<div class="topbar"><div class="brand"><div class="brandmark"><img src="icon-180.png" alt="Sarko game icon"></div><div><b>SARKO CLASSIC RPG</b><span class="eyebrow small">Guild Arena · ${esc(saveFiles.slots[saveFiles.active].name)}</span></div></div><nav class="nav" aria-label="Main navigation">${canUse3D()&&(state.phase==='selection'||(state.phase==='battle'&&state.awaiting))?`<button class="button mini" data-action="view" aria-pressed="${state.view3d}">${state.view3d?'VIEW: 3D':'VIEW: CARDS'}</button>`:''}${state.mode==='campaign'&&state.phase!=='selection'?'<button class="button mini" data-action="modal" data-modal="story">Book Story</button>':''}<button class="button mini ${modal==='files'?'active':''}" data-action="modal" data-modal="files">Save Files</button><button class="button mini ${modal==='shop'?'active':''}" data-action="modal" data-modal="shop">Shop</button><button class="button mini ${modal==='forge'?'active':''}" data-action="modal" data-modal="forge">Forge</button><button class="button mini ${modal==='church'?'active':''}" data-action="modal" data-modal="church">Church</button><button class="button mini ${modal==='tree'?'active':''}" data-action="modal" data-modal="tree">Fruit Tree</button><button class="button mini ${modal==='scores'?'active':''}" data-action="modal" data-modal="scores">Scores</button></nav></div>`;}
 function selection(){return `<div class="intro"><section class="panel heroIntro"><span class="eyebrow">Guild of First Light · two ways to play</span><h1>Choose four heroes.<br>Follow the book or survive.</h1><p>Survival reshuffles all monsters and dungeon guardians. Campaign follows all 17 chapters across seven worlds, with 18 monsters and bosses at stages 10 and 20 in each world. Choose Auto or Manual during combat.</p><div class="statline"><span>✦ ${state.chosen.length}/4 selected</span><span>✦ A chest every victory</span><span>✦ Fruit & gems</span></div><div class="actions"><button class="button" data-action="start" ${state.chosen.length!==4?'disabled':''}>ENDLESS SURVIVAL</button><button class="button" data-action="startCampaign" ${state.chosen.length!==4?'disabled':''}>BOOK CAMPAIGN</button></div><div class="difficultyPick"><span class="eyebrow">Campaign difficulty · beat one to unlock the next</span><div class="actions">${DIFFICULTIES.map((name,i)=>`<button class="button mini ${state.difficulty===i?'active':'alt'}" data-action="difficulty" data-index="${i}" ${i>state.unlockedDifficulty?'disabled':''}>${name}${i>state.unlockedDifficulty?' 🔒':''}</button>`).join('')}</div></div></section><div class="panel introArt" role="img" aria-label="Sarko themed arena"></div></div><div class="sectionHead"><div><span class="eyebrow">Playable companions</span><h2>Pick your party</h2></div><span class="muted small">Tap a card to select it. Skills can be read in battle.</span></div><div class="roster">${HEROES.map((_,i)=>heroCard(i,true)).join('')}</div>`;}
 function lootHtml(){return `<div class="loot">${state.loot.length?state.loot.map(g=>`<div class="lootitem">${g.kind==='Fruit'?fruitIcon(g.name):`<img src="${img('Guild-Gem.jpg')}" alt="">`}<span>${esc(g.rarity)} ${esc(g.name)}</span></div>`).join(''):'<span class="muted">No gear found this fight.</span>'}</div>`;}
-function battle(){if(state.awaiting&&state.phase==='battle')return journeyScreen();const e=state.enemy;return `<section class="arenaBackdrop" style="background-image:url('${img(arenaArt())}')"><div class="battleHead"><div><span class="eyebrow">${state.phase==='over'?'Run complete':state.awaiting?'Foe defeated':`${modeHeading()} · ${e.boss?'Boss battle':state.mode==='campaign'?'World encounter':'Survival'}`}</span><h2>${state.phase==='over'?`${state.cleared} monsters cleared`:state.awaiting?`${e.name} defeated`:`${e.name} enters the arena`}</h2><div class="summary"><span>Cleared <b>${state.cleared}</b></span><span>Gold <b>${state.gold}</b></span><span>Skill points <b>${state.points}</b></span></div></div><div class="actions"><button class="button merchantButton" data-action="modal" data-modal="shop">VISIT MERCHANT · 10 FRUIT OFFERS</button>${state.phase==='battle'&&!state.awaiting?`<button class="button alt" data-action="mode">${state.manual?'MANUAL':'AUTO'}</button><button class="button alt" data-action="pause">${state.paused?'RESUME':'PAUSE BATTLE'}</button>`:''}<button class="button ghost" data-action="music">${musicOn?'MUSIC ON':'MUSIC OFF'}</button></div></div>${manualPanel()}${state.awaiting?`<div class="panel panelpad" style="margin-top:16px"><span class="eyebrow">Victory · rewards found</span><h3>${e.name} is defeated</h3>${lootHtml()}<p class="muted small">${state.cleared%2===0?"+1 skill point earned.":"Next victory earns a skill point."} A chest is guaranteed each victory. Spend gold in the shop or improve gear before continuing.</p><div class="actions"><button class="button" data-action="next">FIGHT NEXT →</button><button class="button alt" data-action="modal" data-modal="shop">VISIT MERCHANT</button><button class="button alt" data-action="modal" data-modal="forge">VISIT FORGE</button><button class="button alt" data-action="modal" data-modal="church">UPGRADE SKILLS</button><button class="button alt" data-action="modal" data-modal="tree">EQUIP FRUIT</button></div></div>`:''}<div class="battleGrid"><div class="heroes">${state.fighters.map(f=>heroCard(f.id)).join('')}</div><article class="card enemyCard" data-world="${WORLD_NAMES[e.world??0]}"><img src="${img(enemyArt(e))}" alt="${e.name}"><div class="cardbody"><span class="eyebrow">${e.boss?'Boss':'Monster'} · ${WORLD_NAMES[e.world??0]} world · level ${e.level}</span><h3>${e.name}</h3><div class="bar enemy" aria-label="Enemy health ${e.hp} of ${e.max}"><span style="width:${100*e.hp/e.max}%"></span></div><p class="stats">HP ${e.hp}/${e.max} · ATK ${e.attack} · GUARD ${e.guard}</p><button class="button mini alt" data-action="enemy">Attack patterns</button><div class="damageDealt" aria-live="polite">${transient.chips.map(c=>`<span class="chip" style="color:${c.color}">${esc(c.text)}${c.text.startsWith('−')?' DAMAGE DEALT':''}</span>`).join('')}</div></div>${transient.weapon>=0?`<img class="strike" src="${img('Weapon-'+hero(transient.weapon).art+'.png')}" alt="">`:''}</article></div>${state.phase==='over'?`<div class="panel panelpad" style="margin-top:16px"><span class="eyebrow">Your guild record</span><h3>Enter a name for the high scores</h3><div class="actions"><input id="scoreName" class="nameInput" maxlength="30" autocomplete="nickname" placeholder="Your name" value="${esc(state.playerName)}" ${state.scoreSent?'disabled':''}><button class="button" data-action="submit" ${state.scoreSent?'disabled':''}>${state.scoreSent?'SCORE SAVED':'SAVE SCORE'}</button><button class="button alt" data-action="reset">NEW RUN</button></div><p class="muted small">Scores are currently saved on this device.</p></div>`:''}<div class="battleFoot"><div class="panel panelpad"><span class="eyebrow">Battle record</span><div class="log" aria-live="polite">${state.log.slice(0,8).map(line=>`<p>${esc(line)}</p>`).join('')}</div></div><div class="panel panelpad"><span class="eyebrow">How to play</span><div class="detail"><strong>Tap a hero</strong> to read all eight skills and their cooldowns.<br><strong>Auto/Manual</strong> switches between watching and choosing each action. Pause to inspect gear or use the forge and church.<br><strong>After victory</strong>, inspect the loot and choose when to fight next.<br><strong>Bosses</strong> bring fruit and a gem. Each world has bosses at encounters 10 and 20 in Survival and Campaign.</div></div></div></section>`;}
+function battle(){if(state.awaiting&&state.phase==='battle'&&!threeBusy)return journeyScreen();const e=state.enemy;return `<section class="arenaBackdrop" style="background-image:url('${img(arenaArt())}')"><div class="battleHead"><div><span class="eyebrow">${state.phase==='over'?'Run complete':state.awaiting?'Foe defeated':`${modeHeading()} · ${e.boss?'Boss battle':state.mode==='campaign'?'World encounter':'Survival'}`}</span><h2>${state.phase==='over'?`${state.cleared} monsters cleared`:state.awaiting?`${e.name} defeated`:`${e.name} enters the arena`}</h2><div class="summary"><span>Cleared <b>${state.cleared}</b></span><span>Gold <b>${state.gold}</b></span><span>Skill points <b>${state.points}</b></span></div></div><div class="actions">${canUse3D()?`<button class="button alt" data-action="view" aria-pressed="${state.view3d}">${state.view3d?'VIEW: 3D':'VIEW: CARDS'}</button>`:''}<button class="button merchantButton" data-action="modal" data-modal="shop">VISIT MERCHANT · 10 FRUIT OFFERS</button>${state.phase==='battle'&&!state.awaiting?`<button class="button alt" data-action="mode">${state.manual?'MANUAL':'AUTO'}</button><button class="button alt" data-action="pause">${state.paused?'RESUME':'PAUSE BATTLE'}</button>`:''}<button class="button ghost" data-action="music">${musicOn?'MUSIC ON':'MUSIC OFF'}</button></div></div>${manualPanel()}${state.awaiting?`<div class="panel panelpad" style="margin-top:16px"><span class="eyebrow">Victory · rewards found</span><h3>${e.name} is defeated</h3>${lootHtml()}<p class="muted small">${state.cleared%2===0?"+1 skill point earned.":"Next victory earns a skill point."} A chest is guaranteed each victory. Spend gold in the shop or improve gear before continuing.</p><div class="actions"><button class="button" data-action="next">FIGHT NEXT →</button><button class="button alt" data-action="modal" data-modal="shop">VISIT MERCHANT</button><button class="button alt" data-action="modal" data-modal="forge">VISIT FORGE</button><button class="button alt" data-action="modal" data-modal="church">UPGRADE SKILLS</button><button class="button alt" data-action="modal" data-modal="tree">EQUIP FRUIT</button></div></div>`:''}${state.view3d&&canUse3D()?'<div id="battle3d" aria-label="3D battle arena"></div>':''}<div class="battleGrid"><div class="heroes">${state.fighters.map(f=>heroCard(f.id)).join('')}</div><article class="card enemyCard" data-world="${WORLD_NAMES[e.world??0]}"><img src="${img(enemyArt(e))}" alt="${e.name}"><div class="cardbody"><span class="eyebrow">${e.boss?'Boss':'Monster'} · ${WORLD_NAMES[e.world??0]} world · level ${e.level}</span><h3>${e.name}</h3><div class="bar enemy" aria-label="Enemy health ${e.hp} of ${e.max}"><span style="width:${100*e.hp/e.max}%"></span></div><p class="stats">HP ${e.hp}/${e.max} · ATK ${e.attack} · GUARD ${e.guard}</p><button class="button mini alt" data-action="enemy">Attack patterns</button><div class="damageDealt" aria-live="polite">${transient.chips.map(c=>`<span class="chip" style="color:${c.color}">${esc(c.text)}${c.text.startsWith('−')?' DAMAGE DEALT':''}</span>`).join('')}</div></div>${transient.weapon>=0?`<img class="strike" src="${img('Weapon-'+hero(transient.weapon).art+'.png')}" alt="">`:''}</article></div>${state.phase==='over'?`<div class="panel panelpad" style="margin-top:16px"><span class="eyebrow">Your guild record</span><h3>Enter a name for the high scores</h3><div class="actions"><input id="scoreName" class="nameInput" maxlength="30" autocomplete="nickname" placeholder="Your name" value="${esc(state.playerName)}" ${state.scoreSent?'disabled':''}><button class="button" data-action="submit" ${state.scoreSent?'disabled':''}>${state.scoreSent?'SCORE SAVED':'SAVE SCORE'}</button><button class="button alt" data-action="reset">NEW RUN</button></div><p class="muted small">Scores are currently saved on this device.</p></div>`:''}<div class="battleFoot"><div class="panel panelpad"><span class="eyebrow">Battle record</span><div class="log" aria-live="polite">${state.log.slice(0,8).map(line=>`<p>${esc(line)}</p>`).join('')}</div></div><div class="panel panelpad"><span class="eyebrow">How to play</span><div class="detail"><strong>Tap a hero</strong> to read all eight skills and their cooldowns.<br><strong>Auto/Manual</strong> switches between watching and choosing each action. Pause to inspect gear or use the forge and church.<br><strong>After victory</strong>, inspect the loot and choose when to fight next.<br><strong>Bosses</strong> bring fruit and a gem. Each world has bosses at encounters 10 and 20 in Survival and Campaign.</div></div></div></section>`;}
 function modalFrame(title,body){return `<div class="overlay" id="overlay"><section class="panel panelpad modal" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="modalHead"><div><span class="eyebrow">Guild of First Light</span><h2>${esc(title)}</h2></div><button class="button alt" data-action="close">CLOSE ✕</button></div>${body}</section></div>`;}
+// Short playable adaptations of the chapter material in campaign-data.json.
+// Combat, rewards and progression remain owned by the existing campaign.
+const JOURNEY_GOALS = [
+ ['Walk with Waiz to First Light','Keep the eastern road open','Put Diago’s lesson into practice','Protect the road beyond the eastern gate'],
+ ['Help the team cross together','Secure the flooded approach','Keep the crossing open for others','Face the guardian of the crossing'],
+ ['Stand together after the guild attack','Clear a route for the rebuilding effort','Carry hope through the mountain pass','Break through the corruption in the pass'],
+ ['Reach the farming settlement','Protect the road to the Hidden Garden','Hold together when the formation breaks','Defend the Garden’s approach'],
+ ['Follow the road toward the Dragon King','Hold the line against the gathering creatures','Protect one another through the fire','Break through the fiery blockade'],
+ ['Enter the canyon without abandoning one another','Open a path through the shadow host','Stand against the King of Lies','Defeat the force barring the canyon exit'],
+ ['Carry the wounded toward the light','Clear the final approach together','Make the road safe for those behind you','Open the last road to the Heavenly City']
+];
+const JOURNEY_DIALOGUE = [
+ [['Waiz','Nobody reaches the Heavenly City alone. Your team will need you, too.'],['Sarko','Then I’ll take the first step with them.'],['Diago','You do not learn to protect people by waiting until you feel brave. Stand with your team.'],['Sarko','The road is safer now. Let’s use what we found before we go on.'],['Diago','You held your ground. Now learn when to strike and when to let someone help.'],['Waiz','That is why we brought a team.'],['Sarko','I still remember the flood. I don’t want fear to choose for me again.'],['Diago','Then choose the next right step. We will take it together.']],
+ [['Waiz','You don’t have to face that fear alone. Watch my flank, and I’ll watch yours.'],['Sarko','Together, then.'],['Sarko','There are others who need this crossing. We cannot leave the road like this.'],['Waiz','One stretch at a time. Keep everyone close.'],['Amaya','The crossing is behind us. Check the wounded before we press on.'],['Sarko','We keep moving as a team.'],['Waiz','That creature is blocking the way. Ready?'],['Sarko','Ready enough to stand beside you.']],
+ [['Amaya','The guild can be rebuilt. First, we keep the road safe for those helping us.'],['Sarko','Then that is where we begin.'],['Hailey','Everything feels different after the attack.'],['Sarko','We can still choose what we do for one another.'],['Amaya','Fear does not disappear because you hide it. Stay with the formation.'],['Waiz','And stay with us.'],['Sarko','We have carried our fears this far. We do not have to carry them alone.'],['Amaya','Then let’s finish the crossing.']],
+ [['Naomi','Protecting people means noticing the lives beyond the battlefield.'],['Sarko','The farmers need a safe road. We can give them that.'],['Isaac','We hold the path. They bring their families through.'],['Sarko','No one gets left behind.'],['Amaya','Their attacks are coordinated. We must keep our own line together.'],['Sarko','I can protect the team without trying to control every step.'],['Levi','Strength is not yours alone to carry.'],['Sarko','I’ll trust the others to stand with me.']],
+ [['Levi','Rex calls dependence weakness. He has forgotten what love can endure.'],['Sarko','Then we will show it by how we fight together.'],['Hailey','There are so many of them.'],['Sarko','Look at us, Hailey. You are not facing them alone.'],['Hailey','I can help keep everyone standing.'],['Amaya','Then we will make room for your light.'],['Levi','Hold your purpose when the fire comes.'],['Sarko','Protect one another. That is our way through.']],
+ [['Naomi','Not every voice in this canyon tells the truth. Remember who stands beside you.'],['Sarko','I remember.'],['Waiz','The road keeps trying to split us up.'],['Amaya','Then we give it no opening.'],['Sarko','My failures do not have to decide what I do now.'],['Levi','Stand in that truth.'],['Isaac','Together to the end.'],['Sarko','Together.']],
+ [['Sarko','The light is closer. Check on everyone before we go on.'],['Naomi','There is still a road to walk.'],['Hailey','We have come so far.'],['Waiz','And we are bringing everyone with us.'],['Levi','Others will follow this road. Leave it safer than we found it.'],['Sarko','Then our journey can help theirs.'],['Sarko','I can protect them and love them. I do not have to be their savior.'],['Levi','Walk forward, Shepherd.']]
+];
+function narrativeContext(){
+ const world=state.pendingScene?.world??state.world;
+ const segment=state.pendingScene?Math.floor(state.pendingScene.stage/5):0;
+ const w=campaignData.worlds[world]||{first:0,after:3};
+ const chapter=Math.min(w.after,w.first+1+Math.min(segment,w.after-w.first-1));
+ return {world,segment,chapter,goal:JOURNEY_GOALS[world]?.[segment]||'Travel onward together'};
+}
+function narrativePages(){
+ const c=narrativeContext(),lines=JOURNEY_DIALOGUE[c.world].slice(c.segment*2,c.segment*2+2);
+ return lines.map(([speaker,text])=>({speaker,text}));
+}
+function narrativeModal(kind){
+ const c=narrativeContext(),pages=narrativePages(),page=Math.min(state.scenePage||0,pages.length-1),line=pages[page];
+ const portrait=HEROES.find(h=>h.name===line.speaker)?.art||'Sarko';
+ const opening=c.world===0&&c.segment===0;
+ const art=`story-scenes/${c.world}-${c.segment}.jpg`;
+ const goalEnd=(c.segment+1)*5;
+ return modalFrame(opening?'A road we walk together':c.goal,
+ `<section class="narrativeScene"><img class="narrativeArt" src="${img(art)}" alt="${esc([...new Set(pages.map(p=>p.speaker))].join(' and '))} on the ${WORLD_NAMES[c.world]} road"><div class="narrativeSpeech"><img src="${img(portrait+'.jpg')}" alt="${esc(line.speaker)}"><div><span class="eyebrow">${esc(line.speaker)} · ${page+1}/${pages.length}</span><p>${esc(line.text)}</p></div></div></section>`+
+ `<div class="storyObjective"><span class="eyebrow">Your next objective</span><h3>${esc(c.goal)}</h3><p>Win encounters ${c.segment*5+1}–${goalEnd} on this road.${goalEnd===10||goalEnd===20?' A boss guards the final encounter.':''} Victories open the next scene.</p></div>`+
+ `${opening?'<p>Meet Sarko and Waiz in this adaptation of the opening chapters, then take your chosen four heroes onto the road. Guided play teaches manual attacks and equipping your first reward.</p>':''}`+
+ `<div class="actions"><button class="button" data-action="${kind==='scene'?'continueScene':'continueStory'}">${page<pages.length-1?'NEXT DIALOGUE':opening?'BEGIN JOURNEY':'TAKE THE NEXT STEP'}</button>${opening?'<button class="button alt" data-action="guidedStory">PLAY GUIDED INTRO</button>':''}<button class="button ghost" data-action="skipNarrative">${opening?'SKIP INTRO & TUTORIAL':'SKIP SCENE'}</button></div>`+
+ `<details class="storyArchive"><summary>Read or listen to the source chapter</summary><p class="small muted">Short dialogue is adapted for the game. Full chapter ${c.chapter} is optional.</p><p>${esc(campaignData.chapters[c.chapter-1]?.summary||'')}</p><audio controls preload="none" src="assets/story/Chapter-${String(c.chapter).padStart(2,'0')}-Full.mp3" aria-label="Chapter ${c.chapter} narration"></audio></details>`);
+}
+function advanceNarrative(){const pages=narrativePages();if((state.scenePage||0)<pages.length-1){state.scenePage=(state.scenePage||0)+1;save();render();return true;}state.scenePage=0;return false;}
+function finishNarrative(skip=false,guided=false){
+ state.scenePage=0;if(skip)state.guidedIntro=false;
+ if(guided){state.guidedIntro=true;state.manual=true;manualChoice=null;}
+ if(modal==='scene')continueScene(true);else continueStory(true);
+}
+function storyObjectiveBanner(){
+ if(state.mode!=='campaign'||state.phase==='selection')return '';
+ const segment=Math.min(3,Math.floor(Math.min(19,state.worldStage)/5)),goal=JOURNEY_GOALS[state.world]?.[segment];
+ if(!goal)return '';
+ const guidance=state.guidedIntro?(state.cleared===0?'Diago’s lesson: choose Basic Attack or a ready skill below. Each hero takes one action. You can switch to Auto at any time.':state.inventory.some(g=>g.kind==='Fruit'&&g.equippedTo!==null)?'Your first fruit is equipped. Its bonus now helps its wearer in battle. Continue along the road when ready.':'Your victory earned Spirit Fruit. Open Fruit Tree, choose a hero, and press EQUIP beside a fruit to strengthen that hero.') : '';
+ return `<aside class="storyObjective" aria-label="Story objective"><span class="eyebrow">${state.phase==='over'&&state.worldStage===20?'Journey complete':'Story objective'}</span><strong>${esc(goal)}</strong><span>${Math.min(5,state.worldStage-segment*5)} / 5 encounters cleared</span>${guidance?`<p>${esc(guidance)}</p><div class="actions">${state.cleared?'<button class="button mini" data-action="modal" data-modal="tree">OPEN FRUIT TREE</button>':''}<button class="button mini ghost" data-action="endGuide">END TUTORIAL</button></div>`:''}</aside>`;
+}
+
 function storyModal(){
+  if(state.pendingStory)return narrativeModal("story");
   const world=campaignData.worlds[state.world]||{name:'Earth',first:0,after:3};
   const chapters=campaignData.chapters.slice(world.first,world.after);
   return modalFrame(`${world.name} · The Book of Sarko`,
@@ -430,8 +552,9 @@ function storyModal(){
     `<div class="storyChapters">${chapters.map((chapter,i)=>{const n=world.first+i+1;return `<article class="storyChapter"><span class="eyebrow">Chapter ${n}</span><h3>${esc(chapter.title)}</h3><p>${esc(chapter.summary)}</p><details><summary>Read the full chapter</summary><p class="chapterText">${esc(chapter.text)}</p></details><audio controls preload="none" src="assets/story/Chapter-${String(n).padStart(2,'0')}-Full.mp3" aria-label="Listen to chapter ${n}"></audio></article>`;}).join('')}</div>`+
     `<div class="actions"><button class="button" data-action="continueStory">${state.awaiting?'ENTER NEXT WORLD':'BEGIN WORLD'}</button></div>`);
 }
-function continueStory(){modal='';if(state.pendingStory){state.pendingStory=false;if(state.awaiting&&state.phase==='battle')spawnEnemy();else state.paused=false;}save();render();}
+function continueStory(skip=false){if(state.pendingStory&&!skip&&advanceNarrative())return;state.scenePage=0;modal='';if(state.pendingStory){state.pendingStory=false;if(state.awaiting&&state.phase==='battle')spawnEnemy();else state.paused=false;}save();render();}
 function sceneModal(){
+  if(state.pendingScene)return narrativeModal("scene");
   const scene=state.pendingScene;if(!scene)return '';
   const world=campaignData.worlds[scene.world]||{name:'EARTH',first:0,after:1};
   const beat=[5,10,15].indexOf(scene.stage),chapter=Math.min(world.after,world.first+beat+1);
@@ -443,7 +566,7 @@ function sceneModal(){
     `<p class="muted small">These lines adapt the chapter. Listen to the full ElevenLabs narration below.</p><audio controls preload="none" src="assets/story/Chapter-${String(chapter).padStart(2,'0')}-Full.mp3" aria-label="Listen to chapter ${chapter}"></audio>`+
     `<div class="actions"><button class="button" data-action="continueScene">CONTINUE TO STAGE ${scene.stage+1}</button></div>`);
 }
-function continueScene(){state.pendingScene=null;modal='';if(state.awaiting&&state.phase==='battle')spawnEnemy();save();render();}
+function continueScene(skip=false){if(state.pendingScene&&!skip&&advanceNarrative())return;state.scenePage=0;state.pendingScene=null;modal='';if(state.awaiting&&state.phase==='battle')spawnEnemy();save();render();}
 function tabs(){const ids=state.phase==='selection'?state.chosen:state.chosen;return `<div class="heroTabs">${ids.map(id=>`<button class="button mini ${selectedHero===id?'active':'alt'}" data-action="heroTab" data-id="${id}">${hero(id).name}</button>`).join('')}</div>`;}
 function detailsModal(id){const h=hero(id),skills=data.skills[id===7?'Magnar':h.name]||[];return modalFrame(`${h.name} · skills`,`${tabs()}<div class="summary"><span>HP <b>${h.hp}</b></span><span>ATK <b>${h.attack}</b></span><span>DEF <b>${h.defense}</b></span><span>HEAL <b>${h.healing}</b></span><span>CRIT <b>${Math.round(h.crit*100)}%</b></span></div><p class="muted">${esc(h.role)} · Tap a skill to read it. In Manual mode, pick a ready skill or Basic Attack on each hero's turn.</p><div class="skillGrid">${skills.map((s,i)=>`<div class="skill"><img src="${img('Skill-'+id+'-'+i+'.png')}" alt=""><div><strong>${esc(s.name)}</strong><p>${esc(s.description)}</p><span class="eyebrow small">Rank ${rankFor(id,i)} · ${cooldown(id,i)} turn cooldown</span></div></div>`).join('')}</div>`);}
 function scoresModal(){return modalFrame('High scores',`<p class="muted">Local rankings on this device. Shared online rankings need a durable score database.</p><div class="rankings">${state.scores.length?state.scores.map((s,i)=>`<div class="shopItem"><span class="eyebrow">#${i+1}</span><div class="grow"><strong>${esc(s.name)}</strong><div class="small muted">${esc(s.team)} · ${esc(s.date)}</div></div><strong>${s.cleared} cleared</strong></div>`).join(''):'<div class="empty">No scores yet. Your first run can set the record.</div>'}</div>`);}
@@ -475,7 +598,7 @@ function treeModal(){
     `<div class="sectionHead"><h3>Equipped by ${hero(id).name}</h3></div><div class="inventory">${equipped.length?equipped.map(fruitRow).join(''):'<div class="empty">No fruit equipped yet.</div>'}</div>`+
     `${others.length?`<div class="sectionHead"><h3>Equipped by other heroes</h3></div><div class="inventory">${others.map(fruitRow).join('')}</div>`:''}`);
 }
-function enemyModal(){const e=state.enemy;return modalFrame(e.name,`<div class="shopItem"><img src="${img(enemyArt(e))}" alt=""><div><strong>Level ${e.level} · HP ${e.hp}/${e.max}</strong><p>Attack ${e.attack} · Guard ${e.guard}</p><span class="eyebrow">Attack patterns</span><p>${e.moves.map(esc).join(' · ')}</p><p class="muted">The monster deck reshuffles after all families appear.</p></div></div>`);}
+function enemyModal(){const e=state.enemy,kit=enemyKit(e);return modalFrame(e.name,`<div class="shopItem"><img src="${img(enemyArt(e))}" alt=""><div><strong>Level ${e.level} · HP ${e.hp}/${e.max}</strong><p>Attack ${e.attack} · Guard ${e.guard}</p><span class="eyebrow">Basic attack</span><p><strong>${esc(kit.basic)}</strong> · A light strike against one hero.</p><span class="eyebrow">${kit.skills.length} skills</span>${kit.skills.map(name=>`<p><strong>${esc(name)}</strong><br>${esc(enemySkillDescription(name))}</p>`).join('')}<p class="muted">One action per turn. Basic attacks alternate with skills, in the order shown. The monster deck reshuffles after all families appear.</p></div></div>`);}
 function forgeModalV2(){
   const fruit=state.inventory.filter(g=>g.kind==='Fruit'),gems=state.inventory.filter(g=>g.kind==='Gem');
   const target=state.inventory[selectedGear],gem=state.inventory[selectedGem];
@@ -486,8 +609,47 @@ function forgeModalV2(){
     `<div class="forgeActions"><div><strong>Selected fruit:</strong> ${target?.kind==='Fruit'?esc(target.name):'None'} · <strong>Selected gem:</strong> ${gem?.kind==='Gem'?esc(gem.name)+' ('+esc(gemStat(gem))+')':'None'}</div><div class="actions"><button class="button" data-action="merge" ${!target||target.kind!=='Fruit'?'disabled':''}>MERGE FIVE MATCHING · 120 GOLD</button><button class="button alt" data-action="unsocket" ${!target?.gem?'disabled':''}>REMOVE GEM FROM SELECTED FRUIT</button><button class="button alt" data-action="modal" data-modal="tree">GO TO FRUIT TREE</button></div></div>`);
 }
 function socketInto(index){selectedGear=index;socket();}
+let travelView=null,travelHost=null,travelKey=null,travelVersion=0;
+function closeTravel3D(){++travelVersion;travelView?.dispose();travelView=null;travelHost?.remove();travelHost=null;travelKey=null;}
+async function syncTravel3D(){
+ const slot=document.querySelector('#travel3d');
+ if(!slot||!state.view3d||!canUse3D()){if(travelHost)closeTravel3D();return;}
+ const world=state.mode==='campaign'?state.world:Math.floor(state.cleared/20)%7,stage=state.mode==='campaign'?state.worldStage:state.regular;
+ const token=hero(state.arena),key=[world,stage,token.name,state.mapView].join(':');
+ if(travelHost&&travelKey===key){slot.append(travelHost);travelView?.stage.setPaused(!!modal);return;}
+ closeTravel3D();const version=++travelVersion;travelKey=key;
+ travelHost=document.createElement('div');travelHost.className='travel3dStage';travelHost.setAttribute('aria-busy','true');slot.append(travelHost);
+ try{
+  const {Travel3DView}=await import('./rpg3d-travel.js');if(version!==travelVersion)return;
+  travelView=new Travel3DView(travelHost,{onError:message=>{if(version===travelVersion){closeTravel3D();fail3D(Error(message));}}});
+  if(state.mapView==='overview')await travelView.showOverview(threeManifest,world);
+  else {const start=stage>=10?10:0;let monsterIndex=0,bossIndex=0;
+   const encounters=Array.from({length:10},(_,i)=>{const encounter=start+i;if(encounter<stage)return null;let name;if(i===9){name=state.mode==='campaign'?(encounter===9?MIDWORLD_BOSSES[world]:BOSSES[CAMPAIGN_BOSSES[world]])?.name:BOSSES[state.bossDeck?.[bossIndex++]]?.name;}else name=state.deck[monsterIndex++];const entry=threeManifest.enemies[name];return entry?{name,entry}:null;});
+   await travelView.show({encounters,entry:threeManifest.worlds[`${WORLD_NAMES[world]}-${stage>=10?2:1}`],hero:threeManifest.heroes[token.name],stage,world:WORLD_NAMES[world]});}
+  if(version===travelVersion)travelView.stage.setPaused(!!modal);
+ }catch(error){if(version===travelVersion){closeTravel3D();fail3D(error);}}
+}
+let serviceView=null,serviceHost=null,serviceKey=null,serviceVersion=0,serviceEquipmentKey=null;
+function closeService3D(){++serviceVersion;serviceView?.dispose();serviceView=null;serviceHost?.remove();serviceHost=null;serviceKey=null;serviceEquipmentKey=null;}
+async function syncService3D(){
+ const entry=threeManifest?.services?.[modal],panel=document.querySelector('#overlay .modal');
+ if(!state.view3d||!canUse3D()||!entry?.reviewed||!panel){if(serviceHost)closeService3D();return;}
+ const id=state.chosen.includes(selectedHero)?selectedHero:state.chosen[0]??0;
+ const equipped=state.inventory.filter(g=>g.kind==='Fruit'&&g.equippedTo===id).map(g=>g.name),equipmentKey=JSON.stringify([id,equipped]);
+ const options={fruits:threeManifest.fruits,equipped};
+ if(serviceHost&&serviceKey===modal){panel.querySelector('.modalHead').after(serviceHost);if(modal==='tree'&&serviceView&&equipmentKey!==serviceEquipmentKey){serviceEquipmentKey=equipmentKey;const current=serviceView;try{await current.show(entry,options);}catch(error){if(serviceView===current){closeService3D();toast('The 3D fruit tree could not load. Equipment controls are still available.');}}}return;}
+ closeService3D();const version=++serviceVersion;serviceKey=modal;
+ serviceHost=document.createElement('div');serviceHost.className='service3d';serviceHost.setAttribute('aria-label',`${modal} 3D scene`);serviceHost.setAttribute('aria-busy','true');panel.querySelector('.modalHead').after(serviceHost);
+ try{
+  const {Service3DView}=await import('./rpg3d-service.js');if(version!==serviceVersion)return;
+  serviceView=new Service3DView(serviceHost,{onError:message=>{if(version===serviceVersion){closeService3D();toast(message);}}});
+  serviceEquipmentKey=equipmentKey;await serviceView.show(entry,options);if(version!==serviceVersion)return;
+  serviceHost.setAttribute('aria-busy','false');
+ }catch(error){if(version===serviceVersion){closeService3D();toast('The 3D service scene could not load. Its controls are still available.');}}
+}
+
 function renderModal(){if(!modal)return '';if(modal==='story')return storyModal();if(modal==='scene')return sceneModal();if(modal==='files')return filesModal();if(modal==='scores')return scoresModal();if(modal==='shop')return shopModal();if(modal==='forge')return forgeModalV2();if(modal==='church')return churchModal();if(modal==='tree')return treeModal();if(modal==='details')return detailsModal(selectedHero);if(modal==='enemy')return enemyModal();return '';}
-function render(){const app=$('#app');app.innerHTML=`<main class="shell">${header()}${state.phase==='selection'?selection():battle()}<footer class="footer">Sarko · Radiant Kingdom Studios · Free browser edition · Progress and scores are saved on this device.</footer></main>${renderModal()}`;}
+function render(){const focused=document.activeElement?.tagName==='BUTTON'?{...document.activeElement.dataset}:null;if(!modal&&state.phase==='battle'&&state.pendingStory&&!state.awaiting)modal='story';const app=$('#app'),live=state;if(threeBusy&&threeFrame)state={...threeFrame,paused:threePaused};if(threeHost)threeHost.remove();if(serviceHost)serviceHost.remove();if(travelHost)travelHost.remove();app.innerHTML=`<main class="shell">${header()}${storyObjectiveBanner()}${state.phase==='selection'?selection():battle()}<footer class="footer">Sarko · Radiant Kingdom Studios · Free browser edition · Progress and scores are saved on this device.</footer></main>${renderModal()}`;state=live;if(canUse3D())sync3D();syncService3D();syncTravel3D();if(focused&&Object.keys(focused).length){const scope=modal?'#overlay button':'button';const matching=[...document.querySelectorAll(scope)].find(b=>!b.disabled&&Object.entries(focused).every(([k,v])=>b.dataset[k]===v));matching?.focus({preventScroll:true});}}
 function openModal(type){modal=type;if(state.phase==='battle'&&!state.awaiting)state.paused=true;save();render();}
 function buy(index){if(state.phase!=='battle'||state.shopBought.includes(index))return;const offer=shopOffers()[index];if(!offer||state.gold<offer.price)return;state.gold-=offer.price;state.shopBought.push(index);state.inventory.push({id:newId(),kind:'Fruit',name:offer.name,rarity:offer.rarity,bonus:offer.bonus,equippedTo:null,gem:null});save();render();toast(`${offer.name} Fruit purchased.`);}
 function merge(){const g=state.inventory[selectedGear];if(!g||g.kind!=='Fruit')return;const matches=state.inventory.filter(x=>x.kind==='Fruit'&&x.id!==g.id&&x.name===g.name&&x.rarity===g.rarity&&x.equippedTo===null);const tier=RARITIES.indexOf(g.rarity);if(matches.length<4)return toast('Five matching fruits are needed.');if(tier>=RARITIES.length-1)return toast('Already legendary.');if(state.gold<120)return toast('Need 120 gold.');state.gold-=120;const used=new Set(matches.slice(0,4).map(x=>x.id));state.inventory=state.inventory.filter(x=>!used.has(x.id));g.rarity=RARITIES[tier+1];g.bonus=Math.round((g.bonus+.04)*100)/100;save();render();toast(`${g.name} Fruit became ${g.rarity}.`);}
@@ -496,13 +658,29 @@ function unsocket(){const g=state.inventory[selectedGear];if(!g?.gem)return;cons
 function equip(id,index){const g=state.inventory[index];if(!g||g.kind!=='Fruit')return;if(state.phase==='battle'&&state.fighters.some(f=>f.id===id&&f.hp===0))return toast('A fallen hero cannot equip fruit until the next run.');if(g.equippedTo===id)g.equippedTo=null;else{for(const x of state.inventory)if(x.kind==='Fruit'&&x.name===g.name&&x.equippedTo===id)x.equippedTo=null;g.equippedTo=id;}for(const f of state.fighters){const max=fighterStats(f).max;f.hp=Math.min(f.hp,max);}save();render();}
 function unequipAll(id){for(const g of state.inventory)if(g.kind==='Fruit'&&g.equippedTo===id)g.equippedTo=null;for(const f of state.fighters){const max=fighterStats(f).max;f.hp=Math.min(f.hp,max);}save();render();toast(`All fruit removed from ${hero(id).name}.`);}
 function upgrade(id,index){const rank=rankFor(id,index),cost=skillUpgradeCost(index,rank);if(rank>=5||state.points<1||state.gold<cost)return;state.points--;state.gold-=cost;state.ranks[`${id}-${index}`]=(state.ranks[`${id}-${index}`]||0)+1;save();render();toast(`${skillFor(id,index).name} upgraded.`);}
-document.addEventListener('click',event=>{const button=event.target.closest('[data-action]');if(!button)return;const a=button.dataset.action,id=Number(button.dataset.id),index=Number(button.dataset.index);if(a==='pick')pickHero(id);else if(a==='mode')toggleMode();else if(a==='view')toggleView();else if(a==='mapView'){state.mapView=button.dataset.view;save();render();}else if(a==='basic')chooseManual(-1);else if(a==='manualSkill')chooseManual(index);else if(a==='start')startRun();else if(a==='startCampaign')startRun('campaign');else if(a==='difficulty'){if(index<=state.unlockedDifficulty){state.difficulty=index;save();render();}}else if(a==='continueStory')continueStory();else if(a==='continueScene')continueScene();else if(a==='pause'){state.paused=!state.paused;save();render();}else if(a==='next')nextFight();else if(a==='reset')resetRun();else if(a==='submit')submitScore();else if(a==='modal')openModal(button.dataset.modal);else if(a==='close'){if(modal==='story')continueStory();else if(modal==='scene')continueScene();else{modal='';render();}}else if(a==='switchFile')switchFile(index);else if(a==='renameFile')renameFile(index);else if(a==='deleteFile')deleteFile(index);else if(a==='downloadFile')downloadFile(index);else if(a==='chooseImport')$(`#fileImport${index}`)?.click();else if(a==='details'){selectedHero=id;openModal('details');}else if(a==='heroTab'){selectedHero=id;render();}else if(a==='enemy')openModal('enemy');else if(a==='music')toggleMusic();else if(a==='buy')buy(index);else if(a==='refresh'){if(state.gold>=100){state.gold-=100;state.shopRevision++;state.shopBought=[];save();render();}}else if(a==='selectGear'){selectedGear=index;render();}else if(a==='selectGem'){selectedGem=index;render();}else if(a==='merge')merge();else if(a==='socket')socket();else if(a==='socketInto')socketInto(index);else if(a==='unsocket')unsocket();else if(a==='equip')equip(id,index);else if(a==='unequipAll')unequipAll(id);else if(a==='upgrade')upgrade(id,index);});
+document.addEventListener('click',event=>{const button=event.target.closest('[data-action]');if(!button)return;const a=button.dataset.action,id=Number(button.dataset.id),index=Number(button.dataset.index);if((threeBusy||threeLoading)&&!['pause','music'].includes(a)){toast('Let the current move finish before changing gear or screens.');return;}if(a==='skipNarrative')finishNarrative(true);else if(a==='guidedStory')finishNarrative(false,true);else if(a==='endGuide'){state.guidedIntro=false;save();render();}else if(a==='pick')pickHero(id);else if(a==='mode')toggleMode();else if(a==='view')toggleView();else if(a==='mapView'){state.mapView=button.dataset.view;save();render();}else if(a==='basic')chooseManual(-1);else if(a==='manualSkill')chooseManual(index);else if(a==='start')startRun();else if(a==='startCampaign')startRun('campaign');else if(a==='difficulty'){if(index<=state.unlockedDifficulty){state.difficulty=index;save();render();}}else if(a==='continueStory')continueStory();else if(a==='continueScene')continueScene();else if(a==='pause'){pauseBattle();}else if(a==='next')nextFight();else if(a==='reset')resetRun();else if(a==='submit')submitScore();else if(a==='modal')openModal(button.dataset.modal);else if(a==='close'){if(modal==='story')continueStory();else if(modal==='scene')continueScene();else{modal='';render();}}else if(a==='switchFile')switchFile(index);else if(a==='renameFile')renameFile(index);else if(a==='deleteFile')deleteFile(index);else if(a==='downloadFile')downloadFile(index);else if(a==='chooseImport')$(`#fileImport${index}`)?.click();else if(a==='details'){selectedHero=id;openModal('details');}else if(a==='heroTab'){selectedHero=id;render();}else if(a==='enemy')openModal('enemy');else if(a==='music')toggleMusic();else if(a==='buy')buy(index);else if(a==='refresh'){if(state.gold>=100){state.gold-=100;state.shopRevision++;state.shopBought=[];save();render();}}else if(a==='selectGear'){selectedGear=index;render();}else if(a==='selectGem'){selectedGem=index;render();}else if(a==='merge')merge();else if(a==='socket')socket();else if(a==='socketInto')socketInto(index);else if(a==='unsocket')unsocket();else if(a==='equip')equip(id,index);else if(a==='unequipAll')unequipAll(id);else if(a==='upgrade')upgrade(id,index);});
 document.addEventListener('change',event=>{const input=event.target.closest('[data-import-slot]');if(input){importFile(Number(input.dataset.importSlot),input.files?.[0]);input.value='';}});
 document.addEventListener('contextmenu',event=>{const card=event.target.closest('[data-action="details"]');if(card){event.preventDefault();selectedHero=Number(card.dataset.id);openModal('details');}});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal){if(modal==='story')continueStory();else if(modal==='scene')continueScene();else{modal='';render();}}else if(event.key===' '&&state.phase==='battle'&&!modal){event.preventDefault();state.paused=!state.paused;save();render();}});
+document.addEventListener('keydown',event=>{if(globalThis.sarkoIntroPlaying)return;if(event.key==='Escape'&&modal){if(modal==='story')continueStory();else if(modal==='scene')continueScene();else{modal='';render();}}else if(event.key===' '&&state.phase==='battle'&&!modal){event.preventDefault();pauseBattle();}});
 document.addEventListener('click',event=>{if(event.target?.id==='overlay'){if(modal==='story')continueStory();else if(modal==='scene')continueScene();else{modal='';render();}}});
-if(globalThis.SarkoArena3D)globalThis.SarkoArena3D.onHeroClick=id=>{selectedHero=id;openModal('details');};
-let padHeld=false;setInterval(()=>{const pad=navigator.getGamepads?.()?.find(Boolean);if(!pad)return;const pressed=pad.buttons[0]?.pressed;if(pressed&&!padHeld){const focused=document.activeElement;if(focused?.tagName==='BUTTON')focused.click();}padHeld=pressed;if(pad.buttons[1]?.pressed&&modal){modal='';render();}if(pad.buttons[12]?.pressed||pad.buttons[13]?.pressed){const all=[...document.querySelectorAll('button:not(:disabled)')];const at=all.indexOf(document.activeElement);all[(at+(pad.buttons[13]?.pressed?1:all.length-1))%all.length]?.focus();}},220);
+fetch('assets-3d.json').then(r=>r.json()).then(manifest=>{threeManifest=manifest;if(!canUse3D())state.view3d=false;render();}).catch(()=>{state.view3d=false;});
+let controllerActive=false,padPrevious=[],padDirection=0,padNextMove=0;
+function controllerButtons(){return [...document.querySelectorAll((globalThis.sarkoIntroPlaying?'#studioIntro ':modal?'#overlay ':'')+'button:not(:disabled)')].filter(b=>b.getClientRects().length&&!b.closest('[hidden]'));}
+function pollController(){
+ const pad=Array.from(navigator.getGamepads?.()||[]).find(Boolean);if(!pad){padPrevious=[];padDirection=0;return;}
+ const pressed=i=>!!pad.buttons[i]?.pressed,edge=i=>pressed(i)&&!padPrevious[i];
+ const vertical=pad.axes?.[1]||0,horizontal=pad.axes?.[0]||0;
+ const direction=pressed(13)||pressed(15)||vertical>.55||horizontal>.55?1:pressed(12)||pressed(14)||vertical<-.55||horizontal<-.55?-1:0;
+ const all=controllerButtons(),now=performance.now();
+ if(direction&&(direction!==padDirection||now>=padNextMove)){controllerActive=true;const at=all.indexOf(document.activeElement);all[at<0?(direction>0?0:all.length-1):(at+direction+all.length)%all.length]?.focus();padNextMove=now+(direction!==padDirection?320:150);}
+ if(edge(0)){controllerActive=true;const button=all.includes(document.activeElement)?document.activeElement:all[0];button?.focus();button?.click();}
+ if(edge(1)){if(globalThis.sarkoIntroPlaying)document.querySelector('#startupSkip')?.click();else if(modal)document.querySelector('#overlay [data-action="close"]')?.click();}
+ if(edge(9)&&!globalThis.sarkoIntroPlaying&&state.phase==='battle'&&!modal&&!state.awaiting)pauseBattle();
+ padDirection=direction;padPrevious=pad.buttons.map(b=>!!b.pressed);
+}
+setInterval(pollController,80);
 Promise.all([fetch('data.json').then(r=>r.json()),fetch('campaign-data.json').then(r=>r.json())]).then(([skills,story])=>{data=skills;campaignData=story;render();}).catch(()=>{render();toast('Game data is loading.');});
 setInterval(battleTick,1800);
 render();
+
+

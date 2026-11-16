@@ -1,0 +1,1670 @@
+{
+  "version": 1,
+  "releaseReady": true,
+  "heroes": {
+    "Sarko": {
+      "file": "assets/heroes/Sarko.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "shield_guard": "sarko.shield_guard",
+        "radiant_mark": "sarko.radiant_mark",
+        "minor_restoration": "sarko.minor_restoration",
+        "miraculous_heal": "sarko.miraculous_heal",
+        "sanctuary": "sarko.sanctuary",
+        "shared_burden": "sarko.shared_burden",
+        "light_of_renewal": "sarko.light_of_renewal",
+        "guardians_covenant": "sarko.guardians_covenant",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.7472,
+          "impact": 0.2733,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "shield_guard": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "radiant_mark": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "minor_restoration": {
+          "duration": 1.7133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "miraculous_heal": {
+          "duration": 1.7133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "sanctuary": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "shared_burden": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "light_of_renewal": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "guardians_covenant": {
+          "duration": 1.2133,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Sarko-reactions.json",
+      "framingBounds": {
+        "min": [
+          -2.084520904637191,
+          -0.6965386179102374,
+          -1.5876004383297493
+        ],
+        "max": [
+          1.6916100116163288,
+          2.502853197294629,
+          2.30131734594157
+        ]
+      }
+    },
+    "Levi": {
+      "file": "assets/heroes/Levi.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "apostles_advance": "levi.apostles_advance",
+        "resolute_assault": "levi.resolute_assault",
+        "formation_seven": "levi.formation_seven",
+        "steady_resolve": "levi.steady_resolve",
+        "radiant_judgment": "levi.radiant_judgment",
+        "guiding_parry": "levi.guiding_parry",
+        "rallying_command": "levi.rallying_command",
+        "measured_rebuke": "levi.measured_rebuke",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.5273,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "apostles_advance": {
+          "duration": 0.5633,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "resolute_assault": {
+          "duration": 0.9333,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "formation_seven": {
+          "duration": 0.9333,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "steady_resolve": {
+          "duration": 0.9333,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "radiant_judgment": {
+          "duration": 0.5633,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "guiding_parry": {
+          "duration": 0.9333,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "rallying_command": {
+          "duration": 0.9333,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "measured_rebuke": {
+          "duration": 0.5633,
+          "impact": 0.2133,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Levi-reactions.json",
+      "framingBounds": {
+        "min": [
+          -1.9094130028682859,
+          -0.7850548262283261,
+          -1.6256082681337924
+        ],
+        "max": [
+          1.7387605945437021,
+          2.583779288151477,
+          2.685204485840844
+        ]
+      }
+    },
+    "Waiz": {
+      "file": "assets/heroes/Waiz.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "tendon_cut": "waiz.tendon_cut",
+        "fleet_witness": "waiz.fleet_witness",
+        "guardians_passage": "waiz.guardians_passage",
+        "courageous_witness": "waiz.courageous_witness",
+        "radiant_wind": "waiz.radiant_wind",
+        "crosswind_flurry": "waiz.crosswind_flurry",
+        "twin_blade_counter": "waiz.twin_blade_counter",
+        "opening_strike": "waiz.opening_strike",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.5273,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "tendon_cut": {
+          "duration": 0.5273,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "fleet_witness": {
+          "duration": 0.9333,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "guardians_passage": {
+          "duration": 0.9333,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "courageous_witness": {
+          "duration": 0.9333,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "radiant_wind": {
+          "duration": 0.5273,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "crosswind_flurry": {
+          "duration": 0.5273,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "twin_blade_counter": {
+          "duration": 0.9333,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "opening_strike": {
+          "duration": 0.5273,
+          "impact": 0.1533,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Waiz-reactions.json",
+      "framingBounds": {
+        "min": [
+          -1.5919830123703935,
+          -0.7682442564588429,
+          -1.3481272363429464
+        ],
+        "max": [
+          1.4779429750166575,
+          2.837331907351548,
+          2.156506390798494
+        ]
+      }
+    },
+    "Diago": {
+      "file": "assets/heroes/Diago.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "resolute_cleave": "diago.resolute_cleave",
+        "groundbreaker": "diago.groundbreaker",
+        "mentors_measure": "diago.mentors_measure",
+        "second_wind": "diago.second_wind",
+        "guarding_lesson": "diago.guarding_lesson",
+        "disarming_blow": "diago.disarming_blow",
+        "teachers_rebuke": "diago.teachers_rebuke",
+        "stand_together": "diago.stand_together",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "resolute_cleave": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "groundbreaker": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "mentors_measure": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "second_wind": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "guarding_lesson": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "disarming_blow": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "teachers_rebuke": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "stand_together": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Diago-reactions.json",
+      "framingBounds": {
+        "min": [
+          -1.5569876543318095,
+          -0.7091686521253373,
+          -1.748813899835276
+        ],
+        "max": [
+          1.2612355703451512,
+          3.1950917825655005,
+          2.3617089006533143
+        ]
+      }
+    },
+    "Amaya": {
+      "file": "assets/heroes/Amaya.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "piercing_current": "amaya.piercing_current",
+        "watchful_counter": "amaya.watchful_counter",
+        "weak_point_thrust": "amaya.weak_point_thrust",
+        "renewed_focus": "amaya.renewed_focus",
+        "thunder_breaker": "amaya.thunder_breaker",
+        "vanguard_step": "amaya.vanguard_step",
+        "sweeping_guard": "amaya.sweeping_guard",
+        "pinning_thrust": "amaya.pinning_thrust",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "piercing_current": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "watchful_counter": {
+          "duration": 0.9333,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "weak_point_thrust": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "renewed_focus": {
+          "duration": 0.9333,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "thunder_breaker": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "vanguard_step": {
+          "duration": 0.9333,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "sweeping_guard": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "pinning_thrust": {
+          "duration": 0.5933,
+          "impact": 0.2233,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Amaya-reactions.json",
+      "framingBounds": {
+        "min": [
+          -2.3529966967749405,
+          -1.7186741889460144,
+          -1.6733249934954038
+        ],
+        "max": [
+          1.723793755048452,
+          3.3467403473103317,
+          2.7830919213289538
+        ]
+      }
+    },
+    "Naomi": {
+      "file": "assets/heroes/Naomi.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "foresight": "naomi.foresight",
+        "sheltering_word": "naomi.sheltering_word",
+        "discernment": "naomi.discernment",
+        "steadfast_counsel": "naomi.steadfast_counsel",
+        "guided_bolt": "naomi.guided_bolt",
+        "pinning_bolt": "naomi.pinning_bolt",
+        "safe_passage": "naomi.safe_passage",
+        "warning_bolt": "naomi.warning_bolt",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.8933,
+          "impact": 0.3433,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "foresight": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "sheltering_word": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "discernment": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "steadfast_counsel": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "guided_bolt": {
+          "duration": 0.8933,
+          "impact": 0.3433,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "pinning_bolt": {
+          "duration": 0.8933,
+          "impact": 0.3433,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "safe_passage": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "warning_bolt": {
+          "duration": 0.8933,
+          "impact": 0.3433,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Naomi-reactions.json",
+      "framingBounds": {
+        "min": [
+          -1.3807546328082545,
+          -0.6195683639747304,
+          -1.247942206194769
+        ],
+        "max": [
+          1.1490254061742367,
+          2.4107604359497232,
+          1.5278083602335422
+        ]
+      }
+    },
+    "Hailey": {
+      "file": "assets/heroes/Hailey.glb",
+      "height": 2.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "binding_shot": "hailey.binding_shot",
+        "retreating_shot": "hailey.retreating_shot",
+        "piercing_star": "hailey.piercing_star",
+        "regenerative_focus": "hailey.regenerative_focus",
+        "celestial_convergence": "hailey.celestial_convergence",
+        "celestial_rain": "hailey.celestial_rain",
+        "celestial_volley": "hailey.celestial_volley",
+        "heartseeker": "hailey.heartseeker",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "binding_shot": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "retreating_shot": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "piercing_star": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "regenerative_focus": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "celestial_convergence": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "celestial_rain": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "celestial_volley": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "heartseeker": {
+          "duration": 0.7933,
+          "impact": 0.3033,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Hailey-reactions.json",
+      "framingBounds": {
+        "min": [
+          -1.5631962616828408,
+          -0.8247998593534976,
+          -1.1535762084535197
+        ],
+        "max": [
+          1.4216330677904747,
+          2.620399579950115,
+          2.262028428346508
+        ]
+      }
+    },
+    "Isaac": {
+      "file": "assets/heroes/Isaac.glb",
+      "height": 2.5,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "idle": "movement-settle",
+        "walk": "walk",
+        "run": "run",
+        "attack": "attack-0",
+        "dodge": "dodge",
+        "stonewall_brace": "isaac.stonewall_brace",
+        "earthbreaker": "isaac.earthbreaker",
+        "stand_for_another": "isaac.stand_for_another",
+        "steadfast_heart": "isaac.steadfast_heart",
+        "fortress_dominion": "isaac.fortress_dominion",
+        "fortress_titan": "isaac.fortress_titan",
+        "fortress_descent": "isaac.fortress_descent",
+        "hammer_riposte": "isaac.hammer_riposte",
+        "hit": "reaction-hit",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko game rig, fitted weapons and all eight native skill motions; optimized for browser playback.",
+      "pending": [],
+      "timings": {
+        "attack": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "stonewall_brace": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "earthbreaker": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "stand_for_another": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "steadfast_heart": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "fortress_dominion": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "fortress_titan": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "fortress_descent": {
+          "duration": 1.0533,
+          "impact": 0.3933,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        },
+        "hammer_riposte": {
+          "duration": 0.9333,
+          "impact": 0.2283,
+          "source": "Native combat timing capture",
+          "reviewed": true
+        }
+      },
+      "motionFile": "assets/motions/Isaac-reactions.json",
+      "framingBounds": {
+        "min": [
+          -2.147864988627712,
+          -0.8550599322307909,
+          -1.5825787420508848
+        ],
+        "max": [
+          1.6063387557350257,
+          3.2619831408436766,
+          2.959951521005111
+        ]
+      }
+    },
+    "Grace": {
+      "file": "assets/Grace-3D-fitted.glb",
+      "reviewed": true,
+      "height": 2.2,
+      "inPlace": true,
+      "actions": {
+        "walk": "Walking",
+        "run": "Running",
+        "starblade_proclamation": "_01a1e2fa_7451_75ce_af78_c4c4d05ec471",
+        "shelter_of_grace": "_01a1e311_1b80_7647_b539_320f702bb886",
+        "living_word": "_01a1e312_dc48_7160_a72a_8d1c978d7d4b",
+        "heralds_advance": "_01a1e315_3da1_77ef_bcd9_2554dd5eabd2",
+        "mercy_in_motion": "_01a1e316_f9ef_7041_a748_36bbb99ab59e",
+        "steadfast_witness": "_01a1e318_f828_7584_8b14_075077fd3b7f",
+        "radiant_charge": "_01a1e46f_7e15_75a0_afe1_c6b818b02d75",
+        "great_commission": "_01a1e471_542a_7123_b37f_62616f53541b",
+        "attack": "_01a1e554_6190_70c3_849c_be47334b6c98",
+        "hit": "_01a1e54b_26c4_7125_af81_1a98b7f31a72",
+        "defeat": "_01a1e54c_5a6d_76bc_9cd1_720d0440832a",
+        "idle": "_01a1e54e_a9e2_7014_8de0_e9ffba6c8e7e"
+      },
+      "notes": "Twelve generated Meshy combat motions plus walking/running, with fitted shorts.",
+      "pending": [],
+      "weapons": [
+        {
+          "name": "Right-hand longsword",
+          "file": "assets/weapons/Sarko-Sword.glb",
+          "bone": "mixamorig:RightHand",
+          "length": 1.25,
+          "offset": [
+            0,
+            0.09,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "grip": [
+            0,
+            0,
+            0.31
+          ]
+        }
+      ],
+      "lockFacingActions": [
+        "attack"
+      ],
+      "framingBounds": {
+        "min": [
+          -2.432070849588197,
+          -0.2753024979305401,
+          -1.3868245670129216
+        ],
+        "max": [
+          1.2885176601435768,
+          3.0464089245324777,
+          2.8449530549774376
+        ]
+      },
+      "motionFile": "assets/motions/Grace-defeat.json"
+    }
+  },
+  "enemies": {
+    "AshhornStag": {
+      "file": "assets/monsters/AshhornStag.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Antler Run": "Charge",
+        "Antler Sweep": "Swipe"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "BriarClawBear": {
+      "file": "assets/monsters/BriarClawBear.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Hooking Claw": "Swipe",
+        "Mauling Rush": "Pounce"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "BrightCap": {
+      "file": "assets/monsters/BrightCap.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Cap Spring": "Pounce",
+        "Spore Burst": "Burst"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "CrystalBackTortoise": {
+      "file": "assets/monsters/CrystalBackTortoise.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Shell Turn": "Swipe",
+        "Crystal Tremor": "Slam"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "HollowWretch": {
+      "file": "assets/monsters/HollowWretch.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Twin Rake": "DoubleFist",
+        "Hunger Lunge": "Pounce"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "StonehideRhino": {
+      "file": "assets/monsters/StonehideRhino.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Horn Drive": "Charge",
+        "Horn Toss": "Swipe"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "VineboundGuardian": {
+      "file": "assets/monsters/VineboundGuardian.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Rootfall": "Slam",
+        "Vine Snare": "Burst"
+      },
+      "source": "Original Sarko game Meshy rig and articulated monster motion; browser texture and geometry optimization.",
+      "pending": []
+    },
+    "Rockshade": {
+      "file": "assets/monsters/Rockshade.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "hit": "hit",
+        "attack": "Swipe",
+        "Stone Guard": "idle",
+        "Boulder Throw": "Boulder",
+        "defeat": "reaction-defeat"
+      },
+      "source": "Original Sarko model and native articulated motions.",
+      "pending": [],
+      "motionFile": "assets/motions/Rockshade-reactions.json"
+    },
+    "Shadowthorn": {
+      "file": "assets/monsters/Shadowthorn.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "hit": "hit",
+        "attack": "Swipe",
+        "Shadow Pounce": "Pounce",
+        "Thorn Burst": "Burst",
+        "defeat": "native-defeat"
+      },
+      "source": "Original Sarko model and native articulated motions. Bite/death gaps filled using original game joint formulas.",
+      "pending": [],
+      "motionFile": "assets/motions/Shadowthorn-native.json",
+      "blendDuration": 0.06
+    },
+    "Thornback": {
+      "file": "assets/monsters/Thornback.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "hit": "hit",
+        "attack": "Swipe",
+        "Tusks": "Swipe",
+        "Boar Charge": "Charge",
+        "defeat": "native-defeat"
+      },
+      "source": "Original Sarko model and native articulated motions. Bite/death gaps filled using original game joint formulas.",
+      "pending": [],
+      "motionFile": "assets/motions/Thornback-native.json",
+      "blendDuration": 0.06
+    },
+    "CorruptedWolf": {
+      "file": "assets/monsters/CorruptedWolf.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "hit": "hit",
+        "Shadow Pounce": "Pounce",
+        "Raking Swipe": "Swipe",
+        "Dread Howl": "Burst",
+        "Ravenous Lunge": "Pounce",
+        "defeat": "native-defeat",
+        "attack": "native-attack"
+      },
+      "source": "Original Sarko model and native articulated motions. Bite/death gaps filled using original game joint formulas.",
+      "pending": [],
+      "motionFile": "assets/motions/CorruptedWolf-native.json",
+      "blendDuration": 0.06
+    },
+    "Corrupted Wolf": {
+      "file": "assets/monsters/CorruptedWolf.glb",
+      "height": 2.2,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "hit": "hit",
+        "Shadow Pounce": "Pounce",
+        "Raking Swipe": "Swipe",
+        "Dread Howl": "Burst",
+        "Ravenous Lunge": "Pounce",
+        "defeat": "native-defeat",
+        "attack": "native-attack"
+      },
+      "source": "Original Sarko model and native articulated motions. Bite/death gaps filled using original game joint formulas.",
+      "pending": [],
+      "motionFile": "assets/motions/CorruptedWolf-native.json",
+      "blendDuration": 0.06
+    },
+    "DreadwingVulture": {
+      "file": "assets/monsters/DreadwingVulture-animated.glb",
+      "height": 1.8,
+      "reviewed": true,
+      "blendDuration": 0.06,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "attack",
+        "Dreadwing Dive": "Dreadwing Dive",
+        "Wing Rake": "Wing Rake",
+        "hit": "hit",
+        "defeat": "defeat"
+      },
+      "source": "Original game mesh; native PracticeWingMotion vertex deformation adapted to glTF morph animation with body skeleton.",
+      "pending": []
+    },
+    "Rex Draconum": {
+      "file": "assets/bosses/Rex-corrected-rig.glb",
+      "height": 3.2,
+      "inPlace": true,
+      "reviewed": true,
+      "actions": {
+        "walk": "rex-walk",
+        "run": "rex-run",
+        "attack": "rex-attack",
+        "Rex Claw": "rex-Rex Claw",
+        "Dragon Breath": "rex-Dragon Breath",
+        "Tail Sweep": "rex-Tail Sweep",
+        "Royal Roar": "rex-Royal Roar",
+        "idle": "rex-idle",
+        "hit": "rex-hit",
+        "defeat": "rex-defeat"
+      },
+      "source": "Original Meshy Dragon Warrior geometry, repaired anatomy and weights, generated Meshy combat motions retargeted with rest-pose offsets",
+      "pending": [],
+      "motionFile": "assets/motions/Rex-repaired.json",
+      "blendDuration": 0.06,
+      "framingBounds": {
+        "min": [
+          -2.048278356562159,
+          -3.543156730869985e-7,
+          -1.5377409602875372
+        ],
+        "max": [
+          2.555878997312097,
+          3.3535919926424107,
+          2.6282271638192882
+        ]
+      }
+    },
+    "Thunderstone Colossus": {
+      "file": "assets/bosses/Thunderstone-Colossus.glb",
+      "height": 3.2,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Thunderstone.json",
+      "actions": {
+        "walk": "Walking",
+        "run": "Running",
+        "idle": "colossus-idle",
+        "attack": "colossus-attack",
+        "Boulder Throw": "colossus-Boulder Throw",
+        "Quaking Fist": "colossus-Quaking Fist",
+        "Thunderstrike": "colossus-Thunderstrike",
+        "Stone Guard": "colossus-Stone Guard",
+        "hit": "colossus-hit",
+        "defeat": "colossus-defeat"
+      },
+      "source": "Existing Meshy Crystal Colossus with new humanoid rig; original Rockshade attack/throw and Meshy defensive/casting/reaction motions retargeted to blade arms.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -2.8548499060594934,
+          -0.08014749490510616,
+          -2.618386702862121
+        ],
+        "max": [
+          2.801553411274155,
+          4.828834982026218,
+          2.4740258232975285
+        ]
+      }
+    },
+    "Floodfang": {
+      "file": "assets/monsters/Thornback.glb",
+      "height": 2.53,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "native-defeat",
+        "Tusks": "Swipe",
+        "Tidal Surge": "Burst",
+        "Undertow": "Slam",
+        "Boar Charge": "Charge"
+      },
+      "source": "Elemental boss variant of the original game's Thornback model, with four boss actions and basic attack.",
+      "pending": [],
+      "motionFile": "assets/motions/Thornback-native.json",
+      "blendDuration": 0.06
+    },
+    "Cinder Crown": {
+      "file": "assets/monsters/BriarClawBear.glb",
+      "height": 2.53,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Hooking Claw": "Swipe",
+        "Cinder Breath": "Burst",
+        "Molten Slam": "Slam",
+        "Ember Guard": "Burst"
+      },
+      "source": "Elemental boss variant of the original game's BriarClawBear model, with four boss actions and basic attack.",
+      "pending": []
+    },
+    "Ashhorn Inferno": {
+      "file": "assets/monsters/AshhornStag.glb",
+      "height": 2.53,
+      "reviewed": true,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "Swipe",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Antler Run": "Charge",
+        "Cinder Breath": "Burst",
+        "Antler Sweep": "Swipe",
+        "Ember Guard": "Burst"
+      },
+      "source": "Elemental boss variant of the original game's AshhornStag model, with four boss actions and basic attack.",
+      "pending": []
+    },
+    "Stormwing Herald": {
+      "file": "assets/monsters/DreadwingVulture-animated.glb",
+      "height": 2.07,
+      "reviewed": true,
+      "blendDuration": 0.06,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "attack",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Dreadwing Dive": "Dreadwing Dive",
+        "Thunderstrike": "Thunderstrike",
+        "Wing Rake": "Wing Rake",
+        "Tempest Burst": "Tempest Burst"
+      },
+      "source": "Elemental boss variant of the original game's DreadwingVulture model, with four boss actions and basic attack.",
+      "pending": []
+    },
+    "Icewing": {
+      "file": "assets/monsters/DreadwingVulture-animated.glb",
+      "height": 2.07,
+      "reviewed": true,
+      "blendDuration": 0.06,
+      "actions": {
+        "idle": "idle",
+        "walk": "walk",
+        "attack": "attack",
+        "hit": "hit",
+        "defeat": "defeat",
+        "Dreadwing Dive": "Dreadwing Dive",
+        "Whiteout Charge": "Whiteout Charge",
+        "Ice Lance": "Ice Lance",
+        "Wing Rake": "Wing Rake"
+      },
+      "source": "Elemental boss variant of the original game's DreadwingVulture model, with four boss actions and basic attack.",
+      "pending": []
+    },
+    "Malachar": {
+      "file": "assets/bosses/Malachar.glb",
+      "height": 2.6,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Malachar.json",
+      "actions": {
+        "walk": "malachar-walk",
+        "run": "malachar-run",
+        "idle": "malachar-idle",
+        "attack": "malachar-attack",
+        "Rush": "malachar-Rush",
+        "Heavy Strike": "malachar-Heavy Strike",
+        "Corruption Wave": "malachar-Corruption Wave",
+        "Shadow Ward": "malachar-Shadow Ward",
+        "hit": "malachar-hit",
+        "defeat": "malachar-defeat"
+      },
+      "source": "Existing Meshy Malachar with corrected humanoid rig markers; native melee and Meshy casting, ward and reaction motions retargeted.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -1.6179327834103212,
+          -2.0755194324849076e-7,
+          -1.083625105506581
+        ],
+        "max": [
+          1.7305121276901174,
+          3.1457613676606284,
+          2.077910751304967
+        ]
+      }
+    },
+    "Tidebound Oracle": {
+      "file": "assets/bosses/Tidebound-Oracle.glb",
+      "height": 2.6,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Tidebound-Oracle.json",
+      "actions": {
+        "walk": "oracle-walk",
+        "run": "oracle-run",
+        "idle": "oracle-idle",
+        "attack": "oracle-attack",
+        "Shell Turn": "oracle-Shell Turn",
+        "Tidal Surge": "oracle-Tidal Surge",
+        "Undertow": "oracle-Undertow",
+        "Crashing Wave": "oracle-Crashing Wave",
+        "hit": "oracle-hit",
+        "defeat": "oracle-defeat"
+      },
+      "source": "Existing Meshy Tidebound Oracle with corrected humanoid rig markers; native melee and Meshy casting, ward and reaction motions retargeted.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -1.72818545395508,
+          -3.4079458764738817e-7,
+          -1.2645958243448834
+        ],
+        "max": [
+          1.5746711617316667,
+          3.0381562270921694,
+          1.8298783960715153
+        ]
+      }
+    },
+    "Frostveil Warden": {
+      "file": "assets/bosses/Frostveil-Warden.glb",
+      "height": 2.6,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Frostveil-Warden.json",
+      "actions": {
+        "walk": "frostveil-walk",
+        "run": "frostveil-run",
+        "idle": "frostveil-idle",
+        "attack": "frostveil-attack",
+        "Whiteout Charge": "frostveil-Whiteout Charge",
+        "Antler Run": "frostveil-Antler Run",
+        "Ice Lance": "frostveil-Ice Lance",
+        "Frost Guard": "frostveil-Frost Guard",
+        "hit": "frostveil-hit",
+        "defeat": "frostveil-defeat"
+      },
+      "source": "Existing Meshy Frostveil Warden with corrected humanoid rig markers; native melee and Meshy casting, ward and reaction motions retargeted.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -2.3639039465202605,
+          -3.8323069068146864e-7,
+          -2.08879518817674
+        ],
+        "max": [
+          2.1892395313217867,
+          3.631683631452224,
+          1.9911761449166965
+        ]
+      }
+    },
+    "Stoneheart Warden": {
+      "file": "assets/bosses/Stoneheart-Warden.glb",
+      "height": 2.6,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Stoneheart-Warden.json",
+      "actions": {
+        "walk": "stoneheart-walk",
+        "run": "stoneheart-run",
+        "idle": "stoneheart-idle",
+        "attack": "stoneheart-attack",
+        "Horn Drive": "stoneheart-Horn Drive",
+        "Quaking Fist": "stoneheart-Quaking Fist",
+        "Boulder Throw": "stoneheart-Boulder Throw",
+        "Stone Guard": "stoneheart-Stone Guard",
+        "hit": "stoneheart-hit",
+        "defeat": "stoneheart-defeat"
+      },
+      "source": "Existing Meshy Stoneheart Warden with corrected humanoid rig markers; native melee and Meshy casting, ward and reaction motions retargeted.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -1.7739336611752472,
+          -1.3092297867708946e-7,
+          -1.3343951798787383
+        ],
+        "max": [
+          1.5654251811713973,
+          2.859832313332383,
+          2.280332292050683
+        ]
+      }
+    },
+    "Dawn Guardian": {
+      "file": "assets/bosses/Dawn-Guardian.glb",
+      "height": 2.6,
+      "inPlace": true,
+      "blendDuration": 0.06,
+      "reviewed": true,
+      "motionFile": "assets/motions/Dawn-Guardian.json",
+      "actions": {
+        "idle": "dawn-idle",
+        "walk": "dawn-walk",
+        "run": "dawn-run",
+        "attack": "dawn-attack",
+        "Rootfall": "dawn-Rootfall",
+        "Radiant Judgment": "dawn-Radiant Judgment",
+        "Dawn Lance": "dawn-Dawn Lance",
+        "Radiant Ward": "dawn-Radiant Ward",
+        "hit": "dawn-hit",
+        "defeat": "dawn-defeat"
+      },
+      "source": "Existing Meshy dragon Smart Rig; authored quadruped and wing motion adapted to its skeleton.",
+      "pending": [],
+      "framingBounds": {
+        "min": [
+          -2.0144553273334065,
+          -7.120467189681472e-8,
+          -2.002184664624275
+        ],
+        "max": [
+          1.7868911878815577,
+          3.321880152815607,
+          2.135025337517
+        ]
+      }
+    }
+  },
+  "worlds": {
+    "Earth-1": {
+      "file": "assets/worlds/earth.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#49759b",
+        "horizon": "#d6e3d4"
+      }
+    },
+    "Water-1": {
+      "file": "assets/worlds/water.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#3c7c98",
+        "horizon": "#bbe6ef"
+      }
+    },
+    "Snow-1": {
+      "file": "assets/worlds/snow.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#6c8fb1",
+        "horizon": "#eff8ff"
+      }
+    },
+    "Thunder-1": {
+      "file": "assets/worlds/thunder.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#171c39",
+        "horizon": "#8e8fa9"
+      }
+    },
+    "Fire-1": {
+      "file": "assets/worlds/fire.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#361a28",
+        "horizon": "#d17b40"
+      }
+    },
+    "Shadow-1": {
+      "file": "assets/worlds/shadow.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#161329",
+        "horizon": "#695179"
+      }
+    },
+    "Light-1": {
+      "file": "assets/worlds/light.glb",
+      "scale": 1,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "reviewed": true,
+      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "pending": [],
+      "sky": {
+        "top": "#709ed0",
+        "horizon": "#fff3c7"
+      }
+    },
+    "Earth-2": {
+      "file": "assets/worlds/earth-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#49759b",
+        "horizon": "#d6e3d4"
+      },
+      "pending": []
+    },
+    "Water-2": {
+      "file": "assets/worlds/water-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#3c7c98",
+        "horizon": "#bbe6ef"
+      },
+      "pending": []
+    },
+    "Snow-2": {
+      "file": "assets/worlds/snow-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#6c8fb1",
+        "horizon": "#eff8ff"
+      },
+      "pending": []
+    },
+    "Thunder-2": {
+      "file": "assets/worlds/thunder-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#171c39",
+        "horizon": "#8e8fa9"
+      },
+      "pending": []
+    },
+    "Fire-2": {
+      "file": "assets/worlds/fire-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#361a28",
+        "horizon": "#d17b40"
+      },
+      "pending": []
+    },
+    "Shadow-2": {
+      "file": "assets/worlds/shadow-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#161329",
+        "horizon": "#695179"
+      },
+      "pending": []
+    },
+    "Light-2": {
+      "file": "assets/worlds/light-2.glb",
+      "reviewed": true,
+      "source": "Distinct second-stage textured Meshy environment",
+      "sky": {
+        "top": "#709ed0",
+        "horizon": "#fff3c7"
+      },
+      "pending": []
+    }
+  },
+  "services": {
+    "shop": {
+      "file": "assets/services/shop.glb",
+      "height": 3.5,
+      "reviewed": true,
+      "source": "Textured Meshy service prop, mobile texture optimization",
+      "pending": []
+    },
+    "forge": {
+      "file": "assets/services/forge.glb",
+      "height": 3.5,
+      "reviewed": true,
+      "source": "Textured Meshy service prop, mobile texture optimization",
+      "pending": []
+    },
+    "church": {
+      "file": "assets/services/church.glb",
+      "height": 3.5,
+      "reviewed": true,
+      "source": "Textured Meshy service prop, mobile texture optimization",
+      "pending": []
+    },
+    "tree": {
+      "file": "assets/services/tree.glb",
+      "height": 3.5,
+      "reviewed": true,
+      "source": "Textured Meshy service prop, mobile texture optimization",
+      "pending": [],
+      "fruitTree": true
+    },
+    "heavenlyCity": {
+      "file": "assets/worlds/heavenly_city.glb",
+      "height": 3.5,
+      "reviewed": true,
+      "source": "Textured Meshy celestial city courtyard",
+      "sky": {
+        "top": "#709ed0",
+        "horizon": "#fff3c7"
+      },
+      "pending": []
+    }
+  },
+  "fruits": {
+    "Love": {
+      "file": "assets/fruits/Love.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Joy": {
+      "file": "assets/fruits/Joy.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Peace": {
+      "file": "assets/fruits/Peace.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Patience": {
+      "file": "assets/fruits/Patience.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Kindness": {
+      "file": "assets/fruits/Kindness.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Goodness": {
+      "file": "assets/fruits/Goodness.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Faithfulness": {
+      "file": "assets/fruits/Faithfulness.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Gentleness": {
+      "file": "assets/fruits/Gentleness.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    },
+    "Self-Control": {
+      "file": "assets/fruits/Self-Control.glb",
+      "height": 0.46,
+      "reviewed": true,
+      "source": "Meshy model derived from approved fruit reference",
+      "pending": []
+    }
+  },
+  "releaseVersion": "Sarko-3D-Beta-2026-11-16",
+  "reviewNote": "Sampled skill-pose galleries, grounded defeat equipment, framing, 3D world/service/fruit tests and gameplay QA. Release publication remains subject to final suite and package verification."
+}

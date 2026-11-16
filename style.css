@@ -27,6 +27,10 @@
 .shopItem .wearerHead{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center 15%;border:2px solid var(--gold);flex:none}.lootitem .fruitIcon{width:38px;height:38px;border-radius:6px}
 .rpgScene{height:clamp(300px,40vw,480px);width:100%;margin:14px 0 18px;border:2px solid #b4904d;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#263a51,#081523 70%);box-shadow:0 18px 48px #0009,inset 0 0 0 2px #f6d88a33;position:relative}
 .rpgScene canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+#battle3d{position:relative;height:clamp(320px,44vw,560px);margin:16px 0;border:2px solid #b4904d;border-radius:18px;overflow:hidden;background:#142335;box-shadow:0 18px 48px #0009}
+#battle3d[aria-busy=true]:after{content:'Preparing the arena…';position:absolute;inset:0;display:grid;place-items:center;background:#142335e8;color:#f1d08b;font:600 1.1rem Cinzel,serif;pointer-events:none}
+.battle3dStage,.battle3dStage canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+@media(max-width:600px){#battle3d{height:350px;margin:12px 0}}
 .rpgScene:after{content:'GUILD OF FIRST LIGHT  ·  3D BATTLE';pointer-events:none;position:absolute;left:14px;top:12px;color:#ffe7aa;font:700 .73rem Cinzel,serif;letter-spacing:.14em;text-shadow:0 2px 8px #000}
 .manualPanel{margin:0 0 18px;border-color:#f0cf84;box-shadow:0 0 28px #d6ad5440}
 .manualPanel .sectionHead{margin:0 0 10px}.manualPanel h3{margin:4px 0}.manualSkills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
@@ -35,3 +39,4 @@
 @media(max-width:900px){.manualSkills{grid-template-columns:repeat(2,minmax(0,1fr))}.rpgScene{height:320px}}
 @media(max-width:600px){.rpgScene{height:260px;margin:10px 0 14px}.rpgScene:after{font-size:.57rem;letter-spacing:.08em}.manualSkills{grid-template-columns:repeat(2,minmax(0,1fr))}.manualSkill{min-height:56px}.manualSkill img{width:36px;height:36px}.battleGrid .heroBattle .portrait{height:62px}.battleGrid .enemyCard>img:first-child{height:125px}}
 
+.travel3dStage{height:520px;position:relative;overflow:hidden;border:1px solid #b28c43;border-radius:18px}.travel3dStage canvas{display:block;width:100%;height:100%}.travel3dLabels{position:absolute;inset:0;pointer-events:none}.travel3dLabel{position:absolute;transform:translate(-50%,-120%);background:#101d2ee8;border:1px solid #c9a360;border-radius:7px;padding:3px 7px;color:#ffe6a3;font-weight:700;font-size:12px;white-space:nowrap}.travel3dLabel[data-state=next]{background:#6e501c;color:white}.travel3dLabel[data-state=cleared]{color:#8de0b5}@media(max-width:650px){.travel3dStage{height:420px}.travel3dLabel{font-size:10px;padding:2px 4px}}
