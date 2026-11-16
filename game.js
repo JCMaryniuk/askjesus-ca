@@ -392,7 +392,7 @@ function journeyScreen(){
   const names=['Earth','Water','Snow','Thunder','Fire','Shadow','Light'],name=names[world];
   const stage=campaign?state.worldStage:state.regular;
   const progress=campaign?stage/20:(state.cleared%20)/20;
-  const x=8+(world+progress)*12.1,y=[45,48,42,45,43,48,45][world];
+  const x=15+(world+progress)*11.3,y=[45,48,42,45,43,48,45][world];
   const nextBoss=[9,19].includes(stage);
   const next=campaign?`World ${world+1} · Stage ${stage+1} of 20`:`Survival wave ${state.cleared+1}`;
   const token=hero(state.arena);

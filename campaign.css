@@ -63,3 +63,29 @@
 .enemyCard[data-world]::before{inset:0 0 auto;height:210px}
 @media(max-width:1199px){.battleGrid .enemyCard>img:first-child{height:220px}}
 @media(max-width:600px){.battleGrid .enemyCard>img:first-child{height:170px}.enemyCard[data-world]::before{height:170px}}
+
+/* Illustrated destination buttons and a shared carved plate for every control. */
+.button{background:#0d2036 url('assets/Guild-Button-Plate.png') center/100% 100% no-repeat!important;border:0!important;border-radius:10px!important;color:#fff7dd!important;font-family:Cinzel,Georgia,serif;font-weight:800;letter-spacing:.035em;text-shadow:0 2px 4px #000,0 0 8px #000;box-shadow:0 5px 17px #0009!important;transition:filter .16s ease,transform .16s ease}
+.button:hover:not(:disabled){filter:brightness(1.22);transform:translateY(-2px)}
+.button:active:not(:disabled){transform:translateY(1px)}
+.button:focus-visible{outline:3px solid #fff3bc;outline-offset:3px;filter:brightness(1.25)}
+.button:disabled{filter:grayscale(.75);opacity:.52}
+.button[data-modal="shop"],.button[data-modal="forge"],.button[data-modal="church"],.button[data-modal="tree"],.button[data-action="next"],.button[data-action="start"],.button[data-action="startCampaign"]{border:2px solid #efcd79!important;background-position:center!important;background-size:cover!important;box-shadow:inset 0 0 0 2px #07172b,0 5px 19px #000b!important}
+.button[data-modal="shop"]{background-image:linear-gradient(90deg,#071321d9,#0713218c),url('assets/Guild-Shop.jpg')!important}
+.button[data-modal="forge"]{background-image:linear-gradient(90deg,#071321d9,#0713218c),url('assets/Guild-Forge.jpg')!important}
+.button[data-modal="church"]{background-image:linear-gradient(90deg,#071321d9,#0713218c),url('assets/Guild-Church.jpg')!important}
+.button[data-modal="tree"]{background-image:linear-gradient(90deg,#071321d9,#0713218c),url('assets/Guild-Fruit-Tree.jpg')!important}
+.button[data-action="next"]{background-image:linear-gradient(90deg,#071321d9,#07132170),url('assets/Sarko-World-Map.jpg')!important}
+.button[data-action="start"],.button[data-action="startCampaign"]{background-image:linear-gradient(90deg,#071321d9,#07132180),url('assets/Guild-Boss.jpg')!important}
+.nav .button{min-height:52px;padding:8px 13px;font-size:.78rem}
+.battleHead .merchantButton{min-height:62px;padding-inline:24px}
+.journeyGrid .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.journeyGrid .actions .button{min-height:76px;line-height:1.35}
+.journeyGo{min-height:76px}
+.modal[aria-label*="merchant"] .modalHead,.modal[aria-label*="forge"] .modalHead,.modal[aria-label*="Church"] .modalHead,.modal[aria-label*="fruit tree"] .modalHead{min-height:105px;padding:12px;border:1px solid #cba45e;border-radius:12px;background-size:cover;background-position:center}
+.modal[aria-label*="merchant"] .modalHead{background-image:linear-gradient(90deg,#071321ee,#07132177),url('assets/Guild-Shop.jpg')}
+.modal[aria-label*="forge"] .modalHead{background-image:linear-gradient(90deg,#071321ee,#07132177),url('assets/Guild-Forge.jpg')}
+.modal[aria-label*="Church"] .modalHead{background-image:linear-gradient(90deg,#071321ee,#07132177),url('assets/Guild-Church.jpg')}
+.modal[aria-label*="fruit tree"] .modalHead{background-image:linear-gradient(90deg,#071321ee,#07132177),url('assets/Guild-Fruit-Tree.jpg')}
+@media(max-width:600px){.nav .button{min-height:50px;padding:5px;font-size:.63rem}.journeyGrid .actions .button{min-height:64px;font-size:.7rem}.battleHead .merchantButton{min-height:54px}}
+@media(prefers-reduced-motion:reduce){.button{transition:none}.button:hover:not(:disabled),.button:active:not(:disabled){transform:none}}
