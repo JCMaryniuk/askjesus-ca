@@ -32,6 +32,7 @@
 .merchantButton{border:2px solid #f7d77d!important;background:linear-gradient(120deg,#83501d,#c7953a,#5a3619)!important;color:#fff6da!important;box-shadow:0 0 18px #d7a55580}
 .journeyScreen{margin-top:20px}.journeyIntro{margin:0 0 18px;line-height:1.55}
 .mapToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;flex-wrap:wrap}
+.brandmark{overflow:hidden;padding:0}.brandmark img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px}
 .travelMap{position:relative;overflow:hidden;border:3px solid #d6a451;border-radius:18px;background:#071429;box-shadow:0 14px 40px #0009;aspect-ratio:16/9}
 .travelMap>img{display:block;width:100%;height:100%;object-fit:cover}
 .travelMap:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#06101b77,transparent 32%,#06101b44)}
