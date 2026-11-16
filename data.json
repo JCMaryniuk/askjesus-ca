@@ -399,6 +399,56 @@
         "index": 7,
         "description": "Prepare a heavy hammer riposte after a successful block."
       }
+    ],
+    "Grace": [
+      {
+        "id": "starblade_proclamation",
+        "name": "Starblade Proclamation",
+        "index": 0,
+        "description": "A radiant longsword strike against one foe."
+      },
+      {
+        "id": "shelter_of_grace",
+        "name": "Shelter of Grace",
+        "index": 1,
+        "description": "Strike the foe and ward all living allies."
+      },
+      {
+        "id": "living_word",
+        "name": "Living Word",
+        "index": 2,
+        "description": "Restore health to the most wounded ally."
+      },
+      {
+        "id": "heralds_advance",
+        "name": "Herald's Advance",
+        "index": 3,
+        "description": "A bright longsword thrust that protects all allies."
+      },
+      {
+        "id": "mercy_in_motion",
+        "name": "Mercy in Motion",
+        "index": 4,
+        "description": "Strike the foe and restore the most wounded ally."
+      },
+      {
+        "id": "steadfast_witness",
+        "name": "Steadfast Witness",
+        "index": 5,
+        "description": "Restore a wounded ally and ward the whole party."
+      },
+      {
+        "id": "radiant_charge",
+        "name": "Radiant Charge",
+        "index": 6,
+        "description": "A decisive sword strike against the foe."
+      },
+      {
+        "id": "great_commission",
+        "name": "Great Commission",
+        "index": 7,
+        "description": "Strike the foe, restore a wounded ally, and ward the party."
+      }
     ]
   }
 }
