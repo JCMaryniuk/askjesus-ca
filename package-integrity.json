@@ -1418,18 +1418,18 @@
     },
     {
       "file": "campaign.css",
-      "bytes": 16281,
-      "sha256": "984d0086442643561f12186f6f2f96e1065cd9b8ae9242050a6b226d1a238d41"
+      "bytes": 16279,
+      "sha256": "8185b2ed4e4e662f4d7934ea556aa295a52703b862ba8203b6e62a162558e75d"
     },
     {
       "file": "data.json",
-      "bytes": 13789,
-      "sha256": "5ca8f6e0975625a004a89a5af6b8a9c3a1ff4e92dcc4ea63d78b1ea911e0fe4d"
+      "bytes": 13335,
+      "sha256": "5a5dbcaed1f60815bc8a53f5f13704c1c0e6b8310f8b50d51029d3c4fc7a14fd"
     },
     {
       "file": "game.js",
-      "bytes": 93704,
-      "sha256": "94c32f45cf21b3f44f64f9dcf364cb8d520353f7b40a3db645e8593ca1785aaf"
+      "bytes": 93702,
+      "sha256": "caec7b3bcc7610184a062a8f92769e6d226abb960833fd2d9648a652b326a687"
     },
     {
       "file": "icon-180.png",
@@ -1478,9 +1478,9 @@
     },
     {
       "file": "style.css",
-      "bytes": 19116,
-      "sha256": "28dd6aad7e1da1fed9ef8a8ce149cde47594ceb1e01ae31e6e7f31b92a9cef15"
+      "bytes": 19115,
+      "sha256": "52820acd902aaa1f47a7ac8f5532bb8a14a5e8a7383c43610314c013890764cd"
     }
   ],
-  "bytes": 267998689
+  "bytes": 267998230
 }
