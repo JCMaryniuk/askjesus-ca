@@ -110,7 +110,12 @@ function loadSaveFiles(){
   try {old=JSON.parse(localStorage.getItem(LEGACY_KEY));} catch {}
   return {version:1,active:0,slots:[{name:'File 1',state:validState(old)?old:initialState()},null,null]};
 }
-function loadState(){return {...initialState(),...saveFiles.slots[saveFiles.active].state};}
+function loadState(){
+  const loaded={...initialState(),...saveFiles.slots[saveFiles.active].state};
+  if(loaded.mode==='survival')loaded.regular=loaded.cleared%20;
+  if(loaded.enemy&&!Number.isInteger(loaded.enemy.world))loaded.enemy.world=loaded.mode==='campaign'?loaded.world:Math.floor(loaded.cleared/20)%7;
+  return loaded;
+}
 function save(){
   state.savedAt=Date.now();
   saveFiles.slots[saveFiles.active].state=state;
