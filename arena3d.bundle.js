@@ -38630,6 +38630,268 @@ var SarkoArena3D = (function (exports) {
 
 	];
 
+	const _matrix = /*@__PURE__*/ new Matrix4();
+
+	/**
+	 * This class is designed to assist with raycasting. Raycasting is used for
+	 * mouse picking (working out what objects in the 3d space the mouse is over)
+	 * amongst other things.
+	 */
+	class Raycaster {
+
+		/**
+		 * Constructs a new raycaster.
+		 *
+		 * @param {Vector3} origin - The origin vector where the ray casts from.
+		 * @param {Vector3} direction - The (normalized) direction vector that gives direction to the ray.
+		 * @param {number} [near=0] - All results returned are further away than near. Near can't be negative.
+		 * @param {number} [far=Infinity] - All results returned are closer than far. Far can't be lower than near.
+		 */
+		constructor( origin, direction, near = 0, far = Infinity ) {
+
+			/**
+			 * The ray used for raycasting.
+			 *
+			 * @type {Ray}
+			 */
+			this.ray = new Ray( origin, direction );
+
+			/**
+			 * All results returned are further away than near. Near can't be negative.
+			 *
+			 * @type {number}
+			 * @default 0
+			 */
+			this.near = near;
+
+			/**
+			 * All results returned are closer than far. Far can't be lower than near.
+			 *
+			 * @type {number}
+			 * @default Infinity
+			 */
+			this.far = far;
+
+			/**
+			 * The camera to use when raycasting against view-dependent objects such as
+			 * billboarded objects like sprites. This field can be set manually or
+			 * is set when calling `setFromCamera()`.
+			 *
+			 * @type {?Camera}
+			 * @default null
+			 */
+			this.camera = null;
+
+			/**
+			 * Allows to selectively ignore 3D objects when performing intersection tests.
+			 * The following code example ensures that only 3D objects on layer `1` will be
+			 * honored by raycaster.
+			 * ```js
+			 * raycaster.layers.set( 1 );
+			 * object.layers.enable( 1 );
+			 * ```
+			 *
+			 * @type {Layers}
+			 */
+			this.layers = new Layers();
+
+
+			/**
+			 * A parameter object that configures the raycasting. It has the structure:
+			 *
+			 * ```
+			 * {
+			 * 	Mesh: {},
+			 * 	Line: { threshold: 1 },
+			 * 	LOD: {},
+			 * 	Points: { threshold: 1 },
+			 * 	Sprite: {}
+			 * }
+			 * ```
+			 * Where `threshold` is the precision of the raycaster when intersecting objects, in world units.
+			 *
+			 * @type {Object}
+			 */
+			this.params = {
+				Mesh: {},
+				Line: { threshold: 1 },
+				LOD: {},
+				Points: { threshold: 1 },
+				Sprite: {}
+			};
+
+		}
+
+		/**
+		 * Updates the ray with a new origin and direction by copying the values from the arguments.
+		 *
+		 * @param {Vector3} origin - The origin vector where the ray casts from.
+		 * @param {Vector3} direction - The (normalized) direction vector that gives direction to the ray.
+		 */
+		set( origin, direction ) {
+
+			// direction is assumed to be normalized (for accurate distance calculations)
+
+			this.ray.set( origin, direction );
+
+		}
+
+		/**
+		 * Uses the given coordinates and camera to compute a new origin and direction for the internal ray.
+		 *
+		 * @param {Vector2} coords - 2D coordinates of the mouse, in normalized device coordinates (NDC).
+		 * X and Y components should be between `-1` and `1`.
+		 * @param {Camera} camera - The camera from which the ray should originate.
+		 */
+		setFromCamera( coords, camera ) {
+
+			if ( camera.isPerspectiveCamera ) {
+
+				this.ray.origin.setFromMatrixPosition( camera.matrixWorld );
+				this.ray.direction.set( coords.x, coords.y, 0.5 ).unproject( camera ).sub( this.ray.origin ).normalize();
+				this.camera = camera;
+
+			} else if ( camera.isOrthographicCamera ) {
+
+				this.ray.origin.set( coords.x, coords.y, camera.projectionMatrix.elements[ 14 ] ).unproject( camera ); // set origin in plane of camera
+				this.ray.direction.set( 0, 0, -1 ).transformDirection( camera.matrixWorld );
+				this.camera = camera;
+
+			} else {
+
+				error( 'Raycaster: Unsupported camera type: ' + camera.type );
+
+			}
+
+		}
+
+		/**
+		 * Uses the given WebXR controller to compute a new origin and direction for the internal ray.
+		 *
+		 * @param {WebXRController} controller - The controller to copy the position and direction from.
+		 * @return {Raycaster} A reference to this raycaster.
+		 */
+		setFromXRController( controller ) {
+
+			_matrix.identity().extractRotation( controller.matrixWorld );
+
+			this.ray.origin.setFromMatrixPosition( controller.matrixWorld );
+			this.ray.direction.set( 0, 0, -1 ).applyMatrix4( _matrix );
+
+			return this;
+
+		}
+
+		/**
+		 * The intersection point of a raycaster intersection test.
+		 * @typedef {Object} Raycaster~Intersection
+		 * @property {number} distance - The distance from the ray's origin to the intersection point.
+		 * @property {number} distanceToRay -  Some 3D objects e.g. {@link Points} provide the distance of the
+		 * intersection to the nearest point on the ray. For other objects it will be `undefined`.
+		 * @property {Vector3} point - The intersection point, in world coordinates.
+		 * @property {Object} face - The face that has been intersected.
+		 * @property {number} faceIndex - The face index.
+		 * @property {Object3D} object - The 3D object that has been intersected.
+		 * @property {Vector2} uv - U,V coordinates at point of intersection.
+		 * @property {Vector2} uv1 - Second set of U,V coordinates at point of intersection.
+		 * @property {Vector3} normal - Interpolated normal vector at point of intersection.
+		 * @property {number} instanceId - The index number of the instance where the ray
+		 * intersects the {@link InstancedMesh}.
+		 * @property {number} batchId - The index number of the instance where the ray
+		 * intersects the {@link BatchedMesh}.
+		 */
+
+		/**
+		 * Checks all intersection between the ray and the object with or without the
+		 * descendants. Intersections are returned sorted by distance, closest first.
+		 *
+		 * `Raycaster` delegates to the `raycast()` method of the passed 3D object, when
+		 * evaluating whether the ray intersects the object or not. This allows meshes to respond
+		 * differently to ray casting than lines or points.
+		 *
+		 * Note that for meshes, faces must be pointed towards the origin of the ray in order
+		 * to be detected; intersections of the ray passing through the back of a face will not
+		 * be detected. To raycast against both faces of an object, you'll want to set  {@link Material#side}
+		 * to `THREE.DoubleSide`.
+		 *
+		 * Note that a ray hitting a triangle mesh exactly along an edge shared by two faces may be
+		 * reported by both faces, resulting in two coincident intersections (identical point and
+		 * distance) in the returned array.
+		 *
+		 * @param {Object3D} object - The 3D object to check for intersection with the ray.
+		 * @param {boolean} [recursive=true] - If set to `true`, it also checks all descendants.
+		 * Otherwise it only checks intersection with the object.
+		 * @param {Array<Raycaster~Intersection>} [intersects=[]] The target array that holds the result of the method.
+		 * @return {Array<Raycaster~Intersection>} An array holding the intersection points.
+		 */
+		intersectObject( object, recursive = true, intersects = [] ) {
+
+			intersect( object, this, intersects, recursive );
+
+			intersects.sort( ascSort );
+
+			return intersects;
+
+		}
+
+		/**
+		 * Checks all intersection between the ray and the objects with or without
+		 * the descendants. Intersections are returned sorted by distance, closest first.
+		 *
+		 * @param {Array<Object3D>} objects - The 3D objects to check for intersection with the ray.
+		 * @param {boolean} [recursive=true] - If set to `true`, it also checks all descendants.
+		 * Otherwise it only checks intersection with the object.
+		 * @param {Array<Raycaster~Intersection>} [intersects=[]] The target array that holds the result of the method.
+		 * @return {Array<Raycaster~Intersection>} An array holding the intersection points.
+		 */
+		intersectObjects( objects, recursive = true, intersects = [] ) {
+
+			for ( let i = 0, l = objects.length; i < l; i ++ ) {
+
+				intersect( objects[ i ], this, intersects, recursive );
+
+			}
+
+			intersects.sort( ascSort );
+
+			return intersects;
+
+		}
+
+	}
+
+	function ascSort( a, b ) {
+
+		return a.distance - b.distance;
+
+	}
+
+	function intersect( object, raycaster, intersects, recursive ) {
+
+		let propagate = true;
+
+		if ( object.layers.test( raycaster.layers ) ) {
+
+			const result = object.raycast( raycaster, intersects );
+
+			if ( result === false ) propagate = false;
+
+		}
+
+		if ( propagate === true && recursive === true ) {
+
+			const children = object.children;
+
+			for ( let i = 0, l = children.length; i < l; i ++ ) {
+
+				intersect( children[ i ], raycaster, intersects, true );
+
+			}
+
+		}
+
+	}
+
 	/**
 	 * Class for keeping track of time.
 	 *
@@ -63541,8 +63803,9 @@ void main() {
 
 	const names=['Sarko','Levi','Waiz','Diago','Amaya','Naomi','Hailey','Isaac'];
 	const colors=['#f0c568','#70a8f6','#96e7ca','#f39a75','#ffb679','#d0a5f5','#77d5ed','#b9c6da'];
-	let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='';
+	let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='',backdropName='',backdrop;
 	let enemyRoot,actors=[],effects=[],lastState;
+	const raycaster=new Raycaster(),pointer=new Vector2();
 	const loader=new GLTFLoader(),textureLoader=new TextureLoader(),modelCache=new Map(),weaponCache=new Map();
 	const clock=new Clock();
 
@@ -63557,9 +63820,15 @@ void main() {
 	  flame.userData.flame=true;
 	}
 	function setup(){
-	  scene=new Scene();scene.background=new Color('#071526');scene.fog=new Fog('#071526',11,24);
+	  scene=new Scene();scene.background=new Color('#071526');scene.fog=new Fog('#071526',20,38);
 	  camera=new PerspectiveCamera(43,2,.1,60);camera.position.set(0,4.7,10.6);camera.lookAt(0,1.1,0);
 	  renderer=new WebGLRenderer({antialias:false,alpha:false,powerPreference:'low-power'});
+	  renderer.domElement.addEventListener('click',event=>{
+	    const bounds=renderer.domElement.getBoundingClientRect();
+	    pointer.set(((event.clientX-bounds.left)/bounds.width)*2-1,-((event.clientY-bounds.top)/bounds.height)*2+1);
+	    raycaster.setFromCamera(pointer,camera);
+	    for(const actor of actors){if(raycaster.intersectObject(actor.figure,true).length){globalThis.SarkoArena3D?.onHeroClick?.(actor.id);break;}}
+	  });
 	  renderer.setPixelRatio(Math.min(1.5,window.devicePixelRatio||1));
 	  renderer.outputColorSpace=SRGBColorSpace;
 	  renderer.toneMapping=ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;
@@ -63568,6 +63837,9 @@ void main() {
 	  const blue=new PointLight('#80b8ff',16,12);blue.position.set(1,4,-4);scene.add(blue);
 	  const floor=mesh(new CylinderGeometry(7.2,7.2,.34,48),material('#344254',.1,.95),scene,0,-0.2,0);
 	  floor.name='arena-floor';
+	  backdrop=mesh(new PlaneGeometry(29,16),new MeshBasicMaterial({color:'#13233c',side:DoubleSide,fog:false}),scene,0,5,-10);
+	  const shade=mesh(new PlaneGeometry(29,16),new MeshBasicMaterial({color:'#03101c',transparent:true,opacity:.3,side:DoubleSide,fog:false}),scene,0,5,-9.98);
+	  shade.renderOrder=1;
 	  mesh(new CylinderGeometry(7.34,7.34,.08,48),material('#bd9550',.75,.32),scene,0,-0.38,0);
 	  ring=new Mesh(new RingGeometry(5.8,5.87,64),new MeshBasicMaterial({color:'#c8a260',side:DoubleSide}));
 	  ring.rotation.x=-Math.PI/2;ring.position.y=.001;scene.add(ring);
@@ -63625,7 +63897,6 @@ void main() {
 	    const root=new Group();
 	    const x=-3.35+(index%2)*1.55,z=-1.05+Math.floor(index/2)*1.65;
 	    root.position.set(x,.13,z);root.rotation.y=.22;scene.add(root);
-	    mesh(new CylinderGeometry(.55,.64,.15,18),material('#967e55',.7,.36),root,0,.02,0);
 	    const figure=new Group();root.add(figure);figureFallback(fighter.id,figure);
 	    const actor={id:fighter.id,root,figure,x,z,loaded:false};actors.push(actor);
 	    weaponFor(fighter.id);
@@ -63634,7 +63905,7 @@ void main() {
 	      figure.clear();
 	      const copy=source.clone(true);
 	      const bounds=new Box3().setFromObject(copy),size=bounds.getSize(new Vector3());
-	      const height=Math.max(.01,size.y),scale=1.88/height;
+	      const height=Math.max(.01,size.y),scale=2.45/height;
 	      copy.scale.setScalar(scale);
 	      copy.position.sub(bounds.getCenter(new Vector3()).multiplyScalar(scale));
 	      copy.position.y+=height*scale*.5+.13;
@@ -63642,17 +63913,18 @@ void main() {
 	    });
 	  });
 	}
-	function enemyArt(type){
-	  if(type===enemyType)return;
-	  enemyType=type;
+	function enemyArt(type,art){
+	  const key=type+'|'+(art||'');
+	  if(key===enemyType)return;
+	  enemyType=key;
 	  if(enemyTexture)enemyTexture.dispose();
-	  textureLoader.load('assets/Monster-'+type+'.jpg',texture=>{
-	    if(type!==enemyType){texture.dispose();return;}
+	  textureLoader.load('assets/'+(art||'Monster-'+type+'.jpg'),texture=>{
+	    if(key!==enemyType){texture.dispose();return;}
 	    texture.colorSpace=SRGBColorSpace;enemyTexture=texture;
 	    if(enemyImage.parent){enemyImage.material.dispose();enemyImage.material=new MeshBasicMaterial({map:texture,side:DoubleSide});}
 	  });
 	}
-	function mount(nextHost,state){
+	function mount(nextHost,state,art){
 	  lastState=state;
 	  if(!nextHost)return;
 	  try{if(!renderer)setup();}catch(error){nextHost.textContent='3D view unavailable on this device. Battle controls remain playable.';return;}
@@ -63660,7 +63932,15 @@ void main() {
 	  if(renderer.domElement.parentNode!==host)host.appendChild(renderer.domElement);
 	  const key=state.fighters.map(f=>f.id).join(',');
 	  if(key!==partyKey){partyKey=key;rebuildParty(state);}
-	  enemyArt(state.enemy?.type||'BriarClawBear');
+	  enemyArt(state.enemy?.type||'BriarClawBear',state.enemy?.art);
+	  if(art&&art!==backdropName){
+	    backdropName=art;
+	    textureLoader.load('assets/'+art,texture=>{
+	      if(art!==backdropName){texture.dispose();return;}
+	      texture.colorSpace=SRGBColorSpace;
+	      backdrop.material.dispose();backdrop.material=new MeshBasicMaterial({map:texture,side:DoubleSide,fog:false});
+	    });
+	  }
 	  const width=Math.max(1,host.clientWidth),height=Math.max(1,host.clientHeight);
 	  if(renderer.domElement.width!==Math.round(width*renderer.getPixelRatio())||renderer.domElement.height!==Math.round(height*renderer.getPixelRatio())){
 	    renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();

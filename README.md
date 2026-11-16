@@ -4,9 +4,11 @@ A free browser RPG for iPhone and desktop, hosted at askjesus.ca while the Sarko
 
 Choose four of eight Sarko heroes. Players can switch between classic cards and a 3D battle arena with optimized character models exported from the Windows game. Auto mode plays their eight skills against a reshuffling deck of monsters; Manual mode lets you choose a ready skill or basic attack each turn. Defeat a boss after every five regular foes, collect spirit fruit and gems, and choose when to start the next fight. The shop, forge, fruit tree, church upgrades, and local high scores are available from the arena.
 
-The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. It is a standalone browser adaptation of survival mode. The campaign is not part of this release.
+The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. Survival reshuffles all 11 monster families and a named boss appears after every five regular foes. The seven-world book campaign has 20 stages per world, a boss at stage 20, all 17 full chapters to read, and ElevenLabs chapter narration. Completing a difficulty unlocks the next and carries the team, levels, fruit, skill ranks, gold, and points forward.
 
-Arena monsters have half their original health, attack, and guard. Victories award 50% more gold and one team skill point for every two monsters cleared.
+Survival backdrops change with the monster. Campaign backdrops match the current world. Card and 3D views share the same battle rules, with Auto and Manual controls in both.
+
+Arena monsters have half their original health, attack, and guard. Victories award 50% more gold, at least one fruit chest, and one team skill point for every two monsters cleared. Bosses award three fruit chests and a gem. Church skill upgrade costs are 25% higher than the prior beta.
 
 Each hero has a dedicated Fruit of the Spirit tree based on the supplied art. Empty branches name the missing fruit, and wordless fruit pictures appear only when equipped. Remove All returns every fruit on that hero to inventory. Each fruit now applies its named effect: health, experience, damage reduction, cooldown, healing, gold, critical chance, special attack resistance, or attack power. The current value shown on the card includes any socketed gem.
 
@@ -23,4 +25,3 @@ These files live in browser storage on the current device; private browsing or c
 ## Original site
 
 The earlier AskJesus.ca source is preserved in the `archive/askjesus-2026` branch.
-

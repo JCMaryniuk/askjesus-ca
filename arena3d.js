@@ -3,8 +3,9 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 const names=['Sarko','Levi','Waiz','Diago','Amaya','Naomi','Hailey','Isaac'];
 const colors=['#f0c568','#70a8f6','#96e7ca','#f39a75','#ffb679','#d0a5f5','#77d5ed','#b9c6da'];
-let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='';
+let renderer,scene,camera,host,ring,enemyImage,enemyTexture,enemyType='',partyKey='',backdropName='',backdrop;
 let enemyRoot,actors=[],effects=[],lastState,frame=0;
+const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
 const loader=new GLTFLoader(),textureLoader=new THREE.TextureLoader(),modelCache=new Map(),weaponCache=new Map();
 const clock=new THREE.Clock();
 
@@ -19,9 +20,15 @@ function addPillar(x,z){
   flame.userData.flame=true;
 }
 function setup(){
-  scene=new THREE.Scene();scene.background=new THREE.Color('#071526');scene.fog=new THREE.Fog('#071526',11,24);
+  scene=new THREE.Scene();scene.background=new THREE.Color('#071526');scene.fog=new THREE.Fog('#071526',20,38);
   camera=new THREE.PerspectiveCamera(43,2,.1,60);camera.position.set(0,4.7,10.6);camera.lookAt(0,1.1,0);
   renderer=new THREE.WebGLRenderer({antialias:false,alpha:false,powerPreference:'low-power'});
+  renderer.domElement.addEventListener('click',event=>{
+    const bounds=renderer.domElement.getBoundingClientRect();
+    pointer.set(((event.clientX-bounds.left)/bounds.width)*2-1,-((event.clientY-bounds.top)/bounds.height)*2+1);
+    raycaster.setFromCamera(pointer,camera);
+    for(const actor of actors){if(raycaster.intersectObject(actor.figure,true).length){globalThis.SarkoArena3D?.onHeroClick?.(actor.id);break;}}
+  });
   renderer.setPixelRatio(Math.min(1.5,window.devicePixelRatio||1));
   renderer.outputColorSpace=THREE.SRGBColorSpace;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;
@@ -30,6 +37,9 @@ function setup(){
   const blue=new THREE.PointLight('#80b8ff',16,12);blue.position.set(1,4,-4);scene.add(blue);
   const floor=mesh(new THREE.CylinderGeometry(7.2,7.2,.34,48),material('#344254',.1,.95),scene,0,-.2,0);
   floor.name='arena-floor';
+  backdrop=mesh(new THREE.PlaneGeometry(29,16),new THREE.MeshBasicMaterial({color:'#13233c',side:THREE.DoubleSide,fog:false}),scene,0,5,-10);
+  const shade=mesh(new THREE.PlaneGeometry(29,16),new THREE.MeshBasicMaterial({color:'#03101c',transparent:true,opacity:.3,side:THREE.DoubleSide,fog:false}),scene,0,5,-9.98);
+  shade.renderOrder=1;
   mesh(new THREE.CylinderGeometry(7.34,7.34,.08,48),material('#bd9550',.75,.32),scene,0,-.38,0);
   ring=new THREE.Mesh(new THREE.RingGeometry(5.8,5.87,64),new THREE.MeshBasicMaterial({color:'#c8a260',side:THREE.DoubleSide}));
   ring.rotation.x=-Math.PI/2;ring.position.y=.001;scene.add(ring);
@@ -87,7 +97,6 @@ function rebuildParty(state){
     const root=new THREE.Group();
     const x=-3.35+(index%2)*1.55,z=-1.05+Math.floor(index/2)*1.65;
     root.position.set(x,.13,z);root.rotation.y=.22;scene.add(root);
-    mesh(new THREE.CylinderGeometry(.55,.64,.15,18),material('#967e55',.7,.36),root,0,.02,0);
     const figure=new THREE.Group();root.add(figure);figureFallback(fighter.id,figure);
     const actor={id:fighter.id,root,figure,x,z,loaded:false};actors.push(actor);
     weaponFor(fighter.id);
@@ -96,7 +105,7 @@ function rebuildParty(state){
       figure.clear();
       const copy=source.clone(true);
       const bounds=new THREE.Box3().setFromObject(copy),size=bounds.getSize(new THREE.Vector3());
-      const height=Math.max(.01,size.y),scale=1.88/height;
+      const height=Math.max(.01,size.y),scale=2.45/height;
       copy.scale.setScalar(scale);
       copy.position.sub(bounds.getCenter(new THREE.Vector3()).multiplyScalar(scale));
       copy.position.y+=height*scale*.5+.13;
@@ -104,17 +113,18 @@ function rebuildParty(state){
     });
   });
 }
-function enemyArt(type){
-  if(type===enemyType)return;
-  enemyType=type;
+function enemyArt(type,art){
+  const key=type+'|'+(art||'');
+  if(key===enemyType)return;
+  enemyType=key;
   if(enemyTexture)enemyTexture.dispose();
-  textureLoader.load('assets/Monster-'+type+'.jpg',texture=>{
-    if(type!==enemyType){texture.dispose();return;}
+  textureLoader.load('assets/'+(art||'Monster-'+type+'.jpg'),texture=>{
+    if(key!==enemyType){texture.dispose();return;}
     texture.colorSpace=THREE.SRGBColorSpace;enemyTexture=texture;
     if(enemyImage.parent){enemyImage.material.dispose();enemyImage.material=new THREE.MeshBasicMaterial({map:texture,side:THREE.DoubleSide});}
   });
 }
-function mount(nextHost,state){
+function mount(nextHost,state,art){
   lastState=state;
   if(!nextHost)return;
   try{if(!renderer)setup();}catch(error){nextHost.textContent='3D view unavailable on this device. Battle controls remain playable.';return;}
@@ -122,7 +132,15 @@ function mount(nextHost,state){
   if(renderer.domElement.parentNode!==host)host.appendChild(renderer.domElement);
   const key=state.fighters.map(f=>f.id).join(',');
   if(key!==partyKey){partyKey=key;rebuildParty(state);}
-  enemyArt(state.enemy?.type||'BriarClawBear');
+  enemyArt(state.enemy?.type||'BriarClawBear',state.enemy?.art);
+  if(art&&art!==backdropName){
+    backdropName=art;
+    textureLoader.load('assets/'+art,texture=>{
+      if(art!==backdropName){texture.dispose();return;}
+      texture.colorSpace=THREE.SRGBColorSpace;
+      backdrop.material.dispose();backdrop.material=new THREE.MeshBasicMaterial({map:texture,side:THREE.DoubleSide,fog:false});
+    });
+  }
   const width=Math.max(1,host.clientWidth),height=Math.max(1,host.clientHeight);
   if(renderer.domElement.width!==Math.round(width*renderer.getPixelRatio())||renderer.domElement.height!==Math.round(height*renderer.getPixelRatio())){
     renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();
@@ -195,4 +213,3 @@ function animate(){
   renderer.render(scene,camera);
 }
 export {mount,action};
-
