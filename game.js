@@ -394,7 +394,7 @@ function arenaArt(){
   return `World-${WORLD_NAMES[state.enemy?.world??(state.mode==='campaign'?state.world:Math.floor(state.cleared/20)%7)]}.jpg`;
 }
 function modeHeading(){return state.mode==='campaign'?`World ${state.world+1}: ${campaignData.worlds[state.world]?.name||'Earth'} · Stage ${state.worldStage+1}/20 · ${DIFFICULTIES[state.difficulty]}`:`Wave ${state.cleared+1}`;}
-const ROUTE_POINTS=[[[10,86],[29,75],[54,71],[73,64],[66,52],[31,50],[43,42],[70,39],[76,27],[88,17]],[[10,86],[29,74],[47,66],[73,64],[65,51],[31,45],[41,36],[70,30],[77,24],[88,17]]];
+const ROUTE_POINTS=[[[10,86],[29,75],[54,71],[66,64],[60,52],[31,50],[43,42],[70,39],[76,27],[88,17]],[[10,86],[29,74],[47,66],[73,64],[65,51],[31,45],[41,36],[70,30],[77,24],[88,17]]];
 const WORLD_POINTS=[[11,45],[25,75],[31,32],[44,29],[57,31],[69,46],[79,54],[89,18]];
 function travelMap(world,stage,token){
   const names=[...WORLD_NAMES,'Heavenly City'];
