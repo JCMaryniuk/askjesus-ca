@@ -4,7 +4,7 @@ A free browser RPG for iPhone and desktop, hosted at askjesus.ca while the Sarko
 
 Choose four of eight Sarko heroes. Battles use the illustrated card arena; Auto mode plays their eight skills against a reshuffling deck of monsters, while Manual mode lets you choose a ready skill or basic attack each turn. Actions advance slowly enough to read damage and healing. After every win, the party appears on an illustrated world map and you decide when to travel to the next battle. Defeat a boss after every five regular foes, collect spirit fruit and gems, and visit the merchant, forge, fruit tree, or church between fights.
 
-The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. Survival reshuffles all 11 monster families and a named boss appears after every five regular foes. The seven-world book campaign has 20 stages per world, a boss at stage 20, all 17 full chapters to read, and ElevenLabs chapter narration. Completing a difficulty unlocks the next and carries the team, levels, fruit, skill ranks, gold, and points forward.
+The game uses character names, level-one stats, skill names and descriptions from the Sarko Windows beta. Survival reshuffles all 11 monster families and a named boss appears after every five regular foes. The seven-world book campaign has 20 stages per world, bosses at stages 10 and 20, all 17 full chapters to read, and ElevenLabs chapter narration. Completing a difficulty unlocks the next and carries the team, levels, fruit, skill ranks, gold, and points forward.
 
 Survival backdrops change with the monster. Campaign backdrops match the current world. The illustrated travel map covers the seven linked worlds and shows the party's route between battles.
 

@@ -38,3 +38,24 @@
 .journeyGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:17px}.journeyGrid .loot{max-height:175px;overflow:auto}.journeyWorld{display:flex;align-items:center;gap:12px;margin:15px 0}.journeyWorld img{width:126px;height:90px;object-fit:cover;border-radius:10px;border:1px solid #d6ae68}.journeyWorld div{display:grid;gap:5px}.journeyWorld span{font-size:.85rem;color:var(--pale)}.journeyGo{width:100%;font-size:1.05rem}
 @media(max-width:750px){.worldMap{height:260px}.mapNames span{font-size:.54rem;padding:2px 3px}.partyMarker img{width:42px;height:42px;border-width:2px}.partyMarker span{font-size:.48rem}.journeyGrid{grid-template-columns:1fr}.journeyWorld img{width:96px;height:72px}}
 @media(max-width:750px){.map:has(.dot:nth-child(20)){grid-template-columns:repeat(10,minmax(0,1fr))}.storyLead,.forgeColumns{grid-template-columns:1fr}.forgeGuide{grid-template-columns:90px 1fr}.forgeGuide img{width:90px;height:90px}.battleGrid .heroBattle .portrait{height:90px}}
+
+/* Every encounter keeps its monster silhouette while carrying its map region. */
+.enemyCard[data-world]{isolation:isolate}
+.enemyCard[data-world]::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;mix-blend-mode:screen;opacity:.6}
+.enemyCard[data-world]::after{content:attr(data-world) " WILDS";position:absolute;top:10px;left:10px;z-index:2;pointer-events:none;padding:5px 9px;border:1px solid #f9e3b8;border-radius:7px;background:#071523d9;color:#fff5dc;font:700 .68rem Cinzel,Georgia,serif;letter-spacing:.13em;box-shadow:0 2px 14px #000b}
+.enemyCard[data-world] .cardbody{position:relative;z-index:2}
+.enemyCard[data-world] .strike{z-index:3}
+.enemyCard[data-world="Earth"]>img:first-child{filter:sepia(.25) saturate(1.2) hue-rotate(-8deg)}
+.enemyCard[data-world="Earth"]::before{background:radial-gradient(circle at 25% 22%,#b47f3944,transparent 55%)}
+.enemyCard[data-world="Water"]>img:first-child{filter:sepia(.25) saturate(1.55) hue-rotate(145deg)}
+.enemyCard[data-world="Water"]::before{background:radial-gradient(circle at 65% 25%,#3de4ff88,transparent 46%),linear-gradient(150deg,transparent 30%,#0086c266 60%,transparent 83%)}
+.enemyCard[data-world="Snow"]>img:first-child{filter:grayscale(.7) brightness(1.35) contrast(1.08) sepia(.15) hue-rotate(155deg)}
+.enemyCard[data-world="Snow"]::before{background:radial-gradient(circle at 20% 15%,#fff 1px,transparent 3px) 0 0/28px 30px,radial-gradient(circle at 75% 50%,#b0efffaa,transparent 60%)}
+.enemyCard[data-world="Thunder"]>img:first-child{filter:saturate(1.5) hue-rotate(45deg) contrast(1.15)}
+.enemyCard[data-world="Thunder"]::before{background:linear-gradient(115deg,transparent 42%,#b18cffaa 43%,transparent 45%,transparent 67%,#a9c8ff99 68%,transparent 70%)}
+.enemyCard[data-world="Fire"]>img:first-child{filter:sepia(.45) saturate(2.4) hue-rotate(-18deg) contrast(1.14)}
+.enemyCard[data-world="Fire"]::before{background:radial-gradient(circle at 26% 69%,#ffb421bb,transparent 32%),radial-gradient(circle at 78% 13%,#f33b1b99,transparent 42%),linear-gradient(0deg,#e74e1666,transparent 50%)}
+.enemyCard[data-world="Shadow"]>img:first-child{filter:saturate(.85) hue-rotate(65deg) brightness(.76) contrast(1.3)}
+.enemyCard[data-world="Shadow"]::before{background:radial-gradient(circle at 72% 20%,#b14dff88,transparent 50%),linear-gradient(0deg,#20073388,transparent 65%)}
+.enemyCard[data-world="Light"]>img:first-child{filter:sepia(.3) saturate(1.35) brightness(1.2)}
+.enemyCard[data-world="Light"]::before{background:radial-gradient(circle at 50% 18%,#fff2a6bb,transparent 52%),linear-gradient(0deg,#f2c44c33,transparent 65%)}
