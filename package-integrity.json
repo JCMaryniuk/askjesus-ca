@@ -2783,8 +2783,8 @@
     },
     {
       "file": "rpg3d-view.js",
-      "bytes": 4731,
-      "sha256": "1d3b8535e684abf5685d83890e3036fcfade8ed1f1eae1ce03fe1a652c027038"
+      "bytes": 4733,
+      "sha256": "16f112466730dd76f7b977250658076002955c2a501b0e05b924eddcc054735e"
     },
     {
       "file": "rpg3d.bundle.js",
@@ -2802,5 +2802,5 @@
       "sha256": "52820acd902aaa1f47a7ac8f5532bb8a14a5e8a7383c43610314c013890764cd"
     }
   ],
-  "bytes": 316617056
+  "bytes": 316617058
 }
