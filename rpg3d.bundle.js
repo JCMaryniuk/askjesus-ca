@@ -81118,6 +81118,19 @@ var three_module = /*#__PURE__*/Object.freeze({
 	warnOnce: warnOnce
 });
 
+// The battle floor stays level; surrounding scenery never obstructs combat lanes.
+async function buildBattleScenery(stage,entry,ridge,generation){
+ const world=entry.battleTheme;
+ if(entry.illustratedBattle){
+  const texture=await new TextureLoader().loadAsync(entry.battleBackdrop||`assets/World-${world}.jpg`);if(stage.disposed||stage.environmentGeneration!==generation){texture.dispose();return;}texture.colorSpace=SRGBColorSpace;
+  stage.scene.background=texture;stage.scene.fog=null;
+  const floor=new Mesh(new PlaneGeometry(120,120),new ShadowMaterial({opacity:.3}));floor.rotation.x=-Math.PI/2;floor.position.y=-0.025;floor.receiveShadow=true;stage.terrain.add(floor);
+  stage.camera.position.set(7,7.5,15);stage.camera.lookAt(-0.3,1.8,0);
+  stage.sceneryResources={texture};stage.illustratedBackground=texture;
+  return;
+ }
+}
+
 /**
  * Converts the given geometry to the `TrianglesDrawMode` draw mode, which
  * corresponds to the `gl.TRIANGLES` primitive in WebGL. The conversion only
@@ -86266,6 +86279,7 @@ class ModelLibrary {
     placement.rotation.y=entry.yaw||0;
     visual.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
     const actor={visual,root,mixer,clips,entry,current:null,dead:false,weapons:[],ownedMaterials:[]};
+    if(entry.hideCapes)root.traverse(o=>{if(o.isMesh&&/cape|cloak/i.test(o.name)){o.visible=false;o.userData.hiddenCape=true;}});
     if(entry.worldTint){
       const tint=new Color(entry.worldTint),strength=entry.tintStrength??.55;
       root.traverse(o=>{if(!o.isMesh)return;
@@ -86282,6 +86296,24 @@ class ModelLibrary {
       });
     }
     for(const weapon of entry.weapons||[])await this.attachWeapon(actor,weapon);
+    if(entry.gripFix){
+      const fix=entry.gripFix;let original,bone;
+      root.traverse(o=>{if(o.isMesh&&o.name===fix.mesh)original=o;if(o.isBone&&o.name===fix.bone)bone=o;});
+      if(!original||!bone)throw Error('Sarko grip attachment is missing');
+      if(idle){mixer.clipAction(clips.get(entry.actions.idle)).play();mixer.update(0);}
+      visual.updateMatrixWorld(true);
+      const rotation=bone.getWorldQuaternion(new Quaternion()).invert().multiply(original.getWorldQuaternion(new Quaternion()));
+      const scale=original.getWorldScale(new Vector3()).divide(bone.getWorldScale(new Vector3()));
+      const socket=new Group();socket.name='Sarko right-paw sword grip';socket.position.fromArray(fix.palm);socket.quaternion.copy(rotation);socket.scale.copy(scale);
+      const model=new Mesh(original.geometry,original.material);model.position.fromArray(fix.grip).negate();model.castShadow=true;model.receiveShadow=true;socket.add(model);bone.add(socket);original.visible=false;
+      if(fix.fingers){
+        const fur=new MeshStandardMaterial({color:'#bea583',roughness:.88});actor.ownedMaterials.push(fur);
+        actor.ownedGeometries=[];
+        for(let i=0;i<4;i++){const geometry=new TorusGeometry(.00087,.00028,8,16,Math.PI*1.6);actor.ownedGeometries.push(geometry);const finger=new Mesh(geometry,fur);finger.position.z=(i-1.5)*.00064;finger.rotation.z=-0.8;finger.castShadow=true;socket.add(finger);}
+      }
+      actor.weapons.push({socket,bone,entry:fix});actor.gripFix={socket,bone,model,original};
+      mixer.stopAllAction();
+    }
     return actor;
   }
   async attachWeapon(actor,entry){
@@ -86345,37 +86377,37 @@ class RPGStage {
     this.resizeObserver=new ResizeObserver(()=>this.resize());this.resizeObserver.observe(host);this.resize();
     this.previous=performance.now();this.frame=requestAnimationFrame(t=>this.tick(t));
   }
-  resize(){if(this.disposed)return;const w=Math.max(1,this.host.clientWidth),h=Math.max(1,this.host.clientHeight);this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();if(this.autoFrameActors)this.frameActors();}
+  resize(){if(this.disposed)return;const w=Math.max(1,this.host.clientWidth),h=Math.max(1,this.host.clientHeight);this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();if(this.autoFrameActors)this.frameActors();this.fitScenery();}
   frameActors(){
     this.autoFrameActors=true;if(!this.actors.size)return;
-    const bounds=new Box3();this.scene.updateMatrixWorld(true);
+    const bounds=new Box3(),framingBoxes=[];this.scene.updateMatrixWorld(true);
     for(const actor of this.actors.values()){
     actor.root.traverse(o=>{
-      if(!o.isMesh)return;
+      if(!o.isMesh||!o.visible)return;
       if(o.isSkinnedMesh)o.computeBoundingBox();else if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();
       const box=o.isSkinnedMesh?o.boundingBox:o.geometry.boundingBox;
-      if(box)bounds.union(box.clone().applyMatrix4(o.matrixWorld));
+      if(box){const worldBox=box.clone().applyMatrix4(o.matrixWorld);bounds.union(worldBox);framingBoxes.push(worldBox);}
     });
     // Authored motion envelopes include raised weapons and extended wings,
     // so framing an idle pose cannot crop a later attack.
-    if(actor.entry.framingBounds){const box=new Box3(new Vector3().fromArray(actor.entry.framingBounds.min),new Vector3().fromArray(actor.entry.framingBounds.max));bounds.union(box.applyMatrix4(actor.visual.matrixWorld));}
+    if(actor.entry.framingBounds){const box=new Box3(new Vector3().fromArray(actor.entry.framingBounds.min),new Vector3().fromArray(actor.entry.framingBounds.max));box.applyMatrix4(actor.visual.matrixWorld);bounds.union(box);framingBoxes.push(box);}
     }
     if(bounds.isEmpty())return;
     bounds.expandByVector(new Vector3(.35,.5,.35));
     this.camera.zoom=1;this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld(true);
     let extent=.01;const point=new Vector3();
-    for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z]){
+    for(const box of framingBoxes){box.expandByVector(new Vector3(.35,.5,.35));for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z]){
       point.set(x,y,z).project(this.camera);extent=Math.max(extent,Math.abs(point.x),Math.abs(point.y));
-    }
-    this.camera.zoom=Math.min(1.5,.9/extent);this.camera.updateProjectionMatrix();
+    }}
+    this.camera.zoom=Math.min(2.2,.9/extent);this.camera.updateProjectionMatrix();
   }
   async setActors(items){
     const version=++this.generation;
     this.cancelActions();
-    for(const a of this.actors.values()){a.mixer.stopAllAction();a.mixer.uncacheRoot(a.root);for(const m of a.ownedMaterials||[])m.dispose();this.scene.remove(a.visual);}
+    for(const a of this.actors.values()){a.mixer.stopAllAction();a.mixer.uncacheRoot(a.root);for(const m of a.ownedMaterials||[])m.dispose();for(const g of a.ownedGeometries||[])g.dispose();this.scene.remove(a.visual);}
     this.actors.clear();
     const loaded=await Promise.allSettled(items.map(async item=>({item,actor:await this.library.actor(item.entry)})));
-    if(this.disposed||version!==this.generation){for(const r of loaded)if(r.status==='fulfilled'){r.value.actor.mixer.stopAllAction();r.value.actor.mixer.uncacheRoot(r.value.actor.root);for(const m of r.value.actor.ownedMaterials||[])m.dispose();}return;}
+    if(this.disposed||version!==this.generation){for(const r of loaded)if(r.status==='fulfilled'){r.value.actor.mixer.stopAllAction();r.value.actor.mixer.uncacheRoot(r.value.actor.root);for(const m of r.value.actor.ownedMaterials||[])m.dispose();for(const g of r.value.actor.ownedGeometries||[])g.dispose();}return;}
     for(let i=0;i<loaded.length;i++){
       const result=loaded[i];if(result.status==='rejected'){this.onError(items[i].key+': '+result.reason.message);continue;}
       const {item,actor}=result.value;actor.key=item.key;actor.visual.position.fromArray(item.position||[0,0,0]);actor.visual.rotation.y=item.facing||0;this.scene.add(actor.visual);this.actors.set(item.key,actor);
@@ -86387,19 +86419,31 @@ class RPGStage {
   async setEnvironment(entry){
     const generation=++this.environmentGeneration;
     if(!entry?.file)throw Error('This world has no verified 3D map');
-    const gltf=await this.library.load(entry.file);
+    const gltf=entry.illustratedBattle?null:await this.library.load(entry.file);
     if(this.disposed||generation!==this.environmentGeneration)return;
-    this.terrain.clear();const model=gltf.scene.clone(true);model.scale.setScalar(entry.scale||1);model.position.fromArray(entry.position||[0,0,0]);
-    model.traverse(o=>{if(o.isMesh)o.receiveShadow=true;});this.terrain.add(model);
+    this.clearScenery();this.terrain.clear();this.illustratedBackground=null;this.scene.fog=new Fog('#142335',20,55);
+    if(entry.battleTheme){await buildBattleScenery(this,entry,gltf,generation);if(this.disposed||generation!==this.environmentGeneration)return;}
+    else {const model=gltf.scene.clone(true);model.scale.setScalar(entry.scale||1);model.position.fromArray(entry.position||[0,0,0]);model.traverse(o=>{if(o.isMesh)o.receiveShadow=true;});this.terrain.add(model);}
     this.skyTexture?.dispose();this.skyTexture=null;
-    if(entry.sky){
+    if(this.illustratedBackground){this.scene.background=this.illustratedBackground;}else if(entry.sky){
       const canvas=document.createElement('canvas');canvas.width=2;canvas.height=256;
       const ctx=canvas.getContext('2d'),gradient=ctx.createLinearGradient(0,0,0,256);
       gradient.addColorStop(0,entry.sky.top);gradient.addColorStop(.85,entry.sky.horizon);gradient.addColorStop(1,entry.sky.horizon);
       ctx.fillStyle=gradient;ctx.fillRect(0,0,2,256);this.skyTexture=new CanvasTexture(canvas);this.skyTexture.colorSpace=SRGBColorSpace;
       this.scene.background=this.skyTexture;this.scene.fog.color.set(entry.sky.horizon);
     }else {this.scene.background=new Color(entry.background||'#142335');this.scene.fog.color.set(entry.background||'#142335');}
-    if(entry.camera){this.camera.position.fromArray(entry.camera);this.camera.lookAt(...(entry.lookAt||[0,1,0]));}
+    if(entry.camera){this.camera.position.fromArray(entry.camera);this.camera.lookAt(...(entry.lookAt||[0,1,0]));}this.fitScenery();
+  }
+  fitScenery(){
+    const texture=this.illustratedBackground;if(!texture)return;
+    const aspect=texture.image.width/texture.image.height,view=this.camera.aspect;
+    texture.repeat.set(Math.min(1,view/aspect),Math.min(1,aspect/view));texture.offset.set((1-texture.repeat.x)/2,(1-texture.repeat.y)/2);texture.updateMatrix();
+  }
+  clearScenery(){
+    if(!this.sceneryResources)return;
+    const materials=new Set(),geometries=new Set();
+    this.terrain.traverse(o=>{if(o.isMesh){[].concat(o.material).forEach(m=>materials.add(m));if(o.geometry.type!=='BufferGeometry')geometries.add(o.geometry);}});
+    materials.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());this.sceneryResources.texture.dispose();this.sceneryResources=null;
   }
   playClip(actor,action,loop=false,report=true){
     const name=actor.entry.actions?.[action],clip=actor.clips.get(name);
@@ -86433,6 +86477,17 @@ class RPGStage {
     if(!event.effectOnly)actor.current.setEffectiveTimeScale(nativeDuration/duration);
     const origin=actor.visual.position.clone(),target=this.actors.get(event.targets?.find(t=>t.kind==='damage')?.key);
     const direction=target?target.visual.position.clone().sub(origin).setY(0).normalize():new Vector3();
+    // Clamp a forward step before any teammate's personal space. This also
+    // protects custom/loaded formations rather than relying on row order alone.
+    if(event.advance>0){
+      const side=event.actor.startsWith('hero-')?'hero-':null;
+      for(const [key,other] of this.actors){
+        if(!side||!key.startsWith(side)||other===actor)continue;
+        const delta=other.visual.position.clone().sub(origin).setY(0),along=delta.dot(direction);
+        const radius=1.65,across=delta.lengthSq()-along*along;
+        if(along>0&&across<radius*radius)event.advance=Math.min(event.advance,Math.max(0,along-Math.sqrt(radius*radius-across)));
+      }
+    }
     this.active={...event,impactAt,elapsed:0,duration,impact:false,origin,direction};
     if(event.projectile&&target)this.active.flight=this.projectileEffect(actor,target,event.projectile,event.effectColor||event.color);
   }
@@ -86506,7 +86561,7 @@ class RPGStage {
     }
     this.renderer.render(this.scene,this.camera);
   }
-  async dispose(){if(this.disposed)return;this.disposed=true;++this.generation;++this.environmentGeneration;cancelAnimationFrame(this.frame);this.cancelActions();this.resizeObserver.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('click',this.click);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const a of this.actors.values()){a.mixer.stopAllAction();a.mixer.uncacheRoot(a.root);for(const m of a.ownedMaterials||[])m.dispose();}this.actors.clear();this.skyTexture?.dispose();this.renderer.dispose();this.renderer.domElement.remove();await this.library.dispose();}
+  async dispose(){if(this.disposed)return;this.disposed=true;++this.generation;++this.environmentGeneration;cancelAnimationFrame(this.frame);this.cancelActions();this.resizeObserver.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('click',this.click);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);for(const a of this.actors.values()){a.mixer.stopAllAction();a.mixer.uncacheRoot(a.root);for(const m of a.ownedMaterials||[])m.dispose();for(const g of a.ownedGeometries||[])g.dispose();}this.actors.clear();this.clearScenery();this.skyTexture?.dispose();this.renderer.dispose();this.renderer.domElement.remove();await this.library.dispose();}
 }
 
 export { ModelLibrary, RPGStage, three_module as THREE };

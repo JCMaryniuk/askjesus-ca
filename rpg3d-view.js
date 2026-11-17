@@ -1,5 +1,14 @@
 import {RPGStage} from './rpg3d.bundle.js';
 export const WORLD_TINTS={Earth:'#77a95b',Water:'#35b9d3',Snow:'#e4f4ff',Thunder:'#839bff',Fire:'#ef5731',Shadow:'#a768d3',Light:'#ffe9a9'};
+export function battleFormation(heroes){
+ const ranged=heroes.filter(h=>['Naomi','Hailey'].includes(h.name));
+ const melee=heroes.filter(h=>!ranged.includes(h));
+ const positions=new Map();
+ // Every melee hero has a clear forward lane. Only bow/crossbow users stand back.
+ for(const [group,x,spacing] of [[melee,-2.8,2.5],[ranged,-5.6,2.8]])
+  group.forEach((h,i)=>positions.set(h.id,[x,0,(i-(group.length-1)/2)*spacing]));
+ return heroes.map(h=>positions.get(h.id));
+}
 export function actionPresentation(action=''){
  const name=action.toLowerCase();
  if(/thunder|lightning|tempest/.test(name))return {effectKind:'lightning',color:'#a6caff'};
@@ -30,7 +39,7 @@ export class Game3DView {
     if(this.battleKey===key)return;
     const version=++this.version;
     const worldEntry=this.entry('worlds',`${world}-${chapterStage>10?2:1}`);
-    const places=[[-4.3,0,-2.5],[-2.5,0,-2.5],[-4.3,0,1.6],[-2.5,0,1.6]];
+    const places=battleFormation(heroes);
     const actors=heroes.map((hero,i)=>({key:`hero-${hero.id}`,entry:this.entry('heroes',hero.name),position:places[i],facing:Math.PI/2,defeated:hero.defeated}));
     actors.push({key:'enemy',entry:{...this.entry('enemies',enemy),worldTint:WORLD_TINTS[world],tintStrength:world==='Snow'?.85:.55,tintFloor:world==='Snow'?.5:.08},position:[3,0,0],facing:-Math.PI/2,defeated:enemyDefeated});
     await this.stage.setEnvironment(worldEntry);

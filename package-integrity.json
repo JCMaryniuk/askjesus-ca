@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-3D-Beta-2026-11-16",
+  "version": "Sarko-3D-Beta-2026-11-17",
   "files": [
     {
       "file": "assets-3d.json",
-      "bytes": 50008,
-      "sha256": "7501440ad18d00961cd1c41bfef2f55d5b724de17517aca8a09249360c3dcaa9"
+      "bytes": 53307,
+      "sha256": "82277bf970061add4520d9dddec575d4e34070dc59c6c72684cbe6a380369bb1"
     },
     {
       "file": "assets/Amaya-arena.jpg",
@@ -767,9 +767,19 @@
       "sha256": "1f4f3d48349c3d255df9a2c2d4f5b901f82c348f7f23ff164e6301d7d3854103"
     },
     {
+      "file": "assets/World-Earth-2.jpg",
+      "bytes": 791001,
+      "sha256": "211ce395085ab1d85a84d5410d157daf2670cda640675fb04ef77d30bd12d95e"
+    },
+    {
       "file": "assets/World-Earth.jpg",
       "bytes": 325406,
       "sha256": "e69ebcfa997507324a585d7e8be40445b3a14bf26774d84955cf5ed23920987e"
+    },
+    {
+      "file": "assets/World-Fire-2.jpg",
+      "bytes": 580124,
+      "sha256": "97954dc9eb00b4b55f66598937ebda8f383f514fe32b0d988dd1468dad5d48c3"
     },
     {
       "file": "assets/World-Fire.jpg",
@@ -777,9 +787,19 @@
       "sha256": "3379aa1a6f546914ab2e0e4296cde5a173858faf45422c9f93aa587b07655975"
     },
     {
+      "file": "assets/World-Light-2.jpg",
+      "bytes": 601875,
+      "sha256": "0d45b973ddbe86cb1af9c6e35188b8a96ba3bc7760e1d546f0cd98d6923e72d3"
+    },
+    {
       "file": "assets/World-Light.jpg",
       "bytes": 286009,
       "sha256": "20c0ef634a5572450f5581ae5f621ae526c05ef0325ded4a7381376239ee769e"
+    },
+    {
+      "file": "assets/World-Shadow-2.jpg",
+      "bytes": 631251,
+      "sha256": "442eae1a0af927c628d01e066723cb0393ff8ed287f9e726787f8ac87f545cbb"
     },
     {
       "file": "assets/World-Shadow.jpg",
@@ -787,14 +807,29 @@
       "sha256": "4433c31870a9d7b53a28c621a8416583cdcd1621aba1581ac27bc0b4a8420321"
     },
     {
+      "file": "assets/World-Snow-2.jpg",
+      "bytes": 617223,
+      "sha256": "8c00b3992b1883398635dc8a63dc1f9dc3c94dbaa064aac73e002ac354a10789"
+    },
+    {
       "file": "assets/World-Snow.jpg",
       "bytes": 300693,
       "sha256": "b78657aa47fb243edd200fb84a735ae5b280708d0cd7a2ef5ace0e4ebb3c7182"
     },
     {
+      "file": "assets/World-Thunder-2.jpg",
+      "bytes": 579970,
+      "sha256": "68d7ca9d0c25e41de5585f7740e92def90b075c77abcd6bef11637c24d30dc54"
+    },
+    {
       "file": "assets/World-Thunder.jpg",
       "bytes": 282359,
       "sha256": "33d64793c7947e2ae20f979e9d721f55ca645f54f9174efee4de0111da32a8fd"
+    },
+    {
+      "file": "assets/World-Water-2.jpg",
+      "bytes": 772254,
+      "sha256": "223298cd9e96a68107d5c23af5977e731ce2b030b174d8814046130627944322"
     },
     {
       "file": "assets/World-Water.jpg",
@@ -838,143 +873,148 @@
     },
     {
       "file": "assets/dialogue/0-0.mp3",
-      "bytes": 161375,
-      "sha256": "0e2225a3d8aec92b08dc892187fcb18582d6a1536a6fc3586790957bc46fba4c"
+      "bytes": 96173,
+      "sha256": "f28057cbb549a7d42a2c442f42e7637c51d3886f13e82477b4eddb66cb22486f"
     },
     {
       "file": "assets/dialogue/0-1.mp3",
-      "bytes": 212784,
-      "sha256": "1d973c4cd6c6e31f739a4c30bb3bff6fc89a6c0626b01d9f4d40611b48965777"
+      "bytes": 170570,
+      "sha256": "ade724858673a6360a19eec9eb876df86cabc19b20e043ce25bf435083760c75"
     },
     {
       "file": "assets/dialogue/0-2.mp3",
-      "bytes": 162629,
-      "sha256": "0429c47a60d5c42451706a71a2c8eb29f7831923c925497259ed648e85175286"
+      "bytes": 140059,
+      "sha256": "4a20862ad3a64877fefcfdc80bb7b77aab6733e7392c650d0789c26bff240044"
     },
     {
       "file": "assets/dialogue/0-3.mp3",
-      "bytes": 183109,
-      "sha256": "2f728aa951ec0f85ca1c82c243aebe71803024725488462f3d9b99f5ce97f0fe"
+      "bytes": 142985,
+      "sha256": "9fc43b9b4ca70e0865872efe34e6b6f4018f689a9567aaa7117af1daf12b0d56"
     },
     {
       "file": "assets/dialogue/1-0.mp3",
-      "bytes": 143403,
-      "sha256": "8ac7710e9b8a1ed91730e51f2477a0469de90303b5f5a75f0206d51b06b23d60"
+      "bytes": 81963,
+      "sha256": "55753d4b7bf3546b84c62acf901e0a365420cf5fc583a67dce58824dcb2b7ac7"
     },
     {
       "file": "assets/dialogue/1-1.mp3",
-      "bytes": 166808,
-      "sha256": "ffce1aaf2940938dde9e851bed06432d926f402ab52520309b269c15cbc870e7"
+      "bytes": 96591,
+      "sha256": "c12effd0a5b935fc64a74db0c30aecd1b25d564a6bcf874602af91e0b486b9f8"
     },
     {
       "file": "assets/dialogue/1-2.mp3",
-      "bytes": 140895,
-      "sha256": "4ab3e6c3862c8a9c652c18d979c2c1f00b57770d727da76fa07d9911244a4d63"
+      "bytes": 81963,
+      "sha256": "cfe8a141290f2bff7c3129503b762e441a9752957391a2d82d4dddf14578fbab"
     },
     {
       "file": "assets/dialogue/1-3.mp3",
-      "bytes": 125848,
-      "sha256": "20d44a4b05c303737d11d350f2653c6e5ec8eb76f1e9bd5bc5f56ce0bab83f7e"
+      "bytes": 64826,
+      "sha256": "1385b7eaaa2713a3ef06ada12830c57579a1345ce03eb075879aae7238d4fb4f"
     },
     {
       "file": "assets/dialogue/2-0.mp3",
-      "bytes": 166808,
-      "sha256": "632cedb4629d0816cdd6ff082a564b55ef0ff67d0266cf8e33d8f42fc2c47fec"
+      "bytes": 102025,
+      "sha256": "eb7a13b33c56b8663b1e3207340a1119c6ea2c701939a032917275b1c481abf4"
     },
     {
       "file": "assets/dialogue/2-1.mp3",
-      "bytes": 134625,
-      "sha256": "2f96322bc42e22965822c2a45494cca3d313a2114a2adfb444e70976c80949cd"
+      "bytes": 81127,
+      "sha256": "e6c578ee60fdb99347d7d1ba0b7e84bd9897dddbdffa5d8123cc1e13cff9fa79"
     },
     {
       "file": "assets/dialogue/2-2.mp3",
-      "bytes": 147582,
-      "sha256": "cf4e33df17dc32be2be781eb4cf0e6b15db01c17f3d5c40178e90646f14790b5"
+      "bytes": 95755,
+      "sha256": "d8d107e5c88a55f43aceda49ea79978acd398cc8c6b0ba5707b45f5a3e2c7744"
     },
     {
       "file": "assets/dialogue/2-3.mp3",
-      "bytes": 153852,
-      "sha256": "729177d6a8c533ea83439220f11b91606ab9ffb4936b1b9a229e2a981f4de5af"
+      "bytes": 82381,
+      "sha256": "e4deb689ee75a0dc26952cff1ab25144a18f3a85fcafb6eea7509761a4c4e78e"
     },
     {
       "file": "assets/dialogue/3-0.mp3",
-      "bytes": 171824,
-      "sha256": "72c6aee5d1a829d72340e2b195a14d2f9180e2fdf4bda808d2732bbc80c9029b"
+      "bytes": 129192,
+      "sha256": "3b660f78ac9ed1ac064a4583c4a539f6ae210abca4d9d45dba2d20f135358d9d"
     },
     {
       "file": "assets/dialogue/3-1.mp3",
-      "bytes": 132118,
-      "sha256": "2b5e069f47d69929040ff54f6f3a5eaa4936a588e440f776dd47866fe7f10323"
+      "bytes": 80709,
+      "sha256": "d8aa8b72bdc4a1a349579a39873f97b9a2a2a41dc127f3c4bed1f6b2a1790a47"
     },
     {
       "file": "assets/dialogue/3-2.mp3",
-      "bytes": 174332,
-      "sha256": "b3d0ffde174c7d6da53be4ebb8055ba336f5506df87f7638c927f9be6f454f0f"
+      "bytes": 105368,
+      "sha256": "6c02b1ba7f9b2ab600f4de79b6b81cf78ce3d09e45dd5f6e43bba5a0fd209efb"
     },
     {
       "file": "assets/dialogue/3-3.mp3",
-      "bytes": 134625,
-      "sha256": "ab2f5b0c5499babe9eb3828a579114fb544ef87c6d235fa506d143c5f772ec97"
+      "bytes": 70678,
+      "sha256": "8eed71c80f698a46e25e39d45abdc7b8412a9239e4ed632c541db74b7dac1ea3"
     },
     {
       "file": "assets/dialogue/4-0.mp3",
-      "bytes": 175585,
-      "sha256": "fad5f2da04080e50c1e18f667aa1e3d9673afd356b69fd18c91baa1a0aeb5f5c"
+      "bytes": 102443,
+      "sha256": "99c79d70e8ea61308091288c5852c4a45b82eee2f3991ffabb28734a3b51537c"
     },
     {
       "file": "assets/dialogue/4-1.mp3",
-      "bytes": 129610,
-      "sha256": "7207410eb88ac67fe0eea6bbe3b531b322a635bf7e98bf1547d3eb3b99aa0cd8"
+      "bytes": 66498,
+      "sha256": "25f4d04fe7fe7f81bae08a1ae448b324b25ad8801658bf92dbd8668b38036e70"
     },
     {
       "file": "assets/dialogue/4-2.mp3",
-      "bytes": 117907,
-      "sha256": "8c19d88d81f58081b997b3b448c79ba392b7cc7a5cf257a7c9dafa2d3c53fea0"
+      "bytes": 76947,
+      "sha256": "00a36c1161dbc041613e238244210b72b67f280399732b0c59bbeff42de171db"
     },
     {
       "file": "assets/dialogue/4-3.mp3",
-      "bytes": 146328,
-      "sha256": "05c89f0498cdd20603d633ee8382910f0c466797661d6b2c2d2dcbab80dbc6fb"
+      "bytes": 72767,
+      "sha256": "53f873305da1694c26c3e95c59dfd0dcb5079e07568b38231d8cdda98c66a995"
     },
     {
       "file": "assets/dialogue/5-0.mp3",
-      "bytes": 158867,
-      "sha256": "33e50cb1261fe683eaf952466c61267a0422e0315db6a2714359162df98ae657"
+      "bytes": 116235,
+      "sha256": "826460854f4926feb4a78ddfa665f30ae4b2afdec23ad7324ac881fd6f477dcb"
     },
     {
       "file": "assets/dialogue/5-1.mp3",
-      "bytes": 116653,
-      "sha256": "a124fb3aee5be324dfb0bca9b0efdb54d60f1da3669d7727fb5fa0fe7814b668"
+      "bytes": 69424,
+      "sha256": "552f5c587379a8e859c3840456378349c5f28ba407529ebff1d2cda1de3d02cb"
     },
     {
       "file": "assets/dialogue/5-2.mp3",
-      "bytes": 129610,
-      "sha256": "52884b70673db32786e954599653bd07112aecfc7388d5654b26791ea973968c"
+      "bytes": 56467,
+      "sha256": "a20a09b8ad24b7b1967de84f507a0c5817374dbb00326e9aa9b7fe0abf0d3f52"
     },
     {
       "file": "assets/dialogue/5-3.mp3",
-      "bytes": 86142,
-      "sha256": "bf1fa8e7226decff43c57064b2fb5377f7e504e4b62b14989ad5be144f9ee919"
+      "bytes": 43510,
+      "sha256": "fa313946e63ca97e781017b2d259567f5c67d16a7803e039831b5cb32facb74c"
     },
     {
       "file": "assets/dialogue/6-0.mp3",
-      "bytes": 138387,
-      "sha256": "700ae6d2019e67be7732f9887a6c1108ff086c981df3d6a10034a0b7f80d72c9"
+      "bytes": 86142,
+      "sha256": "a4c9a8ef701fda1bcf78063b198fe84edcaccff6afc62d8dad79a98b79d56b45"
     },
     {
       "file": "assets/dialogue/6-1.mp3",
-      "bytes": 110384,
-      "sha256": "549da461dcd40cca35e9cd4b01bdf948067b777915f921baf86cc2cc5704a2fc"
+      "bytes": 71096,
+      "sha256": "7fc3c64f26ab6bd80cbb955d76b46f931ba7ed11ad41badfe5b04ecab05968d8"
     },
     {
       "file": "assets/dialogue/6-2.mp3",
-      "bytes": 150090,
-      "sha256": "fc2342c8814bdb5e147180249c960454361f32cf912593e92d12b221a0a3f727"
+      "bytes": 98681,
+      "sha256": "b36cf8bef0252f402936a5218d1ffef1c4b4bf3fff4d679af3096b6d82ce0bd6"
     },
     {
       "file": "assets/dialogue/6-3.mp3",
-      "bytes": 148836,
-      "sha256": "373b09dc6587ebe81d429db40dc6cc63462b95584784a57ca6c1dff64455cb67"
+      "bytes": 116235,
+      "sha256": "bf8e804df3b80293c616b271963e1046bfc6de073da6a068d9a32c0589150fa5"
+    },
+    {
+      "file": "assets/dialogue/voice-cast.json",
+      "bytes": 10939,
+      "sha256": "84b395a5d1dfd22a3f2d98511d195e175b70cd60e511742a7199abaea83bb422"
     },
     {
       "file": "assets/fruits/Faithfulness.glb",
@@ -1225,6 +1265,926 @@
       "file": "assets/motions/Waiz-reactions.json",
       "bytes": 2433745,
       "sha256": "3f4622e4b517a845dbe00f6426a331ec369f17dca6d40e94a09634dd3bc9fab1"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Earth.jpg",
+      "bytes": 176097,
+      "sha256": "e149b93ecc646bb960b32c54acb4c3eb07c899c7530deb875d0e5e49ad2727e9"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Fire.jpg",
+      "bytes": 158943,
+      "sha256": "a30d4623525f695112c5ed9fb9b58174579599c4df13ff5c35d2bca3858bd333"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Light.jpg",
+      "bytes": 157579,
+      "sha256": "12d14bfbb9a583cdd04970e6d1985873d1b747b76c2f7d1c950ca0ac775d4c09"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Shadow.jpg",
+      "bytes": 141742,
+      "sha256": "65b26b174fb3cc7e4f6b1218d1c1a11e39530eeb8aed7b4ec5c52a6b66729bbd"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Snow.jpg",
+      "bytes": 162239,
+      "sha256": "1777a9df28228dbaa4959fef501cbeef3f760aec983d00bd371ff3096af41c7b"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Thunder.jpg",
+      "bytes": 155926,
+      "sha256": "64feed1ebb1f3e8f4f5a19022a6930ae7c5b9564fc7bc47de94087a6567e46c6"
+    },
+    {
+      "file": "assets/portraits/Ashhorn-Inferno-Water.jpg",
+      "bytes": 178196,
+      "sha256": "6847d162d00f219591883224d6980165b0f14ee335d7538a2a731a1135715654"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Earth.jpg",
+      "bytes": 175972,
+      "sha256": "040cbad25e5d2957c99ce7c5c50b6a9b6f2c6ce83830cad5db0895c45022ae5e"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Fire.jpg",
+      "bytes": 159078,
+      "sha256": "a659a25af65841a3c410896041c141f2063bbccfd20f99143e430f0c3f70322e"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Light.jpg",
+      "bytes": 157466,
+      "sha256": "4f7494725066ca72a4cbd28ce354494d5c78b00c435e9552ade4ead190155b7d"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Shadow.jpg",
+      "bytes": 141705,
+      "sha256": "c4d55b4f3d26c07041dede0897046b8af85294b72d4ef6f6784fb3c07cef611e"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Snow.jpg",
+      "bytes": 162117,
+      "sha256": "2842fd3346ae53ee8170685a4bab35805259755066f929e0687d2ba5f2978c8d"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Thunder.jpg",
+      "bytes": 155888,
+      "sha256": "51a44139bfde9793539a6c57ad710ff0a2afa085a72d1d017298f26ca7894f4d"
+    },
+    {
+      "file": "assets/portraits/AshhornStag-Water.jpg",
+      "bytes": 178304,
+      "sha256": "de5fc610fcf24e87bf024c44080b86a38675a127ca248f0324a78cca2a106a97"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Earth.jpg",
+      "bytes": 170531,
+      "sha256": "9736b525b2a23c5af8f12d87c4416c793eb65ba672e4531d4940ad568f68c677"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Fire.jpg",
+      "bytes": 153991,
+      "sha256": "383030555b79eacfb06a0332496d48cff6b34d6cf387f3d7dc47cd64a874c02d"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Light.jpg",
+      "bytes": 154505,
+      "sha256": "560f56624aceb9b8ecf96264bfd24ce7dd86e7aed8198983a94e0966b9f5ce0b"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Shadow.jpg",
+      "bytes": 138375,
+      "sha256": "56907f59ffcf6027baaa1e90d0d5ffd3cca877d0a14c010b36707affa7751bb0"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Snow.jpg",
+      "bytes": 159172,
+      "sha256": "4118c2d4100e6f58e284e2d3ed4a69fb900579b4fb33e449188279327d65527c"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Thunder.jpg",
+      "bytes": 152366,
+      "sha256": "9e1e92d48d6e059e3b628d17c0d9dc095a39f310f1e686d2066b1587c23019e6"
+    },
+    {
+      "file": "assets/portraits/BriarClawBear-Water.jpg",
+      "bytes": 172663,
+      "sha256": "81e97de095bab28ac94a8279f6e068217704ddf080f131d4c453386d5404e0e5"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Earth.jpg",
+      "bytes": 177696,
+      "sha256": "8018c95a8b17defb1ebe7a72423c230a912398a866226706568b1acc1352f73b"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Fire.jpg",
+      "bytes": 162531,
+      "sha256": "32025f3f84856c9c4a147952ff9c262f73f5385c2c7153ab5e2a082c0ed2cfab"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Light.jpg",
+      "bytes": 161865,
+      "sha256": "fa9c89766077e8ece49a70436ddf4cb26de60832631fed0f09b962e5ba2bca9e"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Shadow.jpg",
+      "bytes": 145462,
+      "sha256": "9865993b3fd39636402d533bec6374d4e9fff6c0714ce484be6234bffa1923d9"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Snow.jpg",
+      "bytes": 164852,
+      "sha256": "2297b66dfe89034dfddcf8177dc7744b08390143991bd56c39b1bca252667bfa"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Thunder.jpg",
+      "bytes": 158796,
+      "sha256": "1f6f377cbe8fa86a8c20d760f1b869f6dc26fe0f66b6e0eb16c305e73b34a5c6"
+    },
+    {
+      "file": "assets/portraits/BrightCap-Water.jpg",
+      "bytes": 179698,
+      "sha256": "c4dfa0b702e20b5b926c103ff143b49d15c57bf90e5b1b8ac08918f005aeb648"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Earth.jpg",
+      "bytes": 170490,
+      "sha256": "4ab6941d0fa4885983861bc9dd3718a0b82b4a229928e50b321ba523057a5524"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Fire.jpg",
+      "bytes": 154063,
+      "sha256": "1ca07475192d4773e6fd3b67bddca91f97f0ef3915bda5d23ba56cd6cf363d4f"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Light.jpg",
+      "bytes": 154448,
+      "sha256": "81f3ab1a0a7be6b5c4f864cad1f673ec8897740ba580e2e14245771248b60827"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Shadow.jpg",
+      "bytes": 138292,
+      "sha256": "36a00fede2aab3b5bb49644445e7bf37067d7632a798f688916a4e7d02c3e850"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Snow.jpg",
+      "bytes": 159098,
+      "sha256": "ad4c3983349cca6bf22e8bd5dbb7cbc01c110240aa587694259c4081a5edd31c"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Thunder.jpg",
+      "bytes": 152419,
+      "sha256": "ac52751dbbe8f1d687fc9c6bbb9759bcc41371ec6d68a27970b460c190b0b6b6"
+    },
+    {
+      "file": "assets/portraits/Cinder-Crown-Water.jpg",
+      "bytes": 172702,
+      "sha256": "6b37b4612294247a2d35fd956b3bae206e2c6cbfcf830ab3936cffed904cc1b1"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Earth.jpg",
+      "bytes": 162961,
+      "sha256": "bee726dfea827890b74954c9845fb27e829eefdbb39ac830f09b8b3bdb50f533"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Fire.jpg",
+      "bytes": 147208,
+      "sha256": "eb1581df176685874d77cad170ecb24d3704f99e73e7a0450da254383d3ceb53"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Light.jpg",
+      "bytes": 145103,
+      "sha256": "6aca1170321ea036ea0ecbe4c2cf79e2ab6d77243b650693ecbd185a391e66ae"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Shadow.jpg",
+      "bytes": 131094,
+      "sha256": "f6327efc457439de7d0a9dfafd5c8cb96d5d8c1dfc099c2fcf50de17b1a5886e"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Snow.jpg",
+      "bytes": 155482,
+      "sha256": "ee1dfc4e4abc3c4bcb6bfd1ac84492de34092ffd21eab6bc690f91a15b111766"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Thunder.jpg",
+      "bytes": 144489,
+      "sha256": "f056522d362925fa618281975bf5eacae51c27b0911939c12441cad5daaf529d"
+    },
+    {
+      "file": "assets/portraits/Corrupted-Wolf-Water.jpg",
+      "bytes": 166044,
+      "sha256": "97d8aa44d5a2e5ce6701b35559774105decc674c2b86833d5ee0e8f77faa2172"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Earth.jpg",
+      "bytes": 162961,
+      "sha256": "bee726dfea827890b74954c9845fb27e829eefdbb39ac830f09b8b3bdb50f533"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Fire.jpg",
+      "bytes": 147208,
+      "sha256": "eb1581df176685874d77cad170ecb24d3704f99e73e7a0450da254383d3ceb53"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Light.jpg",
+      "bytes": 145103,
+      "sha256": "6aca1170321ea036ea0ecbe4c2cf79e2ab6d77243b650693ecbd185a391e66ae"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Shadow.jpg",
+      "bytes": 131094,
+      "sha256": "f6327efc457439de7d0a9dfafd5c8cb96d5d8c1dfc099c2fcf50de17b1a5886e"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Snow.jpg",
+      "bytes": 155482,
+      "sha256": "ee1dfc4e4abc3c4bcb6bfd1ac84492de34092ffd21eab6bc690f91a15b111766"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Thunder.jpg",
+      "bytes": 144489,
+      "sha256": "f056522d362925fa618281975bf5eacae51c27b0911939c12441cad5daaf529d"
+    },
+    {
+      "file": "assets/portraits/CorruptedWolf-Water.jpg",
+      "bytes": 166044,
+      "sha256": "97d8aa44d5a2e5ce6701b35559774105decc674c2b86833d5ee0e8f77faa2172"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Earth.jpg",
+      "bytes": 178723,
+      "sha256": "d6f215ba5446242a10fddf96cac48ed9269828eb3a97fb2db3e5a41456b20cb2"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Fire.jpg",
+      "bytes": 163289,
+      "sha256": "aa31272ae0356edb20c1b525510d69df0d5821b73c6412726898a2226b5d92c0"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Light.jpg",
+      "bytes": 161372,
+      "sha256": "ee0191c7eef0005b80a38b56c092a7ff2d92e883f12925a5592ff24053998c58"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Shadow.jpg",
+      "bytes": 144703,
+      "sha256": "f4c1c1ca673d54f1eb3689daac00eb1c0f15f9478af77849d992ecf593ed6707"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Snow.jpg",
+      "bytes": 161190,
+      "sha256": "a8531f1e4fcb47fb4dcae1dc5a7dbf0cd25456cdfe2c7af4500001f9a00d5c62"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Thunder.jpg",
+      "bytes": 158158,
+      "sha256": "426db6ce0e6ed26a35fb11a8017863ca28b7f5744aad04daa10f7409a6aca4fc"
+    },
+    {
+      "file": "assets/portraits/CrystalBackTortoise-Water.jpg",
+      "bytes": 179535,
+      "sha256": "64719d7579911242c1ed5296b5c242bd148393af3fd08321aa5034b0f5619934"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Earth.jpg",
+      "bytes": 178894,
+      "sha256": "49b9074a45e9229297fda90be116f11fc3a8c2b4c41940e0b4d7cd1253df0091"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Fire.jpg",
+      "bytes": 163188,
+      "sha256": "7894a3a317bc903ebe510e2c77c09e7c73b3e3bcb32292a8f401bb4af933aec8"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Light.jpg",
+      "bytes": 160034,
+      "sha256": "e3e934459ffe5206ce485868516d52b28b1e4fc5dff6b6e558f48f3fb43c36bd"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Shadow.jpg",
+      "bytes": 145189,
+      "sha256": "f4f4c2b515674d35eae022b93d18a328c08b7e26c76fb126026f8dddd55f816c"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Snow.jpg",
+      "bytes": 163858,
+      "sha256": "857ad6a0ca3ab46b2a2e3b8030ffadedb0d22f24d830254c75b0bcbef564e0f4"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Thunder.jpg",
+      "bytes": 159406,
+      "sha256": "7c1a27eaffbd5162e0ff2b98473147bccb74d7c44badb289f7fccf79637d846d"
+    },
+    {
+      "file": "assets/portraits/Dawn-Guardian-Water.jpg",
+      "bytes": 181344,
+      "sha256": "a083016137a01bcc74cfa54426804499f5550fb21b4074201d4a6314096db972"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Earth.jpg",
+      "bytes": 170306,
+      "sha256": "6c7943f4cfb30d9728db5b2ccd84f5cc163df7a80b0b190ec864eb5ea68bd65a"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Fire.jpg",
+      "bytes": 154351,
+      "sha256": "61c4781c991b6aa9e9adb79cffb56b3bb00b9c4764bbfc8943f937edc2b1cd84"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Light.jpg",
+      "bytes": 150347,
+      "sha256": "3978b78d9804c44b429e359d5b6054356a7567fc426221b4c774e08766ed35a7"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Shadow.jpg",
+      "bytes": 134445,
+      "sha256": "73482c3131bc7071750ecabf9ab39c118b495b7394e0861232c94f68e36fa892"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Snow.jpg",
+      "bytes": 161136,
+      "sha256": "72d7f9a052547d96e7ce61c8608dfdc47de4f07a697f1fc01135f3264be53113"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Thunder.jpg",
+      "bytes": 150092,
+      "sha256": "34b7cdb519f8a140bf7a44a60327d5e11e969f42031703c840ca3f8c51432c65"
+    },
+    {
+      "file": "assets/portraits/DreadwingVulture-Water.jpg",
+      "bytes": 173276,
+      "sha256": "e16139a3504d3099da759d1486b2abb73558f050efcb0cd695752b09a0da3b3f"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Earth.jpg",
+      "bytes": 165983,
+      "sha256": "a1ddf08760127014b3664d5a69a9851a809b17400746b3c2e474d26276d9185b"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Fire.jpg",
+      "bytes": 150567,
+      "sha256": "cbc54a7fcc0ea62de88a58b71b2ec904515f997081556f93a6e57a18ec4a8a1d"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Light.jpg",
+      "bytes": 147563,
+      "sha256": "b2e8e59083bbc8a8783214a769eacc639a26ad46dac373aa2fbe9ad9257437dc"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Shadow.jpg",
+      "bytes": 134087,
+      "sha256": "624a8c72f52ee6b1d0a0fff2568126165469d9b256458628adb8aa7d4b94ece9"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Snow.jpg",
+      "bytes": 153341,
+      "sha256": "97039474919526ba94e1730b0ffb1b512d6426a030d250875f273a54649f6008"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Thunder.jpg",
+      "bytes": 147347,
+      "sha256": "e626e39de1efc1cbbb2ae8c6e3deca43486993c324af54eb27ef06747039e77c"
+    },
+    {
+      "file": "assets/portraits/Floodfang-Water.jpg",
+      "bytes": 167821,
+      "sha256": "bc73b9ef374cc3fd0f7af486926582af1fe5c012f2d00b99da63e9d31a802a00"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Earth.jpg",
+      "bytes": 182111,
+      "sha256": "e29bbe47bfea57cbfe0f4a8a9466e3914a5fc78fe1c5133c86367ac7579e5fef"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Fire.jpg",
+      "bytes": 169079,
+      "sha256": "fa10857ed9c1d655b9f2b19d053415233495cfa51f7e6e4a9b2d2f4b1c4d5987"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Light.jpg",
+      "bytes": 169160,
+      "sha256": "6e0f3b400cde3683307205b1bb83ffeebe65da755817fac152bffbd0d1037bea"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Shadow.jpg",
+      "bytes": 152834,
+      "sha256": "ae3ee610982d64a280a3577d27e63624796a68d2a878ddd61ca884da912aa398"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Snow.jpg",
+      "bytes": 162497,
+      "sha256": "e9a0d06221c65ee5b3f0d1b88b38465b8b0d5d29b5eeea380a51b0449769fe18"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Thunder.jpg",
+      "bytes": 167178,
+      "sha256": "c95082e2b322429a1531de94b44b90d0ef3548f9331cc9cbff9b79bdedf00a6e"
+    },
+    {
+      "file": "assets/portraits/Frostveil-Warden-Water.jpg",
+      "bytes": 184931,
+      "sha256": "f89cdf5d4f065632f4e6daace0e7beaeaa3df6d37a325744202758f67284e8cf"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Earth.jpg",
+      "bytes": 179736,
+      "sha256": "eeb7c3c1746d8704268407ca852a283632bdce532ea5e3206b8f3a0af69b38b5"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Fire.jpg",
+      "bytes": 162065,
+      "sha256": "9796bdd1b8074c4a5ed88e8c8f11192dc8c6df2e01b95c41031c0f40eeba6a03"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Light.jpg",
+      "bytes": 160147,
+      "sha256": "09736ac8ad82cee9676dc8dc894060246cdad17b9799428f475c9ff7bb9e9fc4"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Shadow.jpg",
+      "bytes": 142880,
+      "sha256": "9e727f04f7741e090b87956c0e96fbb7843c39c3653839bf15ec2c5fefdc0482"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Snow.jpg",
+      "bytes": 166203,
+      "sha256": "36309bdf27a3f140612e28e75b18e0855626a2c7ab70b39201c350477e587a73"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Thunder.jpg",
+      "bytes": 156792,
+      "sha256": "ea5bd549e439f7033f7e05f834faddd98d84fc1c47c2d12123e4c9c1582cf3fd"
+    },
+    {
+      "file": "assets/portraits/HollowWretch-Water.jpg",
+      "bytes": 180821,
+      "sha256": "fb3a8da5005bf4ff97a355be1d773727f8688b466b936f777f2a4d82146da5b5"
+    },
+    {
+      "file": "assets/portraits/Icewing-Earth.jpg",
+      "bytes": 170305,
+      "sha256": "3beabd5dd7361a02056a8723afc8cbf82fa1014be0d902d23a84e12e50893c63"
+    },
+    {
+      "file": "assets/portraits/Icewing-Fire.jpg",
+      "bytes": 154375,
+      "sha256": "0732853641ebea9b83c296cb838aa7723db91824c61c49ad1e4929c5bcd606d8"
+    },
+    {
+      "file": "assets/portraits/Icewing-Light.jpg",
+      "bytes": 150326,
+      "sha256": "8adcd910567e35b8e328271be3494b55653e04f38af86c9dc68dd3985372f44e"
+    },
+    {
+      "file": "assets/portraits/Icewing-Shadow.jpg",
+      "bytes": 134375,
+      "sha256": "cd9986ab32c9b97f67637a44896a3c91278d41a0c7ecc7a5c73ba0c6ad85c744"
+    },
+    {
+      "file": "assets/portraits/Icewing-Snow.jpg",
+      "bytes": 161154,
+      "sha256": "cfe2712753ff07c5fec6317cbf535790d709181ad85352791f4fef2db5a21815"
+    },
+    {
+      "file": "assets/portraits/Icewing-Thunder.jpg",
+      "bytes": 150072,
+      "sha256": "075dc45b2cf699f371895f64a8b37d399bd2ae0ca319ba563df7d3f482749c70"
+    },
+    {
+      "file": "assets/portraits/Icewing-Water.jpg",
+      "bytes": 173215,
+      "sha256": "3c30783de50d13a56ec65cc1cf607e413eabaeaf8fe23104944f39e9eb011877"
+    },
+    {
+      "file": "assets/portraits/Malachar-Earth.jpg",
+      "bytes": 178244,
+      "sha256": "fd5715c24b438f126f12a437fbc86fc273176a981a1de17f496e12fff8b95d88"
+    },
+    {
+      "file": "assets/portraits/Malachar-Fire.jpg",
+      "bytes": 167053,
+      "sha256": "3852fbe86f2ddc568d8bd1fc604653feb03d4a5dc16e794fb89d135d917340f7"
+    },
+    {
+      "file": "assets/portraits/Malachar-Light.jpg",
+      "bytes": 169221,
+      "sha256": "4ce66e1edff371668863235de01106ce43c2de7f62f5f3e069eddb36e9470bc2"
+    },
+    {
+      "file": "assets/portraits/Malachar-Shadow.jpg",
+      "bytes": 150732,
+      "sha256": "45ee78a3edcee5f7a93cc11799a5aa4325c44698ead5184cbd9adcad68b70795"
+    },
+    {
+      "file": "assets/portraits/Malachar-Snow.jpg",
+      "bytes": 175033,
+      "sha256": "c9ad85814fb47ede92540afd025baba5139ff490eed44c3dac337e7a8e65e29b"
+    },
+    {
+      "file": "assets/portraits/Malachar-Thunder.jpg",
+      "bytes": 163338,
+      "sha256": "b7eb5909ac777164faee0ba1bfa28b0bdfdf844121c656679006b6bfabe1f184"
+    },
+    {
+      "file": "assets/portraits/Malachar-Water.jpg",
+      "bytes": 179146,
+      "sha256": "4f64bba3b449b337c2d3d20fa69fd2da0389e4ec8d25a962ac4ecb2373bf97ca"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Earth.jpg",
+      "bytes": 189002,
+      "sha256": "39f8058e130740943c45012765bd2f200b8216d7f7cef57b92833003eb5d22d3"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Fire.jpg",
+      "bytes": 174567,
+      "sha256": "6b5f981ae707a32523e2356fef34f34b051287a1190cff0fd38c954dbae22011"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Light.jpg",
+      "bytes": 176890,
+      "sha256": "a83f437754c184c4d11c054c81be5aa22afd142e88e527b579cc587fe151d0be"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Shadow.jpg",
+      "bytes": 159836,
+      "sha256": "58947cf4ded4a029133444721f95fdbe1da4aaa8e801bb42d3c5ca61868efe6e"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Snow.jpg",
+      "bytes": 176610,
+      "sha256": "15f96d8f190a83789b0e4ff6373ab38ea674f4e08eaf0b4b1f1b79540fcaf384"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Thunder.jpg",
+      "bytes": 173389,
+      "sha256": "020b237cc1a085aa4fa370f7532a06482163cb3f5fae202057274d9a43322dd5"
+    },
+    {
+      "file": "assets/portraits/Rex-Draconum-Water.jpg",
+      "bytes": 192761,
+      "sha256": "c57b399a1fa8562f96be2a9bd6976c0ed775764a4769e9dcbf0ecb7f1785aa23"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Earth.jpg",
+      "bytes": 170360,
+      "sha256": "6ca5842f502640af9d097c25d5f79e45ef4ab25971a360212d04cac4f8b7d0c4"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Fire.jpg",
+      "bytes": 155983,
+      "sha256": "e822ff48bbeccc67fdaf287b7f8771d235fd2457364b7326d80b64ecf3bcf8f3"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Light.jpg",
+      "bytes": 157172,
+      "sha256": "efd3c4b6d0555aeeaf019a593ed76e656cd9050da047002e92b84597d96a9437"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Shadow.jpg",
+      "bytes": 140524,
+      "sha256": "5d640c0ae304b2bda0f92b3ac7e51860cf7d8841ba8fab915a3cd9080debe198"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Snow.jpg",
+      "bytes": 156809,
+      "sha256": "67d9c33d22b527a959be4e680f974879daca40931169038353054cc5d09b927a"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Thunder.jpg",
+      "bytes": 154308,
+      "sha256": "add7c85e6b2da4a443aeb5685095b87bd7535b2f81c049b1c652b90297bc314f"
+    },
+    {
+      "file": "assets/portraits/Rockshade-Water.jpg",
+      "bytes": 171646,
+      "sha256": "11d580d081fb8d3c27110832ee012ca9edbc7e5d58d3b6e2341b7af27aea5348"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Earth.jpg",
+      "bytes": 172029,
+      "sha256": "3307f67f6aaddfd913d519fe8cfad4f3fe150bd6da11f2144e18f0117bcda6f4"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Fire.jpg",
+      "bytes": 154792,
+      "sha256": "ce5c877a6129f3526eae7dbdb3f6d9297aaece1df883bc96b94734e19c0cb81a"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Light.jpg",
+      "bytes": 153222,
+      "sha256": "4a8a7ec69f71057c25a085ac21b3b7328a26fb6d448d65eba283ac922eb33099"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Shadow.jpg",
+      "bytes": 137643,
+      "sha256": "13d8282d6a189ba6f1679b357bead690888248c409824b768c709b80ebc74eab"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Snow.jpg",
+      "bytes": 161955,
+      "sha256": "91fe7ecd873e23160dbf29adb816597394bd9abfe631bf75f19c09371e22a5b5"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Thunder.jpg",
+      "bytes": 151156,
+      "sha256": "4032038d421084b7627af9d1e163e3b2075c870086a8cf49b0b6d44dcdb70bfd"
+    },
+    {
+      "file": "assets/portraits/Shadowthorn-Water.jpg",
+      "bytes": 174192,
+      "sha256": "e2f4bc3b4f7401dccc825daae44e65cb01f82c4782539df76d2e79828617f874"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Earth.jpg",
+      "bytes": 185703,
+      "sha256": "8f210669d256b1a469938e9c4830dcb8cc25c948c270c033d5ae0ca121a8f3ee"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Fire.jpg",
+      "bytes": 171923,
+      "sha256": "0a825910eac2ff2aff8cdcd42c8918d6a3d0a12a0d5825cedcfd2cb810c107c8"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Light.jpg",
+      "bytes": 175170,
+      "sha256": "90328c9c427c818af6223664211313ec131bb816ff26d3ac169b82e64219a67e"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Shadow.jpg",
+      "bytes": 157104,
+      "sha256": "7eab248c47a69d7a32ac8a633ac4fe8b6fb8956b0258dee617f7a24b112f3831"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Snow.jpg",
+      "bytes": 169947,
+      "sha256": "807e6f8367276d30e36cb8b62ca151ad3d6c44d186bc1506fca7c98c23b9af33"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Thunder.jpg",
+      "bytes": 170163,
+      "sha256": "fdd9efffc4edc090dc4a34ccd29768569026459c80a601af20afac32115e4948"
+    },
+    {
+      "file": "assets/portraits/Stoneheart-Warden-Water.jpg",
+      "bytes": 187721,
+      "sha256": "4503525ba383cfbd5d9be910e51e4e1f6283ed55c10624f23d137d629760a45f"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Earth.jpg",
+      "bytes": 177577,
+      "sha256": "b893a46cd1f65bb3ff764a4448e6706cbc10181ef1ea20630d9dc57c97b75771"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Fire.jpg",
+      "bytes": 162921,
+      "sha256": "b13838fecd10154206108b4ee2ba65357fc1d85f09e62154f0c5b365dff45bf4"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Light.jpg",
+      "bytes": 160590,
+      "sha256": "3465c61f3e0f8263c49b3c309df981a99421d2d65eb25be2da58373724bdacb5"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Shadow.jpg",
+      "bytes": 145264,
+      "sha256": "22126a42c2494952ea9055dc4a252a5889781bdce19e2235849c55611a1a6071"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Snow.jpg",
+      "bytes": 157605,
+      "sha256": "5d7b55a9a6d76634e0b0f2ceb0074fd693c884688a0d35f64180e4fdcf70e06f"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Thunder.jpg",
+      "bytes": 158737,
+      "sha256": "67681bb205d0aa54ae631bc23bf5f67b327e7358ec4927ee98c93f33e29d0929"
+    },
+    {
+      "file": "assets/portraits/StonehideRhino-Water.jpg",
+      "bytes": 179381,
+      "sha256": "b89d630659f975ef16834287a977868e4d40dbf15f732db541af1050566cb22d"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Earth.jpg",
+      "bytes": 170305,
+      "sha256": "3beabd5dd7361a02056a8723afc8cbf82fa1014be0d902d23a84e12e50893c63"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Fire.jpg",
+      "bytes": 154375,
+      "sha256": "0732853641ebea9b83c296cb838aa7723db91824c61c49ad1e4929c5bcd606d8"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Light.jpg",
+      "bytes": 150326,
+      "sha256": "8adcd910567e35b8e328271be3494b55653e04f38af86c9dc68dd3985372f44e"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Shadow.jpg",
+      "bytes": 134375,
+      "sha256": "cd9986ab32c9b97f67637a44896a3c91278d41a0c7ecc7a5c73ba0c6ad85c744"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Snow.jpg",
+      "bytes": 161154,
+      "sha256": "cfe2712753ff07c5fec6317cbf535790d709181ad85352791f4fef2db5a21815"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Thunder.jpg",
+      "bytes": 150072,
+      "sha256": "075dc45b2cf699f371895f64a8b37d399bd2ae0ca319ba563df7d3f482749c70"
+    },
+    {
+      "file": "assets/portraits/Stormwing-Herald-Water.jpg",
+      "bytes": 173215,
+      "sha256": "3c30783de50d13a56ec65cc1cf607e413eabaeaf8fe23104944f39e9eb011877"
+    },
+    {
+      "file": "assets/portraits/Thornback-Earth.jpg",
+      "bytes": 165933,
+      "sha256": "ba3ca2f97de21fe9d1138f58105390193240aca408350608c2c76949fb8a777b"
+    },
+    {
+      "file": "assets/portraits/Thornback-Fire.jpg",
+      "bytes": 150509,
+      "sha256": "ace9f68f44821ab17eafdae22100413fb35cf9879e3ba32eb7f055374c443c24"
+    },
+    {
+      "file": "assets/portraits/Thornback-Light.jpg",
+      "bytes": 147533,
+      "sha256": "14477e2fda4084dbf9aaa76a9759577612ac982ed204f861d851cb25d4c5b945"
+    },
+    {
+      "file": "assets/portraits/Thornback-Shadow.jpg",
+      "bytes": 134146,
+      "sha256": "22b839e54f3274f14a67b0d09a5d8efa9129655877cd169ca38b7f41a5b316e3"
+    },
+    {
+      "file": "assets/portraits/Thornback-Snow.jpg",
+      "bytes": 153147,
+      "sha256": "9c5c2702a4d269fac4810d0bf7025d70dd5e24832a85d40ea7d1b8e40813b74d"
+    },
+    {
+      "file": "assets/portraits/Thornback-Thunder.jpg",
+      "bytes": 147320,
+      "sha256": "01f36c4c215a384f4f6cee92f97be61f33cb04d51386823e979145d0c4912e8a"
+    },
+    {
+      "file": "assets/portraits/Thornback-Water.jpg",
+      "bytes": 167804,
+      "sha256": "75caa5a0e91fd1d5d947bdb2e336fe3ffd90db3b0009b613a62e4bb5c948e737"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Earth.jpg",
+      "bytes": 173542,
+      "sha256": "f1d2e00272a7cae06a39b109745d017d090b5a0c811bfe48d4668268f48c6101"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Fire.jpg",
+      "bytes": 158371,
+      "sha256": "6b28aef8e9a27f63526af7ce945b420fd74486f50ef7595aad8741ad7f9c2663"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Light.jpg",
+      "bytes": 160872,
+      "sha256": "3b50def9e34756046a346e1ec4f3134d3a1cea75f7f3e1966eb3b14702da0299"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Shadow.jpg",
+      "bytes": 144452,
+      "sha256": "c4dd2fe9389355384189b7d5d50519c2a40689c774c8b3db44d7cc64cba15eef"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Snow.jpg",
+      "bytes": 157197,
+      "sha256": "fb73409d70585a0873ad1cdd70f921d6c0d372e8aab8dbb24eb264bd98a709c5"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Thunder.jpg",
+      "bytes": 158510,
+      "sha256": "f5b17296b170cad684c77840535f0d85e2a1334a628209132a6339a321bcc478"
+    },
+    {
+      "file": "assets/portraits/Thunderstone-Colossus-Water.jpg",
+      "bytes": 177521,
+      "sha256": "e1baf76757be161415f79f6e1aab0e47f8238184c35cb5b83ad0be1b8ebc44ca"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Earth.jpg",
+      "bytes": 180670,
+      "sha256": "be21f4af646b42fa8386c505528e2d8f5d093e093fc3d12edf0aac8e2cdb4f1f"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Fire.jpg",
+      "bytes": 167453,
+      "sha256": "63bd27af2d8b764e156b90235882c5797d3d8584017f1419c8cc382226ae80d5"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Light.jpg",
+      "bytes": 167853,
+      "sha256": "a173b479e801fbfb806f847233535de30054e71889dbeed3382eac58b1f16830"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Shadow.jpg",
+      "bytes": 149870,
+      "sha256": "2fc263054a547a83511fa778c6bb70807468848b1d9ae96fa15106a5bcc1bd5a"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Snow.jpg",
+      "bytes": 164355,
+      "sha256": "67cdc07bf69fff0c2066aab8143685297b750448a8848be6a5cdd006e0566977"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Thunder.jpg",
+      "bytes": 164612,
+      "sha256": "ba0121e066413b5de71cc43a176cc28a6d5b4e194a5e72d00dd4afab422bf0c7"
+    },
+    {
+      "file": "assets/portraits/Tidebound-Oracle-Water.jpg",
+      "bytes": 182920,
+      "sha256": "bea73ad9bc6f9467badfe36db3de8c73d5fb8dba38badf6bded871c0fe6b10b7"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Earth.jpg",
+      "bytes": 185763,
+      "sha256": "702adc6941f5fe48381364c44efcff935fe69e500371ed3f1ecfcd591c654b2b"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Fire.jpg",
+      "bytes": 169790,
+      "sha256": "1801429386d962d36fb2f760e82f1496174aee58ba17e84ae4ab653f365171f2"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Light.jpg",
+      "bytes": 169080,
+      "sha256": "f665e3edec1a99ec78e5d63936ff9766d33c3a31d7f20278bd8c21d64d91aed8"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Shadow.jpg",
+      "bytes": 152107,
+      "sha256": "5114231f6ae13822fe716b1e9961e914229d41821125d3c3b8be86ddfc2b1bf9"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Snow.jpg",
+      "bytes": 167900,
+      "sha256": "7b09bf0c8f2a7229f1d56d7eed0b63f9930b02e4575719c03c5a02d717092869"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Thunder.jpg",
+      "bytes": 164862,
+      "sha256": "292b78b8abc0ad705ea2c832fc595a9f6e0fcde1ead82ad069c3c58604f31382"
+    },
+    {
+      "file": "assets/portraits/VineboundGuardian-Water.jpg",
+      "bytes": 187380,
+      "sha256": "a5cec606864b0120ae79de782b987aeec9a3d2877caf67ded538437cdfedf62f"
+    },
+    {
+      "file": "assets/portraits/hero-Amaya.jpg",
+      "bytes": 181128,
+      "sha256": "95add99ec96854d6870afae7e5b838d47ae0ab049b1c32acd0ff201c44133fce"
+    },
+    {
+      "file": "assets/portraits/hero-Diago.jpg",
+      "bytes": 168235,
+      "sha256": "1e579516b72df30ee1da39ae37304a645b91bea57ef1582d8dc0535765f13fc7"
+    },
+    {
+      "file": "assets/portraits/hero-Grace.jpg",
+      "bytes": 205911,
+      "sha256": "7c6d80d8feee57244afc174a5dc92b70148fde4edd9404e3642a7c8f4319655d"
+    },
+    {
+      "file": "assets/portraits/hero-Hailey.jpg",
+      "bytes": 196516,
+      "sha256": "18771efada3ed02a89d06c53e19061272e645c48f69d41dfc33f48006b11e0e5"
+    },
+    {
+      "file": "assets/portraits/hero-Isaac.jpg",
+      "bytes": 173526,
+      "sha256": "ac6d309f4ea777b3d0bed4053bc045ce1e68f089c92b6b15489639ad593b7c44"
+    },
+    {
+      "file": "assets/portraits/hero-Levi.jpg",
+      "bytes": 202791,
+      "sha256": "15ee3b1b384ad059559aecb05059c2be820e0a88802ca10b7583223a705c3d01"
+    },
+    {
+      "file": "assets/portraits/hero-Naomi.jpg",
+      "bytes": 172967,
+      "sha256": "e55f5a7d1c42a68de1e6bb1a3e2531e155886aa5c6075e159ca58240b0c39248"
+    },
+    {
+      "file": "assets/portraits/hero-Sarko.jpg",
+      "bytes": 229706,
+      "sha256": "aad9baad62e503026367ae61f889b9e1dedb3dc8010f62cc74af2f083827611b"
+    },
+    {
+      "file": "assets/portraits/hero-Waiz.jpg",
+      "bytes": 208884,
+      "sha256": "1415b05e74d6cc6a015e15f46b9c562606a4ef3f0e11e9cec58f1aec0da6279d"
     },
     {
       "file": "assets/services/church.glb",
@@ -1558,8 +2518,8 @@
     },
     {
       "file": "campaign.css",
-      "bytes": 16497,
-      "sha256": "42cfa6fdd44f757e16f9eb4297f2ab7f45ef594dc33da2274a6c667c355750e2"
+      "bytes": 16717,
+      "sha256": "d6b881bb760e48901f1b9aa909103947c8e88f4eecef1f3e992ab3aedca16994"
     },
     {
       "file": "data.json",
@@ -1568,8 +2528,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 95680,
-      "sha256": "a7e019da475b64044c5c40b19a57d392c5aa25612e556fdbae529da086b3b4d7"
+      "bytes": 100118,
+      "sha256": "36c39f1d9fc29ec5c9ba6790ce849548d8954bec3c38d24673fdea172cad8196"
     },
     {
       "file": "icon-180.png",
@@ -1603,13 +2563,13 @@
     },
     {
       "file": "rpg3d-view.js",
-      "bytes": 3954,
-      "sha256": "bcca074e78f92bff3fe866fd806301deba3f93f286becb8826b54394fe0f30a6"
+      "bytes": 4393,
+      "sha256": "7faff60d82951a3e2a8a7000394efcbfda7485852fa6b5adcce91ad6297971ed"
     },
     {
       "file": "rpg3d.bundle.js",
-      "bytes": 2277368,
-      "sha256": "e310dbe24e475262770c7dcec0c4d3044b85f1682a891df4c63ada6428927df3"
+      "bytes": 2282042,
+      "sha256": "fb19fb65ae838c36530072615b428e5cc15857e01795669c38c7b5991db9c27a"
     },
     {
       "file": "studio-intro.js",
@@ -1622,5 +2582,5 @@
       "sha256": "52820acd902aaa1f47a7ac8f5532bb8a14a5e8a7383c43610314c013890764cd"
     }
   ],
-  "bytes": 272121455
+  "bytes": 305209163
 }

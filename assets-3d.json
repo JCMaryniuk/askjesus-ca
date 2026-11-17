@@ -94,6 +94,22 @@
           2.502853197294629,
           2.30131734594157
         ]
+      },
+      "hideCapes": true,
+      "gripFix": {
+        "mesh": "Sarko_sword_gameplay(Clone)",
+        "bone": "mixamorigRightHand",
+        "palm": [
+          0,
+          23,
+          3
+        ],
+        "grip": [
+          0,
+          0,
+          0.0053
+        ],
+        "fingers": true
       }
     },
     "Levi": {
@@ -188,7 +204,8 @@
           2.583779288151477,
           2.685204485840844
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Waiz": {
       "file": "assets/heroes/Waiz.glb",
@@ -282,7 +299,8 @@
           2.837331907351548,
           2.156506390798494
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Diago": {
       "file": "assets/heroes/Diago.glb",
@@ -376,7 +394,8 @@
           3.1950917825655005,
           2.3617089006533143
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Amaya": {
       "file": "assets/heroes/Amaya.glb",
@@ -470,7 +489,8 @@
           3.3467403473103317,
           2.7830919213289538
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Naomi": {
       "file": "assets/heroes/Naomi.glb",
@@ -564,7 +584,8 @@
           2.4107604359497232,
           1.5278083602335422
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Hailey": {
       "file": "assets/heroes/Hailey.glb",
@@ -658,7 +679,8 @@
           2.620399579950115,
           2.262028428346508
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Isaac": {
       "file": "assets/heroes/Isaac.glb",
@@ -752,7 +774,8 @@
           3.2619831408436766,
           2.959951521005111
         ]
-      }
+      },
+      "hideCapes": true
     },
     "Grace": {
       "file": "assets/Grace-3D-fitted.glb",
@@ -815,7 +838,8 @@
           2.8449530549774376
         ]
       },
-      "motionFile": "assets/motions/Grace-defeat.json"
+      "motionFile": "assets/motions/Grace-defeat.json",
+      "hideCapes": true
     }
   },
   "enemies": {
@@ -1384,12 +1408,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#49759b",
         "horizon": "#d6e3d4"
-      }
+      },
+      "battleTheme": "Earth",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Earth.jpg"
     },
     "Water-1": {
       "file": "assets/worlds/water.glb",
@@ -1400,12 +1428,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#3c7c98",
         "horizon": "#bbe6ef"
-      }
+      },
+      "battleTheme": "Water",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Water.jpg"
     },
     "Snow-1": {
       "file": "assets/worlds/snow.glb",
@@ -1416,12 +1448,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#6c8fb1",
         "horizon": "#eff8ff"
-      }
+      },
+      "battleTheme": "Snow",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Snow.jpg"
     },
     "Thunder-1": {
       "file": "assets/worlds/thunder.glb",
@@ -1432,12 +1468,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#171c39",
         "horizon": "#8e8fa9"
-      }
+      },
+      "battleTheme": "Thunder",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Thunder.jpg"
     },
     "Fire-1": {
       "file": "assets/worlds/fire.glb",
@@ -1448,12 +1488,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#361a28",
         "horizon": "#d17b40"
-      }
+      },
+      "battleTheme": "Fire",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Fire.jpg"
     },
     "Shadow-1": {
       "file": "assets/worlds/shadow.glb",
@@ -1464,12 +1508,16 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#161329",
         "horizon": "#695179"
-      }
+      },
+      "battleTheme": "Shadow",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Shadow.jpg"
     },
     "Light-1": {
       "file": "assets/worlds/light.glb",
@@ -1480,82 +1528,114 @@
         0
       ],
       "reviewed": true,
-      "source": "Textured Meshy world diorama, optimized textures and measured central ground.",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "pending": [],
       "sky": {
         "top": "#709ed0",
         "horizon": "#fff3c7"
-      }
+      },
+      "battleTheme": "Light",
+      "battleStage": 1,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Light.jpg"
     },
     "Earth-2": {
       "file": "assets/worlds/earth-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#49759b",
         "horizon": "#d6e3d4"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Earth",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Earth-2.jpg"
     },
     "Water-2": {
       "file": "assets/worlds/water-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#3c7c98",
         "horizon": "#bbe6ef"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Water",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Water-2.jpg"
     },
     "Snow-2": {
       "file": "assets/worlds/snow-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#6c8fb1",
         "horizon": "#eff8ff"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Snow",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Snow-2.jpg"
     },
     "Thunder-2": {
       "file": "assets/worlds/thunder-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#171c39",
         "horizon": "#8e8fa9"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Thunder",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Thunder-2.jpg"
     },
     "Fire-2": {
       "file": "assets/worlds/fire-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#361a28",
         "horizon": "#d17b40"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Fire",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Fire-2.jpg"
     },
     "Shadow-2": {
       "file": "assets/worlds/shadow-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#161329",
         "horizon": "#695179"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Shadow",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Shadow-2.jpg"
     },
     "Light-2": {
       "file": "assets/worlds/light-2.glb",
       "reviewed": true,
-      "source": "Distinct second-stage textured Meshy environment",
+      "source": "Illustrated Sarko world scenery with real-time 3D actors and a shadow-catching ground plane. Travel maps remain illustrated.",
       "sky": {
         "top": "#709ed0",
         "horizon": "#fff3c7"
       },
-      "pending": []
+      "pending": [],
+      "battleTheme": "Light",
+      "battleStage": 2,
+      "illustratedBattle": true,
+      "battleBackdrop": "assets/World-Light-2.jpg"
     }
   },
   "services": {

@@ -1,0 +1,408 @@
+{
+  "provider": "ElevenLabs",
+  "model": "Eleven Multilingual v2",
+  "cast": {
+    "Sarko": "Sarko",
+    "Waiz": "Waiz",
+    "Diago": "Diego",
+    "Amaya": "Sarah - Mature, Reassuring, Confident",
+    "Hailey": "Laura - Enthusiast, Quirky Attitude",
+    "Naomi": "Alice - Clear, Engaging Educator",
+    "Isaac": "Harry - Fierce Warrior",
+    "Levi": "Bill - Wise, Mature, Balanced"
+  },
+  "conversations": [
+    {
+      "id": "0-0",
+      "lines": [
+        {
+          "speaker": "Waiz",
+          "text": "Nobody reaches the Heavenly City alone. Your team will need you, too."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Then I’ll take the first step with them."
+        }
+      ],
+      "sha256": "f28057cbb549a7d42a2c442f42e7637c51d3886f13e82477b4eddb66cb22486f"
+    },
+    {
+      "id": "0-1",
+      "lines": [
+        {
+          "speaker": "Diago",
+          "text": "You do not learn to protect people by waiting until you feel brave. Stand with your team."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "The road is safer now. Let’s use what we found before we go on."
+        }
+      ],
+      "sha256": "ade724858673a6360a19eec9eb876df86cabc19b20e043ce25bf435083760c75"
+    },
+    {
+      "id": "0-2",
+      "lines": [
+        {
+          "speaker": "Diago",
+          "text": "You held your ground. Now learn when to strike and when to let someone help."
+        },
+        {
+          "speaker": "Waiz",
+          "text": "That is why we brought a team."
+        }
+      ],
+      "sha256": "4a20862ad3a64877fefcfdc80bb7b77aab6733e7392c650d0789c26bff240044"
+    },
+    {
+      "id": "0-3",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "I still remember the flood. I don’t want fear to choose for me again."
+        },
+        {
+          "speaker": "Diago",
+          "text": "Then choose the next right step. We will take it together."
+        }
+      ],
+      "sha256": "9fc43b9b4ca70e0865872efe34e6b6f4018f689a9567aaa7117af1daf12b0d56"
+    },
+    {
+      "id": "1-0",
+      "lines": [
+        {
+          "speaker": "Waiz",
+          "text": "You don’t have to face that fear alone. Watch my flank, and I’ll watch yours."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Together, then."
+        }
+      ],
+      "sha256": "55753d4b7bf3546b84c62acf901e0a365420cf5fc583a67dce58824dcb2b7ac7"
+    },
+    {
+      "id": "1-1",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "There are others who need this crossing. We cannot leave the road like this."
+        },
+        {
+          "speaker": "Waiz",
+          "text": "One stretch at a time. Keep everyone close."
+        }
+      ],
+      "sha256": "c12effd0a5b935fc64a74db0c30aecd1b25d564a6bcf874602af91e0b486b9f8"
+    },
+    {
+      "id": "1-2",
+      "lines": [
+        {
+          "speaker": "Amaya",
+          "text": "The crossing is behind us. Check the wounded before we press on."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "We keep moving as a team."
+        }
+      ],
+      "sha256": "cfe8a141290f2bff7c3129503b762e441a9752957391a2d82d4dddf14578fbab"
+    },
+    {
+      "id": "1-3",
+      "lines": [
+        {
+          "speaker": "Waiz",
+          "text": "That creature is blocking the way. Ready?"
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Ready enough to stand beside you."
+        }
+      ],
+      "sha256": "1385b7eaaa2713a3ef06ada12830c57579a1345ce03eb075879aae7238d4fb4f"
+    },
+    {
+      "id": "2-0",
+      "lines": [
+        {
+          "speaker": "Amaya",
+          "text": "The guild can be rebuilt. First, we keep the road safe for those helping us."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Then that is where we begin."
+        }
+      ],
+      "sha256": "eb7a13b33c56b8663b1e3207340a1119c6ea2c701939a032917275b1c481abf4"
+    },
+    {
+      "id": "2-1",
+      "lines": [
+        {
+          "speaker": "Hailey",
+          "text": "Everything feels different after the attack."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "We can still choose what we do for one another."
+        }
+      ],
+      "sha256": "e6c578ee60fdb99347d7d1ba0b7e84bd9897dddbdffa5d8123cc1e13cff9fa79"
+    },
+    {
+      "id": "2-2",
+      "lines": [
+        {
+          "speaker": "Amaya",
+          "text": "Fear does not disappear because you hide it. Stay with the formation."
+        },
+        {
+          "speaker": "Waiz",
+          "text": "And stay with us."
+        }
+      ],
+      "sha256": "d8d107e5c88a55f43aceda49ea79978acd398cc8c6b0ba5707b45f5a3e2c7744"
+    },
+    {
+      "id": "2-3",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "We have carried our fears this far. We do not have to carry them alone."
+        },
+        {
+          "speaker": "Amaya",
+          "text": "Then let’s finish the crossing."
+        }
+      ],
+      "sha256": "e4deb689ee75a0dc26952cff1ab25144a18f3a85fcafb6eea7509761a4c4e78e"
+    },
+    {
+      "id": "3-0",
+      "lines": [
+        {
+          "speaker": "Naomi",
+          "text": "Protecting people means noticing the lives beyond the battlefield."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "The farmers need a safe road. We can give them that."
+        }
+      ],
+      "sha256": "3b660f78ac9ed1ac064a4583c4a539f6ae210abca4d9d45dba2d20f135358d9d"
+    },
+    {
+      "id": "3-1",
+      "lines": [
+        {
+          "speaker": "Isaac",
+          "text": "We hold the path. They bring their families through."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "No one gets left behind."
+        }
+      ],
+      "sha256": "d8aa8b72bdc4a1a349579a39873f97b9a2a2a41dc127f3c4bed1f6b2a1790a47"
+    },
+    {
+      "id": "3-2",
+      "lines": [
+        {
+          "speaker": "Amaya",
+          "text": "Their attacks are coordinated. We must keep our own line together."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "I can protect the team without trying to control every step."
+        }
+      ],
+      "sha256": "6c02b1ba7f9b2ab600f4de79b6b81cf78ce3d09e45dd5f6e43bba5a0fd209efb"
+    },
+    {
+      "id": "3-3",
+      "lines": [
+        {
+          "speaker": "Levi",
+          "text": "Strength is not yours alone to carry."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "I’ll trust the others to stand with me."
+        }
+      ],
+      "sha256": "8eed71c80f698a46e25e39d45abdc7b8412a9239e4ed632c541db74b7dac1ea3"
+    },
+    {
+      "id": "4-0",
+      "lines": [
+        {
+          "speaker": "Levi",
+          "text": "Rex calls dependence weakness. He has forgotten what love can endure."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Then we will show it by how we fight together."
+        }
+      ],
+      "sha256": "99c79d70e8ea61308091288c5852c4a45b82eee2f3991ffabb28734a3b51537c"
+    },
+    {
+      "id": "4-1",
+      "lines": [
+        {
+          "speaker": "Hailey",
+          "text": "There are so many of them."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Look at us, Hailey. You are not facing them alone."
+        }
+      ],
+      "sha256": "25f4d04fe7fe7f81bae08a1ae448b324b25ad8801658bf92dbd8668b38036e70"
+    },
+    {
+      "id": "4-2",
+      "lines": [
+        {
+          "speaker": "Hailey",
+          "text": "I can help keep everyone standing."
+        },
+        {
+          "speaker": "Amaya",
+          "text": "Then we will make room for your light."
+        }
+      ],
+      "sha256": "00a36c1161dbc041613e238244210b72b67f280399732b0c59bbeff42de171db"
+    },
+    {
+      "id": "4-3",
+      "lines": [
+        {
+          "speaker": "Levi",
+          "text": "Hold your purpose when the fire comes."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Protect one another. That is our way through."
+        }
+      ],
+      "sha256": "53f873305da1694c26c3e95c59dfd0dcb5079e07568b38231d8cdda98c66a995"
+    },
+    {
+      "id": "5-0",
+      "lines": [
+        {
+          "speaker": "Naomi",
+          "text": "Not every voice in this canyon tells the truth. Remember who stands beside you."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "I remember."
+        }
+      ],
+      "sha256": "826460854f4926feb4a78ddfa665f30ae4b2afdec23ad7324ac881fd6f477dcb"
+    },
+    {
+      "id": "5-1",
+      "lines": [
+        {
+          "speaker": "Waiz",
+          "text": "The road keeps trying to split us up."
+        },
+        {
+          "speaker": "Amaya",
+          "text": "Then we give it no opening."
+        }
+      ],
+      "sha256": "552f5c587379a8e859c3840456378349c5f28ba407529ebff1d2cda1de3d02cb"
+    },
+    {
+      "id": "5-2",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "My failures do not have to decide what I do now."
+        },
+        {
+          "speaker": "Levi",
+          "text": "Stand in that truth."
+        }
+      ],
+      "sha256": "a20a09b8ad24b7b1967de84f507a0c5817374dbb00326e9aa9b7fe0abf0d3f52"
+    },
+    {
+      "id": "5-3",
+      "lines": [
+        {
+          "speaker": "Isaac",
+          "text": "Together to the end."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Together."
+        }
+      ],
+      "sha256": "fa313946e63ca97e781017b2d259567f5c67d16a7803e039831b5cb32facb74c"
+    },
+    {
+      "id": "6-0",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "The light is closer. Check on everyone before we go on."
+        },
+        {
+          "speaker": "Naomi",
+          "text": "There is still a road to walk."
+        }
+      ],
+      "sha256": "a4c9a8ef701fda1bcf78063b198fe84edcaccff6afc62d8dad79a98b79d56b45"
+    },
+    {
+      "id": "6-1",
+      "lines": [
+        {
+          "speaker": "Hailey",
+          "text": "We have come so far."
+        },
+        {
+          "speaker": "Waiz",
+          "text": "And we are bringing everyone with us."
+        }
+      ],
+      "sha256": "7fc3c64f26ab6bd80cbb955d76b46f931ba7ed11ad41badfe5b04ecab05968d8"
+    },
+    {
+      "id": "6-2",
+      "lines": [
+        {
+          "speaker": "Levi",
+          "text": "Others will follow this road. Leave it safer than we found it."
+        },
+        {
+          "speaker": "Sarko",
+          "text": "Then our journey can help theirs."
+        }
+      ],
+      "sha256": "b36cf8bef0252f402936a5218d1ffef1c4b4bf3fff4d679af3096b6d82ce0bd6"
+    },
+    {
+      "id": "6-3",
+      "lines": [
+        {
+          "speaker": "Sarko",
+          "text": "I can protect them and love them. I do not have to be their savior."
+        },
+        {
+          "speaker": "Levi",
+          "text": "Walk forward, Shepherd."
+        }
+      ],
+      "sha256": "bf8e804df3b80293c616b271963e1046bfc6de073da6a068d9a32c0589150fa5"
+    }
+  ]
+}
