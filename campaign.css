@@ -108,3 +108,4 @@
 
 .service3d{position:relative}.fruit3dLabels{position:absolute;inset:0;pointer-events:none}.fruit3dLabel{position:absolute;transform:translate(-50%,0);font-size:10px;white-space:nowrap;color:#ffe8a6;text-shadow:0 1px 3px #000;background:#111b2cbd;padding:2px 4px;border-radius:3px}.service3d:has(.fruit3dLabel){height:440px}@media(max-width:600px){.service3d:has(.fruit3dLabel){height:400px}.fruit3dLabel{font-size:8px}}
 .modal:has(.service3d .fruit3dLabel) .spiritTree{display:none}
+.dialoguePlayer{padding:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid #b59353}.dialoguePlayer>.eyebrow,.dialoguePlayer>audio{flex-basis:100%}.dialoguePlayer .button{min-height:44px}

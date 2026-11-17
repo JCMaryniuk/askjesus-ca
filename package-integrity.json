@@ -837,6 +837,146 @@
       "sha256": "b96cf82f02027302dd4e1c1869c01ecd2f8e78da6000e90159d0f823f920e580"
     },
     {
+      "file": "assets/dialogue/0-0.mp3",
+      "bytes": 161375,
+      "sha256": "0e2225a3d8aec92b08dc892187fcb18582d6a1536a6fc3586790957bc46fba4c"
+    },
+    {
+      "file": "assets/dialogue/0-1.mp3",
+      "bytes": 212784,
+      "sha256": "1d973c4cd6c6e31f739a4c30bb3bff6fc89a6c0626b01d9f4d40611b48965777"
+    },
+    {
+      "file": "assets/dialogue/0-2.mp3",
+      "bytes": 162629,
+      "sha256": "0429c47a60d5c42451706a71a2c8eb29f7831923c925497259ed648e85175286"
+    },
+    {
+      "file": "assets/dialogue/0-3.mp3",
+      "bytes": 183109,
+      "sha256": "2f728aa951ec0f85ca1c82c243aebe71803024725488462f3d9b99f5ce97f0fe"
+    },
+    {
+      "file": "assets/dialogue/1-0.mp3",
+      "bytes": 143403,
+      "sha256": "8ac7710e9b8a1ed91730e51f2477a0469de90303b5f5a75f0206d51b06b23d60"
+    },
+    {
+      "file": "assets/dialogue/1-1.mp3",
+      "bytes": 166808,
+      "sha256": "ffce1aaf2940938dde9e851bed06432d926f402ab52520309b269c15cbc870e7"
+    },
+    {
+      "file": "assets/dialogue/1-2.mp3",
+      "bytes": 140895,
+      "sha256": "4ab3e6c3862c8a9c652c18d979c2c1f00b57770d727da76fa07d9911244a4d63"
+    },
+    {
+      "file": "assets/dialogue/1-3.mp3",
+      "bytes": 125848,
+      "sha256": "20d44a4b05c303737d11d350f2653c6e5ec8eb76f1e9bd5bc5f56ce0bab83f7e"
+    },
+    {
+      "file": "assets/dialogue/2-0.mp3",
+      "bytes": 166808,
+      "sha256": "632cedb4629d0816cdd6ff082a564b55ef0ff67d0266cf8e33d8f42fc2c47fec"
+    },
+    {
+      "file": "assets/dialogue/2-1.mp3",
+      "bytes": 134625,
+      "sha256": "2f96322bc42e22965822c2a45494cca3d313a2114a2adfb444e70976c80949cd"
+    },
+    {
+      "file": "assets/dialogue/2-2.mp3",
+      "bytes": 147582,
+      "sha256": "cf4e33df17dc32be2be781eb4cf0e6b15db01c17f3d5c40178e90646f14790b5"
+    },
+    {
+      "file": "assets/dialogue/2-3.mp3",
+      "bytes": 153852,
+      "sha256": "729177d6a8c533ea83439220f11b91606ab9ffb4936b1b9a229e2a981f4de5af"
+    },
+    {
+      "file": "assets/dialogue/3-0.mp3",
+      "bytes": 171824,
+      "sha256": "72c6aee5d1a829d72340e2b195a14d2f9180e2fdf4bda808d2732bbc80c9029b"
+    },
+    {
+      "file": "assets/dialogue/3-1.mp3",
+      "bytes": 132118,
+      "sha256": "2b5e069f47d69929040ff54f6f3a5eaa4936a588e440f776dd47866fe7f10323"
+    },
+    {
+      "file": "assets/dialogue/3-2.mp3",
+      "bytes": 174332,
+      "sha256": "b3d0ffde174c7d6da53be4ebb8055ba336f5506df87f7638c927f9be6f454f0f"
+    },
+    {
+      "file": "assets/dialogue/3-3.mp3",
+      "bytes": 134625,
+      "sha256": "ab2f5b0c5499babe9eb3828a579114fb544ef87c6d235fa506d143c5f772ec97"
+    },
+    {
+      "file": "assets/dialogue/4-0.mp3",
+      "bytes": 175585,
+      "sha256": "fad5f2da04080e50c1e18f667aa1e3d9673afd356b69fd18c91baa1a0aeb5f5c"
+    },
+    {
+      "file": "assets/dialogue/4-1.mp3",
+      "bytes": 129610,
+      "sha256": "7207410eb88ac67fe0eea6bbe3b531b322a635bf7e98bf1547d3eb3b99aa0cd8"
+    },
+    {
+      "file": "assets/dialogue/4-2.mp3",
+      "bytes": 117907,
+      "sha256": "8c19d88d81f58081b997b3b448c79ba392b7cc7a5cf257a7c9dafa2d3c53fea0"
+    },
+    {
+      "file": "assets/dialogue/4-3.mp3",
+      "bytes": 146328,
+      "sha256": "05c89f0498cdd20603d633ee8382910f0c466797661d6b2c2d2dcbab80dbc6fb"
+    },
+    {
+      "file": "assets/dialogue/5-0.mp3",
+      "bytes": 158867,
+      "sha256": "33e50cb1261fe683eaf952466c61267a0422e0315db6a2714359162df98ae657"
+    },
+    {
+      "file": "assets/dialogue/5-1.mp3",
+      "bytes": 116653,
+      "sha256": "a124fb3aee5be324dfb0bca9b0efdb54d60f1da3669d7727fb5fa0fe7814b668"
+    },
+    {
+      "file": "assets/dialogue/5-2.mp3",
+      "bytes": 129610,
+      "sha256": "52884b70673db32786e954599653bd07112aecfc7388d5654b26791ea973968c"
+    },
+    {
+      "file": "assets/dialogue/5-3.mp3",
+      "bytes": 86142,
+      "sha256": "bf1fa8e7226decff43c57064b2fb5377f7e504e4b62b14989ad5be144f9ee919"
+    },
+    {
+      "file": "assets/dialogue/6-0.mp3",
+      "bytes": 138387,
+      "sha256": "700ae6d2019e67be7732f9887a6c1108ff086c981df3d6a10034a0b7f80d72c9"
+    },
+    {
+      "file": "assets/dialogue/6-1.mp3",
+      "bytes": 110384,
+      "sha256": "549da461dcd40cca35e9cd4b01bdf948067b777915f921baf86cc2cc5704a2fc"
+    },
+    {
+      "file": "assets/dialogue/6-2.mp3",
+      "bytes": 150090,
+      "sha256": "fc2342c8814bdb5e147180249c960454361f32cf912593e92d12b221a0a3f727"
+    },
+    {
+      "file": "assets/dialogue/6-3.mp3",
+      "bytes": 148836,
+      "sha256": "373b09dc6587ebe81d429db40dc6cc63462b95584784a57ca6c1dff64455cb67"
+    },
+    {
       "file": "assets/fruits/Faithfulness.glb",
       "bytes": 254084,
       "sha256": "8d084d094084beac661b35ae096d84a3b9e4a92b6589520de9b3f1906a34a013"
@@ -1418,8 +1558,8 @@
     },
     {
       "file": "campaign.css",
-      "bytes": 16279,
-      "sha256": "8185b2ed4e4e662f4d7934ea556aa295a52703b862ba8203b6e62a162558e75d"
+      "bytes": 16497,
+      "sha256": "42cfa6fdd44f757e16f9eb4297f2ab7f45ef594dc33da2274a6c667c355750e2"
     },
     {
       "file": "data.json",
@@ -1428,8 +1568,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 93702,
-      "sha256": "caec7b3bcc7610184a062a8f92769e6d226abb960833fd2d9648a652b326a687"
+      "bytes": 95680,
+      "sha256": "a7e019da475b64044c5c40b19a57d392c5aa25612e556fdbae529da086b3b4d7"
     },
     {
       "file": "icon-180.png",
@@ -1443,8 +1583,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 1154,
-      "sha256": "715beb57a7b6e9a0b22d17c4fd84a0c8a4f1fdefe5e296cca287821b47d05888"
+      "bytes": 1167,
+      "sha256": "900f838c84eaaea5aa2c9b2ba18fb56aee7aeb997303ffcbf08d2d99c21bef60"
     },
     {
       "file": "manifest.webmanifest",
@@ -1482,5 +1622,5 @@
       "sha256": "52820acd902aaa1f47a7ac8f5532bb8a14a5e8a7383c43610314c013890764cd"
     }
   ],
-  "bytes": 267998230
+  "bytes": 272121455
 }

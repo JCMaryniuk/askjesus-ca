@@ -460,7 +460,7 @@ const ROUTE_POINTS=[[[10,86],[29,75],[54,71],[66,64],[60,52],[31,50],[43,42],[70
 const WORLD_POINTS=[[11,45],[25,75],[31,32],[44,29],[57,31],[69,46],[79,54],[89,18]];
 function travelMap(world,stage,token){
   const names=[...WORLD_NAMES,'Heavenly City'];
-  if(state.view3d&&canUse3D())return `<div id="travel3d" aria-label="3D journey through ${esc(names[world])}"></div>`;
+  // Keep the illustrated routes in both Cards and 3D battle modes.
   if(state.mapView==='overview')return `<div class="travelMap overviewMap" role="img" aria-label="Seven Sarko worlds and Heavenly City"><img src="${img('Sarko-Overworld-Map.jpg')}" alt="Seven connected Sarko worlds leading to Heavenly City">${names.map((name,i)=>`<span class="worldPin ${i===world?'current':''}" style="left:${WORLD_POINTS[i][0]}%;top:${WORLD_POINTS[i][1]}%">${i===world?'◆ ':''}${esc(name)}</span>`).join('')}</div>`;
   const second=stage>=10,offset=second?10:0;
   const route=ROUTE_POINTS[second?1:0];
@@ -523,13 +523,13 @@ function narrativeModal(kind){
  const art=`story-scenes/${c.world}-${c.segment}.jpg`;
  const goalEnd=(c.segment+1)*5;
  return modalFrame(opening?'A road we walk together':c.goal,
- `<section class="narrativeScene"><img class="narrativeArt" src="${img(art)}" alt="${esc([...new Set(pages.map(p=>p.speaker))].join(' and '))} on the ${WORLD_NAMES[c.world]} road"><div class="narrativeSpeech"><img src="${img(portrait+'.jpg')}" alt="${esc(line.speaker)}"><div><span class="eyebrow">${esc(line.speaker)} · ${page+1}/${pages.length}</span><p>${esc(line.text)}</p></div></div></section>`+
+ `<section class="narrativeScene"><img class="narrativeArt" src="${img(art)}" alt="${esc([...new Set(pages.map(p=>p.speaker))].join(' and '))} on the ${WORLD_NAMES[c.world]} road">${pages.map(p=>`<div class="narrativeSpeech"><img src="${img((HEROES.find(h=>h.name===p.speaker)?.art||'Sarko')+'.jpg')}" alt="${esc(p.speaker)}"><div><span class="eyebrow">${esc(p.speaker)}</span><p>${esc(p.text)}</p></div></div>`).join('')}<div data-dialogue-audio="${c.world}-${c.segment}" class="dialoguePlayer"><span class="eyebrow">Listen to the conversation</span></div></section>`+
  `<div class="storyObjective"><span class="eyebrow">Your next objective</span><h3>${esc(c.goal)}</h3><p>Win encounters ${c.segment*5+1}–${goalEnd} on this road.${goalEnd===10||goalEnd===20?' A boss guards the final encounter.':''} Victories open the next scene.</p></div>`+
  `${opening?'<p>Meet Sarko and Waiz in this adaptation of the opening chapters, then take your chosen four heroes onto the road. Guided play teaches manual attacks and equipping your first reward.</p>':''}`+
- `<div class="actions"><button class="button" data-action="${kind==='scene'?'continueScene':'continueStory'}">${page<pages.length-1?'NEXT DIALOGUE':opening?'BEGIN JOURNEY':'TAKE THE NEXT STEP'}</button>${opening?'<button class="button alt" data-action="guidedStory">PLAY GUIDED INTRO</button>':''}<button class="button ghost" data-action="skipNarrative">${opening?'SKIP INTRO & TUTORIAL':'SKIP SCENE'}</button></div>`+
+ `<div class="actions"><button class="button" data-action="${kind==='scene'?'continueScene':'continueStory'}">${opening?'BEGIN JOURNEY':'TAKE THE NEXT STEP'}</button>${opening?'<button class="button alt" data-action="guidedStory">PLAY GUIDED INTRO</button>':''}<button class="button ghost" data-action="skipNarrative">${opening?'SKIP INTRO & TUTORIAL':'SKIP SCENE'}</button></div>`+
  `<details class="storyArchive"><summary>Read or listen to the source chapter</summary><p class="small muted">Short dialogue is adapted for the game. Full chapter ${c.chapter} is optional.</p><p>${esc(campaignData.chapters[c.chapter-1]?.summary||'')}</p><audio controls preload="none" src="assets/story/Chapter-${String(c.chapter).padStart(2,'0')}-Full.mp3" aria-label="Chapter ${c.chapter} narration"></audio></details>`);
 }
-function advanceNarrative(){const pages=narrativePages();if((state.scenePage||0)<pages.length-1){state.scenePage=(state.scenePage||0)+1;save();render();return true;}state.scenePage=0;return false;}
+function advanceNarrative(){state.scenePage=0;return false;}
 function finishNarrative(skip=false,guided=false){
  state.scenePage=0;if(skip)state.guidedIntro=false;
  if(guided){state.guidedIntro=true;state.manual=true;manualChoice=null;}
@@ -649,7 +649,7 @@ async function syncService3D(){
 }
 
 function renderModal(){if(!modal)return '';if(modal==='story')return storyModal();if(modal==='scene')return sceneModal();if(modal==='files')return filesModal();if(modal==='scores')return scoresModal();if(modal==='shop')return shopModal();if(modal==='forge')return forgeModalV2();if(modal==='church')return churchModal();if(modal==='tree')return treeModal();if(modal==='details')return detailsModal(selectedHero);if(modal==='enemy')return enemyModal();return '';}
-function render(){const focused=document.activeElement?.tagName==='BUTTON'?{...document.activeElement.dataset}:null;if(!modal&&state.phase==='battle'&&state.pendingStory&&!state.awaiting)modal='story';const app=$('#app'),live=state;if(threeBusy&&threeFrame)state={...threeFrame,paused:threePaused};if(threeHost)threeHost.remove();if(serviceHost)serviceHost.remove();if(travelHost)travelHost.remove();app.innerHTML=`<main class="shell">${header()}${storyObjectiveBanner()}${state.phase==='selection'?selection():battle()}<footer class="footer">Sarko · Radiant Kingdom Studios · Free browser edition · Progress and scores are saved on this device.</footer></main>${renderModal()}`;state=live;if(canUse3D())sync3D();syncService3D();syncTravel3D();if(focused&&Object.keys(focused).length){const scope=modal?'#overlay button':'button';const matching=[...document.querySelectorAll(scope)].find(b=>!b.disabled&&Object.entries(focused).every(([k,v])=>b.dataset[k]===v));matching?.focus({preventScroll:true});}}
+function render(){const focused=document.activeElement?.tagName==='BUTTON'?{...document.activeElement.dataset}:null;if(!modal&&state.phase==='battle'&&state.pendingStory&&!state.awaiting)modal='story';const app=$('#app'),live=state;if(threeBusy&&threeFrame)state={...threeFrame,paused:threePaused};if(threeHost)threeHost.remove();if(serviceHost)serviceHost.remove();if(travelHost)travelHost.remove();app.innerHTML=`<main class="shell">${header()}${storyObjectiveBanner()}${state.phase==='selection'?selection():battle()}<footer class="footer">Sarko · Radiant Kingdom Studios · Free browser edition · Progress and scores are saved on this device.</footer></main>${renderModal()}`;state=live;if(canUse3D())sync3D();syncService3D();syncTravel3D();syncDialogueAudio();if(focused&&Object.keys(focused).length){const scope=modal?'#overlay button':'button';const matching=[...document.querySelectorAll(scope)].find(b=>!b.disabled&&Object.entries(focused).every(([k,v])=>b.dataset[k]===v));matching?.focus({preventScroll:true});}}
 function openModal(type){modal=type;if(state.phase==='battle'&&!state.awaiting)state.paused=true;save();render();}
 function buy(index){if(state.phase!=='battle'||state.shopBought.includes(index))return;const offer=shopOffers()[index];if(!offer||state.gold<offer.price)return;state.gold-=offer.price;state.shopBought.push(index);state.inventory.push({id:newId(),kind:'Fruit',name:offer.name,rarity:offer.rarity,bonus:offer.bonus,equippedTo:null,gem:null});save();render();toast(`${offer.name} Fruit purchased.`);}
 function merge(){const g=state.inventory[selectedGear];if(!g||g.kind!=='Fruit')return;const matches=state.inventory.filter(x=>x.kind==='Fruit'&&x.id!==g.id&&x.name===g.name&&x.rarity===g.rarity&&x.equippedTo===null);const tier=RARITIES.indexOf(g.rarity);if(matches.length<4)return toast('Five matching fruits are needed.');if(tier>=RARITIES.length-1)return toast('Already legendary.');if(state.gold<120)return toast('Need 120 gold.');state.gold-=120;const used=new Set(matches.slice(0,4).map(x=>x.id));state.inventory=state.inventory.filter(x=>!used.has(x.id));g.rarity=RARITIES[tier+1];g.bonus=Math.round((g.bonus+.04)*100)/100;save();render();toast(`${g.name} Fruit became ${g.rarity}.`);}
@@ -681,6 +681,22 @@ function pollController(){
 setInterval(pollController,80);
 Promise.all([fetch('data.json').then(r=>r.json()),fetch('campaign-data.json').then(r=>r.json())]).then(([skills,story])=>{data=skills;campaignData=story;render();}).catch(()=>{render();toast('Game data is loading.');});
 setInterval(battleTick,1800);
+// Keep one conversation player across renders; leaving or skipping stops speech.
+let dialogueAudio=null,dialogueKey=null;
+document.addEventListener('play',event=>{if(event.target.matches?.('.storyArchive audio'))dialogueAudio?.pause();},true);
+function syncDialogueAudio(){
+ const slot=document.querySelector('[data-dialogue-audio]'),key=slot?.dataset.dialogueAudio;
+ if(key===dialogueKey&&dialogueAudio){const buttons=[...(dialogueAudio.parentElement?.querySelectorAll('button')||[])];slot?.append(dialogueAudio,...buttons);return;}
+ if(dialogueAudio){dialogueAudio.pause();dialogueAudio.removeAttribute('src');dialogueAudio.load();}
+ if($('#music'))$('#music').volume=.28;
+ dialogueAudio=null;dialogueKey=key||null;if(!key)return;
+ const audio=document.createElement('audio');audio.controls=true;audio.preload='metadata';audio.src='assets/dialogue/'+key+'.mp3';audio.setAttribute('aria-label','Listen to this conversation');audio.style.width='100%';slot.append(audio);dialogueAudio=audio;
+ const replay=document.createElement('button');replay.className='button mini';replay.textContent='REPLAY VOICES';replay.dataset.action='replayVoices';replay.onclick=()=>{audio.currentTime=0;audio.play().catch(()=>{});};slot.append(replay);
+ const pause=document.createElement('button');pause.className='button mini alt';pause.textContent='PAUSE VOICES';pause.dataset.action='pauseVoices';pause.onclick=()=>audio.pause();slot.append(pause);
+ audio.addEventListener('play',()=>{document.querySelectorAll('.storyArchive audio').forEach(a=>a.pause());if($('#music'))$('#music').volume=.07;});
+ for(const name of ['pause','ended'])audio.addEventListener(name,()=>{if($('#music'))$('#music').volume=.28;});
+ audio.addEventListener('error',()=>{if(audio!==dialogueAudio)return;const note=document.createElement('p');note.className='small muted';note.textContent='Audio unavailable. You can read the conversation above and continue.';slot.append(note);},{once:true});
+ if(!globalThis.sarkoIntroPlaying)audio.play().catch(()=>{});
+}
+
 render();
-
-
