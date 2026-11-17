@@ -113,3 +113,7 @@
 /* Model-rendered portraits already contain the same world tint as the 3D actor. */
 .enemyCard[data-world]>img:first-child{filter:none;object-fit:contain;background:#102033}
 .enemyCard[data-world]::before{display:none}
+
+.bookShelves{display:grid;gap:16px}.bookLocked,.bookChapter{padding:20px;border:1px solid #a78042;border-radius:12px;background:#101e30}.bookLocked{opacity:.65}.bookChapter summary{cursor:pointer;color:#f5d692;font-size:1.2rem}.bookIllustration{display:block;width:100%;max-height:480px;object-fit:cover;border-radius:8px;margin:18px 0}.bookChapter audio{width:100%;margin:12px 0}.bookChapter .chapterText{white-space:pre-wrap;line-height:1.85;max-width:72ch;margin:20px auto;font-family:Georgia,serif;font-size:1.1rem}
+
+.bookFace{display:block;width:86px;height:86px;min-width:86px;background-repeat:no-repeat;border-radius:12px;border:1px solid #d4ad62}.narrativeSpeech{align-items:start}

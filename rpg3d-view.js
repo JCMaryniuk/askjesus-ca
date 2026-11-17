@@ -5,7 +5,7 @@ export function battleFormation(heroes){
  const melee=heroes.filter(h=>!ranged.includes(h));
  const positions=new Map();
  // Every melee hero has a clear forward lane. Only bow/crossbow users stand back.
- for(const [group,x,spacing] of [[melee,-2.8,2.5],[ranged,-5.6,2.8]])
+ for(const [group,x,spacing] of [[melee,-2.8,heroes.length>4?1.7:2.5],[ranged,-5.6,2.8]])
   group.forEach((h,i)=>positions.set(h.id,[x,0,(i-(group.length-1)/2)*spacing]));
  return heroes.map(h=>positions.get(h.id));
 }
@@ -28,17 +28,17 @@ export function actionPresentation(action=''){
 export class Game3DView {
   constructor(host,manifest,{allowUnreviewed=false,onSelect=()=>{},onError=()=>{}}={}){
     this.host=host;this.manifest=manifest;this.allowUnreviewed=allowUnreviewed;
-    this.stage=new RPGStage(host,{onSelect,onError});this.battleKey=null;this.version=0;
+    this.stage=new RPGStage(host,{onSelect,onError});this.baseFrameActors=this.stage.frameActors.bind(this.stage);this.battleKey=null;this.version=0;
   }
   entry(group,name){
     const entry=this.manifest[group]?.[name];
     if(!entry?.file||(!entry.reviewed&&!this.allowUnreviewed))throw Error(`${name} is still being prepared for 3D.`);
     return entry;
   }
-  async setBattle({key,heroes,enemy,enemyDefeated=false,world,chapterStage}){
+  async setBattle({key,heroes,enemy,enemyDefeated=false,world,chapterStage,storyBattle=false}){
     if(this.battleKey===key)return;
     const version=++this.version;
-    const worldEntry=this.entry('worlds',`${world}-${chapterStage>10?2:1}`);
+    const baseWorld=this.entry('worlds',`${world}-${chapterStage>10?2:1}`);const worldEntry=storyBattle?{...baseWorld,battleBackdrop:'assets/book/guild-arena.jpg'}:baseWorld;
     const places=battleFormation(heroes);
     const actors=heroes.map((hero,i)=>({key:`hero-${hero.id}`,entry:this.entry('heroes',hero.name),position:places[i],facing:Math.PI/2,defeated:hero.defeated}));
     actors.push({key:'enemy',entry:{...this.entry('enemies',enemy),worldTint:WORLD_TINTS[world],tintStrength:world==='Snow'?.85:.55,tintFloor:world==='Snow'?.5:.08},position:[3,0,0],facing:-Math.PI/2,defeated:enemyDefeated});
@@ -46,7 +46,7 @@ export class Game3DView {
     if(version!==this.version)return;
     if(!await this.stage.setActors(actors))throw Error('The 3D battle could not finish loading.');
     if(version!==this.version)return;
-    this.stage.frameActors();
+    this.stage.frameActors=()=>{this.baseFrameActors();if(storyBattle){this.stage.camera.zoom*=1.7;this.stage.camera.updateProjectionMatrix();}};this.stage.frameActors();
     this.battleKey=key;
   }
   async present(events){

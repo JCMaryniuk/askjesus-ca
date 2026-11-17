@@ -1,5 +1,5 @@
 {
-  "version": "Sarko-3D-Beta-2026-11-17",
+  "version": "Sarko-Illustrated-Campaign-2026-11-17",
   "files": [
     {
       "file": "assets-3d.json",
@@ -837,6 +837,71 @@
       "sha256": "b93677b0c29aa758b848e2fd8652c4b6bab5a3afa632b9ebb5805235996bb616"
     },
     {
+      "file": "assets/book/chapter-01.jpg",
+      "bytes": 523230,
+      "sha256": "d96737a1840ebd2cf16bbd134d7db6dae82869bb39e013febf6c97b694205e11"
+    },
+    {
+      "file": "assets/book/fire.jpg",
+      "bytes": 580632,
+      "sha256": "d02a2c7108bea2382af38a6cab2c1433ea4138e24542ebdca1c74c8c319b1283"
+    },
+    {
+      "file": "assets/book/garden.jpg",
+      "bytes": 806423,
+      "sha256": "80bd6f33ad54bd188b199d47782702c0dd35bef4f0f05618db324c9a36d94fb2"
+    },
+    {
+      "file": "assets/book/guild-arena.jpg",
+      "bytes": 445054,
+      "sha256": "39adc616368addd3fdf9ad1231625d43362ebc411fa9a0d004cabf229934f8f2"
+    },
+    {
+      "file": "assets/book/guild.jpg",
+      "bytes": 722175,
+      "sha256": "e87aaac2afe8c07135c8ac88538adb50d6ffba537db1b00c46ef20f680bb5de7"
+    },
+    {
+      "file": "assets/book/levi.jpg",
+      "bytes": 696282,
+      "sha256": "a7230d63b50435f91c1b7750efd3e87f03e2f3c7c83448418d885a1363c3fa86"
+    },
+    {
+      "file": "assets/book/light.jpg",
+      "bytes": 723290,
+      "sha256": "5a9f82dbfbff7cc4fa50d5dc97f4c1258e04953b1b17d93d90e8faa035052b40"
+    },
+    {
+      "file": "assets/book/malachar.jpg",
+      "bytes": 714598,
+      "sha256": "7b93b2c4b9806374ffc4eed21a524ce7ae07595bf7590660b9dc66362f85774f"
+    },
+    {
+      "file": "assets/book/shadow.jpg",
+      "bytes": 614748,
+      "sha256": "03175afd97e0d3da360a9b0f8760bf467a15091138c8851853ee838c0953a5a2"
+    },
+    {
+      "file": "assets/book/snow.jpg",
+      "bytes": 675904,
+      "sha256": "944652843e8d74301656fadd9d0cdd90d734a64aecb7eb047420510723c094b1"
+    },
+    {
+      "file": "assets/book/thunder.jpg",
+      "bytes": 802721,
+      "sha256": "bc2e7a4bb1c027c661ccc877205ef034289aaa7505ef0524a030c57ce5a54cf9"
+    },
+    {
+      "file": "assets/book/training.jpg",
+      "bytes": 735493,
+      "sha256": "a0c3303356b7eb1ff06b06ffcc3b694be708e943d819e6e52d181cc904069a56"
+    },
+    {
+      "file": "assets/book/water.jpg",
+      "bytes": 799342,
+      "sha256": "3970a0ed5f0b311cb3f25563351086f392029a3bc11d2c5684cbe5607473cdc1"
+    },
+    {
       "file": "assets/bosses/Dawn-Guardian.glb",
       "bytes": 4124516,
       "sha256": "f10b13104a7b9a70b131898aad8bb2de66c608eeedcff6df6ed75ab58835037b"
@@ -1012,9 +1077,164 @@
       "sha256": "bf8e804df3b80293c616b271963e1046bfc6de073da6a068d9a32c0589150fa5"
     },
     {
+      "file": "assets/dialogue/opening-aftermath-0.mp3",
+      "bytes": 87814,
+      "sha256": "1a136c68cb7ac7a6bff41fb079251e1653ca7ed85a8e467bbea6c49c7f744702"
+    },
+    {
+      "file": "assets/dialogue/opening-aftermath-1.mp3",
+      "bytes": 34733,
+      "sha256": "c1a82b127b32f75ea28f3eeadb868fae4b5c9d35c42ef9cccf4865772d361449"
+    },
+    {
+      "file": "assets/dialogue/opening-aftermath-2.mp3",
+      "bytes": 33897,
+      "sha256": "d747b424fd9fb12eb1b173ce301d667114a83f89f963957cbe3ce7d8fa9c3846"
+    },
+    {
+      "file": "assets/dialogue/opening-aftermath-3.mp3",
+      "bytes": 99099,
+      "sha256": "c7de15e7d22fe26acb551a1907dc66105c8f4d7a6ec5d9ab72289b1b79056382"
+    },
+    {
+      "file": "assets/dialogue/opening-garden-0.mp3",
+      "bytes": 66080,
+      "sha256": "e8d3fb8f8a9865e822147d7ec6560f0715572d874773d51c9450c05029e90e93"
+    },
+    {
+      "file": "assets/dialogue/opening-garden-1.mp3",
+      "bytes": 57303,
+      "sha256": "5ea65efd6e68710ea272cc371bb00b8476171162e09c3c40aa2a5968cdc3b9eb"
+    },
+    {
+      "file": "assets/dialogue/opening-garden-2.mp3",
+      "bytes": 121251,
+      "sha256": "b5e87af06fd23d2a804f549ce06f189eb875a9ac6877ca1b058d058b51e06d77"
+    },
+    {
+      "file": "assets/dialogue/opening-garden-3.mp3",
+      "bytes": 112892,
+      "sha256": "4ad513ed44764d20e4c28b6c0f24b8b2f54f31935569fa315c75b2ccea84617b"
+    },
+    {
+      "file": "assets/dialogue/opening-garden-4.mp3",
+      "bytes": 66080,
+      "sha256": "57d5bd3bd1a15a3198e6f1409662384ab6b90f863a379f826eb62fc4e6b7a5e4"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-0.mp3",
+      "bytes": 87814,
+      "sha256": "c605c3a77925733f8074ae014b84c9a9af6f625cb5ff1f56639373533ecba89b"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-1.mp3",
+      "bytes": 79455,
+      "sha256": "30542d358f898b24774cdde56e50729130bdc0dbea81fd6da9fa5439a0ea5a73"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-2.mp3",
+      "bytes": 91576,
+      "sha256": "66a12ea0248bd4909fc8e2dd046b363d386b5577faa04f0d77bcf4437d7b1f80"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-3.mp3",
+      "bytes": 83634,
+      "sha256": "6569fb2a8e333b8daf3012df62f2884c9e97c84848f68ec6e43ed134056874e7"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-4.mp3",
+      "bytes": 102861,
+      "sha256": "17707595500f5c865004cf156b86da5df1a6a97fd74412a0a45c35f95d68f5f0"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-5.mp3",
+      "bytes": 133372,
+      "sha256": "b44add9f7ab063aa651c2098e04067f9f295ee045e241441a767cbc50d91bbc6"
+    },
+    {
+      "file": "assets/dialogue/opening-guild-6.mp3",
+      "bytes": 87814,
+      "sha256": "fdc6d110890c13c20ee24c9d2a8810b5034d61ea0e2c57ddd720bc63051be896"
+    },
+    {
+      "file": "assets/dialogue/opening-levi-0.mp3",
+      "bytes": 23030,
+      "sha256": "9e5278a97e32a11358be50af42f233837aed825e58bcc85d29f69a17bf980c9b"
+    },
+    {
+      "file": "assets/dialogue/opening-levi-1.mp3",
+      "bytes": 67334,
+      "sha256": "3509be60647f6419425941b8ec3ff8c2cc079b4196917d8d37980440cb20a7e1"
+    },
+    {
+      "file": "assets/dialogue/opening-levi-2.mp3",
+      "bytes": 52287,
+      "sha256": "79f5f5d317785fef4ed6b21763ae4528d9523966f44b6a3296bff042b68c728a"
+    },
+    {
+      "file": "assets/dialogue/opening-levi-3.mp3",
+      "bytes": 124176,
+      "sha256": "9e9bf3c23aa4660de54f7e44ee4703462da6b2557a2fd90cd60bfd6d248c83d1"
+    },
+    {
+      "file": "assets/dialogue/opening-malachar-0.mp3",
+      "bytes": 171824,
+      "sha256": "04ff7e578273a751963add5d71b56dc34a5f6dad9f0e4ef6137e69807b14ed96"
+    },
+    {
+      "file": "assets/dialogue/opening-malachar-1.mp3",
+      "bytes": 52287,
+      "sha256": "40fdd1c19645e4aaf2a3b4c0b7feed970eebe49a5cac276df05ceed3b49f0eb6"
+    },
+    {
+      "file": "assets/dialogue/opening-malachar-2.mp3",
+      "bytes": 98681,
+      "sha256": "4d2aac8e4e5fe64bd2c3fc690a8860d3dd72f374ad3c1b5b065014022a426cc6"
+    },
+    {
+      "file": "assets/dialogue/opening-training-0.mp3",
+      "bytes": 101607,
+      "sha256": "c896b0d842e9f5f4c5774784008e49f6be47e10b4ba53ebdfddd9156e3935bf4"
+    },
+    {
+      "file": "assets/dialogue/opening-training-1.mp3",
+      "bytes": 62736,
+      "sha256": "d9b421d17efda564d3e7841bf095b7ac3cdc40402e059c68302a643deac8afc4"
+    },
+    {
+      "file": "assets/dialogue/opening-training-2.mp3",
+      "bytes": 122087,
+      "sha256": "3d290c6d185eebd318ee12c704fbc24c79a217e8d63e3cecf59f11c37d4ee2b2"
+    },
+    {
+      "file": "assets/dialogue/opening-training-3.mp3",
+      "bytes": 22194,
+      "sha256": "3637cb7c9edb2d1ac30ea18a4a21d90d1b09fd3914bd24fe8dec4c5fd98dc3db"
+    },
+    {
+      "file": "assets/dialogue/opening-wake-0.mp3",
+      "bytes": 68588,
+      "sha256": "33573c9fbd32e5e6fb77927f57697ac82aa5106cf9fe551f1a382f1b1f992b34"
+    },
+    {
+      "file": "assets/dialogue/opening-wake-1.mp3",
+      "bytes": 78201,
+      "sha256": "e176ce5a6bb9dae496aec7f21074b6a5f7b2b0cbfc4ed21e497bbbd31bda5aa5"
+    },
+    {
+      "file": "assets/dialogue/opening-wake-2.mp3",
+      "bytes": 58557,
+      "sha256": "ee61721eedaeadd9c988487f781a24640e7a4d97d86f641a49adb337efc19fa4"
+    },
+    {
+      "file": "assets/dialogue/opening-wake-3.mp3",
+      "bytes": 98263,
+      "sha256": "995fc04d25fbdd3d1726b3399ee6f5b4c80a394628677fb4e926fb3d289b3a8a"
+    },
+    {
       "file": "assets/dialogue/voice-cast.json",
-      "bytes": 10939,
-      "sha256": "84b395a5d1dfd22a3f2d98511d195e175b70cd60e511742a7199abaea83bb422"
+      "bytes": 18064,
+      "sha256": "6bc60713780fbd743e8aedfcdac9bbfd94ddc9155a9df2b2270e7b4cc5e3f921"
     },
     {
       "file": "assets/fruits/Faithfulness.glb",
@@ -2518,8 +2738,8 @@
     },
     {
       "file": "campaign.css",
-      "bytes": 16717,
-      "sha256": "d6b881bb760e48901f1b9aa909103947c8e88f4eecef1f3e992ab3aedca16994"
+      "bytes": 17409,
+      "sha256": "4e22d71542f8e8b56b73e4144d7d815d798f30e7d03b3141dfe2430d35d5530a"
     },
     {
       "file": "data.json",
@@ -2528,8 +2748,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 100118,
-      "sha256": "36c39f1d9fc29ec5c9ba6790ce849548d8954bec3c38d24673fdea172cad8196"
+      "bytes": 112436,
+      "sha256": "15f7a1ee528092f2efc4f3d22ceb224a224bdcec441ae75aac0e782341b9f683"
     },
     {
       "file": "icon-180.png",
@@ -2543,8 +2763,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 1167,
-      "sha256": "900f838c84eaaea5aa2c9b2ba18fb56aee7aeb997303ffcbf08d2d99c21bef60"
+      "bytes": 1168,
+      "sha256": "6186d26ddb92cbebd8805535b5bba4bb192b1fc8e8fcfc91edf903496fee3bba"
     },
     {
       "file": "manifest.webmanifest",
@@ -2563,8 +2783,8 @@
     },
     {
       "file": "rpg3d-view.js",
-      "bytes": 4393,
-      "sha256": "7faff60d82951a3e2a8a7000394efcbfda7485852fa6b5adcce91ad6297971ed"
+      "bytes": 4731,
+      "sha256": "1d3b8535e684abf5685d83890e3036fcfade8ed1f1eae1ce03fe1a652c027038"
     },
     {
       "file": "rpg3d.bundle.js",
@@ -2582,5 +2802,5 @@
       "sha256": "52820acd902aaa1f47a7ac8f5532bb8a14a5e8a7383c43610314c013890764cd"
     }
   ],
-  "bytes": 305209163
+  "bytes": 316617056
 }

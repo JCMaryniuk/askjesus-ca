@@ -9,7 +9,10 @@
     "Hailey": "Laura - Enthusiast, Quirky Attitude",
     "Naomi": "Alice - Clear, Engaging Educator",
     "Isaac": "Harry - Fierce Warrior",
-    "Levi": "Bill - Wise, Mature, Balanced"
+    "Levi": "Bill - Wise, Mature, Balanced",
+    "Grace": "Lily - Velvety Actress",
+    "Malachar": "Malachar - Severin Commanding",
+    "Angel": "Matilda - Knowledgable, Professional"
   },
   "conversations": [
     {
@@ -403,6 +406,225 @@
         }
       ],
       "sha256": "bf8e804df3b80293c616b271963e1046bfc6de073da6a068d9a32c0589150fa5"
+    }
+  ],
+  "opening": [
+    {
+      "key": "opening-wake-0",
+      "text": "Where am I? The storm... I thought the water would never end.",
+      "expression": "worried",
+      "speaker": "Sarko",
+      "file": "opening-wake-0.mp3"
+    },
+    {
+      "key": "opening-wake-2",
+      "text": "This room, this armour... is all of this really for me?",
+      "expression": "wonder",
+      "speaker": "Sarko",
+      "file": "opening-wake-2.mp3"
+    },
+    {
+      "key": "opening-training-3",
+      "text": "Then we begin together.",
+      "expression": "determined",
+      "speaker": "Sarko",
+      "file": "opening-training-3.mp3"
+    },
+    {
+      "key": "opening-garden-0",
+      "text": "We helped mend their fences, and somehow this little garden feels greater than a victory.",
+      "expression": "wonder",
+      "speaker": "Sarko",
+      "file": "opening-garden-0.mp3"
+    },
+    {
+      "key": "opening-garden-4",
+      "text": "Then we share it. Whatever waits ahead, nobody carries it alone.",
+      "expression": "determined",
+      "speaker": "Sarko",
+      "file": "opening-garden-4.mp3"
+    },
+    {
+      "key": "opening-malachar-1",
+      "text": "You will not take them. Everyone, stay together!",
+      "expression": "determined",
+      "speaker": "Sarko",
+      "file": "opening-malachar-1.mp3"
+    },
+    {
+      "key": "opening-aftermath-2",
+      "text": "I could not have done that by myself.",
+      "expression": "relieved",
+      "speaker": "Sarko",
+      "file": "opening-aftermath-2.mp3"
+    },
+    {
+      "key": "opening-wake-1",
+      "text": "Hello! My name is Waiz. You are safe in First Light. Take a breath.",
+      "expression": "warm",
+      "speaker": "Waiz",
+      "file": "opening-wake-1.mp3"
+    },
+    {
+      "key": "opening-wake-3",
+      "text": "Yes. But nobody walks this new road alone. Your team will need you, and you will need them.",
+      "expression": "warm",
+      "speaker": "Waiz",
+      "file": "opening-wake-3.mp3"
+    },
+    {
+      "key": "opening-training-1",
+      "text": "And I will try not to call all my screaming tactical enthusiasm.",
+      "expression": "amused",
+      "speaker": "Waiz",
+      "file": "opening-training-1.mp3"
+    },
+    {
+      "key": "opening-guild-0",
+      "text": "Home at last! Everyone, meet Sarko. He survived Diago’s training. Mostly.",
+      "expression": "amused",
+      "speaker": "Waiz",
+      "file": "opening-guild-0.mp3"
+    },
+    {
+      "key": "opening-levi-2",
+      "text": "For the record, the evil panther started it.",
+      "expression": "amused",
+      "speaker": "Waiz",
+      "file": "opening-levi-2.mp3"
+    },
+    {
+      "key": "opening-training-0",
+      "text": "I am Diago. A Shepherd protects the others. Today you learn by standing beside us.",
+      "expression": "serious",
+      "speaker": "Diago",
+      "file": "opening-training-0.mp3"
+    },
+    {
+      "key": "opening-training-2",
+      "text": "Watch whose turn it is. Use a basic attack, or choose a ready skill. Healing keeps a companion in the fight.",
+      "expression": "serious",
+      "speaker": "Diago",
+      "file": "opening-training-2.mp3"
+    },
+    {
+      "key": "opening-guild-6",
+      "text": "Choose your companions for the road. Speak, listen, and make room for their gifts.",
+      "expression": "serious",
+      "speaker": "Diago",
+      "file": "opening-guild-6.mp3"
+    },
+    {
+      "key": "opening-garden-3",
+      "text": "Evolution shards. A gift entrusted to the whole company, not a prize for one champion.",
+      "expression": "serious",
+      "speaker": "Diago",
+      "file": "opening-garden-3.mp3"
+    },
+    {
+      "key": "opening-malachar-2",
+      "text": "He is stronger than us. Protect each other and hold the line. We need time.",
+      "expression": "serious",
+      "speaker": "Diago",
+      "file": "opening-malachar-2.mp3"
+    },
+    {
+      "key": "opening-guild-1",
+      "text": "Surviving is a beginning. I am Amaya. My spear will hold the flank.",
+      "expression": "confident",
+      "speaker": "Amaya",
+      "file": "opening-guild-1.mp3"
+    },
+    {
+      "key": "opening-guild-2",
+      "text": "Shield brother! Isaac. When the road gets rough, stand beside me.",
+      "expression": "warm",
+      "speaker": "Isaac",
+      "file": "opening-guild-2.mp3"
+    },
+    {
+      "key": "opening-guild-3",
+      "text": "I am Hailey. My bow can reach the threats you cannot. You can count on me.",
+      "expression": "warm",
+      "speaker": "Hailey",
+      "file": "opening-guild-3.mp3"
+    },
+    {
+      "key": "opening-guild-4",
+      "text": "I am Naomi. I carry a crossbow, but listening is also part of protecting our friends.",
+      "expression": "gentle",
+      "speaker": "Naomi",
+      "file": "opening-guild-4.mp3"
+    },
+    {
+      "key": "opening-garden-1",
+      "text": "Be still. We are not alone here.",
+      "expression": "wonder",
+      "speaker": "Naomi",
+      "file": "opening-garden-1.mp3"
+    },
+    {
+      "key": "opening-levi-0",
+      "text": "He is here.",
+      "expression": "hopeful",
+      "speaker": "Naomi",
+      "file": "opening-levi-0.mp3"
+    },
+    {
+      "key": "opening-guild-5",
+      "text": "Grace. An evangelist’s courage means little unless it helps someone else stand. My sword is with you.",
+      "expression": "confident",
+      "speaker": "Grace",
+      "file": "opening-guild-5.mp3"
+    },
+    {
+      "key": "opening-garden-2",
+      "text": "Bearer of restoration. Those who walk in unity may receive what lies within. Remain as one.",
+      "expression": "gentle",
+      "speaker": "Angel",
+      "file": "opening-garden-2.mp3"
+    },
+    {
+      "key": "opening-malachar-0",
+      "text": "So... Heaven chose another. Tell me, Shepherd: how long before your light breaks?",
+      "expression": "menacing",
+      "speaker": "Malachar",
+      "file": "opening-malachar-0.mp3"
+    },
+    {
+      "key": "opening-aftermath-0",
+      "text": "When we meet again, I will not be alone.",
+      "expression": "angry",
+      "speaker": "Malachar",
+      "file": "opening-aftermath-0.mp3"
+    },
+    {
+      "key": "opening-levi-1",
+      "text": "I leave for one supply run, and you nearly destroy headquarters.",
+      "expression": "amused",
+      "speaker": "Levi",
+      "file": "opening-levi-1.mp3"
+    },
+    {
+      "key": "opening-levi-3",
+      "text": "Formation seven. Sarko and Isaac, hold the front. Watch for my signal. Now—together!",
+      "expression": "determined",
+      "speaker": "Levi",
+      "file": "opening-levi-3.mp3"
+    },
+    {
+      "key": "opening-aftermath-1",
+      "text": "You lost the moment you came alone.",
+      "expression": "serious",
+      "speaker": "Levi",
+      "file": "opening-aftermath-1.mp3"
+    },
+    {
+      "key": "opening-aftermath-3",
+      "text": "You were never asked to. Take your companions. The road beyond First Light is waiting.",
+      "expression": "warm",
+      "speaker": "Levi",
+      "file": "opening-aftermath-3.mp3"
     }
   ]
 }
