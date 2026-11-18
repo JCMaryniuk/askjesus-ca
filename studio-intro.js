@@ -8,7 +8,7 @@
   const controls=document.createElement('div');controls.className='actions';
   const sound=document.createElement('button');sound.className='button';sound.textContent='SOUND ON';sound.onclick=()=>{video.muted=!video.muted;sound.textContent=video.muted?'SOUND ON':'SOUND OFF';};
   const skip=document.createElement('button');skip.className='button alt';skip.id='startupSkip';skip.textContent='SKIP INTRO';
-  let timer;const finish=()=>{clearTimeout(timer);video.pause();video.removeAttribute('src');video.load();panel.remove();globalThis.sarkoIntroPlaying=false;try{sessionStorage.setItem('sarko-studio-intro','seen')}catch{}};
+  let timer;const finish=()=>{clearTimeout(timer);video.pause();video.removeAttribute('src');video.load();panel.remove();globalThis.sarkoIntroPlaying=false;document.dispatchEvent(new Event('sarko-intro-finished'));try{sessionStorage.setItem('sarko-studio-intro','seen')}catch{}};
   skip.onclick=finish;video.onended=finish;video.onerror=finish;panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();finish();}});
   controls.append(sound,skip);panel.append(video,controls);document.body.append(panel);skip.focus();timer=setTimeout(finish,12000);video.play().catch(()=>finish());
 })();

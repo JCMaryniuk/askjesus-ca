@@ -4168,8 +4168,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 259786,
-      "sha256": "8c94106a6403ed26991b1ed17dbea72f3de2d10e25a572616fc4a101fafa733f"
+      "bytes": 261255,
+      "sha256": "10d12680b0c58c6d4de6849a9bd735641d6950dbf05e93d856efceda867725b2"
     },
     {
       "file": "icon-180.png",
@@ -4218,8 +4218,8 @@
     },
     {
       "file": "studio-intro.js",
-      "bytes": 1632,
-      "sha256": "13b7771d82ca0cc2aebc64fdaf833619726b4604452b7891f89cf3b37c7b7dd8"
+      "bytes": 1690,
+      "sha256": "f84506ac411c9ede2bea9b5ebe6783944e658457ea03cca07f0eb3950adcf388"
     },
     {
       "file": "style.css",
@@ -4233,9 +4233,9 @@
     },
     {
       "file": "town.css",
-      "bytes": 5955,
-      "sha256": "b663b0a88ec10ad884fa710258235039c8bf4118b57a433f9bb58aa81dc7bcad"
+      "bytes": 6149,
+      "sha256": "2e98f1f343d5451735b7fdb10db4000d3e5f2aa51b4726b8d608ed3b68221d04"
     }
   ],
-  "bytes": 383911929
+  "bytes": 383913650
 }
