@@ -847,6 +847,11 @@
       "sha256": "b93677b0c29aa758b848e2fd8652c4b6bab5a3afa632b9ebb5805235996bb616"
     },
     {
+      "file": "assets/book/armour-fits-game.png",
+      "bytes": 2767110,
+      "sha256": "67d54c359552db462770cf96263ed7ae5db9d52db8d7ee7f907f5a1a9e077179"
+    },
+    {
       "file": "assets/book/breath-heaven.jpg",
       "bytes": 952768,
       "sha256": "005c44563915f8e4061797f59076df4e9a41eda7837465f7262aa918c0cce100"
@@ -872,6 +877,11 @@
       "sha256": "d02a2c7108bea2382af38a6cab2c1433ea4138e24542ebdca1c74c8c319b1283"
     },
     {
+      "file": "assets/book/first-light-overlook-game.png",
+      "bytes": 2739281,
+      "sha256": "d552cabf0d39f1b269e4c879ffb3fcb5d712885d9f47f5e705e7a165abb9d092"
+    },
+    {
       "file": "assets/book/first-light-overlook.png",
       "bytes": 3269991,
       "sha256": "1724bca1ca1b70fae91d318ca6a1ad8527977e0d72f1297c0bd199d714327d9b"
@@ -880,6 +890,11 @@
       "file": "assets/book/garden-fractures.jpg",
       "bytes": 934582,
       "sha256": "a0e8fd94c822cbcb364618b0ba9bb203d1d075ba0df364edb0800f96646fd088"
+    },
+    {
+      "file": "assets/book/garden-gift-game.png",
+      "bytes": 3535204,
+      "sha256": "340cb8f7aa15f623779a390bbb9811cb599d7a0152e746cd2ff68fd757a7cf98"
     },
     {
       "file": "assets/book/garden-invitation.jpg",
@@ -892,9 +907,19 @@
       "sha256": "80bd6f33ad54bd188b199d47782702c0dd35bef4f0f05618db324c9a36d94fb2"
     },
     {
+      "file": "assets/book/guild-after-battle-game.png",
+      "bytes": 3718535,
+      "sha256": "b2fa50f1cae4e5785251a0225fb28741fb13c341da73a916fab84340270ec68e"
+    },
+    {
       "file": "assets/book/guild-arena.jpg",
       "bytes": 445054,
       "sha256": "39adc616368addd3fdf9ad1231625d43362ebc411fa9a0d004cabf229934f8f2"
+    },
+    {
+      "file": "assets/book/guild-hearth-game.png",
+      "bytes": 2964887,
+      "sha256": "8372ffd906854b3e257254a53f8320d4d4ecefbebb558a37a16757930c80e1ae"
     },
     {
       "file": "assets/book/guild-repairs.jpg",
@@ -922,6 +947,11 @@
       "sha256": "7b93b2c4b9806374ffc4eed21a524ce7ae07595bf7590660b9dc66362f85774f"
     },
     {
+      "file": "assets/book/meeting-diago-game.png",
+      "bytes": 3044207,
+      "sha256": "65247d520121f7be5da50fc6c3683591e610b5a3569a6bbde8e60fbb6618b375"
+    },
+    {
       "file": "assets/book/meeting-diago.png",
       "bytes": 3539967,
       "sha256": "ca319c5621c68047d99064a5792ea5dce6110ce05a14b53fb16f2fcb0aab3024"
@@ -937,6 +967,11 @@
       "sha256": "248948abe15f94f38c3c44d6ecfcb8128c8da51798199fe2ca79472585f01c61"
     },
     {
+      "file": "assets/book/rex-mercy-game.png",
+      "bytes": 3465638,
+      "sha256": "99807558e4b3124f5f3f43ecec029ec0dc45fe803857c8ca0fd03c9a922fa895"
+    },
+    {
       "file": "assets/book/rex-restoration.jpg",
       "bytes": 949225,
       "sha256": "2e6e3e61514a6252f13c31df7b1401283898923ffbe0078aa5fc90bf0ade03e2"
@@ -950,6 +985,11 @@
       "file": "assets/book/shadow.jpg",
       "bytes": 614748,
       "sha256": "03175afd97e0d3da360a9b0f8760bf467a15091138c8851853ee838c0953a5a2"
+    },
+    {
+      "file": "assets/book/shield-lesson-game.png",
+      "bytes": 3329324,
+      "sha256": "2612fa4ee300a0e18f04abf33ed0f6b5488e3c3afef2de497c7e19b82a0501a3"
     },
     {
       "file": "assets/book/shield-lesson.png",
@@ -972,9 +1012,19 @@
       "sha256": "a0c3303356b7eb1ff06b06ffcc3b694be708e943d819e6e52d181cc904069a56"
     },
     {
+      "file": "assets/book/waiz-welcome-game.png",
+      "bytes": 2981912,
+      "sha256": "baf443e0dbefc87522b3356cc50288ade57c2dcb9be9662e8faf4ce1072c7af4"
+    },
+    {
       "file": "assets/book/waiz-welcome.png",
       "bytes": 3005692,
       "sha256": "2bf20003614668437da5187c7c24b4f20d99db9c197e84c37d82c3f52748015c"
+    },
+    {
+      "file": "assets/book/wake-alone-game.png",
+      "bytes": 2647596,
+      "sha256": "3ed5260ab0e4c3df81af8c46a53bcf9cfaf500c13253e9ffd1a592565fc0d47a"
     },
     {
       "file": "assets/book/water.jpg",
@@ -2363,8 +2413,8 @@
     },
     {
       "file": "assets/dialogue/opening-wake-3.mp3",
-      "bytes": 107458,
-      "sha256": "d06e2bced789ffe9bea6836623a67ee3f6a96f29a21bf231cf74a84e8643542c"
+      "bytes": 87990,
+      "sha256": "2cfc1f5b8d337d06a07fdaf0ce1e908f71cfda7067e90d42f6da59b9bf0f2f96"
     },
     {
       "file": "assets/dialogue/opening-wake-4.mp3",
@@ -2488,8 +2538,8 @@
     },
     {
       "file": "assets/dialogue/voice-cast.json",
-      "bytes": 85795,
-      "sha256": "5d08a6009e8c2cee1322472bff7dfe04398ed8a8f94f2e8132a267fc83d78953"
+      "bytes": 85892,
+      "sha256": "c9cdefa780b49e8943df56b66e969ab0e53d330d6b825559412fefe799ed26be"
     },
     {
       "file": "assets/fruits/Faithfulness.glb",
@@ -4188,8 +4238,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 265422,
-      "sha256": "b2cbc3bfe63c7b870911e2a56fea981f63bff501761817a7633a6d69cbe385f2"
+      "bytes": 266312,
+      "sha256": "452357bee7a3508169730ea8b6a9a34e7cb583918ddbf48156c590f2b98f7fd3"
     },
     {
       "file": "icon-180.png",
@@ -4257,5 +4307,5 @@
       "sha256": "dff5c21cdb3ea40c0fe30dc97809ae4e67dc3121bb66dee815994e82633a4e46"
     }
   ],
-  "bytes": 397177424
+  "bytes": 428352637
 }
