@@ -86445,7 +86445,19 @@ class RPGStage {
     this.terrain.traverse(o=>{if(o.isMesh){[].concat(o.material).forEach(m=>materials.add(m));if(o.geometry.type!=='BufferGeometry')geometries.add(o.geometry);}});
     materials.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());this.sceneryResources.texture.dispose();this.sceneryResources=null;
   }
+  restoreSwordPose(actor){const pose=actor.idleSwordPose;if(pose){pose.arm.quaternion.copy(pose.base);actor.idleSwordPose=null;}}
+  poseIdleSword(actor){
+    if(!actor.entry.gripFix?.uprightIdle||!actor.gripFix||actor.dead||actor.current?.getClip().name!==actor.entry.actions.idle)return;
+    const {model,socket,bone}=actor.gripFix,arm=bone.parent;if(!arm?.isBone)return;
+    actor.visual.updateMatrixWorld(true);
+    if(!actor.swordTip){const points=model.geometry.attributes.position,grip=new Vector3().fromArray(actor.entry.gripFix.grip);let far=0,tip=new Vector3();for(let i=0;i<points.count;i++){const v=new Vector3().fromBufferAttribute(points,i),d=v.distanceToSquared(grip);if(d>far){far=d;tip.copy(v);}}actor.swordTip=tip;}
+    const origin=socket.getWorldPosition(new Vector3()),tip=model.localToWorld(actor.swordTip.clone()),direction=tip.sub(origin).normalize();
+    const parentQ=arm.parent.getWorldQuaternion(new Quaternion()),worldQ=arm.getWorldQuaternion(new Quaternion());
+    const turn=new Quaternion().setFromUnitVectors(direction,new Vector3(0,1,0));
+    actor.idleSwordPose={arm,base:arm.quaternion.clone()};arm.quaternion.copy(parentQ.invert().multiply(turn).multiply(worldQ));actor.visual.updateMatrixWorld(true);
+  }
   playClip(actor,action,loop=false,report=true){
+    this.restoreSwordPose(actor);
     const name=actor.entry.actions?.[action],clip=actor.clips.get(name);
     if(!clip){if(report)this.onError(`${actor.key}: missing animation ${action}`);return null;}
     const next=actor.mixer.clipAction(clip),previous=actor.current;
@@ -86477,18 +86489,17 @@ class RPGStage {
     if(!event.effectOnly)actor.current.setEffectiveTimeScale(nativeDuration/duration);
     const origin=actor.visual.position.clone(),target=this.actors.get(event.targets?.find(t=>t.kind==='damage')?.key);
     const direction=target?target.visual.position.clone().sub(origin).setY(0).normalize():new Vector3();
-    // Clamp a forward step before any teammate's personal space. This also
-    // protects custom/loaded formations rather than relying on row order alone.
-    if(event.advance>0){
-      const side=event.actor.startsWith('hero-')?'hero-':null;
-      for(const [key,other] of this.actors){
-        if(!side||!key.startsWith(side)||other===actor)continue;
-        const delta=other.visual.position.clone().sub(origin).setY(0),along=delta.dot(direction);
-        const radius=1.65,across=delta.lengthSq()-along*along;
-        if(along>0&&across<radius*radius)event.advance=Math.min(event.advance,Math.max(0,along-Math.sqrt(radius*radius-across)));
-      }
+    let contactPath=null;
+    if(event.advance>0&&target&&!event.projectile){
+      const distance=target.visual.position.clone().sub(origin).setY(0).length();
+      const reach=Math.max(.9,((actor.entry.height||2)+(target.entry.height||2))*.28);
+      event.advance=Math.max(0,distance-reach);
+      const destination=origin.clone().addScaledVector(direction,event.advance),points=[origin.clone()];
+      const blockers=[...this.actors.values()].filter(other=>{if(other===actor||other===target||other.dead)return false;const delta=other.visual.position.clone().sub(origin).setY(0),along=delta.dot(direction);return along>0&&along<event.advance&&delta.lengthSq()-along*along<2.25;});
+      if(blockers.length){const side=new Vector3(-direction.z,0,direction.x);let offset=1.8;for(const other of blockers)offset=Math.max(offset,other.visual.position.clone().sub(origin).dot(side)+1.8);points.push(origin.clone().addScaledVector(side,offset),destination.clone().addScaledVector(side,offset));}
+      points.push(destination);contactPath=new CurvePath();for(let i=1;i<points.length;i++)contactPath.add(new LineCurve3(points[i-1],points[i]));
     }
-    this.active={...event,impactAt,elapsed:0,duration,impact:false,origin,direction};
+    this.active={...event,contactPath,impactAt,elapsed:0,duration,impact:false,origin,direction};
     if(event.projectile&&target)this.active.flight=this.projectileEffect(actor,target,event.projectile,event.effectColor||event.color);
   }
   projectileEffect(source,target,kind,color){
@@ -86513,8 +86524,8 @@ class RPGStage {
     for(const target of event.targets||[]){
       const actor=this.actors.get(target.key);if(!actor)continue;
       this.lightEffect(actor.visual.position,target.kind==='heal'?'heal':target.kind==='ward'?'ward':event.effectKind||'hit',event.effectColor||target.color||event.color);
-      this.numberEffect(actor.visual.position,target.amount,target.kind==='heal'?'#86ffbd':(event.color||'#fff1bc'),target.kind==='heal'?'+':'');
-      if(target.kind==='damage')this.playClip(actor,'hit',false,false);
+      this.numberEffect(actor.visual.position,target.amount,target.kind==='heal'?'#fff3b0':target.kind==='damage'?'#ffffff':(event.color||'#fff1bc'),target.kind==='heal'?'+':'',target.kind==='damage',!!target.critical);
+      if(target.kind==='damage'){this.playClip(actor,'hit',false,false);const source=this.actors.get(event.actor);actor.recoil={origin:actor.visual.position.clone(),direction:source?actor.visual.position.clone().sub(source.visual.position).setY(0).normalize():new Vector3(1,0,0),elapsed:0};}
       if(target.defeated){actor.dead=true;this.playClip(actor,'defeat',false,false);}
     }
   }
@@ -86540,14 +86551,20 @@ class RPGStage {
     }
     this.effects.push({group,elapsed:0,duration:kind==='hit'?.6:1.3,kind});
   }
-  numberEffect(position,amount,color,prefix=''){
+  numberEffect(position,amount,color,prefix='',damage=false,critical=false){
     if(!Number.isFinite(amount))return;
-    const canvas=document.createElement('canvas');canvas.width=256;canvas.height=96;const ctx=canvas.getContext('2d');ctx.font='bold 52px Georgia';ctx.textAlign='center';ctx.lineWidth=7;ctx.strokeStyle='#101626';ctx.fillStyle=color;const text=prefix+String(amount);ctx.strokeText(text,128,64);ctx.fillText(text,128,64);
-    const map=new CanvasTexture(canvas),material=new SpriteMaterial({map,transparent:true,depthTest:false});
-    const group=new Sprite(material);group.position.copy(position).add(new Vector3(0,2.6,0));group.scale.set(1.8,.68,1);this.scene.add(group);this.effects.push({group,elapsed:0,duration:1.2,kind:'number',texture:map});
+    const canvas=document.createElement('canvas');canvas.width=512;canvas.height=192;const ctx=canvas.getContext('2d');
+    if(damage){
+      ctx.beginPath();for(let i=0;i<24;i++){const angle=i*Math.PI/12,r=i%2?.72:1,x=256+Math.cos(angle)*228*r,y=96+Math.sin(angle)*85*r;i?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.closePath();ctx.fillStyle=critical?'#145ccc':'#b51225';ctx.fill();ctx.lineWidth=5;ctx.strokeStyle=critical?'#8bdfff':'#ff6673';ctx.stroke();
+    }
+    if(critical){ctx.font='bold 24px Georgia';ctx.textAlign='center';ctx.fillStyle='#ffffff';ctx.fillText('CRITICAL',256,37);}
+    const text=prefix+String(amount);ctx.font='bold 88px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineWidth=10;ctx.strokeStyle='#191020';ctx.fillStyle=color;ctx.strokeText(text,256,96,430);ctx.fillText(text,256,96,430);
+    const map=new CanvasTexture(canvas),material=new SpriteMaterial({map,transparent:true,depthTest:false,depthWrite:false,toneMapped:false});
+    const group=new Sprite(material);group.renderOrder=1000;group.position.copy(position).add(new Vector3(0,2.6,0));group.scale.set(2.3,.86,1);this.scene.add(group);this.effects.push({group,elapsed:0,duration:1.65,kind:'number',texture:map});
   }
+
   setPaused(paused){this.paused=paused;this.previous=performance.now();if(!paused)this.startNext();}
-  cancelActions(){if(this.active){this.actors.get(this.active.actor)?.visual.position.copy(this.active.origin);if(this.active.flight)this.removeEffect(this.active.flight);this.active.resolve(false);}this.active=null;for(const action of this.pending)action.resolve(false);this.pending=[];for(const effect of this.effects)this.removeEffect(effect);this.effects=[];}
+  cancelActions(){for(const actor of this.actors.values())if(actor.recoil){actor.visual.position.copy(actor.recoil.origin);actor.recoil=null;}if(this.active){this.actors.get(this.active.actor)?.visual.position.copy(this.active.origin);if(this.active.flight)this.removeEffect(this.active.flight);this.active.resolve(false);}this.active=null;for(const action of this.pending)action.resolve(false);this.pending=[];for(const effect of this.effects)this.removeEffect(effect);this.effects=[];}
   removeEffect(effect){this.scene.remove(effect.group);effect.group.traverse(o=>{o.geometry?.dispose();for(const m of (Array.isArray(o.material)?o.material:[o.material]).filter(Boolean))m.dispose();});effect.texture?.dispose();}
   tick(now){
     // Use elapsed foreground time rather than a per-frame cap: capping to 50 ms
@@ -86555,8 +86572,8 @@ class RPGStage {
     if(this.disposed)return;this.frame=requestAnimationFrame(t=>this.tick(t));const dt=Math.max(0,(now-this.previous)/1000);this.previous=now;
     if(document.hidden||!this.host.isConnected)return;
     if(!this.paused){
-      for(const actor of this.actors.values())actor.mixer.update(dt);
-      if(this.active){const event=this.active;event.elapsed+=dt;const actor=this.actors.get(event.actor);if(actor&&event.advance)actor.visual.position.copy(event.origin).addScaledVector(event.direction,Math.sin(Math.PI*Math.min(1,event.elapsed/event.duration))*event.advance);this.updateProjectile(event);if(!event.impact&&event.elapsed>=event.duration*(event.impactAt??.5)){event.impact=true;this.applyImpact(event);}if(event.elapsed>=event.duration){actor?.visual.position.copy(event.origin);if(event.flight)this.removeEffect(event.flight);this.active=null;for(const a of this.actors.values())if(!a.dead)this.playClip(a,'idle',true,false);event.resolve(true);this.startNext();}}
+      for(const actor of this.actors.values()){this.restoreSwordPose(actor);actor.mixer.update(dt);this.poseIdleSword(actor);if(actor.recoil){const r=actor.recoil;r.elapsed+=dt;actor.visual.position.copy(r.origin).addScaledVector(r.direction,Math.sin(Math.PI*Math.min(1,r.elapsed/.45))*.18);if(r.elapsed>=.45){actor.visual.position.copy(r.origin);actor.recoil=null;}}}
+      if(this.active){const event=this.active;event.elapsed+=dt;const actor=this.actors.get(event.actor);if(actor&&event.advance){const p=Math.min(1,event.elapsed/event.duration),peak=event.impactAt,travel=p<=peak?p/peak:1-(p-peak)/(1-peak),ease=travel*travel*(3-2*travel);if(event.contactPath)actor.visual.position.copy(event.contactPath.getPoint(ease));else actor.visual.position.copy(event.origin).addScaledVector(event.direction,ease*event.advance);}this.updateProjectile(event);if(!event.impact&&event.elapsed>=event.duration*(event.impactAt??.5)){event.impact=true;this.applyImpact(event);}if(event.elapsed>=event.duration){actor?.visual.position.copy(event.origin);if(event.flight)this.removeEffect(event.flight);this.active=null;for(const a of this.actors.values())if(!a.dead)this.playClip(a,'idle',true,false);event.resolve(true);this.startNext();}}
       for(let i=this.effects.length-1;i>=0;i--){const e=this.effects[i];e.elapsed+=dt;if(e.elapsed>=e.duration){this.removeEffect(e);this.effects.splice(i,1);continue;}const fade=1-e.elapsed/e.duration;e.group.traverse(o=>{if(o.material)o.material.opacity=Math.min(o.material.opacity,fade);});if(e.kind==='number')e.group.position.y+=dt*.55;}
     }
     this.renderer.render(this.scene,this.camera);

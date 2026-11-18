@@ -58,7 +58,7 @@ export class Game3DView {
       const visual=actionPresentation(action);
       const targets=(event.targets||[]).map(t=>({
         key:t.enemy?'enemy':`hero-${t.hero}`,
-        kind:t.kind,amount:t.kind==='damage'?-Math.abs(t.amount):t.amount,
+        kind:t.kind,critical:!!t.critical,amount:t.kind==='damage'?-Math.abs(t.amount):t.amount,
         defeated:!!t.defeated,color:t.color||event.color
       }));
       if(!await this.stage.enqueue({actor,action,targets,participants:event.participants?.map(p=>({actor:`hero-${p.hero}`,action:p.action})),effectOnly:event.effectOnly,projectile:event.projectile||visual.projectile,effectKind:visual.effectKind,effectColor:visual.color,color:event.color,impactAt:event.impactAt,minimumDuration:1.25,advance:visual.projectile?0:event.advance||0}))
