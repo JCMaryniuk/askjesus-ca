@@ -19,3 +19,4 @@
 @media(max-width:600px) and (max-height:650px){
  .titleScreen{align-items:flex-start}.titleCrest{width:36px;height:36px}.titleRail h1{font-size:30px}.titleRail{padding-top:10px}.titleRail nav{gap:6px;margin:8px 0}.titleRail h2{margin-bottom:8px}
 }
+#partyNotice{position:fixed;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:8;width:min(620px,calc(100% - 24px));padding:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#0b1d32f5;border:2px solid #d6af63;border-radius:14px;box-shadow:0 8px 35px #000b}#partyNotice span{flex:1 1 100%;color:#ffe4a8}#partyNotice .button{min-height:44px;font-size:12px}
