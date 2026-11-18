@@ -2098,14 +2098,14 @@
     {
       "scene": "wake",
       "index": 3,
-      "text": "A dove on my forehead, and on my right paw. It is warm. I should be frightened, but somehow I feel safe.",
+      "text": "A dove on my forehead. It is warm. I should be frightened, but somehow I feel safe.",
       "expression": "wonder",
       "speaker": "Sarko",
       "file": "opening-wake-3.mp3",
-      "start": 18.771881999999998,
-      "end": 25.416077,
       "voice": "Sarko",
-      "sha256": "d06e2bced789ffe9bea6836623a67ee3f6a96f29a21bf231cf74a84e8643542c"
+      "sha256": "2cfc1f5b8d337d06a07fdaf0ce1e908f71cfda7067e90d42f6da59b9bf0f2f96",
+      "sourceRecording": "ElevenLabs_2026-11-18T04_24_36_Sarko_gen_sp100_s50_sb75_se0_b_m2.mp3",
+      "recordingNote": "Single-line ElevenLabs correction; forehead mark only."
     },
     {
       "scene": "wake",
