@@ -4169,7 +4169,7 @@
     {
       "file": "game.js",
       "bytes": 255207,
-      "sha256": "062663ba8042f9463607e361008aea447220e3f8bcda7ff1f18335ad3d7dee21"
+      "sha256": "44c731f71952c22c2b5f9b954a77421b4481477ec86afc4681967f64cfaad7f9"
     },
     {
       "file": "icon-180.png",
@@ -4233,9 +4233,9 @@
     },
     {
       "file": "town.css",
-      "bytes": 4031,
-      "sha256": "a3eca40193d5be7748cd2394d49fe9c3eafa8dab806e7a9195566fa914dda0f5"
+      "bytes": 5541,
+      "sha256": "d87d2fbb5db3e11e79b2d6b7b50dae3d1ab42e3f98d9711f0051661f51ec9444"
     }
   ],
-  "bytes": 383905222
+  "bytes": 383906732
 }
