@@ -109,7 +109,8 @@
           0,
           0.0053
         ],
-        "fingers": true
+        "fingers": true,
+        "uprightIdle": true
       }
     },
     "Levi": {

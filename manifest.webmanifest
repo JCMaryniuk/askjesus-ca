@@ -1,7 +1,7 @@
 {
   "name": "Sarko Classic RPG",
   "short_name": "Sarko RPG",
-  "description": "Choose four Sarko heroes for a classic card RPG with an optional 3D battle view with Auto and Manual turns.",
+  "description": "Journey with Sarko through a voiced story, help neighbours with life-skill quests, build your team, and face 3D battles in Campaign and shared Survival.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#09121f",
