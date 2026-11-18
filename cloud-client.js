@@ -5,6 +5,7 @@ export async function createCloudClient(config) {
   const client = createClient(config.url, config.publishableKey, {auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,storageKey:'sarko-cloud-auth'}});
   return {
     auth:client.auth,
+    async finder(operation='list',room=null,name='Traveler') {const {data,error}=await client.rpc('sarko_party_finder',{p_operation:operation,p_room:room,p_name:name});if(error)throw error;return data;},
     async party(operation,room=null,input={}) {const {data,error}=await client.rpc('sarko_party',{p_operation:operation,p_room:room,p_input:input});if(error)throw error;return data;},
     async reward(room,battle,reward=null,revision=null,payload=null) {const {data,error}=await client.rpc('sarko_party_reward',{p_room:room,p_battle:battle,p_reward:reward,p_revision:revision,p_payload:payload});if(error)throw error;return data;},
     async read() {const {data,error}=await client.from('sarko_cloud_saves').select('revision,payload,updated_at').maybeSingle();if(error)throw error;return data;},

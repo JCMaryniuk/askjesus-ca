@@ -4138,8 +4138,8 @@
     },
     {
       "file": "cloud-client.js",
-      "bytes": 1283,
-      "sha256": "f7ad65ae56aed10ef9db9a9ba4540ee62ed4f5b5cf57a12424d55ec14cce02ac"
+      "bytes": 1487,
+      "sha256": "938bd131a30766b15adef161cc39888842a6e5e7022ae92796f8cb7c8b0da027"
     },
     {
       "file": "cloud-config.json",
@@ -4168,8 +4168,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 255207,
-      "sha256": "44c731f71952c22c2b5f9b954a77421b4481477ec86afc4681967f64cfaad7f9"
+      "bytes": 259786,
+      "sha256": "8c94106a6403ed26991b1ed17dbea72f3de2d10e25a572616fc4a101fafa733f"
     },
     {
       "file": "icon-180.png",
@@ -4233,9 +4233,9 @@
     },
     {
       "file": "town.css",
-      "bytes": 5541,
-      "sha256": "d87d2fbb5db3e11e79b2d6b7b50dae3d1ab42e3f98d9711f0051661f51ec9444"
+      "bytes": 5955,
+      "sha256": "b663b0a88ec10ad884fa710258235039c8bf4118b57a433f9bb58aa81dc7bcad"
     }
   ],
-  "bytes": 383906732
+  "bytes": 383911929
 }
