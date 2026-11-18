@@ -4223,8 +4223,8 @@
     },
     {
       "file": "style.css",
-      "bytes": 21212,
-      "sha256": "4f7d4ac3259cdc3004a26a2bf0d5ca5c9204701e84970127b15ef6b5c9e80676"
+      "bytes": 21979,
+      "sha256": "ce9d69bdd6e341d7995c1d0d5415a544c11f313f55cf92fa96335994cfe80be9"
     },
     {
       "file": "supabase.bundle.js",
@@ -4237,5 +4237,5 @@
       "sha256": "a3eca40193d5be7748cd2394d49fe9c3eafa8dab806e7a9195566fa914dda0f5"
     }
   ],
-  "bytes": 383904455
+  "bytes": 383905222
 }
