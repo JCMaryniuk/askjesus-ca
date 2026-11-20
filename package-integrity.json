@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Continuity-2026-11-20",
+  "version": "Sarko-Scale-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1304,
-      "sha256": "561903795054fd292945b4392fc912efe8693c95204e9e93f1a8667e3738d491"
+      "bytes": 1299,
+      "sha256": "97d7ec730f263253c1cb5ab98af20f9cef372c2fef9906ca4458af4eee2c7861"
     },
     {
       "file": "style.css",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 295930,
-      "sha256": "d50e8eb641d91026e5e4c653bde69cadf402427c567f4b4c80318b5db75bdca9"
+      "bytes": 295914,
+      "sha256": "d6071b635ed884887983cfb041d1ffc6ec736e305d09a6961021923b153300ff"
     },
     {
       "file": "soundtrack.mjs",
@@ -205,6 +205,11 @@
       "file": "assets/book/armour-fits-reference-v2.png",
       "bytes": 2690203,
       "sha256": "9fad419723027e12a6d25108e93b1e29499922c83977ace9baa35fc1183a2b78"
+    },
+    {
+      "file": "assets/book/armour-fits-scale-v3.png",
+      "bytes": 2511792,
+      "sha256": "c1ad94e28c480cdd525c85006c7db29add5e48d5bb3edb7a6a942b32c4d95da5"
     },
     {
       "file": "assets/book/breath-heaven-consistent.png",
@@ -492,6 +497,11 @@
       "sha256": "c26da695676c5e361cabede96382095076c7b9fe4281877432beb9895a713d1b"
     },
     {
+      "file": "assets/book/waiz-welcome-scale-v3.png",
+      "bytes": 2548208,
+      "sha256": "a73cdc7b20a4b188229f6df6f564ced7e5cec7d7fb4c8eaa7cb5e0551615f49f"
+    },
+    {
       "file": "assets/book/waiz-welcome.png",
       "bytes": 3005692,
       "sha256": "2bf20003614668437da5187c7c24b4f20d99db9c197e84c37d82c3f52748015c"
@@ -505,6 +515,11 @@
       "file": "assets/book/wake-alone-reference-v2.png",
       "bytes": 2509261,
       "sha256": "90191492b656aaff4ca56fac1a5eb11023e83c79cbee6d5e4b840b3534885070"
+    },
+    {
+      "file": "assets/book/wake-alone-scale-v3.png",
+      "bytes": 2462357,
+      "sha256": "7c42c334ccc9a4f6dc2ba3679dfc61134669d09a2361abef0c3041870d06d1f2"
     },
     {
       "file": "assets/book/water.jpg",
