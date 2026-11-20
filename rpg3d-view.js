@@ -46,7 +46,7 @@ export class Game3DView {
     if(version!==this.version)return;
     if(!await this.stage.setActors(actors))throw Error('The 3D battle could not finish loading.');
     if(version!==this.version)return;
-    this.stage.frameActors=()=>{this.baseFrameActors();if(storyBattle){this.stage.camera.zoom*=1.55;this.stage.camera.updateProjectionMatrix();}};this.stage.frameActors();
+    this.stage.frameActors=()=>{this.baseFrameActors();this.stage.camera.zoom*=storyBattle?1.55:1.3;this.stage.camera.updateProjectionMatrix();};this.stage.frameActors();
     this.battleKey=key;
   }
   async present(events){

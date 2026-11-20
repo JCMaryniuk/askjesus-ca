@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Touch-Scene-2026-11-19",
+  "version": "Sarko-Immersive-Scene-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1299,
-      "sha256": "4854ed7df114c0a8172e2fac888e7da8310036ee0be606c3d4f0fd2a72906e04"
+      "bytes": 1303,
+      "sha256": "d717f3fce0b8063aee670d4145cc846d8197e0968a345672cc236ad663d0bb0c"
     },
     {
       "file": "style.css",
@@ -28,8 +28,8 @@
     },
     {
       "file": "handoff-ui.css",
-      "bytes": 14893,
-      "sha256": "01efcfac1546729efce921d03d2e4bc8310e62410726135fc2641fcc97e1703e"
+      "bytes": 19444,
+      "sha256": "ecd5252a56b2a56b52ec51158812fae27d907dcfcc001ac54409806ac2d89f89"
     },
     {
       "file": "handoff-rules.mjs",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 292844,
-      "sha256": "1467d9ecfdb5bfdbf0b598e8efe9249f921ab027dd8e9fc640421306f08fe158"
+      "bytes": 294514,
+      "sha256": "3ea00f14e5c8f194a3851ac0e9fc47c065b5d8264e6d098e48d666757b4b4bae"
     },
     {
       "file": "soundtrack.mjs",
@@ -128,8 +128,8 @@
     },
     {
       "file": "rpg3d-view.js",
-      "bytes": 4756,
-      "sha256": "4bf07bb29378332df1c43682bf5e392a3969768a19263077d2e763d18eb4dc56"
+      "bytes": 4755,
+      "sha256": "6418f17e4a06657c1914a5162cdd7d02f46be7b5db17739c55e462869bb99ee8"
     },
     {
       "file": "rpg3d-service.js",
