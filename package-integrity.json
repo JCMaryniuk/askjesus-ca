@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Story-Overlay-2026-11-20",
+  "version": "Sarko-Continuity-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1301,
-      "sha256": "83050c1d930bc3ae68872777b69ea7142721e91b814afa7ccde39cab4b2ea828"
+      "bytes": 1304,
+      "sha256": "561903795054fd292945b4392fc912efe8693c95204e9e93f1a8667e3738d491"
     },
     {
       "file": "style.css",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 295898,
-      "sha256": "55e2377d78457ccce468bc11ab72c3e902e37b8e683479ab566cdd349942317f"
+      "bytes": 295930,
+      "sha256": "d50e8eb641d91026e5e4c653bde69cadf402427c567f4b4c80318b5db75bdca9"
     },
     {
       "file": "soundtrack.mjs",
@@ -200,6 +200,11 @@
       "file": "assets/book/armour-fits-game.png",
       "bytes": 2767110,
       "sha256": "67d54c359552db462770cf96263ed7ae5db9d52db8d7ee7f907f5a1a9e077179"
+    },
+    {
+      "file": "assets/book/armour-fits-reference-v2.png",
+      "bytes": 2690203,
+      "sha256": "9fad419723027e12a6d25108e93b1e29499922c83977ace9baa35fc1183a2b78"
     },
     {
       "file": "assets/book/breath-heaven-consistent.png",
@@ -482,6 +487,11 @@
       "sha256": "baf443e0dbefc87522b3356cc50288ade57c2dcb9be9662e8faf4ce1072c7af4"
     },
     {
+      "file": "assets/book/waiz-welcome-reference-v2.png",
+      "bytes": 2665214,
+      "sha256": "c26da695676c5e361cabede96382095076c7b9fe4281877432beb9895a713d1b"
+    },
+    {
       "file": "assets/book/waiz-welcome.png",
       "bytes": 3005692,
       "sha256": "2bf20003614668437da5187c7c24b4f20d99db9c197e84c37d82c3f52748015c"
@@ -490,6 +500,11 @@
       "file": "assets/book/wake-alone-game.png",
       "bytes": 2647596,
       "sha256": "3ed5260ab0e4c3df81af8c46a53bcf9cfaf500c13253e9ffd1a592565fc0d47a"
+    },
+    {
+      "file": "assets/book/wake-alone-reference-v2.png",
+      "bytes": 2509261,
+      "sha256": "90191492b656aaff4ca56fac1a5eb11023e83c79cbee6d5e4b840b3534885070"
     },
     {
       "file": "assets/book/water.jpg",
