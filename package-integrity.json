@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-First-Light-Handoff-2026-11-19",
+  "version": "Sarko-Touch-Scene-2026-11-19",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1307,
-      "sha256": "9aa1341626b8fa821244d87a874d18ab07f9f04faf49ff89fce7d6a3b5bbacbf"
+      "bytes": 1299,
+      "sha256": "4854ed7df114c0a8172e2fac888e7da8310036ee0be606c3d4f0fd2a72906e04"
     },
     {
       "file": "style.css",
@@ -28,8 +28,8 @@
     },
     {
       "file": "handoff-ui.css",
-      "bytes": 5421,
-      "sha256": "560463a4c16f611777cf08da81a6dad8043d9483c00071da812cf8c71c5d964b"
+      "bytes": 14893,
+      "sha256": "01efcfac1546729efce921d03d2e4bc8310e62410726135fc2641fcc97e1703e"
     },
     {
       "file": "handoff-rules.mjs",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 291822,
-      "sha256": "a720ffe4a1d7c919a7f4d2416d4c530345442f1a62e20a93bc3f3e0e854221e1"
+      "bytes": 292844,
+      "sha256": "1467d9ecfdb5bfdbf0b598e8efe9249f921ab027dd8e9fc640421306f08fe158"
     },
     {
       "file": "soundtrack.mjs",
@@ -215,6 +215,16 @@
       "file": "assets/book/chapter-01.jpg",
       "bytes": 523230,
       "sha256": "d96737a1840ebd2cf16bbd134d7db6dae82869bb39e013febf6c97b694205e11"
+    },
+    {
+      "file": "assets/book/city-gates-anatomy-v2.png",
+      "bytes": 3250321,
+      "sha256": "bc9b5601942be389b15e45ef3019a22be73797f677bd3dbbe9f1bd452f4635cb"
+    },
+    {
+      "file": "assets/book/city-gates-anatomy-v3.png",
+      "bytes": 3220937,
+      "sha256": "eaae0d33be428b3990fc5468c7b44af2e4279f50a0dea6c359e7e6c94dba0565"
     },
     {
       "file": "assets/book/city-gates-consistent.png",
