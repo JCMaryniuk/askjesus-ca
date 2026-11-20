@@ -147,3 +147,54 @@ body.sceneApp[data-scene=battle] .partyTouchTab{padding:2px;min-height:36px;font
 body.sceneApp[data-scene=battle] .partyFaceCrop{width:24px;height:28px}
 body.sceneApp[data-scene=battle] .battleExtras{left:4px;bottom:0}
 }
+/* Services and conversations share the illustrated game scene. */
+.sceneApp .overlay:has(.illustratedModal){padding:8px;background:#020811}
+.sceneApp .illustratedModal{position:relative;width:100%;height:100%;max-height:100%;padding:16px;border-radius:14px;background:linear-gradient(90deg,#06101b22,#06101bbb 45%,#06101be8),var(--scene-art) center/cover;overflow:auto;isolation:isolate}
+.sceneApp .illustratedModal>.modalHead{position:sticky;top:-16px;z-index:5;padding:10px 14px;background:#061321dc;border-radius:10px;margin-bottom:16px;min-height:64px}
+.sceneApp .illustratedModal>.modalHead h2{font-size:clamp(18px,2.2vw,30px);margin:0}
+.sceneApp .illustratedModal>.modalHead .eyebrow{font-size:10px}
+.sceneApp .illustratedModal:not(.dialogueModal):not(.townSceneModal)>:not(.modalHead){width:min(900px,72%);margin-left:auto;box-sizing:border-box}
+.sceneApp .illustratedModal :is(.shopItem,.treeNode,.skill,.townNotice,.teamBenefit,.detail){background:#081827e8;backdrop-filter:blur(5px)}
+.sceneApp .illustratedModal>p{background:#081827df;padding:10px;border-radius:8px}
+.sceneApp .dialogueModal{display:flex;flex-direction:column;overflow:hidden;gap:6px;background:linear-gradient(#06101b44,#06101b55),var(--scene-art) center/cover}
+.sceneApp .dialogueModal>.modalHead{position:relative;top:auto;flex:none;margin:0;background:#061321bd}
+.sceneApp .dialogueModal .narrativeScene{position:relative;flex:1;min-height:0;overflow:hidden;border:0;margin:0;border-radius:10px;background:transparent}
+.sceneApp .dialogueModal .narrativeArt{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;background:transparent}
+.sceneApp .dialogueModal .narrativeSpeech{position:absolute;bottom:0;left:0;right:0;max-height:42%;overflow:auto;background:linear-gradient(90deg,#061321ed,#12243ae8);border:1px solid #d4af60;border-radius:12px;padding:14px;backdrop-filter:blur(8px)}
+.sceneApp .dialogueModal .narrativeSpeech p{font-size:clamp(16px,1.8vw,24px);line-height:1.4}
+.sceneApp .dialogueModal .narrativeSpeech>img,.sceneApp .dialogueModal .narrativeSpeech .bookFace{width:72px;height:72px;flex-shrink:0}
+.sceneApp .dialogueModal>.townNotice{flex:none;max-height:15vh;overflow:auto;margin:0;padding:8px 12px;font-size:13px;background:#061321ce}
+.sceneApp .dialogueModal>.actions{flex:none;justify-content:flex-end;margin:0}
+.sceneApp .dialogueModal>.muted{margin:0;padding:2px 8px;font-size:12px;background:transparent}
+.sceneApp .dialogueModal>.controllerHint{font-size:11px;margin:0;padding:2px 8px;background:transparent}
+.sceneApp .dialogueModal .dialogueContinue{position:absolute;right:8px;top:8px;background:#061321cf;padding:5px;border-radius:6px}
+.sceneApp .townSceneModal{background:linear-gradient(#06101b33,#06101b55),var(--scene-art) center/cover}
+.sceneApp .townSceneModal .townMapWrap{width:100%;max-width:none}
+.sceneApp .townSceneModal .townMap{border:0;border-radius:10px;min-width:0;width:100%}
+@media(max-width:600px){
+.sceneApp .overlay:has(.illustratedModal){padding:4px}
+.sceneApp .illustratedModal{padding:8px;background:linear-gradient(#06101b44,#06101bdc 45%),var(--scene-art) center/cover}
+.sceneApp .illustratedModal>.modalHead{top:-8px;padding:6px;gap:6px;min-height:52px}
+.sceneApp .illustratedModal>.modalHead .eyebrow{display:none}
+.sceneApp .illustratedModal>.modalHead .button{font-size:11px;min-height:44px}
+.sceneApp .illustratedModal:not(.dialogueModal):not(.townSceneModal)>:not(.modalHead){width:100%}
+.sceneApp .illustratedModal:not(.dialogueModal):not(.townSceneModal)>.modalHead{margin-bottom:24vh}
+.sceneApp .dialogueModal .narrativeSpeech{padding:8px;gap:8px;max-height:48%}
+.sceneApp .dialogueModal .narrativeSpeech>img,.sceneApp .dialogueModal .narrativeSpeech .bookFace{width:48px;height:48px}
+.sceneApp .dialogueModal .narrativeSpeech p{font-size:16px}
+}
+@media(max-height:500px) and (min-width:601px){
+.sceneApp .dialogueModal{padding:6px;gap:2px}.sceneApp .dialogueModal>.modalHead{min-height:40px;padding:2px 8px}.sceneApp .dialogueModal>.modalHead h2{font-size:18px}
+.sceneApp .dialogueModal .narrativeSpeech{left:auto;width:42%;top:0;bottom:0;max-height:none;padding:8px}.sceneApp .dialogueModal .narrativeArt{width:58%;object-fit:contain}
+.sceneApp .dialogueModal .narrativeSpeech p{font-size:15px}.sceneApp .dialogueModal .narrativeSpeech>img{width:40px;height:40px}
+.sceneApp .dialogueModal>.controllerHint{display:none}
+}
+.sceneApp .dialogueModal{background:#091523}
+.sceneApp .dialogueModal .narrativeArt{object-fit:cover}
+.sceneApp .townSceneModal{overflow:hidden;background:#091523}
+.sceneApp .townSceneModal .townMapWrap{position:absolute;inset:0;width:100%;height:100%;overflow:auto;scrollbar-width:none;touch-action:pan-x pan-y;margin:0;z-index:-1}
+.sceneApp .townSceneModal .townMapWrap::-webkit-scrollbar{display:none}
+.sceneApp .townSceneModal .townMap{max-width:none;aspect-ratio:auto;margin:0}
+.sceneApp .townSceneModal>p{position:relative;z-index:2;font-size:12px;max-width:46%;margin:8px 0;padding:8px;background:#071322d9;pointer-events:none}
+.sceneApp .townSceneModal>p:last-child{position:absolute;bottom:8px;right:8px;margin:0}
+@media(max-height:500px) and (min-width:601px){.sceneApp .dialogueModal .narrativeArt{object-fit:cover}}

@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Immersive-Scene-2026-11-20",
+  "version": "Sarko-Illustrated-Scenes-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1303,
-      "sha256": "d717f3fce0b8063aee670d4145cc846d8197e0968a345672cc236ad663d0bb0c"
+      "bytes": 1306,
+      "sha256": "a019f393af8764b5f34912955749abe7b1af92596e4ee869a7e901665387c2c3"
     },
     {
       "file": "style.css",
@@ -28,8 +28,8 @@
     },
     {
       "file": "handoff-ui.css",
-      "bytes": 19444,
-      "sha256": "ecd5252a56b2a56b52ec51158812fae27d907dcfcc001ac54409806ac2d89f89"
+      "bytes": 24675,
+      "sha256": "3187f6c91d0a36efecfbd4982c94ed850c1c8cd5767dd4f7974a8a468633b68d"
     },
     {
       "file": "handoff-rules.mjs",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 294514,
-      "sha256": "3ea00f14e5c8f194a3851ac0e9fc47c065b5d8264e6d098e48d666757b4b4bae"
+      "bytes": 295558,
+      "sha256": "99bb399ec7f6ff75768938b7e2cb70ee45ffc46e79c5fe1325e8d938d0e89380"
     },
     {
       "file": "soundtrack.mjs",
