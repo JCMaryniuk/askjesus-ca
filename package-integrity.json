@@ -1,10 +1,190 @@
 {
-  "version": "Sarko-Illustrated-Campaign-2026-11-17",
+  "version": "Sarko-First-Light-Handoff-2026-11-19",
   "files": [
+    {
+      "file": "index.html",
+      "bytes": 1307,
+      "sha256": "9aa1341626b8fa821244d87a874d18ab07f9f04faf49ff89fce7d6a3b5bbacbf"
+    },
+    {
+      "file": "style.css",
+      "bytes": 21984,
+      "sha256": "761c9d5d2eb81c0e11f2ef278c3e3d0aa7ca653905f0514bb2bb8d45a9e98668"
+    },
+    {
+      "file": "campaign.css",
+      "bytes": 22257,
+      "sha256": "8632a56bae44da83a36af77d488b02dbb0825a9d24f320ab030167ccf6ecd408"
+    },
+    {
+      "file": "town.css",
+      "bytes": 7484,
+      "sha256": "c6a3a29b897c0819ce41043a9d7d9e935f5573b552df2391054df316d457474c"
+    },
+    {
+      "file": "mobile-app.css",
+      "bytes": 1639,
+      "sha256": "dae7a94d7778b1bd7a90a8c75bfc03a463667c18b3e2ebefe1f660a738a89161"
+    },
+    {
+      "file": "handoff-ui.css",
+      "bytes": 5421,
+      "sha256": "560463a4c16f611777cf08da81a6dad8043d9483c00071da812cf8c71c5d964b"
+    },
+    {
+      "file": "handoff-rules.mjs",
+      "bytes": 4971,
+      "sha256": "0bf191c0dbd991d1c6aaa2c13e0ffd01d43c0ec1ddf049a5132183adb31b99b9"
+    },
+    {
+      "file": "handoff-dialogue.mjs",
+      "bytes": 33131,
+      "sha256": "b2b4ce27d67d86154c4ee1a726d597848e668e5bfaf506db5b5d028e7f10ae10"
+    },
+    {
+      "file": "handoff-story.mjs",
+      "bytes": 748,
+      "sha256": "1734fd7219c050cb09868cb2f6dad4b8681b0b2e0b20f1d0bb8a175d42ee11b1"
+    },
+    {
+      "file": "encounter-lore.mjs",
+      "bytes": 2041,
+      "sha256": "e7f5cc037b712ae1755ffd720c28e6d1074c32145e5fcd211a3e898d07377d5f"
+    },
+    {
+      "file": "game.js",
+      "bytes": 291822,
+      "sha256": "a720ffe4a1d7c919a7f4d2416d4c530345442f1a62e20a93bc3f3e0e854221e1"
+    },
+    {
+      "file": "soundtrack.mjs",
+      "bytes": 3877,
+      "sha256": "9323225f3ea6129ad1b5c5a14a56772d75665c963fc3fb1bfeaa21195d69e8cb"
+    },
+    {
+      "file": "studio-intro.js",
+      "bytes": 1690,
+      "sha256": "f84506ac411c9ede2bea9b5ebe6783944e658457ea03cca07f0eb3950adcf388"
+    },
+    {
+      "file": "pad-keyboard.js",
+      "bytes": 1974,
+      "sha256": "f4e49fea1710d78fa7ea439dd46b7ebd9cf9f76dc1581557950c89f396a93570"
+    },
+    {
+      "file": "cloud-client.js",
+      "bytes": 1487,
+      "sha256": "938bd131a30766b15adef161cc39888842a6e5e7022ae92796f8cb7c8b0da027"
+    },
+    {
+      "file": "cloud-sync.js",
+      "bytes": 4604,
+      "sha256": "e0acb58ae2c4dfd835b28144f83e2acb1e4e98554a368632406a155b0c732711"
+    },
+    {
+      "file": "cloud-config.json",
+      "bytes": 118,
+      "sha256": "55737cecc9efba52423f56a1641fa0e880dbc0130bbba05c39f011b2d007beb4"
+    },
+    {
+      "file": "coop-client.js",
+      "bytes": 1501,
+      "sha256": "faf66abb8c694c52c8ecd2d4b9795d77e72c49743b9e98d921be14949ac02859"
+    },
+    {
+      "file": "coop-core.js",
+      "bytes": 5491,
+      "sha256": "ee14118572894ad3e7a1059a61cffe7a9dd23a822c793ec194bdbeb4b4433ee1"
+    },
+    {
+      "file": "supabase.bundle.js",
+      "bytes": 229159,
+      "sha256": "779148229e7d23ce2d6e08ed5e98d16994077a8e5dce2e2fdd4850af8bce77a5"
+    },
+    {
+      "file": "help-quests-core.mjs",
+      "bytes": 5336,
+      "sha256": "3c1e5f6a4727975a7c5bf1912f1770d9a399bfe71d9017294ece5feef9b61932"
+    },
+    {
+      "file": "life-skills-core.mjs",
+      "bytes": 7928,
+      "sha256": "8d7efbecf48c64206a1c063e462663ce6c48397125e69a76fbe84bfd732654d6"
+    },
+    {
+      "file": "rpg3d.bundle.mjs",
+      "bytes": 1717522,
+      "sha256": "52440b7a5b82d7f9cbb3927dbe9edae10f1c53c21192f738da828d13ba98e479"
+    },
+    {
+      "file": "rpg3d.bundle.js",
+      "bytes": 2285302,
+      "sha256": "f87585006cebfb87c84f795e93440f79777253ddc05d7827aaf9c47a9c9e77c3"
+    },
+    {
+      "file": "arena3d.bundle.js",
+      "bytes": 1764147,
+      "sha256": "074f6c636b9108c3d0c6ef968d64de0bb1812be04dcb2f781da45b2570dc628f"
+    },
+    {
+      "file": "rpg3d-view.js",
+      "bytes": 4756,
+      "sha256": "4bf07bb29378332df1c43682bf5e392a3969768a19263077d2e763d18eb4dc56"
+    },
+    {
+      "file": "rpg3d-service.js",
+      "bytes": 2281,
+      "sha256": "8e9d2afed84cea01668a5af3ce49266756b284598d8776c0539ad2c37469a105"
+    },
+    {
+      "file": "rpg3d-travel.js",
+      "bytes": 6069,
+      "sha256": "e3e06c5deff6b868cfd2ae9ad2e382e9600e5ed86f82242b12a10afc3b2d9e36"
+    },
     {
       "file": "assets-3d.json",
       "bytes": 53335,
       "sha256": "e2bb3afa6dd189415a396cbfbfc27494d830b98ec952a7bd0c5137a7c5b5754a"
+    },
+    {
+      "file": "book-scenes.json",
+      "bytes": 20331,
+      "sha256": "426d52ce19f050ba64f9fdf2731db1eda15b68851e233d22e9e953f79087005c"
+    },
+    {
+      "file": "campaign-data.json",
+      "bytes": 114910,
+      "sha256": "bd0cd31e40d632cd20d4898ef3be0ef2841b683cee30963ae329a5262675b675"
+    },
+    {
+      "file": "data.json",
+      "bytes": 13789,
+      "sha256": "5ca8f6e0975625a004a89a5af6b8a9c3a1ff4e92dcc4ea63d78b1ea911e0fe4d"
+    },
+    {
+      "file": "icon-180.png",
+      "bytes": 103365,
+      "sha256": "52ef4c55860002ad0a0245488b83e21a274466a17e3efa7b33f2c4085a6433a6"
+    },
+    {
+      "file": "icon-192.png",
+      "bytes": 117368,
+      "sha256": "ae7c4f5b87eba4954101e8a75e39a4ada75610af83a36cf849320e22a52b28d5"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "bytes": 433,
+      "sha256": "db57e7fb8c0157cc26c31923ca7d85a03c4c8bbdf2c54343a7a725efc29bec53"
+    },
+    {
+      "file": "server.js",
+      "bytes": 686,
+      "sha256": "492b0b1e73903620704b6df1fc3a3e30197190264b48037ed6910191228e8e41"
+    },
+    {
+      "file": "assets/Amaya-3D.glb",
+      "bytes": 2205760,
+      "sha256": "4c9e6ac641e9b909c30a4bd10e408357ce64060c717f382050fbdb72a1581544"
     },
     {
       "file": "assets/Amaya-arena.jpg",
@@ -15,6 +195,296 @@
       "file": "assets/Amaya.jpg",
       "bytes": 283528,
       "sha256": "d97141092db4f4708b9ff21e2d17924f4023f2b743a3d4b60a44d7821b7de4d8"
+    },
+    {
+      "file": "assets/book/armour-fits-game.png",
+      "bytes": 2767110,
+      "sha256": "67d54c359552db462770cf96263ed7ae5db9d52db8d7ee7f907f5a1a9e077179"
+    },
+    {
+      "file": "assets/book/breath-heaven-consistent.png",
+      "bytes": 3449971,
+      "sha256": "b4e312b94b0bd14b5acdf4e26f38b26c94f372128869601cc4b73546c5c96abe"
+    },
+    {
+      "file": "assets/book/breath-heaven.jpg",
+      "bytes": 952768,
+      "sha256": "005c44563915f8e4061797f59076df4e9a41eda7837465f7262aa918c0cce100"
+    },
+    {
+      "file": "assets/book/chapter-01.jpg",
+      "bytes": 523230,
+      "sha256": "d96737a1840ebd2cf16bbd134d7db6dae82869bb39e013febf6c97b694205e11"
+    },
+    {
+      "file": "assets/book/city-gates-consistent.png",
+      "bytes": 3377167,
+      "sha256": "997632eb956f1b87531aecff6bc3c4bb91f2155eefcb7d1f34486d732bbe37ff"
+    },
+    {
+      "file": "assets/book/city-gates.jpg",
+      "bytes": 918004,
+      "sha256": "79747ebb9547d7646361b375b1b4c691bb5bef3d9782dd525e9c0eda336c8bab"
+    },
+    {
+      "file": "assets/book/city-welcome-consistent.png",
+      "bytes": 3377836,
+      "sha256": "5d00564d69974d042233b9c5d1ee390cfb2bb3fb86e046500464cdaea51788d6"
+    },
+    {
+      "file": "assets/book/city-welcome.jpg",
+      "bytes": 837506,
+      "sha256": "fd9144a680eaf9430c3f4e113c415e242b05d4dc393de900926bf2dc280f93f5"
+    },
+    {
+      "file": "assets/book/fire.jpg",
+      "bytes": 580632,
+      "sha256": "d02a2c7108bea2382af38a6cab2c1433ea4138e24542ebdca1c74c8c319b1283"
+    },
+    {
+      "file": "assets/book/first-light-overlook-dove.png",
+      "bytes": 2660641,
+      "sha256": "4a40c82d02e4a06904ed2062edb04f4175bba6474282e26e29c8cf39b314111c"
+    },
+    {
+      "file": "assets/book/first-light-overlook-game.png",
+      "bytes": 2739281,
+      "sha256": "d552cabf0d39f1b269e4c879ffb3fcb5d712885d9f47f5e705e7a165abb9d092"
+    },
+    {
+      "file": "assets/book/first-light-overlook.png",
+      "bytes": 3269991,
+      "sha256": "1724bca1ca1b70fae91d318ca6a1ad8527977e0d72f1297c0bd199d714327d9b"
+    },
+    {
+      "file": "assets/book/garden-consistent.png",
+      "bytes": 3543189,
+      "sha256": "1f2af592677fc2f7c6211962e69389b70f412a71248bf90584a21c64f7ceef1e"
+    },
+    {
+      "file": "assets/book/garden-fractures-dove.png",
+      "bytes": 3484635,
+      "sha256": "c26a2e941db27e75df92328124f138f83b3176891e9f50771f7b7d8852972049"
+    },
+    {
+      "file": "assets/book/garden-fractures.jpg",
+      "bytes": 934582,
+      "sha256": "a0e8fd94c822cbcb364618b0ba9bb203d1d075ba0df364edb0800f96646fd088"
+    },
+    {
+      "file": "assets/book/garden-gift-dove.png",
+      "bytes": 3389220,
+      "sha256": "8e7f5ac72072481517263f0367ea516d17639728c2816a1df35ecf015e0f43e4"
+    },
+    {
+      "file": "assets/book/garden-gift-game.png",
+      "bytes": 3535204,
+      "sha256": "340cb8f7aa15f623779a390bbb9811cb599d7a0152e746cd2ff68fd757a7cf98"
+    },
+    {
+      "file": "assets/book/garden-invitation-consistent.png",
+      "bytes": 3519222,
+      "sha256": "e367dd6319b86e26c8621f988036ebc963d0a23c5e6fcc563e3ea2298839a1a0"
+    },
+    {
+      "file": "assets/book/garden-invitation.jpg",
+      "bytes": 995289,
+      "sha256": "fe55f2752405e5c15c888c87537c419dbdc91c103bb06c0e7aeaab57b09e80da"
+    },
+    {
+      "file": "assets/book/garden.jpg",
+      "bytes": 806423,
+      "sha256": "80bd6f33ad54bd188b199d47782702c0dd35bef4f0f05618db324c9a36d94fb2"
+    },
+    {
+      "file": "assets/book/guild-after-battle-dove.png",
+      "bytes": 2829643,
+      "sha256": "0d33e3bdf4c4fd0da389856801cd421621dbc439e754b5f0ad092446b5cc45c9"
+    },
+    {
+      "file": "assets/book/guild-after-battle-game.png",
+      "bytes": 3718535,
+      "sha256": "b2fa50f1cae4e5785251a0225fb28741fb13c341da73a916fab84340270ec68e"
+    },
+    {
+      "file": "assets/book/guild-arena.jpg",
+      "bytes": 445054,
+      "sha256": "39adc616368addd3fdf9ad1231625d43362ebc411fa9a0d004cabf229934f8f2"
+    },
+    {
+      "file": "assets/book/guild-dove.png",
+      "bytes": 2983095,
+      "sha256": "aa25b292d42668bfaf195d8365ebf0b122faf2f048c847ecaf5f1091795b2f10"
+    },
+    {
+      "file": "assets/book/guild-hearth-dove.png",
+      "bytes": 2862113,
+      "sha256": "4081291b401908b92f06d7b2fe6fd1f217278b72043b06fb1c972d95c0ea655a"
+    },
+    {
+      "file": "assets/book/guild-hearth-game.png",
+      "bytes": 2964887,
+      "sha256": "8372ffd906854b3e257254a53f8320d4d4ecefbebb558a37a16757930c80e1ae"
+    },
+    {
+      "file": "assets/book/guild-repairs-dove.png",
+      "bytes": 3377230,
+      "sha256": "2c23e1cfac6e6a425324984150e67317fd29fa0ef780e1bdfdf0121520491948"
+    },
+    {
+      "file": "assets/book/guild-repairs.jpg",
+      "bytes": 861386,
+      "sha256": "695c50d027a7b660f008534f7690694658bf27ff0da080942667f5f60524cd22"
+    },
+    {
+      "file": "assets/book/guild.jpg",
+      "bytes": 722175,
+      "sha256": "e87aaac2afe8c07135c8ac88538adb50d6ffba537db1b00c46ef20f680bb5de7"
+    },
+    {
+      "file": "assets/book/levi-dove.png",
+      "bytes": 3061939,
+      "sha256": "2a2efbd043b7c4452cec01e3a89ab3cb7e500be1684d9b6c64ef5f980a27455d"
+    },
+    {
+      "file": "assets/book/levi.jpg",
+      "bytes": 696282,
+      "sha256": "a7230d63b50435f91c1b7750efd3e87f03e2f3c7c83448418d885a1363c3fa86"
+    },
+    {
+      "file": "assets/book/light.jpg",
+      "bytes": 723290,
+      "sha256": "5a9f82dbfbff7cc4fa50d5dc97f4c1258e04953b1b17d93d90e8faa035052b40"
+    },
+    {
+      "file": "assets/book/malachar-consistent.png",
+      "bytes": 2945926,
+      "sha256": "937fea1eac6c647251c199f78c9c0726e572fc0a929a787a3ca83ea4b15a9825"
+    },
+    {
+      "file": "assets/book/malachar.jpg",
+      "bytes": 714598,
+      "sha256": "7b93b2c4b9806374ffc4eed21a524ce7ae07595bf7590660b9dc66362f85774f"
+    },
+    {
+      "file": "assets/book/meeting-diago-dove.png",
+      "bytes": 2915700,
+      "sha256": "c91e080cdc131b67d98927297f62c4c1c6b5b1093c8c1dc3ab4acdb466a7dae8"
+    },
+    {
+      "file": "assets/book/meeting-diago-game.png",
+      "bytes": 3044207,
+      "sha256": "65247d520121f7be5da50fc6c3683591e610b5a3569a6bbde8e60fbb6618b375"
+    },
+    {
+      "file": "assets/book/meeting-diago.png",
+      "bytes": 3539967,
+      "sha256": "ca319c5621c68047d99064a5792ea5dce6110ce05a14b53fb16f2fcb0aab3024"
+    },
+    {
+      "file": "assets/book/rex-arrival-consistent.png",
+      "bytes": 3662170,
+      "sha256": "a7fb9ab7246da61841425d212ce06d62fffd71e67ecb6f2e8074369d330a1636"
+    },
+    {
+      "file": "assets/book/rex-arrival.jpg",
+      "bytes": 994327,
+      "sha256": "bc3c92f065ddc8f2b3210e1701a4d6ce27ea599424cf0e54c87d3ef092d31fee"
+    },
+    {
+      "file": "assets/book/rex-canyon-consistent.png",
+      "bytes": 3331557,
+      "sha256": "4dfb15e0964df87e60e9fa39b343546717e53c22d6b069f069ebd3298e7cee71"
+    },
+    {
+      "file": "assets/book/rex-canyon.jpg",
+      "bytes": 859670,
+      "sha256": "248948abe15f94f38c3c44d6ecfcb8128c8da51798199fe2ca79472585f01c61"
+    },
+    {
+      "file": "assets/book/rex-mercy-consistent.png",
+      "bytes": 2968914,
+      "sha256": "d7fcc419fa194877cbe690f3529917f0abc2525c8b7b9a0a238bc61ee78e5892"
+    },
+    {
+      "file": "assets/book/rex-mercy-game.png",
+      "bytes": 3465638,
+      "sha256": "99807558e4b3124f5f3f43ecec029ec0dc45fe803857c8ca0fd03c9a922fa895"
+    },
+    {
+      "file": "assets/book/rex-restoration.jpg",
+      "bytes": 949225,
+      "sha256": "2e6e3e61514a6252f13c31df7b1401283898923ffbe0078aa5fc90bf0ade03e2"
+    },
+    {
+      "file": "assets/book/seeds-rain-consistent.png",
+      "bytes": 3318132,
+      "sha256": "7906e3d6fab658816e7cb9541ac3d9485c98bfc36aa29e9688b2eceff56bb07c"
+    },
+    {
+      "file": "assets/book/seeds-rain.jpg",
+      "bytes": 738002,
+      "sha256": "b63a11c9277c3e51953085da880812de8c3b3bdf0cea79fffa25e7e93bbcecc3"
+    },
+    {
+      "file": "assets/book/shadow.jpg",
+      "bytes": 614748,
+      "sha256": "03175afd97e0d3da360a9b0f8760bf467a15091138c8851853ee838c0953a5a2"
+    },
+    {
+      "file": "assets/book/shield-lesson-dove.png",
+      "bytes": 3161153,
+      "sha256": "02b9fc963b18abc99ecfbc32be6c0a5364975d48f28acf6354ac668ae9eb4f24"
+    },
+    {
+      "file": "assets/book/shield-lesson-game.png",
+      "bytes": 3329324,
+      "sha256": "2612fa4ee300a0e18f04abf33ed0f6b5488e3c3afef2de497c7e19b82a0501a3"
+    },
+    {
+      "file": "assets/book/shield-lesson.png",
+      "bytes": 3442627,
+      "sha256": "9903351593dbb4fc5eea85ad8da24ef84845fb89f61a2ef91e382df3abac27e9"
+    },
+    {
+      "file": "assets/book/snow.jpg",
+      "bytes": 675904,
+      "sha256": "944652843e8d74301656fadd9d0cdd90d734a64aecb7eb047420510723c094b1"
+    },
+    {
+      "file": "assets/book/thunder.jpg",
+      "bytes": 802721,
+      "sha256": "bc2e7a4bb1c027c661ccc877205ef034289aaa7505ef0524a030c57ce5a54cf9"
+    },
+    {
+      "file": "assets/book/training.jpg",
+      "bytes": 735493,
+      "sha256": "a0c3303356b7eb1ff06b06ffcc3b694be708e943d819e6e52d181cc904069a56"
+    },
+    {
+      "file": "assets/book/waiz-welcome-dove.png",
+      "bytes": 2766449,
+      "sha256": "5e12bac1af6fcba5b2220de61a5fbbc965ae6c08e03034daeecc182a450080a3"
+    },
+    {
+      "file": "assets/book/waiz-welcome-game.png",
+      "bytes": 2981912,
+      "sha256": "baf443e0dbefc87522b3356cc50288ade57c2dcb9be9662e8faf4ce1072c7af4"
+    },
+    {
+      "file": "assets/book/waiz-welcome.png",
+      "bytes": 3005692,
+      "sha256": "2bf20003614668437da5187c7c24b4f20d99db9c197e84c37d82c3f52748015c"
+    },
+    {
+      "file": "assets/book/wake-alone-game.png",
+      "bytes": 2647596,
+      "sha256": "3ed5260ab0e4c3df81af8c46a53bcf9cfaf500c13253e9ffd1a592565fc0d47a"
+    },
+    {
+      "file": "assets/book/water.jpg",
+      "bytes": 799342,
+      "sha256": "3970a0ed5f0b311cb3f25563351086f392029a3bc11d2c5684cbe5607473cdc1"
     },
     {
       "file": "assets/Boss-CorruptedWolf.jpg",
@@ -57,981 +527,6 @@
       "sha256": "248f212cb05cd0191aaac86e54b1a3bfd7b994cb73ea21c77845f553e3e83810"
     },
     {
-      "file": "assets/Diago-arena.jpg",
-      "bytes": 279096,
-      "sha256": "9229790bdbf01407a4753c87accee61a679dbb4ff57d9943ee5aae35a47b792b"
-    },
-    {
-      "file": "assets/Diago.jpg",
-      "bytes": 271738,
-      "sha256": "a724da040bba99ee98c5a7e066b64c2d82bebf132f0638d000b7bae95b1c6272"
-    },
-    {
-      "file": "assets/Fruit-Spirit-Collection.png",
-      "bytes": 2651874,
-      "sha256": "32697352133f5e415072161353a93b50382a6f3b58972b288006caa1dcee9825"
-    },
-    {
-      "file": "assets/Fruit-Spirit-Tree.png",
-      "bytes": 2994006,
-      "sha256": "eec1e6b32a7611bfa33f8d84ee9f7323b679acd450c76ff7bf5a19cfbc557531"
-    },
-    {
-      "file": "assets/Grace-3D-fitted.glb",
-      "bytes": 10495192,
-      "sha256": "cff1a6d99070778d3903df443dc52fc20c1e8c362cd7854d4bb1f4df325f0a61"
-    },
-    {
-      "file": "assets/Grace.jpg",
-      "bytes": 483733,
-      "sha256": "b5394bee2644055dab762bef87b5fdcdf3742678edfc0a1481be65aa2eed7579"
-    },
-    {
-      "file": "assets/Guild-Boss.jpg",
-      "bytes": 208277,
-      "sha256": "f0268c76d5fb2f3fd6a6ada56c71a72b94b3c4865c7555f8fd2b0ec9d56748c8"
-    },
-    {
-      "file": "assets/Guild-Button-Plate.png",
-      "bytes": 1999980,
-      "sha256": "2e6b8ef54593543111ba854293a3550cc8aa692a92028faf1f1a506fa846d950"
-    },
-    {
-      "file": "assets/Guild-Chest.jpg",
-      "bytes": 72701,
-      "sha256": "4ba52fc9ed993bada379ed7b900e7146c9a397a9cca386ff8ffba7a523c87531"
-    },
-    {
-      "file": "assets/Guild-Church.jpg",
-      "bytes": 185178,
-      "sha256": "25ffd2ab19c8f8f6b9f5dc0381f4b6b0e28420a43b4083f9175b74df09540547"
-    },
-    {
-      "file": "assets/Guild-Coin.jpg",
-      "bytes": 79380,
-      "sha256": "d51685d5dd349c32d72774ab1147bebac464d5b532dd211cdaedf2a1707c8026"
-    },
-    {
-      "file": "assets/Guild-Forge.jpg",
-      "bytes": 212939,
-      "sha256": "37c24651c787f999a58de217cfc084cc8b02de03e3c758f5a9bdd975660307cc"
-    },
-    {
-      "file": "assets/Guild-Fruit-Tree.jpg",
-      "bytes": 223337,
-      "sha256": "350b54b2d7cfb257b355eba831a7ac69cd0b1dabff098012767f27bf85bdd43b"
-    },
-    {
-      "file": "assets/Guild-Fruit.jpg",
-      "bytes": 53911,
-      "sha256": "251f51ed891538ca0e4c3528d6c5095b27dbb51dfeb71b465af943577e1f78da"
-    },
-    {
-      "file": "assets/Guild-Gem.jpg",
-      "bytes": 50403,
-      "sha256": "757c7d8ff8f259677cdf72312c41edbe774594944994f1381627e8da9f41cd1a"
-    },
-    {
-      "file": "assets/Guild-Shop.jpg",
-      "bytes": 303880,
-      "sha256": "db2ccd5263746f34e357344ab53cc5ff47c0d9c9f2754d932ed223794613d70f"
-    },
-    {
-      "file": "assets/Hailey-arena.jpg",
-      "bytes": 333338,
-      "sha256": "2935badb5e310a939bf30d4b3b6540fe2a8fd8dde4f927b98fbca816bdb845ad"
-    },
-    {
-      "file": "assets/Hailey.jpg",
-      "bytes": 264152,
-      "sha256": "54e0be56ac44867df5f297efec2ea5c1144e1d338625995cf5cd8fd9566fe746"
-    },
-    {
-      "file": "assets/Journey-Toward-the-Light.mp3",
-      "bytes": 2790293,
-      "sha256": "fa08cb265263ae84e0b03c00d730847af26d41ca924962278c879da1cfde5282"
-    },
-    {
-      "file": "assets/Levi-arena.jpg",
-      "bytes": 305492,
-      "sha256": "b854d4a132f0bde968e941a0b4845c47841b685af32997528f58c777ba295296"
-    },
-    {
-      "file": "assets/Levi.jpg",
-      "bytes": 260056,
-      "sha256": "57eaa42dd11582a44640b638819cd8498264710a12da581defa0fd7af408706c"
-    },
-    {
-      "file": "assets/Magnar-arena.jpg",
-      "bytes": 255487,
-      "sha256": "d93e2c98d547ad21b2e88ecfd6ef8ecb571200b20ffcf5ca3fab019cf1d94ab4"
-    },
-    {
-      "file": "assets/Magnar.jpg",
-      "bytes": 256169,
-      "sha256": "229ffe0cb184395aacb44d48c29f83536116fe084e28f8019fe4bc7ce8cf9afc"
-    },
-    {
-      "file": "assets/Main-Theme.mp3",
-      "bytes": 1152917,
-      "sha256": "e9a62395ae4b5419c09652f5d4616b36b11b0a047061fca132b82879dd0a020a"
-    },
-    {
-      "file": "assets/Monster-AshhornStag.jpg",
-      "bytes": 299572,
-      "sha256": "255363107b8e2e83f0f9962db0216ea57b3b3b70ecefdcdd266bfc489f0fb96c"
-    },
-    {
-      "file": "assets/Monster-BriarClawBear.jpg",
-      "bytes": 320832,
-      "sha256": "c9d757f26d940e7c00d1ebc43ab4dd1cfed39864281b97fef98d44874a91ac3e"
-    },
-    {
-      "file": "assets/Monster-BrightCap.jpg",
-      "bytes": 299069,
-      "sha256": "326b71b783efa9148d0a7d80289d3ea4ec3351e9c09d163d5fafe7a36ae8d902"
-    },
-    {
-      "file": "assets/Monster-CrystalBackTortoise.jpg",
-      "bytes": 335116,
-      "sha256": "d8d05035c574ea6e947fdf3dbe17ae0be559ff406e380241a4991c1a805dfc8c"
-    },
-    {
-      "file": "assets/Monster-DreadwingVulture.jpg",
-      "bytes": 276950,
-      "sha256": "794947b00ea8c8aca0538a307ae1e6795f925f1c6aff2e569c6ea5f4da98035a"
-    },
-    {
-      "file": "assets/Monster-HollowWretch.jpg",
-      "bytes": 301120,
-      "sha256": "a6e0eb4c43751d2fd725440b6dd0935c98a78c345ee68346bf3daf575c34b278"
-    },
-    {
-      "file": "assets/Monster-Rockshade.jpg",
-      "bytes": 286477,
-      "sha256": "ebc3cb93626c41f90007ea2ed3cc0ba8f9cebf7d02080718e569d44dbe40f531"
-    },
-    {
-      "file": "assets/Monster-Shadowthorn.jpg",
-      "bytes": 255192,
-      "sha256": "fa4c209171425e195470c7095faf67c0e9941b182ffb5d63062b4a6d2659f494"
-    },
-    {
-      "file": "assets/Monster-StonehideRhino.jpg",
-      "bytes": 310310,
-      "sha256": "fda4aff913e6d8e5d9c744681a21f5b2d79e0f5531c0563713aa75744691e1f7"
-    },
-    {
-      "file": "assets/Monster-Thornback.jpg",
-      "bytes": 294762,
-      "sha256": "f60ae2c10d807039b4cdf2b02f5b6751b4959f054d02f770a091a32ae12606f0"
-    },
-    {
-      "file": "assets/Monster-VineboundGuardian.jpg",
-      "bytes": 304614,
-      "sha256": "91be7d4677d314ecfe1f85951b6b784cf53e45d0a7ed0b38a95806308991378b"
-    },
-    {
-      "file": "assets/Naomi-arena.jpg",
-      "bytes": 290679,
-      "sha256": "5ba620d88b33d6a3fdea02013cad50b367835fcd47e4ca3797f96ecaedb91d7d"
-    },
-    {
-      "file": "assets/Naomi.jpg",
-      "bytes": 255637,
-      "sha256": "9cc61e8f22bf23e41e711374f27a7c26e08d61e9980e5c64a7cc644d5d4ec901"
-    },
-    {
-      "file": "assets/RKS-intro.mp4",
-      "bytes": 658368,
-      "sha256": "963ae9ecef88f3412c121be3026ce9c4f7f7096580e60129f7d96e099401604a"
-    },
-    {
-      "file": "assets/Sarko-Menu-Background.jpg",
-      "bytes": 632002,
-      "sha256": "e0243f187e138746ab1d8022cdb3264ae9401881f789b9dabcdc9d3ea76435a4"
-    },
-    {
-      "file": "assets/Sarko-Overworld-Map.jpg",
-      "bytes": 513909,
-      "sha256": "3fba63ad804fb71e7f51c3de3182c5c55ad66ca676c6b1975b1468f10780ca5b"
-    },
-    {
-      "file": "assets/Sarko-Route-Earth-2.jpg",
-      "bytes": 628841,
-      "sha256": "300ec7eba945b6f538900b59f86bbd290d4b992558c94362ede2b273c400281d"
-    },
-    {
-      "file": "assets/Sarko-Route-Earth.jpg",
-      "bytes": 653540,
-      "sha256": "db316bc0d30ad6587a8725a091f5356f416e504548c10b07de81ae62f0164b66"
-    },
-    {
-      "file": "assets/Sarko-Route-Fire-2.jpg",
-      "bytes": 517228,
-      "sha256": "df84f86471a93ee9b7147f043de55bf99c7f2d7e0784a0457299047ca22510c2"
-    },
-    {
-      "file": "assets/Sarko-Route-Fire.jpg",
-      "bytes": 476421,
-      "sha256": "df181e0e995f2e28703fe235213b3f0214b07c331a8c4af2b300036e5b823672"
-    },
-    {
-      "file": "assets/Sarko-Route-Light-2.jpg",
-      "bytes": 517571,
-      "sha256": "801f0a5136deead28aae1f12e1807be70439ccd7c3a3663d914793f0edca6cfe"
-    },
-    {
-      "file": "assets/Sarko-Route-Light.jpg",
-      "bytes": 591169,
-      "sha256": "7078a8716b0c890c93043960318e152aae01d4e64dbec3ea505dab4f84c7f30d"
-    },
-    {
-      "file": "assets/Sarko-Route-Shadow-2.jpg",
-      "bytes": 527721,
-      "sha256": "d6ce82da927ad8fdeabde146fb0f77d50306cd0794926188ac648979e4461e2b"
-    },
-    {
-      "file": "assets/Sarko-Route-Shadow.jpg",
-      "bytes": 565051,
-      "sha256": "12563436fea95f53b26d332ab3c945115495c1f50df353c751255511df769ad7"
-    },
-    {
-      "file": "assets/Sarko-Route-Snow-2.jpg",
-      "bytes": 550150,
-      "sha256": "8c44161f8ee0289a56767becfe9225d898209b3c3bb3d9e3761ea43f64cfa280"
-    },
-    {
-      "file": "assets/Sarko-Route-Snow.jpg",
-      "bytes": 582101,
-      "sha256": "4e0df478590fb50c102b551336326eaaafa463853f646542a1e01da7de300c68"
-    },
-    {
-      "file": "assets/Sarko-Route-Thunder-2.jpg",
-      "bytes": 483605,
-      "sha256": "356bd823b828b132fe98ed189879a8a3d38721f318c7bfb9ac5ec01bd1824312"
-    },
-    {
-      "file": "assets/Sarko-Route-Thunder.jpg",
-      "bytes": 542623,
-      "sha256": "4a5931d24c286b00e301296ced276b8be200da4a4551a27d821c58445977b4fb"
-    },
-    {
-      "file": "assets/Sarko-Route-Water-2.jpg",
-      "bytes": 610765,
-      "sha256": "5da7d49571ef76a8ec4c7e5f619f8e8f7a6ca5d47e06165fb924dc90c37265a0"
-    },
-    {
-      "file": "assets/Sarko-Route-Water.jpg",
-      "bytes": 675719,
-      "sha256": "3d6b79a1234af407b26c602ebcf33af4566e9ac05f86c3841eedf26a64f7dce2"
-    },
-    {
-      "file": "assets/Sarko-Trailer.mp4",
-      "bytes": 25795215,
-      "sha256": "bc657ab6110a33e97335b03927106af3686ab1767710bbcf3ddf7f2c6b639892"
-    },
-    {
-      "file": "assets/Sarko-World-Map.jpg",
-      "bytes": 844440,
-      "sha256": "cc0b910e44c8d864cb99b83351e4138a363743e1704f90c74d47c5a3cd91eda2"
-    },
-    {
-      "file": "assets/Sarko-arena.jpg",
-      "bytes": 351055,
-      "sha256": "463048430eacbbb749912339185ec494992d909b64d6789e4370eabe0a32e2d1"
-    },
-    {
-      "file": "assets/Sarko.jpg",
-      "bytes": 266079,
-      "sha256": "131afa592d3b1a756ea21e6795b0dafaf1abd198f07ab383b1ece6ac3d0e19f0"
-    },
-    {
-      "file": "assets/Skill-0-0.png",
-      "bytes": 67576,
-      "sha256": "a83720fca61674b77f8e35f5c1b4dbe46af525b4993593fda31bb12b6cc3b9bb"
-    },
-    {
-      "file": "assets/Skill-0-1.png",
-      "bytes": 69282,
-      "sha256": "13fa0171f7a0c765462382512cceb652442712e46ac7c5038cc5fd0f56c33553"
-    },
-    {
-      "file": "assets/Skill-0-2.png",
-      "bytes": 66268,
-      "sha256": "8048dba7f4055b084a263ab1599a341971c739da052cd275dc01e327f3c98675"
-    },
-    {
-      "file": "assets/Skill-0-3.png",
-      "bytes": 68183,
-      "sha256": "6f0852e8d6d56c8a2b4972e88d387ac5febd09c203b4b0ba5ed0470926a695ae"
-    },
-    {
-      "file": "assets/Skill-0-4.png",
-      "bytes": 67028,
-      "sha256": "497dccf7d4ddc035919cc7bd1d5de09220307be8a049002fd47fbf32b47574c0"
-    },
-    {
-      "file": "assets/Skill-0-5.png",
-      "bytes": 65651,
-      "sha256": "aac45462fac0d2f07c4f61fd5b544afd116cffb0c09539e7f2c04efb09174560"
-    },
-    {
-      "file": "assets/Skill-0-6.png",
-      "bytes": 68505,
-      "sha256": "8b0ce12e85048eeef1ea41841bbcf7abd985f5e5ac38840cf0154c84819b94cd"
-    },
-    {
-      "file": "assets/Skill-0-7.png",
-      "bytes": 67733,
-      "sha256": "616a7a4428a0115fd21baa1c95b5a945a1b64272e796fbc70fc3772bdd3595bf"
-    },
-    {
-      "file": "assets/Skill-1-0.png",
-      "bytes": 69446,
-      "sha256": "294ea51365a0fd0dadd7449a0bfb7b66db3c5b43197edb90bf3a0e5428e75e85"
-    },
-    {
-      "file": "assets/Skill-1-1.png",
-      "bytes": 64149,
-      "sha256": "7d84e6817f1201e41c3186e91198136ac744687af85a8aae855aed77470b52a0"
-    },
-    {
-      "file": "assets/Skill-1-2.png",
-      "bytes": 68096,
-      "sha256": "b654f898fda2cf340d5eb4fec8978bd34940cec8e85346410572fc8ac85ad5fa"
-    },
-    {
-      "file": "assets/Skill-1-3.png",
-      "bytes": 64963,
-      "sha256": "90d57355eacc77a025b1b5db6cbf68052810e01ad2f7ac5f76faa999c35c48a5"
-    },
-    {
-      "file": "assets/Skill-1-4.png",
-      "bytes": 67329,
-      "sha256": "06fe5f44f6980023ddb2b075ff6101f109bc7dc92c00d381897203f92368940b"
-    },
-    {
-      "file": "assets/Skill-1-5.png",
-      "bytes": 66472,
-      "sha256": "557cbbb459bf599332e1eef8b00be6bf8829b467c3756c8736e51b75db689369"
-    },
-    {
-      "file": "assets/Skill-1-6.png",
-      "bytes": 66526,
-      "sha256": "67d6cd883b5478228599b70eca88ba50403d1a924a8a2f0ce47d3c7a0f54d677"
-    },
-    {
-      "file": "assets/Skill-1-7.png",
-      "bytes": 64650,
-      "sha256": "9ca3b0742dc92ee2c8b90c25b3e588c73e0954a793c42957a9f4f1e6b284f369"
-    },
-    {
-      "file": "assets/Skill-2-0.png",
-      "bytes": 69670,
-      "sha256": "78177dcdbf896336903a4bfc4dd9ce16ad4f472ae5cd32e6cea5d47e08918c92"
-    },
-    {
-      "file": "assets/Skill-2-1.png",
-      "bytes": 61704,
-      "sha256": "5ef198278bca9e9ab4832437215a5aa53ca1cb64754cab0b09bbf69d24ebc54a"
-    },
-    {
-      "file": "assets/Skill-2-2.png",
-      "bytes": 64695,
-      "sha256": "45912217a87633dc3f1627da6a373228e9beb3458cf75f3909556d804ff0be3b"
-    },
-    {
-      "file": "assets/Skill-2-3.png",
-      "bytes": 68438,
-      "sha256": "2e5092db3cf2a8913b3ea49c96f106f33aa349e1c14c370e1d5afe629850ece5"
-    },
-    {
-      "file": "assets/Skill-2-4.png",
-      "bytes": 67920,
-      "sha256": "34344c5cde4fed0730f09beb50e78d5675a1c97ba7df8908976d116f8e86c2db"
-    },
-    {
-      "file": "assets/Skill-2-5.png",
-      "bytes": 64208,
-      "sha256": "fedad668d56e9f8478b3c4d74507523585b78fa6683f5a2e22a84106bc1560be"
-    },
-    {
-      "file": "assets/Skill-2-6.png",
-      "bytes": 64134,
-      "sha256": "074d69d68a195d83573c3ee81a75c992f9c822cda90f61676a9bfa916b290bd0"
-    },
-    {
-      "file": "assets/Skill-2-7.png",
-      "bytes": 62832,
-      "sha256": "943772ae2d8223ad8a6927d470f2a2fb87dfbfb7243373d81d289168eef304c9"
-    },
-    {
-      "file": "assets/Skill-3-0.png",
-      "bytes": 70174,
-      "sha256": "884a1798ba1750909322b13e4215e33b0d2fa8e1a2d47887b672410ba2a479cb"
-    },
-    {
-      "file": "assets/Skill-3-1.png",
-      "bytes": 68813,
-      "sha256": "464e6028353d01574d923a7fe38a46441056c36b2c02c16686b9d9d7b83657fe"
-    },
-    {
-      "file": "assets/Skill-3-2.png",
-      "bytes": 68056,
-      "sha256": "b0d44c847fda31e9de3fd50f813feb8499330fbd98c69b6b3d3c6155bf113206"
-    },
-    {
-      "file": "assets/Skill-3-3.png",
-      "bytes": 66254,
-      "sha256": "a8fc3836a11364b57ae8b47c242e643023dc9f862ec029768d7c39eed64265b4"
-    },
-    {
-      "file": "assets/Skill-3-4.png",
-      "bytes": 67308,
-      "sha256": "cc3fbb0d6c895e80409ea5c67081a525e59168cfcfa74f4e68ece60fc972153f"
-    },
-    {
-      "file": "assets/Skill-3-5.png",
-      "bytes": 67692,
-      "sha256": "77a2e72b32c357c56e9066d96dda5bf65fd6e7606d4568c228c066b9f014721e"
-    },
-    {
-      "file": "assets/Skill-3-6.png",
-      "bytes": 69440,
-      "sha256": "13d4e476729bedbb1e207d19df89157db176dd4c54cea92f175b6aaa4d0f91f1"
-    },
-    {
-      "file": "assets/Skill-3-7.png",
-      "bytes": 68076,
-      "sha256": "d7a32bedd8baad8c68cc2f1980faef234864a9ea0e5c18a0055c83ae6db20688"
-    },
-    {
-      "file": "assets/Skill-4-0.png",
-      "bytes": 67097,
-      "sha256": "5edb0ebff61265999e6538ffd2099f12f4788b00cd42c7cccdaaf34f94540f70"
-    },
-    {
-      "file": "assets/Skill-4-1.png",
-      "bytes": 60701,
-      "sha256": "f7a609a0a4a0d6dd8e295b9aeca762ead44dcce677645e672c98f38e0c021e29"
-    },
-    {
-      "file": "assets/Skill-4-2.png",
-      "bytes": 65737,
-      "sha256": "89ff5efec67dd8eab291d31114ab181f9e89ea09d64c13ede1ba6543b6d70e36"
-    },
-    {
-      "file": "assets/Skill-4-3.png",
-      "bytes": 66582,
-      "sha256": "2e7c3d509087f4d6cfd4e261bca2cb3896cc3bd716802a15187aa85997792457"
-    },
-    {
-      "file": "assets/Skill-4-4.png",
-      "bytes": 65029,
-      "sha256": "569041c4cf39bfd71d7ab0bc01ecaa7f1366a64e8fd1a518eef87733fbe34246"
-    },
-    {
-      "file": "assets/Skill-4-5.png",
-      "bytes": 68091,
-      "sha256": "e727967e8867b2fdd8ed0a9aaee62b64a2b3d5d41777ca2258286486461e0628"
-    },
-    {
-      "file": "assets/Skill-4-6.png",
-      "bytes": 68146,
-      "sha256": "d7e2caa781fe925d9b5a47a73851291dd6a5c2442dd6a31ffddfe8e05c647cc7"
-    },
-    {
-      "file": "assets/Skill-4-7.png",
-      "bytes": 67936,
-      "sha256": "9cdd77b0e69828e81491fb77aad3b60f72bd2f2de74a47c2b86ebfd2a5ac88f1"
-    },
-    {
-      "file": "assets/Skill-5-0.png",
-      "bytes": 69844,
-      "sha256": "be96b6c95af62d2f08efcfe4bec0bce063bb5c5e8c2c3f794888a5f2962913fe"
-    },
-    {
-      "file": "assets/Skill-5-1.png",
-      "bytes": 64975,
-      "sha256": "eb5665fe753e1f870788563786cbf5c61027fb8d4cee2d0fbc1d394a5fa1fa65"
-    },
-    {
-      "file": "assets/Skill-5-2.png",
-      "bytes": 66598,
-      "sha256": "024ea1c6436f3b8758e9b90497e7df7c4d080b3b3d475c3d83f3c6152e119bc3"
-    },
-    {
-      "file": "assets/Skill-5-3.png",
-      "bytes": 68915,
-      "sha256": "fbfa49dbf4942a2d4af3696ee85f454325485c834b570690770100c64f3c86ae"
-    },
-    {
-      "file": "assets/Skill-5-4.png",
-      "bytes": 66725,
-      "sha256": "2718f9ce0d4c9842472c51f0c6576f65bf5a9d92dc13837e8cb448aa923f1f12"
-    },
-    {
-      "file": "assets/Skill-5-5.png",
-      "bytes": 67047,
-      "sha256": "842c43c93e9d395663d83eedfa2f7a983bbcd376246ab5223015b9f81b476bfd"
-    },
-    {
-      "file": "assets/Skill-5-6.png",
-      "bytes": 66722,
-      "sha256": "d5f59929d28c961f0bb56da1d79f01f7b61161a8f274afe9dd055d84e17c88b1"
-    },
-    {
-      "file": "assets/Skill-5-7.png",
-      "bytes": 68312,
-      "sha256": "47a4109a7a559f92cdb960ab24fada64c7402693c83850fa77bc8158d8385f66"
-    },
-    {
-      "file": "assets/Skill-6-0.png",
-      "bytes": 66266,
-      "sha256": "04c7acee28d252243f5225ee0574717a47d03f1bf9c253534777735969366d1c"
-    },
-    {
-      "file": "assets/Skill-6-1.png",
-      "bytes": 59574,
-      "sha256": "bbf9bc591ccb2abe83112af92cc28464bfd4441822962b02b81a6c8d3eac9aa6"
-    },
-    {
-      "file": "assets/Skill-6-2.png",
-      "bytes": 59241,
-      "sha256": "fe80891d70f47443495143d63deba4fc503750d89c4be5b83598b906a490cb54"
-    },
-    {
-      "file": "assets/Skill-6-3.png",
-      "bytes": 60612,
-      "sha256": "eeac9fff9e37a198790b49d38194e36a08c24b0a8c8537b1c20483a7691ffb84"
-    },
-    {
-      "file": "assets/Skill-6-4.png",
-      "bytes": 59820,
-      "sha256": "39c4b309362f40f3f7fc4b6b9cf29776a9057f88911a6804672d03126db32ccc"
-    },
-    {
-      "file": "assets/Skill-6-5.png",
-      "bytes": 60153,
-      "sha256": "63be1b7a173facc704bb2a7b8b0106377c67f76175a3d0f047dd09593e80d6bd"
-    },
-    {
-      "file": "assets/Skill-6-6.png",
-      "bytes": 62752,
-      "sha256": "7547048482fb3669999ba22273320a4df01b6f6a7dfd47bf0bcb14c452bc1740"
-    },
-    {
-      "file": "assets/Skill-6-7.png",
-      "bytes": 64207,
-      "sha256": "112f55c6e8ed32c4863ae9842cacda02be61656b71e0e973c08873d8abc181fc"
-    },
-    {
-      "file": "assets/Skill-7-0.png",
-      "bytes": 67589,
-      "sha256": "e3f032fad58b8d7a7c2bcdf299df27fabc141046e9fd4f3faf3a67c17ab5a61b"
-    },
-    {
-      "file": "assets/Skill-7-1.png",
-      "bytes": 66985,
-      "sha256": "5d54bc379642681b60383dc75760cfa6765cc30eec197a2cf4c9ef0e4973b00c"
-    },
-    {
-      "file": "assets/Skill-7-2.png",
-      "bytes": 69115,
-      "sha256": "df5f2605f711d9f4272df717ecd0a2dd1334000b920f8ab7c2129316da00eca0"
-    },
-    {
-      "file": "assets/Skill-7-3.png",
-      "bytes": 68133,
-      "sha256": "789e5be153f7cef328c0e4ef4bed1aacdc8751bae6e95a7051855bb751bafd2b"
-    },
-    {
-      "file": "assets/Skill-7-4.png",
-      "bytes": 65652,
-      "sha256": "7cd7c33ab344bc0f372a3b5ae5156e9a527eff5cc1fcad50aa4ad2fb84052080"
-    },
-    {
-      "file": "assets/Skill-7-5.png",
-      "bytes": 66974,
-      "sha256": "69a12669b0d38d87b6104346a6de4f108268e279fe54ad45acac0f153dd7f4f5"
-    },
-    {
-      "file": "assets/Skill-7-6.png",
-      "bytes": 68709,
-      "sha256": "9a67b2c34aeecabd6290891b9a55f33798ac2e533e132981f0341c10832658c5"
-    },
-    {
-      "file": "assets/Skill-7-7.png",
-      "bytes": 67550,
-      "sha256": "cc592da9784622fb6715578b68f3dd234ae22305b6ac5f1d5fdca84967fc525b"
-    },
-    {
-      "file": "assets/Skill-8-0.png",
-      "bytes": 68081,
-      "sha256": "b5ce1943073c068a8262d8bd40d6b21cf2642a3546627ba7f518edd07e7b869b"
-    },
-    {
-      "file": "assets/Skill-8-1.png",
-      "bytes": 74422,
-      "sha256": "67a0916bb83506d15b30d5b92b9fd960da9a86a208388b2261a16af2cc0a3c1b"
-    },
-    {
-      "file": "assets/Skill-8-2.png",
-      "bytes": 73636,
-      "sha256": "c087a62bcd9e373bddfa212764d1385d0e294f16525a9ea5865a9cc6b9b01579"
-    },
-    {
-      "file": "assets/Skill-8-3.png",
-      "bytes": 78766,
-      "sha256": "3bf9f9a1c79683991fd7d59484f1331c5fa83286820d0ac2369217845735b4a4"
-    },
-    {
-      "file": "assets/Skill-8-4.png",
-      "bytes": 74626,
-      "sha256": "16b7f9b117f9fc558b9d73f618e4c782afbbfc6a521ed55f68288f92ebc73256"
-    },
-    {
-      "file": "assets/Skill-8-5.png",
-      "bytes": 75455,
-      "sha256": "a03d935cd8cea3744b4631363460d6d720c76107a383a1c028e0068a7d0f5f9c"
-    },
-    {
-      "file": "assets/Skill-8-6.png",
-      "bytes": 73212,
-      "sha256": "ac79c1718adc6bfff452a84c1cc21cfacd4f9919a08a6a25f86a14544043fcbf"
-    },
-    {
-      "file": "assets/Skill-8-7.png",
-      "bytes": 78565,
-      "sha256": "c887b310faa30ebbd2b99068bbaa1d73754ea1156b58286e6f5c68a3e03f2860"
-    },
-    {
-      "file": "assets/Spirit-Fruit-Icons.png",
-      "bytes": 2549209,
-      "sha256": "b8f22b2e06124e7d9c695c49d359e3650d82424613defea02be1c2434be660d5"
-    },
-    {
-      "file": "assets/Spirit-Tree-Bare.png",
-      "bytes": 3146196,
-      "sha256": "375eb10f040ad47e87d82747459f28afabedacbf28ddb356b410ad62ce3841a9"
-    },
-    {
-      "file": "assets/Story-First-Light.png",
-      "bytes": 2959890,
-      "sha256": "0d2f681905e3938324c11847c9a86123f432af0d543383b185c6494de5935e2a"
-    },
-    {
-      "file": "assets/Waiz-arena.jpg",
-      "bytes": 350281,
-      "sha256": "0c1eb105d81a8fd593d2808595a15c2fbfde59564566e5f3a633420604ae1d47"
-    },
-    {
-      "file": "assets/Waiz.jpg",
-      "bytes": 274867,
-      "sha256": "d86e5c0f5bc02e7677ec07b95339c6ddc4137667887692a794f940cd26d28196"
-    },
-    {
-      "file": "assets/Weapon-Amaya.png",
-      "bytes": 127818,
-      "sha256": "578bece810ca2bf1b23cc431b678ad3cc366046e8c232fc1d136a510573bd00e"
-    },
-    {
-      "file": "assets/Weapon-Diago.png",
-      "bytes": 181545,
-      "sha256": "bcb123d3cb00507bc5fc8709e03bc02acf2bd5ad187d2a9266b442a74400ee7b"
-    },
-    {
-      "file": "assets/Weapon-Grace.png",
-      "bytes": 481212,
-      "sha256": "fe2326fc9e275e7732a3742ac8f1e2da0baceb94e10fdbcdfd18b01daca2be11"
-    },
-    {
-      "file": "assets/Weapon-Hailey.png",
-      "bytes": 160840,
-      "sha256": "07650f46e717454cd54a4572377f4f103f3a924d9ef30c3418a5c4c40cf191c2"
-    },
-    {
-      "file": "assets/Weapon-Levi.png",
-      "bytes": 141318,
-      "sha256": "a75d12ff835a4c11191420761554dda353023530cdc9de0f2377fa34bd0c860a"
-    },
-    {
-      "file": "assets/Weapon-Magnar.png",
-      "bytes": 149242,
-      "sha256": "f51e27dc54e45f5a7c95712ba84fd9401ee970a685eebaeba4f8597c64c38a65"
-    },
-    {
-      "file": "assets/Weapon-Naomi.png",
-      "bytes": 173246,
-      "sha256": "c8474cd38e0e84c8e726cc9811ca9fbc163286c4c9bb13cdb36cb8f84b8e4044"
-    },
-    {
-      "file": "assets/Weapon-Sarko.png",
-      "bytes": 131257,
-      "sha256": "c4ac2ec78925c9c04c2737e08b9939e3351eea6941c8e91f6079aca1f62cb63a"
-    },
-    {
-      "file": "assets/Weapon-Waiz.png",
-      "bytes": 162236,
-      "sha256": "1f4f3d48349c3d255df9a2c2d4f5b901f82c348f7f23ff164e6301d7d3854103"
-    },
-    {
-      "file": "assets/World-Earth-2.jpg",
-      "bytes": 791001,
-      "sha256": "211ce395085ab1d85a84d5410d157daf2670cda640675fb04ef77d30bd12d95e"
-    },
-    {
-      "file": "assets/World-Earth.jpg",
-      "bytes": 325406,
-      "sha256": "e69ebcfa997507324a585d7e8be40445b3a14bf26774d84955cf5ed23920987e"
-    },
-    {
-      "file": "assets/World-Fire-2.jpg",
-      "bytes": 580124,
-      "sha256": "97954dc9eb00b4b55f66598937ebda8f383f514fe32b0d988dd1468dad5d48c3"
-    },
-    {
-      "file": "assets/World-Fire.jpg",
-      "bytes": 286552,
-      "sha256": "3379aa1a6f546914ab2e0e4296cde5a173858faf45422c9f93aa587b07655975"
-    },
-    {
-      "file": "assets/World-Light-2.jpg",
-      "bytes": 601875,
-      "sha256": "0d45b973ddbe86cb1af9c6e35188b8a96ba3bc7760e1d546f0cd98d6923e72d3"
-    },
-    {
-      "file": "assets/World-Light.jpg",
-      "bytes": 286009,
-      "sha256": "20c0ef634a5572450f5581ae5f621ae526c05ef0325ded4a7381376239ee769e"
-    },
-    {
-      "file": "assets/World-Shadow-2.jpg",
-      "bytes": 631251,
-      "sha256": "442eae1a0af927c628d01e066723cb0393ff8ed287f9e726787f8ac87f545cbb"
-    },
-    {
-      "file": "assets/World-Shadow.jpg",
-      "bytes": 261695,
-      "sha256": "4433c31870a9d7b53a28c621a8416583cdcd1621aba1581ac27bc0b4a8420321"
-    },
-    {
-      "file": "assets/World-Snow-2.jpg",
-      "bytes": 617223,
-      "sha256": "8c00b3992b1883398635dc8a63dc1f9dc3c94dbaa064aac73e002ac354a10789"
-    },
-    {
-      "file": "assets/World-Snow.jpg",
-      "bytes": 300693,
-      "sha256": "b78657aa47fb243edd200fb84a735ae5b280708d0cd7a2ef5ace0e4ebb3c7182"
-    },
-    {
-      "file": "assets/World-Thunder-2.jpg",
-      "bytes": 579970,
-      "sha256": "68d7ca9d0c25e41de5585f7740e92def90b075c77abcd6bef11637c24d30dc54"
-    },
-    {
-      "file": "assets/World-Thunder.jpg",
-      "bytes": 282359,
-      "sha256": "33d64793c7947e2ae20f979e9d721f55ca645f54f9174efee4de0111da32a8fd"
-    },
-    {
-      "file": "assets/World-Water-2.jpg",
-      "bytes": 772254,
-      "sha256": "223298cd9e96a68107d5c23af5977e731ce2b030b174d8814046130627944322"
-    },
-    {
-      "file": "assets/World-Water.jpg",
-      "bytes": 332840,
-      "sha256": "b93677b0c29aa758b848e2fd8652c4b6bab5a3afa632b9ebb5805235996bb616"
-    },
-    {
-      "file": "assets/book/armour-fits-game.png",
-      "bytes": 2767110,
-      "sha256": "67d54c359552db462770cf96263ed7ae5db9d52db8d7ee7f907f5a1a9e077179"
-    },
-    {
-      "file": "assets/book/breath-heaven.jpg",
-      "bytes": 952768,
-      "sha256": "005c44563915f8e4061797f59076df4e9a41eda7837465f7262aa918c0cce100"
-    },
-    {
-      "file": "assets/book/chapter-01.jpg",
-      "bytes": 523230,
-      "sha256": "d96737a1840ebd2cf16bbd134d7db6dae82869bb39e013febf6c97b694205e11"
-    },
-    {
-      "file": "assets/book/city-gates.jpg",
-      "bytes": 918004,
-      "sha256": "79747ebb9547d7646361b375b1b4c691bb5bef3d9782dd525e9c0eda336c8bab"
-    },
-    {
-      "file": "assets/book/city-welcome.jpg",
-      "bytes": 837506,
-      "sha256": "fd9144a680eaf9430c3f4e113c415e242b05d4dc393de900926bf2dc280f93f5"
-    },
-    {
-      "file": "assets/book/fire.jpg",
-      "bytes": 580632,
-      "sha256": "d02a2c7108bea2382af38a6cab2c1433ea4138e24542ebdca1c74c8c319b1283"
-    },
-    {
-      "file": "assets/book/first-light-overlook-game.png",
-      "bytes": 2739281,
-      "sha256": "d552cabf0d39f1b269e4c879ffb3fcb5d712885d9f47f5e705e7a165abb9d092"
-    },
-    {
-      "file": "assets/book/first-light-overlook.png",
-      "bytes": 3269991,
-      "sha256": "1724bca1ca1b70fae91d318ca6a1ad8527977e0d72f1297c0bd199d714327d9b"
-    },
-    {
-      "file": "assets/book/garden-fractures.jpg",
-      "bytes": 934582,
-      "sha256": "a0e8fd94c822cbcb364618b0ba9bb203d1d075ba0df364edb0800f96646fd088"
-    },
-    {
-      "file": "assets/book/garden-gift-game.png",
-      "bytes": 3535204,
-      "sha256": "340cb8f7aa15f623779a390bbb9811cb599d7a0152e746cd2ff68fd757a7cf98"
-    },
-    {
-      "file": "assets/book/garden-invitation.jpg",
-      "bytes": 995289,
-      "sha256": "fe55f2752405e5c15c888c87537c419dbdc91c103bb06c0e7aeaab57b09e80da"
-    },
-    {
-      "file": "assets/book/garden.jpg",
-      "bytes": 806423,
-      "sha256": "80bd6f33ad54bd188b199d47782702c0dd35bef4f0f05618db324c9a36d94fb2"
-    },
-    {
-      "file": "assets/book/guild-after-battle-game.png",
-      "bytes": 3718535,
-      "sha256": "b2fa50f1cae4e5785251a0225fb28741fb13c341da73a916fab84340270ec68e"
-    },
-    {
-      "file": "assets/book/guild-arena.jpg",
-      "bytes": 445054,
-      "sha256": "39adc616368addd3fdf9ad1231625d43362ebc411fa9a0d004cabf229934f8f2"
-    },
-    {
-      "file": "assets/book/guild-hearth-game.png",
-      "bytes": 2964887,
-      "sha256": "8372ffd906854b3e257254a53f8320d4d4ecefbebb558a37a16757930c80e1ae"
-    },
-    {
-      "file": "assets/book/guild-repairs.jpg",
-      "bytes": 861386,
-      "sha256": "695c50d027a7b660f008534f7690694658bf27ff0da080942667f5f60524cd22"
-    },
-    {
-      "file": "assets/book/guild.jpg",
-      "bytes": 722175,
-      "sha256": "e87aaac2afe8c07135c8ac88538adb50d6ffba537db1b00c46ef20f680bb5de7"
-    },
-    {
-      "file": "assets/book/levi.jpg",
-      "bytes": 696282,
-      "sha256": "a7230d63b50435f91c1b7750efd3e87f03e2f3c7c83448418d885a1363c3fa86"
-    },
-    {
-      "file": "assets/book/light.jpg",
-      "bytes": 723290,
-      "sha256": "5a9f82dbfbff7cc4fa50d5dc97f4c1258e04953b1b17d93d90e8faa035052b40"
-    },
-    {
-      "file": "assets/book/malachar.jpg",
-      "bytes": 714598,
-      "sha256": "7b93b2c4b9806374ffc4eed21a524ce7ae07595bf7590660b9dc66362f85774f"
-    },
-    {
-      "file": "assets/book/meeting-diago-game.png",
-      "bytes": 3044207,
-      "sha256": "65247d520121f7be5da50fc6c3683591e610b5a3569a6bbde8e60fbb6618b375"
-    },
-    {
-      "file": "assets/book/meeting-diago.png",
-      "bytes": 3539967,
-      "sha256": "ca319c5621c68047d99064a5792ea5dce6110ce05a14b53fb16f2fcb0aab3024"
-    },
-    {
-      "file": "assets/book/rex-arrival.jpg",
-      "bytes": 994327,
-      "sha256": "bc3c92f065ddc8f2b3210e1701a4d6ce27ea599424cf0e54c87d3ef092d31fee"
-    },
-    {
-      "file": "assets/book/rex-canyon.jpg",
-      "bytes": 859670,
-      "sha256": "248948abe15f94f38c3c44d6ecfcb8128c8da51798199fe2ca79472585f01c61"
-    },
-    {
-      "file": "assets/book/rex-mercy-game.png",
-      "bytes": 3465638,
-      "sha256": "99807558e4b3124f5f3f43ecec029ec0dc45fe803857c8ca0fd03c9a922fa895"
-    },
-    {
-      "file": "assets/book/rex-restoration.jpg",
-      "bytes": 949225,
-      "sha256": "2e6e3e61514a6252f13c31df7b1401283898923ffbe0078aa5fc90bf0ade03e2"
-    },
-    {
-      "file": "assets/book/seeds-rain.jpg",
-      "bytes": 738002,
-      "sha256": "b63a11c9277c3e51953085da880812de8c3b3bdf0cea79fffa25e7e93bbcecc3"
-    },
-    {
-      "file": "assets/book/shadow.jpg",
-      "bytes": 614748,
-      "sha256": "03175afd97e0d3da360a9b0f8760bf467a15091138c8851853ee838c0953a5a2"
-    },
-    {
-      "file": "assets/book/shield-lesson-game.png",
-      "bytes": 3329324,
-      "sha256": "2612fa4ee300a0e18f04abf33ed0f6b5488e3c3afef2de497c7e19b82a0501a3"
-    },
-    {
-      "file": "assets/book/shield-lesson.png",
-      "bytes": 3442627,
-      "sha256": "9903351593dbb4fc5eea85ad8da24ef84845fb89f61a2ef91e382df3abac27e9"
-    },
-    {
-      "file": "assets/book/snow.jpg",
-      "bytes": 675904,
-      "sha256": "944652843e8d74301656fadd9d0cdd90d734a64aecb7eb047420510723c094b1"
-    },
-    {
-      "file": "assets/book/thunder.jpg",
-      "bytes": 802721,
-      "sha256": "bc2e7a4bb1c027c661ccc877205ef034289aaa7505ef0524a030c57ce5a54cf9"
-    },
-    {
-      "file": "assets/book/training.jpg",
-      "bytes": 735493,
-      "sha256": "a0c3303356b7eb1ff06b06ffcc3b694be708e943d819e6e52d181cc904069a56"
-    },
-    {
-      "file": "assets/book/waiz-welcome-game.png",
-      "bytes": 2981912,
-      "sha256": "baf443e0dbefc87522b3356cc50288ade57c2dcb9be9662e8faf4ce1072c7af4"
-    },
-    {
-      "file": "assets/book/waiz-welcome.png",
-      "bytes": 3005692,
-      "sha256": "2bf20003614668437da5187c7c24b4f20d99db9c197e84c37d82c3f52748015c"
-    },
-    {
-      "file": "assets/book/wake-alone-game.png",
-      "bytes": 2647596,
-      "sha256": "3ed5260ab0e4c3df81af8c46a53bcf9cfaf500c13253e9ffd1a592565fc0d47a"
-    },
-    {
-      "file": "assets/book/water.jpg",
-      "bytes": 799342,
-      "sha256": "3970a0ed5f0b311cb3f25563351086f392029a3bc11d2c5684cbe5607473cdc1"
-    },
-    {
       "file": "assets/bosses/Dawn-Guardian.glb",
       "bytes": 4124516,
       "sha256": "f10b13104a7b9a70b131898aad8bb2de66c608eeedcff6df6ed75ab58835037b"
@@ -1052,6 +547,16 @@
       "sha256": "a450331ec820f6ec87790234899f84221d8f39477c35ed12255b26d311fe60d2"
     },
     {
+      "file": "assets/bosses/Rex-original-review.glb",
+      "bytes": 3919672,
+      "sha256": "f3634c6a598bfe2de1db319e0aa801e5b1fe9f74cbed6c1338e41375c49d3caa"
+    },
+    {
+      "file": "assets/bosses/RexDraconum.glb",
+      "bytes": 6188936,
+      "sha256": "b8ebf49b4553e30d96bc4f08acdeb068f8fac6706000fc1addb868f1d6b807e6"
+    },
+    {
       "file": "assets/bosses/Stoneheart-Warden.glb",
       "bytes": 3459424,
       "sha256": "de92b337e4ce6f1d09a75fa02371fad4e830ba0fef94dc6547079fa9e551068c"
@@ -1065,6 +570,41 @@
       "file": "assets/bosses/Tidebound-Oracle.glb",
       "bytes": 3656520,
       "sha256": "b96cf82f02027302dd4e1c1869c01ecd2f8e78da6000e90159d0f823f920e580"
+    },
+    {
+      "file": "assets/BriarClawBear-3D.glb",
+      "bytes": 1483180,
+      "sha256": "d1d2aabae755b68e47def73690e2179bb6d2ab0b9c89eba00508aacb5bd1c237"
+    },
+    {
+      "file": "assets/BriarClawBear-3D.glb.report.json",
+      "bytes": 233,
+      "sha256": "986453ddcd7b1bcf97d3b8acf3a5216360cda841eecfa3ae8aa59d696edb716f"
+    },
+    {
+      "file": "assets/BriarClawBear-native-preview.glb",
+      "bytes": 4190688,
+      "sha256": "c5b9ddcc7d5cc2e1819f44635e8eca2bc21b2428fb16ddbb7218c21e5449528a"
+    },
+    {
+      "file": "assets/Diago-3D.glb",
+      "bytes": 2207576,
+      "sha256": "57419a7cc0d957210dff688f8fd8dab996cd3ea86edbd42fe8f63d749426d5e0"
+    },
+    {
+      "file": "assets/Diago-arena.jpg",
+      "bytes": 279096,
+      "sha256": "9229790bdbf01407a4753c87accee61a679dbb4ff57d9943ee5aae35a47b792b"
+    },
+    {
+      "file": "assets/Diago-native-preview.glb",
+      "bytes": 9443240,
+      "sha256": "3193bba35e65520c6876ba2e28e8c024c2c5bdfdef9587befc0f986755d89b66"
+    },
+    {
+      "file": "assets/Diago.jpg",
+      "bytes": 271738,
+      "sha256": "a724da040bba99ee98c5a7e066b64c2d82bebf132f0638d000b7bae95b1c6272"
     },
     {
       "file": "assets/dialogue/0-0.mp3",
@@ -1205,6 +745,551 @@
       "file": "assets/dialogue/6-3.mp3",
       "bytes": 116235,
       "sha256": "bf8e804df3b80293c616b271963e1046bfc6de073da6a068d9a32c0589150fa5"
+    },
+    {
+      "file": "assets/dialogue/handoff-battle-queue-0.mp3",
+      "bytes": 139223,
+      "sha256": "ac3a75328e97cec6385aaa2d6d02190218bbf22eae6feb9b484ae4ac3d178e69"
+    },
+    {
+      "file": "assets/dialogue/handoff-battle-queue-1.mp3",
+      "bytes": 106622,
+      "sha256": "5e8d0f03558611aa54977d030aef9657a7071758bf9905b702b704f541a1cbc5"
+    },
+    {
+      "file": "assets/dialogue/handoff-battle-queue-2.mp3",
+      "bytes": 106204,
+      "sha256": "a8ff82367f199a59e55b4cc7c5af59f2d82f75041d8a9a483330dc4136094505"
+    },
+    {
+      "file": "assets/dialogue/handoff-battle-queue-3.mp3",
+      "bytes": 26374,
+      "sha256": "203f23c3eeb6277f94de43804d0cfd8bec0dd6691601bbbc0d2ec303b80a7276"
+    },
+    {
+      "file": "assets/dialogue/handoff-battle-queue-4.mp3",
+      "bytes": 165554,
+      "sha256": "9b82ab52728c64215edbedeb72340cbe8302ad459a8b6528d7bdaa92df0849b3"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-0-9-0.mp3",
+      "bytes": 76529,
+      "sha256": "80b4af2b19878b9de1da0aa57d8cad6c51140fbc0b58d7b168afc297952e9305"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-0-9-1.mp3",
+      "bytes": 32643,
+      "sha256": "73f15a062c60d7440cdb9d3063b3ba78f9c1639b62d0c3d9a1f8658c508de269"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-1-19-0.mp3",
+      "bytes": 117489,
+      "sha256": "9d81ad8e8a75ea54be4db06f691e48652494abda8fd2e2bd56dcbf399a4c084a"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-1-19-1.mp3",
+      "bytes": 33061,
+      "sha256": "acc47ab507335d6c95ffae6f3996d4abf40545177db230c5b408cf10593fe341"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-1-9-0.mp3",
+      "bytes": 98681,
+      "sha256": "dc21b98c9455b083f20a7d8716f7315ab0e71d41b999f42019b40588093d25fe"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-1-9-1.mp3",
+      "bytes": 24284,
+      "sha256": "ce4f86530578e9cfa887e7bf1abdc56ce435dd67507126d35abb00026b8c1113"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-2-19-0.mp3",
+      "bytes": 81127,
+      "sha256": "84be30eabc8112867beab40a3abe07f4aa9f272877b768a1669c8eca6b284766"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-2-19-1.mp3",
+      "bytes": 38913,
+      "sha256": "fe99b6e9da0f951786e72fb5dbd68e175f500e2fc7a32036893e4ef5a9f7e72e"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-2-9-0.mp3",
+      "bytes": 76947,
+      "sha256": "0f678e29589eae692eeea1a8e7456d5271cc6a46b45bb04cbb9fd6e1efcebe36"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-2-9-1.mp3",
+      "bytes": 32225,
+      "sha256": "8f758d482ae238a62b9b59ca1d819713dd1d3d47fb11f5c73e97167ede13a04e"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-3-19-0.mp3",
+      "bytes": 88232,
+      "sha256": "1fd3c4002ca330edef6b4472ec50a760e99d7f2f1ae7aeabf453a212bf400efc"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-3-19-1.mp3",
+      "bytes": 25956,
+      "sha256": "009790784180ecf2b379f12a52c7132204757c61f960366d7960cb2bd6a443a5"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-3-9-0.mp3",
+      "bytes": 80291,
+      "sha256": "83b1ea20ffe6944fbe69a4dae2a7e254c11f27bb685091afd6b3914fc8fd8653"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-3-9-1.mp3",
+      "bytes": 36823,
+      "sha256": "03b2411198e46287ef7b0541ae61106ca72714581fb521d88fc31748d0eddc2c"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-4-19-0.mp3",
+      "bytes": 73603,
+      "sha256": "c68b8a327647c0e2b54a59284f04d26255771e4e92eb9e28b400ff2f85348e79"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-4-19-1.mp3",
+      "bytes": 68170,
+      "sha256": "9b12d1116f61e2400dc29fa3dff535dc4649c777985eb2365b55cdf59b209655"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-4-9-0.mp3",
+      "bytes": 118743,
+      "sha256": "1017266b1468370a6c102e4ed3c1550b304c5325c7cb27a31b5dbad9ef17b393"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-4-9-1.mp3",
+      "bytes": 28046,
+      "sha256": "83658f5743919a82e8c0439fb2b08577612268c908d22a41860e633ce80312f9"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-5-19-0.mp3",
+      "bytes": 110384,
+      "sha256": "97fad68655992501d0e55041f1e1f671969cba17831e78e3634c36fb13c84fa6"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-5-19-1.mp3",
+      "bytes": 43092,
+      "sha256": "2b7161a38fada15ac2e06fbebf6c54e3475e350bd393cc646dd704f3566ae839"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-5-9-0.mp3",
+      "bytes": 118743,
+      "sha256": "c835eca0d058c784ab4ce714dc88e430163fb8d9c95a61309098a7be646022b3"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-5-9-1.mp3",
+      "bytes": 23448,
+      "sha256": "c14c52998b2ce18a2d1e063c5a414b0b95ef57ddc1baa9fc77fb39049638b3a8"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-6-19-0.mp3",
+      "bytes": 113310,
+      "sha256": "169acaedf939bb37a3dba6f6d5be514bcd03f3b091525349c69799523c900225"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-6-19-1.mp3",
+      "bytes": 20105,
+      "sha256": "b23647d8dee1638ef5f9f090db766d8f5934a9fadd9ef90dc122b7c9eec199b6"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-6-9-0.mp3",
+      "bytes": 95337,
+      "sha256": "b208d2d5d870615366cfb87476ac2a0565f7a6f58a0071c2155a207155c28b68"
+    },
+    {
+      "file": "assets/dialogue/handoff-boss-6-9-1.mp3",
+      "bytes": 35569,
+      "sha256": "359f249486db6e169d309064ca7c49adf909a569081c9c7e87f3a7d926e77870"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-equipped-0.mp3",
+      "bytes": 122087,
+      "sha256": "879f572ad8143a8487fb6e023787d32db26e545fc397645ca9272c43c757e9bb"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-equipped-1.mp3",
+      "bytes": 53123,
+      "sha256": "1980c2ba2b7542245e0931d0a23d446efea51dd84d41078091a63e49fd460edc"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-equipped-2.mp3",
+      "bytes": 140477,
+      "sha256": "1667a4be73672c7586a1e0fa017e055fd929b91a65964a12b1cdec8c84ede8f4"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-equipped-3.mp3",
+      "bytes": 66916,
+      "sha256": "2625ff6a87d876389ee02246de3e47233462d4b7d7be648a59f0767c384b1ed1"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-welcome-0.mp3",
+      "bytes": 87396,
+      "sha256": "c6837a456b274bc2b429e7302232e272fa269aa08216d4cc9107dacbec0c5659"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-welcome-1.mp3",
+      "bytes": 58557,
+      "sha256": "7113021ee0bff1c830b9d40ffc61537e080876f745f2ad7749839e2a831175bd"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-welcome-2.mp3",
+      "bytes": 144656,
+      "sha256": "c07df50c72e3298d6db7b3a756c20b3c9d0a6c392ae0c1089ec810bd56cce0c3"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-welcome-3.mp3",
+      "bytes": 87396,
+      "sha256": "1dac31fe6371f7cc1a92d73fe18ec0b1a1679d5e09af21c8eaf280db82fc28b1"
+    },
+    {
+      "file": "assets/dialogue/handoff-church-welcome-4.mp3",
+      "bytes": 91994,
+      "sha256": "41a2e6f30a460c9cbc8f94873c4012f120cd89aebecd10443ef9df9bbf8c17ee"
+    },
+    {
+      "file": "assets/dialogue/handoff-life-welcome-0.mp3",
+      "bytes": 122505,
+      "sha256": "7397eabc9edca2ed51b698b1e1575762c4e8ea1066e531988c934a50927ef982"
+    },
+    {
+      "file": "assets/dialogue/handoff-life-welcome-1.mp3",
+      "bytes": 53541,
+      "sha256": "4cf3724903c0257b749145f6a63d85e1c1e891a2d7e8333c01e9d9d750cc2dab"
+    },
+    {
+      "file": "assets/dialogue/handoff-life-welcome-2.mp3",
+      "bytes": 144656,
+      "sha256": "4e0b72f58fa9b10322a9528f20e52b50a43969cb8d53427aee3372e0f5ac0bcd"
+    },
+    {
+      "file": "assets/dialogue/handoff-life-welcome-3.mp3",
+      "bytes": 135461,
+      "sha256": "45b6ac9f6adc5819303afa5178813f1ddb890008ffd493753c3c79a6eb771951"
+    },
+    {
+      "file": "assets/dialogue/handoff-life-welcome-4.mp3",
+      "bytes": 41421,
+      "sha256": "14c54401aa50a64b3c51587665ce8f66c60902e522c6b2d97e8d70c98b294199"
+    },
+    {
+      "file": "assets/dialogue/handoff-recordings.json",
+      "bytes": 45508,
+      "sha256": "1f1d561cd939fb09b8cd55a1da7efc378027c7aca849dc42894edbb70bcf3da6"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-0-0.mp3",
+      "bytes": 123341,
+      "sha256": "732a8bd26b0cb6a4b042442d55b23c2a12f00117247314490eb260ac14f1d2a9"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-0-1.mp3",
+      "bytes": 22612,
+      "sha256": "4356493607af9836063c4f13b7110d1eae75312ea484cdd1ea9d0b10f26311ff"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-0-2.mp3",
+      "bytes": 122923,
+      "sha256": "38cc13c5a085c836ad0d74feaeed1c54169869aa68891af2621a724dc8f79da9"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-1-0.mp3",
+      "bytes": 118325,
+      "sha256": "10221deb6231fc985e84ea21af6ec1dec7204bee3e333430914065a2c71b6f9e"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-1-1.mp3",
+      "bytes": 51034,
+      "sha256": "21bac466ced81b67c20ca0f22b21ce25942e8671d2e22f59489f7a05aeb0be85"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-1-2.mp3",
+      "bytes": 112892,
+      "sha256": "2672cb6b5c51375cabb82068cb215458e497a13885c92ca21d0742f29f016e3d"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-2-0.mp3",
+      "bytes": 110384,
+      "sha256": "d5f13ae208d3c6c6069560e66e16179a1771ec39e389e378107b4b2d70ac9e3d"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-2-1.mp3",
+      "bytes": 21776,
+      "sha256": "7913a1f6dc6ef3ecacaed4e16ea85e3ba0dad585fdf5a1d6ae39adf5c7dcf7e7"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-0-2-2.mp3",
+      "bytes": 104950,
+      "sha256": "05d5b295768f5898ad544bbb05ae8433cd7e1f0f90ce21ea3eb1ef8bdf5bb467"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-0-0.mp3",
+      "bytes": 125012,
+      "sha256": "8f6f54093478e8cf789cccc053399dcd496e92023c25bfd5f5d2ce22637b900e"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-0-1.mp3",
+      "bytes": 35151,
+      "sha256": "54219feccc732d8b7d1ee0d97157eea3fa57a65171be0f524cee1c178999cc34"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-0-2.mp3",
+      "bytes": 39331,
+      "sha256": "9daa6c46047791d76d196709ac9a4959d275dbc77be9556857139f79df554360"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-1-0.mp3",
+      "bytes": 123758,
+      "sha256": "35a4a3689a7e99398227f90a0aa438283b9a332fcc1b10ad01bb8c8a7f570268"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-1-1.mp3",
+      "bytes": 28882,
+      "sha256": "4838f271473ce526dedd62ec8a65e85eaaf230327aeaa5daa8e48855290e3749"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-1-2.mp3",
+      "bytes": 125012,
+      "sha256": "5768ea8cdb9a763e7356aa7bba04827a56a8a4382094d3f6551fb7207c377908"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-2-0.mp3",
+      "bytes": 125848,
+      "sha256": "6b28f8cfd69713ff5e5727a61e016ee10a27d51dd568838ffa13c3bb98e176e0"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-2-1.mp3",
+      "bytes": 23448,
+      "sha256": "3749475421955d81b9131895b28d6b29c23defffe415e9b45a859914067c0aad"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-1-2-2.mp3",
+      "bytes": 43510,
+      "sha256": "26f0ad49eabb342f902a35d92694dc5477ccf3023f8813561099a58f9f37a770"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-0-0.mp3",
+      "bytes": 135879,
+      "sha256": "c0ea30c69a1088bd996c6acdadce7b59d5f139de8d3e79ecea605ff7876c6365"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-0-1.mp3",
+      "bytes": 14253,
+      "sha256": "1cdda6e625810ddf90c814130a499280fbbb66b8b67343504c83f0d8be5f6991"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-0-2.mp3",
+      "bytes": 73185,
+      "sha256": "d900812532653b189b381d27e2a24938fd484f5605f7abc06efeed3dc948e158"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-1-0.mp3",
+      "bytes": 75693,
+      "sha256": "5ccd17c6962595443b67dbbfd440024b9051b01c2af6cfe0a3df8a849ca6d6db"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-1-1.mp3",
+      "bytes": 22194,
+      "sha256": "a1f1bcbe0908296679170d9c3a7571b085bae691013a30362732a6fd04bd55d1"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-1-2.mp3",
+      "bytes": 86560,
+      "sha256": "b43fa302e04fb2a56d3dbcf4eb5da7b855f80f4503bd9d93d1eb5d0c3001959a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-2-0.mp3",
+      "bytes": 76111,
+      "sha256": "7fa9772914b9fba0b3e08c61154e75ba7108c47303555c67206812693bbe2841"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-2-1.mp3",
+      "bytes": 18851,
+      "sha256": "c68f953ed501fdfcf7b09c0b201e53f0c6494a0d973adaa26080ecca1344b945"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-2-2-2.mp3",
+      "bytes": 75275,
+      "sha256": "3f0c08e19fc69c3b7cdb1095de6a204fcf1cceecc18b09714ef3c8651c27a7e9"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-0-0.mp3",
+      "bytes": 105786,
+      "sha256": "ca7499c430b91cc69e4c0fb9d7590bd855fc74ec912e170ded365da561dedc9c"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-0-1.mp3",
+      "bytes": 23448,
+      "sha256": "5b2c3e2bd9504198590b99ef2f53839a267ad9820eb5832bf7bc239c41772e7a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-0-2.mp3",
+      "bytes": 103278,
+      "sha256": "1e8704e61e8a8e88cb4553ad9be447b6dae8ca6ded03fdd21294a7722d33f27b"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-1-0.mp3",
+      "bytes": 111638,
+      "sha256": "3852bafcb70b09bfdad46143f1adff6dec98623ca4461455f9668e2ee1f1357c"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-1-1.mp3",
+      "bytes": 19269,
+      "sha256": "e6229a19f83baaddb9061f342e5ae89788044a889a12e3f42ba2b1eab4b0458a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-1-2.mp3",
+      "bytes": 71932,
+      "sha256": "ebd51caf36be932601b5267c20acec9af208c0d75162e1e6aadca55e8025693e"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-2-0.mp3",
+      "bytes": 61901,
+      "sha256": "33a281848cef898b14288dda67255050965e08443adf3841d4e40f6b95628458"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-2-1.mp3",
+      "bytes": 31390,
+      "sha256": "6e49979f2cc77df4680cb6e1d3d454cb23b5508a3c6cb0cfe3e3193ac890c5b9"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-3-2-2.mp3",
+      "bytes": 106622,
+      "sha256": "50f4007ae7098bdcb73cd27acf1b593880419840ac78ec848d6326f5321890e0"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-0-0.mp3",
+      "bytes": 110802,
+      "sha256": "3cbe9ca26be0db3cc742dfb7b188a907622b9186c31076c96b9542e983d10396"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-0-1.mp3",
+      "bytes": 20523,
+      "sha256": "088f5c1c3328af18386130dc4ac3636b7923eeeaa4cc9ecf974c3896fe4a7885"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-0-2.mp3",
+      "bytes": 93247,
+      "sha256": "555e2d4e94c5fbe021a5b02b6d56bb1ce917d62359c3958dbe92c9ecf2ef57fa"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-1-0.mp3",
+      "bytes": 91158,
+      "sha256": "3cb83217bc7ba997218d33f921789d09d304c27dda886a744e0ca4e99e84dbd2"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-1-1.mp3",
+      "bytes": 115817,
+      "sha256": "610ba76c3a1ff536b53ac5a25c81818aaede8752b28fa15c81222a8b85326a5b"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-1-2.mp3",
+      "bytes": 76947,
+      "sha256": "bddbbb8e932ae994c177023bd3edeb0b777cf3e44b37491170956a5d5175c512"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-2-0.mp3",
+      "bytes": 88232,
+      "sha256": "720096c55f92300814488da1b4b7ae5afeb57069d5038ff35494c7e373d51b9d"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-2-1.mp3",
+      "bytes": 25956,
+      "sha256": "090963d78256d0cbc5bcf4f6a82e8d0e21340af1f204ef9853eb293432b1168c"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-4-2-2.mp3",
+      "bytes": 85306,
+      "sha256": "1b111b4fa9c7ac9aa82d73e3218e734450a62e75076c7c4ea3860810b93e6660"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-0-0.mp3",
+      "bytes": 99517,
+      "sha256": "9bb4ac64977421874c0dd83c699b3a0a0f09340c3072b641d2acb52515733708"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-0-1.mp3",
+      "bytes": 13835,
+      "sha256": "e84eaa6787b7cd88cf1826a5006a06d9bc0d8505cfb75fbac362caff2169860a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-0-2.mp3",
+      "bytes": 109966,
+      "sha256": "6d77fde005dbaed5371201f1407a2c5224f20aaee3214e2af1073f96fe566b8a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-1-0.mp3",
+      "bytes": 91576,
+      "sha256": "1a786d03d9336264f18a9d772634444ab8f12a817e1fdd48fd838e7a0e6e3c24"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-1-1.mp3",
+      "bytes": 23030,
+      "sha256": "0dbbca7fefdda9cc87a8b9f2118094ca7e174508ece6869dd04363b9dcc05fb8"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-1-2.mp3",
+      "bytes": 97427,
+      "sha256": "077c97acff714b44c9c3bd1f01ff49d3ac40b7f89498c08f8b57354eeb918357"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-2-0.mp3",
+      "bytes": 67334,
+      "sha256": "56da89c924a616996323103f403eed9fc19a22eae84411293278cc38a7f551ed"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-2-1.mp3",
+      "bytes": 17597,
+      "sha256": "cf71613b60f32b7457d14b51b0cf69595e36ec0528030fbf6252d9982d8be6a4"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-5-2-2.mp3",
+      "bytes": 107040,
+      "sha256": "ae0207e422901b9dc1cff9aadc6866a65b0446db4e0fb196d451c09de1fe2294"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-0-0.mp3",
+      "bytes": 117907,
+      "sha256": "3549cc0ca95489368d5d318252dcf0cc5ba32decdaf082e1f5f83b23d5f11429"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-0-1.mp3",
+      "bytes": 16343,
+      "sha256": "d5d618d9f648561fca028b7150c79538f50686ade684e1acaa7eea5a1c8088b3"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-0-2.mp3",
+      "bytes": 113310,
+      "sha256": "e10bc9869174a9455c7078c653ef50ffbfdd1a611cec6ffca1895ba1918bd798"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-1-0.mp3",
+      "bytes": 90322,
+      "sha256": "4fc14cfa28a2efef6128b635c93f3127337e8c1d73c34e5f9e7f9a96f4700762"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-1-1.mp3",
+      "bytes": 53959,
+      "sha256": "3a5390722059f759452cfc6b07e79098a999e1e0ffe6a854088f6d2bc4f55443"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-1-2.mp3",
+      "bytes": 43928,
+      "sha256": "1d65d98d75695ff1e2285b1adcf09c04ff33b00a7a1aef191c80e8c52cc69b6b"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-2-0.mp3",
+      "bytes": 74857,
+      "sha256": "9aada45fbbec51c9a749d39eb419e66c8c3dcd754fd14964f734c16a7390c84a"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-2-1.mp3",
+      "bytes": 36405,
+      "sha256": "dbf47357554efd39e3dd79104baf3f786ed77586fd77f53b28fe1a2c950d52a4"
+    },
+    {
+      "file": "assets/dialogue/handoff-world-6-2-2.mp3",
+      "bytes": 89486,
+      "sha256": "318784979ad9da53eb3c086ac459c4edd7c2d92d7508cb27dacec0ef1a42bd97"
     },
     {
       "file": "assets/dialogue/life-0.mp3",
@@ -1733,8 +1818,8 @@
     },
     {
       "file": "assets/dialogue/opening-finalStand-6.mp3",
-      "bytes": 93247,
-      "sha256": "aec2ee82d65ad58ae142bbabdf608bdddcc95415f486b4c0c1eacd3109502067"
+      "bytes": 96173,
+      "sha256": "e69a978b611dd3801b17b756732d25de4b37e90bb3e44e88c4c8075dff8e2838"
     },
     {
       "file": "assets/dialogue/opening-firstLightView-0.mp3",
@@ -1813,8 +1898,8 @@
     },
     {
       "file": "assets/dialogue/opening-fractures-4.mp3",
-      "bytes": 160121,
-      "sha256": "5d4ae7ca935053b0cf2f271904f8d01ba39a31d37ed85b0f5870e6bfbbfe78b0"
+      "bytes": 214038,
+      "sha256": "0fc286674efe2b30a236d2d6a24cdee87f8c64e07f28546a138a794af0594d62"
     },
     {
       "file": "assets/dialogue/opening-fractures-5.mp3",
@@ -2103,8 +2188,8 @@
     },
     {
       "file": "assets/dialogue/opening-repairs-7.mp3",
-      "bytes": 153434,
-      "sha256": "978056fee6f2000c5f09b4b153978a2b15ff5de8ace1bbc5b4a6dfed0f9267a8"
+      "bytes": 162211,
+      "sha256": "9f50bd0b734fe05bc4ba9705bbe256512cb04caaa77dcf42ea98af5ae895cdb2"
     },
     {
       "file": "assets/dialogue/opening-restoration-0.mp3",
@@ -2413,8 +2498,8 @@
     },
     {
       "file": "assets/dialogue/opening-wake-3.mp3",
-      "bytes": 87990,
-      "sha256": "2cfc1f5b8d337d06a07fdaf0ce1e908f71cfda7067e90d42f6da59b9bf0f2f96"
+      "bytes": 86560,
+      "sha256": "94b421f7e6beb7abb334e612ef7dacd734e3fa294e79b155e0daf49d04aadcaa"
     },
     {
       "file": "assets/dialogue/opening-wake-4.mp3",
@@ -2428,8 +2513,8 @@
     },
     {
       "file": "assets/dialogue/opening-wake-6.mp3",
-      "bytes": 108294,
-      "sha256": "4fc8e2f6c110bc12a18844ab422552fd37e3cb0e9ca0802a85b3e0476fc43d94"
+      "bytes": 131282,
+      "sha256": "fed51206aa8a9ac47259d7ffcd408e46ff434f1ea2a051b315809479eab587c9"
     },
     {
       "file": "assets/dialogue/opening-wake-7.mp3",
@@ -2445,6 +2530,11 @@
       "file": "assets/dialogue/opening-wake-9.mp3",
       "bytes": 108712,
       "sha256": "74f1568d01462866a85666ce5734a6f8ce980c2a637b5177742481ac6c945699"
+    },
+    {
+      "file": "assets/dialogue/pronunciation-repairs.json",
+      "bytes": 3612,
+      "sha256": "342bbc74402e558abc9f3c2ace9e7b1c0a8d9a517e50fa6a394834705ce68214"
     },
     {
       "file": "assets/dialogue/quest-0.mp3",
@@ -2538,8 +2628,23 @@
     },
     {
       "file": "assets/dialogue/voice-cast.json",
-      "bytes": 85892,
-      "sha256": "c9cdefa780b49e8943df56b66e969ab0e53d330d6b825559412fefe799ed26be"
+      "bytes": 88952,
+      "sha256": "f532acb8c1a3a6d85d7bf46d35702794924a81006e70c79a9706040b8b4c8a40"
+    },
+    {
+      "file": "assets/ForestWolf-3D.glb",
+      "bytes": 2099720,
+      "sha256": "36a76bf51a79bd4ae5373d4f5e95c274d599a1a51d225fbb9454f461616d07e8"
+    },
+    {
+      "file": "assets/Fruit-Spirit-Collection.png",
+      "bytes": 2651874,
+      "sha256": "32697352133f5e415072161353a93b50382a6f3b58972b288006caa1dcee9825"
+    },
+    {
+      "file": "assets/Fruit-Spirit-Tree.png",
+      "bytes": 2994006,
+      "sha256": "eec1e6b32a7611bfa33f8d84ee9f7323b679acd450c76ff7bf5a19cfbc557531"
     },
     {
       "file": "assets/fruits/Faithfulness.glb",
@@ -2555,6 +2660,11 @@
       "file": "assets/fruits/Goodness.glb",
       "bytes": 267764,
       "sha256": "40d28a3b1f2fafcbac6e924df6afb92154c5c94a088c8106f579a8a79866d7a9"
+    },
+    {
+      "file": "assets/fruits/import-report.json",
+      "bytes": 1997,
+      "sha256": "0f2a952cd9263c357e3a7b0fd78241ca548c8fc074ef7e500f593150ab10b773"
     },
     {
       "file": "assets/fruits/Joy.glb",
@@ -2587,9 +2697,99 @@
       "sha256": "af62706744dd8dfc072f5ff0c4a5b9225cb8b9efa09bf62ba80b2b22360f1d21"
     },
     {
+      "file": "assets/Grace-3D-fitted.glb",
+      "bytes": 10495192,
+      "sha256": "cff1a6d99070778d3903df443dc52fc20c1e8c362cd7854d4bb1f4df325f0a61"
+    },
+    {
+      "file": "assets/Grace-3D-preview.glb",
+      "bytes": 10780280,
+      "sha256": "e72e3ac6bd3de998a88a00e1dacfa7bfce797508a69aecdd16e34454928e85eb"
+    },
+    {
+      "file": "assets/Grace.jpg",
+      "bytes": 483733,
+      "sha256": "b5394bee2644055dab762bef87b5fdcdf3742678edfc0a1481be65aa2eed7579"
+    },
+    {
+      "file": "assets/Guild-Boss.jpg",
+      "bytes": 208277,
+      "sha256": "f0268c76d5fb2f3fd6a6ada56c71a72b94b3c4865c7555f8fd2b0ec9d56748c8"
+    },
+    {
+      "file": "assets/Guild-Button-Plate-prompt.txt",
+      "bytes": 682,
+      "sha256": "412ee9633656ecdbdc95ceb761edef9e358f6142969741c00d75cc11258645ef"
+    },
+    {
+      "file": "assets/Guild-Button-Plate.png",
+      "bytes": 1999980,
+      "sha256": "2e6b8ef54593543111ba854293a3550cc8aa692a92028faf1f1a506fa846d950"
+    },
+    {
+      "file": "assets/Guild-Chest.jpg",
+      "bytes": 72701,
+      "sha256": "4ba52fc9ed993bada379ed7b900e7146c9a397a9cca386ff8ffba7a523c87531"
+    },
+    {
+      "file": "assets/Guild-Church.jpg",
+      "bytes": 185178,
+      "sha256": "25ffd2ab19c8f8f6b9f5dc0381f4b6b0e28420a43b4083f9175b74df09540547"
+    },
+    {
+      "file": "assets/Guild-Coin.jpg",
+      "bytes": 79380,
+      "sha256": "d51685d5dd349c32d72774ab1147bebac464d5b532dd211cdaedf2a1707c8026"
+    },
+    {
+      "file": "assets/Guild-Forge.jpg",
+      "bytes": 212939,
+      "sha256": "37c24651c787f999a58de217cfc084cc8b02de03e3c758f5a9bdd975660307cc"
+    },
+    {
+      "file": "assets/Guild-Fruit-Tree.jpg",
+      "bytes": 223337,
+      "sha256": "350b54b2d7cfb257b355eba831a7ac69cd0b1dabff098012767f27bf85bdd43b"
+    },
+    {
+      "file": "assets/Guild-Fruit.jpg",
+      "bytes": 53911,
+      "sha256": "251f51ed891538ca0e4c3528d6c5095b27dbb51dfeb71b465af943577e1f78da"
+    },
+    {
+      "file": "assets/Guild-Gem.jpg",
+      "bytes": 50403,
+      "sha256": "757c7d8ff8f259677cdf72312c41edbe774594944994f1381627e8da9f41cd1a"
+    },
+    {
+      "file": "assets/Guild-Shop.jpg",
+      "bytes": 303880,
+      "sha256": "db2ccd5263746f34e357344ab53cc5ff47c0d9c9f2754d932ed223794613d70f"
+    },
+    {
+      "file": "assets/Hailey-3D.glb",
+      "bytes": 2195088,
+      "sha256": "e2fc6ff58666c81695ee7ca87d1f1e09aeb1021e9db95f64f32200bffe71da2a"
+    },
+    {
+      "file": "assets/Hailey-arena.jpg",
+      "bytes": 333338,
+      "sha256": "2935badb5e310a939bf30d4b3b6540fe2a8fd8dde4f927b98fbca816bdb845ad"
+    },
+    {
+      "file": "assets/Hailey.jpg",
+      "bytes": 264152,
+      "sha256": "54e0be56ac44867df5f297efec2ea5c1144e1d338625995cf5cd8fd9566fe746"
+    },
+    {
       "file": "assets/heroes/Amaya.glb",
       "bytes": 7179060,
       "sha256": "91861377d1f6a2c88fc7db3aa33e39360fb18b73d1370604d3b24c7c7fbd6b3e"
+    },
+    {
+      "file": "assets/heroes/Amaya.glb.report.json",
+      "bytes": 357,
+      "sha256": "6237d39c7ba5cf2f6a1a417d6e19ec3f3383b35d4873629d5cc22c056ed192b9"
     },
     {
       "file": "assets/heroes/Diago.glb",
@@ -2597,9 +2797,19 @@
       "sha256": "bba2f4cb20b31dac420dc87be5cc9485e18af1a4da9f10f213a8d2658719c950"
     },
     {
+      "file": "assets/heroes/Diago.glb.report.json",
+      "bytes": 357,
+      "sha256": "6cda6b3c47cc6b46cc345c3499090a59f6d5bab08dc9c0ef4f97d1fb0ef8de41"
+    },
+    {
       "file": "assets/heroes/Hailey.glb",
       "bytes": 3862724,
       "sha256": "9dc64d26320b9db2f253806eb33069c2a330ad7a9ce78f1418dc18efac4507ff"
+    },
+    {
+      "file": "assets/heroes/Hailey.glb.report.json",
+      "bytes": 359,
+      "sha256": "07ef1217e1a6778b540ed06473bdf979eff0f913ce532432c8e81808f0760397"
     },
     {
       "file": "assets/heroes/Isaac.glb",
@@ -2607,9 +2817,19 @@
       "sha256": "fd79da6c56abffe532224272baea1cffd911fa345db3598b80689be078d92549"
     },
     {
+      "file": "assets/heroes/Isaac.glb.report.json",
+      "bytes": 357,
+      "sha256": "80fe6641408e2d1247581ee4bf72dd511c9ed2c984839d67171d2e471f2178d7"
+    },
+    {
       "file": "assets/heroes/Levi.glb",
       "bytes": 7190348,
       "sha256": "a5302f23fe20137e370c0d2034b67d5a04db2b3333a175f80fea8e0f377b6d99"
+    },
+    {
+      "file": "assets/heroes/Levi.glb.report.json",
+      "bytes": 355,
+      "sha256": "fbb022df1830d36981d67c3d1d4b7b1888a5d7e4b501f7cea1d128c67d647995"
     },
     {
       "file": "assets/heroes/Naomi.glb",
@@ -2617,14 +2837,29 @@
       "sha256": "86c3b3a07c7e2983d0d137daaae1ab660797105c8b250b389e35692f6cba0775"
     },
     {
+      "file": "assets/heroes/Naomi.glb.report.json",
+      "bytes": 357,
+      "sha256": "ad921f98c8a1c578657a0200106f439e6ef709450ec6dee7c702bdffda204f94"
+    },
+    {
       "file": "assets/heroes/Sarko.glb",
       "bytes": 7902468,
       "sha256": "e4431f2e994fcc1619fde7aa19f82c05c7de016a9c85140793a4acde7e8b40bc"
     },
     {
+      "file": "assets/heroes/Sarko.glb.report.json",
+      "bytes": 357,
+      "sha256": "f5f6a94d25902b7b7a6070f1306d3c89f493bf1ad6e7f5b7ef23b53fb75daaea"
+    },
+    {
       "file": "assets/heroes/Waiz.glb",
       "bytes": 8265964,
       "sha256": "d4f12cf145d85c694b029e7fe2d7b0b88612f23adc548f11bbf9e3aba8762c85"
+    },
+    {
+      "file": "assets/heroes/Waiz.glb.report.json",
+      "bytes": 355,
+      "sha256": "99ce416dff6c403a1b530dbf0891b792bbe3d552e6702224ed042935444f20ba"
     },
     {
       "file": "assets/illustrations/AshhornStag.jpg",
@@ -2640,6 +2875,11 @@
       "file": "assets/illustrations/BrightCap.jpg",
       "bytes": 474680,
       "sha256": "8f746f1e59fadcfa9a17086f5b0607be16ff3f635ea50590c3ea7036649f23d2"
+    },
+    {
+      "file": "assets/illustrations/church-training-v2.jpg",
+      "bytes": 403392,
+      "sha256": "0d5a073af11431775f78a4861f39fe0154a5c8aedb6f2d1736a9883ae5fd6218"
     },
     {
       "file": "assets/illustrations/CorruptedWolf.jpg",
@@ -2662,9 +2902,114 @@
       "sha256": "58fcfc221c004d706657a4dfab8e74ffaca5d2798c98b8c2367abb3fd1a44fee"
     },
     {
+      "file": "assets/illustrations/first-light-town.jpg",
+      "bytes": 1429726,
+      "sha256": "d636e61b3e95db8eef3471d8d3079bbecb5ac6e2cfbd3210270b2c989bf3414c"
+    },
+    {
       "file": "assets/illustrations/Frostveil-Warden.jpg",
       "bytes": 381642,
       "sha256": "09c90ef3c038ea4a68c0fc6fffe7cb504b389fe9b7cd70ea016da884280abcd3"
+    },
+    {
+      "file": "assets/illustrations/help-townsfolk.jpg",
+      "bytes": 646750,
+      "sha256": "4c3ec02a5d04d7a9c4abca399c67c1c391bfc9f1f9d5516502668d01a427e9ed"
+    },
+    {
+      "file": "assets/illustrations/hero-Amaya-dove.png",
+      "bytes": 2502631,
+      "sha256": "e006443ff6f065e4d2a15bcf589283d0582900cde6695531c446900a666e2a12"
+    },
+    {
+      "file": "assets/illustrations/hero-Amaya.jpg",
+      "bytes": 363685,
+      "sha256": "5d34d9ef3f440d091b1ecd595502600d583eeb27d0c34c66a30bd554cbeb54aa"
+    },
+    {
+      "file": "assets/illustrations/hero-Diago-dove.png",
+      "bytes": 2355831,
+      "sha256": "ecde2ae24ea2e4365805cf2528dd41fbfe2d20b7471cbd6d240a72930106888d"
+    },
+    {
+      "file": "assets/illustrations/hero-Diago.jpg",
+      "bytes": 329132,
+      "sha256": "5fc81a19c1b42468079b503b9d8b4dcf94130188a1d08565872fbcb777a70aed"
+    },
+    {
+      "file": "assets/illustrations/hero-Grace-dove.png",
+      "bytes": 2581881,
+      "sha256": "6c1d8c00aa946e2b7577e279ac95f81a253040f36175d92f0ee8724b8b449288"
+    },
+    {
+      "file": "assets/illustrations/hero-Grace.jpg",
+      "bytes": 334065,
+      "sha256": "15200d9d30ef4efc22184d55dbe05714fbe210501919667a1de519887b8a41a7"
+    },
+    {
+      "file": "assets/illustrations/hero-Hailey-dove.png",
+      "bytes": 2747445,
+      "sha256": "553a1c186e839641f7289930fc0bbe655fec61be5cbef912781671213fd9b316"
+    },
+    {
+      "file": "assets/illustrations/hero-Hailey.jpg",
+      "bytes": 389993,
+      "sha256": "ec60aa29197424bdf387b82525235f298971ca39307a3b57eb56227c58ed934a"
+    },
+    {
+      "file": "assets/illustrations/hero-Isaac-dove.png",
+      "bytes": 2437357,
+      "sha256": "7687cdb7d36c9065981a409409eb65640ba9848ce8eee407562c2327112f1bc1"
+    },
+    {
+      "file": "assets/illustrations/hero-Isaac.jpg",
+      "bytes": 359996,
+      "sha256": "b798f5c608534d85fbe9d10af843aaa47e17bb8634416e4230403344e8211717"
+    },
+    {
+      "file": "assets/illustrations/hero-Levi-dove.png",
+      "bytes": 2765115,
+      "sha256": "52a816885b7d60aebb183babd842ba744fdb554123b01a89a124f5132eefea31"
+    },
+    {
+      "file": "assets/illustrations/hero-Levi.jpg",
+      "bytes": 442958,
+      "sha256": "231042719d1362c5d10d24af84dfe333002e77217052cece6f9ead10e243b3e5"
+    },
+    {
+      "file": "assets/illustrations/hero-Naomi-dove.png",
+      "bytes": 2420058,
+      "sha256": "21e3a877845c20d4f8277c7e3e5a8eef66375787c38b13809cf7f0e4821288cb"
+    },
+    {
+      "file": "assets/illustrations/hero-Naomi.jpg",
+      "bytes": 336787,
+      "sha256": "2f7f07635c66d7c73fe5c9e25682aec52552b583e82b75a104b4ddc51c7c0e8d"
+    },
+    {
+      "file": "assets/illustrations/hero-Sarko-dove.png",
+      "bytes": 2449419,
+      "sha256": "afb13a1b46051573d6622bf1a9e06508dee794c9f603dd914e70fdce60c271d3"
+    },
+    {
+      "file": "assets/illustrations/hero-Sarko-model-v2.png",
+      "bytes": 2903907,
+      "sha256": "d96c53f75318c6e35684f2861d1553b77ab3384cf0d6259f15c3a24bd7815e84"
+    },
+    {
+      "file": "assets/illustrations/hero-Sarko.jpg",
+      "bytes": 432712,
+      "sha256": "59a8cfa84d564a77708bf7ec2ec35a464ed9cdf6e450f4488c5f296cbe0c1e55"
+    },
+    {
+      "file": "assets/illustrations/hero-Waiz-dove.png",
+      "bytes": 2688349,
+      "sha256": "670739aa74c9cb3cae64ffb8ed7f4aafb342e78f112f01de0a780b017e478dbe"
+    },
+    {
+      "file": "assets/illustrations/hero-Waiz.jpg",
+      "bytes": 388978,
+      "sha256": "0880a5fd82c978dca95062f3912cbdfc637fbd6c16d5499ebe50c51d52c84e55"
     },
     {
       "file": "assets/illustrations/HollowWretch.jpg",
@@ -2672,9 +3017,54 @@
       "sha256": "572354e42c333c5dd32dde021dcc0cbad9fbaca1253a134abfe536ae60a9158d"
     },
     {
+      "file": "assets/illustrations/life-mining-v1.jpg",
+      "bytes": 396127,
+      "sha256": "22cc13a62e5478b196a039e86ecd11621a67411ef7e3300394ce66393dfd49d4"
+    },
+    {
+      "file": "assets/illustrations/life-skills.jpg",
+      "bytes": 821460,
+      "sha256": "4920b541dd384180bd8bda58c7cbb75df274e3ce7fcfe6d3d793c692f0a06535"
+    },
+    {
       "file": "assets/illustrations/Malachar.jpg",
       "bytes": 295724,
       "sha256": "0f3228c807d5711204c00e79ebbffb7bd3aff69c9ef3030cce5f98bb8fdc14e9"
+    },
+    {
+      "file": "assets/illustrations/neighbour-ansel-v1.jpg",
+      "bytes": 338959,
+      "sha256": "f5e71525a40603bb957fb7f38c2c8ef0d7a8696cef4b6b6f2199fe258a1945d0"
+    },
+    {
+      "file": "assets/illustrations/neighbour-elian-v1.jpg",
+      "bytes": 439091,
+      "sha256": "77ed1d8f96ab31bb24abfaea3f7f1ce387aa4ff2ba3fa4a0ebe324cce6b95ca0"
+    },
+    {
+      "file": "assets/illustrations/neighbour-elior-v1.jpg",
+      "bytes": 290743,
+      "sha256": "dace61b2692af49e64fa7c13e7b0c57533c38666ed548f106dd7299c4ac7113f"
+    },
+    {
+      "file": "assets/illustrations/neighbour-liora-v1.jpg",
+      "bytes": 449420,
+      "sha256": "73a4e2ec938f47f184c3ae6a3d57cb82ba608c3efb5f3abeaee9085a24f683ce"
+    },
+    {
+      "file": "assets/illustrations/neighbour-marra-v1.jpg",
+      "bytes": 467572,
+      "sha256": "33b3242d206729bb01a619f2db704af53ac62bd545014f418f5233eaf625e19d"
+    },
+    {
+      "file": "assets/illustrations/neighbour-ruthen-v1.jpg",
+      "bytes": 378379,
+      "sha256": "a02687d63329e1b6f9e6a6460f3f55fd972d38f805efa3b4cd9ed3668dcff4d0"
+    },
+    {
+      "file": "assets/illustrations/neighbour-tamar-v1.jpg",
+      "bytes": 382189,
+      "sha256": "b53bfd47264b2b809b5bc15d2c458e244649b4d78153fc375a2cccbf180819db"
     },
     {
       "file": "assets/illustrations/Rex-Draconum.jpg",
@@ -2690,6 +3080,11 @@
       "file": "assets/illustrations/Shadowthorn.jpg",
       "bytes": 378236,
       "sha256": "4d2113ad2a994f409006024f6107185465f1d8feb1a52d3b8657ccb7fec4e08b"
+    },
+    {
+      "file": "assets/illustrations/spirit-tree.jpg",
+      "bytes": 960637,
+      "sha256": "3c231e399975f3df0f6b0d66992bdec5a4142c22558e9331df3fa603527fb60b"
     },
     {
       "file": "assets/illustrations/Stoneheart-Warden.jpg",
@@ -2722,69 +3117,64 @@
       "sha256": "b370f1d597a9a9800c2a72d3c3dae2f578ea9ee74ba89506fe8ef90bff547fed"
     },
     {
-      "file": "assets/illustrations/first-light-town.jpg",
-      "bytes": 1429726,
-      "sha256": "d636e61b3e95db8eef3471d8d3079bbecb5ac6e2cfbd3210270b2c989bf3414c"
+      "file": "assets/Isaac-3D.glb",
+      "bytes": 2204164,
+      "sha256": "0bef869ebdb198f50eecbd19017092f5d055e9ba12159c46345b063e2020dccd"
     },
     {
-      "file": "assets/illustrations/help-townsfolk.jpg",
-      "bytes": 646750,
-      "sha256": "4c3ec02a5d04d7a9c4abca399c67c1c391bfc9f1f9d5516502668d01a427e9ed"
+      "file": "assets/Journey-Toward-the-Light.mp3",
+      "bytes": 2790293,
+      "sha256": "fa08cb265263ae84e0b03c00d730847af26d41ca924962278c879da1cfde5282"
     },
     {
-      "file": "assets/illustrations/hero-Amaya.jpg",
-      "bytes": 363685,
-      "sha256": "5d34d9ef3f440d091b1ecd595502600d583eeb27d0c34c66a30bd554cbeb54aa"
+      "file": "assets/Levi-3D.glb",
+      "bytes": 2215760,
+      "sha256": "324d38af596261391f8144a3507dc29e37e7aebe84b0f34e6245b530f49d8ce7"
     },
     {
-      "file": "assets/illustrations/hero-Diago.jpg",
-      "bytes": 329132,
-      "sha256": "5fc81a19c1b42468079b503b9d8b4dcf94130188a1d08565872fbcb777a70aed"
+      "file": "assets/Levi-arena.jpg",
+      "bytes": 305492,
+      "sha256": "b854d4a132f0bde968e941a0b4845c47841b685af32997528f58c777ba295296"
     },
     {
-      "file": "assets/illustrations/hero-Grace.jpg",
-      "bytes": 334065,
-      "sha256": "15200d9d30ef4efc22184d55dbe05714fbe210501919667a1de519887b8a41a7"
+      "file": "assets/Levi-fixed-preview.glb",
+      "bytes": 4266764,
+      "sha256": "e8afecee6109f42f734ea53c6da822651e24ef18678aa17d2568b3ddaf2ea0db"
     },
     {
-      "file": "assets/illustrations/hero-Hailey.jpg",
-      "bytes": 389993,
-      "sha256": "ec60aa29197424bdf387b82525235f298971ca39307a3b57eb56227c58ed934a"
+      "file": "assets/Levi-fixed-preview.glb.report.json",
+      "bytes": 230,
+      "sha256": "fb3c82dbc61380a4b6cb5e85272877380111342b4aeeee6ca3a9ad7639c87a28"
     },
     {
-      "file": "assets/illustrations/hero-Isaac.jpg",
-      "bytes": 359996,
-      "sha256": "b798f5c608534d85fbe9d10af843aaa47e17bb8634416e4230403344e8211717"
+      "file": "assets/Levi-native-preview.glb",
+      "bytes": 17738088,
+      "sha256": "6f7ebcd301f38ffc2328b67d00f69673d7872f66568ea820bd819b59872b0b6c"
     },
     {
-      "file": "assets/illustrations/hero-Levi.jpg",
-      "bytes": 442958,
-      "sha256": "231042719d1362c5d10d24af84dfe333002e77217052cece6f9ead10e243b3e5"
+      "file": "assets/Levi.jpg",
+      "bytes": 260056,
+      "sha256": "57eaa42dd11582a44640b638819cd8498264710a12da581defa0fd7af408706c"
     },
     {
-      "file": "assets/illustrations/hero-Naomi.jpg",
-      "bytes": 336787,
-      "sha256": "2f7f07635c66d7c73fe5c9e25682aec52552b583e82b75a104b4ddc51c7c0e8d"
+      "file": "assets/Magnar-arena.jpg",
+      "bytes": 255487,
+      "sha256": "d93e2c98d547ad21b2e88ecfd6ef8ecb571200b20ffcf5ca3fab019cf1d94ab4"
     },
     {
-      "file": "assets/illustrations/hero-Sarko.jpg",
-      "bytes": 432712,
-      "sha256": "59a8cfa84d564a77708bf7ec2ec35a464ed9cdf6e450f4488c5f296cbe0c1e55"
+      "file": "assets/Magnar.jpg",
+      "bytes": 256169,
+      "sha256": "229ffe0cb184395aacb44d48c29f83536116fe084e28f8019fe4bc7ce8cf9afc"
     },
     {
-      "file": "assets/illustrations/hero-Waiz.jpg",
-      "bytes": 388978,
-      "sha256": "0880a5fd82c978dca95062f3912cbdfc637fbd6c16d5499ebe50c51d52c84e55"
+      "file": "assets/Main-Theme.mp3",
+      "bytes": 1152917,
+      "sha256": "e9a62395ae4b5419c09652f5d4616b36b11b0a047061fca132b82879dd0a020a"
     },
     {
-      "file": "assets/illustrations/life-skills.jpg",
-      "bytes": 821460,
-      "sha256": "4920b541dd384180bd8bda58c7cbb75df274e3ce7fcfe6d3d793c692f0a06535"
-    },
-    {
-      "file": "assets/illustrations/spirit-tree.jpg",
-      "bytes": 960637,
-      "sha256": "3c231e399975f3df0f6b0d66992bdec5a4142c22558e9331df3fa603527fb60b"
+      "file": "assets/materials/courtyard-stone-generation.json",
+      "bytes": 917,
+      "sha256": "340376d0e3a13cb30cf8a16924f6b524c262a66b92ef1a45d45d098dc7a07f48"
     },
     {
       "file": "assets/materials/courtyard-stone.png",
@@ -2792,9 +3182,69 @@
       "sha256": "15dde5bd3f7e2de419bfe03a08995acd2ed2db04dcc28f939a809128d325eef0"
     },
     {
+      "file": "assets/Monster-AshhornStag.jpg",
+      "bytes": 299572,
+      "sha256": "255363107b8e2e83f0f9962db0216ea57b3b3b70ecefdcdd266bfc489f0fb96c"
+    },
+    {
+      "file": "assets/Monster-BriarClawBear.jpg",
+      "bytes": 320832,
+      "sha256": "c9d757f26d940e7c00d1ebc43ab4dd1cfed39864281b97fef98d44874a91ac3e"
+    },
+    {
+      "file": "assets/Monster-BrightCap.jpg",
+      "bytes": 299069,
+      "sha256": "326b71b783efa9148d0a7d80289d3ea4ec3351e9c09d163d5fafe7a36ae8d902"
+    },
+    {
+      "file": "assets/Monster-CrystalBackTortoise.jpg",
+      "bytes": 335116,
+      "sha256": "d8d05035c574ea6e947fdf3dbe17ae0be559ff406e380241a4991c1a805dfc8c"
+    },
+    {
+      "file": "assets/Monster-DreadwingVulture.jpg",
+      "bytes": 276950,
+      "sha256": "794947b00ea8c8aca0538a307ae1e6795f925f1c6aff2e569c6ea5f4da98035a"
+    },
+    {
+      "file": "assets/Monster-HollowWretch.jpg",
+      "bytes": 301120,
+      "sha256": "a6e0eb4c43751d2fd725440b6dd0935c98a78c345ee68346bf3daf575c34b278"
+    },
+    {
+      "file": "assets/Monster-Rockshade.jpg",
+      "bytes": 286477,
+      "sha256": "ebc3cb93626c41f90007ea2ed3cc0ba8f9cebf7d02080718e569d44dbe40f531"
+    },
+    {
+      "file": "assets/Monster-Shadowthorn.jpg",
+      "bytes": 255192,
+      "sha256": "fa4c209171425e195470c7095faf67c0e9941b182ffb5d63062b4a6d2659f494"
+    },
+    {
+      "file": "assets/Monster-StonehideRhino.jpg",
+      "bytes": 310310,
+      "sha256": "fda4aff913e6d8e5d9c744681a21f5b2d79e0f5531c0563713aa75744691e1f7"
+    },
+    {
+      "file": "assets/Monster-Thornback.jpg",
+      "bytes": 294762,
+      "sha256": "f60ae2c10d807039b4cdf2b02f5b6751b4959f054d02f770a091a32ae12606f0"
+    },
+    {
+      "file": "assets/Monster-VineboundGuardian.jpg",
+      "bytes": 304614,
+      "sha256": "91be7d4677d314ecfe1f85951b6b784cf53e45d0a7ed0b38a95806308991378b"
+    },
+    {
       "file": "assets/monsters/AshhornStag.glb",
       "bytes": 1054172,
       "sha256": "23342340ab3d73e13d18be390c28efdfcc13301512ff5a95122c7d283f987a68"
+    },
+    {
+      "file": "assets/monsters/AshhornStag.glb.report.json",
+      "bytes": 372,
+      "sha256": "2e70ead14296e2d9ceedd0c339003f61f74df99ac910130f35c5909eea130808"
     },
     {
       "file": "assets/monsters/BriarClawBear.glb",
@@ -2802,9 +3252,19 @@
       "sha256": "5325cab7c4dc366821df5b59a208f7fa828ba027213cccf097f36bbd64d45e86"
     },
     {
+      "file": "assets/monsters/BriarClawBear.glb.report.json",
+      "bytes": 376,
+      "sha256": "db65332c009d2f5ef33d5a5f34feb9018ff510dc4e5aabc7c9190668db412889"
+    },
+    {
       "file": "assets/monsters/BrightCap.glb",
       "bytes": 1520760,
       "sha256": "afb115d53a1259958da576c10fab27ab7ca8f0e1612c2a499cff674614f03325"
+    },
+    {
+      "file": "assets/monsters/BrightCap.glb.report.json",
+      "bytes": 368,
+      "sha256": "5eb09f1b43f05776537219a34d8bf727d12194c4b1b7851bf019f311acbf4d9b"
     },
     {
       "file": "assets/monsters/CorruptedWolf.glb",
@@ -2812,9 +3272,19 @@
       "sha256": "084b50d3aaaeacbf7ef14ce93e96f76aa61db11e5bbad6e7f1f1e70ff70692f8"
     },
     {
+      "file": "assets/monsters/CorruptedWolf.glb.report.json",
+      "bytes": 376,
+      "sha256": "02eab1f54c64b3a953a2fd721395ab62c188a007d4e8ceaca0e3f6aa9050d816"
+    },
+    {
       "file": "assets/monsters/CrystalBackTortoise.glb",
       "bytes": 1334744,
       "sha256": "de4b5c89846898c8535e5039089e3e5a08cb15c31d2ae815a73c713fa8d5b2eb"
+    },
+    {
+      "file": "assets/monsters/CrystalBackTortoise.glb.report.json",
+      "bytes": 388,
+      "sha256": "7877a6122e8e82d8e576a8925bf595fb174463b170b2951a6d30aaadbbc88eea"
     },
     {
       "file": "assets/monsters/DreadwingVulture-animated.glb",
@@ -2822,9 +3292,24 @@
       "sha256": "957d34553d1b190ab1dd74324e64ab78aa148bc36b9b9731f214ab60857cce30"
     },
     {
+      "file": "assets/monsters/DreadwingVulture.glb",
+      "bytes": 862568,
+      "sha256": "6e4e9a0b4bceb1f88cf44db9ca282b343c442936eef9354b71822b4a86d79d80"
+    },
+    {
+      "file": "assets/monsters/DreadwingVulture.glb.report.json",
+      "bytes": 381,
+      "sha256": "5bb57833850e5c9374473d272230c6efb07a17e389f52e437bdd8080f2390d9d"
+    },
+    {
       "file": "assets/monsters/HollowWretch.glb",
       "bytes": 1543480,
       "sha256": "279266ce55bce3ebd42996ed1f8b7c0164b600b694a72edff658ee542a016903"
+    },
+    {
+      "file": "assets/monsters/HollowWretch.glb.report.json",
+      "bytes": 374,
+      "sha256": "0ea4c16a3c932bb92d04b56b86b4df593e94fe08884fde4df2c9e73bf7708551"
     },
     {
       "file": "assets/monsters/Rockshade.glb",
@@ -2832,9 +3317,19 @@
       "sha256": "0f453d7343fabb0b0e9792fed1195971bc20a3ecba8eb8da8f849de32dd465a6"
     },
     {
+      "file": "assets/monsters/Rockshade.glb.report.json",
+      "bytes": 369,
+      "sha256": "60cebcb0d316c6776eb330c8fa1cb0ef8e93fbf9e8496562c91c850262e9f2fc"
+    },
+    {
       "file": "assets/monsters/Shadowthorn.glb",
       "bytes": 1601096,
       "sha256": "bd43020cc4d4aa2212673a3198112e6e2421d104f6c74852376db360ccb8219c"
+    },
+    {
+      "file": "assets/monsters/Shadowthorn.glb.report.json",
+      "bytes": 373,
+      "sha256": "7b0b10e21974fa6f85157c2104a43392abe172a02ecc6beeb531a7c0a8d2f628"
     },
     {
       "file": "assets/monsters/StonehideRhino.glb",
@@ -2842,14 +3337,29 @@
       "sha256": "230a85bc41304cb82e049de259037e8f0e67524a8839a5b6525c680a87eb46ce"
     },
     {
+      "file": "assets/monsters/StonehideRhino.glb.report.json",
+      "bytes": 378,
+      "sha256": "db1ddba7b119ad2209b8343c4d1c016211b297e457492421e3ff65f097593046"
+    },
+    {
       "file": "assets/monsters/Thornback.glb",
       "bytes": 1484252,
       "sha256": "cf3bea1bc5adc3af01fb41e095ecb3bae53bd6213b8d69865a5bda4da26305f2"
     },
     {
+      "file": "assets/monsters/Thornback.glb.report.json",
+      "bytes": 369,
+      "sha256": "9e4b6b3d1765d61cf2fe0cb4aace7fcdb3b1f373ac3352141e7732b2c8b9446e"
+    },
+    {
       "file": "assets/monsters/VineboundGuardian.glb",
       "bytes": 2067964,
       "sha256": "55a8fd09b83b5611fb27cbda07f53fed2950cbf0b10a63ec32ba18e2aa7594ed"
+    },
+    {
+      "file": "assets/monsters/VineboundGuardian.glb.report.json",
+      "bytes": 384,
+      "sha256": "6c3d0c6ccbf6cfe6e844fcca65970eab296cca567e88a9d836f731c9c29e434c"
     },
     {
       "file": "assets/motions/Amaya-reactions.json",
@@ -2950,6 +3460,131 @@
       "file": "assets/motions/Waiz-reactions.json",
       "bytes": 2433745,
       "sha256": "3f4622e4b517a845dbe00f6426a331ec369f17dca6d40e94a09634dd3bc9fab1"
+    },
+    {
+      "file": "assets/music/01-SARKO-Journey-Toward-the-Light-Main-Theme--210026d1.mp3",
+      "bytes": 4126595,
+      "sha256": "e35a19111a9a819bfc4be270baa7ee9f58d04a6b586bf83ca7df8a94bc9cdfd0"
+    },
+    {
+      "file": "assets/music/02-Sanctuary-Beneath-the-Ruins-Hidden-Holy-Chamber--9c338385.mp3",
+      "bytes": 2856009,
+      "sha256": "92594c972d2e75db42b7f936e8378b23b34f08c50072799fff34c0f549dc31e4"
+    },
+    {
+      "file": "assets/music/03-The-Furnace-of-Endurance-Fire-Dungeon--ed7c0cce.mp3",
+      "bytes": 3837393,
+      "sha256": "89a2329b7fd2df0427a31dc58adeb64d9e3aee73354840b19a1cf59911ea5d94"
+    },
+    {
+      "file": "assets/music/04-Echoes-of-the-Deep-Cavern-Dungeon--03035a64.mp3",
+      "bytes": 4291525,
+      "sha256": "edaa974d8ca9b2a2c95cca40e9c23c68edf72919a461a9e2becce2a3108f3d21"
+    },
+    {
+      "file": "assets/music/05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3",
+      "bytes": 4387122,
+      "sha256": "02b38affa8b8c7dce6bfe36269c3a1393b64a489a2e99659b8c7ab9a8ae222d7"
+    },
+    {
+      "file": "assets/music/06-Trial-of-the-Faithful-Armor-of-God--420c4798.mp3",
+      "bytes": 4503061,
+      "sha256": "cccd4ae801c9761d4f2986f658291be9897ebdc143d38fe622cf8ff9f9708969"
+    },
+    {
+      "file": "assets/music/07-Roots-of-the-Fallen-Overgrown-Dungeon--0b6c33ea.mp3",
+      "bytes": 4037767,
+      "sha256": "45c16f80cf6a9c5b48d9b20592c5c70344cb7666eb178b23421a2e6b3c9bb739"
+    },
+    {
+      "file": "assets/music/08-Light-in-the-Corridors--f761e189.mp3",
+      "bytes": 4029448,
+      "sha256": "491409cd34794c42162ee10bbab1803702500ce1773492259a0e295b536351c6"
+    },
+    {
+      "file": "assets/music/09-City-of-Light--4fb5e959.mp3",
+      "bytes": 4918098,
+      "sha256": "b69bea559268b1c97db9f7d3af299fa7ffd5d958a3c27b28a45c4e996859f478"
+    },
+    {
+      "file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3",
+      "bytes": 3593488,
+      "sha256": "195b7d9ed3499cbddda7549eec4308d48ccb1c78b91d3d789b65efeed269061c"
+    },
+    {
+      "file": "assets/music/11-King-of-Lies--9b209060.mp3",
+      "bytes": 3533826,
+      "sha256": "06c46d13137509950447e47b499b4c2644cdd41f3b09591676f962b5f796467d"
+    },
+    {
+      "file": "assets/music/12-Breath-of-Heaven--36e31766.mp3",
+      "bytes": 4587864,
+      "sha256": "3c4f205a707aaf5b9bd05f27c25c58d074cdbcb4dbc5a31a187693fe680e190f"
+    },
+    {
+      "file": "assets/music/13-The-False-Shepherd--a44c1293.mp3",
+      "bytes": 3868727,
+      "sha256": "dae8449c6ee5ddc8417ebe4e82d00ce80e8c5d9e004ee7f1d4aa45898c9b815b"
+    },
+    {
+      "file": "assets/music/14-Evolution-Shards--f030d3d6.mp3",
+      "bytes": 3927880,
+      "sha256": "237df48fd99bbb1b47f1a19c2ff2bd71cb0e747866aaf511b2c211c5af7ec03b"
+    },
+    {
+      "file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3",
+      "bytes": 3253413,
+      "sha256": "94f0898e4e297416eb16233b62f71e0a20f2bac595e11a275283f8ad452ab22f"
+    },
+    {
+      "file": "assets/music/16-Seeds-in-the-Rain--85930b80.mp3",
+      "bytes": 4689884,
+      "sha256": "265c9c95d1166ddf4f428a1a827ad53e8c0d0264f234d9f9a98bf043a6d43285"
+    },
+    {
+      "file": "assets/music/17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3",
+      "bytes": 3446633,
+      "sha256": "a0b2658aebc3970d9801dd5f024048e347ad75e9e97c73f6cab7e14f1ff98d01"
+    },
+    {
+      "file": "assets/music/18-SARKO-Shadows-in-the-Canyon--cafc0111.mp3",
+      "bytes": 3455889,
+      "sha256": "7f144fd6b4174f716dfca8f29ed686b89b90ac3a0bc7dc206b08a12bef8b71dc"
+    },
+    {
+      "file": "assets/music/19-SARKO-Diago-s-Training--261813e1.mp3",
+      "bytes": 2573496,
+      "sha256": "bb89d1bbe277bf3c8ba4adc94fd0dd967e176353dcf50adb95834204091fda1a"
+    },
+    {
+      "file": "assets/music/20-SARKO-First-Light--57d0535a.mp3",
+      "bytes": 3356694,
+      "sha256": "5c29f608eec2e37b93c1202d63ae90944dc3b7991ed62d10f42b085d869b4d73"
+    },
+    {
+      "file": "assets/music/21-SARKO-The-Storm-and-Awakening--55de0915.mp3",
+      "bytes": 4001228,
+      "sha256": "79b6c3a998bf2a86a24bba066f6d16b31ba165d1df61ff98b6a13b0315541a47"
+    },
+    {
+      "file": "assets/music/manifest.json",
+      "bytes": 22571,
+      "sha256": "e7789d88618e0fdaf5bad2a795d3a75fcf2a648707b5184b0abd647059b97f66"
+    },
+    {
+      "file": "assets/Naomi-3D.glb",
+      "bytes": 2173532,
+      "sha256": "afcb81609bef19318441d2d713927253fb98598722f10ba7a19e1b410efcc178"
+    },
+    {
+      "file": "assets/Naomi-arena.jpg",
+      "bytes": 290679,
+      "sha256": "5ba620d88b33d6a3fdea02013cad50b367835fcd47e4ca3797f96ecaedb91d7d"
+    },
+    {
+      "file": "assets/Naomi.jpg",
+      "bytes": 255637,
+      "sha256": "9cc61e8f22bf23e41e711374f27a7c26e08d61e9980e5c64a7cc644d5d4ec901"
     },
     {
       "file": "assets/portraits/Ashhorn-Inferno-Earth.jpg",
@@ -3370,6 +4005,51 @@
       "file": "assets/portraits/Frostveil-Warden-Water.jpg",
       "bytes": 184931,
       "sha256": "f89cdf5d4f065632f4e6daace0e7beaeaa3df6d37a325744202758f67284e8cf"
+    },
+    {
+      "file": "assets/portraits/hero-Amaya.jpg",
+      "bytes": 181128,
+      "sha256": "95add99ec96854d6870afae7e5b838d47ae0ab049b1c32acd0ff201c44133fce"
+    },
+    {
+      "file": "assets/portraits/hero-Diago.jpg",
+      "bytes": 168235,
+      "sha256": "1e579516b72df30ee1da39ae37304a645b91bea57ef1582d8dc0535765f13fc7"
+    },
+    {
+      "file": "assets/portraits/hero-Grace.jpg",
+      "bytes": 205911,
+      "sha256": "7c6d80d8feee57244afc174a5dc92b70148fde4edd9404e3642a7c8f4319655d"
+    },
+    {
+      "file": "assets/portraits/hero-Hailey.jpg",
+      "bytes": 196516,
+      "sha256": "18771efada3ed02a89d06c53e19061272e645c48f69d41dfc33f48006b11e0e5"
+    },
+    {
+      "file": "assets/portraits/hero-Isaac.jpg",
+      "bytes": 173526,
+      "sha256": "ac6d309f4ea777b3d0bed4053bc045ce1e68f089c92b6b15489639ad593b7c44"
+    },
+    {
+      "file": "assets/portraits/hero-Levi.jpg",
+      "bytes": 202791,
+      "sha256": "15ee3b1b384ad059559aecb05059c2be820e0a88802ca10b7583223a705c3d01"
+    },
+    {
+      "file": "assets/portraits/hero-Naomi.jpg",
+      "bytes": 172967,
+      "sha256": "e55f5a7d1c42a68de1e6bb1a3e2531e155886aa5c6075e159ca58240b0c39248"
+    },
+    {
+      "file": "assets/portraits/hero-Sarko.jpg",
+      "bytes": 229706,
+      "sha256": "aad9baad62e503026367ae61f889b9e1dedb3dc8010f62cc74af2f083827611b"
+    },
+    {
+      "file": "assets/portraits/hero-Waiz.jpg",
+      "bytes": 208884,
+      "sha256": "1415b05e74d6cc6a015e15f46b9c562606a4ef3f0e11e9cec58f1aec0da6279d"
     },
     {
       "file": "assets/portraits/HollowWretch-Earth.jpg",
@@ -3827,49 +4507,114 @@
       "sha256": "a5cec606864b0120ae79de782b987aeec9a3d2877caf67ded538437cdfedf62f"
     },
     {
-      "file": "assets/portraits/hero-Amaya.jpg",
-      "bytes": 181128,
-      "sha256": "95add99ec96854d6870afae7e5b838d47ae0ab049b1c32acd0ff201c44133fce"
+      "file": "assets/RKS-intro.mp4",
+      "bytes": 658368,
+      "sha256": "963ae9ecef88f3412c121be3026ce9c4f7f7096580e60129f7d96e099401604a"
     },
     {
-      "file": "assets/portraits/hero-Diago.jpg",
-      "bytes": 168235,
-      "sha256": "1e579516b72df30ee1da39ae37304a645b91bea57ef1582d8dc0535765f13fc7"
+      "file": "assets/Sarko-3D.glb",
+      "bytes": 1010268,
+      "sha256": "6bc895cb8402a187285de0c254ca096b0476ee257eaa26dc13f08aed11d680f8"
     },
     {
-      "file": "assets/portraits/hero-Grace.jpg",
-      "bytes": 205911,
-      "sha256": "7c6d80d8feee57244afc174a5dc92b70148fde4edd9404e3642a7c8f4319655d"
+      "file": "assets/Sarko-arena.jpg",
+      "bytes": 351055,
+      "sha256": "463048430eacbbb749912339185ec494992d909b64d6789e4370eabe0a32e2d1"
     },
     {
-      "file": "assets/portraits/hero-Hailey.jpg",
-      "bytes": 196516,
-      "sha256": "18771efada3ed02a89d06c53e19061272e645c48f69d41dfc33f48006b11e0e5"
+      "file": "assets/Sarko-Menu-Background.jpg",
+      "bytes": 632002,
+      "sha256": "e0243f187e138746ab1d8022cdb3264ae9401881f789b9dabcdc9d3ea76435a4"
     },
     {
-      "file": "assets/portraits/hero-Isaac.jpg",
-      "bytes": 173526,
-      "sha256": "ac6d309f4ea777b3d0bed4053bc045ce1e68f089c92b6b15489639ad593b7c44"
+      "file": "assets/Sarko-Overworld-Map.jpg",
+      "bytes": 513909,
+      "sha256": "3fba63ad804fb71e7f51c3de3182c5c55ad66ca676c6b1975b1468f10780ca5b"
     },
     {
-      "file": "assets/portraits/hero-Levi.jpg",
-      "bytes": 202791,
-      "sha256": "15ee3b1b384ad059559aecb05059c2be820e0a88802ca10b7583223a705c3d01"
+      "file": "assets/Sarko-Route-Earth-2.jpg",
+      "bytes": 628841,
+      "sha256": "300ec7eba945b6f538900b59f86bbd290d4b992558c94362ede2b273c400281d"
     },
     {
-      "file": "assets/portraits/hero-Naomi.jpg",
-      "bytes": 172967,
-      "sha256": "e55f5a7d1c42a68de1e6bb1a3e2531e155886aa5c6075e159ca58240b0c39248"
+      "file": "assets/Sarko-Route-Earth.jpg",
+      "bytes": 653540,
+      "sha256": "db316bc0d30ad6587a8725a091f5356f416e504548c10b07de81ae62f0164b66"
     },
     {
-      "file": "assets/portraits/hero-Sarko.jpg",
-      "bytes": 229706,
-      "sha256": "aad9baad62e503026367ae61f889b9e1dedb3dc8010f62cc74af2f083827611b"
+      "file": "assets/Sarko-Route-Fire-2.jpg",
+      "bytes": 517228,
+      "sha256": "df84f86471a93ee9b7147f043de55bf99c7f2d7e0784a0457299047ca22510c2"
     },
     {
-      "file": "assets/portraits/hero-Waiz.jpg",
-      "bytes": 208884,
-      "sha256": "1415b05e74d6cc6a015e15f46b9c562606a4ef3f0e11e9cec58f1aec0da6279d"
+      "file": "assets/Sarko-Route-Fire.jpg",
+      "bytes": 476421,
+      "sha256": "df181e0e995f2e28703fe235213b3f0214b07c331a8c4af2b300036e5b823672"
+    },
+    {
+      "file": "assets/Sarko-Route-Light-2.jpg",
+      "bytes": 517571,
+      "sha256": "801f0a5136deead28aae1f12e1807be70439ccd7c3a3663d914793f0edca6cfe"
+    },
+    {
+      "file": "assets/Sarko-Route-Light.jpg",
+      "bytes": 591169,
+      "sha256": "7078a8716b0c890c93043960318e152aae01d4e64dbec3ea505dab4f84c7f30d"
+    },
+    {
+      "file": "assets/Sarko-Route-Shadow-2.jpg",
+      "bytes": 527721,
+      "sha256": "d6ce82da927ad8fdeabde146fb0f77d50306cd0794926188ac648979e4461e2b"
+    },
+    {
+      "file": "assets/Sarko-Route-Shadow.jpg",
+      "bytes": 565051,
+      "sha256": "12563436fea95f53b26d332ab3c945115495c1f50df353c751255511df769ad7"
+    },
+    {
+      "file": "assets/Sarko-Route-Snow-2.jpg",
+      "bytes": 550150,
+      "sha256": "8c44161f8ee0289a56767becfe9225d898209b3c3bb3d9e3761ea43f64cfa280"
+    },
+    {
+      "file": "assets/Sarko-Route-Snow.jpg",
+      "bytes": 582101,
+      "sha256": "4e0df478590fb50c102b551336326eaaafa463853f646542a1e01da7de300c68"
+    },
+    {
+      "file": "assets/Sarko-Route-Thunder-2.jpg",
+      "bytes": 483605,
+      "sha256": "356bd823b828b132fe98ed189879a8a3d38721f318c7bfb9ac5ec01bd1824312"
+    },
+    {
+      "file": "assets/Sarko-Route-Thunder.jpg",
+      "bytes": 542623,
+      "sha256": "4a5931d24c286b00e301296ced276b8be200da4a4551a27d821c58445977b4fb"
+    },
+    {
+      "file": "assets/Sarko-Route-Water-2.jpg",
+      "bytes": 610765,
+      "sha256": "5da7d49571ef76a8ec4c7e5f619f8e8f7a6ca5d47e06165fb924dc90c37265a0"
+    },
+    {
+      "file": "assets/Sarko-Route-Water.jpg",
+      "bytes": 675719,
+      "sha256": "3d6b79a1234af407b26c602ebcf33af4566e9ac05f86c3841eedf26a64f7dce2"
+    },
+    {
+      "file": "assets/Sarko-Trailer.mp4",
+      "bytes": 25795215,
+      "sha256": "bc657ab6110a33e97335b03927106af3686ab1767710bbcf3ddf7f2c6b639892"
+    },
+    {
+      "file": "assets/Sarko-World-Map.jpg",
+      "bytes": 844440,
+      "sha256": "cc0b910e44c8d864cb99b83351e4138a363743e1704f90c74d47c5a3cd91eda2"
+    },
+    {
+      "file": "assets/Sarko.jpg",
+      "bytes": 266079,
+      "sha256": "131afa592d3b1a756ea21e6795b0dafaf1abd198f07ab383b1ece6ac3d0e19f0"
     },
     {
       "file": "assets/services/church.glb",
@@ -3882,6 +4627,11 @@
       "sha256": "66969d27b10577be0fce09d682783df064efedf5a52f8e16b8f304257cbb5f83"
     },
     {
+      "file": "assets/services/import-report.json",
+      "bytes": 1134,
+      "sha256": "138e1563e7b3783e2cabf1fce7ba53874f1e64945272863fff081dda01bbb15c"
+    },
+    {
       "file": "assets/services/shop.glb",
       "bytes": 878512,
       "sha256": "985185d10e0e9832280e68587aa5b5a97001fd1e54f2d4b1818ee4fc02426dab"
@@ -3890,6 +4640,466 @@
       "file": "assets/services/tree.glb",
       "bytes": 1045992,
       "sha256": "e7dbd0322de428e8433204527c21f2eafd384e72f8d9c4a2d45a601c03dd2f5a"
+    },
+    {
+      "file": "assets/Skill-0-0.png",
+      "bytes": 67576,
+      "sha256": "a83720fca61674b77f8e35f5c1b4dbe46af525b4993593fda31bb12b6cc3b9bb"
+    },
+    {
+      "file": "assets/Skill-0-1.png",
+      "bytes": 69282,
+      "sha256": "13fa0171f7a0c765462382512cceb652442712e46ac7c5038cc5fd0f56c33553"
+    },
+    {
+      "file": "assets/Skill-0-2.png",
+      "bytes": 66268,
+      "sha256": "8048dba7f4055b084a263ab1599a341971c739da052cd275dc01e327f3c98675"
+    },
+    {
+      "file": "assets/Skill-0-3.png",
+      "bytes": 68183,
+      "sha256": "6f0852e8d6d56c8a2b4972e88d387ac5febd09c203b4b0ba5ed0470926a695ae"
+    },
+    {
+      "file": "assets/Skill-0-4.png",
+      "bytes": 67028,
+      "sha256": "497dccf7d4ddc035919cc7bd1d5de09220307be8a049002fd47fbf32b47574c0"
+    },
+    {
+      "file": "assets/Skill-0-5.png",
+      "bytes": 65651,
+      "sha256": "aac45462fac0d2f07c4f61fd5b544afd116cffb0c09539e7f2c04efb09174560"
+    },
+    {
+      "file": "assets/Skill-0-6.png",
+      "bytes": 68505,
+      "sha256": "8b0ce12e85048eeef1ea41841bbcf7abd985f5e5ac38840cf0154c84819b94cd"
+    },
+    {
+      "file": "assets/Skill-0-7.png",
+      "bytes": 67733,
+      "sha256": "616a7a4428a0115fd21baa1c95b5a945a1b64272e796fbc70fc3772bdd3595bf"
+    },
+    {
+      "file": "assets/Skill-1-0.png",
+      "bytes": 69446,
+      "sha256": "294ea51365a0fd0dadd7449a0bfb7b66db3c5b43197edb90bf3a0e5428e75e85"
+    },
+    {
+      "file": "assets/Skill-1-1.png",
+      "bytes": 64149,
+      "sha256": "7d84e6817f1201e41c3186e91198136ac744687af85a8aae855aed77470b52a0"
+    },
+    {
+      "file": "assets/Skill-1-2.png",
+      "bytes": 68096,
+      "sha256": "b654f898fda2cf340d5eb4fec8978bd34940cec8e85346410572fc8ac85ad5fa"
+    },
+    {
+      "file": "assets/Skill-1-3.png",
+      "bytes": 64963,
+      "sha256": "90d57355eacc77a025b1b5db6cbf68052810e01ad2f7ac5f76faa999c35c48a5"
+    },
+    {
+      "file": "assets/Skill-1-4.png",
+      "bytes": 67329,
+      "sha256": "06fe5f44f6980023ddb2b075ff6101f109bc7dc92c00d381897203f92368940b"
+    },
+    {
+      "file": "assets/Skill-1-5.png",
+      "bytes": 66472,
+      "sha256": "557cbbb459bf599332e1eef8b00be6bf8829b467c3756c8736e51b75db689369"
+    },
+    {
+      "file": "assets/Skill-1-6.png",
+      "bytes": 66526,
+      "sha256": "67d6cd883b5478228599b70eca88ba50403d1a924a8a2f0ce47d3c7a0f54d677"
+    },
+    {
+      "file": "assets/Skill-1-7.png",
+      "bytes": 64650,
+      "sha256": "9ca3b0742dc92ee2c8b90c25b3e588c73e0954a793c42957a9f4f1e6b284f369"
+    },
+    {
+      "file": "assets/Skill-2-0.png",
+      "bytes": 69670,
+      "sha256": "78177dcdbf896336903a4bfc4dd9ce16ad4f472ae5cd32e6cea5d47e08918c92"
+    },
+    {
+      "file": "assets/Skill-2-1.png",
+      "bytes": 61704,
+      "sha256": "5ef198278bca9e9ab4832437215a5aa53ca1cb64754cab0b09bbf69d24ebc54a"
+    },
+    {
+      "file": "assets/Skill-2-2.png",
+      "bytes": 64695,
+      "sha256": "45912217a87633dc3f1627da6a373228e9beb3458cf75f3909556d804ff0be3b"
+    },
+    {
+      "file": "assets/Skill-2-3.png",
+      "bytes": 68438,
+      "sha256": "2e5092db3cf2a8913b3ea49c96f106f33aa349e1c14c370e1d5afe629850ece5"
+    },
+    {
+      "file": "assets/Skill-2-4.png",
+      "bytes": 67920,
+      "sha256": "34344c5cde4fed0730f09beb50e78d5675a1c97ba7df8908976d116f8e86c2db"
+    },
+    {
+      "file": "assets/Skill-2-5.png",
+      "bytes": 64208,
+      "sha256": "fedad668d56e9f8478b3c4d74507523585b78fa6683f5a2e22a84106bc1560be"
+    },
+    {
+      "file": "assets/Skill-2-6.png",
+      "bytes": 64134,
+      "sha256": "074d69d68a195d83573c3ee81a75c992f9c822cda90f61676a9bfa916b290bd0"
+    },
+    {
+      "file": "assets/Skill-2-7.png",
+      "bytes": 62832,
+      "sha256": "943772ae2d8223ad8a6927d470f2a2fb87dfbfb7243373d81d289168eef304c9"
+    },
+    {
+      "file": "assets/Skill-3-0.png",
+      "bytes": 70174,
+      "sha256": "884a1798ba1750909322b13e4215e33b0d2fa8e1a2d47887b672410ba2a479cb"
+    },
+    {
+      "file": "assets/Skill-3-1.png",
+      "bytes": 68813,
+      "sha256": "464e6028353d01574d923a7fe38a46441056c36b2c02c16686b9d9d7b83657fe"
+    },
+    {
+      "file": "assets/Skill-3-2.png",
+      "bytes": 68056,
+      "sha256": "b0d44c847fda31e9de3fd50f813feb8499330fbd98c69b6b3d3c6155bf113206"
+    },
+    {
+      "file": "assets/Skill-3-3.png",
+      "bytes": 66254,
+      "sha256": "a8fc3836a11364b57ae8b47c242e643023dc9f862ec029768d7c39eed64265b4"
+    },
+    {
+      "file": "assets/Skill-3-4.png",
+      "bytes": 67308,
+      "sha256": "cc3fbb0d6c895e80409ea5c67081a525e59168cfcfa74f4e68ece60fc972153f"
+    },
+    {
+      "file": "assets/Skill-3-5.png",
+      "bytes": 67692,
+      "sha256": "77a2e72b32c357c56e9066d96dda5bf65fd6e7606d4568c228c066b9f014721e"
+    },
+    {
+      "file": "assets/Skill-3-6.png",
+      "bytes": 69440,
+      "sha256": "13d4e476729bedbb1e207d19df89157db176dd4c54cea92f175b6aaa4d0f91f1"
+    },
+    {
+      "file": "assets/Skill-3-7.png",
+      "bytes": 68076,
+      "sha256": "d7a32bedd8baad8c68cc2f1980faef234864a9ea0e5c18a0055c83ae6db20688"
+    },
+    {
+      "file": "assets/Skill-4-0.png",
+      "bytes": 67097,
+      "sha256": "5edb0ebff61265999e6538ffd2099f12f4788b00cd42c7cccdaaf34f94540f70"
+    },
+    {
+      "file": "assets/Skill-4-1.png",
+      "bytes": 60701,
+      "sha256": "f7a609a0a4a0d6dd8e295b9aeca762ead44dcce677645e672c98f38e0c021e29"
+    },
+    {
+      "file": "assets/Skill-4-2.png",
+      "bytes": 65737,
+      "sha256": "89ff5efec67dd8eab291d31114ab181f9e89ea09d64c13ede1ba6543b6d70e36"
+    },
+    {
+      "file": "assets/Skill-4-3.png",
+      "bytes": 66582,
+      "sha256": "2e7c3d509087f4d6cfd4e261bca2cb3896cc3bd716802a15187aa85997792457"
+    },
+    {
+      "file": "assets/Skill-4-4.png",
+      "bytes": 65029,
+      "sha256": "569041c4cf39bfd71d7ab0bc01ecaa7f1366a64e8fd1a518eef87733fbe34246"
+    },
+    {
+      "file": "assets/Skill-4-5.png",
+      "bytes": 68091,
+      "sha256": "e727967e8867b2fdd8ed0a9aaee62b64a2b3d5d41777ca2258286486461e0628"
+    },
+    {
+      "file": "assets/Skill-4-6.png",
+      "bytes": 68146,
+      "sha256": "d7e2caa781fe925d9b5a47a73851291dd6a5c2442dd6a31ffddfe8e05c647cc7"
+    },
+    {
+      "file": "assets/Skill-4-7.png",
+      "bytes": 67936,
+      "sha256": "9cdd77b0e69828e81491fb77aad3b60f72bd2f2de74a47c2b86ebfd2a5ac88f1"
+    },
+    {
+      "file": "assets/Skill-5-0.png",
+      "bytes": 69844,
+      "sha256": "be96b6c95af62d2f08efcfe4bec0bce063bb5c5e8c2c3f794888a5f2962913fe"
+    },
+    {
+      "file": "assets/Skill-5-1.png",
+      "bytes": 64975,
+      "sha256": "eb5665fe753e1f870788563786cbf5c61027fb8d4cee2d0fbc1d394a5fa1fa65"
+    },
+    {
+      "file": "assets/Skill-5-2.png",
+      "bytes": 66598,
+      "sha256": "024ea1c6436f3b8758e9b90497e7df7c4d080b3b3d475c3d83f3c6152e119bc3"
+    },
+    {
+      "file": "assets/Skill-5-3.png",
+      "bytes": 68915,
+      "sha256": "fbfa49dbf4942a2d4af3696ee85f454325485c834b570690770100c64f3c86ae"
+    },
+    {
+      "file": "assets/Skill-5-4.png",
+      "bytes": 66725,
+      "sha256": "2718f9ce0d4c9842472c51f0c6576f65bf5a9d92dc13837e8cb448aa923f1f12"
+    },
+    {
+      "file": "assets/Skill-5-5.png",
+      "bytes": 67047,
+      "sha256": "842c43c93e9d395663d83eedfa2f7a983bbcd376246ab5223015b9f81b476bfd"
+    },
+    {
+      "file": "assets/Skill-5-6.png",
+      "bytes": 66722,
+      "sha256": "d5f59929d28c961f0bb56da1d79f01f7b61161a8f274afe9dd055d84e17c88b1"
+    },
+    {
+      "file": "assets/Skill-5-7.png",
+      "bytes": 68312,
+      "sha256": "47a4109a7a559f92cdb960ab24fada64c7402693c83850fa77bc8158d8385f66"
+    },
+    {
+      "file": "assets/Skill-6-0.png",
+      "bytes": 66266,
+      "sha256": "04c7acee28d252243f5225ee0574717a47d03f1bf9c253534777735969366d1c"
+    },
+    {
+      "file": "assets/Skill-6-1.png",
+      "bytes": 59574,
+      "sha256": "bbf9bc591ccb2abe83112af92cc28464bfd4441822962b02b81a6c8d3eac9aa6"
+    },
+    {
+      "file": "assets/Skill-6-2.png",
+      "bytes": 59241,
+      "sha256": "fe80891d70f47443495143d63deba4fc503750d89c4be5b83598b906a490cb54"
+    },
+    {
+      "file": "assets/Skill-6-3.png",
+      "bytes": 60612,
+      "sha256": "eeac9fff9e37a198790b49d38194e36a08c24b0a8c8537b1c20483a7691ffb84"
+    },
+    {
+      "file": "assets/Skill-6-4.png",
+      "bytes": 59820,
+      "sha256": "39c4b309362f40f3f7fc4b6b9cf29776a9057f88911a6804672d03126db32ccc"
+    },
+    {
+      "file": "assets/Skill-6-5.png",
+      "bytes": 60153,
+      "sha256": "63be1b7a173facc704bb2a7b8b0106377c67f76175a3d0f047dd09593e80d6bd"
+    },
+    {
+      "file": "assets/Skill-6-6.png",
+      "bytes": 62752,
+      "sha256": "7547048482fb3669999ba22273320a4df01b6f6a7dfd47bf0bcb14c452bc1740"
+    },
+    {
+      "file": "assets/Skill-6-7.png",
+      "bytes": 64207,
+      "sha256": "112f55c6e8ed32c4863ae9842cacda02be61656b71e0e973c08873d8abc181fc"
+    },
+    {
+      "file": "assets/Skill-7-0.png",
+      "bytes": 67589,
+      "sha256": "e3f032fad58b8d7a7c2bcdf299df27fabc141046e9fd4f3faf3a67c17ab5a61b"
+    },
+    {
+      "file": "assets/Skill-7-1.png",
+      "bytes": 66985,
+      "sha256": "5d54bc379642681b60383dc75760cfa6765cc30eec197a2cf4c9ef0e4973b00c"
+    },
+    {
+      "file": "assets/Skill-7-2.png",
+      "bytes": 69115,
+      "sha256": "df5f2605f711d9f4272df717ecd0a2dd1334000b920f8ab7c2129316da00eca0"
+    },
+    {
+      "file": "assets/Skill-7-3.png",
+      "bytes": 68133,
+      "sha256": "789e5be153f7cef328c0e4ef4bed1aacdc8751bae6e95a7051855bb751bafd2b"
+    },
+    {
+      "file": "assets/Skill-7-4.png",
+      "bytes": 65652,
+      "sha256": "7cd7c33ab344bc0f372a3b5ae5156e9a527eff5cc1fcad50aa4ad2fb84052080"
+    },
+    {
+      "file": "assets/Skill-7-5.png",
+      "bytes": 66974,
+      "sha256": "69a12669b0d38d87b6104346a6de4f108268e279fe54ad45acac0f153dd7f4f5"
+    },
+    {
+      "file": "assets/Skill-7-6.png",
+      "bytes": 68709,
+      "sha256": "9a67b2c34aeecabd6290891b9a55f33798ac2e533e132981f0341c10832658c5"
+    },
+    {
+      "file": "assets/Skill-7-7.png",
+      "bytes": 67550,
+      "sha256": "cc592da9784622fb6715578b68f3dd234ae22305b6ac5f1d5fdca84967fc525b"
+    },
+    {
+      "file": "assets/Skill-8-0.png",
+      "bytes": 68081,
+      "sha256": "b5ce1943073c068a8262d8bd40d6b21cf2642a3546627ba7f518edd07e7b869b"
+    },
+    {
+      "file": "assets/Skill-8-1.png",
+      "bytes": 74422,
+      "sha256": "67a0916bb83506d15b30d5b92b9fd960da9a86a208388b2261a16af2cc0a3c1b"
+    },
+    {
+      "file": "assets/Skill-8-2.png",
+      "bytes": 73636,
+      "sha256": "c087a62bcd9e373bddfa212764d1385d0e294f16525a9ea5865a9cc6b9b01579"
+    },
+    {
+      "file": "assets/Skill-8-3.png",
+      "bytes": 78766,
+      "sha256": "3bf9f9a1c79683991fd7d59484f1331c5fa83286820d0ac2369217845735b4a4"
+    },
+    {
+      "file": "assets/Skill-8-4.png",
+      "bytes": 74626,
+      "sha256": "16b7f9b117f9fc558b9d73f618e4c782afbbfc6a521ed55f68288f92ebc73256"
+    },
+    {
+      "file": "assets/Skill-8-5.png",
+      "bytes": 75455,
+      "sha256": "a03d935cd8cea3744b4631363460d6d720c76107a383a1c028e0068a7d0f5f9c"
+    },
+    {
+      "file": "assets/Skill-8-6.png",
+      "bytes": 73212,
+      "sha256": "ac79c1718adc6bfff452a84c1cc21cfacd4f9919a08a6a25f86a14544043fcbf"
+    },
+    {
+      "file": "assets/Skill-8-7.png",
+      "bytes": 78565,
+      "sha256": "c887b310faa30ebbd2b99068bbaa1d73754ea1156b58286e6f5c68a3e03f2860"
+    },
+    {
+      "file": "assets/Spirit-Fruit-Icons.png",
+      "bytes": 2549209,
+      "sha256": "b8f22b2e06124e7d9c695c49d359e3650d82424613defea02be1c2434be660d5"
+    },
+    {
+      "file": "assets/Spirit-Tree-Bare.png",
+      "bytes": 3146196,
+      "sha256": "375eb10f040ad47e87d82747459f28afabedacbf28ddb356b410ad62ce3841a9"
+    },
+    {
+      "file": "assets/story/Chapter-01-Full.mp3",
+      "bytes": 3190691,
+      "sha256": "9656e24921165c3498dd9eabe960a5def7340eb1a7c1273bfb75f2526391dd19"
+    },
+    {
+      "file": "assets/story/Chapter-02-Full.mp3",
+      "bytes": 1790267,
+      "sha256": "4f072a3056854f25f53b761f43f6cfafe384cfd3646e038da82b71eb894083cb"
+    },
+    {
+      "file": "assets/story/Chapter-03-Full.mp3",
+      "bytes": 2386642,
+      "sha256": "019900dfd307993b44d35b895c704e43a0fa6952480c88ac39fe25f1ce51e57b"
+    },
+    {
+      "file": "assets/story/Chapter-04-Full.mp3",
+      "bytes": 2506283,
+      "sha256": "894b56fb253b2f7b3e984b00d4923f7582df9c32f2c38403b00b090008297fae"
+    },
+    {
+      "file": "assets/story/Chapter-05-Full.mp3",
+      "bytes": 2023540,
+      "sha256": "aa8b1e00554697290291fc0a2d77b75c8853a4fb8c21c3fb4f770e1587560fa1"
+    },
+    {
+      "file": "assets/story/Chapter-06-Full.mp3",
+      "bytes": 2135867,
+      "sha256": "19389e9aeab8c7bd490bc545fd9685fa090d4470b3b96f3a5fe27507e43f202f"
+    },
+    {
+      "file": "assets/story/Chapter-07-Full.mp3",
+      "bytes": 2812699,
+      "sha256": "62281c09d3d37795736b7c23f01f7ca05f9224f6e327864601aa9fcbc771c857"
+    },
+    {
+      "file": "assets/story/Chapter-08-Full.mp3",
+      "bytes": 2613516,
+      "sha256": "7528315bd9eee5df2f7aca62e3315a2aa4ff860cb9d5936f5d71e4deaee39795"
+    },
+    {
+      "file": "assets/story/Chapter-09-Full.mp3",
+      "bytes": 2216716,
+      "sha256": "75c4624efc1cab55b7bea38d994d12ac8255d1ea0330c8a6d8277cea0e779fe1"
+    },
+    {
+      "file": "assets/story/Chapter-10-Full.mp3",
+      "bytes": 2280324,
+      "sha256": "f08fd9a5b4fc1f5d57a171613b9f1220beb42cd930d7ce2c0fac5fee6ea69d9c"
+    },
+    {
+      "file": "assets/story/Chapter-11-Full.mp3",
+      "bytes": 2185499,
+      "sha256": "4d3043138566ba2fb2266f07c1e9676e468058f8c8148c9f5f7eec6f535c6ed7"
+    },
+    {
+      "file": "assets/story/Chapter-12-Full.mp3",
+      "bytes": 2731850,
+      "sha256": "1c985eac30ccae77e6fc1a4609b0e163a2b64e577148f1b761848acb4d5ea9b2"
+    },
+    {
+      "file": "assets/story/Chapter-13-Full.mp3",
+      "bytes": 1059099,
+      "sha256": "7f5aff8de626172925bd4e12517acb1dbb9f943fa3575a3a86fff8813496c037"
+    },
+    {
+      "file": "assets/story/Chapter-14-Full.mp3",
+      "bytes": 2294299,
+      "sha256": "5b0079d8c83e30b7bafc0bb095da6bc77f8e783901dd83f5aff253b8ae71cfa8"
+    },
+    {
+      "file": "assets/story/Chapter-15-Full.mp3",
+      "bytes": 3513303,
+      "sha256": "9f870825f52995e6622f384de8608673d3e9cef1a46048ae2eefe006c7269fc1"
+    },
+    {
+      "file": "assets/story/Chapter-16-Full.mp3",
+      "bytes": 2608552,
+      "sha256": "d4f179f9668938a25e129179196c45fb87a4e51ebee0dfa2ece9c5c84dd571b1"
+    },
+    {
+      "file": "assets/story/Chapter-17-Full.mp3",
+      "bytes": 1824618,
+      "sha256": "5a66cde03541658ccb00422bd35a5ebdab32145aa85d6f1b8312af1001a06a77"
+    },
+    {
+      "file": "assets/Story-First-Light.png",
+      "bytes": 2959890,
+      "sha256": "0d2f681905e3938324c11847c9a86123f432af0d543383b185c6494de5935e2a"
     },
     {
       "file": "assets/story-scenes/0-0.jpg",
@@ -4032,94 +5242,169 @@
       "sha256": "bbb0c2adc256ebdf41eedfc59d7dad3cbf24b00582933b0511990b8601578601"
     },
     {
-      "file": "assets/story/Chapter-01-Full.mp3",
-      "bytes": 3190691,
-      "sha256": "9656e24921165c3498dd9eabe960a5def7340eb1a7c1273bfb75f2526391dd19"
+      "file": "assets/Waiz-3D.glb",
+      "bytes": 2237184,
+      "sha256": "c498de41a8f56a0fda6367a083f015dd74228458ca5e1107fc690b03e4039025"
     },
     {
-      "file": "assets/story/Chapter-02-Full.mp3",
-      "bytes": 1790267,
-      "sha256": "4f072a3056854f25f53b761f43f6cfafe384cfd3646e038da82b71eb894083cb"
+      "file": "assets/Waiz-arena.jpg",
+      "bytes": 350281,
+      "sha256": "0c1eb105d81a8fd593d2808595a15c2fbfde59564566e5f3a633420604ae1d47"
     },
     {
-      "file": "assets/story/Chapter-03-Full.mp3",
-      "bytes": 2386642,
-      "sha256": "019900dfd307993b44d35b895c704e43a0fa6952480c88ac39fe25f1ce51e57b"
+      "file": "assets/Waiz.jpg",
+      "bytes": 274867,
+      "sha256": "d86e5c0f5bc02e7677ec07b95339c6ddc4137667887692a794f940cd26d28196"
     },
     {
-      "file": "assets/story/Chapter-04-Full.mp3",
-      "bytes": 2506283,
-      "sha256": "894b56fb253b2f7b3e984b00d4923f7582df9c32f2c38403b00b090008297fae"
+      "file": "assets/Weapon-Amaya.png",
+      "bytes": 127818,
+      "sha256": "578bece810ca2bf1b23cc431b678ad3cc366046e8c232fc1d136a510573bd00e"
     },
     {
-      "file": "assets/story/Chapter-05-Full.mp3",
-      "bytes": 2023540,
-      "sha256": "aa8b1e00554697290291fc0a2d77b75c8853a4fb8c21c3fb4f770e1587560fa1"
+      "file": "assets/Weapon-Diago.png",
+      "bytes": 181545,
+      "sha256": "bcb123d3cb00507bc5fc8709e03bc02acf2bd5ad187d2a9266b442a74400ee7b"
     },
     {
-      "file": "assets/story/Chapter-06-Full.mp3",
-      "bytes": 2135867,
-      "sha256": "19389e9aeab8c7bd490bc545fd9685fa090d4470b3b96f3a5fe27507e43f202f"
+      "file": "assets/Weapon-Grace.png",
+      "bytes": 481212,
+      "sha256": "fe2326fc9e275e7732a3742ac8f1e2da0baceb94e10fdbcdfd18b01daca2be11"
     },
     {
-      "file": "assets/story/Chapter-07-Full.mp3",
-      "bytes": 2812699,
-      "sha256": "62281c09d3d37795736b7c23f01f7ca05f9224f6e327864601aa9fcbc771c857"
+      "file": "assets/Weapon-Hailey.png",
+      "bytes": 160840,
+      "sha256": "07650f46e717454cd54a4572377f4f103f3a924d9ef30c3418a5c4c40cf191c2"
     },
     {
-      "file": "assets/story/Chapter-08-Full.mp3",
-      "bytes": 2613516,
-      "sha256": "7528315bd9eee5df2f7aca62e3315a2aa4ff860cb9d5936f5d71e4deaee39795"
+      "file": "assets/Weapon-Levi.png",
+      "bytes": 141318,
+      "sha256": "a75d12ff835a4c11191420761554dda353023530cdc9de0f2377fa34bd0c860a"
     },
     {
-      "file": "assets/story/Chapter-09-Full.mp3",
-      "bytes": 2216716,
-      "sha256": "75c4624efc1cab55b7bea38d994d12ac8255d1ea0330c8a6d8277cea0e779fe1"
+      "file": "assets/Weapon-Magnar.png",
+      "bytes": 149242,
+      "sha256": "f51e27dc54e45f5a7c95712ba84fd9401ee970a685eebaeba4f8597c64c38a65"
     },
     {
-      "file": "assets/story/Chapter-10-Full.mp3",
-      "bytes": 2280324,
-      "sha256": "f08fd9a5b4fc1f5d57a171613b9f1220beb42cd930d7ce2c0fac5fee6ea69d9c"
+      "file": "assets/Weapon-Naomi.png",
+      "bytes": 173246,
+      "sha256": "c8474cd38e0e84c8e726cc9811ca9fbc163286c4c9bb13cdb36cb8f84b8e4044"
     },
     {
-      "file": "assets/story/Chapter-11-Full.mp3",
-      "bytes": 2185499,
-      "sha256": "4d3043138566ba2fb2266f07c1e9676e468058f8c8148c9f5f7eec6f535c6ed7"
+      "file": "assets/Weapon-Sarko.png",
+      "bytes": 131257,
+      "sha256": "c4ac2ec78925c9c04c2737e08b9939e3351eea6941c8e91f6079aca1f62cb63a"
     },
     {
-      "file": "assets/story/Chapter-12-Full.mp3",
-      "bytes": 2731850,
-      "sha256": "1c985eac30ccae77e6fc1a4609b0e163a2b64e577148f1b761848acb4d5ea9b2"
+      "file": "assets/Weapon-Waiz.png",
+      "bytes": 162236,
+      "sha256": "1f4f3d48349c3d255df9a2c2d4f5b901f82c348f7f23ff164e6301d7d3854103"
     },
     {
-      "file": "assets/story/Chapter-13-Full.mp3",
-      "bytes": 1059099,
-      "sha256": "7f5aff8de626172925bd4e12517acb1dbb9f943fa3575a3a86fff8813496c037"
+      "file": "assets/weapons/Amaya.glb",
+      "bytes": 3378928,
+      "sha256": "02e38d7f9148ac7ff700525e04635e1eb3f2d522c645b543bb01a4798807b4c9"
     },
     {
-      "file": "assets/story/Chapter-14-Full.mp3",
-      "bytes": 2294299,
-      "sha256": "5b0079d8c83e30b7bafc0bb095da6bc77f8e783901dd83f5aff253b8ae71cfa8"
+      "file": "assets/weapons/Diago.glb",
+      "bytes": 3568204,
+      "sha256": "c188e4edebf3c569f56a861c83509427b25c54145c7b09ae8b7b6e9074f6365c"
     },
     {
-      "file": "assets/story/Chapter-15-Full.mp3",
-      "bytes": 3513303,
-      "sha256": "9f870825f52995e6622f384de8608673d3e9cef1a46048ae2eefe006c7269fc1"
+      "file": "assets/weapons/Hailey.glb",
+      "bytes": 3782688,
+      "sha256": "f9a73dbadc8536608903c80a6c4f8daed27c233d1c8a774248c1ea4d87d562f8"
     },
     {
-      "file": "assets/story/Chapter-16-Full.mp3",
-      "bytes": 2608552,
-      "sha256": "d4f179f9668938a25e129179196c45fb87a4e51ebee0dfa2ece9c5c84dd571b1"
+      "file": "assets/weapons/Isaac.glb",
+      "bytes": 3841192,
+      "sha256": "245ee670c57a2702efd06f88cac75e40154b218ba8326a9661420cc0de9a729a"
     },
     {
-      "file": "assets/story/Chapter-17-Full.mp3",
-      "bytes": 1824618,
-      "sha256": "5a66cde03541658ccb00422bd35a5ebdab32145aa85d6f1b8312af1001a06a77"
+      "file": "assets/weapons/Levi.glb",
+      "bytes": 3136092,
+      "sha256": "cbfa2205551e14d12775298b18c3ed7e54a5444a6c48babad22a3ee083df7199"
     },
     {
       "file": "assets/weapons/Sarko-Sword.glb",
       "bytes": 295752,
       "sha256": "4bd6efb226e0d3e3a6c3d5ad3b635d2a71761e6dce023b2ee36d73f40ef453af"
+    },
+    {
+      "file": "assets/weapons/Waiz.glb",
+      "bytes": 3287348,
+      "sha256": "769adfeaa7d72b14ebc9c6987f178e80175f12c1a3b0263ce89d654b98e7df36"
+    },
+    {
+      "file": "assets/World-Earth-2.jpg",
+      "bytes": 791001,
+      "sha256": "211ce395085ab1d85a84d5410d157daf2670cda640675fb04ef77d30bd12d95e"
+    },
+    {
+      "file": "assets/World-Earth.jpg",
+      "bytes": 325406,
+      "sha256": "e69ebcfa997507324a585d7e8be40445b3a14bf26774d84955cf5ed23920987e"
+    },
+    {
+      "file": "assets/World-Fire-2.jpg",
+      "bytes": 580124,
+      "sha256": "97954dc9eb00b4b55f66598937ebda8f383f514fe32b0d988dd1468dad5d48c3"
+    },
+    {
+      "file": "assets/World-Fire.jpg",
+      "bytes": 286552,
+      "sha256": "3379aa1a6f546914ab2e0e4296cde5a173858faf45422c9f93aa587b07655975"
+    },
+    {
+      "file": "assets/World-Light-2.jpg",
+      "bytes": 601875,
+      "sha256": "0d45b973ddbe86cb1af9c6e35188b8a96ba3bc7760e1d546f0cd98d6923e72d3"
+    },
+    {
+      "file": "assets/World-Light.jpg",
+      "bytes": 286009,
+      "sha256": "20c0ef634a5572450f5581ae5f621ae526c05ef0325ded4a7381376239ee769e"
+    },
+    {
+      "file": "assets/World-Shadow-2.jpg",
+      "bytes": 631251,
+      "sha256": "442eae1a0af927c628d01e066723cb0393ff8ed287f9e726787f8ac87f545cbb"
+    },
+    {
+      "file": "assets/World-Shadow.jpg",
+      "bytes": 261695,
+      "sha256": "4433c31870a9d7b53a28c621a8416583cdcd1621aba1581ac27bc0b4a8420321"
+    },
+    {
+      "file": "assets/World-Snow-2.jpg",
+      "bytes": 617223,
+      "sha256": "8c00b3992b1883398635dc8a63dc1f9dc3c94dbaa064aac73e002ac354a10789"
+    },
+    {
+      "file": "assets/World-Snow.jpg",
+      "bytes": 300693,
+      "sha256": "b78657aa47fb243edd200fb84a735ae5b280708d0cd7a2ef5ace0e4ebb3c7182"
+    },
+    {
+      "file": "assets/World-Thunder-2.jpg",
+      "bytes": 579970,
+      "sha256": "68d7ca9d0c25e41de5585f7740e92def90b075c77abcd6bef11637c24d30dc54"
+    },
+    {
+      "file": "assets/World-Thunder.jpg",
+      "bytes": 282359,
+      "sha256": "33d64793c7947e2ae20f979e9d721f55ca645f54f9174efee4de0111da32a8fd"
+    },
+    {
+      "file": "assets/World-Water-2.jpg",
+      "bytes": 772254,
+      "sha256": "223298cd9e96a68107d5c23af5977e731ce2b030b174d8814046130627944322"
+    },
+    {
+      "file": "assets/World-Water.jpg",
+      "bytes": 332840,
+      "sha256": "b93677b0c29aa758b848e2fd8652c4b6bab5a3afa632b9ebb5805235996bb616"
     },
     {
       "file": "assets/worlds/earth-2.glb",
@@ -4145,6 +5430,11 @@
       "file": "assets/worlds/heavenly_city.glb",
       "bytes": 1240536,
       "sha256": "25cedd3241800ccc3d4bf0be6ebf1a6a4abab0d0ba0a7de17bd1a2b1dd158787"
+    },
+    {
+      "file": "assets/worlds/import-report.json",
+      "bytes": 3293,
+      "sha256": "58b5c92211cf88c1e32485c4d2d9fc07e51a056caca628271d5600acf8d650a5"
     },
     {
       "file": "assets/worlds/light-2.glb",
@@ -4177,6 +5467,11 @@
       "sha256": "5ce287ad74da789d145700778add7314d9d5f3b613f02649431bc8935df6f227"
     },
     {
+      "file": "assets/worlds/stage2-import-report.json",
+      "bytes": 3720,
+      "sha256": "55496e8c6b6db3e31d000c557748c9806f64b51466e9c00ee32d7c7c7dca3b50"
+    },
+    {
       "file": "assets/worlds/thunder-2.glb",
       "bytes": 1082620,
       "sha256": "43f99f404d533f1268cf7e45cc84d5b6950af57a0c5acb6bb97cb3055afd3bc1"
@@ -4187,6 +5482,11 @@
       "sha256": "da05ff77e0e35d44f26d5ca8b6d2894367f4dddd19b61b2f756e3ea8a5d067e2"
     },
     {
+      "file": "assets/worlds/titan-ridge.glb",
+      "bytes": 14544344,
+      "sha256": "14e9dc0479badecd1ebe12cb06e5458be4795318da2afeecb635c97376d8184a"
+    },
+    {
       "file": "assets/worlds/water-2.glb",
       "bytes": 1174736,
       "sha256": "bd0b811b56adecd79135f1b71073c11001acc8d34f293bf55cef37587ce79e37"
@@ -4195,117 +5495,6 @@
       "file": "assets/worlds/water.glb",
       "bytes": 1236728,
       "sha256": "3a9ea0e48bd135287fa0f37cd4ac26e14bfb73389d1a22759beba86c81c0c7d9"
-    },
-    {
-      "file": "campaign-data.json",
-      "bytes": 114910,
-      "sha256": "bd0cd31e40d632cd20d4898ef3be0ef2841b683cee30963ae329a5262675b675"
-    },
-    {
-      "file": "campaign.css",
-      "bytes": 22254,
-      "sha256": "66c75ab8be63a8c8297e73c1b637cc1c882b281d215514832c363a8853228d69"
-    },
-    {
-      "file": "cloud-client.js",
-      "bytes": 1487,
-      "sha256": "938bd131a30766b15adef161cc39888842a6e5e7022ae92796f8cb7c8b0da027"
-    },
-    {
-      "file": "cloud-config.json",
-      "bytes": 117,
-      "sha256": "9749ee9e63a116358d6ae65b7f35fc08d35f44937221a28a79a67a2c3021ff6d"
-    },
-    {
-      "file": "cloud-sync.js",
-      "bytes": 4604,
-      "sha256": "e0acb58ae2c4dfd835b28144f83e2acb1e4e98554a368632406a155b0c732711"
-    },
-    {
-      "file": "coop-client.js",
-      "bytes": 1482,
-      "sha256": "20047d93127772be20bcaf35f7c604ff0345891ed7df2913863a0a0ef2f5bea5"
-    },
-    {
-      "file": "coop-core.js",
-      "bytes": 5124,
-      "sha256": "052909b3f3fde339023595dcd906189343a7db3beb1ea7fa196ec9c4e4471926"
-    },
-    {
-      "file": "data.json",
-      "bytes": 13335,
-      "sha256": "5a5dbcaed1f60815bc8a53f5f13704c1c0e6b8310f8b50d51029d3c4fc7a14fd"
-    },
-    {
-      "file": "game.js",
-      "bytes": 266312,
-      "sha256": "452357bee7a3508169730ea8b6a9a34e7cb583918ddbf48156c590f2b98f7fd3"
-    },
-    {
-      "file": "icon-180.png",
-      "bytes": 103365,
-      "sha256": "52ef4c55860002ad0a0245488b83e21a274466a17e3efa7b33f2c4085a6433a6"
-    },
-    {
-      "file": "icon-192.png",
-      "bytes": 117368,
-      "sha256": "ae7c4f5b87eba4954101e8a75e39a4ada75610af83a36cf849320e22a52b28d5"
-    },
-    {
-      "file": "index.html",
-      "bytes": 1212,
-      "sha256": "60dfe2d8e7e3a19d55c4537fa4b2776a1a72221a855491cb83e7b5b3df6e173f"
-    },
-    {
-      "file": "manifest.webmanifest",
-      "bytes": 433,
-      "sha256": "db57e7fb8c0157cc26c31923ca7d85a03c4c8bbdf2c54343a7a725efc29bec53"
-    },
-    {
-      "file": "pad-keyboard.js",
-      "bytes": 1974,
-      "sha256": "f4e49fea1710d78fa7ea439dd46b7ebd9cf9f76dc1581557950c89f396a93570"
-    },
-    {
-      "file": "rpg3d-service.js",
-      "bytes": 2281,
-      "sha256": "8e9d2afed84cea01668a5af3ce49266756b284598d8776c0539ad2c37469a105"
-    },
-    {
-      "file": "rpg3d-travel.js",
-      "bytes": 6069,
-      "sha256": "e3e06c5deff6b868cfd2ae9ad2e382e9600e5ed86f82242b12a10afc3b2d9e36"
-    },
-    {
-      "file": "rpg3d-view.js",
-      "bytes": 4755,
-      "sha256": "0e2b957472876eb80a816077c17197e946bcb3b24a12604191af52072ee543b5"
-    },
-    {
-      "file": "rpg3d.bundle.js",
-      "bytes": 2285302,
-      "sha256": "f87585006cebfb87c84f795e93440f79777253ddc05d7827aaf9c47a9c9e77c3"
-    },
-    {
-      "file": "studio-intro.js",
-      "bytes": 1690,
-      "sha256": "f84506ac411c9ede2bea9b5ebe6783944e658457ea03cca07f0eb3950adcf388"
-    },
-    {
-      "file": "style.css",
-      "bytes": 21979,
-      "sha256": "ce9d69bdd6e341d7995c1d0d5415a544c11f313f55cf92fa96335994cfe80be9"
-    },
-    {
-      "file": "supabase.bundle.js",
-      "bytes": 229159,
-      "sha256": "779148229e7d23ce2d6e08ed5e98d16994077a8e5dce2e2fdd4850af8bce77a5"
-    },
-    {
-      "file": "town.css",
-      "bytes": 7479,
-      "sha256": "dff5c21cdb3ea40c0fe30dc97809ae4e67dc3121bb66dee815994e82633a4e46"
     }
-  ],
-  "bytes": 428352637
+  ]
 }

@@ -1,0 +1,733 @@
+{
+  "repairs": {
+    "title": "After the attack · a home worth rebuilding",
+    "chapter": 7,
+    "art": "guild-repairs",
+    "context": "Malachar has fled the ruined guild hall. Rain falls through the broken roof, but the company stays to repair its home and care for one another.",
+    "lines": [
+      [
+        "Waiz",
+        "So... who is cleaning this up?",
+        "amused"
+      ],
+      [
+        "Isaac",
+        "New guy!",
+        "warm"
+      ],
+      [
+        "Sarko",
+        "What? I only just got here!",
+        "surprised"
+      ],
+      [
+        "Waiz",
+        "I am carrying this board. It is emotionally heavy.",
+        "amused"
+      ],
+      [
+        "Amaya",
+        "You are carrying one board. Here—bring it to the damaged wall.",
+        "amused"
+      ],
+      [
+        "Hailey",
+        "The wall is crooked on purpose. Artistic design.",
+        "amused"
+      ],
+      [
+        "Diago",
+        "Check everyone's wounds first. We rebuild together.",
+        "warm"
+      ],
+      [
+        "Grace",
+        "Grace! Evangelist, enthusiastic volunteer, occasional ladder problem. Waiz, grab that end—wait, is anyone hurt? We should check first.",
+        "warm"
+      ]
+    ]
+  },
+  "seeds": {
+    "title": "Seeds in the Rain",
+    "chapter": 7,
+    "art": "seeds-rain",
+    "context": "Outside the damaged hall, Sarko finds Levi watching the mountains where Malachar disappeared. Below them, the people of First Light carry supplies and tend the wounded.",
+    "lines": [
+      [
+        "Sarko",
+        "You think he will come back soon? You do not seem angry about the destruction.",
+        "worried"
+      ],
+      [
+        "Levi",
+        "Yes, he will return. But look at the town. Chadash Adamah means New Earth—not because it is free from suffering, but because God is rebuilding everything.",
+        "gentle"
+      ],
+      [
+        "Levi",
+        "A seed remains alone unless it enters the ground. Before something greater can grow, the seed must first break. Breaking hurts, but it is not the end.",
+        "gentle"
+      ],
+      [
+        "Sarko",
+        "What happened to Malachar? He carries a mark like ours.",
+        "thoughtful"
+      ],
+      [
+        "Levi",
+        "He once protected others. He saw loss and unanswered prayers, and decided that pain meant God could not be good. Pain did not destroy him. Hopelessness did.",
+        "sad"
+      ],
+      [
+        "Sarko",
+        "Then healing has to mean more than closing a wound.",
+        "thoughtful"
+      ],
+      [
+        "Levi",
+        "You are a Shepherd. You remind others why they should keep going.",
+        "warm"
+      ]
+    ]
+  },
+  "departure": {
+    "title": "The road to the Heavenly City",
+    "chapter": 7,
+    "art": "guild-repairs",
+    "context": "The company gathers by the guild hearth. Their injuries are real, but so is the bond forming between them. At sunrise they will leave First Light.",
+    "lines": [
+      [
+        "Levi",
+        "We leave at sunrise. The Heavenly City awaits. The road will test your fear, your trust, and your hope. Nobody walks it alone.",
+        "serious"
+      ],
+      [
+        "Diago",
+        "I trained others before you. I lost people I wanted to protect. That is why I push you so hard.",
+        "sad"
+      ],
+      [
+        "Sarko",
+        "You have been carrying that all this time?",
+        "gentle"
+      ],
+      [
+        "Naomi",
+        "Heroes become family before they become legends. We can carry one another's burdens.",
+        "gentle"
+      ],
+      [
+        "Waiz",
+        "Then we should start by agreeing that the carved-stone game was unfair.",
+        "amused"
+      ],
+      [
+        "Isaac",
+        "Adventure tomorrow. Food tonight!",
+        "warm"
+      ],
+      [
+        "Grace",
+        "Right! Adventure, good news, possibly snacks. But if someone falls behind, we all stop. Nobody walks alone.",
+        "determined"
+      ]
+    ]
+  },
+  "gardenInvite": {
+    "title": "An invitation beside the stream",
+    "chapter": 9,
+    "art": "garden-invitation",
+    "context": "After helping a damaged farming settlement, the weary company rests beside a crystal stream. Naomi has just guided them away from a collapsing path. The water begins to shine.",
+    "lines": [
+      [
+        "Naomi",
+        "The path to the left was not safe. Sometimes God shows a moment before it happens.",
+        "serious"
+      ],
+      [
+        "Waiz",
+        "Prophet deer picks directions from now on.",
+        "amused"
+      ],
+      [
+        "Angel",
+        "Bearer of restoration, you carry the light of renewal. There is little time. Those who walk in unity may receive what lies within—but only those who remain as one.",
+        "gentle"
+      ],
+      [
+        "Naomi",
+        "The Hidden Garden...",
+        "wonder"
+      ],
+      [
+        "Levi",
+        "I thought it was legend. Lower your shield, Sarko. This is an invitation.",
+        "wonder"
+      ],
+      [
+        "Sarko",
+        "Then we enter together.",
+        "determined"
+      ]
+    ]
+  },
+  "gardenGift": {
+    "title": "The silver tree",
+    "chapter": 9,
+    "art": "garden-invitation",
+    "context": "A hidden path leads to a luminous silver tree. The gift within the garden belongs to the whole company. Their light draws attention from the shadows.",
+    "lines": [
+      [
+        "Sarko",
+        "We spent the morning repairing fences and helping tired families. For once, protecting people meant ordinary kindness.",
+        "thoughtful"
+      ],
+      [
+        "Naomi",
+        "That matters too. The light is not only for a battlefield.",
+        "gentle"
+      ],
+      [
+        "Levi",
+        "Receive this gift together. Do not mistake growth for permission to stand alone.",
+        "serious"
+      ],
+      [
+        "Waiz",
+        "I would prefer our next surprise to stay peaceful.",
+        "worried"
+      ],
+      [
+        "Malachar",
+        "You have grown quickly. Faster than I expected. This time, I did not come alone.",
+        "menacing"
+      ]
+    ]
+  },
+  "fractures": {
+    "title": "Malachar returns with allies",
+    "chapter": 10,
+    "art": "garden-fractures",
+    "context": "Malachar's followers emerge beneath the silver roots. This adaptation uses existing arena creatures for his coordinated assault. The full guild joins the encounter; Levi is already with them this time.",
+    "lines": [
+      [
+        "Malachar",
+        "You still believe suffering has purpose? My companions chose truth after Heaven abandoned them.",
+        "menacing"
+      ],
+      [
+        "Levi",
+        "No. They forgot. Company, hold your formation.",
+        "serious"
+      ],
+      [
+        "Naomi",
+        "Sarko—shield high, now! They are trying to split our attention.",
+        "serious"
+      ],
+      [
+        "Sarko",
+        "Kingdom Sanctuary! Stay inside the light. We share the burden.",
+        "determined"
+      ],
+      [
+        "Malachar",
+        "Waiz hides fear behind laughter. Amaya carries guilt. Hailey fears failure. Your Apostle blames himself for every soul he cannot save.",
+        "menacing"
+      ],
+      [
+        "Sarko",
+        "He is not striking our armor. He is striking the things we hide from one another.",
+        "worried"
+      ],
+      [
+        "Grace",
+        "I had an inspiring speech ready. My knees have apparently voted against it. Stay close, will you?",
+        "worried"
+      ]
+    ]
+  },
+  "surrender": {
+    "title": "Strength through surrender",
+    "chapter": 11,
+    "art": "garden-fractures",
+    "context": "The formation falters. Instead of pretending to be invulnerable, the companions admit their fears. Sarko's Shared Burden brightens as they choose trust over pride.",
+    "lines": [
+      [
+        "Waiz",
+        "I joke because I hate feeling weak. I lost focus. I need your help.",
+        "sad"
+      ],
+      [
+        "Amaya",
+        "I judged you for mistakes I make myself. I carried pressure like pride instead of trust.",
+        "sad"
+      ],
+      [
+        "Hailey",
+        "I am afraid of failing you. So I force things and pretend I am in control.",
+        "worried"
+      ],
+      [
+        "Isaac",
+        "I thought strength meant carrying everything alone. Shield brother shares the burden. So should I.",
+        "gentle"
+      ],
+      [
+        "Naomi",
+        "Pride isolates. Humility reconnects.",
+        "gentle"
+      ],
+      [
+        "Levi",
+        "God does not unite perfect souls. He unites surrendered ones.",
+        "serious"
+      ],
+      [
+        "Sarko",
+        "I do not have to control every outcome to stand beside you. Together—again!",
+        "determined"
+      ],
+      [
+        "Grace",
+        "All right. One breath, one step, one wildly hopeful horse. Come on—we can do this together.",
+        "determined"
+      ]
+    ]
+  },
+  "rexArrival": {
+    "title": "The Dragon King",
+    "chapter": 12,
+    "art": "rex-arrival",
+    "context": "Malachar is driven back against the silver tree, but he smiles toward the sky. Rex Draconum descends, spreading his vast wings above the garden. The Dragon King himself has come.",
+    "lines": [
+      [
+        "Malachar",
+        "My king.",
+        "menacing"
+      ],
+      [
+        "Levi",
+        "Rex Draconum. Why reveal yourself now?",
+        "serious"
+      ],
+      [
+        "Rex",
+        "Because hope grows dangerous when ignored. Allow me to correct your expectations.",
+        "menacing"
+      ],
+      [
+        "Sarko",
+        "My sanctuary... he shattered it without trying.",
+        "worried"
+      ],
+      [
+        "Rex",
+        "You believe dependence protects people. Strength would have prevented your wounds.",
+        "cold"
+      ],
+      [
+        "Levi",
+        "No. Love stayed when strength failed.",
+        "determined"
+      ],
+      [
+        "Rex",
+        "Then show me how long your faith endures when those you protect begin to fall.",
+        "menacing"
+      ]
+    ]
+  },
+  "rexAfter": {
+    "title": "A threat, not a victory",
+    "chapter": 12,
+    "art": "rex-arrival",
+    "context": "The company survives Rex's overwhelming demonstration. He chooses to leave with Malachar; the heroes have not defeated him. Sarko reaches for restoration rather than revenge.",
+    "lines": [
+      [
+        "Malachar",
+        "My king, we can finish them.",
+        "menacing"
+      ],
+      [
+        "Rex",
+        "No. They are not ready. The Heavenly City will reveal whether their faith was ever real.",
+        "cold"
+      ],
+      [
+        "Sarko",
+        "Divine Restoration. Come back to the light, everyone.",
+        "determined"
+      ],
+      [
+        "Naomi",
+        "The Spirit of God sustains us.",
+        "gentle"
+      ],
+      [
+        "Levi",
+        "And through the Son, we stand. This was not the end of our road.",
+        "serious"
+      ],
+      [
+        "Sarko",
+        "This is not just power. It is purpose.",
+        "thoughtful"
+      ],
+      [
+        "Grace",
+        "Well, that was considerably more dragon than I ordered. Hey—look at me. You are safe with us. Nobody left.",
+        "warm"
+      ]
+    ]
+  },
+  "breath": {
+    "title": "Breath of Heaven",
+    "chapter": 13,
+    "art": "breath-heaven",
+    "context": "Corrupted creatures converge on the damaged garden. Hailey sees too many threats at once. With the others beside her, she finds the courage to raise her bow.",
+    "lines": [
+      [
+        "Hailey",
+        "There are too many angles. I am afraid I will miss when you need me most.",
+        "worried"
+      ],
+      [
+        "Levi",
+        "Stand firm in faith. You do not have to carry this alone.",
+        "serious"
+      ],
+      [
+        "Hailey",
+        "Celestial Rain!",
+        "determined"
+      ],
+      [
+        "Hailey",
+        "I almost did not shoot.",
+        "sad"
+      ],
+      [
+        "Sarko",
+        "But you did. We move forward together.",
+        "warm"
+      ],
+      [
+        "Angel",
+        "Faithful ones... continue.",
+        "gentle"
+      ]
+    ]
+  },
+  "kingLies": {
+    "title": "The King of Lies",
+    "chapter": 14,
+    "art": "rex-canyon",
+    "context": "In a canyon of glowing blue stone, Rex approaches without his crushing aura. His offer sounds gentle: limitless power, if Sarko will abandon dependence and trust only himself.",
+    "lines": [
+      [
+        "Rex",
+        "You heal, protect, sacrifice—and still you kneel. Why choose between light and darkness when both can belong to you?",
+        "cold"
+      ],
+      [
+        "Sarko",
+        "If my healing had no limits... could I keep everyone safe?",
+        "worried"
+      ],
+      [
+        "Naomi",
+        "Sarko, do not listen. He is using your fear of failure.",
+        "serious"
+      ],
+      [
+        "Rex",
+        "What if you no longer served Heaven, but surpassed it?",
+        "menacing"
+      ],
+      [
+        "Levi",
+        "Creation does not surpass its Creator. God never feared humanity becoming powerful. He feared what pride would turn us into.",
+        "serious"
+      ],
+      [
+        "Sarko",
+        "I remember what carried us here. Love—not control.",
+        "determined"
+      ],
+      [
+        "Isaac",
+        "Formation twelve!",
+        "determined"
+      ],
+      [
+        "Grace",
+        "That is not a gift, Sarko. That is a chain with a very shiny ribbon. We already have you; you do not need to earn us.",
+        "serious"
+      ]
+    ]
+  },
+  "finalStand": {
+    "title": "The fall of the Dragon King",
+    "chapter": 15,
+    "art": "rex-canyon",
+    "context": "Rex returns above the shattered canyon, his wings casting a shadow over the company. Isaac and Sarko form the front line, Levi guides their defense, and the others cover the flanks and fire from the rear.",
+    "lines": [
+      [
+        "Rex",
+        "Stand together, so you may fall together.",
+        "menacing"
+      ],
+      [
+        "Levi",
+        "Everyone together! Protect the line. Watch for the opening.",
+        "determined"
+      ],
+      [
+        "Sarko",
+        "Kingdom Sanctuary! Isaac, beside me!",
+        "determined"
+      ],
+      [
+        "Isaac",
+        "Fortress Titan!",
+        "determined"
+      ],
+      [
+        "Hailey",
+        "I can see the wing joints. Cover me while I aim.",
+        "serious"
+      ],
+      [
+        "Naomi",
+        "His power is consuming him. Do not let his anger break our formation.",
+        "serious"
+      ],
+      [
+        "Grace",
+        "Archers, I have your opening! Waiz, try to keep up. And please do not trip over my longsword.",
+        "determined"
+      ]
+    ]
+  },
+  "restoration": {
+    "title": "Love restores",
+    "chapter": 15,
+    "art": "rex-restoration",
+    "context": "Dragonfire breaks through the barrier and Hailey falls badly injured. The scene avoids graphic injury. Sarko reaches her while the others hold the line, and radiant restoration returns her strength.",
+    "lines": [
+      [
+        "Naomi",
+        "Hailey! Sarko, she needs you!",
+        "worried"
+      ],
+      [
+        "Sarko",
+        "Divine Restoration! Stay with us.",
+        "determined"
+      ],
+      [
+        "Hailey",
+        "That was unpleasant. My bow—there. I can still fight.",
+        "determined"
+      ],
+      [
+        "Waiz",
+        "She said that so calmly!",
+        "amused"
+      ],
+      [
+        "Rex",
+        "You restored what was destroyed...",
+        "surprised"
+      ],
+      [
+        "Sarko",
+        "I supported her. The regeneration is part of how the Creator made her. Love restores what power destroys.",
+        "determined"
+      ],
+      [
+        "Levi",
+        "Now! Every opening, cover one another. Together!",
+        "determined"
+      ]
+    ]
+  },
+  "rexDefeat": {
+    "title": "The king lays down control",
+    "chapter": 15,
+    "art": "rex-restoration",
+    "context": "Rex falters as the guild’s coordinated attack breaks his defenses. Sarko offers restoration rather than hatred, and corruption loosens its grip on the exhausted Dragon King.",
+    "lines": [
+      [
+        "Rex",
+        "So... this is what unity looks like.",
+        "sad"
+      ],
+      [
+        "Levi",
+        "No. This is what love looks like.",
+        "gentle"
+      ],
+      [
+        "Rex",
+        "All this time, I thought strength meant never needing anyone.",
+        "sad"
+      ],
+      [
+        "Levi",
+        "And where did that road lead you?",
+        "gentle"
+      ],
+      [
+        "Rex",
+        "Alone.",
+        "sad"
+      ],
+      [
+        "Sarko",
+        "Courage is not never being afraid. I can protect and love people without controlling everything that happens to them.",
+        "thoughtful"
+      ],
+      [
+        "Waiz",
+        "Does this count as a team-building exercise?",
+        "amused"
+      ],
+      [
+        "Isaac",
+        "Best team building!",
+        "warm"
+      ],
+      [
+        "Grace",
+        "Mercy! Unexpected, brilliant, and much better than another argument. Let us help him up—carefully.",
+        "gentle"
+      ]
+    ]
+  },
+  "cityGates": {
+    "title": "The Heavenly City",
+    "chapter": 16,
+    "art": "city-gates",
+    "context": "Beyond the canyon lies the final valley. Crystal rivers flow beneath radiant walls. The company approaches open gates, and the weight of exhaustion begins to lift.",
+    "lines": [
+      [
+        "Naomi",
+        "We are close.",
+        "wonder"
+      ],
+      [
+        "Waiz",
+        "How do you even describe that?",
+        "wonder"
+      ],
+      [
+        "Levi",
+        "You do not.",
+        "gentle"
+      ],
+      [
+        "Angel",
+        "The King has awaited your arrival.",
+        "warm"
+      ],
+      [
+        "Hailey",
+        "No pain. No exhaustion. I can hardly believe it.",
+        "wonder"
+      ],
+      [
+        "Waiz",
+        "Home.",
+        "gentle"
+      ],
+      [
+        "Grace",
+        "Oh! Oh, look at the gates! I had so many words ready... Sarko, we actually made it. All of us.",
+        "wonder"
+      ]
+    ]
+  },
+  "cityWelcome": {
+    "title": "The heart of a Shepherd",
+    "chapter": 16,
+    "art": "city-welcome",
+    "context": "Inside the City, gentle light draws the company forward. Jesus welcomes Sarko with kindness that reaches back to the storm and the failure he has carried for so long.",
+    "lines": [
+      [
+        "Jesus",
+        "I saw you in the rain.",
+        "gentle"
+      ],
+      [
+        "Sarko",
+        "I thought I had to make up for it.",
+        "sad"
+      ],
+      [
+        "Jesus",
+        "You were never asked to become everyone's savior. You were called to follow Me faithfully.",
+        "gentle"
+      ],
+      [
+        "Sarko",
+        "I can protect them. I can love them. But I am not their Savior.",
+        "thoughtful"
+      ],
+      [
+        "Jesus",
+        "Now you understand the heart of a Shepherd. You are home now.",
+        "warm"
+      ],
+      [
+        "Sarko",
+        "I thought belonging was something I had to earn. Thank You for bringing us home.",
+        "gentle"
+      ]
+    ]
+  },
+  "cityPurpose": {
+    "title": "A journey complete · a purpose beginning",
+    "chapter": 17,
+    "art": "city-welcome",
+    "context": "The city is not the end of love's work. Beyond its gates, countless travelers still journey toward the light. The company receives a purpose that fits what they have learned together.",
+    "lines": [
+      [
+        "Jesus",
+        "Shepherd, your role remains unchanged.",
+        "warm"
+      ],
+      [
+        "Sarko",
+        "Protect people?",
+        "thoughtful"
+      ],
+      [
+        "Jesus",
+        "Bring them together.",
+        "warm"
+      ],
+      [
+        "Levi",
+        "Our journey to the City is over. But our purpose is only beginning.",
+        "gentle"
+      ],
+      [
+        "Waiz",
+        "Then I suppose there are more people who need encouraging.",
+        "warm"
+      ],
+      [
+        "Sarko",
+        "And none of them should have to walk alone.",
+        "determined"
+      ],
+      [
+        "Grace",
+        "Then what are we waiting for? Well—one hug first. Then we carry that welcome to everyone still searching.",
+        "warm"
+      ]
+    ]
+  }
+}

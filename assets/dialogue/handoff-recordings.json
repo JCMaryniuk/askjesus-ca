@@ -1,0 +1,1119 @@
+{
+  "provider": "ElevenLabs",
+  "model": "Eleven Multilingual v2",
+  "cast": {
+    "Sarko": "Sarko",
+    "Waiz": "Waiz",
+    "Diago": "Diego",
+    "Amaya": "Sarah - Mature, Reassuring, Confident",
+    "Hailey": "Laura - Enthusiast, Quirky Attitude",
+    "Naomi": "Alice - Clear, Engaging Educator",
+    "Isaac": "Harry - Fierce Warrior",
+    "Levi": "Bill - Wise, Mature, Balanced",
+    "Grace": "Lily - Velvety Actress",
+    "Malachar": "Malachar - Severin Commanding",
+    "Angel": "Matilda - Knowledgable, Professional",
+    "Rex": "Adam - Dominant, Firm",
+    "Jesus": "George - Warm, Captivating Storyteller",
+    "Elian": "Daniel - Steady Broadcaster",
+    "Ansel": "Eric - Smooth, Trustworthy",
+    "Ruthen": "Brian - Deep, Resonant and Comforting",
+    "Elior": "Charlie - Deep, Confident, Energetic",
+    "Marra": "Bella - Professional, Bright, Warm",
+    "Tamar": "Jessica - Playful, Bright, Warm",
+    "Liora": "Rachel - Calm & Emotionally Engaging"
+  },
+  "status": "recorded-content-verification-incomplete",
+  "summary": {
+    "totalLines": 108,
+    "recordedLines": 108,
+    "contentVerifiedLines": 102,
+    "downloadedBatches": 21,
+    "totalBatches": 21,
+    "linesNeedingNameReview": 6,
+    "linesAwaitingTranscript": 0
+  },
+  "lines": [
+    {
+      "key": "handoff-church-welcome-0",
+      "speaker": "Diago",
+      "textHash": "8419fa164a7ab6109332bac443b9d1b480f23c015d2e982eb2a92c37b85755c3",
+      "voice": "Diego",
+      "file": "handoff-church-welcome-0.mp3",
+      "audioSha256": "c6837a456b274bc2b429e7302232e272fa269aa08216d4cc9107dacbec0c5659",
+      "durationSeconds": 5.383,
+      "verificationStatus": "transcript-differences-needs-review"
+    },
+    {
+      "key": "handoff-church-welcome-1",
+      "speaker": "Sarko",
+      "textHash": "f3a5f50ca7e15b49879c2150bfb2a2906b0cd37d3d86331de59046c5fc2ab928",
+      "voice": "Sarko",
+      "file": "handoff-church-welcome-1.mp3",
+      "audioSha256": "7113021ee0bff1c830b9d40ffc61537e080876f745f2ad7749839e2a831175bd",
+      "durationSeconds": 3.582,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-welcome-2",
+      "speaker": "Diago",
+      "textHash": "4faedd21b576d5bb07502307df047cc2cfa48ad88d3885ca16b19e2e2fa4130d",
+      "voice": "Diego",
+      "file": "handoff-church-welcome-2.mp3",
+      "audioSha256": "c07df50c72e3298d6db7b3a756c20b3c9d0a6c392ae0c1089ec810bd56cce0c3",
+      "durationSeconds": 8.966,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-welcome-3",
+      "speaker": "Waiz",
+      "textHash": "10bbeee44865b4b4f71d4d82867de1ef581df5abb4b3844e674ef479e17d56b2",
+      "voice": "Waiz",
+      "file": "handoff-church-welcome-3.mp3",
+      "audioSha256": "1dac31fe6371f7cc1a92d73fe18ec0b1a1679d5e09af21c8eaf280db82fc28b1",
+      "durationSeconds": 5.404,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-welcome-4",
+      "speaker": "Diago",
+      "textHash": "6cdf395b9853ed7303ed1147ec7dda11140b155368aadf2612473ae72a3cea79",
+      "voice": "Diego",
+      "file": "handoff-church-welcome-4.mp3",
+      "audioSha256": "41a2e6f30a460c9cbc8f94873c4012f120cd89aebecd10443ef9df9bbf8c17ee",
+      "durationSeconds": 5.688,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-equipped-0",
+      "speaker": "Diago",
+      "textHash": "0eb3109bd86b25e44c0e68735fbe237f7bfff7ba67409a9783251e619e2be28e",
+      "voice": "Diego",
+      "file": "handoff-church-equipped-0.mp3",
+      "audioSha256": "879f572ad8143a8487fb6e023787d32db26e545fc397645ca9272c43c757e9bb",
+      "durationSeconds": 7.551,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-equipped-1",
+      "speaker": "Sarko",
+      "textHash": "7d951aa1c741927d9766819071565bac9a69afe0ca647a11a9ecbba288893df4",
+      "voice": "Sarko",
+      "file": "handoff-church-equipped-1.mp3",
+      "audioSha256": "1980c2ba2b7542245e0931d0a23d446efea51dd84d41078091a63e49fd460edc",
+      "durationSeconds": 3.26,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-equipped-2",
+      "speaker": "Diago",
+      "textHash": "194cc46445505891b0a0f7a59bd71d9b9798ca89352a293b7f1565cc7cf92bdc",
+      "voice": "Diego",
+      "file": "handoff-church-equipped-2.mp3",
+      "audioSha256": "1667a4be73672c7586a1e0fa017e055fd929b91a65964a12b1cdec8c84ede8f4",
+      "durationSeconds": 8.721,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-church-equipped-3",
+      "speaker": "Waiz",
+      "textHash": "401b7704ed487822a12ff6a1cc71988111aa4d5bd88217549ed5297eabe6d94b",
+      "voice": "Waiz",
+      "file": "handoff-church-equipped-3.mp3",
+      "audioSha256": "2625ff6a87d876389ee02246de3e47233462d4b7d7be648a59f0767c384b1ed1",
+      "durationSeconds": 4.106,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-battle-queue-0",
+      "speaker": "Diago",
+      "textHash": "a46f396d921a86703a33376330d81ad058e555f66ea87d913c47cff789de18ee",
+      "voice": "Diego",
+      "file": "handoff-battle-queue-0.mp3",
+      "audioSha256": "ac3a75328e97cec6385aaa2d6d02190218bbf22eae6feb9b484ae4ac3d178e69",
+      "durationSeconds": 8.643,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-battle-queue-1",
+      "speaker": "Waiz",
+      "textHash": "6a41fc932d5d268705b1cf6095bb87850635797f853f8cfb293e4a92473e77f0",
+      "voice": "Waiz",
+      "file": "handoff-battle-queue-1.mp3",
+      "audioSha256": "5e8d0f03558611aa54977d030aef9657a7071758bf9905b702b704f541a1cbc5",
+      "durationSeconds": 6.594,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-battle-queue-2",
+      "speaker": "Diago",
+      "textHash": "930c7739178e43ddd55469b5d11a282e6fe2e9956bee4a452b3c6e1ddcd8ba5c",
+      "voice": "Diego",
+      "file": "handoff-battle-queue-2.mp3",
+      "audioSha256": "a8ff82367f199a59e55b4cc7c5af59f2d82f75041d8a9a483330dc4136094505",
+      "durationSeconds": 6.573,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-battle-queue-3",
+      "speaker": "Sarko",
+      "textHash": "bd1ca9046a5392982a7b0c5b4a55e1fe7fe317e79e4a5b34a9c7a14490343aed",
+      "voice": "Sarko",
+      "file": "handoff-battle-queue-3.mp3",
+      "audioSha256": "203f23c3eeb6277f94de43804d0cfd8bec0dd6691601bbbc0d2ec303b80a7276",
+      "durationSeconds": 1.568,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-battle-queue-4",
+      "speaker": "Diago",
+      "textHash": "0f6eed40904dfcfb9adf6952d6cc6c3cd811bc51726720844950702585871fa7",
+      "voice": "Diego",
+      "file": "handoff-battle-queue-4.mp3",
+      "audioSha256": "9b82ab52728c64215edbedeb72340cbe8302ad459a8b6528d7bdaa92df0849b3",
+      "durationSeconds": 10.269,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-life-welcome-0",
+      "speaker": "Waiz",
+      "textHash": "4f3f6ad5a296ef3e3cfec871c161552b1c1dd97af380d43a9a695377bf8d44c4",
+      "voice": "Waiz",
+      "file": "handoff-life-welcome-0.mp3",
+      "audioSha256": "7397eabc9edca2ed51b698b1e1575762c4e8ea1066e531988c934a50927ef982",
+      "durationSeconds": 7.593,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-life-welcome-1",
+      "speaker": "Sarko",
+      "textHash": "198651a05125828fe61f189c355abda25d471706efc307c816c73946884dafba",
+      "voice": "Sarko",
+      "file": "handoff-life-welcome-1.mp3",
+      "audioSha256": "4cf3724903c0257b749145f6a63d85e1c1e891a2d7e8333c01e9d9d750cc2dab",
+      "durationSeconds": 3.27,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-life-welcome-2",
+      "speaker": "Diago",
+      "textHash": "b777d0bc0d36896ec4f78bb6ee454ee6486bdfed368d0aedf4b3905041177f2c",
+      "voice": "Diego",
+      "file": "handoff-life-welcome-2.mp3",
+      "audioSha256": "4e0b72f58fa9b10322a9528f20e52b50a43969cb8d53427aee3372e0f5ac0bcd",
+      "durationSeconds": 8.968,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-life-welcome-3",
+      "speaker": "Waiz",
+      "textHash": "4189d82b5425bb6ca7c5df91084abe2cfbda5a37bfc0b504ded49e02f383a959",
+      "voice": "Waiz",
+      "file": "handoff-life-welcome-3.mp3",
+      "audioSha256": "45b6ac9f6adc5819303afa5178813f1ddb890008ffd493753c3c79a6eb771951",
+      "durationSeconds": 8.399,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-life-welcome-4",
+      "speaker": "Sarko",
+      "textHash": "017527fc46aeaedd3653cc5df5b3380c8c32007675dba9421fc6c9cbb669f6ac",
+      "voice": "Sarko",
+      "file": "handoff-life-welcome-4.mp3",
+      "audioSha256": "14c54401aa50a64b3c51587665ce8f66c60902e522c6b2d97e8d70c98b294199",
+      "durationSeconds": 2.533,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-0-0",
+      "speaker": "Elian",
+      "textHash": "fc991c731242650c02b943ef1a2fa9af5ad896c3f9c30d7972fb8739861d0c7f",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-0-0.mp3",
+      "audioSha256": "732a8bd26b0cb6a4b042442d55b23c2a12f00117247314490eb260ac14f1d2a9",
+      "durationSeconds": 7.646,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-0-1",
+      "speaker": "Sarko",
+      "textHash": "689f13cec488c6f3745543d27eea9e2ef578ae0a068fdeae73182096c8ac6939",
+      "voice": "Sarko",
+      "file": "handoff-world-0-0-1.mp3",
+      "audioSha256": "4356493607af9836063c4f13b7110d1eae75312ea484cdd1ea9d0b10f26311ff",
+      "durationSeconds": 1.34,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-0-2",
+      "speaker": "Elian",
+      "textHash": "3cbe814e3bd7ac3cf6e75dd3bb604659864263805ae30c8f07d9093f131a3c61",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-0-2.mp3",
+      "audioSha256": "38cc13c5a085c836ad0d74feaeed1c54169869aa68891af2621a724dc8f79da9",
+      "durationSeconds": 7.611,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-1-0",
+      "speaker": "Elian",
+      "textHash": "7c2d1e02152270b724896d52cb7679ba5a7ef20f388895ce87990c220da20871",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-1-0.mp3",
+      "audioSha256": "10221deb6231fc985e84ea21af6ec1dec7204bee3e333430914065a2c71b6f9e",
+      "durationSeconds": 7.324,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-1-1",
+      "speaker": "Sarko",
+      "textHash": "a1ea8c7fee681b8307f5847b3861d31f4a2e3ceacc18e5ac8af0269a931e6659",
+      "voice": "Sarko",
+      "file": "handoff-world-0-1-1.mp3",
+      "audioSha256": "21bac466ced81b67c20ca0f22b21ce25942e8671d2e22f59489f7a05aeb0be85",
+      "durationSeconds": 3.116,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-1-2",
+      "speaker": "Elian",
+      "textHash": "9d5ef344776d9bc14a34adbcf72fdd0bf6008a0cbabd92a7b861a9d12de95158",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-1-2.mp3",
+      "audioSha256": "2672cb6b5c51375cabb82068cb215458e497a13885c92ca21d0742f29f016e3d",
+      "durationSeconds": 6.989,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-2-0",
+      "speaker": "Elian",
+      "textHash": "6a490781d1c6cfeb6912128c2f66493691e601334c5dcd6ff27c92f201f7f4e5",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-2-0.mp3",
+      "audioSha256": "d5f13ae208d3c6c6069560e66e16179a1771ec39e389e378107b4b2d70ac9e3d",
+      "durationSeconds": 6.839,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-2-1",
+      "speaker": "Sarko",
+      "textHash": "9f47d2e26ab1f21ad0a5784430bd9adeceef98aa989c8fe18129d13f763e462e",
+      "voice": "Sarko",
+      "file": "handoff-world-0-2-1.mp3",
+      "audioSha256": "7913a1f6dc6ef3ecacaed4e16ea85e3ba0dad585fdf5a1d6ae39adf5c7dcf7e7",
+      "durationSeconds": 1.295,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-0-2-2",
+      "speaker": "Elian",
+      "textHash": "1adb972ff8bf46eac6e4d15d4fbe6758a95cc8f24b39fab1cb96ccf6b2ab7a97",
+      "voice": "Daniel - Steady Broadcaster",
+      "file": "handoff-world-0-2-2.mp3",
+      "audioSha256": "05d5b295768f5898ad544bbb05ae8433cd7e1f0f90ce21ea3eb1ef8bdf5bb467",
+      "durationSeconds": 6.489,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-0-0",
+      "speaker": "Marra",
+      "textHash": "c232ddc92c0b53b786f76b3b18d4d1321f40dc18fb84f9fe6d0958a5de963211",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-0-0.mp3",
+      "audioSha256": "8f6f54093478e8cf789cccc053399dcd496e92023c25bfd5f5d2ce22637b900e",
+      "durationSeconds": 7.733,
+      "verificationStatus": "transcript-differences-needs-review"
+    },
+    {
+      "key": "handoff-world-1-0-1",
+      "speaker": "Sarko",
+      "textHash": "399863af0b3139dd884b8f3407131c6214ca29fc37e2189fe1f96e0b2d2ffb00",
+      "voice": "Sarko",
+      "file": "handoff-world-1-0-1.mp3",
+      "audioSha256": "54219feccc732d8b7d1ee0d97157eea3fa57a65171be0f524cee1c178999cc34",
+      "durationSeconds": 2.132,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-0-2",
+      "speaker": "Marra",
+      "textHash": "eed55593e9781405e2a584851e181c21770f512b5ebb13c12d146fd3eaf31ef5",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-0-2.mp3",
+      "audioSha256": "9daa6c46047791d76d196709ac9a4959d275dbc77be9556857139f79df554360",
+      "durationSeconds": 2.384,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-1-0",
+      "speaker": "Marra",
+      "textHash": "70a0c00314598d18f33d37c7a34b3c710ae57522992038de71cd1c75db074745",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-1-0.mp3",
+      "audioSha256": "35a4a3689a7e99398227f90a0aa438283b9a332fcc1b10ad01bb8c8a7f570268",
+      "durationSeconds": 7.656,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-1-1",
+      "speaker": "Sarko",
+      "textHash": "08d426f8fbce44e5310196c5068c895621ea200566cdb1907c11c669f718ad70",
+      "voice": "Sarko",
+      "file": "handoff-world-1-1-1.mp3",
+      "audioSha256": "4838f271473ce526dedd62ec8a65e85eaaf230327aeaa5daa8e48855290e3749",
+      "durationSeconds": 1.739,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-1-2",
+      "speaker": "Marra",
+      "textHash": "6d5a9c63580246c1a852553da15a41ff7dc24fd7013fbc3e2a4684e7cbb98f08",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-1-2.mp3",
+      "audioSha256": "5768ea8cdb9a763e7356aa7bba04827a56a8a4382094d3f6551fb7207c377908",
+      "durationSeconds": 7.742,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-2-0",
+      "speaker": "Marra",
+      "textHash": "e48743c61df264b858ac65965be34a99c28ca54d0bcdf2222b7d8b21370e5e6c",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-2-0.mp3",
+      "audioSha256": "6b28f8cfd69713ff5e5727a61e016ee10a27d51dd568838ffa13c3bb98e176e0",
+      "durationSeconds": 7.793,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-2-1",
+      "speaker": "Sarko",
+      "textHash": "ac4d09978e4187053df90fcd2028148388ef8483eb66f527953273797e671170",
+      "voice": "Sarko",
+      "file": "handoff-world-1-2-1.mp3",
+      "audioSha256": "3749475421955d81b9131895b28d6b29c23defffe415e9b45a859914067c0aad",
+      "durationSeconds": 1.408,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-1-2-2",
+      "speaker": "Marra",
+      "textHash": "b1cac02fe2b078d3940f930d3fc23890a2d7633c0a8507135a7c9aa332899c1f",
+      "voice": "Bella - Professional, Bright, Warm",
+      "file": "handoff-world-1-2-2.mp3",
+      "audioSha256": "26f0ad49eabb342f902a35d92694dc5477ccf3023f8813561099a58f9f37a770",
+      "durationSeconds": 2.661,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-0-0",
+      "speaker": "Ansel",
+      "textHash": "75a2e1dcd0b5a0eb94932414ad4d9ec32f05cd7baeb15f1fc382a548119c60a0",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-0-0.mp3",
+      "audioSha256": "c0ea30c69a1088bd996c6acdadce7b59d5f139de8d3e79ecea605ff7876c6365",
+      "durationSeconds": 8.424,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-0-1",
+      "speaker": "Sarko",
+      "textHash": "c4dc542b511fd74f401665a02dd5a20cf41cebd16daa6a7f78ddfbcce88239fe",
+      "voice": "Sarko",
+      "file": "handoff-world-2-0-1.mp3",
+      "audioSha256": "1cdda6e625810ddf90c814130a499280fbbb66b8b67343504c83f0d8be5f6991",
+      "durationSeconds": 0.825,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-0-2",
+      "speaker": "Ansel",
+      "textHash": "e064b91ca7ba62bc60b17a5ecee5d66f9f3f1ece47be4e016826378585507a4a",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-0-2.mp3",
+      "audioSha256": "d900812532653b189b381d27e2a24938fd484f5605f7abc06efeed3dc948e158",
+      "durationSeconds": 4.509,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-1-0",
+      "speaker": "Ansel",
+      "textHash": "9d4e535641083275b69271dc13079b70b983dfcbed57be40a5f00c9fb7760841",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-1-0.mp3",
+      "audioSha256": "5ccd17c6962595443b67dbbfd440024b9051b01c2af6cfe0a3df8a849ca6d6db",
+      "durationSeconds": 4.653,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-1-1",
+      "speaker": "Sarko",
+      "textHash": "a7af83192585cb850658edd556dea007a09af732ec60d5cfd09fd2261a073b6a",
+      "voice": "Sarko",
+      "file": "handoff-world-2-1-1.mp3",
+      "audioSha256": "a1f1bcbe0908296679170d9c3a7571b085bae691013a30362732a6fd04bd55d1",
+      "durationSeconds": 1.317,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-1-2",
+      "speaker": "Ansel",
+      "textHash": "bf69e71ef247fdb561fbe30a5e939dcaa3beecf9f5b72e407c2dffe34c49b9f9",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-1-2.mp3",
+      "audioSha256": "b43fa302e04fb2a56d3dbcf4eb5da7b855f80f4503bd9d93d1eb5d0c3001959a",
+      "durationSeconds": 5.341,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-2-0",
+      "speaker": "Ansel",
+      "textHash": "58dc01fb9c1d748186917e647919bd3ff00956165932f27392ee4de25434fb25",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-2-0.mp3",
+      "audioSha256": "7fa9772914b9fba0b3e08c61154e75ba7108c47303555c67206812693bbe2841",
+      "durationSeconds": 4.68,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-2-1",
+      "speaker": "Sarko",
+      "textHash": "2bac850edd26ad156d57650718244350d0c079060b05739c578f3e8541dd619d",
+      "voice": "Sarko",
+      "file": "handoff-world-2-2-1.mp3",
+      "audioSha256": "c68f953ed501fdfcf7b09c0b201e53f0c6494a0d973adaa26080ecca1344b945",
+      "durationSeconds": 1.123,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-2-2-2",
+      "speaker": "Ansel",
+      "textHash": "455c53f7234a5a9007031de6a55f325cc9961e0c744c985a20dbc9c8b11b5c21",
+      "voice": "Eric - Smooth, Trustworthy",
+      "file": "handoff-world-2-2-2.mp3",
+      "audioSha256": "3f0c08e19fc69c3b7cdb1095de6a204fcf1cceecc18b09714ef3c8651c27a7e9",
+      "durationSeconds": 4.636,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-0-0",
+      "speaker": "Tamar",
+      "textHash": "b00d3ecb0e92c56cf40dbf556f358836f4ba958298bb0a46dc5dd7b1ed345ac4",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-0-0.mp3",
+      "audioSha256": "ca7499c430b91cc69e4c0fb9d7590bd855fc74ec912e170ded365da561dedc9c",
+      "durationSeconds": 6.544,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-0-1",
+      "speaker": "Sarko",
+      "textHash": "308d0f3ca077011929760a18fdf3fb51d23bc5d05cf9b7e3e980b33fa30e424d",
+      "voice": "Sarko",
+      "file": "handoff-world-3-0-1.mp3",
+      "audioSha256": "5b2c3e2bd9504198590b99ef2f53839a267ad9820eb5832bf7bc239c41772e7a",
+      "durationSeconds": 1.406,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-0-2",
+      "speaker": "Tamar",
+      "textHash": "a724ae98269267170b3efdbf161f0866ef027bd38bd9d4a94a2299a71c2af21c",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-0-2.mp3",
+      "audioSha256": "1e8704e61e8a8e88cb4553ad9be447b6dae8ca6ded03fdd21294a7722d33f27b",
+      "durationSeconds": 6.388,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-1-0",
+      "speaker": "Tamar",
+      "textHash": "ee818a258a1d9a10d7c96480487ce2e78daf04ec039d0ae768694c14d0e48da1",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-1-0.mp3",
+      "audioSha256": "3852bafcb70b09bfdad46143f1adff6dec98623ca4461455f9668e2ee1f1357c",
+      "durationSeconds": 6.901,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-1-1",
+      "speaker": "Sarko",
+      "textHash": "43b785df4de6f07a15114e43fc2e42ecb627b8631c4925655751e8a1eaf47790",
+      "voice": "Sarko",
+      "file": "handoff-world-3-1-1.mp3",
+      "audioSha256": "e6229a19f83baaddb9061f342e5ae89788044a889a12e3f42ba2b1eab4b0458a",
+      "durationSeconds": 1.132,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-1-2",
+      "speaker": "Tamar",
+      "textHash": "d2b6b1fe67c7b196ba2127a384cf6063a88c007626fd8c5c67c9d519ffcf3133",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-1-2.mp3",
+      "audioSha256": "ebd51caf36be932601b5267c20acec9af208c0d75162e1e6aadca55e8025693e",
+      "durationSeconds": 4.434,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-2-0",
+      "speaker": "Tamar",
+      "textHash": "7352eb8ad0bcb1c2eed30c22e669abba230ed118b4765202c4238ce312fdc237",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-2-0.mp3",
+      "audioSha256": "33a281848cef898b14288dda67255050965e08443adf3841d4e40f6b95628458",
+      "durationSeconds": 3.79,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-2-1",
+      "speaker": "Sarko",
+      "textHash": "9adf5e4a09100a174be286989bb17c2a3d8231fae570a4433d52e3f173f6fc22",
+      "voice": "Sarko",
+      "file": "handoff-world-3-2-1.mp3",
+      "audioSha256": "6e49979f2cc77df4680cb6e1d3d454cb23b5508a3c6cb0cfe3e3193ac890c5b9",
+      "durationSeconds": 1.89,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-3-2-2",
+      "speaker": "Tamar",
+      "textHash": "b4384f7a3cfa9d256ecaceda910e422c5e1c372987fef92d9d18209acc363e94",
+      "voice": "Jessica - Playful, Bright, Warm",
+      "file": "handoff-world-3-2-2.mp3",
+      "audioSha256": "50f4007ae7098bdcb73cd27acf1b593880419840ac78ec848d6326f5321890e0",
+      "durationSeconds": 6.589,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-0-0",
+      "speaker": "Ruthen",
+      "textHash": "82907eeeae843ef9ff5f0819fb287ba227c5215f944aba840273d75d8ef5719e",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-0-0.mp3",
+      "audioSha256": "3cbe9ca26be0db3cc742dfb7b188a907622b9186c31076c96b9542e983d10396",
+      "durationSeconds": 6.855,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-0-1",
+      "speaker": "Sarko",
+      "textHash": "5a324f8c095a0dd91b304f5c5935c7df2af5faff7690b706ccf243b1edffe68f",
+      "voice": "Sarko",
+      "file": "handoff-world-4-0-1.mp3",
+      "audioSha256": "088f5c1c3328af18386130dc4ac3636b7923eeeaa4cc9ecf974c3896fe4a7885",
+      "durationSeconds": 1.225,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-0-2",
+      "speaker": "Ruthen",
+      "textHash": "278d076002839e3e4930f6dc4f3a539c44235b4741de3e917426b6f9af6710f6",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-0-2.mp3",
+      "audioSha256": "555e2d4e94c5fbe021a5b02b6d56bb1ce917d62359c3958dbe92c9ecf2ef57fa",
+      "durationSeconds": 5.757,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-1-0",
+      "speaker": "Ruthen",
+      "textHash": "4f6341714d95b3825dc4a2d53e1b4e5b5b027eb7d6cc38649170baef54e19572",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-1-0.mp3",
+      "audioSha256": "3cb83217bc7ba997218d33f921789d09d304c27dda886a744e0ca4e99e84dbd2",
+      "durationSeconds": 5.625,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-1-1",
+      "speaker": "Grace",
+      "textHash": "bdeb1c725144e05bf01cbbcef481d867c16b63112a8c35b51e798af84996ed12",
+      "voice": "Lily - Velvety Actress",
+      "file": "handoff-world-4-1-1.mp3",
+      "audioSha256": "610ba76c3a1ff536b53ac5a25c81818aaede8752b28fa15c81222a8b85326a5b",
+      "durationSeconds": 7.17,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-1-2",
+      "speaker": "Ruthen",
+      "textHash": "a46764d8d986dd99716e76fcb30cf84f42d9fa9bd51ce790dcc0db273d01512a",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-1-2.mp3",
+      "audioSha256": "bddbbb8e932ae994c177023bd3edeb0b777cf3e44b37491170956a5d5175c512",
+      "durationSeconds": 4.745,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-2-0",
+      "speaker": "Ruthen",
+      "textHash": "055fddd25c75641d72a6998c9fb1327e165037e17ff35fe45d33000cf852e46e",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-2-0.mp3",
+      "audioSha256": "720096c55f92300814488da1b4b7ae5afeb57069d5038ff35494c7e373d51b9d",
+      "durationSeconds": 5.437,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-2-1",
+      "speaker": "Sarko",
+      "textHash": "77db52c37e3618b73906fa1bd5261bb374955d77118d4f8fad18a73cd5bae9dd",
+      "voice": "Sarko",
+      "file": "handoff-world-4-2-1.mp3",
+      "audioSha256": "090963d78256d0cbc5bcf4f6a82e8d0e21340af1f204ef9853eb293432b1168c",
+      "durationSeconds": 1.564,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-4-2-2",
+      "speaker": "Ruthen",
+      "textHash": "86e0470ac964d798219c7b6d360f0f53eded4edbeec3c8657c0fac6e6683538e",
+      "voice": "Brian - Deep, Resonant and Comforting",
+      "file": "handoff-world-4-2-2.mp3",
+      "audioSha256": "1b111b4fa9c7ac9aa82d73e3218e734450a62e75076c7c4ea3860810b93e6660",
+      "durationSeconds": 5.255,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-0-0",
+      "speaker": "Elior",
+      "textHash": "b4dc59f7b304a2114c85e998b0df692c72bc2101f0aca64a4bd0b6e393d16fa3",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-0-0.mp3",
+      "audioSha256": "9bb4ac64977421874c0dd83c699b3a0a0f09340c3072b641d2acb52515733708",
+      "durationSeconds": 6.161,
+      "verificationStatus": "transcript-differences-needs-review"
+    },
+    {
+      "key": "handoff-world-5-0-1",
+      "speaker": "Sarko",
+      "textHash": "c4dc542b511fd74f401665a02dd5a20cf41cebd16daa6a7f78ddfbcce88239fe",
+      "voice": "Sarko",
+      "file": "handoff-world-5-0-1.mp3",
+      "audioSha256": "e84eaa6787b7cd88cf1826a5006a06d9bc0d8505cfb75fbac362caff2169860a",
+      "durationSeconds": 0.786,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-0-2",
+      "speaker": "Elior",
+      "textHash": "722f9f823124bb75cc7d920db5333866d08166fbac48491e6120523bc217340f",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-0-2.mp3",
+      "audioSha256": "6d77fde005dbaed5371201f1407a2c5224f20aaee3214e2af1073f96fe566b8a",
+      "durationSeconds": 6.801,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-1-0",
+      "speaker": "Elior",
+      "textHash": "6f28a5c804586e982e5ae57c08557093826582c7c0d390986e99e5d916cbb3f2",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-1-0.mp3",
+      "audioSha256": "1a786d03d9336264f18a9d772634444ab8f12a817e1fdd48fd838e7a0e6e3c24",
+      "durationSeconds": 5.664,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-1-1",
+      "speaker": "Sarko",
+      "textHash": "2c91c1ae9370840d65638b8cf322ec893bafe3e4cb47da07bb444b36bce71357",
+      "voice": "Sarko",
+      "file": "handoff-world-5-1-1.mp3",
+      "audioSha256": "0dbbca7fefdda9cc87a8b9f2118094ca7e174508ece6869dd04363b9dcc05fb8",
+      "durationSeconds": 1.369,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-1-2",
+      "speaker": "Elior",
+      "textHash": "0a9d4991a19da5c21ed8836bce6ab754c7fb5add87bc4e34739d4d52b03fb744",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-1-2.mp3",
+      "audioSha256": "077c97acff714b44c9c3bd1f01ff49d3ac40b7f89498c08f8b57354eeb918357",
+      "durationSeconds": 6.024,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-2-0",
+      "speaker": "Elior",
+      "textHash": "1127c12d13672c0c8be671c93b3ac9683f2a8d29fa4680dffc91cc4788b39f31",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-2-0.mp3",
+      "audioSha256": "56da89c924a616996323103f403eed9fc19a22eae84411293278cc38a7f551ed",
+      "durationSeconds": 4.15,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-2-1",
+      "speaker": "Sarko",
+      "textHash": "7a73a432c03256c630b5aceb5e6aea84db5b28f45c3a2aab16afdb2ceaffb2e0",
+      "voice": "Sarko",
+      "file": "handoff-world-5-2-1.mp3",
+      "audioSha256": "cf71613b60f32b7457d14b51b0cf69595e36ec0528030fbf6252d9982d8be6a4",
+      "durationSeconds": 1.028,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-5-2-2",
+      "speaker": "Elior",
+      "textHash": "096f7233ad545b4bfb02802b4d7ba68a73ffffab91021a2ad55f8f7a4302719c",
+      "voice": "Charlie - Deep, Confident, Energetic",
+      "file": "handoff-world-5-2-2.mp3",
+      "audioSha256": "ae0207e422901b9dc1cff9aadc6866a65b0446db4e0fb196d451c09de1fe2294",
+      "durationSeconds": 6.63,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-0-0",
+      "speaker": "Liora",
+      "textHash": "ce7f10f36b10b642f48365a7a9e5245a8f0948e276c49bc074bc26e0bde8ab2c",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-0-0.mp3",
+      "audioSha256": "3549cc0ca95489368d5d318252dcf0cc5ba32decdaf082e1f5f83b23d5f11429",
+      "durationSeconds": 7.313,
+      "verificationStatus": "transcript-differences-needs-review"
+    },
+    {
+      "key": "handoff-world-6-0-1",
+      "speaker": "Sarko",
+      "textHash": "0177b987cc73de79a7daf310bab8f1a144f602b963b7a46c4f965b4b7765a9bd",
+      "voice": "Sarko",
+      "file": "handoff-world-6-0-1.mp3",
+      "audioSha256": "d5d618d9f648561fca028b7150c79538f50686ade684e1acaa7eea5a1c8088b3",
+      "durationSeconds": 0.95,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-0-2",
+      "speaker": "Liora",
+      "textHash": "bf5126b76ae706dac96e27c921dbe7d454d6a0b53d8dca8b98a250f40eb14bdd",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-0-2.mp3",
+      "audioSha256": "e10bc9869174a9455c7078c653ef50ffbfdd1a611cec6ffca1895ba1918bd798",
+      "durationSeconds": 7.009,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-1-0",
+      "speaker": "Liora",
+      "textHash": "725d6bc9ef6221964d81b667639d940f05fc94aadb4315b11f4db937e5f7ed5b",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-1-0.mp3",
+      "audioSha256": "4fc14cfa28a2efef6128b635c93f3127337e8c1d73c34e5f9e7f9a96f4700762",
+      "durationSeconds": 5.576,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-1-1",
+      "speaker": "Sarko",
+      "textHash": "b85c41ca5d16c82e3341ea1eb45daaf363014a5a123421107da8dc0fabbe329e",
+      "voice": "Sarko",
+      "file": "handoff-world-6-1-1.mp3",
+      "audioSha256": "3a5390722059f759452cfc6b07e79098a999e1e0ffe6a854088f6d2bc4f55443",
+      "durationSeconds": 3.296,
+      "verificationStatus": "pronunciation-alias-generated-needs-listening"
+    },
+    {
+      "key": "handoff-world-6-1-2",
+      "speaker": "Liora",
+      "textHash": "091fc53040007d706c6f0e4758f8d5db80685794b70c6c2b923881ac00fa259f",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-1-2.mp3",
+      "audioSha256": "1d65d98d75695ff1e2285b1adcf09c04ff33b00a7a1aef191c80e8c52cc69b6b",
+      "durationSeconds": 2.675,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-2-0",
+      "speaker": "Liora",
+      "textHash": "2e25dc2d67887e2df56498ab56ece0cc9370c4fb779c9a5bb9e4c41c37da3139",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-2-0.mp3",
+      "audioSha256": "9aada45fbbec51c9a749d39eb419e66c8c3dcd754fd14964f734c16a7390c84a",
+      "durationSeconds": 4.602,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-2-1",
+      "speaker": "Sarko",
+      "textHash": "60a23368b5f93cd28928c8ad42b5b2c56cdec979accc6eb1a26f6fe99b67d6f5",
+      "voice": "Sarko",
+      "file": "handoff-world-6-2-1.mp3",
+      "audioSha256": "dbf47357554efd39e3dd79104baf3f786ed77586fd77f53b28fe1a2c950d52a4",
+      "durationSeconds": 2.217,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-world-6-2-2",
+      "speaker": "Liora",
+      "textHash": "bd3b10d3c7425c36890985a92d0020c772d5ca40f5c531551853952342efefd4",
+      "voice": "Rachel - Calm & Emotionally Engaging",
+      "file": "handoff-world-6-2-2.mp3",
+      "audioSha256": "318784979ad9da53eb3c086ac459c4edd7c2d92d7508cb27dacec0ef1a42bd97",
+      "durationSeconds": 5.524,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-0-9-0",
+      "speaker": "Diago",
+      "textHash": "f521cc5e7fe832310fb8cba4c64488ea3f9f5c37322ec0346994e498aa41a5c4",
+      "voice": "Diego",
+      "file": "handoff-boss-0-9-0.mp3",
+      "audioSha256": "80b4af2b19878b9de1da0aa57d8cad6c51140fbc0b58d7b168afc297952e9305",
+      "durationSeconds": 4.709,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-0-9-1",
+      "speaker": "Sarko",
+      "textHash": "92086683959c5cb6bd72e21ab2a83829b157df85f72c44b503d4b6239ac858e4",
+      "voice": "Sarko",
+      "file": "handoff-boss-0-9-1.mp3",
+      "audioSha256": "73f15a062c60d7440cdb9d3063b3ba78f9c1639b62d0c3d9a1f8658c508de269",
+      "durationSeconds": 1.975,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-1-9-0",
+      "speaker": "Naomi",
+      "textHash": "1bc54bbed74af10058d461e4be2ddfedbf58a5b79557a6fbde7187fc5d3ecb6e",
+      "voice": "Alice - Clear, Engaging Educator",
+      "file": "handoff-boss-1-9-0.mp3",
+      "audioSha256": "dc21b98c9455b083f20a7d8716f7315ab0e71d41b999f42019b40588093d25fe",
+      "durationSeconds": 6.096,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-1-9-1",
+      "speaker": "Sarko",
+      "textHash": "c46aa8e8a477cb754003095944299f910a738adb4f48fd9ef4841743dcdfd214",
+      "voice": "Sarko",
+      "file": "handoff-boss-1-9-1.mp3",
+      "audioSha256": "ce4f86530578e9cfa887e7bf1abdc56ce435dd67507126d35abb00026b8c1113",
+      "durationSeconds": 1.462,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-1-19-0",
+      "speaker": "Naomi",
+      "textHash": "68d0b4ca06f5c6ce9c2f1c11398bdaf4bc775ea4cbf9706e0498911c9c88bce0",
+      "voice": "Alice - Clear, Engaging Educator",
+      "file": "handoff-boss-1-19-0.mp3",
+      "audioSha256": "9d81ad8e8a75ea54be4db06f691e48652494abda8fd2e2bd56dcbf399a4c084a",
+      "durationSeconds": 7.287,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-1-19-1",
+      "speaker": "Sarko",
+      "textHash": "74f63af4be78945bd423498352a1c8f2c96c387ea67b7024fa5e7e80b0618074",
+      "voice": "Sarko",
+      "file": "handoff-boss-1-19-1.mp3",
+      "audioSha256": "acc47ab507335d6c95ffae6f3996d4abf40545177db230c5b408cf10593fe341",
+      "durationSeconds": 2.007,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-2-9-0",
+      "speaker": "Hailey",
+      "textHash": "52fe3b903c32dc5ed33542a17964c1d6dcb7dd59c4f48d5d756bdeb4d84b6d50",
+      "voice": "Laura - Enthusiast, Quirky Attitude",
+      "file": "handoff-boss-2-9-0.mp3",
+      "audioSha256": "0f678e29589eae692eeea1a8e7456d5271cc6a46b45bb04cbb9fd6e1efcebe36",
+      "durationSeconds": 4.732,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-2-9-1",
+      "speaker": "Sarko",
+      "textHash": "5d4963ffb483f64567b2bc66a0e12b8e6eccd1453f9401d3006e2c36770dbf51",
+      "voice": "Sarko",
+      "file": "handoff-boss-2-9-1.mp3",
+      "audioSha256": "8f758d482ae238a62b9b59ca1d819713dd1d3d47fb11f5c73e97167ede13a04e",
+      "durationSeconds": 1.957,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-2-19-0",
+      "speaker": "Hailey",
+      "textHash": "ae2afaf48b6bf4255c6bda6a2448a4e4ae52aa1ee4a47256a31e86f50e7b4424",
+      "voice": "Laura - Enthusiast, Quirky Attitude",
+      "file": "handoff-boss-2-19-0.mp3",
+      "audioSha256": "84be30eabc8112867beab40a3abe07f4aa9f272877b768a1669c8eca6b284766",
+      "durationSeconds": 5.013,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-2-19-1",
+      "speaker": "Sarko",
+      "textHash": "e89aa623b45b02fb5364431ffd5ee12e0573957461a0de39f101fbbb67b2f782",
+      "voice": "Sarko",
+      "file": "handoff-boss-2-19-1.mp3",
+      "audioSha256": "fe99b6e9da0f951786e72fb5dbd68e175f500e2fc7a32036893e4ef5a9f7e72e",
+      "durationSeconds": 2.363,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-3-9-0",
+      "speaker": "Isaac",
+      "textHash": "63e741c3cc78fc5e13e7d77003caf6e8c5f4142e7c0ba4ff07493ee15bd5a735",
+      "voice": "Harry - Fierce Warrior",
+      "file": "handoff-boss-3-9-0.mp3",
+      "audioSha256": "83b1ea20ffe6944fbe69a4dae2a7e254c11f27bb685091afd6b3914fc8fd8653",
+      "durationSeconds": 4.96,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-3-9-1",
+      "speaker": "Sarko",
+      "textHash": "ccaecad44886d76be9e1bba563854835899bc19d326b06eb29f9383980542d12",
+      "voice": "Sarko",
+      "file": "handoff-boss-3-9-1.mp3",
+      "audioSha256": "03b2411198e46287ef7b0541ae61106ca72714581fb521d88fc31748d0eddc2c",
+      "durationSeconds": 2.223,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-3-19-0",
+      "speaker": "Hailey",
+      "textHash": "c705abcdb683959dd21541c2ce08df18df6c2961b501f4acb24bfb837e99e896",
+      "voice": "Laura - Enthusiast, Quirky Attitude",
+      "file": "handoff-boss-3-19-0.mp3",
+      "audioSha256": "1fd3c4002ca330edef6b4472ec50a760e99d7f2f1ae7aeabf453a212bf400efc",
+      "durationSeconds": 5.456,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-3-19-1",
+      "speaker": "Sarko",
+      "textHash": "462e1d5723e53e9f7e6124905563786a5f1c357fee31c75b0ee12088f5b5362b",
+      "voice": "Sarko",
+      "file": "handoff-boss-3-19-1.mp3",
+      "audioSha256": "009790784180ecf2b379f12a52c7132204757c61f960366d7960cb2bd6a443a5",
+      "durationSeconds": 1.551,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-4-9-0",
+      "speaker": "Grace",
+      "textHash": "3ac675406a7acc7b8d32368bd25d9f0da008232a9f9bbba800ee28c69fd1bb2d",
+      "voice": "Lily - Velvety Actress",
+      "file": "handoff-boss-4-9-0.mp3",
+      "audioSha256": "1017266b1468370a6c102e4ed3c1550b304c5325c7cb27a31b5dbad9ef17b393",
+      "durationSeconds": 7.354,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-4-9-1",
+      "speaker": "Sarko",
+      "textHash": "9ae0d170984adec83da3e5f024bc5d719888372b337cfc70f039b99fe8146da7",
+      "voice": "Sarko",
+      "file": "handoff-boss-4-9-1.mp3",
+      "audioSha256": "83658f5743919a82e8c0439fb2b08577612268c908d22a41860e633ce80312f9",
+      "durationSeconds": 1.68,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-4-19-0",
+      "speaker": "Sarko",
+      "textHash": "6ab9392b371922de221431e9530f84c73227a5f96da0af596b251929ff57c59a",
+      "voice": "Sarko",
+      "file": "handoff-boss-4-19-0.mp3",
+      "audioSha256": "c68b8a327647c0e2b54a59284f04d26255771e4e92eb9e28b400ff2f85348e79",
+      "durationSeconds": 4.538,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-4-19-1",
+      "speaker": "Grace",
+      "textHash": "69d3d6bd385ae799e25e7e90e262fcee1861a52d100a19014a5a55ad816a58af",
+      "voice": "Lily - Velvety Actress",
+      "file": "handoff-boss-4-19-1.mp3",
+      "audioSha256": "9b12d1116f61e2400dc29fa3dff535dc4649c777985eb2365b55cdf59b209655",
+      "durationSeconds": 4.195,
+      "verificationStatus": "transcript-differences-needs-review"
+    },
+    {
+      "key": "handoff-boss-5-9-0",
+      "speaker": "Waiz",
+      "textHash": "3834affb6f59bb8b495ac4fd8696558c0f120bee3df1dedef73756d75bda35da",
+      "voice": "Waiz",
+      "file": "handoff-boss-5-9-0.mp3",
+      "audioSha256": "c835eca0d058c784ab4ce714dc88e430163fb8d9c95a61309098a7be646022b3",
+      "durationSeconds": 7.36,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-5-9-1",
+      "speaker": "Sarko",
+      "textHash": "5e076e4237b28831b3b44d6dab25f0f24acbd9dcb2a874d509b33aab5f65517f",
+      "voice": "Sarko",
+      "file": "handoff-boss-5-9-1.mp3",
+      "audioSha256": "c14c52998b2ce18a2d1e063c5a414b0b95ef57ddc1baa9fc77fb39049638b3a8",
+      "durationSeconds": 1.404,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-5-19-0",
+      "speaker": "Levi",
+      "textHash": "fafefa18fd8a227c688620567684227013b8ded8f99404546ea90d0118e16e53",
+      "voice": "Bill - Wise, Mature, Balanced",
+      "file": "handoff-boss-5-19-0.mp3",
+      "audioSha256": "97fad68655992501d0e55041f1e1f671969cba17831e78e3634c36fb13c84fa6",
+      "durationSeconds": 6.837,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-5-19-1",
+      "speaker": "Sarko",
+      "textHash": "23d32e9dfa365179dfb1df52aaafce91cb98d8c92aa858548e10abf3c08d2100",
+      "voice": "Sarko",
+      "file": "handoff-boss-5-19-1.mp3",
+      "audioSha256": "2b7161a38fada15ac2e06fbebf6c54e3475e350bd393cc646dd704f3566ae839",
+      "durationSeconds": 2.634,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-6-9-0",
+      "speaker": "Levi",
+      "textHash": "528a56c73e482af83a052034b698e72cfb99f438d5602e5d52f1fa330250ae90",
+      "voice": "Bill - Wise, Mature, Balanced",
+      "file": "handoff-boss-6-9-0.mp3",
+      "audioSha256": "b208d2d5d870615366cfb87476ac2a0565f7a6f58a0071c2155a207155c28b68",
+      "durationSeconds": 5.89,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-6-9-1",
+      "speaker": "Sarko",
+      "textHash": "ea879aa92f9b51595a1a5a60d8cb0e127153d2e34b7108d9454acf7d81a6695e",
+      "voice": "Sarko",
+      "file": "handoff-boss-6-9-1.mp3",
+      "audioSha256": "359f249486db6e169d309064ca7c49adf909a569081c9c7e87f3a7d926e77870",
+      "durationSeconds": 2.153,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-6-19-0",
+      "speaker": "Levi",
+      "textHash": "8690025ddd7e7183fc28a50198d982e96a1364e6ad7a2f868d49b377d3180220",
+      "voice": "Bill - Wise, Mature, Balanced",
+      "file": "handoff-boss-6-19-0.mp3",
+      "audioSha256": "169acaedf939bb37a3dba6f6d5be514bcd03f3b091525349c69799523c900225",
+      "durationSeconds": 7.007,
+      "verificationStatus": "content-verified"
+    },
+    {
+      "key": "handoff-boss-6-19-1",
+      "speaker": "Sarko",
+      "textHash": "b9249ad09f3961885bb698890eb86ae410c13e1e4eaf325987baf6b2b21f8d6a",
+      "voice": "Sarko",
+      "file": "handoff-boss-6-19-1.mp3",
+      "audioSha256": "b23647d8dee1638ef5f9f090db766d8f5934a9fadd9ef90dc122b7c9eec199b6",
+      "durationSeconds": 1.202,
+      "verificationStatus": "content-verified"
+    }
+  ],
+  "releaseReady": false
+}

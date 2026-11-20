@@ -1,0 +1,57 @@
+{
+  "releaseReady": false,
+  "notes": "Listening approval is recorded per exact audio hash; other recordings retain their individual verification status.",
+  "skipped": [
+    {
+      "key": "opening-wake-1",
+      "reason": "Superseded script: replacement does not match current scene"
+    }
+  ],
+  "lines": [
+    {
+      "key": "opening-wake-3",
+      "speaker": "Sarko",
+      "text": "A dove on my forehead. It is warm. I should be frightened, but somehow I feel safe.",
+      "synthesisText": "A duv on my forehead. It is warm. I should be frightened, but somehow I feel safe.",
+      "sha256": "94b421f7e6beb7abb334e612ef7dacd734e3fa294e79b155e0daf49d04aadcaa",
+      "verificationStatus": "user-listening-approved",
+      "verificationNote": "User confirmed both clips sound correct: dove as duv, Waiz as ways."
+    },
+    {
+      "key": "opening-wake-6",
+      "speaker": "Waiz",
+      "text": "Hello! My name is Waiz! And judging by that expression, you have approximately a thousand questions.",
+      "synthesisText": "Hello! My name is Ways! And judging by that expression, you have approximately a thousand questions.",
+      "sha256": "fed51206aa8a9ac47259d7ffcd408e46ff434f1ea2a051b315809479eab587c9",
+      "verificationStatus": "user-listening-approved",
+      "verificationNote": "User confirmed both clips sound correct: dove as duv, Waiz as ways."
+    },
+    {
+      "key": "opening-repairs-7",
+      "speaker": "Grace",
+      "text": "Grace! Evangelist, enthusiastic volunteer, occasional ladder problem. Waiz, grab that end—wait, is anyone hurt? We should check first.",
+      "synthesisText": "Grace! Evangelist, enthusiastic volunteer, occasional ladder problem. Ways, grab that end—wait, is anyone hurt? We should check first.",
+      "sha256": "9f50bd0b734fe05bc4ba9705bbe256512cb04caaa77dcf42ea98af5ae895cdb2",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending."
+    },
+    {
+      "key": "opening-finalStand-6",
+      "speaker": "Grace",
+      "text": "Archers, I have your opening! Waiz, try to keep up. And please do not trip over my longsword.",
+      "synthesisText": "Archers, I have your opening! Ways, try to keep up. And please do not trip over my longsword.",
+      "sha256": "e69a978b611dd3801b17b756732d25de4b37e90bb3e44e88c4c8075dff8e2838",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending."
+    },
+    {
+      "key": "opening-fractures-4",
+      "speaker": "Malachar",
+      "text": "Waiz hides fear behind laughter. Amaya carries guilt. Hailey fears failure. Your Apostle blames himself for every soul he cannot save.",
+      "synthesisText": "Ways hides fear behind laughter. Amaya carries guilt. Hailey fears failure. Your Apostle blames himself for every soul he cannot save.",
+      "sha256": "0fc286674efe2b30a236d2d6a24cdee87f8c64e07f28546a138a794af0594d62",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending."
+    }
+  ]
+}

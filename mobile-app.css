@@ -1,0 +1,25 @@
+/* Touch targets, notches and software-keyboard-friendly scrolling. */
+html { -webkit-text-size-adjust:100%; }
+body { overscroll-behavior-y:none; }
+button, a, input, select, textarea { touch-action:manipulation; }
+.titleScreen { min-height:100svh; padding-top:max(16px,env(safe-area-inset-top)); padding-bottom:max(16px,env(safe-area-inset-bottom)); }
+.overlay { padding-top:max(12px,env(safe-area-inset-top)); padding-bottom:max(12px,env(safe-area-inset-bottom)); }
+.modal { max-height:calc(100dvh - max(24px,env(safe-area-inset-top)) - max(24px,env(safe-area-inset-bottom))); overflow:auto; overscroll-behavior:contain; }
+@media (max-width:900px) {
+  .shell { padding-left:max(10px,env(safe-area-inset-left)); padding-right:max(10px,env(safe-area-inset-right)); padding-bottom:max(18px,env(safe-area-inset-bottom)); }
+  button.button, .menuCategories .button { min-height:44px; }
+  input,select,textarea { font-size:16px; }
+  .titleRail { max-width:410px; }
+  .modalHead { position:sticky; top:-1px; z-index:5; background:#0b1929; padding:10px 0; }
+  .modalHead h2 { overflow-wrap:anywhere; }
+}
+@media (max-height:500px) and (orientation:landscape) {
+ .titleRail { max-width:680px; width:min(100%,680px); padding:10px 16px; }
+ .titleCrest { width:34px;height:34px; }
+ .titleRail h1 { font-size:26px; margin:2px; }
+ .titleRail h2 { font-size:16px;margin:2px; }
+ .titleRail nav { grid-template-columns:repeat(3,minmax(0,1fr));gap:6px; }
+ .titleRail nav .button { grid-column:auto;min-height:44px;font-size:11px; }
+ .titleRail .titleControlHint { display:none; }
+}
+@media(prefers-reduced-motion:reduce) { .titleBackdrop { display:none; } }

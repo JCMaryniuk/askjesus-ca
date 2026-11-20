@@ -13,6 +13,6 @@ export class CoopClient {
   async poll(){if(this.pending||!this.room||this.closed)return;this.pending=true;try{const r=await this.request('poll',this.room.id);if(!this.closed){this.room=r;this.onRoom(r);}}catch(error){if(!this.closed)this.onError(error);}finally{this.pending=false;}}
   get leader(){return this.room?.leader_id===this.user.id;}
   async publish(snapshot,ack=[]){if(!this.leader)throw Error('Only the party leader advances the encounter.');return this.command('publish',{revision:this.room.revision,snapshot,ack});}
-  async action(hero,skill,type='skill'){return this.command('action',{id:crypto.randomUUID(),type,hero,skill});}
+  async action(hero,skill,type='skill',target=null){return this.command('action',{id:crypto.randomUUID(),type,hero,skill,target});}
   stop(){this.closed=true;}
 }

@@ -1,0 +1,5 @@
+{
+  "tool": "Built-in image_gen",
+  "prompt": "Use case: stylized-concept. Asset type: seamless square albedo texture for a 3D fantasy RPG stone courtyard floor. Generate a top-down orthographic edge-to-edge texture of weathered pale grey limestone flagstones with subtly bevelled edges, fine mineral veins, worn pitted surface and narrow irregular dark seams. Moderate small rectangular and polygonal stone slabs fit together across the whole square, about 5 stones across, neutral desaturated medium-light grey so the game can tint it to ivory marble, volcanic basalt or storm slate. Hand-painted premium fantasy game texture detail, physically plausible stone. Uniform diffuse lighting, no directional shadows or perspective, no objects, no text, no symbols, no border. Seamless tileable edges. This is a flat material texture, not a scene.",
+  "usage": "Generated stone albedo for repaired 3D courtyard floors"
+}

@@ -1,0 +1,9 @@
+{
+  "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\meshy-overnight\\native-monsters\\CorruptedWolf.glb",
+  "target": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\monsters\\CorruptedWolf.glb",
+  "polygonsBefore": 60079,
+  "polygonsAfter": 24048,
+  "preservedCapeTopology": true,
+  "actions": 10,
+  "bytes": 1384120
+}

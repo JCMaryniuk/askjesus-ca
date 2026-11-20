@@ -36,7 +36,12 @@ export function settleSharedLife(members,before,after,user,getLevel){
 export function canControl(room,user,action){
   if(!room.members.some(m=>m.user_id===user)||room.status!=='playing')return false;
   if(['move','next','fight','help','dialogue','pause','mode'].includes(action.type))return room.leader_id===user;
-  if(['skill','priority'].includes(action.type))return ownsHero(room,user,action.hero)&&Number.isInteger(action.skill)&&action.skill>=-1&&action.skill<8;
+  if(['skill','priority','queue'].includes(action.type)){
+    if(!ownsHero(room,user,action.hero)||!Number.isInteger(action.skill)||action.skill< -1||action.skill>8)return false;
+    if(action.target!==null&&action.target!==undefined&&!room.members.some(m=>m.loadout.heroes.includes(action.target)))return false;
+    const f=room.members.find(m=>m.user_id===user)?.loadout.fighters.find(f=>f.id===action.hero);
+    return action.skill===-1||!Array.isArray(f?.equippedSkills)||f.equippedSkills.includes(action.skill);
+  }
   return false;
 }
 export function applyCoopReward(solo,reward,ownedHeroes,maxHealth){

@@ -1,0 +1,9 @@
+{
+  "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\meshy-overnight\\native-monsters\\Thornback.glb",
+  "target": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\monsters\\Thornback.glb",
+  "polygonsBefore": 116038,
+  "polygonsAfter": 24063,
+  "preservedCapeTopology": true,
+  "actions": 10,
+  "bytes": 1484252
+}

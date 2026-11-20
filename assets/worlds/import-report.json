@@ -1,0 +1,100 @@
+[
+  {
+    "theme": "earth",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_earth_world_30k_1116155455_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\earth.glb",
+    "bytes": 3225636,
+    "triangles": 29779,
+    "scale": 10.61080602792528,
+    "centralGround": [
+      0.0014485418796539307,
+      -0.0024835169315338135,
+      -0.20037543773651123
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "water",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_water_world_30k_1116155649_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\water.glb",
+    "bytes": 1236728,
+    "triangles": 30208,
+    "scale": 29.392098336462414,
+    "centralGround": [
+      -0.0009765028953552246,
+      0.0004885047674179077,
+      -0.03448331356048584
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "snow",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_snow_world_30k_1116155830_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\snow.glb",
+    "bytes": 1389776,
+    "triangles": 29311,
+    "scale": 21.04828902992342,
+    "centralGround": [
+      -0.007324501872062683,
+      -0.0017089992761611938,
+      -0.09246814250946045
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "thunder",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_thunder_world_3_1116155941_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\thunder.glb",
+    "bytes": 1257832,
+    "triangles": 30587,
+    "scale": 20.983606557377048,
+    "centralGround": [
+      -0.0031739920377731323,
+      -0.0017085075378417969,
+      0.03165864944458008
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "fire",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fire_world_30k_1116160048_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\fire.glb",
+    "bytes": 1127560,
+    "triangles": 30232,
+    "scale": 20.951424964530894,
+    "centralGround": [
+      -0.0036619901657104492,
+      0.0009765028953552246,
+      -0.13402974605560303
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "shadow",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_shadow_world_30_1116160158_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\shadow.glb",
+    "bytes": 1510848,
+    "triangles": 29858,
+    "scale": 21.026691409923213,
+    "centralGround": [
+      -0.0004884898662567139,
+      -0.0007320046424865723,
+      -0.023313522338867188
+    ],
+    "reviewed": false
+  },
+  {
+    "theme": "light",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_light_world_30k_1116160303_texture.glb",
+    "file": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\sarko-web\\assets\\worlds\\light.glb",
+    "bytes": 1332756,
+    "triangles": 27161,
+    "scale": 21.102522481201817,
+    "centralGround": [
+      -0.005371004343032837,
+      -0.0004879981279373169,
+      -0.04246163368225098
+    ],
+    "reviewed": false
+  }
+]

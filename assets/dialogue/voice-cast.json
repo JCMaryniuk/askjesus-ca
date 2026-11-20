@@ -1289,7 +1289,12 @@
       "start": 0,
       "end": 9.521701,
       "voice": "Lily - Velvety Actress",
-      "sha256": "978056fee6f2000c5f09b4b153978a2b15ff5de8ace1bbc5b4a6dfed0f9267a8"
+      "sha256": "9f50bd0b734fe05bc4ba9705bbe256512cb04caaa77dcf42ea98af5ae895cdb2",
+      "synthesisText": "Grace! Evangelist, enthusiastic volunteer, occasional ladder problem. Ways, grab that end—wait, is anyone hurt? We should check first.",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending.",
+      "sourceRecording": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\handoff-20261119\\dialogue\\recorded\\pronunciation-repairs\\Grace-original.mp3",
+      "recordingNote": "User-requested pronunciation correction; displayed canonical spelling retained."
     },
     {
       "scene": "departure",
@@ -1361,7 +1366,12 @@
       "start": 55.289932,
       "end": 61.038889,
       "voice": "Lily - Velvety Actress",
-      "sha256": "aec2ee82d65ad58ae142bbabdf608bdddcc95415f486b4c0c1eacd3109502067"
+      "sha256": "e69a978b611dd3801b17b756732d25de4b37e90bb3e44e88c4c8075dff8e2838",
+      "synthesisText": "Archers, I have your opening! Ways, try to keep up. And please do not trip over my longsword.",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending.",
+      "sourceRecording": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\handoff-20261119\\dialogue\\recorded\\pronunciation-repairs\\Grace-original.mp3",
+      "recordingNote": "User-requested pronunciation correction; displayed canonical spelling retained."
     },
     {
       "scene": "rexDefeat",
@@ -1841,7 +1851,12 @@
       "start": 14.960816000000001,
       "end": 24.894172,
       "voice": "Malachar - Severin Commanding",
-      "sha256": "5d4ae7ca935053b0cf2f271904f8d01ba39a31d37ed85b0f5870e6bfbbfe78b0"
+      "sha256": "0fc286674efe2b30a236d2d6a24cdee87f8c64e07f28546a138a794af0594d62",
+      "synthesisText": "Ways hides fear behind laughter. Amaya carries guilt. Hailey fears failure. Your Apostle blames himself for every soul he cannot save.",
+      "verificationStatus": "audio-integrity-checked-pronunciation-pending",
+      "verificationNote": "MP3 fully decoded; hash and exact user-authorized synthesis alias checked. No independent ASR or listening of this replacement was available without desktop use. Pronunciation remains pending.",
+      "sourceRecording": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\handoff-20261119\\dialogue\\recorded\\pronunciation-repairs\\Malachar-original.mp3",
+      "recordingNote": "User-requested pronunciation correction; displayed canonical spelling retained."
     },
     {
       "scene": "rexArrival",
@@ -2103,9 +2118,12 @@
       "speaker": "Sarko",
       "file": "opening-wake-3.mp3",
       "voice": "Sarko",
-      "sha256": "2cfc1f5b8d337d06a07fdaf0ce1e908f71cfda7067e90d42f6da59b9bf0f2f96",
-      "sourceRecording": "ElevenLabs_2026-11-18T04_24_36_Sarko_gen_sp100_s50_sb75_se0_b_m2.mp3",
-      "recordingNote": "Single-line ElevenLabs correction; forehead mark only."
+      "sha256": "94b421f7e6beb7abb334e612ef7dacd734e3fa294e79b155e0daf49d04aadcaa",
+      "sourceRecording": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\handoff-20261119\\dialogue\\recorded\\pronunciation-repairs\\Sarko-original.mp3",
+      "recordingNote": "User-requested pronunciation correction; displayed canonical spelling retained.",
+      "synthesisText": "A duv on my forehead. It is warm. I should be frightened, but somehow I feel safe.",
+      "verificationStatus": "user-listening-approved",
+      "verificationNote": "User confirmed both clips sound correct: dove as duv, Waiz as ways."
     },
     {
       "scene": "wake",
@@ -2309,7 +2327,12 @@
       "start": 0,
       "end": 6.693175,
       "voice": "Waiz",
-      "sha256": "4fc8e2f6c110bc12a18844ab422552fd37e3cb0e9ca0802a85b3e0476fc43d94"
+      "sha256": "fed51206aa8a9ac47259d7ffcd408e46ff434f1ea2a051b315809479eab587c9",
+      "synthesisText": "Hello! My name is Ways! And judging by that expression, you have approximately a thousand questions.",
+      "verificationStatus": "user-listening-approved",
+      "verificationNote": "User confirmed both clips sound correct: dove as duv, Waiz as ways.",
+      "sourceRecording": "C:\\Users\\Admin\\Documents\\Codex\\2026-11-12\\i\\work\\handoff-20261119\\dialogue\\recorded\\pronunciation-repairs\\Waiz-original.mp3",
+      "recordingNote": "User-requested pronunciation correction; displayed canonical spelling retained."
     },
     {
       "scene": "wake",

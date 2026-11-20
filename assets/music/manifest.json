@@ -1,0 +1,541 @@
+{
+  "instrumental_only": true,
+  "tracks": [
+    {
+      "cue": "main",
+      "title": "SARKO — Journey Toward the Light (Main Theme)",
+      "version_id": "210026d1-c829-4210-8356-f30ea01a209e",
+      "source_url": "https://suno.com/song/210026d1-c829-4210-8356-f30ea01a209e",
+      "duration_seconds": 174.32,
+      "file": "01-SARKO-Journey-Toward-the-Light-Main-Theme--210026d1.mp3"
+    },
+    {
+      "cue": "sanctuary",
+      "title": "Sanctuary Beneath the Ruins — Hidden Holy Chamber",
+      "version_id": "9c338385-d235-40c1-ae75-5c9d8985ec50",
+      "source_url": "https://suno.com/song/9c338385-d235-40c1-ae75-5c9d8985ec50",
+      "duration_seconds": 119.96,
+      "file": "02-Sanctuary-Beneath-the-Ruins-Hidden-Holy-Chamber--9c338385.mp3"
+    },
+    {
+      "cue": "furnace",
+      "title": "The Furnace of Endurance — Fire Dungeon",
+      "version_id": "ed7c0cce-e8cf-4902-a62b-6b536f2fbb1e",
+      "source_url": "https://suno.com/song/ed7c0cce-e8cf-4902-a62b-6b536f2fbb1e",
+      "duration_seconds": 162.8,
+      "file": "03-The-Furnace-of-Endurance-Fire-Dungeon--ed7c0cce.mp3"
+    },
+    {
+      "cue": "cavern",
+      "title": "Echoes of the Deep — Cavern Dungeon",
+      "version_id": "03035a64-f9f1-4218-81af-9b87e6cff265",
+      "source_url": "https://suno.com/song/03035a64-f9f1-4218-81af-9b87e6cff265",
+      "duration_seconds": 187.56,
+      "file": "04-Echoes-of-the-Deep-Cavern-Dungeon--03035a64.mp3"
+    },
+    {
+      "cue": "stand",
+      "title": "4. Stand Against the Darkness — Boss Battle",
+      "version_id": "3e9c9c97-cb30-41db-8252-866df316bf29",
+      "source_url": "https://suno.com/song/3e9c9c97-cb30-41db-8252-866df316bf29",
+      "duration_seconds": 187.6,
+      "file": "05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3"
+    },
+    {
+      "cue": "trial",
+      "title": "Trial of the Faithful — Armor of God",
+      "version_id": "420c4798-5246-45ea-9f34-60b8c09f9712",
+      "source_url": "https://suno.com/song/420c4798-5246-45ea-9f34-60b8c09f9712",
+      "duration_seconds": 188.48,
+      "file": "06-Trial-of-the-Faithful-Armor-of-God--420c4798.mp3"
+    },
+    {
+      "cue": "roots",
+      "title": "Roots of the Fallen — Overgrown Dungeon",
+      "version_id": "0b6c33ea-4968-42d7-a81e-f6b22138cd3b",
+      "source_url": "https://suno.com/song/0b6c33ea-4968-42d7-a81e-f6b22138cd3b",
+      "duration_seconds": 172.8,
+      "file": "07-Roots-of-the-Fallen-Overgrown-Dungeon--0b6c33ea.mp3"
+    },
+    {
+      "cue": "corridors",
+      "title": "Light in the Corridors",
+      "version_id": "f761e189-ee09-44e0-8408-a42cbc89bd98",
+      "source_url": "https://suno.com/song/f761e189-ee09-44e0-8408-a42cbc89bd98",
+      "duration_seconds": 173.2,
+      "file": "08-Light-in-the-Corridors--f761e189.mp3"
+    },
+    {
+      "cue": "city",
+      "title": "City of Light",
+      "version_id": "4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+      "source_url": "https://suno.com/song/4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+      "duration_seconds": 214.48,
+      "file": "09-City-of-Light--4fb5e959.mp3"
+    },
+    {
+      "cue": "dragon",
+      "title": "The Dragon King's Battle",
+      "version_id": "15160c97-5a68-44a8-a499-3789aa9dc620",
+      "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+      "duration_seconds": 153.2,
+      "file": "10-The-Dragon-King-s-Battle--15160c97.mp3"
+    },
+    {
+      "cue": "lies",
+      "title": "King of Lies",
+      "version_id": "9b209060-22a2-4c06-aad6-376358bd270c",
+      "source_url": "https://suno.com/song/9b209060-22a2-4c06-aad6-376358bd270c",
+      "duration_seconds": 152.4,
+      "file": "11-King-of-Lies--9b209060.mp3"
+    },
+    {
+      "cue": "breath",
+      "title": "Breath of Heaven",
+      "version_id": "36e31766-fe40-4a8a-990c-9dd03df7c612",
+      "source_url": "https://suno.com/song/36e31766-fe40-4a8a-990c-9dd03df7c612",
+      "duration_seconds": 197.6,
+      "file": "12-Breath-of-Heaven--36e31766.mp3"
+    },
+    {
+      "cue": "shepherd",
+      "title": "The False Shepherd",
+      "version_id": "a44c1293-1e28-47c7-aa05-a87746486948",
+      "source_url": "https://suno.com/song/a44c1293-1e28-47c7-aa05-a87746486948",
+      "duration_seconds": 166.76,
+      "file": "13-The-False-Shepherd--a44c1293.mp3"
+    },
+    {
+      "cue": "shards",
+      "title": "Evolution Shards",
+      "version_id": "f030d3d6-940a-4140-81e5-d92d6f9dd1c5",
+      "source_url": "https://suno.com/song/f030d3d6-940a-4140-81e5-d92d6f9dd1c5",
+      "duration_seconds": 169.2,
+      "file": "14-Evolution-Shards--f030d3d6.mp3"
+    },
+    {
+      "cue": "journey",
+      "title": "The Weight of the Journey",
+      "version_id": "2e0a0e17-b394-41ea-9634-0ea8892d151f",
+      "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+      "duration_seconds": 139.96,
+      "file": "15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+    },
+    {
+      "cue": "seeds",
+      "title": "Seeds in the Rain",
+      "version_id": "85930b80-ebb0-485b-9e6f-9254a099456c",
+      "source_url": "https://suno.com/song/85930b80-ebb0-485b-9e6f-9254a099456c",
+      "duration_seconds": 200,
+      "file": "16-Seeds-in-the-Rain--85930b80.mp3"
+    },
+    {
+      "cue": "gathering",
+      "title": "Track 06 — The Gathering of Light",
+      "version_id": "bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+      "source_url": "https://suno.com/song/bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+      "duration_seconds": 147.6,
+      "file": "17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3"
+    },
+    {
+      "cue": "canyon",
+      "title": "SARKO — Shadows in the Canyon",
+      "version_id": "cafc0111-2a72-4278-a8fd-8454c0f756dc",
+      "source_url": "https://suno.com/song/cafc0111-2a72-4278-a8fd-8454c0f756dc",
+      "duration_seconds": 148,
+      "file": "18-SARKO-Shadows-in-the-Canyon--cafc0111.mp3"
+    },
+    {
+      "cue": "training",
+      "title": "SARKO — Diago's Training",
+      "version_id": "261813e1-43c9-460e-9010-e8532f4a3968",
+      "source_url": "https://suno.com/song/261813e1-43c9-460e-9010-e8532f4a3968",
+      "duration_seconds": 109.96,
+      "file": "19-SARKO-Diago-s-Training--261813e1.mp3"
+    },
+    {
+      "cue": "firstLight",
+      "title": "SARKO — First Light",
+      "version_id": "57d0535a-8e18-48e6-8c67-791157cfcff8",
+      "source_url": "https://suno.com/song/57d0535a-8e18-48e6-8c67-791157cfcff8",
+      "duration_seconds": 142.4,
+      "file": "20-SARKO-First-Light--57d0535a.mp3"
+    },
+    {
+      "cue": "storm",
+      "title": "SARKO — The Storm and Awakening",
+      "version_id": "55de0915-0333-4f5e-81df-1dbebaf3e11d",
+      "source_url": "https://suno.com/song/55de0915-0333-4f5e-81df-1dbebaf3e11d",
+      "duration_seconds": 172.8,
+      "file": "21-SARKO-The-Storm-and-Awakening--55de0915.mp3"
+    }
+  ],
+  "assignments": {
+    "instrumental_only": true,
+    "lyrical_tracks_excluded": true,
+    "title": {
+      "cue": "main",
+      "title": "SARKO — Journey Toward the Light (Main Theme)",
+      "source_url": "https://suno.com/song/210026d1-c829-4210-8356-f30ea01a209e",
+      "game_file": "assets/music/01-SARKO-Journey-Toward-the-Light-Main-Theme--210026d1.mp3"
+    },
+    "life_skills": {
+      "Fishing": {
+        "cue": "seeds",
+        "title": "Seeds in the Rain",
+        "source_url": "https://suno.com/song/85930b80-ebb0-485b-9e6f-9254a099456c",
+        "game_file": "assets/music/16-Seeds-in-the-Rain--85930b80.mp3"
+      },
+      "Cooking": {
+        "cue": "gathering",
+        "title": "Track 06 — The Gathering of Light",
+        "source_url": "https://suno.com/song/bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+        "game_file": "assets/music/17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3"
+      },
+      "Woodcutting": {
+        "cue": "firstLight",
+        "title": "SARKO — First Light",
+        "source_url": "https://suno.com/song/57d0535a-8e18-48e6-8c67-791157cfcff8",
+        "game_file": "assets/music/20-SARKO-First-Light--57d0535a.mp3"
+      },
+      "Mining": {
+        "cue": "cavern",
+        "title": "Echoes of the Deep — Cavern Dungeon",
+        "source_url": "https://suno.com/song/03035a64-f9f1-4218-81af-9b87e6cff265",
+        "game_file": "assets/music/04-Echoes-of-the-Deep-Cavern-Dungeon--03035a64.mp3"
+      },
+      "Forging": {
+        "cue": "journey",
+        "title": "The Weight of the Journey",
+        "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+        "game_file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+      },
+      "Wisdom": {
+        "cue": "sanctuary",
+        "title": "Sanctuary Beneath the Ruins — Hidden Holy Chamber",
+        "source_url": "https://suno.com/song/9c338385-d235-40c1-ae75-5c9d8985ec50",
+        "game_file": "assets/music/02-Sanctuary-Beneath-the-Ruins-Hidden-Holy-Chamber--9c338385.mp3"
+      }
+    },
+    "worlds": {
+      "Earth": {
+        "exploration": {
+          "cue": "firstLight",
+          "title": "SARKO — First Light",
+          "source_url": "https://suno.com/song/57d0535a-8e18-48e6-8c67-791157cfcff8",
+          "game_file": "assets/music/20-SARKO-First-Light--57d0535a.mp3"
+        },
+        "battle": {
+          "cue": "roots",
+          "title": "Roots of the Fallen — Overgrown Dungeon",
+          "source_url": "https://suno.com/song/0b6c33ea-4968-42d7-a81e-f6b22138cd3b",
+          "game_file": "assets/music/07-Roots-of-the-Fallen-Overgrown-Dungeon--0b6c33ea.mp3"
+        },
+        "boss": {
+          "cue": "stand",
+          "title": "4. Stand Against the Darkness — Boss Battle",
+          "source_url": "https://suno.com/song/3e9c9c97-cb30-41db-8252-866df316bf29",
+          "game_file": "assets/music/05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3"
+        }
+      },
+      "Water": {
+        "exploration": {
+          "cue": "seeds",
+          "title": "Seeds in the Rain",
+          "source_url": "https://suno.com/song/85930b80-ebb0-485b-9e6f-9254a099456c",
+          "game_file": "assets/music/16-Seeds-in-the-Rain--85930b80.mp3"
+        },
+        "battle": {
+          "cue": "canyon",
+          "title": "SARKO — Shadows in the Canyon",
+          "source_url": "https://suno.com/song/cafc0111-2a72-4278-a8fd-8454c0f756dc",
+          "game_file": "assets/music/18-SARKO-Shadows-in-the-Canyon--cafc0111.mp3"
+        },
+        "boss": {
+          "cue": "canyon",
+          "title": "SARKO — Shadows in the Canyon",
+          "source_url": "https://suno.com/song/cafc0111-2a72-4278-a8fd-8454c0f756dc",
+          "game_file": "assets/music/18-SARKO-Shadows-in-the-Canyon--cafc0111.mp3"
+        }
+      },
+      "Snow": {
+        "exploration": {
+          "cue": "journey",
+          "title": "The Weight of the Journey",
+          "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+          "game_file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+        },
+        "battle": {
+          "cue": "trial",
+          "title": "Trial of the Faithful — Armor of God",
+          "source_url": "https://suno.com/song/420c4798-5246-45ea-9f34-60b8c09f9712",
+          "game_file": "assets/music/06-Trial-of-the-Faithful-Armor-of-God--420c4798.mp3"
+        },
+        "boss": {
+          "cue": "trial",
+          "title": "Trial of the Faithful — Armor of God",
+          "source_url": "https://suno.com/song/420c4798-5246-45ea-9f34-60b8c09f9712",
+          "game_file": "assets/music/06-Trial-of-the-Faithful-Armor-of-God--420c4798.mp3"
+        }
+      },
+      "Thunder": {
+        "exploration": {
+          "cue": "shards",
+          "title": "Evolution Shards",
+          "source_url": "https://suno.com/song/f030d3d6-940a-4140-81e5-d92d6f9dd1c5",
+          "game_file": "assets/music/14-Evolution-Shards--f030d3d6.mp3"
+        },
+        "battle": {
+          "cue": "stand",
+          "title": "4. Stand Against the Darkness — Boss Battle",
+          "source_url": "https://suno.com/song/3e9c9c97-cb30-41db-8252-866df316bf29",
+          "game_file": "assets/music/05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3"
+        },
+        "boss": {
+          "cue": "stand",
+          "title": "4. Stand Against the Darkness — Boss Battle",
+          "source_url": "https://suno.com/song/3e9c9c97-cb30-41db-8252-866df316bf29",
+          "game_file": "assets/music/05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3"
+        }
+      },
+      "Fire": {
+        "exploration": {
+          "cue": "corridors",
+          "title": "Light in the Corridors",
+          "source_url": "https://suno.com/song/f761e189-ee09-44e0-8408-a42cbc89bd98",
+          "game_file": "assets/music/08-Light-in-the-Corridors--f761e189.mp3"
+        },
+        "battle": {
+          "cue": "furnace",
+          "title": "The Furnace of Endurance — Fire Dungeon",
+          "source_url": "https://suno.com/song/ed7c0cce-e8cf-4902-a62b-6b536f2fbb1e",
+          "game_file": "assets/music/03-The-Furnace-of-Endurance-Fire-Dungeon--ed7c0cce.mp3"
+        },
+        "boss": {
+          "cue": "furnace",
+          "title": "The Furnace of Endurance — Fire Dungeon",
+          "source_url": "https://suno.com/song/ed7c0cce-e8cf-4902-a62b-6b536f2fbb1e",
+          "game_file": "assets/music/03-The-Furnace-of-Endurance-Fire-Dungeon--ed7c0cce.mp3"
+        }
+      },
+      "Shadow": {
+        "exploration": {
+          "cue": "sanctuary",
+          "title": "Sanctuary Beneath the Ruins — Hidden Holy Chamber",
+          "source_url": "https://suno.com/song/9c338385-d235-40c1-ae75-5c9d8985ec50",
+          "game_file": "assets/music/02-Sanctuary-Beneath-the-Ruins-Hidden-Holy-Chamber--9c338385.mp3"
+        },
+        "battle": {
+          "cue": "lies",
+          "title": "King of Lies",
+          "source_url": "https://suno.com/song/9b209060-22a2-4c06-aad6-376358bd270c",
+          "game_file": "assets/music/11-King-of-Lies--9b209060.mp3"
+        },
+        "boss": {
+          "cue": "shepherd",
+          "title": "The False Shepherd",
+          "source_url": "https://suno.com/song/a44c1293-1e28-47c7-aa05-a87746486948",
+          "game_file": "assets/music/13-The-False-Shepherd--a44c1293.mp3"
+        }
+      },
+      "Light": {
+        "exploration": {
+          "cue": "city",
+          "title": "City of Light",
+          "source_url": "https://suno.com/song/4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+          "game_file": "assets/music/09-City-of-Light--4fb5e959.mp3"
+        },
+        "battle": {
+          "cue": "dragon",
+          "title": "The Dragon King's Battle",
+          "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+          "game_file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3"
+        },
+        "boss": {
+          "cue": "dragon",
+          "title": "The Dragon King's Battle",
+          "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+          "game_file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3"
+        }
+      }
+    },
+    "named_bosses": {
+      "Malachar": {
+        "cue": "shepherd",
+        "title": "The False Shepherd",
+        "source_url": "https://suno.com/song/a44c1293-1e28-47c7-aa05-a87746486948",
+        "game_file": "assets/music/13-The-False-Shepherd--a44c1293.mp3"
+      },
+      "Rex Draconum": {
+        "cue": "dragon",
+        "title": "The Dragon King's Battle",
+        "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+        "game_file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3"
+      }
+    },
+    "story": {
+      "wake": {
+        "cue": "storm",
+        "title": "SARKO — The Storm and Awakening",
+        "source_url": "https://suno.com/song/55de0915-0333-4f5e-81df-1dbebaf3e11d",
+        "game_file": "assets/music/21-SARKO-The-Storm-and-Awakening--55de0915.mp3"
+      },
+      "firstLightView": {
+        "cue": "firstLight",
+        "title": "SARKO — First Light",
+        "source_url": "https://suno.com/song/57d0535a-8e18-48e6-8c67-791157cfcff8",
+        "game_file": "assets/music/20-SARKO-First-Light--57d0535a.mp3"
+      },
+      "meetDiago": {
+        "cue": "training",
+        "title": "SARKO — Diago's Training",
+        "source_url": "https://suno.com/song/261813e1-43c9-460e-9010-e8532f4a3968",
+        "game_file": "assets/music/19-SARKO-Diago-s-Training--261813e1.mp3"
+      },
+      "training": {
+        "cue": "training",
+        "title": "SARKO — Diago's Training",
+        "source_url": "https://suno.com/song/261813e1-43c9-460e-9010-e8532f4a3968",
+        "game_file": "assets/music/19-SARKO-Diago-s-Training--261813e1.mp3"
+      },
+      "guild": {
+        "cue": "gathering",
+        "title": "Track 06 — The Gathering of Light",
+        "source_url": "https://suno.com/song/bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+        "game_file": "assets/music/17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3"
+      },
+      "guildParty": {
+        "cue": "gathering",
+        "title": "Track 06 — The Gathering of Light",
+        "source_url": "https://suno.com/song/bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+        "game_file": "assets/music/17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3"
+      },
+      "aftermath": {
+        "cue": "journey",
+        "title": "The Weight of the Journey",
+        "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+        "game_file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+      },
+      "repairs": {
+        "cue": "gathering",
+        "title": "Track 06 — The Gathering of Light",
+        "source_url": "https://suno.com/song/bcc6bc64-c4fa-4830-af42-d7948aa431a8",
+        "game_file": "assets/music/17-Track-06-The-Gathering-of-Light--bcc6bc64.mp3"
+      },
+      "seeds": {
+        "cue": "seeds",
+        "title": "Seeds in the Rain",
+        "source_url": "https://suno.com/song/85930b80-ebb0-485b-9e6f-9254a099456c",
+        "game_file": "assets/music/16-Seeds-in-the-Rain--85930b80.mp3"
+      },
+      "departure": {
+        "cue": "main",
+        "title": "SARKO — Journey Toward the Light (Main Theme)",
+        "source_url": "https://suno.com/song/210026d1-c829-4210-8356-f30ea01a209e",
+        "game_file": "assets/music/01-SARKO-Journey-Toward-the-Light-Main-Theme--210026d1.mp3"
+      },
+      "garden": {
+        "cue": "shards",
+        "title": "Evolution Shards",
+        "source_url": "https://suno.com/song/f030d3d6-940a-4140-81e5-d92d6f9dd1c5",
+        "game_file": "assets/music/14-Evolution-Shards--f030d3d6.mp3"
+      },
+      "gardenInvite": {
+        "cue": "sanctuary",
+        "title": "Sanctuary Beneath the Ruins — Hidden Holy Chamber",
+        "source_url": "https://suno.com/song/9c338385-d235-40c1-ae75-5c9d8985ec50",
+        "game_file": "assets/music/02-Sanctuary-Beneath-the-Ruins-Hidden-Holy-Chamber--9c338385.mp3"
+      },
+      "gardenGift": {
+        "cue": "shards",
+        "title": "Evolution Shards",
+        "source_url": "https://suno.com/song/f030d3d6-940a-4140-81e5-d92d6f9dd1c5",
+        "game_file": "assets/music/14-Evolution-Shards--f030d3d6.mp3"
+      },
+      "fractures": {
+        "cue": "shepherd",
+        "title": "The False Shepherd",
+        "source_url": "https://suno.com/song/a44c1293-1e28-47c7-aa05-a87746486948",
+        "game_file": "assets/music/13-The-False-Shepherd--a44c1293.mp3"
+      },
+      "surrender": {
+        "cue": "journey",
+        "title": "The Weight of the Journey",
+        "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+        "game_file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+      },
+      "malachar": {
+        "cue": "shepherd",
+        "title": "The False Shepherd",
+        "source_url": "https://suno.com/song/a44c1293-1e28-47c7-aa05-a87746486948",
+        "game_file": "assets/music/13-The-False-Shepherd--a44c1293.mp3"
+      },
+      "levi": {
+        "cue": "stand",
+        "title": "4. Stand Against the Darkness — Boss Battle",
+        "source_url": "https://suno.com/song/3e9c9c97-cb30-41db-8252-866df316bf29",
+        "game_file": "assets/music/05-4-Stand-Against-the-Darkness-Boss-Battle--3e9c9c97.mp3"
+      },
+      "rexArrival": {
+        "cue": "dragon",
+        "title": "The Dragon King's Battle",
+        "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+        "game_file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3"
+      },
+      "rexAfter": {
+        "cue": "journey",
+        "title": "The Weight of the Journey",
+        "source_url": "https://suno.com/song/2e0a0e17-b394-41ea-9634-0ea8892d151f",
+        "game_file": "assets/music/15-The-Weight-of-the-Journey--2e0a0e17.mp3"
+      },
+      "breath": {
+        "cue": "breath",
+        "title": "Breath of Heaven",
+        "source_url": "https://suno.com/song/36e31766-fe40-4a8a-990c-9dd03df7c612",
+        "game_file": "assets/music/12-Breath-of-Heaven--36e31766.mp3"
+      },
+      "kingLies": {
+        "cue": "lies",
+        "title": "King of Lies",
+        "source_url": "https://suno.com/song/9b209060-22a2-4c06-aad6-376358bd270c",
+        "game_file": "assets/music/11-King-of-Lies--9b209060.mp3"
+      },
+      "finalStand": {
+        "cue": "dragon",
+        "title": "The Dragon King's Battle",
+        "source_url": "https://suno.com/song/15160c97-5a68-44a8-a499-3789aa9dc620",
+        "game_file": "assets/music/10-The-Dragon-King-s-Battle--15160c97.mp3"
+      },
+      "restoration": {
+        "cue": "breath",
+        "title": "Breath of Heaven",
+        "source_url": "https://suno.com/song/36e31766-fe40-4a8a-990c-9dd03df7c612",
+        "game_file": "assets/music/12-Breath-of-Heaven--36e31766.mp3"
+      },
+      "rexDefeat": {
+        "cue": "breath",
+        "title": "Breath of Heaven",
+        "source_url": "https://suno.com/song/36e31766-fe40-4a8a-990c-9dd03df7c612",
+        "game_file": "assets/music/12-Breath-of-Heaven--36e31766.mp3"
+      },
+      "cityGates": {
+        "cue": "city",
+        "title": "City of Light",
+        "source_url": "https://suno.com/song/4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+        "game_file": "assets/music/09-City-of-Light--4fb5e959.mp3"
+      },
+      "cityWelcome": {
+        "cue": "city",
+        "title": "City of Light",
+        "source_url": "https://suno.com/song/4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+        "game_file": "assets/music/09-City-of-Light--4fb5e959.mp3"
+      },
+      "cityPurpose": {
+        "cue": "city",
+        "title": "City of Light",
+        "source_url": "https://suno.com/song/4fb5e959-f1e6-45ff-a974-6ff6d9720320",
+        "game_file": "assets/music/09-City-of-Light--4fb5e959.mp3"
+      }
+    }
+  }
+}

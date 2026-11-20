@@ -1,0 +1,30 @@
+/* Shared battle and church layout for browser and native builds. */
+.churchLesson{flex-direction:column}.churchLesson img{width:100%!important;max-width:100%!important;aspect-ratio:16/9;object-fit:cover}.bossAdvice{display:flex;gap:14px;align-items:center;margin:14px 0;padding:14px;background:#15283b;border:1px solid #c8a35a;border-radius:12px}.bossAdvice img{width:64px;height:64px;object-fit:cover;object-position:top;border-radius:50%}.bossAdvice p{margin:6px 0}
+.partyDock{padding:14px;border:1px solid #c8a35a;border-radius:16px;background:#0b1928;color:#f9ecd0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.partyDockHead{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}.partyDockHead small{color:#d9c7a6}
+.partyStatus{min-width:0;display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;padding:10px;border:1px solid #576071;border-radius:12px;background:linear-gradient(130deg,#1a3044,#0c1725)}
+.partyStatus.currentTurn{border-color:var(--hero-accent);box-shadow:inset 0 0 16px #e9bd4a20}.partyFace{padding:0;width:64px;height:64px;border-radius:50%;overflow:hidden;border:2px solid var(--hero-accent);background:#152638}.partyFace img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}.partyVitals{min-width:0}.partyVitals strong{display:block}.partyVitals small{font-size:12px;color:#d9c7a6}.partyVitals>span{font-size:12px}.partyVitals .bar{margin:5px 0}
+.equippedSkills{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.skillIcon{position:relative;min-width:0;min-height:58px;padding:4px;border:1px solid #947744;border-radius:8px;background:#14263c;color:#fff0c5}.skillIcon img{display:block;width:36px;height:36px;object-fit:contain;margin:auto}.skillIcon small{display:block;font-size:9px;line-height:14px;font-weight:700}.skillIcon.queued{border-color:#fff0a1;box-shadow:0 0 9px #e7bd58}.skillIcon:disabled{opacity:.45}
+.churchTree{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.treeNode{min-width:0;display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;padding:14px;background:#12243a;border:1px solid #617083;border-radius:12px}.treeNode.owned{border-color:#d7b262}.treeNode>img{width:48px;height:48px;object-fit:contain}.treeNode h3{font-size:18px;margin:4px 0}.treeNode p{font-size:14px;line-height:1.5;margin:4px 0}.treeNode>button,.treeNode>strong{grid-column:1/-1;min-height:44px;white-space:normal}.churchLesson{display:flex;gap:16px;align-items:center}.churchLesson img{width:160px;max-width:35%;border-radius:12px}.teamBenefit{padding:12px;border-left:3px solid #d5b56e;background:#ffffff08}.healChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.healChoices button{display:grid;justify-items:center;gap:6px;min-height:100px}.healChoices img{width:64px;height:64px;object-fit:cover;object-position:top;border-radius:50%}.difficultyOptions{display:grid;gap:12px}.difficultyOptions button{min-height:48px;white-space:normal}
+@media(max-width:600px){.partyDock{grid-template-columns:minmax(0,1fr);padding:8px;gap:8px}.partyStatus{grid-template-columns:52px minmax(0,1fr);padding:8px}.partyFace{width:52px;height:52px}.churchTree{grid-template-columns:minmax(0,1fr)}.churchLesson{align-items:flex-start}.partyDockHead{font-size:14px}.partyDockHead small{font-size:12px}.treeNode h3{font-size:16px}}
+.routeChoices{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.routeChoice{min-width:0;padding:18px;border:1px solid #aa8849;border-radius:18px;background:linear-gradient(145deg,#14263a,#09131f);box-shadow:inset 0 0 25px #d2aa4820;display:flex;flex-direction:column;align-items:stretch}
+.routeChoice h2{font-size:clamp(1.2rem,2.5vw,1.8rem);margin:12px 0 6px;overflow-wrap:anywhere}
+.routeChoice h3{font-size:1rem;color:#f3cc78;margin:14px 0 6px}
+.routeChoice p,.routeChoice li{line-height:1.4;overflow-wrap:anywhere;margin:6px 0}
+.routeChoice ul{padding-left:22px;margin:6px 0}
+.routeMonsterPortrait{width:100%;height:160px;object-fit:contain;background:#080f19;border-radius:12px;margin-top:10px}
+.routeChoice .questPortrait{float:none;width:160px;height:160px;max-width:100%;margin:10px auto 6px;flex-shrink:0}
+.routeChoice>.button{min-height:48px;width:100%;white-space:normal;margin-top:auto}
+.routeChoice .small{display:block}
+.routeReward{color:#f6d48a}
+.routeChoice details{margin-top:16px;font-size:.85rem}
+.routeChoice summary{cursor:pointer;padding:10px 0;color:#d7c5a0}
+.routeChoices .monsterRoute{border-color:#c28a65}.routeChoices .neighbourRoute{border-color:#a8bc7a}
+@media(max-width:680px){.routeChoices{grid-template-columns:1fr;gap:16px}.routeChoice{padding:16px}.routeMonsterPortrait{height:190px}.routeChoice .questPortrait{width:180px;height:180px}.routeChoice>.button{margin-top:12px}}
+.activityScene{background-size:cover;background-position:center;min-height:340px;text-shadow:0 2px 3px #000}
+.activityScene .lifeMeter{box-shadow:0 0 0 2px #e9ca78,0 8px 24px #0009}
+.lifeFeedback{color:#ffe29b;background:#112536dd;padding:10px 14px;border:1px solid #b99546;border-radius:9px;animation:life-feedback .35s ease-out}
+.lifeSkill5 .lifeMeter,.lifeSkill5 progress,.lifeSkill5 #lifeHint{display:none}
+@keyframes life-feedback{from{transform:scale(.96);opacity:.4}to{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.lifeFeedback{animation:none}}

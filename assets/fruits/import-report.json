@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Love",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_love_1116164809_texture.glb",
+    "file": "assets/fruits/Love.glb",
+    "bytes": 270144,
+    "reviewed": false
+  },
+  {
+    "name": "Joy",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_joy_1116164651_texture.glb",
+    "file": "assets/fruits/Joy.glb",
+    "bytes": 278668,
+    "reviewed": false
+  },
+  {
+    "name": "Peace",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_peace_1116164229_texture.glb",
+    "file": "assets/fruits/Peace.glb",
+    "bytes": 269180,
+    "reviewed": false
+  },
+  {
+    "name": "Patience",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_patience_1116164946_texture.glb",
+    "file": "assets/fruits/Patience.glb",
+    "bytes": 285644,
+    "reviewed": false
+  },
+  {
+    "name": "Kindness",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_kindness_1116164917_texture.glb",
+    "file": "assets/fruits/Kindness.glb",
+    "bytes": 288216,
+    "reviewed": false
+  },
+  {
+    "name": "Goodness",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_goodness_1116163938_texture.glb",
+    "file": "assets/fruits/Goodness.glb",
+    "bytes": 267764,
+    "reviewed": false
+  },
+  {
+    "name": "Faithfulness",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_faithfuln_1116164107_texture.glb",
+    "file": "assets/fruits/Faithfulness.glb",
+    "bytes": 254084,
+    "reviewed": false
+  },
+  {
+    "name": "Gentleness",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_gentlenes_1116164725_texture.glb",
+    "file": "assets/fruits/Gentleness.glb",
+    "bytes": 262704,
+    "reviewed": false
+  },
+  {
+    "name": "Self-Control",
+    "source": "C:\\Users\\Admin/Downloads\\Meshy_AI_sarko_fruit_self_cont_1116164851_texture.glb",
+    "file": "assets/fruits/Self-Control.glb",
+    "bytes": 268632,
+    "reviewed": false
+  }
+]

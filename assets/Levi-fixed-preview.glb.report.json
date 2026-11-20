@@ -1,0 +1,8 @@
+{
+  "source": ".\\work\\meshy-overnight\\Levi-fixed-preview.glb",
+  "target": ".\\work\\sarko-web\\assets\\Levi-fixed-preview.glb",
+  "polygonsBefore": 233648,
+  "polygonsAfter": 30067,
+  "actions": 18,
+  "bytes": 4266764
+}
