@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Story-Fit-2026-11-20",
+  "version": "Sarko-Story-Overlay-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1297,
-      "sha256": "4e443fe5296f53f791678801f75959c88d90d8d67685ed532598038b01059c9b"
+      "bytes": 1301,
+      "sha256": "83050c1d930bc3ae68872777b69ea7142721e91b814afa7ccde39cab4b2ea828"
     },
     {
       "file": "style.css",
@@ -28,8 +28,8 @@
     },
     {
       "file": "handoff-ui.css",
-      "bytes": 26396,
-      "sha256": "6c64199edf957d563d329eeac71c8f60c950bf64724c8609852833991c95be89"
+      "bytes": 28528,
+      "sha256": "c7861016ec72abc36ca054893c12514aa39ead1ecabc3c71261e1b360af7219b"
     },
     {
       "file": "handoff-rules.mjs",
