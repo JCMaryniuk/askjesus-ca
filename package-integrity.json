@@ -1,10 +1,10 @@
 {
-  "version": "Sarko-Scale-2026-11-20",
+  "version": "Sarko-Audio-Height-2026-11-20",
   "files": [
     {
       "file": "index.html",
-      "bytes": 1299,
-      "sha256": "97d7ec730f263253c1cb5ab98af20f9cef372c2fef9906ca4458af4eee2c7861"
+      "bytes": 1306,
+      "sha256": "a4443e917d9455fab3105d26ffb01a67f9a8b74683e0327f37a0afa9e0af8cf2"
     },
     {
       "file": "style.css",
@@ -53,8 +53,8 @@
     },
     {
       "file": "game.js",
-      "bytes": 295914,
-      "sha256": "d6071b635ed884887983cfb041d1ffc6ec736e305d09a6961021923b153300ff"
+      "bytes": 295957,
+      "sha256": "03a9a4e8fb0c6d82203fa4c3ea9aa4818229d5fafb979aed825a2d1d404d4852"
     },
     {
       "file": "soundtrack.mjs",
@@ -63,8 +63,8 @@
     },
     {
       "file": "studio-intro.js",
-      "bytes": 1690,
-      "sha256": "f84506ac411c9ede2bea9b5ebe6783944e658457ea03cca07f0eb3950adcf388"
+      "bytes": 1886,
+      "sha256": "613cf1967e147e27a603eb9fc7c1a5d87d9c1d675424a92a9301015cf674f635"
     },
     {
       "file": "pad-keyboard.js",
@@ -490,6 +490,11 @@
       "file": "assets/book/waiz-welcome-game.png",
       "bytes": 2981912,
       "sha256": "baf443e0dbefc87522b3356cc50288ade57c2dcb9be9662e8faf4ce1072c7af4"
+    },
+    {
+      "file": "assets/book/waiz-welcome-height-v4.png",
+      "bytes": 2470829,
+      "sha256": "2f30d90b40ef181efecc2dec8c086a2ceee0647f195d5412dc5f11fcf1fdce2b"
     },
     {
       "file": "assets/book/waiz-welcome-reference-v2.png",
